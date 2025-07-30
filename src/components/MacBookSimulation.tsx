@@ -330,14 +330,14 @@ return synthesis;`
   useEffect(() => {
     if (!isPlaying) return;
     
-    const currentPaths = cursorPaths[currentStepData.component as keyof typeof cursorPaths] || [];
+    const currentPaths = cursorPaths[steps[currentStep].component as keyof typeof cursorPaths] || [];
     if (currentPaths.length === 0) return;
 
     const animateCursor = () => {
       setCursorPath(0);
       
       currentPaths.forEach((position, index) => {
-        const baseDelay = (currentStepData.duration / currentPaths.length) * index;
+        const baseDelay = (steps[currentStep].duration / currentPaths.length) * index;
         
         // Add hesitation before main movement
         if (position.hesitation) {
@@ -372,7 +372,7 @@ return synthesis;`
     };
 
     setTimeout(animateCursor, 500);
-  }, [currentStep, isPlaying, currentStepData]);
+  }, [currentStep, isPlaying]); // Removed currentStepData dependency
 
   // Animated cursor blinking
   useEffect(() => {
@@ -384,11 +384,11 @@ return synthesis;`
 
   // Substep progression
   useEffect(() => {
-    if (isPlaying && currentStepData.substeps) {
-      const substepDuration = currentStepData.duration / currentStepData.substeps.length;
+    if (isPlaying && steps[currentStep].substeps) {
+      const substepDuration = steps[currentStep].duration / steps[currentStep].substeps!.length;
       const timer = setInterval(() => {
         setCurrentSubstep(prev => {
-          if (prev < currentStepData.substeps!.length - 1) {
+          if (prev < steps[currentStep].substeps!.length - 1) {
             return prev + 1;
           }
           return prev;
@@ -397,7 +397,7 @@ return synthesis;`
 
       return () => clearInterval(timer);
     }
-  }, [currentStep, isPlaying, currentStepData]);
+  }, [currentStep, isPlaying]); // Removed currentStepData dependency
 
   // Step progression
   useEffect(() => {
@@ -415,25 +415,25 @@ return synthesis;`
           setProgress(100);
           addNotification("🎉 Processus terminé avec succès!");
         }
-      }, currentStepData.duration);
+      }, steps[currentStep].duration);
 
       return () => clearTimeout(timer);
     }
-  }, [currentStep, isPlaying, currentStepData.duration]);
+  }, [currentStep, isPlaying]); // Removed currentStepData dependency
 
   // Progress update with substeps
   useEffect(() => {
     if (isPlaying) {
       const interval = setInterval(() => {
         setProgress(prev => {
-          const increment = 100 / (currentStepData.duration / 100);
+          const increment = 100 / (steps[currentStep].duration / 100);
           return Math.min(prev + increment, 100);
         });
       }, 100);
 
       return () => clearInterval(interval);
     }
-  }, [isPlaying, currentStepData.duration]);
+  }, [isPlaying, currentStep]); // Removed currentStepData dependency
 
   // Type code when in VS Code step
   useEffect(() => {
@@ -442,7 +442,7 @@ return synthesis;`
         typeCode(currentStepData.content.code);
       }, 500);
     }
-  }, [currentStep, isPlaying, currentStepData]);
+  }, [currentStep, isPlaying]); // Removed currentStepData dependency
 
   // Terminal animation
   useEffect(() => {
@@ -454,7 +454,7 @@ return synthesis;`
         }, index * 600);
       });
     }
-  }, [currentStep, isPlaying, currentStepData]);
+  }, [currentStep, isPlaying]); // Removed currentStepData dependency
 
   const startSimulation = () => {
     setCurrentStep(0);
