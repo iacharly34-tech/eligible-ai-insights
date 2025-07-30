@@ -60,6 +60,10 @@ export default {
 					DEFAULT: 'hsl(var(--warning))',
 					foreground: 'hsl(var(--warning-foreground))'
 				},
+				'cyan-soft': {
+					DEFAULT: 'hsl(var(--cyan-soft))',
+					foreground: 'hsl(var(--cyan-foreground))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -78,6 +82,8 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-highlight': 'var(--gradient-highlight)',
+				'gradient-cta': 'var(--gradient-cta)',
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-subtle': 'var(--gradient-subtle)'
 			},

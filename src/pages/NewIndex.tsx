@@ -214,7 +214,7 @@ const NewIndex = () => {
               
               <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                 Transformez votre{" "}
-                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent animate-pulse">
+                <span className="bg-gradient-highlight bg-clip-text text-transparent">
                   veille commerciale
                 </span>{" "}
                 en avantage concurrentiel
@@ -228,7 +228,7 @@ const NewIndex = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-8 py-4 h-auto group"
+                  className="bg-gradient-cta hover:shadow-glow text-white text-lg px-8 py-4 h-auto group transition-all duration-300 hover:scale-105"
                 >
                   <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                   Voir la démo interactive
@@ -238,7 +238,7 @@ const NewIndex = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="text-lg px-8 py-4 h-auto border-2 hover:bg-gray-50"
+                  className="text-lg px-8 py-4 h-auto border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
                 >
                   <BarChart3 className="w-5 h-5 mr-2" />
                   Accès gratuit 7 jours
@@ -269,10 +269,10 @@ const NewIndex = () => {
       <section id="features" className="py-20 px-4">
         <div className="container mx-auto">
           <ScrollReveal className="text-center mb-16">
-            <Badge className="mb-4 bg-blue-100 text-blue-700">Fonctionnalités</Badge>
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Fonctionnalités</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Une plateforme complète pour votre{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-highlight bg-clip-text text-transparent">
                 croissance
               </span>
             </h2>
@@ -285,17 +285,17 @@ const NewIndex = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <ScrollReveal key={index} delay={index * 100}>
-                <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 bg-white/50 backdrop-blur-sm">
+                <Card className="group hover:shadow-glow transition-all duration-500 hover:scale-105 border-0 bg-white/50 backdrop-blur-sm">
                   <CardContent className="p-8 text-center">
-                    <div className={`w-16 h-16 bg-gradient-to-r ${
-                      feature.color === 'blue' ? 'from-blue-500 to-blue-600' :
-                      feature.color === 'purple' ? 'from-purple-500 to-purple-600' :
-                      feature.color === 'green' ? 'from-green-500 to-green-600' :
-                      'from-orange-500 to-orange-600'
-                    } rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform`}>
+                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform ${
+                      feature.color === 'blue' ? 'bg-gradient-to-r from-accent to-primary' :
+                      feature.color === 'purple' ? 'bg-gradient-primary' :
+                      feature.color === 'green' ? 'bg-gradient-to-r from-cyan-soft to-accent' :
+                      'bg-gradient-highlight'
+                    }`}>
                       <feature.icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold mb-4 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">
                       {feature.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -310,13 +310,13 @@ const NewIndex = () => {
       </section>
 
       {/* Demo Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-gray-50 to-blue-50">
+      <section className="py-20 px-4 bg-gradient-hero">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-purple-100 text-purple-700">Démonstration</Badge>
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Démonstration</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Processus automatisé{" "}
-              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-highlight bg-clip-text text-transparent">
                 en action
               </span>
             </h2>
@@ -348,15 +348,15 @@ const NewIndex = () => {
         <div className="container mx-auto relative z-10">
           <ScrollReveal className="text-center mb-16">
             <div className="flex justify-center items-center gap-3 mb-4">
-              <Badge className="bg-green-100 text-green-700">Sources de données</Badge>
-              <div className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-sm border border-emerald-200 animate-pulse">
-                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-ping"></div>
+              <Badge className="bg-cyan-soft/10 text-cyan-soft border-cyan-soft/20">Sources de données</Badge>
+              <div className="flex items-center gap-2 bg-cyan-soft/10 text-cyan-soft px-3 py-1 rounded-full text-sm border border-cyan-soft/20 animate-pulse">
+                <div className="w-2 h-2 bg-cyan-soft rounded-full animate-ping"></div>
                 Mise à jour en temps réel
               </div>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Couverture{" "}
-              <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-highlight bg-clip-text text-transparent">
                 exhaustive
               </span>
             </h2>
