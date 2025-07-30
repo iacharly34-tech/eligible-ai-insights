@@ -271,6 +271,155 @@ const NewIndex = () => {
         </div>
       </section>
 
+      {/* Charly AI Assistant Section - Style "Découvrez Tom" */}
+      <section className="py-20 px-4 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-accent/15 to-cyan-soft/15 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="container mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Column - Content */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                  Découvrez{" "}
+                  <span className="bg-gradient-highlight bg-clip-text text-transparent">
+                    Charly
+                  </span>
+                </h2>
+                <p className="text-xl text-gray-300 leading-relaxed">
+                  Votre assistant IA commercial qui analyse, détecte et vous alerte des meilleures 
+                  opportunités de marchés publics 24h/24, avec une précision inégalée.
+                </p>
+              </div>
+
+              {/* Benefits List - Style pills/badges */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300 group">
+                  <div className="w-10 h-10 bg-gradient-cta rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Brain className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-medium">Analyse IA en temps réel</h3>
+                    <p className="text-gray-400 text-sm">Traitement intelligent de 600+ sources officielles</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300 group">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Zap className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-medium">Alertes intelligentes instantanées</h3>
+                    <p className="text-gray-400 text-sm">Notifications personnalisées selon vos critères</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300 group">
+                  <div className="w-10 h-10 bg-gradient-to-r from-cyan-soft to-accent rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Target className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-medium">Détection automatique d'opportunités</h3>
+                    <p className="text-gray-400 text-sm">Scoring précis et recommandations expertes</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300 group">
+                  <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Clock className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-medium">Surveillance 24h/24, 7j/7</h3>
+                    <p className="text-gray-400 text-sm">Veille continue sans intervention manuelle</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-cta hover:shadow-glow text-white px-8 py-4 h-auto group transition-all duration-300 hover:scale-105"
+                >
+                  Essayer gratuitement
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="px-8 py-4 h-auto border-2 border-white/20 text-white hover:bg-white/10 transition-all duration-300"
+                >
+                  Réserver une démo
+                </Button>
+              </div>
+            </div>
+
+            {/* Right Column - Charly Illustration */}
+            <div className="relative">
+              {/* Gradient background card for Charly */}
+              <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl p-8 backdrop-blur-sm border border-white/10">
+                <div className="relative">
+                  <img 
+                    src={aiAssistantMain} 
+                    alt="Charly - Assistant IA Eligible.ai" 
+                    className="w-full h-auto max-w-md mx-auto"
+                  />
+                  
+                  {/* AI Assistant Card - positioned elegantly */}
+                  <div className="absolute -bottom-8 -right-8 bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 max-w-xs animate-fade-in">
+                    {/* Agent Identity */}
+                    <div className="text-center mb-4">
+                      <div className="w-12 h-12 bg-gradient-cta rounded-full flex items-center justify-center mx-auto mb-2">
+                        <Brain className="w-6 h-6 text-white" />
+                      </div>
+                      <p className="text-xs text-gray-500 uppercase tracking-wide">Assistant Commercial</p>
+                      <h3 className="text-lg font-bold text-gray-900">Charly</h3>
+                    </div>
+                    
+                    {/* Live Stats */}
+                    <div className="space-y-3">
+                      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-3 border border-green-200">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                            <span className="text-sm font-medium text-green-700">En analyse</span>
+                          </div>
+                          <Badge className="bg-green-100 text-green-700 text-xs">Live</Badge>
+                        </div>
+                        <p className="text-xs text-green-600 mt-1">127 nouvelles opportunités détectées</p>
+                      </div>
+                      
+                      <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-3">
+                        <div className="text-sm font-medium text-blue-700">Score moyen du jour</div>
+                        <div className="text-2xl font-bold text-blue-600">94%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Floating notification */}
+              <div className="absolute -top-4 -left-4 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 hidden lg:block animate-fade-in">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-sm text-gray-900">Marché en hausse</div>
+                    <div className="text-xs text-gray-500">+23% cette semaine</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section id="features" className="py-20 px-4">
         <div className="container mx-auto">
