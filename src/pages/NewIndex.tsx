@@ -190,124 +190,124 @@ const NewIndex = () => {
 
             {/* Right Column - Charly AI Assistant avec notifications multi-canaux */}
             <div className="relative">
-              {/* Main Charly illustration - AGRANDI */}
+              {/* Main Charly illustration - AGRANDI et centré */}
               <div className="relative flex justify-center">
                 <img 
                   src={charlyAssistant} 
                   alt="Charly - Assistant IA Eligible.ai" 
-                  className="w-full h-auto max-w-2xl transform scale-110"
+                  className="w-full h-auto max-w-xl transform scale-110"
                 />
               </div>
 
-              {/* Notifications Email - Top Right */}
-              <div className="absolute -top-12 -right-20 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-200/50 p-4 max-w-xs animate-fade-in hidden xl:block">
+              {/* Notifications Email - Top Right - PLUS LOIN du visage */}
+              <div className="absolute -top-16 right-4 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-border/50 p-4 max-w-xs animate-fade-in hidden xl:block">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+                    <Mail className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 text-sm">Email reçu</h3>
-                    <p className="text-xs text-gray-500">Il y a 2 minutes</p>
+                    <h3 className="font-semibold text-foreground text-sm">Email reçu</h3>
+                    <p className="text-xs text-muted-foreground">Il y a 2 minutes</p>
                   </div>
                 </div>
-                <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-3 border border-blue-200">
-                  <div className="text-sm font-medium text-blue-700 mb-1">Nouvelle opportunité détectée!</div>
-                  <div className="text-xs text-blue-600">2,4M€ • Score: 98%</div>
+                <div className="bg-primary/5 rounded-lg p-3 border border-primary/20">
+                  <div className="text-sm font-medium text-primary mb-1">Nouvelle opportunité détectée!</div>
+                  <div className="text-xs text-primary/80">2,4M€ • Score: 98%</div>
                 </div>
               </div>
 
-              {/* Notification Slack - Bottom Left */}
-              <div className="absolute -bottom-12 -left-20 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 hidden lg:block animate-fade-in">
+              {/* Notification Slack - Bottom Left - Plus espacé */}
+              <div className="absolute -bottom-16 left-4 bg-card rounded-2xl p-4 shadow-luxury border border-border hidden lg:block animate-fade-in">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
                     <Zap className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <div className="font-medium text-sm text-gray-900">Slack</div>
-                    <div className="text-xs text-gray-500">#marchés-publics</div>
+                    <div className="font-medium text-sm text-foreground">Slack</div>
+                    <div className="text-xs text-muted-foreground">#marchés-publics</div>
                   </div>
                 </div>
-                <div className="text-xs text-gray-700 bg-gray-50 rounded p-2">
+                <div className="text-xs text-foreground bg-muted rounded p-2">
                   🚨 <strong>Charly:</strong> Opportunité Premium détectée pour vous!
                 </div>
               </div>
 
-              {/* Notification Mobile - Right */}
-              <div className="absolute top-1/2 -translate-y-1/2 -right-24 bg-white rounded-xl p-3 shadow-lg border border-gray-100 hidden xl:block animate-slide-in">
+              {/* Notification Mobile - Right - Plus bas pour éviter le visage */}
+              <div className="absolute bottom-1/4 -right-20 bg-card rounded-xl p-3 shadow-elegant border border-border hidden xl:block animate-slide-in">
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
-                    <Phone className="w-3 h-3 text-white" />
+                  <div className="w-6 h-6 bg-success rounded-lg flex items-center justify-center">
+                    <Phone className="w-3 h-3 text-success-foreground" />
                   </div>
-                  <span className="text-xs font-medium text-gray-900">Mobile</span>
+                  <span className="text-xs font-medium text-foreground">Mobile</span>
                 </div>
-                <div className="text-xs text-gray-700 bg-green-50 rounded p-2">
+                <div className="text-xs text-foreground bg-success/10 rounded p-2">
                   📱 Alerte: Marché à 98% de match
                 </div>
               </div>
 
-              {/* Notification Teams - Left */}
-              <div className="absolute top-1/4 -left-16 bg-white rounded-lg p-3 shadow-md border border-gray-100 hidden lg:block animate-bounce">
+              {/* Notification Teams - Left - Plus bas */}
+              <div className="absolute bottom-1/3 -left-16 bg-card rounded-lg p-3 shadow-elegant border border-border hidden lg:block animate-bounce">
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="w-6 h-6 bg-gradient-to-r from-indigo-500 to-blue-500 rounded flex items-center justify-center">
-                    <Users className="w-3 h-3 text-white" />
+                  <div className="w-6 h-6 bg-primary rounded flex items-center justify-center">
+                    <Users className="w-3 h-3 text-primary-foreground" />
                   </div>
-                  <span className="text-xs font-medium text-gray-900">Teams</span>
+                  <span className="text-xs font-medium text-foreground">Teams</span>
                 </div>
-                <div className="text-xs text-gray-700">💼 Nouveau marché détecté</div>
+                <div className="text-xs text-foreground">💼 Nouveau marché détecté</div>
               </div>
 
-              {/* Notification SMS - Top Left */}
-              <div className="absolute top-12 -left-12 bg-white rounded-xl p-2 shadow-lg border border-gray-100 hidden lg:block animate-pulse">
+              {/* Notification SMS - Top Left - Plus espacé du visage */}
+              <div className="absolute top-8 -left-16 bg-card rounded-xl p-2 shadow-elegant border border-border hidden lg:block animate-pulse">
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 bg-gradient-to-r from-orange-500 to-red-500 rounded flex items-center justify-center">
                     <Target className="w-2 h-2 text-white" />
                   </div>
                   <div>
-                    <div className="text-xs font-medium text-gray-900">SMS</div>
-                    <div className="text-xs text-gray-500">Alerte urgente</div>
+                    <div className="text-xs font-medium text-foreground">SMS</div>
+                    <div className="text-xs text-muted-foreground">Alerte urgente</div>
                   </div>
                 </div>
               </div>
 
-              {/* Floating main dashboard card */}
-              <div className="absolute top-8 right-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-200/50 p-6 max-w-sm animate-fade-in hidden xl:block">
+              {/* Floating main dashboard card - REPOSITIONNÉ pour ne pas couvrir le visage */}
+              <div className="absolute top-1/2 right-8 bg-card/95 backdrop-blur-sm rounded-2xl shadow-luxury border border-border/50 p-6 max-w-sm animate-fade-in hidden xl:block">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-gradient-cta rounded-lg flex items-center justify-center">
-                      <Target className="w-4 h-4 text-white" />
+                    <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                      <Target className="w-4 h-4 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 text-sm">Eligible.ai</h3>
-                      <p className="text-xs text-gray-500">Intelligence des marchés</p>
+                      <h3 className="font-semibold text-foreground text-sm">Eligible.ai</h3>
+                      <p className="text-xs text-muted-foreground">Intelligence des marchés</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-xs text-gray-500">Live</span>
+                    <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
+                    <span className="text-xs text-muted-foreground">Live</span>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3 mb-4">
-                  <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-3">
-                    <div className="text-xl font-bold text-blue-600">2,4M€</div>
-                    <div className="text-xs text-blue-500">Marché détecté</div>
+                  <div className="bg-primary/10 rounded-xl p-3">
+                    <div className="text-xl font-bold text-primary">2,4M€</div>
+                    <div className="text-xs text-primary/80">Marché détecté</div>
                   </div>
-                  <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-3">
-                    <div className="text-xl font-bold text-emerald-600">98%</div>
-                    <div className="text-xs text-emerald-500">Score match</div>
+                  <div className="bg-success/10 rounded-xl p-3">
+                    <div className="text-xl font-bold text-success">98%</div>
+                    <div className="text-xs text-success/80">Score match</div>
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 border border-green-200">
+                <div className="bg-success/10 rounded-lg p-4 border border-success/20">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
-                      <Award className="w-4 h-4 text-green-600" />
-                      <span className="text-sm font-medium text-green-700">Opportunité Premium</span>
+                      <Award className="w-4 h-4 text-success" />
+                      <span className="text-sm font-medium text-success">Opportunité Premium</span>
                     </div>
-                    <Badge className="bg-green-100 text-green-700 text-xs">Nouveau</Badge>
+                    <Badge className="bg-success/20 text-success text-xs">Nouveau</Badge>
                   </div>
-                  <h4 className="font-medium text-gray-900 text-sm mb-1">Système de gestion documentaire</h4>
-                  <p className="text-xs text-gray-600">Ministère de l'Éducation Nationale</p>
+                  <h4 className="font-medium text-foreground text-sm mb-1">Système de gestion documentaire</h4>
+                  <p className="text-xs text-muted-foreground">Ministère de l'Éducation Nationale</p>
                 </div>
               </div>
             </div>
