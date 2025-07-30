@@ -52,10 +52,44 @@ export const MacBookSimulation = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [typedText, setTypedText] = useState("");
-  const [showCursor, setShowCursor] = useState(true);
   const [notifications, setNotifications] = useState<string[]>([]);
   const [terminalLines, setTerminalLines] = useState<string[]>([]);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState({ x: 50, y: 50 });
+  const [showAnimatedCursor, setShowAnimatedCursor] = useState(true);
+  const [cursorPath, setCursorPath] = useState(0);
+
+  // Cursor animation paths for each step
+  const cursorPaths = {
+    browser: [
+      { x: 20, y: 15 }, // Navigate to URL bar
+      { x: 50, y: 15 }, // Type in URL
+      { x: 80, y: 15 }, // Click secure icon
+      { x: 30, y: 60 }, // Scroll down
+      { x: 70, y: 80 }  // Click result
+    ],
+    terminal: [
+      { x: 15, y: 25 }, // Click terminal
+      { x: 40, y: 25 }, // Type command
+      { x: 25, y: 40 }, // Watch output
+      { x: 60, y: 70 }, // Scroll to see results
+      { x: 80, y: 90 }  // Complete
+    ],
+    vscode: [
+      { x: 10, y: 20 }, // Click file
+      { x: 30, y: 40 }, // Start typing
+      { x: 60, y: 60 }, // Continue coding
+      { x: 40, y: 80 }, // See results
+      { x: 70, y: 85 }  // Success message
+    ],
+    dashboard: [
+      { x: 80, y: 20 }, // Look at score
+      { x: 30, y: 50 }, // Check criteria
+      { x: 60, y: 70 }, // Scroll progress bars
+      { x: 50, y: 90 }, // Read recommendation
+      { x: 25, y: 95 }  // Action button
+    ]
+  };
 
   const steps: Step[] = [
     {
@@ -269,10 +303,33 @@ return synthesis;`
     }, 4000);
   };
 
-  // Cursor blinking
+  // Cursor animation
+  useEffect(() => {
+    if (!isPlaying) return;
+    
+    const currentPaths = cursorPaths[currentStepData.component as keyof typeof cursorPaths] || [];
+    if (currentPaths.length === 0) return;
+
+    const pathDuration = currentStepData.duration / currentPaths.length;
+    
+    const animateCursor = () => {
+      setCursorPath(0);
+      
+      currentPaths.forEach((position, index) => {
+        setTimeout(() => {
+          setCursorPosition(position);
+          setCursorPath(index);
+        }, index * pathDuration);
+      });
+    };
+
+    setTimeout(animateCursor, 500);
+  }, [currentStep, isPlaying, currentStepData]);
+
+  // Animated cursor blinking
   useEffect(() => {
     const interval = setInterval(() => {
-      setShowCursor(prev => !prev);
+      setShowAnimatedCursor(prev => !prev);
     }, 500);
     return () => clearInterval(interval);
   }, []);
@@ -522,7 +579,7 @@ return synthesis;`
                 </div>
               )}
               
-              {showCursor && isPlaying && (
+              {showAnimatedCursor && isPlaying && (
                 <span className="bg-green-400 w-2 h-4 inline-block animate-pulse ml-1">_</span>
               )}
             </div>
@@ -573,7 +630,7 @@ return synthesis;`
                 
                 <pre className="text-green-400 whitespace-pre-wrap leading-6">
                   {typedText}
-                  {showCursor && isPlaying && <span className="bg-white w-1 h-5 inline-block animate-pulse">|</span>}
+                  {showAnimatedCursor && isPlaying && <span className="bg-white w-1 h-5 inline-block animate-pulse">|</span>}
                 </pre>
                 
                 {progress > 70 && (
@@ -874,7 +931,34 @@ return synthesis;`
                 </div>
                 
                 {/* Screen Content */}
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg" style={{ height: '500px' }}>
+                <div className="bg-white rounded-xl overflow-hidden shadow-lg relative" style={{ height: '500px' }}>
+                  {/* Animated Cursor */}
+                  {isPlaying && (
+                    <div 
+                      className="absolute z-50 pointer-events-none transition-all duration-1000 ease-out"
+                      style={{ 
+                        left: `${cursorPosition.x}%`, 
+                        top: `${cursorPosition.y}%`,
+                        transform: 'translate(-50%, -50%)'
+                      }}
+                    >
+                      <div className="relative">
+                        {/* Cursor */}
+                        <div className="w-6 h-6 transform rotate-12">
+                          <svg viewBox="0 0 24 24" fill="currentColor" className="text-gray-800 drop-shadow-lg">
+                            <path d="M8.5 2.1L3.3 17.3l4.9-1.4 1.9 4.9 3.4-1.3L8.5 2.1z"/>
+                          </svg>
+                        </div>
+                        {/* Click effect */}
+                        <div className="absolute inset-0 w-8 h-8 -translate-x-1 -translate-y-1">
+                          <div className="w-full h-full rounded-full border-2 border-blue-500 animate-ping opacity-75"></div>
+                        </div>
+                        {/* Trail effect */}
+                        <div className="absolute -inset-2 w-10 h-10 rounded-full bg-blue-500/20 animate-pulse"></div>
+                      </div>
+                    </div>
+                  )}
+                  
                   {/* Enhanced macOS Menu Bar */}
                   <div className="bg-gray-50/80 backdrop-blur-sm px-4 py-2 flex items-center justify-between text-xs border-b border-gray-200">
                     <div className="flex items-center gap-4">

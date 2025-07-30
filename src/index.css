@@ -135,4 +135,18 @@ All colors MUST be HSL.
     background-image: radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px);
     background-size: 24px 24px;
   }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-pulse,
+    .animate-ping,
+    .animate-spin,
+    .animate-bounce {
+      animation: none;
+    }
+    
+    .transition-all {
+      transition: none;
+    }
+  }
 }
