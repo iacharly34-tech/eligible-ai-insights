@@ -28,7 +28,7 @@ import {
   MapPin
 } from "lucide-react";
 import { MacBookSimulation } from "@/components/MacBookSimulation";
-import charlyAssistant from "@/assets/charly-ai-assistant.png";
+import charlyAssistant from "@/assets/charly-no-background.png";
 
 const NewIndex = () => {
   const [isVisible, setIsVisible] = useState(false);
