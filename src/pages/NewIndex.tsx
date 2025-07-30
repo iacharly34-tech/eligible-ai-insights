@@ -326,7 +326,7 @@ const NewIndex = () => {
                     Charly
                   </span>
                 </h2>
-                <p className="text-xl text-card-foreground leading-relaxed">
+                <p className="text-xl text-gray-300 leading-relaxed">
                   Votre assistant IA commercial qui analyse, détecte et vous alerte des meilleures 
                   opportunités de marchés publics 24h/24, avec une précision inégalée.
                 </p>
@@ -340,7 +340,7 @@ const NewIndex = () => {
                   </div>
                   <div>
                     <h3 className="text-white font-medium">Analyse IA en temps réel</h3>
-                    <p className="text-muted-foreground text-sm">Traitement intelligent de 600+ sources officielles</p>
+                    <p className="text-gray-400 text-sm">Traitement intelligent de 600+ sources officielles</p>
                   </div>
                 </div>
 
@@ -350,7 +350,7 @@ const NewIndex = () => {
                   </div>
                   <div>
                     <h3 className="text-white font-medium">Alertes intelligentes instantanées</h3>
-                    <p className="text-muted-foreground text-sm">Notifications personnalisées selon vos critères</p>
+                    <p className="text-gray-400 text-sm">Notifications personnalisées selon vos critères</p>
                   </div>
                 </div>
 

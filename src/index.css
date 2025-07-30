@@ -41,7 +41,7 @@ All colors MUST be HSL.
     --input: 0 0% 90%;
     --ring: 258 89% 66%;
 
-    --success: 258 89% 66%;
+    --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
 
     --warning: 38 92% 50%;
@@ -105,8 +105,17 @@ All colors MUST be HSL.
     --muted: 258 20% 15%;
     --muted-foreground: 258 15% 65%;
 
-    --accent: 245 58% 51%;
+    --accent: 217 91% 60%;
     --accent-foreground: 0 0% 100%;
+
+    --cyan-soft: 180 77% 64%;
+    --cyan-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
@@ -114,6 +123,7 @@ All colors MUST be HSL.
     --border: 0 0% 20%;
     --input: 0 0% 20%;
     --ring: 258 89% 66%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
