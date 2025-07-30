@@ -188,7 +188,7 @@ const NewIndex = () => {
               </div>
             </div>
 
-            {/* Right Column - Charly AI Assistant avec notifications multi-canaux */}
+            {/* Right Column - Charly AI Assistant avec notifications multi-canaux optimisées */}
             <div className="relative">
               {/* Main Charly illustration - AGRANDI et centré */}
               <div className="relative flex justify-center">
@@ -199,115 +199,144 @@ const NewIndex = () => {
                 />
               </div>
 
-              {/* Notifications Email - Top Right - PLUS LOIN du visage */}
-              <div className="absolute -top-16 right-4 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-border/50 p-4 max-w-xs animate-fade-in hidden xl:block">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-primary-foreground" />
+              {/* NOTIFICATION EMAIL - Priority 1 - Coin supérieur droit */}
+              <div className="absolute -top-12 right-6 bg-card/95 backdrop-blur-sm rounded-2xl shadow-luxury border-2 border-primary/20 p-6 max-w-sm animate-fade-in hover:scale-105 transition-all duration-300 hidden xl:block">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center shadow-lg">
+                    <Mail className="w-6 h-6 text-primary-foreground" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground text-sm">Email reçu</h3>
-                    <p className="text-xs text-muted-foreground">Il y a 2 minutes</p>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-foreground text-base">Email reçu</h3>
+                    <p className="text-sm text-muted-foreground">Il y a 2 minutes</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-success rounded-full animate-pulse"></div>
+                    <span className="text-xs text-success font-medium">LIVE</span>
                   </div>
                 </div>
-                <div className="bg-primary/5 rounded-lg p-3 border border-primary/20">
-                  <div className="text-sm font-medium text-primary mb-1">Nouvelle opportunité détectée!</div>
-                  <div className="text-xs text-primary/80">2,4M€ • Score: 98%</div>
+                <div className="bg-primary/10 rounded-xl p-4 border border-primary/30">
+                  <div className="text-base font-semibold text-primary mb-2">🎯 Nouvelle opportunité détectée!</div>
+                  <div className="text-sm text-primary/80">2,4M€ • Score de match: 98%</div>
                 </div>
               </div>
 
-              {/* Notification Slack - Bottom Left - Plus espacé */}
-              <div className="absolute -bottom-16 left-4 bg-card rounded-2xl p-4 shadow-luxury border border-border hidden lg:block animate-fade-in">
+              {/* NOTIFICATION SLACK - Priority 1 - Mi-hauteur gauche */}
+              <div className="absolute top-1/3 -left-12 bg-card rounded-2xl shadow-luxury border-2 border-purple-200/50 p-5 hover:scale-105 transition-all duration-300 hidden lg:block animate-fade-in max-w-xs">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                    <Zap className="w-4 h-4 text-white" />
+                  <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-md">
+                    <Zap className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <div className="font-medium text-sm text-foreground">Slack</div>
+                    <div className="font-semibold text-foreground text-sm">Slack</div>
                     <div className="text-xs text-muted-foreground">#marchés-publics</div>
                   </div>
                 </div>
-                <div className="text-xs text-foreground bg-muted rounded p-2">
-                  🚨 <strong>Charly:</strong> Opportunité Premium détectée pour vous!
+                <div className="text-sm text-foreground bg-purple-50 rounded-lg p-3 border border-purple-100">
+                  🚨 <strong>Charly:</strong> Opportunité Premium pour vous!
                 </div>
               </div>
 
-              {/* Notification Mobile - Right - Plus bas pour éviter le visage */}
-              <div className="absolute bottom-1/4 -right-20 bg-card rounded-xl p-3 shadow-elegant border border-border hidden xl:block animate-slide-in">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-6 h-6 bg-success rounded-lg flex items-center justify-center">
-                    <Phone className="w-3 h-3 text-success-foreground" />
-                  </div>
-                  <span className="text-xs font-medium text-foreground">Mobile</span>
-                </div>
-                <div className="text-xs text-foreground bg-success/10 rounded p-2">
-                  📱 Alerte: Marché à 98% de match
-                </div>
-              </div>
-
-              {/* Notification Teams - Left - Plus bas */}
-              <div className="absolute bottom-1/3 -left-16 bg-card rounded-lg p-3 shadow-elegant border border-border hidden lg:block animate-bounce">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-6 h-6 bg-primary rounded flex items-center justify-center">
-                    <Users className="w-3 h-3 text-primary-foreground" />
-                  </div>
-                  <span className="text-xs font-medium text-foreground">Teams</span>
-                </div>
-                <div className="text-xs text-foreground">💼 Nouveau marché détecté</div>
-              </div>
-
-              {/* Notification SMS - Top Left - Plus espacé du visage */}
-              <div className="absolute top-8 -left-16 bg-card rounded-xl p-2 shadow-elegant border border-border hidden lg:block animate-pulse">
-                <div className="flex items-center gap-2">
-                  <div className="w-5 h-5 bg-gradient-to-r from-orange-500 to-red-500 rounded flex items-center justify-center">
-                    <Target className="w-2 h-2 text-white" />
+              {/* NOTIFICATION MOBILE - Priority 2 - Bas droite */}
+              <div className="absolute bottom-8 right-8 bg-card rounded-xl shadow-elegant border border-border p-4 hover:scale-105 transition-all duration-300 hidden xl:block animate-slide-in max-w-xs">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 bg-success rounded-lg flex items-center justify-center">
+                    <Phone className="w-4 h-4 text-success-foreground" />
                   </div>
                   <div>
-                    <div className="text-xs font-medium text-foreground">SMS</div>
-                    <div className="text-xs text-muted-foreground">Alerte urgente</div>
+                    <span className="text-sm font-semibold text-foreground">Notification Mobile</span>
+                    <div className="text-xs text-muted-foreground">Push • iOS/Android</div>
                   </div>
+                </div>
+                <div className="text-sm text-foreground bg-success/10 rounded-lg p-3">
+                  📱 <strong>Alerte:</strong> Marché à 98% de compatibilité
                 </div>
               </div>
 
-              {/* Floating main dashboard card - REPOSITIONNÉ pour ne pas couvrir le visage */}
-              <div className="absolute top-1/2 right-8 bg-card/95 backdrop-blur-sm rounded-2xl shadow-luxury border border-border/50 p-6 max-w-sm animate-fade-in hidden xl:block">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                      <Target className="w-4 h-4 text-primary-foreground" />
+              {/* NOTIFICATION TEAMS - Priority 2 - Bas gauche */}
+              <div className="absolute bottom-16 -left-8 bg-card rounded-xl shadow-elegant border border-border p-4 hover:scale-105 transition-all duration-300 hidden lg:block animate-bounce max-w-xs">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                    <Users className="w-4 h-4 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-foreground">Microsoft Teams</div>
+                    <div className="text-xs text-muted-foreground">Canal équipe</div>
+                  </div>
+                </div>
+                <div className="text-sm text-foreground bg-primary/10 rounded-lg p-3">
+                  💼 <strong>Nouveau marché</strong> correspond à vos critères
+                </div>
+              </div>
+
+              {/* NOTIFICATION SMS - Priority 3 - Haut gauche */}
+              <div className="absolute top-12 -left-8 bg-card rounded-xl shadow-elegant border border-border p-3 hover:scale-105 transition-all duration-300 hidden lg:block animate-pulse">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-6 h-6 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                    <Target className="w-3 h-3 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold text-foreground">SMS Urgent</div>
+                    <div className="text-xs text-muted-foreground">+33 6 XX XX XX XX</div>
+                  </div>
+                </div>
+                <div className="text-xs text-foreground bg-orange-50 rounded p-2">
+                  🚨 Alerte marché prioritaire
+                </div>
+              </div>
+
+              {/* CARTE PRINCIPALE IA - Priority 1 - Position centrale optimisée */}
+              <div className="absolute top-2/3 right-12 bg-card/98 backdrop-blur-sm rounded-3xl shadow-luxury border-2 border-border/60 p-8 max-w-md animate-fade-in hover:scale-105 transition-all duration-300 hidden xl:block">
+                {/* Header avec status live */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 bg-gradient-cta rounded-xl flex items-center justify-center shadow-lg">
+                      <Target className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground text-sm">Eligible.ai</h3>
-                      <p className="text-xs text-muted-foreground">Intelligence des marchés</p>
+                      <h3 className="font-bold text-foreground text-lg">Eligible.ai</h3>
+                      <p className="text-sm text-muted-foreground">Intelligence des marchés</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
-                    <span className="text-xs text-muted-foreground">Live</span>
+                  <div className="flex items-center gap-3 bg-success/10 rounded-full px-3 py-1 border border-success/20">
+                    <div className="w-3 h-3 bg-success rounded-full animate-pulse shadow-sm"></div>
+                    <span className="text-sm text-success font-semibold">LIVE</span>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3 mb-4">
-                  <div className="bg-primary/10 rounded-xl p-3">
-                    <div className="text-xl font-bold text-primary">2,4M€</div>
-                    <div className="text-xs text-primary/80">Marché détecté</div>
+                {/* Stats en grille */}
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="bg-primary/10 rounded-xl p-4 border border-primary/20 hover:bg-primary/15 transition-colors">
+                    <div className="text-2xl font-bold text-primary">2,4M€</div>
+                    <div className="text-sm text-primary/80">Marché détecté</div>
                   </div>
-                  <div className="bg-success/10 rounded-xl p-3">
-                    <div className="text-xl font-bold text-success">98%</div>
-                    <div className="text-xs text-success/80">Score match</div>
+                  <div className="bg-success/10 rounded-xl p-4 border border-success/20 hover:bg-success/15 transition-colors">
+                    <div className="text-2xl font-bold text-success">98%</div>
+                    <div className="text-sm text-success/80">Score de match</div>
                   </div>
                 </div>
 
-                <div className="bg-success/10 rounded-lg p-4 border border-success/20">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <Award className="w-4 h-4 text-success" />
-                      <span className="text-sm font-medium text-success">Opportunité Premium</span>
-                    </div>
-                    <Badge className="bg-success/20 text-success text-xs">Nouveau</Badge>
+                {/* Opportunité premium avec style premium */}
+                <div className="bg-gradient-to-r from-success/10 to-emerald-500/10 rounded-xl p-5 border-2 border-success/30 relative overflow-hidden">
+                  {/* Badge premium flottant */}
+                  <div className="absolute top-2 right-2">
+                    <Badge className="bg-success text-success-foreground text-xs font-semibold shadow-sm">
+                      🎯 Premium
+                    </Badge>
                   </div>
-                  <h4 className="font-medium text-foreground text-sm mb-1">Système de gestion documentaire</h4>
-                  <p className="text-xs text-muted-foreground">Ministère de l'Éducation Nationale</p>
+                  
+                  <div className="flex items-center gap-3 mb-3">
+                    <Award className="w-5 h-5 text-success" />
+                    <span className="text-base font-semibold text-success">Opportunité Prioritaire</span>
+                  </div>
+                  
+                  <h4 className="font-bold text-foreground text-base mb-2">Système de gestion documentaire</h4>
+                  <p className="text-sm text-muted-foreground mb-3">Ministère de l'Éducation Nationale</p>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="text-xs text-success font-medium bg-success/20 rounded-full px-3 py-1">
+                      ✅ Analyse terminée • Score: 94%
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
