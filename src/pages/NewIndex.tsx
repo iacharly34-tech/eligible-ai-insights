@@ -206,7 +206,7 @@ const NewIndex = () => {
               </div>
 
               {/* BULLE 1 - Email Priority (apparition immédiate) */}
-              <div className="absolute -top-8 right-16 bg-card/95 backdrop-blur-sm rounded-2xl shadow-luxury border border-primary/20 p-5 max-w-xs animate-fade-in hidden xl:block">
+              <div className="absolute top-8 right-16 bg-card/95 backdrop-blur-sm rounded-2xl shadow-luxury border border-primary/20 p-5 max-w-xs animate-fade-in hidden xl:block">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
                     <Mail className="w-5 h-5 text-primary-foreground" />
@@ -224,7 +224,7 @@ const NewIndex = () => {
               </div>
 
               {/* BULLE 2 - Slack (apparition avec délai) */}
-              <div className="absolute bottom-12 -left-8 bg-card rounded-xl shadow-elegant border border-border p-4 max-w-xs hidden lg:block" 
+              <div className="absolute top-8 -left-8 bg-card rounded-xl shadow-elegant border border-border p-4 max-w-xs hidden lg:block" 
                    style={{ animation: 'fade-in 0.6s ease-out 1.5s both' }}>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
