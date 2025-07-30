@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import useEmblaCarousel from 'embla-carousel-react';
 import { 
   Play, 
   Pause, 
@@ -14,8 +15,322 @@ import {
   TrendingUp,
   Search,
   Filter,
-  Settings
+  Settings,
+  ChevronLeft,
+  ChevronRight,
+  BarChart3,
+  Target,
+  Award,
+  Zap
 } from "lucide-react";
+
+const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progress: number }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const slides = [
+    {
+      title: "Veille d'appels d'offres",
+      content: (
+        <div className="h-full bg-gradient-to-br from-blue-50 to-purple-50 p-4">
+          <div className="grid grid-cols-2 gap-4 h-full">
+            {/* Left side - Features */}
+            <div className="space-y-4">
+              <div className="bg-blue-100 rounded-lg px-3 py-1 text-blue-800 text-xs font-medium w-fit">
+                Flux d'opportunités
+              </div>
+              <h3 className="text-lg font-bold text-gray-800">
+                Simplifiez votre veille d'appels d'offres
+              </h3>
+              <div className="space-y-3">
+                {[
+                  "Soyez avertis de tous les AO français et bientôt européens et privés",
+                  "Captez les meilleurs appels d'offres sur plus de 50 plateformes",
+                  "Collaborez avec votre équipe pour fluidifier la détection des AO"
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-gray-700">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Right side - Dashboard */}
+            <div className="bg-white rounded-xl shadow-lg p-4 relative overflow-hidden">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <Target className="w-5 h-5 text-purple-600" />
+                  <span className="font-semibold text-gray-800">PLACE</span>
+                </div>
+                <Badge className="bg-blue-600 text-white text-lg font-bold px-3 py-1">
+                  {isPlaying ? Math.floor(18 * (progress / 100)) : 18}
+                </Badge>
+              </div>
+              <div className="text-xs text-gray-600 mb-2">opportunités identifiées</div>
+              
+              <Button className="w-full mb-4 bg-blue-600 hover:bg-blue-700">
+                + Créer mon flux
+              </Button>
+              
+              <div className="space-y-2 text-xs">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Statut</span>
+                  <span className="text-green-600 font-medium">Ouvert</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Montant</span>
+                  <span className="font-medium">&gt;80k</span>
+                </div>
+                <div className="text-gray-600">Critères</div>
+              </div>
+              
+              {/* Background decoration */}
+              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full opacity-10"></div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Analyse instantanée",
+      content: (
+        <div className="h-full bg-gradient-to-br from-green-50 to-blue-50 p-4">
+          <div className="grid grid-cols-2 gap-4 h-full">
+            {/* Left side */}
+            <div className="space-y-4">
+              <div className="bg-purple-100 rounded-lg px-3 py-1 text-purple-800 text-xs font-medium w-fit">
+                Analyse instantanée
+              </div>
+              <h3 className="text-lg font-bold text-gray-800">
+                Analysez vos appels d'offres en 3 clics
+              </h3>
+              <div className="space-y-3">
+                {[
+                  "Listez les informations nécessaires à l'analyse d'un marché",
+                  "Identifiez les points d'attention et les points bloquants",
+                  "Accédez directement aux passages pertinents du DCE"
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-gray-700">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Right side - Analysis Dashboard */}
+            <div className="bg-white rounded-xl shadow-lg p-4 space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-semibold text-gray-800">Quels sont les critères de l'acheteur ?</span>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+                    <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="space-y-2 text-xs">
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-600">Critère prix : 20%</span>
+                  <div className="w-16 h-2 bg-gray-200 rounded-full">
+                    <div className="w-3 h-2 bg-blue-500 rounded-full"></div>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-600">Critère qualité : 70%</span>
+                  <div className="w-16 h-2 bg-gray-200 rounded-full">
+                    <div className="w-11 h-2 bg-green-500 rounded-full"></div>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-600">Critère performance : 10%</span>
+                  <div className="w-16 h-2 bg-gray-200 rounded-full">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="border-t pt-3 space-y-2">
+                <div className="flex items-center gap-2 text-xs">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-green-700">Y a-t-il des pénalités ?</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-green-700">Qui est le titulaire du marché ?</span>
+                </div>
+              </div>
+              
+              <input 
+                type="text" 
+                placeholder="Poser une question..." 
+                className="w-full text-xs p-2 border rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Scoring et recommandations",
+      content: (
+        <div className="h-full bg-gradient-to-br from-purple-50 to-pink-50 p-4">
+          <div className="grid grid-cols-2 gap-4 h-full">
+            {/* Left side */}
+            <div className="space-y-4">
+              <div className="bg-orange-100 rounded-lg px-3 py-1 text-orange-800 text-xs font-medium w-fit">
+                Scoring IA
+              </div>
+              <h3 className="text-lg font-bold text-gray-800">
+                Évaluations et recommandations
+              </h3>
+              <div className="space-y-3">
+                {[
+                  "Score de pertinence basé sur vos critères",
+                  "Analyse de la concurrence probable",
+                  "Recommandations stratégiques personnalisées",
+                  "Timeline optimisée pour la réponse"
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start gap-2">
+                    <Award className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-gray-700">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Right side - Scoring Dashboard */}
+            <div className="bg-white rounded-xl shadow-lg p-4 space-y-4">
+              <div className="text-center">
+                <div className="relative w-16 h-16 mx-auto mb-2">
+                  <div className="w-16 h-16 rounded-full border-4 border-gray-200"></div>
+                  <div 
+                    className="absolute top-0 left-0 w-16 h-16 rounded-full border-4 border-green-500 transition-all duration-1000"
+                    style={{
+                      clipPath: isPlaying ? 'inset(0 0 0 0)' : 'inset(0 100% 0 0)',
+                      transform: 'rotate(-90deg)'
+                    }}
+                  ></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-lg font-bold text-gray-800">
+                      {isPlaying ? Math.floor(92 * (progress / 100)) : 92}
+                    </span>
+                  </div>
+                </div>
+                <Badge className="bg-green-100 text-green-700 border-green-200">
+                  Score: {isPlaying ? Math.floor(92 * (progress / 100)) : 92}/100
+                </Badge>
+              </div>
+              
+              <div className="space-y-2">
+                <div className="text-sm font-medium text-gray-700">
+                  Plateforme E-learning - Ministère
+                </div>
+                <div className="text-xs text-gray-600">
+                  Budget: 2.4M€ • Échéance: 15 mars 2025
+                </div>
+              </div>
+              
+              <div className="space-y-2">
+                {[
+                  { label: "Expertise", value: 96, color: "green" },
+                  { label: "Budget", value: 89, color: "blue" },
+                  { label: "Concurrence", value: 85, color: "yellow" }
+                ].map((criteria, index) => (
+                  <div key={index} className="flex items-center justify-between">
+                    <span className="text-xs text-gray-600">{criteria.label}</span>
+                    <div className="flex items-center gap-2">
+                      <div className="w-12 h-1.5 bg-gray-200 rounded-full">
+                        <div 
+                          className={`h-1.5 bg-${criteria.color}-500 rounded-full transition-all duration-1000`}
+                          style={{ width: isPlaying ? `${criteria.value}%` : '0%' }}
+                        ></div>
+                      </div>
+                      <span className="text-xs font-medium text-gray-700 w-8">
+                        {isPlaying ? criteria.value : 0}%
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+  ];
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    };
+
+    emblaApi.on('select', onSelect);
+    onSelect();
+
+    // Auto-scroll when playing
+    if (isPlaying) {
+      const interval = setInterval(() => {
+        emblaApi.scrollNext();
+      }, 3000);
+      return () => clearInterval(interval);
+    }
+
+    return () => {
+      emblaApi.off('select', onSelect);
+    };
+  }, [emblaApi, isPlaying]);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  return (
+    <div className="h-full relative">
+      <div className="overflow-hidden h-full" ref={emblaRef}>
+        <div className="flex h-full">
+          {slides.map((slide, index) => (
+            <div key={index} className="flex-[0_0_100%] min-w-0 h-full">
+              {slide.content}
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {/* Navigation buttons */}
+      <Button
+        variant="outline"
+        size="sm"
+        className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 p-0 bg-white/80 hover:bg-white"
+        onClick={scrollPrev}
+      >
+        <ChevronLeft className="w-4 h-4" />
+      </Button>
+      <Button
+        variant="outline"
+        size="sm"
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 p-0 bg-white/80 hover:bg-white"
+        onClick={scrollNext}
+      >
+        <ChevronRight className="w-4 h-4" />
+      </Button>
+      
+      {/* Dots indicator */}
+      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            className={`w-2 h-2 rounded-full transition-all ${
+              index === selectedIndex ? 'bg-blue-600' : 'bg-gray-300'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export const MacBookSimulation = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -233,53 +548,7 @@ export const MacBookSimulation = () => {
         );
 
       case "dashboard":
-        return (
-          <div className="h-full bg-gradient-to-br from-gray-50 to-blue-50 p-4">
-            <div className="space-y-4">
-              <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-lg font-bold text-gray-800">Opportunité détectée</h2>
-                  <Badge className="bg-green-100 text-green-700 border-green-200">
-                    Score: 92/100
-                  </Badge>
-                </div>
-                
-                <div className="space-y-2">
-                  <div className="text-sm font-medium text-gray-700">
-                    Plateforme E-learning - Ministère Éducation Nationale
-                  </div>
-                  <div className="text-xs text-gray-600">
-                    Budget: 2.4M€ • Échéance: 15 mars 2025
-                  </div>
-                </div>
-                
-                <div className="mt-4 space-y-2">
-                  {[
-                    { label: "Expertise", value: 96 },
-                    { label: "Budget", value: 89 },
-                    { label: "Localisation", value: 94 },
-                    { label: "Concurrence", value: 85 }
-                  ].map((criteria, index) => (
-                    <div key={index} className="flex items-center justify-between">
-                      <span className="text-xs text-gray-600">{criteria.label}</span>
-                      <div className="flex items-center gap-2">
-                        <div className="w-20 h-2 bg-gray-200 rounded-full">
-                          <div 
-                            className="h-2 bg-blue-500 rounded-full transition-all duration-1000"
-                            style={{ width: isPlaying ? `${criteria.value}%` : '0%' }}
-                          ></div>
-                        </div>
-                        <span className="text-xs font-medium text-gray-700 w-8">
-                          {isPlaying ? criteria.value : 0}%
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        );
+        return <DashboardCarousel isPlaying={isPlaying} progress={progress} />;
 
       default:
         return null;
