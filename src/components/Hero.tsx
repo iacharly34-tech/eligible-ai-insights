@@ -5,13 +5,13 @@ import { ArrowRight, Zap, Target, Brain, Play, CheckCircle, TrendingUp } from "l
 
 export const Hero = () => {
   return (
-    <section className="bg-gradient-hero pt-24 pb-20 relative overflow-hidden">
+    <section className="bg-gradient-hero pt-8 pb-16 relative overflow-hidden min-h-[85vh] flex items-center">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       
       <div className="container mx-auto px-4 max-w-7xl relative">
         {/* Social Proof Banner */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <Badge variant="outline" className="text-primary border-primary/20 bg-primary/5 px-4 py-2">
             <TrendingUp className="w-4 h-4 mr-2" />
             +2000 opportunités détectées cette semaine
@@ -19,25 +19,25 @@ export const Hero = () => {
         </div>
 
         {/* Header text */}
-        <div className="text-center mb-20 max-w-5xl mx-auto">
+        <div className="text-center mb-12 max-w-5xl mx-auto">
           <div className="text-sm font-medium text-muted-foreground mb-6 tracking-widest uppercase">
             L'INTELLIGENCE ARTIFICIELLE AU SERVICE DES MARCHÉS PUBLICS
           </div>
           
-          <h1 className="text-6xl md:text-7xl font-light text-foreground leading-tight mb-8 tracking-tight">
+          <h1 className="text-5xl md:text-6xl font-light text-foreground leading-tight mb-6 tracking-tight">
             Transformez votre{" "}
             <span className="text-primary font-medium bg-gradient-primary bg-clip-text text-transparent">
               veille commerciale
             </span>
           </h1>
           
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed font-light">
+          <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto leading-relaxed font-light">
             Notre IA analyse <strong>automatiquement</strong> tous les appels d'offres publics, 
             les score selon vos critères et vous alerte en temps réel des meilleures opportunités.
           </p>
 
           {/* Value Propositions */}
-          <div className="flex flex-wrap justify-center gap-6 mb-12 text-sm text-muted-foreground">
+          <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-primary" />
               <span>+600 sources surveillées</span>
@@ -69,7 +69,7 @@ export const Hero = () => {
         </div>
 
         {/* Dashboard Interface avec stats en overlay */}
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative max-w-6xl mx-auto">
           <div className="bg-card rounded-3xl shadow-luxury overflow-hidden border border-border/50 relative">
             <img 
               src={heroImage} 
@@ -130,8 +130,8 @@ export const Hero = () => {
         </div>
 
         {/* Social proof stats */}
-        <div className="mt-20 text-center">
-          <div className="text-sm text-muted-foreground mb-6">
+        <div className="mt-12 text-center">
+          <div className="text-sm text-muted-foreground mb-4">
             Rejoint par plus de 2000+ professionnels des marchés publics
           </div>
           <div className="flex flex-wrap justify-center gap-8 text-center">
