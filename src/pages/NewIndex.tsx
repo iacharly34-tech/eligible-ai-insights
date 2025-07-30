@@ -128,13 +128,6 @@ const NewIndex = () => {
         </div>
 
         <div className="container mx-auto relative z-10">
-          {/* Social Proof Banner */}
-          <div className="text-center mb-8">
-            <Badge className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200">
-              IA • Marchés Publics • Automation
-            </Badge>
-          </div>
-
           {/* Main Content - Split Layout */}
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Text Content */}
@@ -188,19 +181,9 @@ const NewIndex = () => {
               </div>
 
               {/* Trust indicators */}
-              <div className="flex flex-wrap gap-6 opacity-60">
-                <div className="flex items-center gap-2">
-                  <Shield className="w-4 h-4 text-green-600" />
-                  <span className="text-sm">Conforme RGPD</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-600" />
-                  <span className="text-sm">ISO 27001</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-blue-600" />
-                  <span className="text-sm">500+ entreprises</span>
-                </div>
+              <div className="flex items-center gap-2 opacity-60">
+                <Shield className="w-4 h-4 text-green-600" />
+                <span className="text-sm">Conforme RGPD</span>
               </div>
             </div>
 
