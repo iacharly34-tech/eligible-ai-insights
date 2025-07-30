@@ -59,36 +59,59 @@ export const MacBookSimulation = () => {
   const [showAnimatedCursor, setShowAnimatedCursor] = useState(true);
   const [cursorPath, setCursorPath] = useState(0);
 
-  // Cursor animation paths for each step
+  // Generate human-like cursor paths with natural imperfections
+  const generateHumanPath = (basePoints: { x: number; y: number }[]) => {
+    return basePoints.map((point, index) => {
+      // Human variability factors
+      const jitterX = (Math.random() - 0.5) * 8; // ±4% screen width variation
+      const jitterY = (Math.random() - 0.5) * 6; // ±3% screen height variation
+      
+      // Add micro-hesitations (small pauses/corrections)
+      const hesitation = index > 0 && Math.random() < 0.3 ? {
+        x: point.x + (Math.random() - 0.5) * 4,
+        y: point.y + (Math.random() - 0.5) * 3,
+        delay: Math.random() * 200 + 100
+      } : null;
+      
+      return {
+        x: Math.max(5, Math.min(95, point.x + jitterX)),
+        y: Math.max(5, Math.min(95, point.y + jitterY)),
+        hesitation,
+        overshoot: Math.random() < 0.2 // 20% chance of small overshoot
+      };
+    });
+  };
+
+  // Human-like cursor paths with natural movement patterns
   const cursorPaths = {
-    browser: [
-      { x: 20, y: 15 }, // Navigate to URL bar
-      { x: 50, y: 15 }, // Type in URL
-      { x: 80, y: 15 }, // Click secure icon
-      { x: 30, y: 60 }, // Scroll down
-      { x: 70, y: 80 }  // Click result
-    ],
-    terminal: [
-      { x: 15, y: 25 }, // Click terminal
-      { x: 40, y: 25 }, // Type command
-      { x: 25, y: 40 }, // Watch output
-      { x: 60, y: 70 }, // Scroll to see results
-      { x: 80, y: 90 }  // Complete
-    ],
-    vscode: [
-      { x: 10, y: 20 }, // Click file
-      { x: 30, y: 40 }, // Start typing
-      { x: 60, y: 60 }, // Continue coding
-      { x: 40, y: 80 }, // See results
-      { x: 70, y: 85 }  // Success message
-    ],
-    dashboard: [
-      { x: 80, y: 20 }, // Look at score
-      { x: 30, y: 50 }, // Check criteria
-      { x: 60, y: 70 }, // Scroll progress bars
-      { x: 50, y: 90 }, // Read recommendation
-      { x: 25, y: 95 }  // Action button
-    ]
+    browser: generateHumanPath([
+      { x: 22, y: 18 }, // Navigate to URL bar (slight offset)
+      { x: 48, y: 16 }, // Type in URL (not perfectly aligned)
+      { x: 82, y: 17 }, // Click secure icon (small drift)
+      { x: 28, y: 62 }, // Scroll down (arc movement)
+      { x: 72, y: 78 }  // Click result (approach from side)
+    ]),
+    terminal: generateHumanPath([
+      { x: 18, y: 28 }, // Click terminal (offset entry)
+      { x: 42, y: 26 }, // Type command (typing drift)
+      { x: 27, y: 43 }, // Watch output (scanning)
+      { x: 58, y: 72 }, // Scroll to see results (curved)
+      { x: 78, y: 88 }  // Complete (final position)
+    ]),
+    vscode: generateHumanPath([
+      { x: 12, y: 22 }, // Click file (precise but not perfect)
+      { x: 32, y: 38 }, // Start typing (follow code flow)
+      { x: 58, y: 62 }, // Continue coding (natural progression)
+      { x: 38, y: 82 }, // See results (check output)
+      { x: 68, y: 83 }  // Success message (satisfaction check)
+    ]),
+    dashboard: generateHumanPath([
+      { x: 78, y: 22 }, // Look at score (attention grabber)
+      { x: 32, y: 52 }, // Check criteria (systematic review)
+      { x: 62, y: 68 }, // Scroll progress bars (visual scanning)
+      { x: 48, y: 88 }, // Read recommendation (focus point)
+      { x: 27, y: 93 }  // Action button (decision point)
+    ])
   };
 
   const steps: Step[] = [
@@ -303,23 +326,48 @@ return synthesis;`
     }, 4000);
   };
 
-  // Cursor animation
+  // Human-like cursor animation with natural movements
   useEffect(() => {
     if (!isPlaying) return;
     
     const currentPaths = cursorPaths[currentStepData.component as keyof typeof cursorPaths] || [];
     if (currentPaths.length === 0) return;
 
-    const pathDuration = currentStepData.duration / currentPaths.length;
-    
     const animateCursor = () => {
       setCursorPath(0);
       
       currentPaths.forEach((position, index) => {
+        const baseDelay = (currentStepData.duration / currentPaths.length) * index;
+        
+        // Add hesitation before main movement
+        if (position.hesitation) {
+          setTimeout(() => {
+            setCursorPosition({
+              x: position.hesitation.x,
+              y: position.hesitation.y
+            });
+          }, baseDelay + position.hesitation.delay * 0.3);
+        }
+        
+        // Main movement with variable timing
         setTimeout(() => {
-          setCursorPosition(position);
+          // Overshoot effect for more human feel
+          if (position.overshoot && index < currentPaths.length - 1) {
+            const overshootX = position.x + (Math.random() - 0.5) * 6;
+            const overshootY = position.y + (Math.random() - 0.5) * 4;
+            
+            setCursorPosition({ x: overshootX, y: overshootY });
+            
+            // Correct back to target after overshoot
+            setTimeout(() => {
+              setCursorPosition({ x: position.x, y: position.y });
+            }, 150);
+          } else {
+            setCursorPosition({ x: position.x, y: position.y });
+          }
+          
           setCursorPath(index);
-        }, index * pathDuration);
+        }, baseDelay + (position.hesitation?.delay || 0));
       });
     };
 
