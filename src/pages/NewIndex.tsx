@@ -64,21 +64,21 @@ const NewIndex = () => {
   ];
 
   const francesources = [
-    { name: "BOAMP", desc: "Bulletin officiel", logo: "🏛️" },
-    { name: "Marchés Publics", desc: "Plateforme nationale", logo: "🇫🇷" },
-    { name: "PLACE", desc: "Plateforme des achats", logo: "💼" },
-    { name: "AWS DUME", desc: "Dossiers uniques", logo: "📋" },
-    { name: "e-Marchés", desc: "Solutions régionales", logo: "🌍" },
-    { name: "Achat Public", desc: "Marchés territoriaux", logo: "🏘️" }
+    { name: "BOAMP", desc: "Bulletin officiel", logo: "🏛️", url: "https://www.boamp.fr" },
+    { name: "Marchés Publics", desc: "Plateforme nationale", logo: "🇫🇷", url: "https://www.marches-publics.gouv.fr" },
+    { name: "PLACE", desc: "Plateforme des achats", logo: "💼", url: "https://www.economie.gouv.fr/daj/place" },
+    { name: "AWS DUME", desc: "Dossiers uniques", logo: "📋", url: "https://www.economie.gouv.fr/daj/dume" },
+    { name: "e-Marchés", desc: "Solutions régionales", logo: "🌍", url: "https://www.e-marches.com" },
+    { name: "Achat Public", desc: "Marchés territoriaux", logo: "🏘️", url: "https://www.achatpublic.com" }
   ];
 
   const europeSource = [
-    { name: "TED eTendering", desc: "Tenders Electronic Daily", logo: "🇪🇺" },
-    { name: "Simap", desc: "Système suisse", logo: "🇨🇭" },
-    { name: "Find a Tender", desc: "Royaume-Uni", logo: "🇬🇧" },
-    { name: "Vergabe24", desc: "Allemagne", logo: "🇩🇪" },
-    { name: "Mercell", desc: "Plateforme nordique", logo: "🌊" },
-    { name: "eNotices", desc: "Notices européennes", logo: "📢" }
+    { name: "TED eTendering", desc: "Tenders Electronic Daily", logo: "🇪🇺", url: "https://ted.europa.eu" },
+    { name: "Simap", desc: "Système suisse", logo: "🇨🇭", url: "https://www.simap.ch" },
+    { name: "Find a Tender", desc: "Royaume-Uni", logo: "🇬🇧", url: "https://www.find-tender.service.gov.uk" },
+    { name: "Vergabe24", desc: "Allemagne", logo: "🇩🇪", url: "https://www.vergabe24.de" },
+    { name: "Mercell", desc: "Plateforme nordique", logo: "🌊", url: "https://www.mercell.com" },
+    { name: "eNotices", desc: "Notices européennes", logo: "📢", url: "https://enotices.eu" }
   ];
 
   const benefits = [
@@ -402,7 +402,10 @@ const NewIndex = () => {
             >
               {(activeTab === 'france' ? francesources : europeSource).map((source, index) => (
                 <ScrollReveal key={`${activeTab}-${index}`} delay={index * 50}>
-                  <Card className="group relative hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-2 border border-gray-200/80 bg-white/80 backdrop-blur-sm cursor-pointer overflow-hidden">
+                  <Card 
+                    className="group relative hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-2 border border-gray-200/80 bg-white/80 backdrop-blur-sm cursor-pointer overflow-hidden"
+                    onClick={() => window.open(source.url, '_blank')}
+                  >
                     {/* Hover glow effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 to-green-400/0 group-hover:from-blue-400/10 group-hover:to-green-400/10 transition-all duration-500 rounded-lg"></div>
                     
