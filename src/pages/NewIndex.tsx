@@ -28,7 +28,7 @@ import {
   MapPin
 } from "lucide-react";
 import { MacBookSimulation } from "@/components/MacBookSimulation";
-import aiAssistantMain from "@/assets/ai-assistant-main.jpg";
+import charlyAssistant from "@/assets/charly-ai-assistant.png";
 
 const NewIndex = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -188,21 +188,89 @@ const NewIndex = () => {
               </div>
             </div>
 
-            {/* Right Column - Charly AI Assistant */}
+            {/* Right Column - Charly AI Assistant avec notifications multi-canaux */}
             <div className="relative">
-              {/* Main Charly illustration */}
+              {/* Main Charly illustration - AGRANDI */}
               <div className="relative flex justify-center">
                 <img 
-                  src={aiAssistantMain} 
+                  src={charlyAssistant} 
                   alt="Charly - Assistant IA Eligible.ai" 
-                  className="w-full h-auto max-w-lg"
+                  className="w-full h-auto max-w-2xl transform scale-110"
                 />
               </div>
 
-              {/* Floating cards positioned OUTSIDE the image */}
-              {/* Top right card - outside image bounds */}
-              <div className="absolute -top-8 -right-16 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-200/50 p-6 max-w-sm animate-fade-in hidden xl:block">
-                {/* Header */}
+              {/* Notifications Email - Top Right */}
+              <div className="absolute -top-12 -right-20 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-200/50 p-4 max-w-xs animate-fade-in hidden xl:block">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                    <Mail className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 text-sm">Email reçu</h3>
+                    <p className="text-xs text-gray-500">Il y a 2 minutes</p>
+                  </div>
+                </div>
+                <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-3 border border-blue-200">
+                  <div className="text-sm font-medium text-blue-700 mb-1">Nouvelle opportunité détectée!</div>
+                  <div className="text-xs text-blue-600">2,4M€ • Score: 98%</div>
+                </div>
+              </div>
+
+              {/* Notification Slack - Bottom Left */}
+              <div className="absolute -bottom-12 -left-20 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 hidden lg:block animate-fade-in">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                    <Zap className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-sm text-gray-900">Slack</div>
+                    <div className="text-xs text-gray-500">#marchés-publics</div>
+                  </div>
+                </div>
+                <div className="text-xs text-gray-700 bg-gray-50 rounded p-2">
+                  🚨 <strong>Charly:</strong> Opportunité Premium détectée pour vous!
+                </div>
+              </div>
+
+              {/* Notification Mobile - Right */}
+              <div className="absolute top-1/2 -translate-y-1/2 -right-24 bg-white rounded-xl p-3 shadow-lg border border-gray-100 hidden xl:block animate-slide-in">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
+                    <Phone className="w-3 h-3 text-white" />
+                  </div>
+                  <span className="text-xs font-medium text-gray-900">Mobile</span>
+                </div>
+                <div className="text-xs text-gray-700 bg-green-50 rounded p-2">
+                  📱 Alerte: Marché à 98% de match
+                </div>
+              </div>
+
+              {/* Notification Teams - Left */}
+              <div className="absolute top-1/4 -left-16 bg-white rounded-lg p-3 shadow-md border border-gray-100 hidden lg:block animate-bounce">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-6 h-6 bg-gradient-to-r from-indigo-500 to-blue-500 rounded flex items-center justify-center">
+                    <Users className="w-3 h-3 text-white" />
+                  </div>
+                  <span className="text-xs font-medium text-gray-900">Teams</span>
+                </div>
+                <div className="text-xs text-gray-700">💼 Nouveau marché détecté</div>
+              </div>
+
+              {/* Notification SMS - Top Left */}
+              <div className="absolute top-12 -left-12 bg-white rounded-xl p-2 shadow-lg border border-gray-100 hidden lg:block animate-pulse">
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 bg-gradient-to-r from-orange-500 to-red-500 rounded flex items-center justify-center">
+                    <Target className="w-2 h-2 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-medium text-gray-900">SMS</div>
+                    <div className="text-xs text-gray-500">Alerte urgente</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating main dashboard card */}
+              <div className="absolute top-8 right-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-200/50 p-6 max-w-sm animate-fade-in hidden xl:block">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-cta rounded-lg flex items-center justify-center">
@@ -215,11 +283,10 @@ const NewIndex = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-xs text-gray-500">En direct</span>
+                    <span className="text-xs text-gray-500">Live</span>
                   </div>
                 </div>
 
-                {/* Stats Cards */}
                 <div className="grid grid-cols-2 gap-3 mb-4">
                   <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-3">
                     <div className="text-xl font-bold text-blue-600">2,4M€</div>
@@ -227,11 +294,10 @@ const NewIndex = () => {
                   </div>
                   <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-3">
                     <div className="text-xl font-bold text-emerald-600">98%</div>
-                    <div className="text-xs text-emerald-500">Score de match</div>
+                    <div className="text-xs text-emerald-500">Score match</div>
                   </div>
                 </div>
 
-                {/* Premium opportunity */}
                 <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 border border-green-200">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
@@ -242,52 +308,6 @@ const NewIndex = () => {
                   </div>
                   <h4 className="font-medium text-gray-900 text-sm mb-1">Système de gestion documentaire</h4>
                   <p className="text-xs text-gray-600">Ministère de l'Éducation Nationale</p>
-                  
-                  <div className="mt-3 flex items-center gap-2">
-                    <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
-                      <Brain className="w-3 h-3 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-xs text-blue-600 font-medium">Analyse terminée</div>
-                      <div className="text-xs text-gray-500">Score: 94%</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom left notification - outside image bounds */}
-              <div className="absolute -bottom-8 -left-16 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 hidden lg:block animate-fade-in">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                    <Zap className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-medium text-sm text-gray-900">Nouvelle alerte</div>
-                    <div className="text-xs text-gray-500">Il y a 2 minutes</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right side notification - outside image */}
-              <div className="absolute top-1/2 -translate-y-1/2 -right-20 bg-white rounded-xl p-3 shadow-lg border border-gray-100 hidden xl:block animate-slide-in">
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 bg-blue-500 rounded-lg flex items-center justify-center">
-                    <TrendingUp className="w-3 h-3 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-medium text-xs text-gray-900">Score: 96%</div>
-                    <div className="text-xs text-gray-500">Match parfait</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Left side small notification */}
-              <div className="absolute top-1/3 -left-12 bg-white rounded-lg p-2 shadow-md border border-gray-100 hidden lg:block animate-bounce">
-                <div className="flex items-center gap-1">
-                  <div className="w-4 h-4 bg-orange-500 rounded flex items-center justify-center">
-                    <Clock className="w-2 h-2 text-white" />
-                  </div>
-                  <span className="text-xs text-gray-700 font-medium">Urgent</span>
                 </div>
               </div>
             </div>
@@ -390,7 +410,7 @@ const NewIndex = () => {
                 {/* Charly Image - Center */}
                 <div className="flex justify-center">
                   <img 
-                    src={aiAssistantMain} 
+                    src={charlyAssistant} 
                     alt="Charly - Assistant IA Eligible.ai" 
                     className="w-full h-auto max-w-sm"
                   />
