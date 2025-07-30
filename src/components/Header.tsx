@@ -15,29 +15,29 @@ export const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border/50 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border/50 shadow-sm" role="banner">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-7 h-7 bg-gradient-primary rounded-lg flex items-center justify-center">
+            <div className="w-7 h-7 bg-gradient-primary rounded-lg flex items-center justify-center" aria-hidden="true">
               <Brain className="w-4 h-4 text-white" />
             </div>
-            <span className="text-lg font-semibold text-foreground">
+            <a href="/" className="text-lg font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md" aria-label="Page d'accueil Eligible.ai">
               eligible.ai
-            </span>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Navigation principale">
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors duration-200 relative group"
+                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors duration-200 relative group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-200 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-200 group-hover:w-full" aria-hidden="true"></span>
               </a>
             ))}
           </nav>
@@ -46,14 +46,16 @@ export const Header = () => {
           <div className="hidden md:flex items-center space-x-3">
             <a 
               href="/connexion"
-              className="text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200 px-3 py-2"
+              className="text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md"
+              aria-label="Se connecter à votre compte"
             >
               Se connecter
             </a>
             <a href="/demo">
               <Button 
                 size="sm" 
-                className="bg-gradient-cta hover:shadow-glow text-white text-sm font-medium px-6 py-2 h-9 transition-all duration-300 hover:scale-105"
+                className="bg-gradient-cta hover:shadow-glow text-white text-sm font-medium px-6 py-2 h-9 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                aria-label="Demander une démonstration gratuite"
               >
                 Démo gratuite
               </Button>
@@ -62,14 +64,16 @@ export const Header = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMenuOpen ? (
-              <X className="w-5 h-5" />
+              <X className="w-5 h-5" aria-hidden="true" />
             ) : (
-              <Menu className="w-5 h-5" />
+              <Menu className="w-5 h-5" aria-hidden="true" />
             )}
           </button>
         </div>
@@ -79,27 +83,43 @@ export const Header = () => {
           "md:hidden overflow-hidden transition-all duration-300 ease-in-out border-t border-border/50",
           isMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
         )}>
-          <nav className="py-6 space-y-1">
+          <nav 
+            className="py-6 space-y-1" 
+            id="mobile-navigation"
+            role="navigation" 
+            aria-label="Navigation mobile"
+            aria-hidden={!isMenuOpen}
+          >
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="block text-sm font-medium text-foreground/70 hover:text-foreground hover:bg-gray-50 transition-colors duration-200 px-4 py-3 rounded-lg"
+                className="block text-sm font-medium text-foreground/70 hover:text-foreground hover:bg-gray-50 transition-colors duration-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                 onClick={() => setIsMenuOpen(false)}
+                tabIndex={isMenuOpen ? 0 : -1}
               >
                 {item.name}
               </a>
             ))}
             <div className="pt-4 px-4 space-y-3 border-t border-border/30 mt-4">
-              <button className="w-full text-left text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200 px-3 py-2">
-                Se connecter
-              </button>
-              <Button 
-                className="w-full bg-gradient-cta hover:shadow-glow text-white text-sm font-medium h-10 transition-all duration-300"
-                onClick={() => setIsMenuOpen(false)}
+              <a 
+                href="/connexion"
+                className="block w-full text-left text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md"
+                tabIndex={isMenuOpen ? 0 : -1}
+                aria-label="Se connecter à votre compte"
               >
-                Démo gratuite
-              </Button>
+                Se connecter
+              </a>
+              <a href="/demo">
+                <Button 
+                  className="w-full bg-gradient-cta hover:shadow-glow text-white text-sm font-medium h-10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  onClick={() => setIsMenuOpen(false)}
+                  tabIndex={isMenuOpen ? 0 : -1}
+                  aria-label="Demander une démonstration gratuite"
+                >
+                  Démo gratuite
+                </Button>
+              </a>
             </div>
           </nav>
         </div>

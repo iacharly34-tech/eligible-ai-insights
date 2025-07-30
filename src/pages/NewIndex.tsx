@@ -120,8 +120,9 @@ const NewIndex = () => {
       {/* Header - Clean minimal style like Loris.ai */}
       <Header />
 
-      {/* Hero Section - Split Layout like Loris.ai */}
-      <section className="pt-20 pb-16 px-4 relative overflow-hidden min-h-[85vh] flex items-center">
+      <main role="main">
+        {/* Hero Section - Split Layout like Loris.ai */}
+        <section className="pt-20 pb-16 px-4 relative overflow-hidden min-h-[85vh] flex items-center" aria-label="Section héro">
         {/* Animated Background - Style Loris.ai */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Main gradient background */}
@@ -199,7 +200,7 @@ const NewIndex = () => {
               <div className="relative flex justify-center">
                 <img 
                   src={aiCharacterTechMale}
-                  alt="Charly - Assistant IA Eligible.ai" 
+                  alt="Charly, l'assistant IA d'Eligible.ai, représenté par un personnage masculin en tenue décontractée moderne avec un hoodie" 
                   className="w-full h-auto max-w-xl transform scale-110"
                 />
               </div>
@@ -229,7 +230,7 @@ const NewIndex = () => {
                   <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
                     <Zap className="w-4 h-4 text-white" />
                   </div>
-                  <div>
+      <div>
                     <div className="font-semibold text-foreground text-sm">Slack</div>
                     <div className="text-xs text-muted-foreground">#marchés-publics</div>
                   </div>
@@ -298,10 +299,10 @@ const NewIndex = () => {
             </div>
           </div>
         </div>
-      </section>
+        </section>
 
       {/* Charly AI Assistant Section - Style "Découvrez Tom" */}
-      <section className="py-20 px-4 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+      <section className="py-20 px-4 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden" aria-label="Découvrez Charly, votre assistant IA">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl"></div>
@@ -394,11 +395,12 @@ const NewIndex = () => {
               <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl p-12 backdrop-blur-sm border border-white/10 relative">
                 {/* Charly Image - Center */}
                 <div className="flex justify-center">
-                  <img 
-                    src={aiCharacterTechMale} 
-                    alt="Charly - Assistant IA Eligible.ai" 
-                    className="w-full h-auto max-w-sm"
-                  />
+                <img 
+                  src={aiCharacterTechMale} 
+                  alt="Charly, l'assistant IA d'Eligible.ai dans sa présentation complète montrant l'interface d'analyse des marchés publics" 
+                  className="w-full h-auto max-w-sm"
+                  role="img"
+                />
                 </div>
               </div>
               
@@ -816,6 +818,7 @@ const NewIndex = () => {
           </div>
         </div>
       </footer>
+      </main>
     </div>
   );
 };
