@@ -7,9 +7,10 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: "Fonctionnalités", href: "#features" },
-    { name: "Intégrations", href: "#integrations" },
+    { name: "Produit", href: "#product" },
+    { name: "Solutions", href: "#solutions" },
     { name: "Tarifs", href: "#pricing" },
+    { name: "Ressources", href: "#resources" },
     { name: "À propos", href: "#about" },
   ];
 
