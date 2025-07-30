@@ -109,30 +109,30 @@ const NewIndex = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
       {/* Header */}
       <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200/50 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg flex items-center justify-center">
               <Target className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
               Eligible.ai
             </span>
           </div>
           
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-gray-600 hover:text-blue-600 transition-colors">Fonctionnalités</a>
-            <a href="#sources" className="text-gray-600 hover:text-blue-600 transition-colors">Sources</a>
-            <a href="#benefits" className="text-gray-600 hover:text-blue-600 transition-colors">Avantages</a>
+            <a href="#features" className="text-gray-600 hover:text-emerald-600 transition-colors">Fonctionnalités</a>
+            <a href="#sources" className="text-gray-600 hover:text-emerald-600 transition-colors">Sources</a>
+            <a href="#benefits" className="text-gray-600 hover:text-emerald-600 transition-colors">Avantages</a>
           </nav>
           
           <div className="flex items-center gap-4">
             <Button variant="ghost" className="hidden md:flex">
               Se connecter
             </Button>
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+            <Button className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
               Démo gratuite
             </Button>
           </div>
@@ -140,12 +140,69 @@ const NewIndex = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-        {/* Animated Background */}
+      <section className="pt-32 pb-20 px-4 relative overflow-hidden min-h-screen flex items-center">
+        {/* Animated Background - Style Loris.ai */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-400/5 to-purple-400/5 rounded-full blur-3xl"></div>
+          {/* Main gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/40 via-teal-50/30 to-cyan-50/20"></div>
+          
+          {/* Large floating geometric shapes */}
+          <div className="absolute top-1/4 left-1/4 w-[32rem] h-[32rem] bg-gradient-to-br from-emerald-200/15 to-teal-200/10 rounded-full blur-3xl animate-[pulse_8s_ease-in-out_infinite]"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-[28rem] h-[28rem] bg-gradient-to-br from-cyan-200/12 to-blue-200/8 rounded-full blur-3xl animate-[pulse_6s_ease-in-out_infinite_2s]"></div>
+          <div className="absolute top-1/2 right-1/3 w-80 h-80 bg-gradient-to-br from-teal-300/8 to-emerald-200/6 rounded-full blur-2xl animate-[pulse_10s_ease-in-out_infinite_4s]"></div>
+          
+          {/* Smaller floating elements */}
+          <div className="absolute top-20 left-20 w-3 h-3 bg-emerald-400/30 rounded-full animate-[bounce_3s_ease-in-out_infinite]"></div>
+          <div className="absolute top-40 right-32 w-2 h-2 bg-teal-500/25 rounded-full animate-[bounce_4s_ease-in-out_infinite_1s]"></div>
+          <div className="absolute bottom-32 left-1/3 w-1.5 h-1.5 bg-cyan-500/30 rounded-full animate-[bounce_5s_ease-in-out_infinite_2s]"></div>
+          <div className="absolute top-1/3 right-1/4 w-2.5 h-2.5 bg-emerald-300/20 rounded-full animate-[bounce_6s_ease-in-out_infinite_3s]"></div>
+          
+          {/* Curved flowing lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 1400 800">
+            <defs>
+              <linearGradient id="flowGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="rgb(16 185 129)" stopOpacity="0"/>
+                <stop offset="50%" stopColor="rgb(16 185 129)" stopOpacity="0.3"/>
+                <stop offset="100%" stopColor="rgb(16 185 129)" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="flowGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="rgb(20 184 166)" stopOpacity="0"/>
+                <stop offset="50%" stopColor="rgb(20 184 166)" stopOpacity="0.25"/>
+                <stop offset="100%" stopColor="rgb(20 184 166)" stopOpacity="0"/>
+              </linearGradient>
+              <linearGradient id="flowGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="rgb(6 182 212)" stopOpacity="0"/>
+                <stop offset="50%" stopColor="rgb(6 182 212)" stopOpacity="0.2"/>
+                <stop offset="100%" stopColor="rgb(6 182 212)" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+            <path 
+              d="M-200,200 Q300,150 600,180 T1200,160" 
+              fill="none" 
+              stroke="url(#flowGradient1)" 
+              strokeWidth="1.5"
+              className="animate-[pulse_6s_ease-in-out_infinite]"
+            />
+            <path 
+              d="M-200,400 Q400,350 700,380 T1300,360" 
+              fill="none" 
+              stroke="url(#flowGradient2)" 
+              strokeWidth="1"
+              className="animate-[pulse_8s_ease-in-out_infinite_2s]"
+            />
+            <path 
+              d="M-100,600 Q500,550 800,580 T1400,560" 
+              fill="none" 
+              stroke="url(#flowGradient3)" 
+              strokeWidth="0.8"
+              className="animate-[pulse_10s_ease-in-out_infinite_4s]"
+            />
+          </svg>
+          
+          {/* Floating geometric micro-elements */}
+          <div className="absolute top-1/3 left-1/2 w-10 h-10 border border-emerald-300/15 rounded-full animate-[spin_20s_linear_infinite]"></div>
+          <div className="absolute bottom-1/3 right-1/2 w-8 h-8 border border-teal-400/12 rounded-lg animate-[spin_15s_linear_infinite_reverse]"></div>
+          <div className="absolute top-2/3 left-1/4 w-6 h-6 border border-cyan-300/10 rounded-full animate-[spin_25s_linear_infinite]"></div>
         </div>
 
         <div className="container mx-auto relative z-10">
