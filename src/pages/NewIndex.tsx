@@ -31,6 +31,9 @@ import { MacBookSimulation } from "@/components/MacBookSimulation";
 import aiCharacterMale from "@/assets/ai-character-male.png";
 import aiCharacterFemale from "@/assets/ai-character-female.png";
 import aiCharacterNeutral from "@/assets/ai-character-neutral.png";
+import aiCharacterTechMale from "@/assets/ai-character-tech-male.png";
+import aiCharacterTechFemale from "@/assets/ai-character-tech-female.png";
+import aiCharacterFuturistic from "@/assets/ai-character-futuristic.png";
 
 const NewIndex = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -195,7 +198,7 @@ const NewIndex = () => {
               {/* Main Charly illustration - AGRANDI et centré */}
               <div className="relative flex justify-center">
                 <img 
-                  src={aiCharacterMale}
+                  src={aiCharacterTechMale}
                   alt="Charly - Assistant IA Eligible.ai" 
                   className="w-full h-auto max-w-xl transform scale-110"
                 />
@@ -392,7 +395,7 @@ const NewIndex = () => {
                 {/* Charly Image - Center */}
                 <div className="flex justify-center">
                   <img 
-                    src={aiCharacterNeutral} 
+                    src={aiCharacterFuturistic} 
                     alt="Charly - Assistant IA Eligible.ai" 
                     className="w-full h-auto max-w-sm"
                   />
