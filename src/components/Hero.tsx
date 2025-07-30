@@ -1,59 +1,54 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-dashboard.jpg";
+import heroImage from "@/assets/tengo-style-dashboard.jpg";
 import { ArrowRight, Zap, Target, Brain } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="relative min-h-screen flex items-center justify-center bg-background pt-16">
+      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div className="text-center lg:text-left space-y-8 animate-fade-in">
-            <div className="space-y-4">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm">
+            <div className="space-y-6">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-primary text-sm font-medium">
                 <Zap className="w-4 h-4 mr-2" />
                 Propulsé par l'Intelligence Artificielle
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                Identifiez les{" "}
-                <span className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
-                  opportunités
+              <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
+                Gagnez{" "}
+                <span className="text-primary">
+                  enfin
                 </span>{" "}
-                d'appels d'offres
+                plus d'Appels d'Offres Publics
               </h1>
               
-              <p className="text-xl text-blue-100 max-w-xl mx-auto lg:mx-0">
-                Notre IA analyse et score automatiquement les appels d'offres publics 
-                pour identifier les meilleures opportunités pour votre entreprise.
+              <p className="text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
+                Grâce à la puissance de l'Intelligence Artificielle, eligible.ai vous permet 
+                d'identifier, analyser et répondre à tous les Appels d'offres publics.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="hero" size="lg" className="group">
-                Demander une démo
+              <Button variant="tengo" size="lg" className="group">
+                Demandez votre accès
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10">
-                Voir comment ça marche
               </Button>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8">
               <div className="text-center">
-                <div className="text-2xl font-bold text-white">95%</div>
-                <div className="text-sm text-blue-200">Précision IA</div>
+                <div className="text-3xl font-bold text-foreground">+600</div>
+                <div className="text-sm text-muted-foreground">Appels d'offres remontés chaque jour</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-white">10x</div>
-                <div className="text-sm text-blue-200">Plus rapide</div>
+                <div className="text-3xl font-bold text-foreground">10x</div>
+                <div className="text-sm text-muted-foreground">Plus rapide pour analyser un marché</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-white">24/7</div>
-                <div className="text-sm text-blue-200">Surveillance</div>
+                <div className="text-3xl font-bold text-foreground">+50000</div>
+                <div className="text-sm text-muted-foreground">Renouvellements de marchés détectés</div>
               </div>
             </div>
           </div>

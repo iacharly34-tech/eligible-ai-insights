@@ -56,22 +56,45 @@ export const Features = () => {
             Fonctionnalités
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold">
-            Une solution complète pour{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
-              vos appels d'offres
+            La plateforme préférée des{" "}
+            <span className="text-primary">
+              répondants
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Automatisez votre processus de veille et maximisez vos opportunités commerciales 
-            avec notre plateforme IA dédiée aux appels d'offres publics.
+            Des centaines d'experts des marchés publics utilisent eligible.ai au quotidien pour détecter, analyser et répondre aux appels d'offres.
           </p>
+        </div>
+
+        {/* Tengo-style Stats Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="text-center">
+            <div className="text-5xl font-bold text-primary mb-2">+600</div>
+            <div className="text-lg font-medium">Appels d'offres</div>
+            <div className="text-muted-foreground">remontés chaque jour</div>
+          </div>
+          <div className="text-center">
+            <div className="text-5xl font-bold text-primary mb-2">10x</div>
+            <div className="text-lg font-medium">Plus rapide</div>
+            <div className="text-muted-foreground">pour analyser un marché</div>
+          </div>
+          <div className="text-center">
+            <div className="text-5xl font-bold text-primary mb-2">+50000</div>
+            <div className="text-lg font-medium">Renouvellements</div>
+            <div className="text-muted-foreground">de marchés détectés</div>
+          </div>
+        </div>
+
+        <div className="text-center mb-16 space-y-4">
+          <h3 className="text-2xl font-bold">Flux d'opportunités</h3>
+          <h4 className="text-xl text-primary font-semibold">Simplifiez votre veille</h4>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 border-0 shadow-card"
+              className="group hover:shadow-elegant transition-all duration-300 border bg-white shadow-card"
             >
               <CardHeader className="space-y-4">
                 <div className="flex items-center justify-between">
