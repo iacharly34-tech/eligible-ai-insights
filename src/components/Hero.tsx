@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import heroImage from "@/assets/exact-tengo-dashboard.jpg";
+import heroImage from "@/assets/ai-dashboard-modern.jpg";
 import { ArrowRight, Zap, Target, Brain, Play, CheckCircle, TrendingUp } from "lucide-react";
 
 export const Hero = () => {

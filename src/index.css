@@ -18,17 +18,17 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
 
-    /* Rolex signature green */
-    --primary: 158 64% 17%;
+    /* Violet/Blue modern palette */
+    --primary: 258 89% 66%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 95%;
-    --secondary-foreground: 0 0% 20%;
+    --secondary-foreground: 258 30% 25%;
 
     --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 258 15% 45%;
 
-    --accent: 158 64% 17%;
+    --accent: 245 58% 51%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -36,25 +36,25 @@ All colors MUST be HSL.
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 158 64% 17%;
+    --ring: 258 89% 66%;
 
-    --success: 158 64% 17%;
+    --success: 258 89% 66%;
     --success-foreground: 0 0% 100%;
 
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
 
-    /* Rolex-inspired luxury gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(158, 64%, 17%) 0%, hsl(158, 64%, 22%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(0, 0%, 98%) 0%, hsl(0, 0%, 95%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 98%) 0%, hsl(0, 0%, 100%) 100%);
-    --gradient-luxury: linear-gradient(135deg, hsl(158, 64%, 17%) 0%, hsl(0, 0%, 10%) 100%);
+    /* Modern violet/blue gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(258, 89%, 66%) 0%, hsl(245, 58%, 51%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(258, 20%, 98%) 0%, hsl(245, 15%, 96%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(258, 20%, 98%) 0%, hsl(0, 0%, 100%) 100%);
+    --gradient-luxury: linear-gradient(135deg, hsl(258, 89%, 66%) 0%, hsl(245, 58%, 51%) 100%);
 
-    /* Rolex-style luxury shadows */
-    --shadow-elegant: 0 4px 6px -1px hsl(0, 0%, 0%, 0.1), 0 2px 4px -1px hsl(0, 0%, 0%, 0.06);
-    --shadow-glow: 0 20px 25px -5px hsl(158, 64%, 17%, 0.15);
-    --shadow-card: 0 10px 15px -3px hsl(0, 0%, 0%, 0.1), 0 4px 6px -2px hsl(0, 0%, 0%, 0.05);
-    --shadow-luxury: 0 25px 50px -12px hsl(0, 0%, 0%, 0.25);
+    /* Modern shadows with violet tint */
+    --shadow-elegant: 0 4px 6px -1px hsl(258, 50%, 10%, 0.1), 0 2px 4px -1px hsl(258, 50%, 10%, 0.06);
+    --shadow-glow: 0 20px 25px -5px hsl(258, 89%, 66%, 0.15);
+    --shadow-card: 0 10px 15px -3px hsl(258, 30%, 20%, 0.1), 0 4px 6px -2px hsl(258, 30%, 20%, 0.05);
+    --shadow-luxury: 0 25px 50px -12px hsl(258, 50%, 30%, 0.25);
 
     /* Rolex-style luxury animations */
     --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -91,16 +91,17 @@ All colors MUST be HSL.
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 158 64% 17%;
+    /* Dark mode with violet/blue tones */
+    --primary: 258 89% 66%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 85%;
+    --secondary: 258 20% 15%;
+    --secondary-foreground: 258 20% 85%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 258 20% 15%;
+    --muted-foreground: 258 15% 65%;
 
-    --accent: 158 64% 17%;
+    --accent: 245 58% 51%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
@@ -108,7 +109,7 @@ All colors MUST be HSL.
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 158 64% 17%;
+    --ring: 258 89% 66%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
