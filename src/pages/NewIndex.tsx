@@ -241,7 +241,7 @@ const NewIndex = () => {
               </div>
 
               {/* BULLE 3 - Carte IA Score (apparition avec délai plus long) */}
-              <div className="absolute top-1/2 right-8 bg-card/98 backdrop-blur-sm rounded-2xl shadow-luxury border border-border/50 p-6 max-w-sm hidden xl:block"
+              <div className="absolute top-1/2 right-8 bg-white backdrop-blur-sm rounded-3xl shadow-luxury border border-border/50 p-6 max-w-sm hidden xl:block"
                    style={{ animation: 'fade-in 0.6s ease-out 3s both' }}>
                 
                 {/* Header simplifié */}
