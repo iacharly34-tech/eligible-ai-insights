@@ -327,10 +327,33 @@ const NewIndex = () => {
       </section>
 
       {/* Sources Section */}
-      <section id="sources" className="py-20 px-4">
-        <div className="container mx-auto">
+      <section id="sources" className="py-20 px-4 relative">
+        {/* Subtle background animation */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-r from-green-400/5 to-blue-400/5 rounded-full animate-[float_8s_ease-in-out_infinite]"></div>
+          <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-gradient-to-r from-blue-400/5 to-green-400/5 rounded-full animate-[float_12s_ease-in-out_infinite_reverse]"></div>
+          <svg className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-30" viewBox="0 0 100 100">
+            <path d="M20,50 Q50,20 80,50 T140,50" stroke="url(#gradientStroke)" strokeWidth="0.2" fill="none" opacity="0.3">
+              <animate attributeName="d" values="M20,50 Q50,20 80,50 T140,50;M20,50 Q50,80 80,50 T140,50;M20,50 Q50,20 80,50 T140,50" dur="10s" repeatCount="indefinite"/>
+            </path>
+            <defs>
+              <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#10b981"/>
+                <stop offset="100%" stopColor="#3b82f6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div className="container mx-auto relative z-10">
           <ScrollReveal className="text-center mb-16">
-            <Badge className="mb-4 bg-green-100 text-green-700">Sources de données</Badge>
+            <div className="flex justify-center items-center gap-3 mb-4">
+              <Badge className="bg-green-100 text-green-700">Sources de données</Badge>
+              <div className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-sm border border-emerald-200 animate-pulse">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-ping"></div>
+                Mise à jour en temps réel
+              </div>
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Couverture{" "}
               <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
@@ -342,51 +365,73 @@ const NewIndex = () => {
               de marchés publics, mises à jour en temps réel.
             </p>
             
-            {/* Tabs */}
+            {/* Enhanced Tabs */}
             <div className="flex justify-center mb-8">
-              <div className="bg-gray-100 rounded-full p-1 flex">
+              <div className="bg-gradient-to-r from-gray-100 to-gray-50 rounded-full p-1 flex shadow-inner border border-gray-200">
                 <button
                   onClick={() => setActiveTab('france')}
-                  className={`px-6 py-3 rounded-full transition-all ${
+                  className={`px-8 py-4 rounded-full transition-all duration-300 flex items-center gap-2 font-medium ${
                     activeTab === 'france' 
-                      ? 'bg-white shadow-md text-blue-600 font-semibold' 
-                      : 'text-gray-600 hover:text-gray-800'
+                      ? 'bg-white shadow-lg text-blue-600 font-semibold transform scale-105' 
+                      : 'text-gray-600 hover:text-gray-800 hover:bg-white/50'
                   }`}
                 >
                   🇫🇷 France
+                  {activeTab === 'france' && <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>}
                 </button>
                 <button
                   onClick={() => setActiveTab('europe')}
-                  className={`px-6 py-3 rounded-full transition-all ${
+                  className={`px-8 py-4 rounded-full transition-all duration-300 flex items-center gap-2 font-medium ${
                     activeTab === 'europe' 
-                      ? 'bg-white shadow-md text-blue-600 font-semibold' 
-                      : 'text-gray-600 hover:text-gray-800'
+                      ? 'bg-white shadow-lg text-blue-600 font-semibold transform scale-105' 
+                      : 'text-gray-600 hover:text-gray-800 hover:bg-white/50'
                   }`}
                 >
                   🇪🇺 Europe
+                  {activeTab === 'europe' && <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>}
                 </button>
               </div>
             </div>
           </ScrollReveal>
           
-          {/* Sources Grid */}
-          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {(activeTab === 'france' ? francesources : europeSource).map((source, index) => (
-              <ScrollReveal key={`${activeTab}-${index}`} delay={index * 50}>
-                <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 border border-gray-200">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-3xl mb-3">{source.logo}</div>
-                    <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">
-                      {source.name}
-                    </h3>
-                    <p className="text-sm text-gray-600">
-                      {source.desc}
-                    </p>
-                    <ExternalLink className="w-4 h-4 text-gray-400 mx-auto mt-3 group-hover:text-blue-600 transition-colors" />
-                  </CardContent>
-                </Card>
-              </ScrollReveal>
-            ))}
+          {/* Enhanced Sources Grid with Smooth Transition */}
+          <div className="relative">
+            <div 
+              key={activeTab}
+              className="grid md:grid-cols-3 lg:grid-cols-6 gap-6 animate-[fadeInUp_0.6s_ease-out]"
+            >
+              {(activeTab === 'france' ? francesources : europeSource).map((source, index) => (
+                <ScrollReveal key={`${activeTab}-${index}`} delay={index * 50}>
+                  <Card className="group relative hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-2 border border-gray-200/80 bg-white/80 backdrop-blur-sm cursor-pointer overflow-hidden">
+                    {/* Hover glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 to-green-400/0 group-hover:from-blue-400/10 group-hover:to-green-400/10 transition-all duration-500 rounded-lg"></div>
+                    
+                    <CardContent className="p-6 text-center relative z-10">
+                      <div className="text-3xl mb-3 transform group-hover:scale-125 transition-transform duration-300">
+                        {source.logo}
+                      </div>
+                      <h3 className="font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                        {source.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                        {source.desc}
+                      </p>
+                      
+                      {/* Enhanced link icon with animation */}
+                      <div className="mt-4 flex justify-center">
+                        <div className="relative">
+                          <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-blue-600 transition-all duration-300 group-hover:scale-125" />
+                          <div className="absolute inset-0 bg-blue-400/20 rounded-full scale-0 group-hover:scale-150 transition-transform duration-300"></div>
+                        </div>
+                      </div>
+                      
+                      {/* Subtle shine effect on hover */}
+                      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out"></div>
+                    </CardContent>
+                  </Card>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
