@@ -395,7 +395,7 @@ const NewIndex = () => {
                 {/* Charly Image - Center */}
                 <div className="flex justify-center">
                   <img 
-                    src={aiCharacterFuturistic} 
+                    src={aiCharacterTechFemale} 
                     alt="Charly - Assistant IA Eligible.ai" 
                     className="w-full h-auto max-w-sm"
                   />
