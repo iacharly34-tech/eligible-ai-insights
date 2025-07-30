@@ -363,60 +363,86 @@ const NewIndex = () => {
             <div className="relative">
               {/* Gradient background card for Charly */}
               <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl p-12 backdrop-blur-sm border border-white/10 relative">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-                  {/* Charly Image - Column 1-2 */}
-                  <div className="lg:col-span-2">
-                    <img 
-                      src={aiAssistantMain} 
-                      alt="Charly - Assistant IA Eligible.ai" 
-                      className="w-full h-auto max-w-sm mx-auto"
-                    />
-                  </div>
-                  
-                  {/* AI Assistant Card - Column 3 */}
-                  <div className="lg:col-span-1">
-                    <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 mx-auto max-w-xs">
-                      {/* Agent Identity */}
-                      <div className="text-center mb-4">
-                        <div className="w-12 h-12 bg-gradient-cta rounded-full flex items-center justify-center mx-auto mb-2">
-                          <Brain className="w-6 h-6 text-white" />
-                        </div>
-                        <p className="text-xs text-gray-500 uppercase tracking-wide">Assistant Commercial</p>
-                        <h3 className="text-lg font-bold text-gray-900">Charly</h3>
-                      </div>
-                      
-                      {/* Live Stats */}
-                      <div className="space-y-3">
-                        <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-3 border border-green-200">
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-2">
-                              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                              <span className="text-sm font-medium text-green-700">En analyse</span>
-                            </div>
-                            <Badge className="bg-green-100 text-green-700 text-xs">Live</Badge>
-                          </div>
-                          <p className="text-xs text-green-600 mt-1">127 nouvelles opportunités</p>
-                        </div>
-                        
-                        <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-3">
-                          <div className="text-sm font-medium text-blue-700">Score moyen</div>
-                          <div className="text-2xl font-bold text-blue-600">94%</div>
-                        </div>
-                      </div>
+                {/* Charly Image - Center */}
+                <div className="flex justify-center">
+                  <img 
+                    src={aiAssistantMain} 
+                    alt="Charly - Assistant IA Eligible.ai" 
+                    className="w-full h-auto max-w-sm"
+                  />
+                </div>
+              </div>
+              
+              {/* Floating Cards - Outside the image */}
+              {/* Top Right Card */}
+              <div className="absolute -top-8 -right-8 bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 max-w-xs animate-fade-in">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 bg-gradient-cta rounded-lg flex items-center justify-center">
+                      <Brain className="w-4 h-4 text-white" />
                     </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 text-sm">Eligible.ai</h3>
+                      <p className="text-xs text-gray-500">Intelligence des marchés</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs text-gray-500">Live</span>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-2 mb-3">
+                  <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-2">
+                    <div className="text-lg font-bold text-blue-600">2,4M€</div>
+                    <div className="text-xs text-blue-500">Marché détecté</div>
+                  </div>
+                  <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg p-2">
+                    <div className="text-lg font-bold text-emerald-600">98%</div>
+                    <div className="text-xs text-emerald-500">Score match</div>
                   </div>
                 </div>
               </div>
               
-              {/* Floating notification */}
-              <div className="absolute -top-4 -left-4 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 hidden lg:block animate-fade-in">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
-                    <TrendingUp className="w-4 h-4 text-white" />
+              {/* Bottom Left Card */}
+              <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 max-w-xs animate-fade-in">
+                <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-3 border border-green-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <Award className="w-4 h-4 text-green-600" />
+                      <span className="text-sm font-medium text-green-700">Opportunité Premium</span>
+                    </div>
+                    <Badge className="bg-green-100 text-green-700 text-xs">Nouveau</Badge>
+                  </div>
+                  <h4 className="font-medium text-gray-900 text-sm mb-1">Système de gestion documentaire</h4>
+                  <p className="text-xs text-gray-600">Ministère de l'Éducation Nationale</p>
+                </div>
+              </div>
+              
+              {/* Right Side Card */}
+              <div className="absolute top-1/2 -right-12 transform -translate-y-1/2 bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 hidden xl:block animate-fade-in">
+                <div className="text-center">
+                  <div className="w-10 h-10 bg-gradient-cta rounded-full flex items-center justify-center mx-auto mb-2">
+                    <Zap className="w-5 h-5 text-white" />
+                  </div>
+                  <p className="text-xs text-gray-500 uppercase tracking-wide">Assistant</p>
+                  <h3 className="text-sm font-bold text-gray-900">Charly</h3>
+                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-2 mt-2">
+                    <div className="text-xs font-medium text-green-700">En analyse</div>
+                    <div className="text-lg font-bold text-green-600">94%</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Left Side Notification */}
+              <div className="absolute top-1/4 -left-12 bg-white rounded-2xl shadow-2xl border border-gray-100 p-3 hidden xl:block animate-fade-in">
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 bg-orange-500 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="w-3 h-3 text-white" />
                   </div>
                   <div>
-                    <div className="font-medium text-sm text-gray-900">Marché en hausse</div>
-                    <div className="text-xs text-gray-500">+23% cette semaine</div>
+                    <div className="font-medium text-xs text-gray-900">Nouvelle alerte</div>
+                    <div className="text-xs text-gray-500">Il y a 2 min</div>
                   </div>
                 </div>
               </div>
