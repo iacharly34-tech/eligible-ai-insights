@@ -146,13 +146,13 @@ const NewIndex = () => {
                 </span>
               </h1>
               
-              <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
                 Notre IA analyse automatiquement 600+ sources de marchés publics français et européens, 
                 identifie les opportunités premium et vous alerte en temps réel.
               </p>
 
               {/* Value Propositions */}
-              <div className="space-y-3 text-sm text-gray-600">
+              <div className="space-y-3 text-sm text-muted-foreground">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                   <span>600+ sources surveillées en temps réel</span>
@@ -171,6 +171,8 @@ const NewIndex = () => {
                 <Button 
                   size="lg" 
                   className="bg-gradient-cta hover:shadow-glow text-white text-lg px-8 py-4 h-auto group transition-all duration-300 hover:scale-105"
+                  role="button"
+                  aria-label="Voir la démonstration interactive d'Eligible.ai"
                 >
                   <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                   Voir la démo interactive
@@ -181,6 +183,8 @@ const NewIndex = () => {
                   variant="outline" 
                   size="lg" 
                   className="text-lg px-8 py-4 h-auto border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+                  role="button"
+                  aria-label="Accéder à l'essai gratuit de 7 jours"
                 >
                   <BarChart3 className="w-5 h-5 mr-2" />
                   Accès gratuit 7 jours
@@ -189,8 +193,8 @@ const NewIndex = () => {
 
               {/* Trust indicators */}
               <div className="flex items-center gap-2 opacity-60">
-                <Shield className="w-4 h-4 text-green-600" />
-                <span className="text-sm">Conforme RGPD</span>
+                <Shield className="w-4 h-4 text-success" />
+                <span className="text-sm text-muted-foreground">Conforme RGPD</span>
               </div>
             </div>
 
@@ -202,6 +206,8 @@ const NewIndex = () => {
                   src={aiCharacterTechMale}
                   alt="Charly, l'assistant IA d'Eligible.ai, représenté par un personnage masculin en tenue décontractée moderne avec un hoodie" 
                   className="w-full h-auto max-w-xl transform scale-110"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -320,7 +326,7 @@ const NewIndex = () => {
                     Charly
                   </span>
                 </h2>
-                <p className="text-xl text-gray-300 leading-relaxed">
+                <p className="text-xl text-card-foreground leading-relaxed">
                   Votre assistant IA commercial qui analyse, détecte et vous alerte des meilleures 
                   opportunités de marchés publics 24h/24, avec une précision inégalée.
                 </p>
@@ -334,7 +340,7 @@ const NewIndex = () => {
                   </div>
                   <div>
                     <h3 className="text-white font-medium">Analyse IA en temps réel</h3>
-                    <p className="text-gray-400 text-sm">Traitement intelligent de 600+ sources officielles</p>
+                    <p className="text-muted-foreground text-sm">Traitement intelligent de 600+ sources officielles</p>
                   </div>
                 </div>
 
@@ -344,7 +350,7 @@ const NewIndex = () => {
                   </div>
                   <div>
                     <h3 className="text-white font-medium">Alertes intelligentes instantanées</h3>
-                    <p className="text-gray-400 text-sm">Notifications personnalisées selon vos critères</p>
+                    <p className="text-muted-foreground text-sm">Notifications personnalisées selon vos critères</p>
                   </div>
                 </div>
 
@@ -400,6 +406,8 @@ const NewIndex = () => {
                   alt="Charly, l'assistant IA d'Eligible.ai dans sa présentation complète montrant l'interface d'analyse des marchés publics" 
                   className="w-full h-auto max-w-sm"
                   role="img"
+                  loading="lazy"
+                  decoding="async"
                 />
                 </div>
               </div>
