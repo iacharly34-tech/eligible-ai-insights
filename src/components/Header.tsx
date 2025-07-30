@@ -7,11 +7,11 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: "Produit", href: "#product" },
-    { name: "Solutions", href: "#solutions" },
-    { name: "Tarifs", href: "#pricing" },
-    { name: "Ressources", href: "#resources" },
-    { name: "À propos", href: "#about" },
+    { name: "Produit", href: "/produit" },
+    { name: "Solutions", href: "/solutions" },
+    { name: "Tarifs", href: "/tarifs" },
+    { name: "Ressources", href: "/ressources" },
+    { name: "À propos", href: "/a-propos" },
   ];
 
   return (
@@ -44,15 +44,20 @@ export const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-3">
-            <button className="text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200 px-3 py-2">
-              Se connecter
-            </button>
-            <Button 
-              size="sm" 
-              className="bg-gradient-cta hover:shadow-glow text-white text-sm font-medium px-6 py-2 h-9 transition-all duration-300 hover:scale-105"
+            <a 
+              href="/connexion"
+              className="text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200 px-3 py-2"
             >
-              Démo gratuite
-            </Button>
+              Se connecter
+            </a>
+            <a href="/demo">
+              <Button 
+                size="sm" 
+                className="bg-gradient-cta hover:shadow-glow text-white text-sm font-medium px-6 py-2 h-9 transition-all duration-300 hover:scale-105"
+              >
+                Démo gratuite
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
