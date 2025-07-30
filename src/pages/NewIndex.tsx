@@ -114,8 +114,8 @@ const NewIndex = () => {
       {/* Header - Clean minimal style like Loris.ai */}
       <Header />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden min-h-screen flex items-center">
+      {/* Hero Section - Split Layout like Loris.ai */}
+      <section className="pt-20 pb-16 px-4 relative overflow-hidden min-h-[85vh] flex items-center">
         {/* Animated Background - Style Loris.ai */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Main gradient background */}
@@ -125,82 +125,49 @@ const NewIndex = () => {
           <div className="absolute top-1/4 left-1/4 w-[32rem] h-[32rem] bg-gradient-to-br from-emerald-200/15 to-teal-200/10 rounded-full blur-3xl animate-[pulse_8s_ease-in-out_infinite]"></div>
           <div className="absolute bottom-1/4 right-1/4 w-[28rem] h-[28rem] bg-gradient-to-br from-cyan-200/12 to-blue-200/8 rounded-full blur-3xl animate-[pulse_6s_ease-in-out_infinite_2s]"></div>
           <div className="absolute top-1/2 right-1/3 w-80 h-80 bg-gradient-to-br from-teal-300/8 to-emerald-200/6 rounded-full blur-2xl animate-[pulse_10s_ease-in-out_infinite_4s]"></div>
-          
-          {/* Smaller floating elements */}
-          <div className="absolute top-20 left-20 w-3 h-3 bg-emerald-400/30 rounded-full animate-[bounce_3s_ease-in-out_infinite]"></div>
-          <div className="absolute top-40 right-32 w-2 h-2 bg-teal-500/25 rounded-full animate-[bounce_4s_ease-in-out_infinite_1s]"></div>
-          <div className="absolute bottom-32 left-1/3 w-1.5 h-1.5 bg-cyan-500/30 rounded-full animate-[bounce_5s_ease-in-out_infinite_2s]"></div>
-          <div className="absolute top-1/3 right-1/4 w-2.5 h-2.5 bg-emerald-300/20 rounded-full animate-[bounce_6s_ease-in-out_infinite_3s]"></div>
-          
-          {/* Curved flowing lines */}
-          <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 1400 800">
-            <defs>
-              <linearGradient id="flowGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="rgb(16 185 129)" stopOpacity="0"/>
-                <stop offset="50%" stopColor="rgb(16 185 129)" stopOpacity="0.3"/>
-                <stop offset="100%" stopColor="rgb(16 185 129)" stopOpacity="0"/>
-              </linearGradient>
-              <linearGradient id="flowGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="rgb(20 184 166)" stopOpacity="0"/>
-                <stop offset="50%" stopColor="rgb(20 184 166)" stopOpacity="0.25"/>
-                <stop offset="100%" stopColor="rgb(20 184 166)" stopOpacity="0"/>
-              </linearGradient>
-              <linearGradient id="flowGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="rgb(6 182 212)" stopOpacity="0"/>
-                <stop offset="50%" stopColor="rgb(6 182 212)" stopOpacity="0.2"/>
-                <stop offset="100%" stopColor="rgb(6 182 212)" stopOpacity="0"/>
-              </linearGradient>
-            </defs>
-            <path 
-              d="M-200,200 Q300,150 600,180 T1200,160" 
-              fill="none" 
-              stroke="url(#flowGradient1)" 
-              strokeWidth="1.5"
-              className="animate-[pulse_6s_ease-in-out_infinite]"
-            />
-            <path 
-              d="M-200,400 Q400,350 700,380 T1300,360" 
-              fill="none" 
-              stroke="url(#flowGradient2)" 
-              strokeWidth="1"
-              className="animate-[pulse_8s_ease-in-out_infinite_2s]"
-            />
-            <path 
-              d="M-100,600 Q500,550 800,580 T1400,560" 
-              fill="none" 
-              stroke="url(#flowGradient3)" 
-              strokeWidth="0.8"
-              className="animate-[pulse_10s_ease-in-out_infinite_4s]"
-            />
-          </svg>
-          
-          {/* Floating geometric micro-elements */}
-          <div className="absolute top-1/3 left-1/2 w-10 h-10 border border-emerald-300/15 rounded-full animate-[spin_20s_linear_infinite]"></div>
-          <div className="absolute bottom-1/3 right-1/2 w-8 h-8 border border-teal-400/12 rounded-lg animate-[spin_15s_linear_infinite_reverse]"></div>
-          <div className="absolute top-2/3 left-1/4 w-6 h-6 border border-cyan-300/10 rounded-full animate-[spin_25s_linear_infinite]"></div>
         </div>
 
         <div className="container mx-auto relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200">
-                IA • Marchés Publics • Automation
-              </Badge>
-              
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          {/* Social Proof Banner */}
+          <div className="text-center mb-8">
+            <Badge className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200">
+              IA • Marchés Publics • Automation
+            </Badge>
+          </div>
+
+          {/* Main Content - Split Layout */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Text Content */}
+            <div className={`space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Transformez votre{" "}
                 <span className="bg-gradient-highlight bg-clip-text text-transparent">
                   veille commerciale
-                </span>{" "}
-                en avantage concurrentiel
+                </span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
                 Notre IA analyse automatiquement 600+ sources de marchés publics français et européens, 
                 identifie les opportunités premium et vous alerte en temps réel.
               </p>
+
+              {/* Value Propositions */}
+              <div className="space-y-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span>600+ sources surveillées en temps réel</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span>Analyse IA avec 92% de précision</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span>Alertes instantanées via Slack/Email</span>
+                </div>
+              </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
                   className="bg-gradient-cta hover:shadow-glow text-white text-lg px-8 py-4 h-auto group transition-all duration-300 hover:scale-105"
@@ -219,20 +186,95 @@ const NewIndex = () => {
                   Accès gratuit 7 jours
                 </Button>
               </div>
-              
+
               {/* Trust indicators */}
-              <div className="mt-12 flex flex-wrap justify-center items-center gap-8 opacity-60">
+              <div className="flex flex-wrap gap-6 opacity-60">
                 <div className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-green-600" />
+                  <Shield className="w-4 h-4 text-green-600" />
                   <span className="text-sm">Conforme RGPD</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-green-600" />
+                  <CheckCircle className="w-4 h-4 text-green-600" />
                   <span className="text-sm">ISO 27001</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-blue-600" />
+                  <Users className="w-4 h-4 text-blue-600" />
                   <span className="text-sm">500+ entreprises</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Mockup/Visual */}
+            <div className="relative">
+              {/* Dashboard Preview Card */}
+              <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-200/50 p-8 relative overflow-hidden">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-gradient-cta rounded-lg flex items-center justify-center">
+                      <Target className="w-4 h-4 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900">Eligible.ai</h3>
+                      <p className="text-xs text-gray-500">Intelligence des marchés</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs text-gray-500">En direct</span>
+                  </div>
+                </div>
+
+                {/* Stats Cards */}
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4">
+                    <div className="text-2xl font-bold text-blue-600">2,4M€</div>
+                    <div className="text-xs text-blue-500">Marché détecté</div>
+                  </div>
+                  <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4">
+                    <div className="text-2xl font-bold text-emerald-600">98%</div>
+                    <div className="text-xs text-emerald-500">Score de match</div>
+                  </div>
+                </div>
+
+                {/* Mock opportunity */}
+                <div className="space-y-3">
+                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 border border-green-200">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <Award className="w-4 h-4 text-green-600" />
+                        <span className="text-sm font-medium text-green-700">Opportunité Premium</span>
+                      </div>
+                      <Badge className="bg-green-100 text-green-700 text-xs">Nouveau</Badge>
+                    </div>
+                    <h4 className="font-medium text-gray-900 text-sm mb-1">Système de gestion documentaire</h4>
+                    <p className="text-xs text-gray-600">Ministère de l'Éducation Nationale</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating notification cards */}
+              <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 hidden lg:block animate-fade-in">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                    <Zap className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-sm text-gray-900">Nouvelle alerte</div>
+                    <div className="text-xs text-gray-500">Il y a 2 minutes</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 hidden lg:block animate-fade-in">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <Brain className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-sm text-gray-900">Analyse terminée</div>
+                    <div className="text-xs text-blue-600 font-medium">Score: 94%</div>
+                  </div>
                 </div>
               </div>
             </div>
