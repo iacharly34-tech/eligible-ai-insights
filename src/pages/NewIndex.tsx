@@ -403,48 +403,54 @@ const NewIndex = () => {
               </div>
               
               {/* Floating Cards - Outside the image */}
-              {/* Top Right Card */}
-              <div className="absolute -top-8 -right-8 bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 max-w-xs animate-fade-in">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-gradient-cta rounded-lg flex items-center justify-center">
-                      <Brain className="w-4 h-4 text-white" />
+              {/* Top Right Card - Refonte visuelle */}
+              <div className="absolute -top-8 -right-8 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-6 max-w-sm animate-fade-in">
+                {/* Header avec logo et badge Live */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-gradient-cta rounded-xl flex items-center justify-center shadow-lg">
+                      <Brain className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 text-sm">Eligible.ai</h3>
-                      <p className="text-xs text-gray-500">Intelligence des marchés</p>
+                      <h3 className="font-bold text-gray-900 text-base">Eligible.ai</h3>
+                      <p className="text-sm text-gray-600">IA Analysis</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-1.5 bg-green-100 px-2.5 py-1 rounded-full">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-xs text-gray-500">Live</span>
+                    <span className="text-xs font-medium text-green-700">Live</span>
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-2 mb-3">
-                  <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-2">
-                    <div className="text-lg font-bold text-blue-600">2,4M€</div>
-                    <div className="text-xs text-blue-500">Marché détecté</div>
-                  </div>
-                  <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg p-2">
-                    <div className="text-lg font-bold text-emerald-600">98%</div>
-                    <div className="text-xs text-emerald-500">Score match</div>
+                {/* Statistiques clés - Bloc mis en avant */}
+                <div className="bg-gradient-to-r from-gray-50 to-gray-100/80 rounded-xl p-4 mb-4 border border-gray-200/60">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-blue-600 mb-1">2,4M€</div>
+                      <div className="text-xs font-medium text-gray-600">Marché détecté</div>
+                    </div>
+                    <div className="text-center border-l border-gray-300 pl-4">
+                      <div className="text-2xl font-bold text-emerald-600 mb-1">98%</div>
+                      <div className="text-xs font-medium text-gray-600">Score match</div>
+                    </div>
                   </div>
                 </div>
               </div>
               
-              {/* Bottom Left Card */}
-              <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 max-w-xs animate-fade-in">
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-3 border border-green-200">
-                  <div className="flex items-center justify-between mb-2">
+              {/* Bottom Left Card - Refonte visuelle */}
+              <div className="absolute -bottom-8 -left-8 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-5 max-w-sm animate-fade-in">
+                <div className="bg-gradient-to-r from-green-50/90 to-emerald-50/90 rounded-xl p-4 border border-green-200/60">
+                  <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
-                      <Award className="w-4 h-4 text-green-600" />
-                      <span className="text-sm font-medium text-green-700">Opportunité Premium</span>
+                      <div className="w-6 h-6 bg-green-600 rounded-lg flex items-center justify-center">
+                        <Award className="w-3.5 h-3.5 text-white" />
+                      </div>
+                      <span className="text-sm font-semibold text-green-800">Opportunité Premium</span>
                     </div>
-                    <Badge className="bg-green-100 text-green-700 text-xs">Nouveau</Badge>
+                    <Badge className="bg-green-600 text-white text-xs font-medium px-2 py-1">Nouveau</Badge>
                   </div>
-                  <h4 className="font-medium text-gray-900 text-sm mb-1">Système de gestion documentaire</h4>
-                  <p className="text-xs text-gray-600">Ministère de l'Éducation Nationale</p>
+                  <h4 className="font-semibold text-gray-900 text-base mb-2">Système de gestion documentaire</h4>
+                  <p className="text-sm text-gray-700 font-medium">Ministère de l'Éducation Nationale</p>
                 </div>
               </div>
               
