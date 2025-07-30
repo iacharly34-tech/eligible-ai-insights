@@ -3,6 +3,7 @@ import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Header } from "@/components/Header";
 import { 
   ArrowRight, 
   Database, 
@@ -110,34 +111,8 @@ const NewIndex = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
-      {/* Header */}
-      <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200/50 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg flex items-center justify-center">
-              <Target className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-              Eligible.ai
-            </span>
-          </div>
-          
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-gray-600 hover:text-emerald-600 transition-colors">Fonctionnalités</a>
-            <a href="#sources" className="text-gray-600 hover:text-emerald-600 transition-colors">Sources</a>
-            <a href="#benefits" className="text-gray-600 hover:text-emerald-600 transition-colors">Avantages</a>
-          </nav>
-          
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" className="hidden md:flex">
-              Se connecter
-            </Button>
-            <Button className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
-              Démo gratuite
-            </Button>
-          </div>
-        </div>
-      </header>
+      {/* Header - Clean minimal style like Loris.ai */}
+      <Header />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 relative overflow-hidden min-h-screen flex items-center">
