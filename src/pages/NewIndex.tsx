@@ -31,7 +31,7 @@ import { MacBookSimulation } from "@/components/MacBookSimulation";
 import aiCharacterMale from "@/assets/ai-character-male.png";
 import aiCharacterFemale from "@/assets/ai-character-female.png";
 import aiCharacterNeutral from "@/assets/ai-character-neutral.png";
-import aiCharacterTechMale from "@/assets/ai-character-tech-male.png";
+import aiCharacterTechMale from "@/assets/charly-no-background.png";
 import aiCharacterTechFemale from "@/assets/ai-character-tech-female.png";
 import aiCharacterFuturistic from "@/assets/ai-character-futuristic.png";
 
