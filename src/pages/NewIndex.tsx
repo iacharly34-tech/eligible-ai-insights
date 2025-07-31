@@ -35,7 +35,7 @@ import aiCharacterTechMale from "@/assets/charly-character-cutout.png";
 import aiCharacterTechFemale from "@/assets/ai-character-tech-female.png";
 import aiCharacterFuturistic from "@/assets/ai-character-futuristic.png";
 import { processCharlyImage } from "@/utils/processCharlyImage";
-import slackLogo from "@/assets/slack-logo-modern.png";
+import slackLogo from "@/assets/slack-logo-official.png";
 
 const NewIndex = () => {
   const [isVisible, setIsVisible] = useState(false);
