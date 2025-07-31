@@ -10,7 +10,7 @@ export const TestimonialsSection = () => {
       company: "TechFlow Solutions",
       avatar: "MD",
       rating: 5,
-      text: "Grâce à eligible.ai, nous avons multiplié par 3 notre taux de succès sur les marchés publics. L'IA détecte vraiment les bonnes opportunités.",
+      text: "Grâce à eligibly.ai, nous avons multiplié par 3 notre taux de succès sur les marchés publics. L'IA détecte vraiment les bonnes opportunités.",
       metrics: "+47% taux de succès"
     },
     {
@@ -45,7 +45,7 @@ export const TestimonialsSection = () => {
             <span className="text-primary">performance</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Découvrez comment nos clients utilisent eligible.ai pour décrocher plus de marchés publics 
+            Découvrez comment nos clients utilisent eligibly.ai pour décrocher plus de marchés publics 
             et développer leur activité.
           </p>
         </div>

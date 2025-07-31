@@ -110,7 +110,7 @@ const APropos = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200">
-              À propos d'Eligible.ai
+              À propos d'Eligibly.ai
             </Badge>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -147,7 +147,7 @@ const APropos = () => {
                 <span className="bg-gradient-highlight bg-clip-text text-transparent">vision</span>
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Chez Eligible.ai, nous croyons que l'intelligence artificielle peut transformer 
+                Chez Eligibly.ai, nous croyons que l'intelligence artificielle peut transformer 
                 radicalement la façon dont les entreprises découvrent et remportent des marchés publics.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -310,8 +310,8 @@ const APropos = () => {
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">Email</h3>
                 <p className="text-white/80 text-sm">
-                  contact@eligible.ai<br />
-                  support@eligible.ai
+                  contact@eligibly.ai<br />
+                  support@eligibly.ai
                 </p>
               </div>
               

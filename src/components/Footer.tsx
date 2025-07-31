@@ -51,7 +51,7 @@ export const Footer = () => {
                 <Brain className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                eligible.ai
+                eligibly.ai
               </span>
             </div>
             
@@ -63,7 +63,7 @@ export const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm text-muted-foreground">
                 <Mail className="w-4 h-4" />
-                <span>contact@eligible.ai</span>
+                <span>contact@eligibly.ai</span>
               </div>
               <div className="flex items-center space-x-3 text-sm text-muted-foreground">
                 <Phone className="w-4 h-4" />
@@ -117,7 +117,7 @@ export const Footer = () => {
         <div className="mt-16 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-muted-foreground">
-              © 2024 eligible.ai. Tous droits réservés.
+              © 2024 eligibly.ai. Tous droits réservés.
             </div>
             <div className="flex items-center space-x-6 text-sm text-muted-foreground">
               <span>Made with ❤️ in France</span>

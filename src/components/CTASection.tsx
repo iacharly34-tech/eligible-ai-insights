@@ -25,7 +25,7 @@ export const CTASection = () => {
           </h2>
 
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Rejoignez plus de 2000+ professionnels qui utilisent déjà eligible.ai 
+            Rejoignez plus de 2000+ professionnels qui utilisent déjà eligibly.ai 
             pour décrocher plus de marchés publics.
           </p>
 

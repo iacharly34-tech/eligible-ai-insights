@@ -62,7 +62,7 @@ export const Features = () => {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Des centaines d'experts des marchés publics utilisent eligible.ai au quotidien pour détecter, analyser et répondre aux appels d'offres.
+            Des centaines d'experts des marchés publics utilisent eligibly.ai au quotidien pour détecter, analyser et répondre aux appels d'offres.
           </p>
         </div>
 

@@ -20,7 +20,7 @@ export const Contact = () => {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Découvrez comment eligible.ai peut identifier les meilleures opportunités 
+            Découvrez comment eligibly.ai peut identifier les meilleures opportunités 
             d'appels d'offres pour votre entreprise.
           </p>
         </div>
@@ -86,7 +86,7 @@ export const Contact = () => {
               <div className="text-muted-foreground">
                 <div className="flex items-center space-x-2 mb-2">
                   <Mail className="w-4 h-4" />
-                  <span className="text-sm">contact@eligible.ai</span>
+                  <span className="text-sm">contact@eligibly.ai</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Phone className="w-4 h-4" />

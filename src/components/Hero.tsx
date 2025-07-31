@@ -75,7 +75,7 @@ export const Hero = () => {
             <div className="bg-card rounded-3xl shadow-luxury overflow-hidden border border-border/50 relative">
               <img 
                 src={heroImage} 
-                alt="Interface eligible.ai - Scoring IA des appels d'offres publics" 
+                alt="Interface eligibly.ai - Scoring IA des appels d'offres publics" 
                 className="w-full h-auto"
               />
               

@@ -35,7 +35,7 @@ export const ProcessAnimation = () => {
       code: `const scrapeBOAMP = async () => {
   const browser = await puppeteer.launch();
   const response = await fetch('/api/v1/offres', {
-    headers: { 'User-Agent': 'EligibleBot/2.0' }
+    headers: { 'User-Agent': 'EligiblyBot/2.0' }
   });
   return await response.json();
 };`,
@@ -276,7 +276,7 @@ export const ProcessAnimation = () => {
                             <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                             <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                            <span className="text-gray-400 text-xs ml-2">eligible-ai.js</span>
+                            <span className="text-gray-400 text-xs ml-2">eligibly-ai.js</span>
                           </div>
                           <pre className="text-green-400 leading-relaxed text-xs">
                             {isActive ? (

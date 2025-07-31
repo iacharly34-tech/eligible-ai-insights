@@ -68,7 +68,7 @@ export const SolutionsSection = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Que vous soyez une startup tech, un organisme de formation ou une ESN, 
-            eligible.ai s'adapte à vos besoins spécifiques.
+            eligibly.ai s'adapte à vos besoins spécifiques.
           </p>
         </div>
 

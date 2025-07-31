@@ -43,7 +43,7 @@ export const ProductSection = () => {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            De la détection à l'analyse, eligible.ai automatise votre veille commerciale 
+            De la détection à l'analyse, eligibly.ai automatise votre veille commerciale 
             et vous aide à identifier les meilleures opportunités de marchés publics.
           </p>
         </div>

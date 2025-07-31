@@ -27,7 +27,7 @@ const Ressources = () => {
       title: "Comment répondre efficacement à un appel d'offres public",
       description: "Les 10 étapes clés pour maximiser vos chances de succès dans les marchés publics.",
       readTime: "12 min",
-      author: "Équipe Eligible.ai",
+      author: "Équipe Eligibly.ai",
       date: "15 jan 2024",
       featured: true
     },
@@ -77,7 +77,7 @@ const Ressources = () => {
 
   const videos = [
     {
-      title: "Prise en main rapide d'Eligible.ai",
+      title: "Prise en main rapide d'Eligibly.ai",
       description: "Découvrez les fonctionnalités principales en 10 minutes.",
       duration: "10:32",
       views: "2.1k vues",
@@ -104,7 +104,7 @@ const Ressources = () => {
       title: "Les secrets d'une veille commerciale efficace",
       date: "25 jan 2024",
       time: "14h00 - 15h30",
-      speaker: "Expert Eligible.ai",
+      speaker: "Expert Eligibly.ai",
       status: "upcoming"
     },
     {
@@ -291,7 +291,7 @@ const Ressources = () => {
               Tutoriels{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">vidéo</span>
             </h2>
-            <p className="text-gray-600">Apprenez à utiliser Eligible.ai efficacement</p>
+            <p className="text-gray-600">Apprenez à utiliser Eligibly.ai efficacement</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">

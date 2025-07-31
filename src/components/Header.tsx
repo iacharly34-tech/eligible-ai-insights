@@ -23,8 +23,8 @@ export const Header = () => {
             <div className="w-7 h-7 bg-gradient-primary rounded-lg flex items-center justify-center" aria-hidden="true">
               <Brain className="w-4 h-4 text-white" />
             </div>
-            <a href="/" className="text-lg font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md" aria-label="Page d'accueil Eligible.ai">
-              eligible.ai
+            <a href="/" className="text-lg font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md" aria-label="Page d'accueil Eligibly.ai">
+              eligibly.ai
             </a>
           </div>
 

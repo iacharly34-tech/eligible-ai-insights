@@ -259,7 +259,7 @@ const Tarifs = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-white">
                 <Mail className="w-5 h-5 mr-2" />
-                contact@eligible.ai
+                contact@eligibly.ai
               </Button>
               <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-white">
                 <Phone className="w-5 h-5 mr-2" />

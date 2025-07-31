@@ -58,7 +58,7 @@ const Connexion = () => {
                       Connexion à votre espace
                     </h1>
                     <p className="text-gray-600">
-                      Accédez à votre dashboard Eligible.ai
+                      Accédez à votre dashboard Eligibly.ai
                     </p>
                   </div>
 

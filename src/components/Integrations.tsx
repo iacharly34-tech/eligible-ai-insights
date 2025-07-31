@@ -80,7 +80,7 @@ export const Integrations = () => {
             Intégrations
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold">
-            Connectez eligible.ai à{" "}
+            Connectez eligibly.ai à{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               vos outils favoris
             </span>

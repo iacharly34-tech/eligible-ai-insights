@@ -40,7 +40,7 @@ const Demo = () => {
       name: "Marie Dubois",
       company: "TechCorp Solutions",
       role: "Directrice Commerciale",
-      comment: "Eligible.ai a révolutionné notre approche des marchés publics. +300% d'opportunités qualifiées en 3 mois.",
+      comment: "Eligibly.ai a révolutionné notre approche des marchés publics. +300% d'opportunités qualifiées en 3 mois.",
       rating: 5,
       avatar: "MD"
     },
