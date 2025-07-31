@@ -35,6 +35,7 @@ import aiCharacterTechMale from "@/assets/charly-character-cutout.png";
 import aiCharacterTechFemale from "@/assets/ai-character-tech-female.png";
 import aiCharacterFuturistic from "@/assets/ai-character-futuristic.png";
 import { processCharlyImage } from "@/utils/processCharlyImage";
+import slackLogo from "@/assets/slack-logo-modern.png";
 
 const NewIndex = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -247,10 +248,10 @@ const NewIndex = () => {
               {/* BULLE 2 - Slack (apparition avec délai) */}
               <div className="absolute top-8 -left-8 bg-card rounded-xl shadow-elegant border border-border p-4 max-w-xs hidden lg:block" 
                    style={{ animation: 'fade-in 0.6s ease-out 1.5s both' }}>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
-                    <Zap className="w-4 h-4 text-white" />
-                  </div>
+                 <div className="flex items-center gap-3 mb-2">
+                   <div className="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden">
+                     <img src={slackLogo} alt="Slack" className="w-6 h-6 object-contain" />
+                   </div>
       <div>
                     <div className="font-semibold text-foreground text-sm">Slack</div>
                     <div className="text-xs text-muted-foreground">#marchés-publics</div>
