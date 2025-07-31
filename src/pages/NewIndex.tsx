@@ -188,7 +188,7 @@ const NewIndex = () => {
                   size="lg" 
                   className="bg-gradient-cta hover:shadow-glow text-white text-lg px-8 py-4 h-auto group transition-all duration-300 hover:scale-105"
                   role="button"
-                  aria-label="Voir la démonstration interactive d'Eligible.ai"
+                  aria-label="Voir la démonstration interactive d'Eligibly.ai"
                 >
                   <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                   Voir la démo interactive
@@ -220,7 +220,7 @@ const NewIndex = () => {
               <div className="relative flex justify-center">
                 <img 
                   src={charlyImageUrl}
-                  alt="Charly, l'assistant IA d'Eligible.ai, représenté par un personnage masculin en tenue décontractée moderne avec un hoodie" 
+                  alt="Charly, l'assistant IA d'Eligibly.ai, représenté par un personnage masculin en tenue décontractée moderne avec un hoodie" 
                   className="w-full h-auto max-w-xl transform scale-110"
                   loading="lazy"
                   decoding="async"
@@ -273,7 +273,7 @@ const NewIndex = () => {
                       <Target className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground text-sm">Eligible.ai</h3>
+                      <h3 className="font-semibold text-foreground text-sm">Eligibly.ai</h3>
                       <p className="text-xs text-muted-foreground">IA Analysis</p>
                     </div>
                   </div>
@@ -419,7 +419,7 @@ const NewIndex = () => {
                 <div className="flex justify-center">
                 <img 
                   src={charlyImageUrl} 
-                  alt="Charly, l'assistant IA d'Eligible.ai dans sa présentation complète montrant l'interface d'analyse des marchés publics" 
+                  alt="Charly, l'assistant IA d'Eligibly.ai dans sa présentation complète montrant l'interface d'analyse des marchés publics" 
                   className="w-full h-auto max-w-sm"
                   role="img"
                   loading="lazy"
@@ -438,7 +438,7 @@ const NewIndex = () => {
                       <Brain className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900 text-base">Eligible.ai</h3>
+                      <h3 className="font-bold text-gray-900 text-base">Eligibly.ai</h3>
                       <p className="text-sm text-gray-600">IA Analysis</p>
                     </div>
                   </div>
@@ -694,7 +694,7 @@ const NewIndex = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Pourquoi choisir{" "}
               <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                Eligible.ai
+                Eligibly.ai
               </span>
             </h2>
           </ScrollReveal>
@@ -770,7 +770,7 @@ const NewIndex = () => {
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                   <Target className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-xl font-bold">Eligible.ai</span>
+                <span className="text-xl font-bold">Eligibly.ai</span>
               </div>
               <p className="text-gray-400 mb-6">
                 L'intelligence artificielle au service de votre développement commercial.
@@ -810,7 +810,7 @@ const NewIndex = () => {
               <ul className="space-y-2 text-gray-400">
                 <li className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  contact@eligible.ai
+                  contact@eligibly.ai
                 </li>
                 <li className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
@@ -826,7 +826,7 @@ const NewIndex = () => {
           
           <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 Eligible.ai. Tous droits réservés.
+              © 2024 Eligibly.ai. Tous droits réservés.
             </p>
             <div className="flex gap-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
