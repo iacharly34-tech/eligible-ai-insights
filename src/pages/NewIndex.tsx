@@ -376,10 +376,10 @@ const NewIndex = () => {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 relative z-20">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-cta hover:shadow-glow text-white px-8 py-4 h-auto group transition-all duration-300 hover:scale-105"
+                  className="bg-gradient-cta hover:shadow-glow text-white px-8 py-4 h-auto group transition-all duration-300 hover:scale-105 shadow-xl"
                 >
                   Essayer gratuitement
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -388,7 +388,7 @@ const NewIndex = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="px-8 py-4 h-auto border-2 border-white/20 text-white hover:bg-white/10 transition-all duration-300"
+                  className="px-8 py-4 h-auto border-2 border-white/20 text-white hover:bg-white/10 transition-all duration-300 bg-background/10 backdrop-blur-md shadow-xl"
                 >
                   Réserver une démo
                 </Button>
