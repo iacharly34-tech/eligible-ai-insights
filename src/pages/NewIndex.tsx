@@ -430,7 +430,7 @@ const NewIndex = () => {
               
               {/* Floating Cards - Outside the image */}
               {/* Top Right Card - Refonte visuelle */}
-              <div className="absolute -top-6 -right-16 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-6 max-w-sm animate-fade-in">
+              <div className="absolute -top-4 -right-12 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-4 max-w-xs animate-fade-in">
                 {/* Header avec logo et badge Live */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
@@ -464,7 +464,7 @@ const NewIndex = () => {
               </div>
               
               {/* Bottom Left Card - Refonte visuelle */}
-              <div className="absolute -bottom-6 -left-16 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-5 max-w-sm animate-fade-in">
+              <div className="absolute -bottom-4 -left-12 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-4 max-w-xs animate-fade-in">
                 <div className="bg-gradient-to-r from-green-50/90 to-emerald-50/90 rounded-xl p-4 border border-green-200/60">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
@@ -481,7 +481,7 @@ const NewIndex = () => {
               </div>
               
               {/* Right Side Card */}
-              <div className="absolute top-1/2 -right-20 transform -translate-y-1/2 bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 hidden xl:block animate-fade-in">
+              <div className="absolute top-1/2 -right-16 transform -translate-y-1/2 bg-white rounded-2xl shadow-2xl border border-gray-100 p-3 hidden xl:block animate-fade-in">
                 <div className="text-center">
                   <div className="w-10 h-10 bg-gradient-cta rounded-full flex items-center justify-center mx-auto mb-2">
                     <Zap className="w-5 h-5 text-white" />
@@ -496,7 +496,7 @@ const NewIndex = () => {
               </div>
               
               {/* Left Side Notification */}
-              <div className="absolute top-1/4 -left-20 bg-white rounded-2xl shadow-2xl border border-gray-100 p-3 hidden xl:block animate-fade-in">
+              <div className="absolute top-1/4 -left-16 bg-white rounded-2xl shadow-2xl border border-gray-100 p-3 hidden xl:block animate-fade-in">
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 bg-orange-500 rounded-lg flex items-center justify-center">
                     <TrendingUp className="w-3 h-3 text-white" />
