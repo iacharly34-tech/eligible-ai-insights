@@ -2,16 +2,19 @@ import { Button } from "@/components/ui/button";
 import { Brain, Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const navigation = [
-    { name: "Produit", href: "/produit" },
-    { name: "Solutions", href: "/solutions" },
-    { name: "Tarifs", href: "/tarifs" },
-    { name: "Ressources", href: "/ressources" },
-    { name: "À propos", href: "/a-propos" },
+    { name: t('nav.product'), href: "/produit" },
+    { name: t('nav.solutions'), href: "/solutions" },
+    { name: t('nav.pricing'), href: "/tarifs" },
+    { name: t('nav.resources'), href: "/ressources" },
+    { name: t('nav.about'), href: "/a-propos" },
   ];
 
   return (
@@ -23,13 +26,13 @@ export const Header = () => {
             <div className="w-7 h-7 bg-gradient-primary rounded-lg flex items-center justify-center" aria-hidden="true">
               <Brain className="w-4 h-4 text-white" />
             </div>
-            <a href="/" className="text-lg font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md" aria-label="Page d'accueil Eligibly.ai">
+            <a href="/" className="text-lg font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md" aria-label={t('accessibility.home')}>
               eligibly.ai
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Navigation principale">
+          <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label={t('accessibility.navigation.main')}>
             {navigation.map((item) => (
               <a
                 key={item.name}
@@ -44,20 +47,21 @@ export const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-3">
+            <LanguageSwitcher />
             <a 
               href="/connexion"
               className="text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md"
-              aria-label="Se connecter à votre compte"
+              aria-label={t('accessibility.login')}
             >
-              Se connecter
+              {t('nav.login')}
             </a>
             <a href="/demo">
               <Button 
                 size="sm" 
                 className="bg-gradient-cta hover:shadow-glow text-white text-sm font-medium px-6 py-2 h-9 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                aria-label="Demander une démonstration gratuite"
+                aria-label={t('accessibility.demo')}
               >
-                Démo gratuite
+                {t('nav.demo')}
               </Button>
             </a>
           </div>
@@ -66,7 +70,7 @@ export const Header = () => {
           <button
             className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-label={isMenuOpen ? t('accessibility.menu.close') : t('accessibility.menu.open')}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
           >
@@ -87,7 +91,7 @@ export const Header = () => {
             className="py-6 space-y-1" 
             id="mobile-navigation"
             role="navigation" 
-            aria-label="Navigation mobile"
+            aria-label={t('accessibility.navigation.mobile')}
             aria-hidden={!isMenuOpen}
           >
             {navigation.map((item) => (
@@ -102,22 +106,25 @@ export const Header = () => {
               </a>
             ))}
             <div className="pt-4 px-4 space-y-3 border-t border-border/30 mt-4">
+              <div className="flex justify-center mb-3">
+                <LanguageSwitcher />
+              </div>
               <a 
                 href="/connexion"
                 className="block w-full text-left text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md"
                 tabIndex={isMenuOpen ? 0 : -1}
-                aria-label="Se connecter à votre compte"
+                aria-label={t('accessibility.login')}
               >
-                Se connecter
+                {t('nav.login')}
               </a>
               <a href="/demo">
                 <Button 
                   className="w-full bg-gradient-cta hover:shadow-glow text-white text-sm font-medium h-10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                   onClick={() => setIsMenuOpen(false)}
                   tabIndex={isMenuOpen ? 0 : -1}
-                  aria-label="Demander une démonstration gratuite"
+                  aria-label={t('accessibility.demo')}
                 >
-                  Démo gratuite
+                  {t('nav.demo')}
                 </Button>
               </a>
             </div>

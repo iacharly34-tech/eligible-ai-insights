@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/Header";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   ArrowRight, 
   Database, 
@@ -41,6 +42,7 @@ const NewIndex = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState<'france' | 'europe'>('france');
   const [charlyImageUrl, setCharlyImageUrl] = useState<string>(aiCharacterTechMale);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setIsVisible(true);
@@ -138,7 +140,7 @@ const NewIndex = () => {
 
       <main role="main">
         {/* Hero Section - Split Layout like Loris.ai */}
-        <section className="pt-20 pb-16 px-4 relative overflow-hidden min-h-[85vh] flex items-center" aria-label="Section héro">
+        <section className="pt-20 pb-16 px-4 relative overflow-hidden min-h-[85vh] flex items-center" aria-label={t('hero.badge')}>
         {/* Animated Background - Style Loris.ai */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Main gradient background */}
@@ -156,30 +158,30 @@ const NewIndex = () => {
             {/* Left Column - Text Content */}
             <div className={`space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Transformez votre{" "}
+                {t('hero.title')}{" "}
                 <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                  veille commerciale
-                </span>
+                  {t('hero.title.highlight')}
+                </span>{" "}
+                {t('hero.title.end')}
               </h1>
               
               <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-                Notre IA analyse automatiquement 600+ sources de marchés publics français et européens, 
-                identifie les opportunités premium et vous alerte en temps réel.
+                {t('hero.subtitle')}
               </p>
 
               {/* Value Propositions */}
               <div className="space-y-3 text-sm text-muted-foreground">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span>600+ sources surveillées en temps réel</span>
+                  <span>{t('hero.stats.opportunities')}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span>Analyse IA avec 92% de précision</span>
+                  <span>{t('hero.stats.precision')}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span>Alertes instantanées via Slack/Email</span>
+                  <span>{t('hero.stats.time')}</span>
                 </div>
               </div>
               
@@ -188,10 +190,10 @@ const NewIndex = () => {
                   size="lg" 
                   className="bg-gradient-cta hover:shadow-glow text-white text-lg px-8 py-4 h-auto group transition-all duration-300 hover:scale-105"
                   role="button"
-                  aria-label="Voir la démonstration interactive d'Eligibly.ai"
+                  aria-label={t('accessibility.demo')}
                 >
                   <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                  Voir la démo interactive
+                  {t('hero.cta.secondary')}
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 
@@ -200,10 +202,10 @@ const NewIndex = () => {
                   size="lg" 
                   className="text-lg px-8 py-4 h-auto border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
                   role="button"
-                  aria-label="Accéder à l'essai gratuit de 7 jours"
+                  aria-label={t('hero.cta.primary')}
                 >
                   <BarChart3 className="w-5 h-5 mr-2" />
-                  Accès gratuit 7 jours
+                  {t('hero.cta.primary')}
                 </Button>
               </div>
 
