@@ -34,13 +34,28 @@ import aiCharacterNeutral from "@/assets/ai-character-neutral.png";
 import aiCharacterTechMale from "@/assets/charly-character-cutout.png";
 import aiCharacterTechFemale from "@/assets/ai-character-tech-female.png";
 import aiCharacterFuturistic from "@/assets/ai-character-futuristic.png";
+import { processCharlyImage } from "@/utils/processCharlyImage";
 
 const NewIndex = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState<'france' | 'europe'>('france');
+  const [charlyImageUrl, setCharlyImageUrl] = useState<string>(aiCharacterTechMale);
 
   useEffect(() => {
     setIsVisible(true);
+    
+    // Process Charly image to remove background
+    const loadCharlyImage = async () => {
+      try {
+        const processedImageUrl = await processCharlyImage();
+        setCharlyImageUrl(processedImageUrl);
+      } catch (error) {
+        console.error('Failed to process Charly image:', error);
+        // Fallback to original image
+      }
+    };
+    
+    loadCharlyImage();
   }, []);
 
   const features = [
@@ -203,7 +218,7 @@ const NewIndex = () => {
               {/* Main Charly illustration - AGRANDI et centré */}
               <div className="relative flex justify-center">
                 <img 
-                  src={aiCharacterTechMale}
+                  src={charlyImageUrl}
                   alt="Charly, l'assistant IA d'Eligible.ai, représenté par un personnage masculin en tenue décontractée moderne avec un hoodie" 
                   className="w-full h-auto max-w-xl transform scale-110"
                   loading="lazy"
@@ -402,7 +417,7 @@ const NewIndex = () => {
                 {/* Charly Image - Center */}
                 <div className="flex justify-center">
                 <img 
-                  src={aiCharacterTechMale} 
+                  src={charlyImageUrl} 
                   alt="Charly, l'assistant IA d'Eligible.ai dans sa présentation complète montrant l'interface d'analyse des marchés publics" 
                   className="w-full h-auto max-w-sm"
                   role="img"
