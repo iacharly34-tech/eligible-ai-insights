@@ -8,24 +8,24 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Rolex-inspired luxury color palette */
-    --background: 0 0% 98%;
+    /* Luxury color palette with subtle tones */
+    --background: 258 20% 97%;          /* Très légèrement violet */
     --foreground: 0 0% 10%;
 
-    --card: 0 0% 100%;
+    --card: 258 30% 99%;                /* Cartes avec une teinte violette très subtile */
     --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 100%;
+    --popover: 258 30% 99%;
     --popover-foreground: 0 0% 10%;
 
     /* Harmonized Violet/Blue modern palette */
     --primary: 258 89% 66%;           /* Violet intense #A855F7 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 95%;
+    --secondary: 258 20% 94%;         /* Secondaire avec teinte violette */
     --secondary-foreground: 258 30% 25%;
 
-    --muted: 0 0% 96%;
+    --muted: 258 25% 95%;             /* Muted avec teinte violette */
     --muted-foreground: 258 15% 45%;
 
     --accent: 217 91% 60%;            /* Bleu intense #3B82F6 */
@@ -50,8 +50,8 @@ All colors MUST be HSL.
     /* Harmonized gradients - consistent violet to cyan spectrum */
     --gradient-primary: linear-gradient(135deg, hsl(258, 89%, 66%) 0%, hsl(217, 91%, 60%) 100%);
     --gradient-highlight: linear-gradient(135deg, hsl(258, 89%, 66%) 0%, hsl(180, 77%, 64%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(258, 20%, 98%) 0%, hsl(217, 15%, 96%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(258, 20%, 98%) 0%, hsl(0, 0%, 100%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(258, 25%, 97%) 0%, hsl(217, 20%, 96%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(258, 25%, 97%) 0%, hsl(258, 30%, 99%) 100%);
     --gradient-cta: linear-gradient(135deg, hsl(258, 89%, 66%) 0%, hsl(217, 91%, 60%) 100%);
 
     /* Modern shadows with violet tint */
