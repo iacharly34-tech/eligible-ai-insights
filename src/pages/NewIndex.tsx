@@ -747,14 +747,17 @@ const NewIndex = () => {
               <Play className="w-5 h-5 mr-2" />
               Démarrer l'essai gratuit
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-2 border-white text-white hover:bg-white hover:text-purple-600 text-lg px-10 py-4 h-auto"
+            <button 
+              className="flex items-center justify-center gap-2 rounded-xl text-lg font-semibold px-10 py-4"
+              style={{ 
+                backgroundColor: '#ffffff',
+                color: '#8b5cf6',
+                border: '2px solid #ffffff'
+              }}
             >
-              <Phone className="w-5 h-5 mr-2" />
-              Parler à un expert
-            </Button>
+              <Phone className="w-5 h-5" style={{ color: '#8b5cf6' }} />
+              <span style={{ color: '#8b5cf6' }}>Parler à un expert</span>
+            </button>
           </div>
           
           <p className="text-white/70 mt-6 text-sm">
