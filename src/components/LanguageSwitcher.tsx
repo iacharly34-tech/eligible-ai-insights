@@ -24,21 +24,18 @@ export const LanguageSwitcher = () => {
         <Button 
           variant="ghost" 
           size="sm"
-          className="gap-2 h-9 px-3 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          className="gap-2 h-9 px-3 bg-white/5 hover:bg-white/10 border border-white/20 backdrop-blur-sm transition-all duration-200 hover:border-white/30 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-full"
           aria-label={t('accessibility.language.switch')}
         >
-          <Globe className="w-4 h-4" aria-hidden="true" />
-          <span className="hidden sm:inline">
-            {currentLanguage?.label}
-          </span>
-          <span className="sm:hidden">
+          <Globe className="w-4 h-4 text-white/80" aria-hidden="true" />
+          <span className="text-white/90 font-medium text-sm">
             {currentLanguage?.label}
           </span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent 
         align="end" 
-        className="min-w-[160px] bg-white/95 backdrop-blur-sm border border-gray-200 shadow-lg z-50"
+        className="min-w-[100px] bg-white/95 backdrop-blur-md border border-white/20 shadow-xl rounded-xl z-50 p-1"
         sideOffset={5}
       >
         {languages.map((lang) => (
@@ -46,14 +43,17 @@ export const LanguageSwitcher = () => {
             key={lang.code}
             onClick={() => setLanguage(lang.code)}
             className={`
-              cursor-pointer px-3 py-2 hover:bg-gray-100 focus:bg-gray-100 transition-colors
-              ${language === lang.code ? 'bg-gray-50 font-medium' : ''}
+              cursor-pointer px-3 py-2 rounded-lg transition-all duration-200 text-center font-medium text-sm
+              ${language === lang.code 
+                ? 'bg-primary/10 text-primary shadow-sm' 
+                : 'hover:bg-gray-50 text-gray-700 hover:text-gray-900'
+              }
             `}
             role="menuitem"
           >
             {lang.label}
             {language === lang.code && (
-              <span className="ml-auto text-primary" aria-hidden="true">✓</span>
+              <span className="ml-2 text-primary" aria-hidden="true">●</span>
             )}
           </DropdownMenuItem>
         ))}
