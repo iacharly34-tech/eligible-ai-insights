@@ -135,7 +135,7 @@ const Ressources = () => {
               </span>
             </h1>
             
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-foreground/70 mb-8 max-w-3xl mx-auto leading-relaxed">
               Guides, tutoriels, analyses et bonnes pratiques pour maximiser 
               votre performance commerciale dans les marchés publics.
             </p>
@@ -158,7 +158,7 @@ const Ressources = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="mb-12">
             <h2 className="text-3xl font-bold mb-2">Article à la une</h2>
-            <p className="text-gray-600">Notre sélection de la semaine</p>
+            <p className="text-foreground/70">Notre sélection de la semaine</p>
           </div>
           
           <Card className="hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm overflow-hidden">
@@ -208,7 +208,7 @@ const Ressources = () => {
           <div className="flex items-center justify-between mb-12">
             <div>
               <h2 className="text-3xl font-bold mb-2">Derniers articles</h2>
-              <p className="text-gray-600">Conseils et analyses d'experts</p>
+              <p className="text-foreground/70">Conseils et analyses d'experts</p>
             </div>
             <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-white">
               Voir tous les articles
@@ -226,13 +226,13 @@ const Ressources = () => {
                     </Badge>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                       {article.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                    <p className="text-foreground/70 mb-4 text-sm leading-relaxed">
                       {article.description}
                     </p>
-                    <div className="flex items-center justify-between text-xs text-gray-500">
+                    <div className="flex items-center justify-between text-xs text-foreground/60">
                       <div className="flex items-center gap-3">
                         <span>{article.readTime}</span>
                         <span>{article.date}</span>
@@ -255,7 +255,7 @@ const Ressources = () => {
               Guides et{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">templates</span>
             </h2>
-            <p className="text-gray-600">Ressources pratiques à télécharger</p>
+            <p className="text-foreground/70">Ressources pratiques à télécharger</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -265,9 +265,9 @@ const Ressources = () => {
                   <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                     <guide.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{guide.title}</h3>
-                  <p className="text-gray-600 mb-6">{guide.description}</p>
-                  <div className="flex items-center justify-center gap-4 text-sm text-gray-500 mb-6">
+                   <h3 className="text-xl font-bold text-foreground mb-3">{guide.title}</h3>
+                  <p className="text-foreground/70 mb-6">{guide.description}</p>
+                  <div className="flex items-center justify-center gap-4 text-sm text-foreground/60 mb-6">
                     <span>{guide.pages}</span>
                     <span>•</span>
                     <span>{guide.format}</span>
@@ -291,7 +291,7 @@ const Ressources = () => {
               Tutoriels{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">vidéo</span>
             </h2>
-            <p className="text-gray-600">Apprenez à utiliser Eligibly.ai efficacement</p>
+            <p className="text-foreground/70">Apprenez à utiliser Eligibly.ai efficacement</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -305,11 +305,11 @@ const Ressources = () => {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+                     <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                       {video.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 text-sm">{video.description}</p>
-                    <div className="text-xs text-gray-500">{video.views}</div>
+                    <p className="text-foreground/70 mb-4 text-sm">{video.description}</p>
+                    <div className="text-xs text-foreground/60">{video.views}</div>
                   </div>
                 </CardContent>
               </Card>
