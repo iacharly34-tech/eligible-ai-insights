@@ -43,11 +43,16 @@ export const CTAFooter = ({
               {primaryButtonText}
             </Button>
             <button 
-              className="flex items-center justify-center gap-2 rounded-xl text-lg font-semibold px-10 py-4 bg-white text-gray-900 border-2 border-white"
-              style={{ color: '#1f2937', backgroundColor: '#ffffff' }}
+              className="flex items-center justify-center gap-2 rounded-xl text-lg font-semibold px-10 py-4"
+              style={{ 
+                backgroundColor: '#ffffff',
+                color: '#8b5cf6',
+                border: '2px solid #ffffff',
+                opacity: '1'
+              }}
             >
-              <Phone className="w-5 h-5 mr-2" />
-              {secondaryButtonText}
+              <Phone className="w-5 h-5" style={{ color: '#8b5cf6' }} />
+              <span style={{ color: '#8b5cf6' }}>{secondaryButtonText}</span>
             </button>
           </div>
           
