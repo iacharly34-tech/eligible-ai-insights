@@ -36,6 +36,7 @@ import {
   TRUST_INDICATORS,
   HERO_MESSAGES 
 } from "@/data/constants";
+import { StatsSources } from "@/components/StatsSources";
 
 const NewIndex = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -660,6 +661,9 @@ const NewIndex = () => {
           </p>
         </div>
       </section>
+
+      {/* Sources des statistiques */}
+      <StatsSources />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-16 px-4">
