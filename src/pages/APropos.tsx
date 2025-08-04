@@ -120,7 +120,7 @@ const APropos = () => {
               </span>
             </h1>
             
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-foreground/70 mb-8 max-w-3xl mx-auto leading-relaxed">
               Nous développons les outils d'intelligence artificielle les plus avancés 
               pour révolutionner la façon dont les entreprises appréhendent les marchés publics.
             </p>
@@ -130,7 +130,7 @@ const APropos = () => {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-foreground/70">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -146,26 +146,26 @@ const APropos = () => {
                 Notre{" "}
                 <span className="bg-gradient-highlight bg-clip-text text-transparent">vision</span>
               </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              <p className="text-lg text-foreground/70 mb-6 leading-relaxed">
                 Chez Eligibly.ai, nous croyons que l'intelligence artificielle peut transformer 
                 radicalement la façon dont les entreprises découvrent et remportent des marchés publics.
               </p>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
                 Notre objectif est de rendre cette technologie accessible à toutes les entreprises, 
                 des startups aux grands groupes, pour créer un écosystème plus équitable et efficient.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700">Simplifier l'accès aux marchés publics</span>
+                  <span className="text-foreground">Simplifier l'accès aux marchés publics</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700">Optimiser les chances de succès</span>
+                  <span className="text-foreground">Optimiser les chances de succès</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700">Créer de la valeur pour tous les acteurs</span>
+                  <span className="text-foreground">Créer de la valeur pour tous les acteurs</span>
                 </div>
               </div>
             </div>
@@ -191,7 +191,7 @@ const APropos = () => {
               Nos{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">valeurs</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
               Les principes qui guident chacune de nos décisions et innovations
             </p>
           </div>
@@ -205,10 +205,10 @@ const APropos = () => {
                       <value.icon className="w-7 h-7 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                         {value.title}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-foreground/70 leading-relaxed">
                         {value.description}
                       </p>
                     </div>
@@ -228,7 +228,7 @@ const APropos = () => {
               Notre{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">équipe</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
               Des experts passionnés par l'IA et les marchés publics
             </p>
           </div>
@@ -240,9 +240,9 @@ const APropos = () => {
                   <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold group-hover:scale-110 transition-transform">
                     {member.avatar}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{member.name}</h3>
                   <p className="text-primary font-medium mb-4">{member.role}</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">{member.description}</p>
+                  <p className="text-foreground/70 text-sm leading-relaxed">{member.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -258,7 +258,7 @@ const APropos = () => {
               Sécurité et{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">conformité</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
               Vos données sont notre priorité absolue. Nous respectons les plus hauts standards de sécurité.
             </p>
           </div>
@@ -270,8 +270,8 @@ const APropos = () => {
                   <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                     <cert.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{cert.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{cert.description}</p>
+                  <h3 className="text-lg font-bold text-foreground mb-3">{cert.title}</h3>
+                  <p className="text-foreground/70 text-sm leading-relaxed">{cert.description}</p>
                 </CardContent>
               </Card>
             ))}
