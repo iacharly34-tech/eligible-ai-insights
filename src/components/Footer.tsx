@@ -5,37 +5,37 @@ export const Footer = () => {
     {
       title: "Produit",
       links: [
-        { name: "Fonctionnalités", href: "#features" },
-        { name: "Intégrations", href: "#integrations" },
-        { name: "Tarifs", href: "#pricing" },
-        { name: "Démonstration", href: "#contact" }
+        { name: "Produit", href: "/produit" },
+        { name: "Solutions", href: "/solutions" },
+        { name: "Tarifs", href: "/tarifs" },
+        { name: "Démonstration", href: "/demo" }
       ]
     },
     {
       title: "Entreprise",
       links: [
-        { name: "À propos", href: "#about" },
-        { name: "Blog", href: "/blog" },
-        { name: "Carrières", href: "/careers" },
-        { name: "Presse", href: "/press" }
+        { name: "À propos", href: "/a-propos" },
+        { name: "Ressources", href: "/ressources" },
+        { name: "Connexion", href: "/connexion" },
+        { name: "Contact", href: "mailto:contact@eligibly.ai" }
       ]
     },
     {
       title: "Support",
       links: [
-        { name: "Centre d'aide", href: "/help" },
-        { name: "Documentation", href: "/docs" },
-        { name: "API", href: "/api" },
-        { name: "Statut", href: "/status" }
+        { name: "Démonstration", href: "/demo" },
+        { name: "Contact", href: "mailto:contact@eligibly.ai" },
+        { name: "Aide", href: "tel:+33123456789" },
+        { name: "Documentation", href: "/ressources" }
       ]
     },
     {
       title: "Légal",
       links: [
-        { name: "Confidentialité", href: "/privacy" },
-        { name: "Conditions", href: "/terms" },
-        { name: "Cookies", href: "/cookies" },
-        { name: "RGPD", href: "/gdpr" }
+        { name: "Confidentialité", href: "/ressources#privacy" },
+        { name: "Conditions", href: "/ressources#terms" },
+        { name: "Cookies", href: "/ressources#cookies" },
+        { name: "RGPD", href: "/ressources#gdpr" }
       ]
     }
   ];
