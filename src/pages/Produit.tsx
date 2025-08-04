@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { CTAFooter } from "@/components/CTAFooter";
 import { 
   Brain, 
   Database, 
@@ -162,28 +163,12 @@ const Produit = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-hero">
-        <div className="container mx-auto max-w-4xl text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Prêt à transformer votre veille commerciale ?
-            </h2>
-            <p className="text-xl text-white/80 mb-8">
-              Rejoignez plus de 2000+ professionnels qui utilisent déjà notre IA
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 py-4 h-auto group">
-                Commencer l'essai gratuit
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="lg" className="px-8 py-4 h-auto border-2 border-white text-white hover:bg-white/10">
-                Planifier une démo
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTAFooter 
+        title="Prêt à transformer votre veille commerciale ?"
+        subtitle="Rejoignez plus de 2000+ professionnels qui utilisent déjà notre IA"
+        primaryButtonText="Commencer l'essai gratuit"
+        secondaryButtonText="Planifier une démo"
+      />
     </div>
   );
 };

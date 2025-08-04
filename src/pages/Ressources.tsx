@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
+import { CTAFooter } from "@/components/CTAFooter";
 import { 
   BookOpen,
   Video,
@@ -135,7 +136,7 @@ const Ressources = () => {
               </span>
             </h1>
             
-            <p className="text-xl text-foreground/70 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
               Guides, tutoriels, analyses et bonnes pratiques pour maximiser 
               votre performance commerciale dans les marchés publics.
             </p>
@@ -158,7 +159,7 @@ const Ressources = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="mb-12">
             <h2 className="text-3xl font-bold mb-2">Article à la une</h2>
-            <p className="text-foreground/70">Notre sélection de la semaine</p>
+            <p className="text-muted-foreground">Notre sélection de la semaine</p>
           </div>
           
           <Card className="hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm overflow-hidden">
@@ -208,7 +209,7 @@ const Ressources = () => {
           <div className="flex items-center justify-between mb-12">
             <div>
               <h2 className="text-3xl font-bold mb-2">Derniers articles</h2>
-              <p className="text-foreground/70">Conseils et analyses d'experts</p>
+              <p className="text-muted-foreground">Conseils et analyses d'experts</p>
             </div>
             <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-white">
               Voir tous les articles
@@ -229,7 +230,7 @@ const Ressources = () => {
                     <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                       {article.title}
                     </h3>
-                    <p className="text-foreground/70 mb-4 text-sm leading-relaxed">
+                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                       {article.description}
                     </p>
                     <div className="flex items-center justify-between text-xs text-foreground/60">
@@ -255,7 +256,7 @@ const Ressources = () => {
               Guides et{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">templates</span>
             </h2>
-            <p className="text-foreground/70">Ressources pratiques à télécharger</p>
+            <p className="text-muted-foreground">Ressources pratiques à télécharger</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -266,7 +267,7 @@ const Ressources = () => {
                     <guide.icon className="w-8 h-8 text-white" />
                   </div>
                    <h3 className="text-xl font-bold text-foreground mb-3">{guide.title}</h3>
-                  <p className="text-foreground/70 mb-6">{guide.description}</p>
+                  <p className="text-muted-foreground mb-6">{guide.description}</p>
                   <div className="flex items-center justify-center gap-4 text-sm text-foreground/60 mb-6">
                     <span>{guide.pages}</span>
                     <span>•</span>
@@ -291,7 +292,7 @@ const Ressources = () => {
               Tutoriels{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">vidéo</span>
             </h2>
-            <p className="text-foreground/70">Apprenez à utiliser Eligibly.ai efficacement</p>
+            <p className="text-muted-foreground">Apprenez à utiliser Eligibly.ai efficacement</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -308,7 +309,7 @@ const Ressources = () => {
                      <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                       {video.title}
                     </h3>
-                    <p className="text-foreground/70 mb-4 text-sm">{video.description}</p>
+                    <p className="text-muted-foreground mb-4 text-sm">{video.description}</p>
                     <div className="text-xs text-foreground/60">{video.views}</div>
                   </div>
                 </CardContent>
@@ -318,36 +319,12 @@ const Ressources = () => {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="py-20 px-4 bg-gradient-hero">
-        <div className="container mx-auto max-w-4xl text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
-            <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Mail className="w-10 h-10 text-white" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Restez informé des dernières actualités
-            </h2>
-            <p className="text-xl text-white/80 mb-8">
-              Recevez nos conseils d'experts et analyses de marché directement dans votre boîte mail
-            </p>
-            <div className="max-w-md mx-auto">
-              <div className="flex gap-4">
-                <Input 
-                  placeholder="Votre email professionnel" 
-                  className="bg-white/90 backdrop-blur-sm border-0 h-12"
-                />
-                <Button className="bg-white text-primary hover:bg-gray-100 h-12 px-6">
-                  S'abonner
-                </Button>
-              </div>
-              <p className="text-white/60 text-sm mt-4">
-                Pas de spam. Désabonnement en un clic.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTAFooter 
+        title="Restez informé des dernières actualités"
+        subtitle="Recevez nos conseils d'experts et analyses de marché directement dans votre boîte mail"
+        primaryButtonText="S'abonner à la newsletter"
+        secondaryButtonText="Nous contacter"
+      />
     </div>
   );
 };

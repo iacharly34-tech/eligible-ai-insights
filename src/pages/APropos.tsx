@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { CTAFooter } from "@/components/CTAFooter";
 import { 
   Heart,
   Shield,
@@ -279,63 +280,12 @@ const APropos = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-20 px-4 bg-gradient-hero">
-        <div className="container mx-auto max-w-4xl">
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Rencontrons-nous
-              </h2>
-              <p className="text-xl text-white/80">
-                Une question ? Un projet ? Notre équipe est là pour vous accompagner.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2">Adresse</h3>
-                <p className="text-white/80 text-sm">
-                  42 Avenue de l'Innovation<br />
-                  75008 Paris, France
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Mail className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2">Email</h3>
-                <p className="text-white/80 text-sm">
-                  contact@eligibly.ai<br />
-                  support@eligibly.ai
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Phone className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2">Téléphone</h3>
-                <p className="text-white/80 text-sm">
-                  +33 1 23 45 67 89<br />
-                  Lun-Ven 9h-18h
-                </p>
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 py-4 h-auto group">
-                Planifier un rendez-vous
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTAFooter 
+        title="Rencontrons-nous"
+        subtitle="Une question ? Un projet ? Notre équipe est là pour vous accompagner."
+        primaryButtonText="Planifier un rendez-vous"
+        secondaryButtonText="Nous contacter"
+      />
     </div>
   );
 };

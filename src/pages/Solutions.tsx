@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { CTAFooter } from "@/components/CTAFooter";
 import { 
   Users, 
   Building2, 
@@ -102,7 +103,7 @@ const Solutions = () => {
               </span>
             </h1>
             
-            <p className="text-xl text-foreground/70 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
               Notre IA s'adapte aux besoins spécifiques de votre secteur et de votre 
               rôle pour maximiser votre performance commerciale.
             </p>
@@ -127,11 +128,11 @@ const Solutions = () => {
                           </div>
                           <div>
                              <h3 className="text-2xl font-bold text-foreground">{solution.title}</h3>
-                            <p className="text-foreground/70">{solution.subtitle}</p>
+                            <p className="text-muted-foreground">{solution.subtitle}</p>
                           </div>
                         </div>
                         
-                        <p className="text-foreground/70 mb-6 text-lg leading-relaxed">
+                        <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
                           {solution.description}
                         </p>
                         
@@ -139,7 +140,7 @@ const Solutions = () => {
                           {solution.benefits.map((benefit, i) => (
                             <div key={i} className="flex items-center gap-3">
                               <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                              <span className="text-foreground/70">{benefit}</span>
+                              <span className="text-muted-foreground">{benefit}</span>
                             </div>
                           ))}
                         </div>
@@ -180,7 +181,7 @@ const Solutions = () => {
               Cas d'usage{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">clients</span>
             </h2>
-            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Découvrez comment nos clients transforment leur performance commerciale
             </p>
           </div>
@@ -193,7 +194,7 @@ const Solutions = () => {
                     <useCase.icon className="w-8 h-8 text-white" />
                   </div>
                    <h3 className="text-xl font-bold text-foreground mb-4">{useCase.title}</h3>
-                  <p className="text-foreground/70 mb-6">{useCase.description}</p>
+                  <p className="text-muted-foreground mb-6">{useCase.description}</p>
                   <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 border border-green-200">
                     <p className="text-green-700 font-semibold">{useCase.stat}</p>
                   </div>
@@ -204,28 +205,12 @@ const Solutions = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-hero">
-        <div className="container mx-auto max-w-4xl text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Quelle que soit votre activité, nous avons la solution
-            </h2>
-            <p className="text-xl text-white/80 mb-8">
-              Planifiez une démo personnalisée selon votre secteur
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 py-4 h-auto group">
-                Découvrir ma solution
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="lg" className="px-8 py-4 h-auto border-2 border-white text-white hover:bg-white/10">
-                Planifier une démo
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTAFooter 
+        title="Quelle que soit votre activité, nous avons la solution"
+        subtitle="Planifiez une démo personnalisée selon votre secteur"
+        primaryButtonText="Découvrir ma solution"
+        secondaryButtonText="Planifier une démo"
+      />
     </div>
   );
 };
