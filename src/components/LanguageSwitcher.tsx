@@ -12,8 +12,8 @@ export const LanguageSwitcher = () => {
   const { language, setLanguage, t } = useLanguage();
 
   const languages = [
-    { code: 'fr', label: 'Fr', flag: '🇫🇷' },
-    { code: 'en', label: 'En', flag: '🇬🇧' }
+    { code: 'fr', label: 'Fr' },
+    { code: 'en', label: 'En' }
   ] as const;
 
   const currentLanguage = languages.find(lang => lang.code === language);
@@ -29,10 +29,10 @@ export const LanguageSwitcher = () => {
         >
           <Globe className="w-4 h-4" aria-hidden="true" />
           <span className="hidden sm:inline">
-            {currentLanguage?.flag} {currentLanguage?.label}
+            {currentLanguage?.label}
           </span>
           <span className="sm:hidden">
-            {currentLanguage?.flag}
+            {currentLanguage?.label}
           </span>
         </Button>
       </DropdownMenuTrigger>
@@ -51,7 +51,6 @@ export const LanguageSwitcher = () => {
             `}
             role="menuitem"
           >
-            <span className="mr-2" aria-hidden="true">{lang.flag}</span>
             {lang.label}
             {language === lang.code && (
               <span className="ml-auto text-primary" aria-hidden="true">✓</span>
