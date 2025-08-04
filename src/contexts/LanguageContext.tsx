@@ -82,10 +82,10 @@ const translations = {
     
     // Hero Section
     'hero.badge': 'Artificial Intelligence • Public Procurement',
-    'hero.title': 'Discover the',
+    'hero.title': 'Discover',
     'hero.title.highlight': 'public tenders',
-    'hero.title.end': 'that match you',
-    'hero.subtitle': 'Our AI analyzes 600+ official French and European sources to automatically identify business opportunities tailored to your activity.',
+    'hero.title.end': 'that match your business',
+    'hero.subtitle': 'Our AI analyses 600+ official French and European sources to automatically identify business opportunities tailored to your organisation.',
     'hero.cta.primary': 'Try for free',
     'hero.cta.secondary': 'Watch demo',
     'hero.stats.opportunities': '23 opportunities/day on average',
@@ -95,19 +95,19 @@ const translations = {
     // Features
     'features.title': 'Key',
     'features.title.highlight': 'features',
-    'features.subtitle': 'A complete suite of AI tools to transform your approach to public procurement',
+    'features.subtitle': 'A comprehensive suite of AI tools to transform your approach to public procurement',
     'features.multisource.title': 'Multi-Source Connection',
-    'features.multisource.desc': 'Automated access to 600+ official French and European sources',
+    'features.multisource.desc': 'Automated access to 600+ official French and European procurement sources',
     'features.ai.title': 'Advanced AI Analysis',
-    'features.ai.desc': 'Triple AI model (GPT-4, Claude, Mistral) for comprehensive analysis',
-    'features.scoring.title': 'Smart Scoring',
-    'features.scoring.desc': 'Automatic evaluation of relevance and potential of each tender',
+    'features.ai.desc': 'Triple AI model (GPT-4, Claude, Mistral) for comprehensive tender analysis',
+    'features.scoring.title': 'Intelligent Scoring',
+    'features.scoring.desc': 'Automatic evaluation of relevance and potential for each public tender',
     'features.notifications.title': 'Real-Time Notifications',
-    'features.notifications.desc': 'Instant alerts via Slack, email and custom integrations',
+    'features.notifications.desc': 'Instant alerts via Slack, email and bespoke integrations',
     
     // CTA Section
     'cta.title': 'Ready to transform your business intelligence?',
-    'cta.subtitle': 'Join 2000+ professionals already using our AI',
+    'cta.subtitle': 'Join over 2,000 professionals already using our AI',
     'cta.primary': 'Start free trial',
     'cta.secondary': 'Schedule a demo',
     
