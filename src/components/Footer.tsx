@@ -61,18 +61,18 @@ export const Footer = () => {
             </p>
 
             <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-sm text-muted-foreground">
-                <Mail className="w-4 h-4" />
-                <span>contact@eligibly.ai</span>
-              </div>
-              <div className="flex items-center space-x-3 text-sm text-muted-foreground">
-                <Phone className="w-4 h-4" />
-                <span>+33 1 23 45 67 89</span>
-              </div>
-              <div className="flex items-center space-x-3 text-sm text-muted-foreground">
-                <MapPin className="w-4 h-4" />
-                <span>Paris, France</span>
-              </div>
+                <div className="flex items-center space-x-3 text-sm text-foreground/70">
+                  <Mail className="w-4 h-4" />
+                  <span>contact@eligibly.ai</span>
+                </div>
+                <div className="flex items-center space-x-3 text-sm text-foreground/70">
+                  <Phone className="w-4 h-4" />
+                  <span>+33 1 23 45 67 89</span>
+                </div>
+                <div className="flex items-center space-x-3 text-sm text-foreground/70">
+                  <MapPin className="w-4 h-4" />
+                  <span>Paris, France</span>
+                </div>
             </div>
 
             <div className="flex space-x-4">
@@ -102,7 +102,7 @@ export const Footer = () => {
                   <li key={linkIndex}>
                     <a 
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                      className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200"
                     >
                       {link.name}
                     </a>
@@ -116,10 +116,10 @@ export const Footer = () => {
         {/* Bottom Section */}
         <div className="mt-16 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-muted-foreground">
+            <div className="text-sm text-foreground/70">
               © 2024 eligibly.ai. Tous droits réservés.
             </div>
-            <div className="flex items-center space-x-6 text-sm text-muted-foreground">
+            <div className="flex items-center space-x-6 text-sm text-foreground/70">
               <span>Made with ❤️ in France</span>
               <span>•</span>
               <span>Propulsé par l'IA</span>
