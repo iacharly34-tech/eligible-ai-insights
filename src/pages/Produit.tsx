@@ -73,7 +73,7 @@ const Produit = () => {
               </span>
             </h1>
             
-            <p className="text-xl text-foreground/70 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
               Découvrez comment notre intelligence artificielle révolutionne la veille commerciale
               des marchés publics avec une précision et une rapidité inégalées.
             </p>
@@ -100,7 +100,7 @@ const Produit = () => {
               Fonctionnalités{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">clés</span>
             </h2>
-            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Une suite complète d'outils IA pour transformer votre approche des marchés publics
             </p>
           </div>
@@ -117,7 +117,7 @@ const Produit = () => {
                       <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
                         {feature.title}
                       </h3>
-                      <p className="text-foreground/70 mb-4 leading-relaxed">
+                      <p className="text-muted-foreground mb-4 leading-relaxed">
                         {feature.description}
                       </p>
                       <div className="flex flex-wrap gap-2">
@@ -154,7 +154,7 @@ const Produit = () => {
                     <benefit.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-primary mb-2">{benefit.title}</h3>
-                  <p className="text-foreground/70">{benefit.desc}</p>
+                  <p className="text-muted-foreground">{benefit.desc}</p>
                 </CardContent>
               </Card>
             ))}

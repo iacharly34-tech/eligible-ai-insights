@@ -9,11 +9,11 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Luxury color palette with subtle tones */
-    --background: 258 20% 97%;          /* Très légèrement violet */
-    --foreground: 0 0% 10%;
+    --background: 0 0% 100%;            /* Fond blanc pur */
+    --foreground: 0 0% 20%;             /* Texte très sombre pour contraste maximum */
 
-    --card: 258 30% 99%;                /* Cartes avec une teinte violette très subtile */
-    --card-foreground: 0 0% 10%;
+    --card: 0 0% 100%;                  /* Cartes blanc pur */
+    --card-foreground: 0 0% 20%;        /* Texte sombre sur cartes */
 
     --popover: 258 30% 99%;
     --popover-foreground: 0 0% 10%;
@@ -22,11 +22,11 @@ All colors MUST be HSL.
     --primary: 258 89% 66%;           /* Violet intense #A855F7 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 258 20% 85%;         /* Secondaire plus contrasté */
-    --secondary-foreground: 258 50% 25%;  /* Texte beaucoup plus foncé pour contraste */
+    --secondary: 0 0% 95%;              /* Gris très clair */
+    --secondary-foreground: 0 0% 20%;   /* Texte très sombre pour maximum contraste */
 
-    --muted: 258 20% 88%;             /* Muted plus contrasté */
-    --muted-foreground: 258 25% 30%;     /* Texte muted beaucoup plus foncé */
+    --muted: 0 0% 92%;                  /* Gris clair */
+    --muted-foreground: 0 0% 25%;       /* Texte sombre pour bon contraste */
 
     --accent: 217 91% 60%;            /* Bleu intense #3B82F6 */
     --accent-foreground: 0 0% 100%;
