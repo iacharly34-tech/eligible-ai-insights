@@ -159,12 +159,12 @@ const NewIndex = () => {
                 {/* Métriques principales */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-primary/10 rounded-xl p-4 border border-primary/20">
-                    <div className="text-2xl font-bold text-primary">23</div>
+                    <div className="text-2xl font-bold text-primary">15+</div>
                     <div className="text-xs text-primary/70">Opportunités détectées</div>
                   </div>
-                  <div className="bg-success/10 rounded-xl p-4 border border-success/20">
-                    <div className="text-2xl font-bold text-success">98%</div>
-                    <div className="text-xs text-success/70">Précision IA</div>
+                  <div className="bg-accent/10 rounded-xl p-4 border border-accent/20">
+                    <div className="text-2xl font-bold text-accent">94%</div>
+                    <div className="text-xs text-accent/70">Précision IA</div>
                   </div>
                 </div>
 
@@ -172,37 +172,37 @@ const NewIndex = () => {
                 <div className="space-y-3">
                   <h4 className="text-sm font-medium text-foreground flex items-center gap-2">
                     <Target className="w-4 h-4 text-primary" />
-                    Opportunités premium
+                    Opportunités récentes
                   </h4>
                   
                   <div className="space-y-2">
                     {/* Opportunité 1 */}
-                    <div className="bg-success/5 rounded-lg p-3 border border-success/20 animate-fade-in">
+                    <div className="bg-primary/5 rounded-lg p-3 border border-primary/20 animate-fade-in">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs font-medium text-success">• 2,4M€</span>
-                        <Badge variant="outline" className="text-xs px-2 py-0.5 text-success border-success/30">Score: 98%</Badge>
+                        <span className="text-xs font-medium text-primary">• 2,4M€</span>
+                        <Badge variant="outline" className="text-xs px-2 py-0.5 text-primary border-primary/30">Score: 94%</Badge>
                       </div>
                       <h5 className="text-sm font-medium text-foreground">Système de gestion documentaire</h5>
                       <p className="text-xs text-muted-foreground">Ministère de l'Éducation</p>
                     </div>
 
                     {/* Opportunité 2 */}
-                    <div className="bg-primary/5 rounded-lg p-3 border border-primary/20" style={{ animation: 'fade-in 0.6s ease-out 0.5s both' }}>
+                    <div className="bg-accent/5 rounded-lg p-3 border border-accent/20" style={{ animation: 'fade-in 0.6s ease-out 0.5s both' }}>
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs font-medium text-primary">• 850K€</span>
-                        <Badge variant="outline" className="text-xs px-2 py-0.5 text-primary border-primary/30">Score: 94%</Badge>
+                        <span className="text-xs font-medium text-accent">• 850K€</span>
+                        <Badge variant="outline" className="text-xs px-2 py-0.5 text-accent border-accent/30">Score: 91%</Badge>
                       </div>
                       <h5 className="text-sm font-medium text-foreground">Infrastructure cloud</h5>
                       <p className="text-xs text-muted-foreground">Région Île-de-France</p>
                     </div>
 
                     {/* Opportunité 3 */}
-                    <div className="bg-accent/5 rounded-lg p-3 border border-accent/20" style={{ animation: 'fade-in 0.6s ease-out 1s both' }}>
+                    <div className="bg-cyan-soft/5 rounded-lg p-3 border border-cyan-soft/20" style={{ animation: 'fade-in 0.6s ease-out 1s both' }}>
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs font-medium text-accent">• 1,2M€</span>
-                        <Badge variant="outline" className="text-xs px-2 py-0.5 text-accent border-accent/30">Score: 91%</Badge>
+                        <span className="text-xs font-medium text-cyan-soft">• 1,2M€</span>
+                        <Badge variant="outline" className="text-xs px-2 py-0.5 text-cyan-soft border-cyan-soft/30">Score: 89%</Badge>
                       </div>
-                      <h5 className="text-sm font-medium text-foreground">Plateorme e-learning</h5>
+                      <h5 className="text-sm font-medium text-foreground">Plateforme e-learning</h5>
                       <p className="text-xs text-muted-foreground">Université de Lyon</p>
                     </div>
                   </div>
@@ -436,12 +436,7 @@ const NewIndex = () => {
               <ScrollReveal key={index} delay={index * 100}>
                 <Card className="group hover:shadow-glow transition-all duration-500 hover:scale-105 border-0 bg-white/50 backdrop-blur-sm">
                   <CardContent className="p-8 text-center">
-                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform ${
-                      feature.color === 'blue' ? 'bg-gradient-to-r from-accent to-primary' :
-                      feature.color === 'purple' ? 'bg-gradient-primary' :
-                      feature.color === 'green' ? 'bg-gradient-to-r from-cyan-soft to-accent' :
-                      'bg-gradient-highlight'
-                    }`}>
+                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform bg-gradient-primary">
                       <feature.icon className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">

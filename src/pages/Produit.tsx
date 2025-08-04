@@ -17,8 +17,8 @@ const Produit = () => {
     ...feature,
     // Ajout de détails techniques spécifiques pour la page Produit
     technicalDetails: feature.details,
-    integrations: feature.color === 'orange' ? ['Slack', 'Microsoft Teams', 'Email', 'Webhooks'] : [],
-    apiAccess: feature.color === 'blue' ? true : false
+    integrations: feature.title === "Alertes Instantanées" ? ['Slack', 'Microsoft Teams', 'Email', 'Webhooks'] : [],
+    apiAccess: feature.title === "Surveillance Multi-Sources" ? true : false
   }));
 
   return (

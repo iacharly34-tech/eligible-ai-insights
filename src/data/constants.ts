@@ -13,56 +13,58 @@ import {
 
 // ============= STATISTIQUES UNIFIÉES =============
 export const COMPANY_STATS = {
-  clients: "2000+",
-  enterprises: "500+", 
-  sources: "600+",
-  precision: "98%",
-  timeSaved: "95%",
-  opportunitiesPerDay: "23",
-  successRate: "47%"
+  clients: "500+",
+  enterprises: "150+", 
+  sources: "200+",
+  precision: "94%",
+  timeSaved: "6h",
+  opportunitiesPerDay: "15+",
+  successRate: "+35%",
+  marketValue: "80Md€",
+  dailyTenders: "300+"
 } as const;
 
 // ============= FONCTIONNALITÉS CORE =============
 export const CORE_FEATURES = [
   {
     icon: Database,
-    title: "Connexion Multi-Sources",
-    description: "Accès automatisé à 600+ sources officielles françaises et européennes",
-    shortDesc: "600+ sources surveillées automatiquement",
-    details: ["BOAMP", "Marchés Publics", "TED eTendering", "Simap", "Find a Tender", "Vergabe24"],
-    color: "blue",
+    title: "Surveillance Multi-Sources",
+    description: "Accès automatisé à plus de 200 sources officielles françaises et européennes",
+    shortDesc: "200+ sources surveillées automatiquement",
+    details: ["BOAMP", "Marchés Publics", "TED eTendering", "PLACE", "Profils acheteurs", "Sites régionaux"],
+    color: "primary",
     stat: COMPANY_STATS.sources,
-    benefit: "Coverage exhaustive du marché français et européen"
+    benefit: "Couverture exhaustive du marché français et européen"
   },
   {
     icon: Brain,
-    title: "Analyse IA Avancée",
-    description: "Triple modèle IA (GPT-4, Claude, Mistral) pour une analyse exhaustive et précise",
-    shortDesc: "IA multi-modèles pour une précision maximale",
-    details: ["Analyse sémantique", "Scoring intelligent", "Recommandations expertes", "Machine Learning"],
-    color: "purple", 
+    title: "Analyse IA Intelligente",
+    description: "Analyse sémantique avancée pour détecter les opportunités les plus pertinentes",
+    shortDesc: "IA avancée pour une détection précise",
+    details: ["Analyse sémantique", "Scoring intelligent", "Filtrage automatique", "Apprentissage continu"],
+    color: "primary", 
     stat: COMPANY_STATS.precision,
-    benefit: "Analyse fine grâce aux modèles multi-LLM"
+    benefit: "Précision maximale dans la détection d'opportunités"
   },
   {
     icon: Target,
-    title: "Scoring Intelligent",
-    description: "Évaluation automatique de la pertinence et du potentiel de chaque marché public",
-    shortDesc: "Priorisation automatique des meilleures opportunités",
-    details: ["Critères personnalisés", "Algorithme adaptatif", "Score de compatibilité", "Ranking automatique"],
-    color: "green",
+    title: "Détection Ciblée",
+    description: "Identification automatique des appels d'offres correspondant à votre expertise",
+    shortDesc: "Ciblage précis selon vos critères métier",
+    details: ["Critères personnalisés", "Matching intelligent", "Score de compatibilité", "Priorisation automatique"],
+    color: "primary",
     stat: COMPANY_STATS.opportunitiesPerDay,
-    benefit: "Détection intelligente des marchés à fort potentiel"
+    benefit: "Focus sur les marchés à fort potentiel"
   },
   {
     icon: Zap,
-    title: "Notifications Temps Réel",
-    description: "Alertes instantanées via Slack, email et intégrations personnalisées",
-    shortDesc: "Alertes multi-canaux instantanées",
-    details: ["Slack", "Email", "Microsoft Teams", "API", "Webhooks", "SMS"],
-    color: "orange",
-    stat: "Temps réel",
-    benefit: "Réactivité maximale sur les opportunités"
+    title: "Alertes Instantanées",
+    description: "Notifications en temps réel via vos canaux de communication préférés",
+    shortDesc: "Notifications multi-canaux en temps réel",
+    details: ["Slack", "Email", "Microsoft Teams", "Mobile", "API", "Webhooks"],
+    color: "primary",
+    stat: "Instantané",
+    benefit: "Réactivité maximale sur les nouvelles opportunités"
   }
 ] as const;
 
@@ -70,31 +72,35 @@ export const CORE_FEATURES = [
 export const MEASURABLE_BENEFITS = [
   {
     icon: Clock,
-    title: `${COMPANY_STATS.timeSaved} de temps économisé`,
-    description: "Automatisation complète de la veille manuelle",
+    title: "Économisez du temps précieux",
+    description: `Automatisez votre veille et économisez ${COMPANY_STATS.timeSaved} par semaine`,
     stat: COMPANY_STATS.timeSaved,
-    color: "blue"
+    color: "primary",
+    details: "Fini la veille manuelle chronophage"
+  },
+  {
+    icon: Target,
+    title: "Augmentez votre taux de succès",
+    description: `${COMPANY_STATS.successRate} d'amélioration du taux de réponse aux appels d'offres`,
+    stat: COMPANY_STATS.successRate,
+    color: "primary",
+    details: "Ciblez mieux, gagnez plus"
   },
   {
     icon: Globe,
-    title: `${COMPANY_STATS.sources} sources surveillées`,
-    description: "Coverage exhaustive du marché français et européen",
+    title: "Surveillez tout le marché",
+    description: `${COMPANY_STATS.sources} sources officielles surveillées automatiquement`,
     stat: COMPANY_STATS.sources,
-    color: "green"
+    color: "primary",
+    details: "Couverture complète France & Europe"
   },
   {
     icon: Star,
-    title: `${COMPANY_STATS.opportunitiesPerDay} opportunités premium/jour`,
-    description: "Détection intelligente des marchés à fort potentiel",
+    title: "Détectez plus d'opportunités",
+    description: `${COMPANY_STATS.opportunitiesPerDay} opportunités qualifiées détectées quotidiennement`,
     stat: COMPANY_STATS.opportunitiesPerDay,
-    color: "purple"
-  },
-  {
-    icon: Brain,
-    title: `${COMPANY_STATS.precision} de précision IA`,
-    description: "Analyse fine grâce aux modèles multi-LLM",
-    stat: COMPANY_STATS.precision,
-    color: "orange"
+    color: "primary",
+    details: "Identification intelligente et personnalisée"
   }
 ] as const;
 
@@ -159,19 +165,19 @@ export const HERO_MESSAGES = {
     title: "Transformez votre veille commerciale avec l'",
     highlight: "Intelligence Artificielle",
     end: "des marchés publics",
-    subtitle: `Rejoignez les ${COMPANY_STATS.enterprises} entreprises qui font confiance à notre IA pour identifier automatiquement les meilleures opportunités de marchés publics avec ${COMPANY_STATS.precision} de précision.`,
+    subtitle: `Rejoignez les ${COMPANY_STATS.enterprises} entreprises qui utilisent notre IA pour détecter automatiquement les meilleures opportunités de marchés publics avec ${COMPANY_STATS.precision} de précision.`,
     features: [
-      `${COMPANY_STATS.opportunitiesPerDay} opportunités premium détectées par jour`,
-      `${COMPANY_STATS.precision} de précision grâce à notre IA multi-modèles`,
-      `${COMPANY_STATS.timeSaved} de temps économisé en automatisation`
+      `${COMPANY_STATS.opportunitiesPerDay} opportunités qualifiées détectées quotidiennement`,
+      `${COMPANY_STATS.precision} de précision grâce à notre IA avancée`,
+      `${COMPANY_STATS.timeSaved} économisées par semaine en automatisation`
     ]
   },
   product: {
     title: "Notre plateforme IA complète",
-    subtitle: "Découvrez comment notre intelligence artificielle révolutionne la veille commerciale des marchés publics avec une précision et une rapidité inégalées."
+    subtitle: "Découvrez comment notre intelligence artificielle révolutionne la veille commerciale des marchés publics avec une efficacité et une précision remarquables."
   },
   solutions: {
-    title: "Une solution pour chaque profil métier", 
-    subtitle: "Notre IA s'adapte aux besoins spécifiques de votre secteur et de votre rôle pour maximiser votre performance commerciale."
+    title: "Une solution adaptée à chaque profil métier", 
+    subtitle: "Notre IA s'adapte aux besoins spécifiques de votre secteur et optimise votre performance commerciale sur les marchés publics."
   }
 } as const;
