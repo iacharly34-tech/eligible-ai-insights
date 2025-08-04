@@ -139,16 +139,85 @@ const NewIndex = () => {
               </div>
             </div>
 
-            {/* Right Column - Placeholder ou contenu minimal */}
+            {/* Right Column - Dashboard de suivi des appels d'offres */}
             <div className="relative">
-              {/* Placeholder pour futures fonctionnalités */}
-              <div className="bg-card/40 backdrop-blur-sm rounded-3xl p-8 border border-border/30 text-center">
-                <div className="space-y-4">
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto">
-                    <TrendingUp className="w-8 h-8 text-primary" />
+              {/* Dashboard Container */}
+              <div className="bg-card/90 backdrop-blur-sm rounded-3xl shadow-luxury border border-border/50 p-6 space-y-6">
+                
+                {/* Header Dashboard */}
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">Dashboard Eligibly.ai</h3>
+                    <p className="text-sm text-muted-foreground">Suivi en temps réel</p>
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground">Interface démonstration</h3>
-                  <p className="text-sm text-muted-foreground">Découvrez la puissance de notre IA en action</p>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
+                    <span className="text-xs text-success font-medium">Live</span>
+                  </div>
+                </div>
+
+                {/* Métriques principales */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-primary/10 rounded-xl p-4 border border-primary/20">
+                    <div className="text-2xl font-bold text-primary">23</div>
+                    <div className="text-xs text-primary/70">Opportunités détectées</div>
+                  </div>
+                  <div className="bg-success/10 rounded-xl p-4 border border-success/20">
+                    <div className="text-2xl font-bold text-success">98%</div>
+                    <div className="text-xs text-success/70">Précision IA</div>
+                  </div>
+                </div>
+
+                {/* Opportunités récentes */}
+                <div className="space-y-3">
+                  <h4 className="text-sm font-medium text-foreground flex items-center gap-2">
+                    <Target className="w-4 h-4 text-primary" />
+                    Opportunités premium
+                  </h4>
+                  
+                  <div className="space-y-2">
+                    {/* Opportunité 1 */}
+                    <div className="bg-success/5 rounded-lg p-3 border border-success/20 animate-fade-in">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-medium text-success">• 2,4M€</span>
+                        <Badge variant="outline" className="text-xs px-2 py-0.5 text-success border-success/30">Score: 98%</Badge>
+                      </div>
+                      <h5 className="text-sm font-medium text-foreground">Système de gestion documentaire</h5>
+                      <p className="text-xs text-muted-foreground">Ministère de l'Éducation</p>
+                    </div>
+
+                    {/* Opportunité 2 */}
+                    <div className="bg-primary/5 rounded-lg p-3 border border-primary/20" style={{ animation: 'fade-in 0.6s ease-out 0.5s both' }}>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-medium text-primary">• 850K€</span>
+                        <Badge variant="outline" className="text-xs px-2 py-0.5 text-primary border-primary/30">Score: 94%</Badge>
+                      </div>
+                      <h5 className="text-sm font-medium text-foreground">Infrastructure cloud</h5>
+                      <p className="text-xs text-muted-foreground">Région Île-de-France</p>
+                    </div>
+
+                    {/* Opportunité 3 */}
+                    <div className="bg-accent/5 rounded-lg p-3 border border-accent/20" style={{ animation: 'fade-in 0.6s ease-out 1s both' }}>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-medium text-accent">• 1,2M€</span>
+                        <Badge variant="outline" className="text-xs px-2 py-0.5 text-accent border-accent/30">Score: 91%</Badge>
+                      </div>
+                      <h5 className="text-sm font-medium text-foreground">Plateorme e-learning</h5>
+                      <p className="text-xs text-muted-foreground">Université de Lyon</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Stats en temps réel */}
+                <div className="flex items-center justify-between pt-2 border-t border-border/30">
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <Clock className="w-3 h-3" />
+                    <span>Dernière analyse: il y a 2 min</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-primary">
+                    <TrendingUp className="w-3 h-3" />
+                    <span>+6% cette semaine</span>
+                  </div>
                 </div>
               </div>
             </div>
