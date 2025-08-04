@@ -12,8 +12,8 @@ export const LanguageSwitcher = () => {
   const { language, setLanguage, t } = useLanguage();
 
   const languages = [
-    { code: 'fr', label: 'Français', flag: '🇫🇷' },
-    { code: 'en', label: 'English', flag: '🇺🇸' }
+    { code: 'fr', label: 'Fr', flag: '🇫🇷' },
+    { code: 'en', label: 'En', flag: '🇺🇸' }
   ] as const;
 
   const currentLanguage = languages.find(lang => lang.code === language);
