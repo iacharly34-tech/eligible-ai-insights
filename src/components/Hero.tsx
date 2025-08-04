@@ -23,9 +23,8 @@ export const Hero = () => {
           </Badge>
         </div>
 
-        {/* Main Content - Split Layout */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Text Content */}
+        {/* Main Content - Centered Layout */}
+        <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-8">
             <div className="text-sm font-medium text-muted-foreground tracking-widest uppercase">
               {t('hero.badge')}
@@ -39,12 +38,12 @@ export const Hero = () => {
               {t('hero.title.end')}
             </h1>
             
-            <p className="text-lg text-muted-foreground leading-relaxed font-light max-w-xl">
+            <p className="text-lg text-muted-foreground leading-relaxed font-light max-w-2xl mx-auto">
               {t('hero.subtitle')}
             </p>
 
             {/* Value Propositions */}
-            <div className="space-y-3 text-sm text-muted-foreground">
+            <div className="space-y-3 text-sm text-muted-foreground max-w-md mx-auto">
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                 <span>{t('hero.stats.opportunities')}</span>
@@ -59,7 +58,7 @@ export const Hero = () => {
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="premium" size="xl" className="text-base px-12 py-4 group">
                 {t('hero.cta.primary')}
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -72,58 +71,6 @@ export const Hero = () => {
 
             <div className="text-xs text-muted-foreground">
               ✨ Aucune carte bancaire requise • Essai gratuit 14 jours
-            </div>
-          </div>
-
-          {/* Right Column - Dashboard Interface */}
-          <div className="relative">
-            <div className="hero-image-container bg-card rounded-3xl shadow-luxury overflow-hidden border border-border/50 relative">
-              <OptimizedImage
-                src={heroImage} 
-                alt={t('accessibility.images.hero')}
-                className="w-full h-full object-cover"
-                priority={true}
-                width={600}
-                height={400}
-              />
-              
-              {/* Stats overlay sur l'image */}
-              <div className="absolute top-4 left-4 right-4 flex justify-between items-start">
-                <div className="bg-card/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-border/50">
-                  <div className="text-2xl font-bold text-primary">98%</div>
-                  <div className="text-xs text-muted-foreground">Précision IA</div>
-                </div>
-                
-                <div className="bg-card/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-border/50">
-                  <div className="text-2xl font-bold text-primary">2,4M€</div>
-                  <div className="text-xs text-muted-foreground">Marché détecté</div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Floating cards repositionnées - éviter les superpositions */}
-            <div className="absolute top-4 -right-4 bg-card rounded-2xl p-4 shadow-luxury border border-border/30 hidden lg:block animate-fade-in z-10">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <Target className="w-4 h-4 text-primary-foreground" />
-                </div>
-                <div>
-                  <div className="font-medium text-xs text-foreground">Nouvelle opportunité</div>
-                  <div className="text-xs text-muted-foreground">Ministère Éducation</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute bottom-4 -left-4 bg-card rounded-2xl p-4 shadow-luxury border border-border/30 hidden lg:block animate-fade-in z-10">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <Brain className="w-4 h-4 text-primary-foreground" />
-                </div>
-                <div>
-                  <div className="font-medium text-xs text-foreground">Analyse complétée</div>
-                  <div className="text-xs text-primary font-medium">Score: 94%</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
