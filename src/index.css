@@ -22,11 +22,11 @@ All colors MUST be HSL.
     --primary: 258 89% 66%;           /* Violet intense #A855F7 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 258 25% 90%;         /* Secondaire plus foncé pour meilleur contraste */
-    --secondary-foreground: 258 40% 15%;  /* Texte plus foncé pour contraste */
+    --secondary: 258 20% 85%;         /* Secondaire plus contrasté */
+    --secondary-foreground: 258 50% 25%;  /* Texte beaucoup plus foncé pour contraste */
 
-    --muted: 258 25% 92%;             /* Muted plus contrasté */
-    --muted-foreground: 258 20% 35%;     /* Texte muted plus foncé */
+    --muted: 258 20% 88%;             /* Muted plus contrasté */
+    --muted-foreground: 258 25% 30%;     /* Texte muted beaucoup plus foncé */
 
     --accent: 217 91% 60%;            /* Bleu intense #3B82F6 */
     --accent-foreground: 0 0% 100%;
