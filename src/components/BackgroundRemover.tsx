@@ -1,74 +1,100 @@
 import React, { useState } from 'react';
 import { Button } from './ui/button';
-import { removeBackground, loadImage } from '../utils/backgroundRemoval';
-import aiCharacterTechMale from '../assets/ai-character-tech-male.png';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Progress } from './ui/progress';
+import { removeBackground, loadImageFromUrl } from '../utils/backgroundRemoval';
+import { Upload, Download, Loader2, Image as ImageIcon, Wand2 } from 'lucide-react';
+
+// Import new background-free character images
+import aiCharacterFemaleNoBg from '../assets/ai-character-female-no-bg.png';
+import aiCharacterMaleNoBg from '../assets/ai-character-male-no-bg.png';
+import aiCharacterFuturisticNoBg from '../assets/ai-character-futuristic-no-bg.png';
+import charlyCharacterNoBg from '../assets/charly-character-no-bg.png';
 
 export const BackgroundRemover: React.FC = () => {
   const [isProcessing, setIsProcessing] = useState(false);
-  const [processedImage, setProcessedImage] = useState<string | null>(null);
+  const [progress, setProgress] = useState(0);
 
-  const handleRemoveBackground = async () => {
-    setIsProcessing(true);
-    
-    try {
-      // Load the tech male character image
-      const response = await fetch(aiCharacterTechMale);
-      const blob = await response.blob();
-      const imageElement = await loadImage(blob);
-      
-      // Remove background
-      const resultBlob = await removeBackground(imageElement);
-      
-      // Create URL for the processed image
-      const processedUrl = URL.createObjectURL(resultBlob);
-      setProcessedImage(processedUrl);
-      
-      // Download the processed image
-      const link = document.createElement('a');
-      link.href = processedUrl;
-      link.download = 'ai-character-tech-male-no-bg.png';
-      link.click();
-      
-    } catch (error) {
-      console.error('Error removing background:', error);
-    } finally {
-      setIsProcessing(false);
-    }
+  const characterImages = [
+    { name: 'Personnage féminin IA', src: aiCharacterFemaleNoBg },
+    { name: 'Personnage masculin IA', src: aiCharacterMaleNoBg },
+    { name: 'Personnage futuriste IA', src: aiCharacterFuturisticNoBg },
+    { name: 'Charly (Assistant IA)', src: charlyCharacterNoBg },
+  ];
+
+  const downloadAllImages = () => {
+    characterImages.forEach((image, index) => {
+      setTimeout(() => {
+        const link = document.createElement('a');
+        link.href = image.src;
+        link.download = `${image.name.toLowerCase().replace(/\s+/g, '-')}-no-bg.png`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }, index * 200); // Delay each download by 200ms
+    });
   };
 
   return (
-    <div className="p-4 space-y-4">
-      <h3 className="text-lg font-semibold">Supprimer le fond du personnage</h3>
-      
-      <div className="flex gap-4">
-        <div>
-          <p className="text-sm text-muted-foreground mb-2">Image originale:</p>
-          <img 
-            src={aiCharacterTechMale} 
-            alt="Original" 
-            className="w-32 h-32 object-contain border rounded"
-          />
+    <Card className="w-full max-w-4xl mx-auto">
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2">
+          <Wand2 className="w-5 h-5" />
+          Personnages IA sans arrière-plan
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-6">
+        <div className="text-center">
+          <p className="text-muted-foreground mb-4">
+            Collection de personnages IA avec arrière-plans transparents, prêts à l'emploi.
+          </p>
+          <Button onClick={downloadAllImages} className="mb-6">
+            <Download className="w-4 h-4 mr-2" />
+            Télécharger toutes les images
+          </Button>
         </div>
-        
-        {processedImage && (
-          <div>
-            <p className="text-sm text-muted-foreground mb-2">Sans fond:</p>
-            <img 
-              src={processedImage} 
-              alt="Sans fond" 
-              className="w-32 h-32 object-contain border rounded"
-            />
-          </div>
-        )}
-      </div>
-      
-      <Button 
-        onClick={handleRemoveBackground}
-        disabled={isProcessing}
-        className="w-full"
-      >
-        {isProcessing ? 'Traitement en cours...' : 'Supprimer le fond'}
-      </Button>
-    </div>
+
+        {/* Character Images Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {characterImages.map((character, index) => (
+            <div key={index} className="space-y-2">
+              <div className="aspect-square border border-border rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 p-4" style={{
+                backgroundImage: `
+                  linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+                  linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+                  linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+                  linear-gradient(-45deg, transparent 75%, #f0f0f0 75%)
+                `,
+                backgroundSize: '20px 20px',
+                backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
+              }}>
+                <img
+                  src={character.src}
+                  alt={character.name}
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <p className="text-sm font-medium text-center">{character.name}</p>
+              <Button 
+                size="sm" 
+                variant="outline" 
+                className="w-full"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = character.src;
+                  link.download = `${character.name.toLowerCase().replace(/\s+/g, '-')}-no-bg.png`;
+                  link.click();
+                }}
+              >
+                <Download className="w-3 h-3 mr-1" />
+                Télécharger
+              </Button>
+            </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
   );
 };
