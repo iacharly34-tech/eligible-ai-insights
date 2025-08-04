@@ -76,11 +76,11 @@ export const Hero = () => {
 
           {/* Right Column - Dashboard Interface */}
           <div className="relative">
-            <div className="bg-card rounded-3xl shadow-luxury overflow-hidden border border-border/50 relative">
+            <div className="hero-image-container bg-card rounded-3xl shadow-luxury overflow-hidden border border-border/50 relative">
               <img 
                 src={heroImage} 
                 alt={t('accessibility.images.hero')}
-                className="w-full h-auto"
+                className="w-full h-full object-cover"
                 loading="eager"
                 decoding="async"
               />
@@ -99,39 +99,27 @@ export const Hero = () => {
               </div>
             </div>
             
-            {/* Floating cards repositionnées */}
-            <div className="absolute -top-8 -right-8 bg-card rounded-2xl p-6 shadow-luxury border border-border/30 hidden lg:block animate-fade-in">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                  <Target className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <div>
-                  <div className="font-medium text-sm text-foreground">Nouvelle opportunité</div>
-                  <div className="text-xs text-muted-foreground">Ministère Éducation • Score: 94%</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute -bottom-8 -left-8 bg-card rounded-2xl p-6 shadow-luxury border border-border/30 hidden lg:block animate-fade-in">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                  <Brain className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <div>
-                  <div className="font-medium text-sm text-foreground">Analyse complétée</div>
-                  <div className="text-xs text-primary font-medium">Recommandé • Candidater</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute top-1/2 -right-12 bg-card rounded-2xl p-4 shadow-luxury border border-border/30 hidden xl:block animate-slide-in">
+            {/* Floating cards repositionnées - éviter les superpositions */}
+            <div className="absolute top-4 -right-4 bg-card rounded-2xl p-4 shadow-luxury border border-border/30 hidden lg:block animate-fade-in z-10">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-success rounded-lg flex items-center justify-center">
-                  <Zap className="w-4 h-4 text-success-foreground" />
+                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                  <Target className="w-4 h-4 text-primary-foreground" />
                 </div>
                 <div>
-                  <div className="font-medium text-xs text-foreground">Alerte temps réel</div>
-                  <div className="text-xs text-muted-foreground">Il y a 3 minutes</div>
+                  <div className="font-medium text-xs text-foreground">Nouvelle opportunité</div>
+                  <div className="text-xs text-muted-foreground">Ministère Éducation</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute bottom-4 -left-4 bg-card rounded-2xl p-4 shadow-luxury border border-border/30 hidden lg:block animate-fade-in z-10">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                  <Brain className="w-4 h-4 text-primary-foreground" />
+                </div>
+                <div>
+                  <div className="font-medium text-xs text-foreground">Analyse complétée</div>
+                  <div className="text-xs text-primary font-medium">Score: 94%</div>
                 </div>
               </div>
             </div>

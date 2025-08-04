@@ -2,28 +2,29 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { 
-  MessageSquare, 
-  Users, 
   Mail, 
-  Database, 
   Webhook, 
   Smartphone,
   ArrowRight,
   CheckCircle 
 } from "lucide-react";
+import slackLogo from "@/assets/slack-logo-official.png";
+import teamsLogo from "@/assets/teams-logo-official.png";
+import salesforceLogo from "@/assets/salesforce-logo-official.png";
+import hubspotLogo from "@/assets/hubspot-logo-official.png";
 
 export const Integrations = () => {
   const integrations = [
     {
       name: "Slack",
-      icon: MessageSquare,
+      logo: slackLogo,
       description: "Recevez des notifications instantanées dans vos channels Slack",
       category: "Communication",
       popular: true
     },
     {
       name: "Microsoft Teams",
-      icon: Users,
+      logo: teamsLogo,
       description: "Intégration native avec Teams pour vos équipes commerciales",
       category: "Communication",
       popular: true
@@ -37,14 +38,14 @@ export const Integrations = () => {
     },
     {
       name: "CRM Salesforce",
-      icon: Database,
+      logo: salesforceLogo,
       description: "Synchronisation automatique des opportunités dans Salesforce",
       category: "CRM",
       popular: true
     },
     {
       name: "HubSpot",
-      icon: Database,
+      logo: hubspotLogo,
       description: "Création automatique de deals dans votre pipeline HubSpot",
       category: "CRM",
       popular: false
@@ -103,8 +104,18 @@ export const Integrations = () => {
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
-                          <integration.icon className="w-6 h-6 text-white" />
+                        <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2 border border-border/20">
+                          {integration.logo ? (
+                            <img 
+                              src={integration.logo} 
+                              alt={`${integration.name} logo`}
+                              className="w-full h-full object-contain"
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          ) : (
+                            <integration.icon className="w-6 h-6 text-primary" />
+                          )}
                         </div>
                         <div>
                           <div className="flex items-center space-x-2">
