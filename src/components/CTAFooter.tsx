@@ -43,7 +43,7 @@ export const CTAFooter = ({
               {primaryButtonText}
             </Button>
             <button 
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-lg font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 px-10 py-4 bg-white text-purple-600 border-2 border-white transform active:scale-[0.98]"
+              className="flex items-center justify-center gap-2 rounded-xl text-lg font-semibold px-10 py-4 bg-white text-purple-600 border-2 border-white"
             >
               <Phone className="w-5 h-5 mr-2" />
               {secondaryButtonText}
