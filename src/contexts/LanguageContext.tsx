@@ -61,14 +61,18 @@ const translations = {
     'footer.copyright': '© 2024 Eligibly.ai. Tous droits réservés.',
     
     // Accessibility
-    'accessibility.menu.open': 'Ouvrir le menu',
-    'accessibility.menu.close': 'Fermer le menu',
-    'accessibility.home': 'Page d\'accueil Eligibly.ai',
-    'accessibility.demo': 'Demander une démonstration gratuite',
-    'accessibility.login': 'Se connecter à votre compte',
-    'accessibility.language.switch': 'Changer de langue',
+    'accessibility.skipToContent': 'Aller au contenu principal',
+    'accessibility.home': 'Accueil eligibly.ai',
     'accessibility.navigation.main': 'Navigation principale',
     'accessibility.navigation.mobile': 'Navigation mobile',
+    'accessibility.menu.open': 'Ouvrir le menu',
+    'accessibility.menu.close': 'Fermer le menu',
+    'accessibility.login': 'Se connecter à eligibly.ai',
+    'accessibility.demo': 'Essayer la démo gratuite',
+    'accessibility.images.logo': 'Logo eligibly.ai',
+    'accessibility.images.hero': 'Interface eligibly.ai - Scoring IA des appels d\'offres publics',
+    'accessibility.images.dashboard': 'Tableau de bord eligibly.ai',
+    'accessibility.images.feature': 'Illustration de la fonctionnalité',
   },
   en: {
     // Navigation
@@ -119,14 +123,18 @@ const translations = {
     'footer.copyright': '© 2024 Eligibly.ai. All rights reserved.',
     
     // Accessibility
-    'accessibility.menu.open': 'Open menu',
-    'accessibility.menu.close': 'Close menu',
-    'accessibility.home': 'Eligibly.ai homepage',
-    'accessibility.demo': 'Request a free demonstration',
-    'accessibility.login': 'Sign in to your account',
-    'accessibility.language.switch': 'Switch language',
+    'accessibility.skipToContent': 'Skip to main content',
+    'accessibility.home': 'eligibly.ai Home',
     'accessibility.navigation.main': 'Main navigation',
     'accessibility.navigation.mobile': 'Mobile navigation',
+    'accessibility.menu.open': 'Open menu',
+    'accessibility.menu.close': 'Close menu',
+    'accessibility.login': 'Login to eligibly.ai',
+    'accessibility.demo': 'Try free demo',
+    'accessibility.images.logo': 'eligibly.ai Logo',
+    'accessibility.images.hero': 'eligibly.ai Interface - AI Scoring for Public Tenders',
+    'accessibility.images.dashboard': 'eligibly.ai Dashboard',
+    'accessibility.images.feature': 'Feature illustration',
   }
 } as const;
 

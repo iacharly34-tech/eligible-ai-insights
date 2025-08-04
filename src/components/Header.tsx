@@ -26,9 +26,10 @@ export const Header = () => {
           <div className="flex items-center space-x-3">
             <img 
               src={eligiblyLogo} 
-              alt="Eligibly.ai Logo" 
+              alt={t('accessibility.images.logo')}
               className="w-8 h-8 object-contain"
-              aria-hidden="true"
+              loading="eager"
+              decoding="async"
             />
             <a href="/" className="text-lg font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md" aria-label={t('accessibility.home')}>
               eligibly.ai

@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { SkipNavigation } from "@/components/SkipNavigation";
+import { WCAGAccessibilityComponent } from "@/components/WCAGAccessibilityComponent";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Produit from "./pages/Produit";
@@ -20,6 +22,8 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <LanguageProvider>
       <TooltipProvider>
+        <WCAGAccessibilityComponent />
+        <SkipNavigation />
         <Toaster />
         <Sonner />
         <BrowserRouter>

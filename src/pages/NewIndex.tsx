@@ -138,7 +138,7 @@ const NewIndex = () => {
       {/* Header - Clean minimal style like Loris.ai */}
       <Header />
 
-      <main role="main">
+      <main id="main-content" tabIndex={-1} className="focus:outline-none" role="main">
         {/* Hero Section - Split Layout like Loris.ai */}
         <section className="pt-20 pb-16 px-4 relative overflow-hidden min-h-[85vh] flex items-center" aria-label={t('hero.badge')}>
         {/* Animated Background - Style Loris.ai */}
@@ -222,7 +222,7 @@ const NewIndex = () => {
               <div className="relative flex justify-center">
                 <img 
                   src={charlyImageUrl}
-                  alt="Charly, l'assistant IA d'Eligibly.ai, représenté par un personnage masculin en tenue décontractée moderne avec un hoodie" 
+                  alt={t('accessibility.images.feature')}
                   className="w-full h-auto max-w-xl transform scale-110"
                   loading="lazy"
                   decoding="async"

@@ -79,8 +79,10 @@ export const Hero = () => {
             <div className="bg-card rounded-3xl shadow-luxury overflow-hidden border border-border/50 relative">
               <img 
                 src={heroImage} 
-                alt="Interface eligibly.ai - Scoring IA des appels d'offres publics" 
+                alt={t('accessibility.images.hero')}
                 className="w-full h-auto"
+                loading="eager"
+                decoding="async"
               />
               
               {/* Stats overlay sur l'image */}
