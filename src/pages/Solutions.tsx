@@ -207,9 +207,9 @@ const Solutions = () => {
 
       <CTAFooter 
         title="Quelle que soit votre activité, nous avons la solution"
-        subtitle="Planifiez une démo personnalisée selon votre secteur"
+        subtitle="Planifiez une démonstration personnalisée selon votre secteur"
         primaryButtonText="Découvrir ma solution"
-        secondaryButtonText="Planifier une démo"
+        secondaryButtonText="Démonstration personnalisée"
       />
     </div>
   );

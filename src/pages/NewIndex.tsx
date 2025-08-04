@@ -7,36 +7,35 @@ import { Header } from "@/components/Header";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   ArrowRight, 
-  Database, 
-  Brain, 
   Target, 
-  Zap, 
-  Shield, 
-  TrendingUp, 
-  Users, 
-  Clock, 
   CheckCircle, 
   Star,
   ExternalLink,
   Play,
   BarChart3,
-  Search,
-  Filter,
-  Award,
-  Globe,
-  Mail,
   Phone,
-  MapPin
+  Mail,
+  MapPin,
+  Brain,
+  Zap,
+  Clock,
+  TrendingUp,
+  Award,
+  Shield
 } from "lucide-react";
 import { MacBookSimulation } from "@/components/MacBookSimulation";
-import aiCharacterMale from "@/assets/ai-character-male.png";
-import aiCharacterFemale from "@/assets/ai-character-female.png";
-import aiCharacterNeutral from "@/assets/ai-character-neutral.png";
 import aiCharacterTechMale from "@/assets/charly-character-cutout.png";
-import aiCharacterTechFemale from "@/assets/ai-character-tech-female.png";
-import aiCharacterFuturistic from "@/assets/ai-character-futuristic.png";
 import { processCharlyImage } from "@/utils/processCharlyImage";
 import slackLogo from "@/assets/slack-logo-official.png";
+import { 
+  COMPANY_STATS, 
+  CORE_FEATURES, 
+  MEASURABLE_BENEFITS, 
+  STANDARD_CTAS, 
+  DATA_SOURCES, 
+  TRUST_INDICATORS,
+  HERO_MESSAGES 
+} from "@/data/constants";
 
 const NewIndex = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -61,77 +60,7 @@ const NewIndex = () => {
     loadCharlyImage();
   }, []);
 
-  const features = [
-    {
-      icon: Database,
-      title: "Connexion Multi-Sources",
-      description: "Accès automatisé à 600+ sources officielles françaises et européennes",
-      color: "blue"
-    },
-    {
-      icon: Brain,
-      title: "Analyse IA Avancée",
-      description: "Triple modèle IA (GPT-4, Claude, Mistral) pour une analyse exhaustive",
-      color: "purple"
-    },
-    {
-      icon: Target,
-      title: "Scoring Intelligent",
-      description: "Évaluation automatique de la pertinence et du potentiel de chaque marché",
-      color: "green"
-    },
-    {
-      icon: Zap,
-      title: "Notification Temps Réel",
-      description: "Alertes instantanées via Slack, email et intégrations personnalisées",
-      color: "orange"
-    }
-  ];
-
-  const francesources = [
-    { name: "BOAMP", desc: "Bulletin officiel", logo: "🏛️", url: "https://www.boamp.fr" },
-    { name: "Marchés Publics", desc: "Plateforme nationale", logo: "🇫🇷", url: "https://www.marches-publics.gouv.fr" },
-    { name: "PLACE", desc: "Plateforme des achats", logo: "💼", url: "https://www.economie.gouv.fr/daj/place" },
-    { name: "AWS DUME", desc: "Dossiers uniques", logo: "📋", url: "https://www.economie.gouv.fr/daj/dume" },
-    { name: "e-Marchés", desc: "Solutions régionales", logo: "🌍", url: "https://www.e-marches.com" },
-    { name: "Achat Public", desc: "Marchés territoriaux", logo: "🏘️", url: "https://www.achatpublic.com" }
-  ];
-
-  const europeSource = [
-    { name: "TED eTendering", desc: "Tenders Electronic Daily", logo: "🇪🇺", url: "https://ted.europa.eu" },
-    { name: "Simap", desc: "Système suisse", logo: "🇨🇭", url: "https://www.simap.ch" },
-    { name: "Find a Tender", desc: "Royaume-Uni", logo: "🇬🇧", url: "https://www.find-tender.service.gov.uk" },
-    { name: "Vergabe24", desc: "Allemagne", logo: "🇩🇪", url: "https://www.vergabe24.de" },
-    { name: "Mercell", desc: "Plateforme nordique", logo: "🌊", url: "https://www.mercell.com" },
-    { name: "eNotices", desc: "Notices européennes", logo: "📢", url: "https://enotices.eu" }
-  ];
-
-  const benefits = [
-    {
-      title: "95% de temps économisé",
-      description: "Automatisation complète de la veille manuelle",
-      icon: Clock,
-      stat: "95%"
-    },
-    {
-      title: "600+ sources surveillées",
-      description: "Coverage exhaustive du marché français et européen",
-      icon: Globe,
-      stat: "600+"
-    },
-    {
-      title: "23 opportunités premium/jour",
-      description: "Détection intelligente des marchés à fort potentiel",
-      icon: Star,
-      stat: "23"
-    },
-    {
-      title: "92% de précision IA",
-      description: "Analyse fine grâce aux modèles multi-LLM",
-      icon: Brain,
-      stat: "92%"
-    }
-  ];
+  // Utilisation des données centralisées au lieu des définitions locales
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
@@ -158,31 +87,25 @@ const NewIndex = () => {
             {/* Left Column - Text Content */}
             <div className={`space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                {t('hero.title')}{" "}
+                {HERO_MESSAGES.home.title}{" "}
                 <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                  {t('hero.title.highlight')}
+                  {HERO_MESSAGES.home.highlight}
                 </span>{" "}
-                {t('hero.title.end')}
+                {HERO_MESSAGES.home.end}
               </h1>
               
               <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-                {t('hero.subtitle')}
+                {HERO_MESSAGES.home.subtitle}
               </p>
 
               {/* Value Propositions */}
               <div className="space-y-3 text-sm text-muted-foreground">
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span>{t('hero.stats.opportunities')}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span>{t('hero.stats.precision')}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span>{t('hero.stats.time')}</span>
-                </div>
+                {HERO_MESSAGES.home.features.map((feature, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span>{feature}</span>
+                  </div>
+                ))}
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -193,7 +116,7 @@ const NewIndex = () => {
                   aria-label={t('accessibility.demo')}
                 >
                   <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                  {t('hero.cta.secondary')}
+                  {STANDARD_CTAS.primary.text}
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 
@@ -205,14 +128,14 @@ const NewIndex = () => {
                   aria-label={t('hero.cta.primary')}
                 >
                   <BarChart3 className="w-5 h-5 mr-2" />
-                  {t('hero.cta.primary')}
+                  {STANDARD_CTAS.demo.text}
                 </Button>
               </div>
 
               {/* Trust indicators */}
               <div className="flex items-center gap-2 opacity-60">
                 <Shield className="w-4 h-4 text-success" />
-                <span className="text-sm text-muted-foreground">Conforme RGPD</span>
+                <span className="text-sm text-muted-foreground">{TRUST_INDICATORS[0].text}</span>
               </div>
             </div>
 
@@ -532,7 +455,7 @@ const NewIndex = () => {
           </ScrollReveal>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
+            {CORE_FEATURES.map((feature, index) => (
               <ScrollReveal key={index} delay={index * 100}>
                 <Card className="group hover:shadow-glow transition-all duration-500 hover:scale-105 border-0 bg-white/50 backdrop-blur-sm">
                   <CardContent className="p-8 text-center">
@@ -649,7 +572,7 @@ const NewIndex = () => {
               key={activeTab}
               className="grid md:grid-cols-3 lg:grid-cols-6 gap-6 animate-[fadeInUp_0.6s_ease-out]"
             >
-              {(activeTab === 'france' ? francesources : europeSource).map((source, index) => (
+              {(activeTab === 'france' ? DATA_SOURCES.france : DATA_SOURCES.europe).map((source, index) => (
                 <ScrollReveal key={`${activeTab}-${index}`} delay={index * 50}>
                   <Card 
                     className="group relative hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-2 border border-gray-200/80 bg-white/80 backdrop-blur-sm cursor-pointer overflow-hidden"
@@ -702,7 +625,7 @@ const NewIndex = () => {
           </ScrollReveal>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
+            {MEASURABLE_BENEFITS.map((benefit, index) => (
               <ScrollReveal key={index} delay={index * 150}>
                 <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 bg-white/70 backdrop-blur-sm">
                   <CardContent className="p-8 text-center">
@@ -735,7 +658,7 @@ const NewIndex = () => {
             <span className="text-yellow-300">veille commerciale</span> ?
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto">
-            Rejoignez les 500+ entreprises qui font confiance à notre IA 
+            Rejoignez les {COMPANY_STATS.enterprises} entreprises qui font confiance à notre IA 
             pour identifier les meilleures opportunités de marchés publics.
           </p>
           
@@ -745,7 +668,7 @@ const NewIndex = () => {
               className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-10 py-4 h-auto font-semibold"
             >
               <Play className="w-5 h-5 mr-2" />
-              Démarrer l'essai gratuit
+              {STANDARD_CTAS.primary.text}
             </Button>
             <button 
               className="flex items-center justify-center gap-2 rounded-xl text-lg font-semibold px-10 py-4"
@@ -756,7 +679,7 @@ const NewIndex = () => {
               }}
             >
               <Phone className="w-5 h-5" style={{ color: '#8b5cf6' }} />
-              <span style={{ color: '#8b5cf6' }}>Parler à un expert</span>
+              <span style={{ color: '#8b5cf6' }}>{STANDARD_CTAS.secondary.text}</span>
             </button>
           </div>
           

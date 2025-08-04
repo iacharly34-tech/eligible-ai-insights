@@ -4,56 +4,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CTAFooter } from "@/components/CTAFooter";
 import { 
-  Brain, 
-  Database, 
-  Target, 
-  Zap, 
-  Search,
-  Filter,
-  TrendingUp,
   ArrowRight,
   CheckCircle,
-  Globe,
-  Clock,
-  Award,
   BarChart3
 } from "lucide-react";
 import aiAssistantMain from "@/assets/ai-assistant-main.jpg";
+import { CORE_FEATURES, MEASURABLE_BENEFITS, HERO_MESSAGES, STANDARD_CTAS, COMPANY_STATS } from "@/data/constants";
 
 const Produit = () => {
-  const features = [
-    {
-      icon: Database,
-      title: "Connexion Multi-Sources",
-      description: "Accès automatisé à 600+ sources officielles françaises et européennes",
-      details: ["BOAMP", "Marchés Publics", "TED eTendering", "Simap", "Find a Tender"]
-    },
-    {
-      icon: Brain,
-      title: "Analyse IA Avancée", 
-      description: "Triple modèle IA (GPT-4, Claude, Mistral) pour une analyse exhaustive",
-      details: ["Analyse sémantique", "Scoring intelligent", "Recommandations expertes"]
-    },
-    {
-      icon: Target,
-      title: "Scoring Intelligent",
-      description: "Évaluation automatique de la pertinence et du potentiel de chaque marché",
-      details: ["Critères personnalisés", "Machine Learning", "Précision 98%"]
-    },
-    {
-      icon: Zap,
-      title: "Notification Temps Réel",
-      description: "Alertes instantanées via Slack, email et intégrations personnalisées",
-      details: ["Slack", "Email", "API", "Webhooks"]
-    }
-  ];
-
-  const benefits = [
-    { icon: Clock, title: "95% de temps économisé", desc: "Automatisation complète de la veille" },
-    { icon: Globe, title: "600+ sources surveillées", desc: "Coverage exhaustive du marché" },
-    { icon: Award, title: "98% de précision IA", desc: "Analyse fine grâce aux modèles multi-LLM" },
-    { icon: TrendingUp, title: "23 opportunités/jour", desc: "Détection intelligente des marchés premium" }
-  ];
+  // Spécialisation : Fonctionnalités techniques détaillées uniquement
+  const technicalFeatures = CORE_FEATURES.map(feature => ({
+    ...feature,
+    // Ajout de détails techniques spécifiques pour la page Produit
+    technicalDetails: feature.details,
+    integrations: feature.color === 'orange' ? ['Slack', 'Microsoft Teams', 'Email', 'Webhooks'] : [],
+    apiAccess: feature.color === 'blue' ? true : false
+  }));
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
@@ -68,25 +34,21 @@ const Produit = () => {
             </Badge>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Notre plateforme{" "}
-              <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                IA complète
-              </span>
+              {HERO_MESSAGES.product.title}
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Découvrez comment notre intelligence artificielle révolutionne la veille commerciale
-              des marchés publics avec une précision et une rapidité inégalées.
+              {HERO_MESSAGES.product.subtitle}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="px-8 py-4 h-auto group">
-                Essayer maintenant
+                {STANDARD_CTAS.primary.text}
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button variant="outline" size="lg" className="px-8 py-4 h-auto">
                 <BarChart3 className="w-5 h-5 mr-2" />
-                Voir une démonstration
+                {STANDARD_CTAS.demo.text}
               </Button>
             </div>
           </div>
@@ -107,7 +69,7 @@ const Produit = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {features.map((feature, index) => (
+            {technicalFeatures.map((feature, index) => (
               <Card key={index} className="group hover:shadow-xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-6">
@@ -122,7 +84,7 @@ const Produit = () => {
                         {feature.description}
                       </p>
                       <div className="flex flex-wrap gap-2">
-                        {feature.details.map((detail, i) => (
+                        {feature.technicalDetails.map((detail, i) => (
                           <Badge key={i} variant="outline" className="text-xs">
                             {detail}
                           </Badge>
@@ -148,14 +110,14 @@ const Produit = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
+            {MEASURABLE_BENEFITS.map((benefit, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 border-0 bg-white/60 backdrop-blur-sm">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
                     <benefit.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-primary mb-2">{benefit.title}</h3>
-                  <p className="text-muted-foreground">{benefit.desc}</p>
+                  <p className="text-muted-foreground">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -164,10 +126,10 @@ const Produit = () => {
       </section>
 
       <CTAFooter 
-        title="Prêt à transformer votre veille commerciale ?"
-        subtitle="Rejoignez plus de 2000+ professionnels qui utilisent déjà notre IA"
-        primaryButtonText="Commencer l'essai gratuit"
-        secondaryButtonText="Planifier une démo"
+        title="Prêt à tester notre technologie ?"
+        subtitle={`Rejoignez plus de ${COMPANY_STATS.clients} professionnels qui utilisent déjà notre IA`}
+        primaryButtonText={STANDARD_CTAS.primary.text}
+        secondaryButtonText={STANDARD_CTAS.secondary.text}
       />
     </div>
   );
