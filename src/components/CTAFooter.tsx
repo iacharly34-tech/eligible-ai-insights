@@ -43,9 +43,9 @@ export const CTAFooter = ({
               {primaryButtonText}
             </Button>
             <Button 
-              variant="outline" 
+              variant="secondary" 
               size="lg" 
-              className="border-2 border-white text-white hover:bg-white hover:text-purple-600 text-lg px-10 py-4 h-auto"
+              className="text-lg px-10 py-4 h-auto bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-purple-600"
             >
               <Phone className="w-5 h-5 mr-2" />
               {secondaryButtonText}
