@@ -271,7 +271,7 @@ const APropos = () => {
                     <cert.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-3">{cert.title}</h3>
-                  <p className="text-foreground/70 text-sm leading-relaxed">{cert.description}</p>
+                  <p className="text-foreground text-sm leading-relaxed">{cert.description}</p>
                 </CardContent>
               </Card>
             ))}
