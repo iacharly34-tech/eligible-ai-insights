@@ -80,11 +80,11 @@ const Produit = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-cta hover:shadow-glow text-white px-8 py-4 h-auto group">
+              <Button size="lg" className="px-8 py-4 h-auto group">
                 Essayer maintenant
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="lg" className="px-8 py-4 h-auto border-2 border-primary text-primary hover:bg-primary hover:text-white">
+              <Button variant="outline" size="lg" className="px-8 py-4 h-auto">
                 <BarChart3 className="w-5 h-5 mr-2" />
                 Voir une démonstration
               </Button>

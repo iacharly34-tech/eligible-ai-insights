@@ -9,20 +9,20 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-gradient-primary text-primary-foreground hover:shadow-glow transition-all duration-300",
+        default: "bg-gradient-primary text-white hover:shadow-glow transition-all duration-300",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-all duration-300",
+          "bg-destructive text-white hover:bg-destructive/90 transition-all duration-300",
         outline:
-          "border-2 border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300",
+          "border-2 border-primary bg-background text-primary hover:bg-primary hover:text-white transition-all duration-300",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-all duration-300",
+          "bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white transition-all duration-300",
         ghost: "text-primary hover:bg-primary/10 hover:text-primary transition-all duration-300",
         link: "text-primary underline-offset-4 hover:underline transition-all duration-300",
-        hero: "bg-gradient-primary text-primary-foreground hover:shadow-luxury transition-all duration-300 shadow-elegant",
-        accent: "bg-gradient-primary text-primary-foreground hover:shadow-glow transition-all duration-300",
-        tengo: "bg-gradient-primary text-primary-foreground hover:shadow-glow rounded-xl px-6 py-3 font-semibold transition-all duration-300",
-        rolex: "bg-gradient-primary text-primary-foreground hover:shadow-luxury transition-all duration-300 shadow-elegant font-semibold tracking-wide",
-        premium: "bg-gradient-highlight text-primary-foreground hover:shadow-luxury border border-primary/20 transition-all duration-300 font-semibold",
+        hero: "bg-gradient-primary text-white hover:shadow-luxury transition-all duration-300 shadow-elegant",
+        accent: "bg-gradient-primary text-white hover:shadow-glow transition-all duration-300",
+        tengo: "bg-gradient-primary text-white hover:shadow-glow rounded-xl px-6 py-3 font-semibold transition-all duration-300",
+        rolex: "bg-gradient-primary text-white hover:shadow-luxury transition-all duration-300 shadow-elegant font-semibold tracking-wide",
+        premium: "bg-gradient-primary text-white hover:shadow-luxury border border-primary/20 transition-all duration-300 font-semibold",
       },
       size: {
         default: "h-11 px-6 py-2.5",

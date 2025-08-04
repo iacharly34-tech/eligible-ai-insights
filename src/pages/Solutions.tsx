@@ -145,7 +145,7 @@ const Solutions = () => {
                           ))}
                         </div>
                         
-                        <Button className={`bg-gradient-to-r ${solution.gradient} hover:shadow-lg text-white group w-full sm:w-auto`}>
+                        <Button variant="default" className="w-full sm:w-auto group">
                           {solution.cta}
                           <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                         </Button>

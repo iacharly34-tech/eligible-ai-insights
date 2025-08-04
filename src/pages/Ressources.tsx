@@ -186,7 +186,7 @@ const Ressources = () => {
                         {articles[0].author}
                       </div>
                     </div>
-                    <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+                    <Button variant="secondary">
                       Lire l'article
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
@@ -211,7 +211,7 @@ const Ressources = () => {
               <h2 className="text-3xl font-bold mb-2">Derniers articles</h2>
               <p className="text-muted-foreground">Conseils et analyses d'experts</p>
             </div>
-            <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-white">
+            <Button variant="outline">
               Voir tous les articles
             </Button>
           </div>
@@ -273,7 +273,7 @@ const Ressources = () => {
                     <span>•</span>
                     <span>{guide.format}</span>
                   </div>
-                  <Button className="w-full bg-gradient-cta hover:shadow-lg text-white group">
+                  <Button className="w-full group">
                     <Download className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                     Télécharger
                   </Button>

@@ -69,7 +69,7 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
               </div>
               <div className="text-xs text-gray-600 mb-2">opportunités identifiées</div>
               
-              <Button className="w-full mb-4 bg-blue-600 hover:bg-blue-700">
+              <Button className="w-full mb-4">
                 + Créer mon flux
               </Button>
               
