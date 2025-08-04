@@ -3,10 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Performance optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    
+    <!-- Resource hints -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preconnect" href="//api.lovable.dev">
+    
+    <!-- Critical CSS for faster LCP -->
+    <style>
+      /* Critical above-the-fold styles */
+      body { margin: 0; font-family: Inter, system-ui, sans-serif; }
+      .hero-section { min-height: 100vh; }
+      .nav-header { position: fixed; top: 0; width: 100%; z-index: 50; }
+    </style>
     <title>eligible.ai - Scoring IA pour appels d'offres publics</title>
     <meta name="description" content="Identifiez automatiquement les meilleures opportunités d'appels d'offres publics grâce à notre IA. Scoring intelligent, alertes personnalisées et intégrations CRM." />
     <meta name="author" content="eligible.ai" />
@@ -41,7 +56,17 @@
   
   <!-- Preload critical resources -->
   <link rel="modulepreload" href="/src/main.tsx">
-  <link rel="dns-prefetch" href="//api.lovable.dev">
+  <link rel="preload" href="/src/index.css" as="style">
+  <link rel="preload" href="/src/components/Hero.tsx" as="script">
+  
+  <!-- Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+  </script>
   </head>
 
   <body>

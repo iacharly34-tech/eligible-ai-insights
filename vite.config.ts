@@ -20,21 +20,38 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Optimisations de performance
+    // Optimisations de performance avancées
+    target: 'esnext',
+    minify: 'terser',
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
         manualChunks: {
           // Séparer les vendors pour un meilleur cache
           vendor: ['react', 'react-dom'],
-          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
+          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-navigation-menu'],
           icons: ['lucide-react'],
+          router: ['react-router-dom'],
+          utils: ['clsx', 'tailwind-merge', 'class-variance-authority'],
         },
+        // Optimiser les noms de fichiers pour le cache
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]',
+      },
+    },
+    // Configuration terser pour une compression optimale
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info'],
       },
     },
     // Réduire la limite de taille des chunks
     chunkSizeWarningLimit: 1000,
-    // Optimiser les assets
-    assetsInlineLimit: 4096,
+    // Optimiser les assets - inliner les petits fichiers
+    assetsInlineLimit: 8192,
   },
   // Préchargement des dépendances critiques
   optimizeDeps: {
