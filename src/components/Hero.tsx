@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import heroImage from "@/assets/js-development-workspace.jpg";
 import bannerGradient from "@/assets/banner-gradient.jpg";
 import { ArrowRight, Zap, Target, Brain, Play, CheckCircle, TrendingUp } from "lucide-react";
@@ -77,12 +78,13 @@ export const Hero = () => {
           {/* Right Column - Dashboard Interface */}
           <div className="relative">
             <div className="hero-image-container bg-card rounded-3xl shadow-luxury overflow-hidden border border-border/50 relative">
-              <img 
+              <OptimizedImage
                 src={heroImage} 
                 alt={t('accessibility.images.hero')}
                 className="w-full h-full object-cover"
-                loading="eager"
-                decoding="async"
+                priority={true}
+                width={600}
+                height={400}
               />
               
               {/* Stats overlay sur l'image */}

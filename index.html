@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
     <title>eligible.ai - Scoring IA pour appels d'offres publics</title>
     <meta name="description" content="Identifiez automatiquement les meilleures opportunités d'appels d'offres publics grâce à notre IA. Scoring intelligent, alertes personnalisées et intégrations CRM." />
     <meta name="author" content="eligible.ai" />
@@ -37,10 +38,30 @@
     }
   }
   </script>
+  
+  <!-- Preload critical resources -->
+  <link rel="modulepreload" href="/src/main.tsx">
+  <link rel="dns-prefetch" href="//api.lovable.dev">
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Performance optimizations -->
+    <script>
+      // Preload next page on hover
+      const preloadedLinks = new Set();
+      document.addEventListener('mouseover', (e) => {
+        const link = e.target.closest('a[href]');
+        if (link && link.hostname === location.hostname && !preloadedLinks.has(link.href)) {
+          preloadedLinks.add(link.href);
+          const prefetch = document.createElement('link');
+          prefetch.rel = 'prefetch';
+          prefetch.href = link.href;
+          document.head.appendChild(prefetch);
+        }
+      });
+    </script>
   </body>
 </html>
