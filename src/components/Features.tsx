@@ -1,34 +1,36 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Brain, Zap, Bell, Target, BarChart3, Shield } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Features = () => {
+  const { t } = useLanguage();
   const features = [
     {
       icon: Brain,
-      title: "Scoring IA Avancé",
-      description: "Notre intelligence artificielle analyse chaque appel d'offre selon vos critères spécifiques et attribue un score de compatibilité précis.",
-      badge: "IA",
+      title: t('features.multisource.title'),
+      description: t('features.multisource.desc'),
+      badge: "24h/24",
       color: "bg-primary"
     },
     {
       icon: Zap,
-      title: "Détection Automatique",
-      description: "Surveillance continue des plateformes d'appels d'offres publics pour identifier instantanément les nouvelles opportunités.",
-      badge: "Auto",
+      title: t('features.ai.title'),
+      description: t('features.ai.desc'),
+      badge: "LLM",
       color: "bg-accent"
     },
     {
       icon: Bell,
-      title: "Alertes Intelligentes",
-      description: "Recevez des notifications personnalisées sur Slack, Teams, ou par email dès qu'une opportunité correspond à vos critères.",
+      title: t('features.notifications.title'),
+      description: t('features.notifications.desc'),
       badge: "Temps réel",
       color: "bg-success"
     },
     {
       icon: Target,
-      title: "Ciblage Précis",
-      description: "Filtrez les appels d'offres par secteur, montant, localisation et autres critères pour maximiser vos chances de succès.",
+      title: t('features.scoring.title'),
+      description: t('features.scoring.desc'),
       badge: "Précision",
       color: "bg-warning"
     },
@@ -56,13 +58,13 @@ export const Features = () => {
             Fonctionnalités
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold">
-            La plateforme préférée des{" "}
+            {t('features.title')}{" "}
             <span className="text-primary">
-              répondants
+              {t('features.title.highlight')}
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Des centaines d'experts des marchés publics utilisent eligibly.ai au quotidien pour détecter, analyser et répondre aux appels d'offres.
+            {t('features.subtitle')}
           </p>
         </div>
 

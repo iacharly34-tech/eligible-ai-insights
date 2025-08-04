@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, CheckCircle, Users, Timer, Shield } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const CTASection = () => {
+  const { t } = useLanguage();
   return (
     <section className="py-24 bg-gradient-hero relative overflow-hidden">
       {/* Background Pattern */}
@@ -13,20 +15,15 @@ export const CTASection = () => {
           {/* Urgency Badge */}
           <Badge variant="outline" className="text-primary border-primary/20 bg-primary/10 mb-8 px-6 py-2">
             <Timer className="w-4 h-4 mr-2" />
-            Offre limitée • Plus que 7 jours
+            Essai gratuit • Résultats garantis
           </Badge>
 
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-            Prêt à transformer votre{" "}
-            <span className="text-primary bg-gradient-primary bg-clip-text text-transparent">
-              veille commerciale
-            </span>{" "}
-            ?
+            {t('cta.title')}
           </h2>
 
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Rejoignez plus de 2000+ professionnels qui utilisent déjà eligibly.ai 
-            pour décrocher plus de marchés publics.
+            {t('cta.subtitle')}
           </p>
 
           {/* Benefits List */}
@@ -63,12 +60,12 @@ export const CTASection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button variant="rolex" size="xl" className="text-lg px-12 py-4 group shadow-luxury">
-              Commencer gratuitement
+            <Button variant="premium" size="xl" className="text-lg px-12 py-4 group shadow-luxury">
+              {t('cta.primary')}
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="outline" size="xl" className="text-lg px-8 py-4">
-              Planifier une démo
+              {t('cta.secondary')}
             </Button>
           </div>
 

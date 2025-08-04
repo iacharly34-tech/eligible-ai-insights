@@ -4,6 +4,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import eligiblyLogo from "@/assets/eligibly-logo-main.png";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,9 +24,12 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-7 h-7 bg-gradient-primary rounded-lg flex items-center justify-center" aria-hidden="true">
-              <Brain className="w-4 h-4 text-white" />
-            </div>
+            <img 
+              src={eligiblyLogo} 
+              alt="Eligibly.ai Logo" 
+              className="w-8 h-8 object-contain"
+              aria-hidden="true"
+            />
             <a href="/" className="text-lg font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md" aria-label={t('accessibility.home')}>
               eligibly.ai
             </a>

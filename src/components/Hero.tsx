@@ -1,9 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import heroImage from "@/assets/js-development-workspace.jpg";
+import bannerGradient from "@/assets/banner-gradient.jpg";
 import { ArrowRight, Zap, Target, Brain, Play, CheckCircle, TrendingUp } from "lucide-react";
 
+import { useLanguage } from "@/contexts/LanguageContext";
+
 export const Hero = () => {
+  const { t } = useLanguage();
   return (
     <section className="bg-gradient-hero pt-8 pb-16 relative overflow-hidden min-h-[85vh] flex items-center">
       {/* Background Pattern */}
@@ -14,7 +18,7 @@ export const Hero = () => {
         <div className="text-center mb-8">
           <Badge variant="outline" className="text-primary border-primary/20 bg-primary/5 px-4 py-2">
             <TrendingUp className="w-4 h-4 mr-2" />
-            +2000 opportunités détectées cette semaine
+            {t('hero.stats.opportunities')}
           </Badge>
         </div>
 
@@ -23,45 +27,45 @@ export const Hero = () => {
           {/* Left Column - Text Content */}
           <div className="space-y-8">
             <div className="text-sm font-medium text-muted-foreground tracking-widest uppercase">
-              L'INTELLIGENCE ARTIFICIELLE AU SERVICE DES MARCHÉS PUBLICS
+              {t('hero.badge')}
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight tracking-tight">
-              Transformez votre{" "}
+              {t('hero.title')}{" "}
               <span className="text-primary font-medium bg-gradient-primary bg-clip-text text-transparent">
-                veille commerciale
-              </span>
+                {t('hero.title.highlight')}
+              </span>{" "}
+              {t('hero.title.end')}
             </h1>
             
             <p className="text-lg text-muted-foreground leading-relaxed font-light max-w-xl">
-              Notre IA analyse <strong>automatiquement</strong> tous les appels d'offres publics, 
-              les score selon vos critères et vous alerte en temps réel des meilleures opportunités.
+              {t('hero.subtitle')}
             </p>
 
             {/* Value Propositions */}
             <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                <span>+600 sources surveillées en temps réel</span>
+                <span>{t('hero.stats.opportunities')}</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                <span>Scoring IA précis à 98%</span>
+                <span>{t('hero.stats.time')}</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                <span>Alertes en moins de 15 minutes</span>
+                <span>{t('hero.stats.precision')}</span>
               </div>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="rolex" size="xl" className="text-base px-12 py-4 group">
-                Démarrer gratuitement
+              <Button variant="premium" size="xl" className="text-base px-12 py-4 group">
+                {t('hero.cta.primary')}
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="ghost" size="xl" className="text-base px-8 py-4 flex items-center gap-2">
+              <Button variant="outline" size="xl" className="text-base px-8 py-4 flex items-center gap-2">
                 <Play className="w-4 h-4" />
-                Voir la démo (2min)
+                {t('hero.cta.secondary')}
               </Button>
             </div>
 

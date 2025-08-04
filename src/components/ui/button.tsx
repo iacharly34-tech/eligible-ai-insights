@@ -13,7 +13,7 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-all duration-300",
         outline:
-          "border-2 border-primary/20 bg-background text-primary hover:bg-primary/5 hover:border-primary/40 transition-all duration-300",
+          "border-2 border-primary/30 bg-background text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-all duration-300",
         ghost: "text-primary hover:bg-primary/10 hover:text-primary transition-all duration-300",
@@ -22,6 +22,7 @@ const buttonVariants = cva(
         accent: "bg-gradient-primary text-primary-foreground hover:shadow-glow transition-all duration-300",
         tengo: "bg-gradient-primary text-primary-foreground hover:shadow-glow rounded-xl px-6 py-3 font-semibold transition-all duration-300",
         rolex: "bg-gradient-primary text-primary-foreground hover:shadow-luxury transition-all duration-300 shadow-elegant font-semibold tracking-wide",
+        premium: "bg-gradient-highlight text-primary-foreground hover:shadow-luxury border border-primary/20 transition-all duration-300 font-semibold",
       },
       size: {
         default: "h-11 px-6 py-2.5",
