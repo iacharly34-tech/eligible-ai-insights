@@ -74,28 +74,42 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
     return null
   }
 
-  return (
-    <style
-      dangerouslySetInnerHTML={{
-        __html: Object.entries(THEMES)
-          .map(
-            ([theme, prefix]) => `
-${prefix} [data-chart=${id}] {
-${colorConfig
-  .map(([key, itemConfig]) => {
-    const color =
-      itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
-      itemConfig.color
-    return color ? `  --color-${key}: ${color};` : null
-  })
-  .join("\n")}
-}
-`
-          )
-          .join("\n"),
-      }}
-    />
-  )
+  // Create CSS rules safely without dangerouslySetInnerHTML
+  const styleContent = React.useMemo(() => {
+    return Object.entries(THEMES)
+      .map(([theme, prefix]) => {
+        const rules = colorConfig
+          .map(([key, itemConfig]) => {
+            const color =
+              itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
+              itemConfig.color
+            return color ? `  --color-${key}: ${color};` : null
+          })
+          .filter(Boolean)
+          .join("\n")
+        
+        return rules ? `${prefix} [data-chart="${id}"] {\n${rules}\n}` : ''
+      })
+      .filter(Boolean)
+      .join("\n")
+  }, [id, colorConfig])
+
+  // Use a style element with textContent instead of dangerouslySetInnerHTML
+  React.useEffect(() => {
+    const styleElement = document.createElement('style')
+    styleElement.textContent = styleContent
+    styleElement.setAttribute('data-chart-style', id)
+    document.head.appendChild(styleElement)
+
+    return () => {
+      const existingStyle = document.querySelector(`style[data-chart-style="${id}"]`)
+      if (existingStyle) {
+        document.head.removeChild(existingStyle)
+      }
+    }
+  }, [styleContent, id])
+
+  return null
 }
 
 const ChartTooltip = RechartsPrimitive.Tooltip

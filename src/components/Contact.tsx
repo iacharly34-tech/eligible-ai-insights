@@ -4,8 +4,70 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Mail, MessageCircle, Phone, ArrowRight } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { contactFormSchema, rateLimiter, generateCSRFToken } from "@/utils/security";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
+import type { z } from "zod";
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+  
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      company: "",
+      sector: "",
+      message: ""
+    }
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    // Rate limiting check
+    const clientIP = 'user-session'; // In production, use actual IP
+    if (!rateLimiter.checkLimit(clientIP)) {
+      toast({
+        title: "Trop de tentatives",
+        description: "Veuillez attendre avant de soumettre à nouveau.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      // Generate CSRF token
+      const csrfToken = generateCSRFToken();
+      
+      // In production, submit to your secure backend
+      console.log('Secure form submission:', { ...data, csrfToken });
+      
+      toast({
+        title: "Demande envoyée",
+        description: "Nous vous contacterons bientôt pour votre démonstration."
+      });
+      
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Erreur",
+        description: "Une erreur s'est produite. Veuillez réessayer.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -104,44 +166,109 @@ export const Contact = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Prénom</label>
-                  <Input placeholder="Jean" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Nom</label>
-                  <Input placeholder="Dupont" />
-                </div>
-              </div>
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <div className="grid grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="firstName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Prénom</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Jean" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="lastName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Nom</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Dupont" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Email professionnel</label>
-                <Input type="email" placeholder="jean.dupont@entreprise.com" />
-              </div>
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email professionnel</FormLabel>
+                        <FormControl>
+                          <Input type="email" placeholder="jean.dupont@entreprise.com" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Entreprise</label>
-                <Input placeholder="Nom de votre entreprise" />
-              </div>
+                  <FormField
+                    control={form.control}
+                    name="company"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Entreprise</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Nom de votre entreprise" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Secteur d'activité</label>
-                <Input placeholder="Ex: BTP, Informatique, Conseil..." />
-              </div>
+                  <FormField
+                    control={form.control}
+                    name="sector"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Secteur d'activité</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Ex: BTP, Informatique, Conseil..." {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Message (optionnel)</label>
-                <Textarea 
-                  placeholder="Décrivez vos besoins en matière d'appels d'offres..."
-                  rows={4}
-                />
-              </div>
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Message (optionnel)</FormLabel>
+                        <FormControl>
+                          <Textarea 
+                            placeholder="Décrivez vos besoins en matière d'appels d'offres..."
+                            rows={4}
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-              <Button variant="tengo" className="w-full" size="lg">
-                Demandez votre accès
-                <ArrowRight className="w-4 h-4" />
-              </Button>
+                  <Button 
+                    variant="tengo" 
+                    className="w-full" 
+                    size="lg" 
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Envoi en cours..." : "Demandez votre accès"}
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </form>
+              </Form>
 
               <p className="text-xs text-muted-foreground text-center">
                 En soumettant ce formulaire, vous acceptez d'être contacté par notre équipe. 

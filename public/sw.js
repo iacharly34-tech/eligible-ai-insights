@@ -34,17 +34,52 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Fetch event - Network first with fallback
+// Security helper function
+function isValidOrigin(url) {
+  try {
+    const requestUrl = new URL(url);
+    const allowedOrigins = [
+      self.location.origin,
+      'https://eligibly.ai',
+      'https://www.eligibly.ai'
+    ];
+    return allowedOrigins.includes(requestUrl.origin);
+  } catch {
+    return false;
+  }
+}
+
+// Security validation for responses
+function isSecureResponse(response) {
+  return response && 
+         response.status === 200 && 
+         response.type === 'basic' &&
+         response.headers.get('content-type');
+}
+
+// Fetch event - Secure network first with fallback
 self.addEventListener('fetch', (event) => {
+  // Only handle same-origin requests
+  if (!isValidOrigin(event.request.url)) {
+    return;
+  }
+
+  // Skip non-GET requests for security
+  if (event.request.method !== 'GET') {
+    return;
+  }
+
   if (event.request.destination === 'image') {
     event.respondWith(
       caches.open(DYNAMIC_CACHE).then((cache) => {
         return cache.match(event.request).then((response) => {
-          if (response) {
+          if (response && isSecureResponse(response)) {
             return response;
           }
           return fetch(event.request).then((networkResponse) => {
-            cache.put(event.request, networkResponse.clone());
+            if (isSecureResponse(networkResponse)) {
+              cache.put(event.request, networkResponse.clone());
+            }
             return networkResponse;
           });
         });
@@ -54,10 +89,12 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
-          const responseClone = response.clone();
-          caches.open(DYNAMIC_CACHE).then((cache) => {
-            cache.put(event.request, responseClone);
-          });
+          if (isSecureResponse(response)) {
+            const responseClone = response.clone();
+            caches.open(DYNAMIC_CACHE).then((cache) => {
+              cache.put(event.request, responseClone);
+            });
+          }
           return response;
         })
         .catch(() => {

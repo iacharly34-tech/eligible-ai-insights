@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { secureStorage } from '@/utils/security';
 
 type Language = 'fr' | 'en';
 
@@ -141,7 +142,7 @@ const translations = {
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>(() => {
     // Check localStorage first, then browser language, default to French
-    const saved = localStorage.getItem('eligibly-language') as Language;
+    const saved = secureStorage.getItem('eligibly-language') as Language;
     if (saved && (saved === 'fr' || saved === 'en')) {
       return saved;
     }
@@ -156,7 +157,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   });
 
   useEffect(() => {
-    localStorage.setItem('eligibly-language', language);
+    secureStorage.setItem('eligibly-language', language);
     document.documentElement.lang = language;
   }, [language]);
 
