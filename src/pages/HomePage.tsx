@@ -157,84 +157,125 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Right Column - Dashboard Eligibly.ai */}
+            {/* Right Column - Dashboard Eligibly.ai style Tengo.cc */}
             <div className="relative w-full">
-              {/* Dashboard Container */}
-              <div className="bg-white rounded-2xl shadow-xl border p-6 space-y-6 w-full min-h-[500px]">
+              {/* Dashboard Container - Style Tengo */}
+              <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
                 
-                {/* Header Dashboard */}
-                <div className="flex items-center justify-between border-b border-gray-100 pb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">Dashboard Eligibly.ai</h3>
-                    <p className="text-sm text-gray-600">Suivi en temps réel</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-xs text-green-600 font-medium">Live</span>
-                  </div>
-                </div>
-
-                {/* Métriques principales */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-5 border border-blue-100">
-                    <div className="text-3xl font-bold text-blue-600 mb-1">15+</div>
-                    <div className="text-sm text-blue-600">Opportunités détectées</div>
-                  </div>
-                  <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-5 border border-purple-100">
-                    <div className="text-3xl font-bold text-purple-600 mb-1">94%</div>
-                    <div className="text-sm text-purple-600">Précision IA</div>
-                  </div>
-                </div>
-
-                {/* Opportunités récentes */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2">
-                    <Target className="w-5 h-5 text-purple-600" />
-                    <h4 className="text-lg font-semibold text-gray-900">Opportunités récentes</h4>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    {/* Opportunité 1 */}
-                    <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-4 border border-purple-100 hover:shadow-lg transition-all duration-300">
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="text-lg font-bold text-purple-600">• 2,4M€</span>
-                        <Badge className="bg-purple-600 text-white text-sm px-3 py-1">Score: 94%</Badge>
-                      </div>
-                      <h5 className="font-semibold text-gray-900 mb-1">Système de gestion documentaire</h5>
-                      <p className="text-sm text-gray-600">Ministère de l'Éducation</p>
+                {/* Header Dashboard - Style Tengo */}
+                <div className="bg-gradient-to-r from-slate-50 to-gray-50 px-6 py-4 border-b border-gray-100">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900">Dashboard Eligibly.ai</h3>
+                      <p className="text-sm text-gray-600">Suivi en temps réel</p>
                     </div>
-
-                    {/* Opportunité 2 */}
-                    <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100 hover:shadow-lg transition-all duration-300 animate-fade-in">
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="text-lg font-bold text-blue-600">• 850K€</span>
-                        <Badge className="bg-blue-600 text-white text-sm px-3 py-1">Score: 91%</Badge>
-                      </div>
-                      <h5 className="font-semibold text-gray-900 mb-1">Infrastructure cloud</h5>
-                      <p className="text-sm text-gray-600">Région Île-de-France</p>
-                    </div>
-
-                    {/* Opportunité 3 */}
-                    <div className="bg-gradient-to-r from-cyan-50 to-teal-50 rounded-xl p-4 border border-cyan-100 hover:shadow-lg transition-all duration-300 animate-fade-in">
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="text-lg font-bold text-cyan-600">• 1,2M€</span>
-                        <Badge className="bg-cyan-600 text-white text-sm px-3 py-1">Score: 89%</Badge>
-                      </div>
-                      <h5 className="font-semibold text-gray-900 mb-1">Plateforme e-learning</h5>
-                      <p className="text-sm text-gray-600">Université de Lyon</p>
+                    <div className="flex items-center gap-2 bg-green-100 rounded-full px-3 py-1">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-xs text-green-700 font-semibold">Live</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Stats en temps réel */}
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  <div className="flex items-center gap-2 text-sm text-gray-500">
-                    <Clock className="w-4 h-4" />
-                    <span>Dernière analyse: il y a 2 min</span>
+                {/* Body Dashboard */}
+                <div className="p-6 space-y-6">
+                  {/* Métriques principales - Style Tengo */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl p-4 text-white">
+                      <div className="text-2xl font-bold">15+</div>
+                      <div className="text-xs opacity-90">Opportunités détectées</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl p-4 text-white">
+                      <div className="text-2xl font-bold">94%</div>
+                      <div className="text-xs opacity-90">Précision IA</div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-purple-600">
-                    <TrendingUp className="w-4 h-4" />
-                    <span>+6% cette semaine</span>
+
+                  {/* Section Opportunités - Style détaillé Tengo */}
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-2">
+                      <Target className="w-5 h-5 text-purple-600" />
+                      <h4 className="text-lg font-bold text-gray-900">Opportunités récentes</h4>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      {/* Opportunité 1 - Style Tengo détaillé */}
+                      <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-5 border border-purple-100 hover:shadow-lg transition-all duration-300">
+                        <div className="flex items-start justify-between mb-3">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-3 mb-2">
+                              <span className="text-2xl font-bold text-purple-600">2,4M€</span>
+                              <Badge className="bg-purple-600 text-white text-xs px-2 py-1">Score Charly: 94%</Badge>
+                              <Badge className="bg-green-100 text-green-700 text-xs px-2 py-1">Nouveau marché</Badge>
+                            </div>
+                            <h5 className="font-bold text-gray-900 mb-1">Système de gestion documentaire</h5>
+                            <p className="text-sm text-gray-600 mb-2">Ministère de l'Éducation</p>
+                            <div className="flex items-center gap-4 text-xs text-gray-500">
+                              <span className="flex items-center gap-1">
+                                <Clock className="w-3 h-3" />
+                                Fin: 15/03/2025
+                              </span>
+                              <span className="text-green-600 font-medium">💡 Excellente opportunité selon Charly</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Opportunité 2 - Style Tengo détaillé */}
+                      <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-5 border border-blue-100 hover:shadow-lg transition-all duration-300">
+                        <div className="flex items-start justify-between mb-3">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-3 mb-2">
+                              <span className="text-2xl font-bold text-blue-600">850K€</span>
+                              <Badge className="bg-blue-600 text-white text-xs px-2 py-1">Score Charly: 91%</Badge>
+                              <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1">Renouvellement</Badge>
+                            </div>
+                            <h5 className="font-bold text-gray-900 mb-1">Infrastructure cloud</h5>
+                            <p className="text-sm text-gray-600 mb-2">Région Île-de-France</p>
+                            <div className="flex items-center gap-4 text-xs text-gray-500">
+                              <span className="flex items-center gap-1">
+                                <Clock className="w-3 h-3" />
+                                Fin: 28/02/2025
+                              </span>
+                              <span className="text-blue-600 font-medium">👍 Bonne opportunité selon Charly</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Opportunité 3 - Style Tengo détaillé */}
+                      <div className="bg-gradient-to-r from-cyan-50 to-teal-50 rounded-xl p-5 border border-cyan-100 hover:shadow-lg transition-all duration-300">
+                        <div className="flex items-start justify-between mb-3">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-3 mb-2">
+                              <span className="text-2xl font-bold text-cyan-600">1,2M€</span>
+                              <Badge className="bg-cyan-600 text-white text-xs px-2 py-1">Score Charly: 89%</Badge>
+                              <Badge className="bg-green-100 text-green-700 text-xs px-2 py-1">Nouveau marché</Badge>
+                            </div>
+                            <h5 className="font-bold text-gray-900 mb-1">Plateforme e-learning</h5>
+                            <p className="text-sm text-gray-600 mb-2">Université de Lyon</p>
+                            <div className="flex items-center gap-4 text-xs text-gray-500">
+                              <span className="flex items-center gap-1">
+                                <Clock className="w-3 h-3" />
+                                Fin: 10/03/2025
+                              </span>
+                              <span className="text-cyan-600 font-medium">👌 Opportunité intéressante selon Charly</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Footer Stats - Style Tengo */}
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100 bg-gray-50 -mx-6 px-6 py-3 rounded-b-2xl">
+                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                      <Clock className="w-4 h-4" />
+                      <span>Dernière analyse: il y a 2 min</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-purple-600 font-semibold">
+                      <TrendingUp className="w-4 h-4" />
+                      <span>+6% cette semaine</span>
+                    </div>
                   </div>
                 </div>
               </div>
