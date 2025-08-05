@@ -190,7 +190,7 @@ const NewIndex = () => {
                 <div className="space-y-3">
                   <h4 className="text-sm font-medium text-foreground flex items-center gap-2">
                     <Target className="w-4 h-4 text-primary" />
-                    {t('features.title')} {t('features.title.highlight')}
+                    Opportunités récentes
                   </h4>
                   
                   <div className="space-y-2">
