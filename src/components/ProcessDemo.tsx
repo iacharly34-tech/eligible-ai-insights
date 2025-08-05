@@ -78,48 +78,102 @@ export const ProcessDemo = () => {
   const startDemo = () => {
     if (isRunning) return;
     
+    resetDemo();
     setIsRunning(true);
-    setCurrentStep(1);
-    setProgress(0);
-
-    // Simulate the 4-step process
-    const stepDuration = 2000; // 2 seconds per step
     
-    const runStep = (stepIndex: number) => {
-      if (stepIndex > 4) {
-        setIsRunning(false);
-        return;
+    // Step-by-step progression with proper timing
+    const steps = [
+      {
+        step: 1,
+        delay: 0,
+        duration: 2500,
+        action: () => {
+          setCurrentStep(1);
+          // Simulate data collection
+          setTimeout(() => {
+            setSourceData(prev => ({
+              ...prev,
+              boamp: prev.boamp + Math.floor(Math.random() * 15) + 5,
+              marchesPublics: prev.marchesPublics + Math.floor(Math.random() * 12) + 3
+            }));
+          }, 800);
+        }
+      },
+      {
+        step: 2,
+        delay: 2500,
+        duration: 2000,
+        action: () => {
+          setCurrentStep(2);
+          // Simulate extraction
+          setTimeout(() => {
+            setSourceData(prev => ({
+              ...prev,
+              place: prev.place + Math.floor(Math.random() * 8) + 2,
+              awsDume: prev.awsDume + Math.floor(Math.random() * 6) + 1
+            }));
+          }, 600);
+        }
+      },
+      {
+        step: 3,
+        delay: 4500,
+        duration: 2200,
+        action: () => {
+          setCurrentStep(3);
+          // Simulate AI analysis with multiple data updates
+          setTimeout(() => {
+            setSourceData(prev => ({
+              ...prev,
+              boamp: prev.boamp + Math.floor(Math.random() * 8),
+            }));
+          }, 400);
+          setTimeout(() => {
+            setSourceData(prev => ({
+              ...prev,
+              marchesPublics: prev.marchesPublics + Math.floor(Math.random() * 5),
+            }));
+          }, 1200);
+        }
+      },
+      {
+        step: 4,
+        delay: 6700,
+        duration: 1800,
+        action: () => {
+          setCurrentStep(4);
+          // Final scoring
+          setTimeout(() => {
+            setSourceData(prev => ({
+              ...prev,
+              place: prev.place + Math.floor(Math.random() * 4),
+              awsDume: prev.awsDume + Math.floor(Math.random() * 3)
+            }));
+          }, 500);
+        }
       }
+    ];
 
-      setCurrentStep(stepIndex);
-      
-      // Animate progress for current step
-      const progressInterval = setInterval(() => {
-        setProgress(prev => {
-          const newProgress = (stepIndex - 1) * 25 + (prev % 25) + 2;
-          if (newProgress >= stepIndex * 25) {
-            clearInterval(progressInterval);
-            setTimeout(() => runStep(stepIndex + 1), 300);
-            return stepIndex * 25;
-          }
-          return newProgress;
-        });
-      }, 100);
+    // Animate progress continuously
+    const progressInterval = setInterval(() => {
+      setProgress(prev => {
+        const newProgress = prev + 1.2;
+        if (newProgress >= 100) {
+          clearInterval(progressInterval);
+          setTimeout(() => {
+            setIsRunning(false);
+            setCurrentStep(5); // Completed state
+          }, 500);
+          return 100;
+        }
+        return newProgress;
+      });
+    }, 80);
 
-      // Simulate data changes during processing
-      if (stepIndex === 1) {
-        // Connexion - data flows in
-        setTimeout(() => {
-          setSourceData(prev => ({
-            ...prev,
-            boamp: prev.boamp + Math.floor(Math.random() * 10),
-            marchesPublics: prev.marchesPublics + Math.floor(Math.random() * 8)
-          }));
-        }, 1000);
-      }
-    };
-
-    runStep(1);
+    // Execute each step
+    steps.forEach(({ delay, action }) => {
+      setTimeout(action, delay);
+    });
   };
 
   return (
@@ -248,38 +302,81 @@ export const ProcessDemo = () => {
             {steps.map((step, index) => (
               <div
                 key={step.id}
-                className={`text-center transition-all duration-500 ${
+                className={`text-center transition-all duration-700 transform ${
                   currentStep >= step.id 
-                    ? 'opacity-100' 
-                    : 'opacity-40'
+                    ? 'opacity-100 scale-100 translate-y-0' 
+                    : 'opacity-30 scale-95 translate-y-2'
                 }`}
               >
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 transition-all duration-500 ${
-                  currentStep >= step.id
-                    ? 'bg-purple-600 text-white'
+                <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-700 ${
+                  currentStep > step.id
+                    ? 'bg-green-600 text-white shadow-lg scale-110'
+                    : currentStep === step.id
+                    ? 'bg-purple-600 text-white shadow-lg scale-110 animate-pulse'
                     : 'bg-gray-200 text-gray-400'
                 }`}>
                   {currentStep > step.id ? (
-                    <CheckCircle className="w-6 h-6" />
+                    <CheckCircle className="w-8 h-8" />
+                  ) : currentStep === step.id ? (
+                    <div className="w-3 h-3 bg-white rounded-full animate-bounce"></div>
                   ) : (
-                    step.id
+                    <span className="text-lg font-bold">{step.id}</span>
                   )}
                 </div>
-                <h4 className="font-semibold text-sm mb-2">{step.title}</h4>
-                <p className="text-xs text-gray-600">{step.description}</p>
+                <h4 className={`font-semibold text-sm mb-2 transition-colors duration-500 ${
+                  currentStep >= step.id ? 'text-purple-700' : 'text-gray-500'
+                }`}>
+                  {step.title}
+                </h4>
+                <p className={`text-xs transition-colors duration-500 ${
+                  currentStep >= step.id ? 'text-purple-600' : 'text-gray-400'
+                }`}>
+                  {step.description}
+                </p>
+                
+                {/* Step Connection Line */}
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gray-200 transform translate-x-1/2">
+                    <div 
+                      className={`h-full bg-purple-600 transition-all duration-1000 ${
+                        currentStep > step.id ? 'w-full' : 'w-0'
+                      }`}
+                    ></div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
 
           {/* Current Step Info */}
-          {currentStep > 0 && (
-            <div className="mt-8 p-4 bg-purple-50 rounded-lg border border-purple-200">
+          {currentStep > 0 && currentStep <= 4 && (
+            <div className="mt-8 p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl border border-purple-200 animate-fade-in">
               <div className="text-center">
-                <Badge className="bg-purple-100 text-purple-700 mb-2">
-                  Étape {currentStep}/4: {steps[currentStep - 1]?.title}
+                <Badge className="bg-purple-600 text-white mb-3 px-4 py-2">
+                  {isRunning ? '🔄 En cours' : '✅ Terminé'} - Étape {currentStep}/4
                 </Badge>
-                <p className="text-sm text-purple-700">
+                <h4 className="text-lg font-bold text-purple-800 mb-2">
+                  {steps[currentStep - 1]?.title}
+                </h4>
+                <p className="text-sm text-purple-700 leading-relaxed">
                   {steps[currentStep - 1]?.description}
+                </p>
+              </div>
+            </div>
+          )}
+          
+          {/* Completion Message */}
+          {currentStep >= 5 && (
+            <div className="mt-8 p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200 animate-fade-in">
+              <div className="text-center">
+                <Badge className="bg-green-600 text-white mb-3 px-4 py-2">
+                  ✅ Processus terminé
+                </Badge>
+                <h4 className="text-lg font-bold text-green-800 mb-2">
+                  Analyse complète
+                </h4>
+                <p className="text-sm text-green-700">
+                  Les appels d'offres ont été analysés et scorés avec succès !
                 </p>
               </div>
             </div>
