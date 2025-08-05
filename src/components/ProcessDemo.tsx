@@ -25,9 +25,36 @@ export const ProcessDemo = () => {
   const [codeLines, setCodeLines] = useState<string[]>([]);
   const [showResults, setShowResults] = useState(false);
   const [aoResults, setAoResults] = useState([
-    { title: "Fourniture de matériel informatique", score: 94, budget: "150K€", deadline: "15/02/2025" },
-    { title: "Services de développement web", score: 87, budget: "80K€", deadline: "28/02/2025" },
-    { title: "Maintenance systèmes réseaux", score: 76, budget: "45K€", deadline: "10/03/2025" }
+    { 
+      title: "Fourniture de matériel informatique", 
+      score: 94, 
+      budget: "150K€", 
+      deadline: "15/02/2025",
+      criteres: { prix: 30, qualite: 60, performance: 10 },
+      penalites: "Oui - 0.5% par jour de retard",
+      titulaire: "À déterminer",
+      duree: "24 mois"
+    },
+    { 
+      title: "Services de développement web", 
+      score: 87, 
+      budget: "80K€", 
+      deadline: "28/02/2025",
+      criteres: { prix: 20, qualite: 70, performance: 10 },
+      penalites: "Non spécifié",
+      titulaire: "Nouveau marché",
+      duree: "12 mois"
+    },
+    { 
+      title: "Maintenance systèmes réseaux", 
+      score: 76, 
+      budget: "45K€", 
+      deadline: "10/03/2025",
+      criteres: { prix: 40, qualite: 50, performance: 10 },
+      penalites: "Oui - Forfaitaire 500€",
+      titulaire: "Renouvellement",
+      duree: "36 mois"
+    }
   ]);
 
   const steps = [
@@ -358,29 +385,81 @@ export const ProcessDemo = () => {
                     <Badge className="bg-green-600 text-white ml-auto">3 opportunités trouvées</Badge>
                   </div>
                   
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {aoResults.map((ao, index) => (
                       <div
                         key={index}
-                        className="bg-white rounded-lg p-4 border border-purple-200 flex items-center justify-between animate-fade-in"
+                        className="bg-white rounded-lg p-6 border border-purple-200 animate-fade-in"
                         style={{ animationDelay: `${index * 0.2}s` }}
                       >
-                        <div className="flex-1">
-                          <h4 className="font-semibold text-gray-800 mb-1">{ao.title}</h4>
-                          <div className="flex items-center gap-4 text-sm text-gray-600">
-                            <span>Budget: {ao.budget}</span>
-                            <span>Deadline: {ao.deadline}</span>
+                        <div className="flex justify-between items-start mb-4">
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-gray-800 mb-2">{ao.title}</h4>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                              <div>
+                                <span className="text-gray-500">Budget:</span>
+                                <div className="font-medium">{ao.budget}</div>
+                              </div>
+                              <div>
+                                <span className="text-gray-500">Deadline:</span>
+                                <div className="font-medium">{ao.deadline}</div>
+                              </div>
+                              <div>
+                                <span className="text-gray-500">Durée:</span>
+                                <div className="font-medium">{ao.duree}</div>
+                              </div>
+                              <div>
+                                <span className="text-gray-500">Titulaire:</span>
+                                <div className="font-medium text-xs">{ao.titulaire}</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text-right ml-4">
+                            <div className={`text-2xl font-bold ${
+                              ao.score >= 90 ? 'text-green-600' : 
+                              ao.score >= 80 ? 'text-blue-600' : 
+                              'text-orange-600'
+                            }`}>
+                              {ao.score}%
+                            </div>
+                            <div className="text-xs text-gray-500">Score Charly</div>
                           </div>
                         </div>
-                        <div className="text-right">
-                          <div className={`text-2xl font-bold ${
-                            ao.score >= 90 ? 'text-green-600' : 
-                            ao.score >= 80 ? 'text-blue-600' : 
-                            'text-orange-600'
-                          }`}>
-                            {ao.score}%
+                        
+                        {/* Critères d'évaluation */}
+                        <div className="bg-gray-50 rounded-lg p-4 mb-3">
+                          <h5 className="text-sm font-semibold text-gray-700 mb-2">Critères de l'acheteur</h5>
+                          <div className="flex items-center gap-4">
+                            <div className="flex-1">
+                              <div className="flex justify-between text-xs mb-1">
+                                <span>Prix: {ao.criteres.prix}%</span>
+                                <span>Qualité: {ao.criteres.qualite}%</span>
+                                <span>Performance: {ao.criteres.performance}%</span>
+                              </div>
+                              <div className="flex gap-1 h-2 rounded-full overflow-hidden">
+                                <div 
+                                  className="bg-red-400" 
+                                  style={{ width: `${ao.criteres.prix}%` }}
+                                ></div>
+                                <div 
+                                  className="bg-green-400" 
+                                  style={{ width: `${ao.criteres.qualite}%` }}
+                                ></div>
+                                <div 
+                                  className="bg-blue-400" 
+                                  style={{ width: `${ao.criteres.performance}%` }}
+                                ></div>
+                              </div>
+                            </div>
                           </div>
-                          <div className="text-xs text-gray-500">Score Charly</div>
+                        </div>
+                        
+                        {/* Pénalités */}
+                        <div className="text-sm">
+                          <span className="text-gray-500">Pénalités: </span>
+                          <span className={ao.penalites.includes("Oui") ? "text-red-600 font-medium" : "text-gray-600"}>
+                            {ao.penalites}
+                          </span>
                         </div>
                       </div>
                     ))}
