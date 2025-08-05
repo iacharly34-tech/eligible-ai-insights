@@ -5,10 +5,12 @@ import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { SafeLink } from "./SafeLink";
+import { useLocation } from "react-router-dom";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useLanguage();
+  const location = useLocation();
 
   const navigation = [
     { name: t('nav.product'), href: "/produit" },
@@ -29,16 +31,32 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label={t('accessibility.navigation.main')}>
-            {navigation.map((item) => (
-              <SafeLink
-                key={item.name}
-                to={item.href}
-                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors duration-200 relative group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1"
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-200 group-hover:w-full" aria-hidden="true"></span>
-              </SafeLink>
-            ))}
+            {navigation.map((item) => {
+              const isActive = location.pathname === item.href;
+              return (
+                <SafeLink
+                  key={item.name}
+                  to={item.href}
+                  className={cn(
+                    "text-sm font-medium transition-colors duration-200 relative group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
+                    isActive 
+                      ? "text-primary font-semibold" 
+                      : "text-foreground/70 hover:text-foreground"
+                  )}
+                >
+                  {item.name}
+                  <span 
+                    className={cn(
+                      "absolute -bottom-1 left-0 h-0.5 bg-gradient-primary transition-all duration-200",
+                      isActive 
+                        ? "w-full" 
+                        : "w-0 group-hover:w-full"
+                    )} 
+                    aria-hidden="true"
+                  />
+                </SafeLink>
+              );
+            })}
           </nav>
 
           {/* Desktop CTA */}
@@ -90,17 +108,25 @@ export const Header = () => {
             aria-label={t('accessibility.navigation.mobile')}
             aria-hidden={!isMenuOpen}
           >
-            {navigation.map((item) => (
-              <SafeLink
-                key={item.name}
-                to={item.href}
-                className="block text-sm font-medium text-foreground/70 hover:text-foreground hover:bg-gray-50 transition-colors duration-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                onClick={() => setIsMenuOpen(false)}
-                tabIndex={isMenuOpen ? 0 : -1}
-              >
-                {item.name}
-              </SafeLink>
-            ))}
+            {navigation.map((item) => {
+              const isActive = location.pathname === item.href;
+              return (
+                <SafeLink
+                  key={item.name}
+                  to={item.href}
+                  className={cn(
+                    "block text-sm font-medium transition-colors duration-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
+                    isActive 
+                      ? "text-primary font-semibold bg-primary/10" 
+                      : "text-foreground/70 hover:text-foreground hover:bg-gray-50"
+                  )}
+                  onClick={() => setIsMenuOpen(false)}
+                  tabIndex={isMenuOpen ? 0 : -1}
+                >
+                  {item.name}
+                </SafeLink>
+              );
+            })}
             <div className="pt-4 px-4 space-y-3 border-t border-border/30 mt-4">
               <div className="flex justify-center mb-3">
                 <LanguageSwitcher />
