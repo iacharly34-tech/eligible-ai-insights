@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { SkipNavigation } from "@/components/SkipNavigation";
 import { WCAGAccessibilityComponent } from "@/components/WCAGAccessibilityComponent";
+import { Header } from "@/components/Header";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Produit from "./pages/Produit";
