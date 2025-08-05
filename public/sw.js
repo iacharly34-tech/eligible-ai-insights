@@ -1,11 +1,20 @@
-const CACHE_NAME = 'eligible-ai-v1';
-const STATIC_CACHE = 'static-v1';
-const DYNAMIC_CACHE = 'dynamic-v1';
+const CACHE_NAME = 'eligible-ai-v2';
+const STATIC_CACHE = 'static-v2';
+const DYNAMIC_CACHE = 'dynamic-v2';
+const IMAGE_CACHE = 'images-v1';
 
+// Cache stratégique pour l'écoconception
 const STATIC_ASSETS = [
   '/',
   '/src/main.tsx',
   '/src/index.css',
+  '/manifest.json'
+];
+
+// Ressources critiques uniquement
+const CRITICAL_RESOURCES = [
+  '/src/components/Hero.tsx',
+  '/src/assets/js-development-workspace.jpg'
 ];
 
 // Install event
@@ -57,7 +66,7 @@ function isSecureResponse(response) {
          response.headers.get('content-type');
 }
 
-// Fetch event - Secure network first with fallback
+// Stratégie de cache optimisée pour l'écoconception
 self.addEventListener('fetch', (event) => {
   // Only handle same-origin requests
   if (!isValidOrigin(event.request.url)) {
@@ -69,29 +78,36 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Cache intelligent pour les images (stratégie cache-first)
   if (event.request.destination === 'image') {
     event.respondWith(
-      caches.open(DYNAMIC_CACHE).then((cache) => {
+      caches.open(IMAGE_CACHE).then((cache) => {
         return cache.match(event.request).then((response) => {
           if (response && isSecureResponse(response)) {
             return response;
           }
           return fetch(event.request).then((networkResponse) => {
             if (isSecureResponse(networkResponse)) {
+              // Cache agressif pour les images (économie bande passante)
               cache.put(event.request, networkResponse.clone());
             }
             return networkResponse;
+          }).catch(() => {
+            // Fallback gracieux sans image cassée
+            return new Response('', { status: 204 });
           });
         });
       })
     );
-  } else {
+  } 
+  // Stratégie network-first pour les ressources critiques
+  else if (CRITICAL_RESOURCES.some(resource => event.request.url.includes(resource))) {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
           if (isSecureResponse(response)) {
             const responseClone = response.clone();
-            caches.open(DYNAMIC_CACHE).then((cache) => {
+            caches.open(STATIC_CACHE).then((cache) => {
               cache.put(event.request, responseClone);
             });
           }
@@ -100,6 +116,25 @@ self.addEventListener('fetch', (event) => {
         .catch(() => {
           return caches.match(event.request);
         })
+    );
+  }
+  // Cache-first pour les autres ressources (économie d'énergie)
+  else {
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        if (response && isSecureResponse(response)) {
+          return response;
+        }
+        return fetch(event.request).then((networkResponse) => {
+          if (isSecureResponse(networkResponse)) {
+            const responseClone = networkResponse.clone();
+            caches.open(DYNAMIC_CACHE).then((cache) => {
+              cache.put(event.request, responseClone);
+            });
+          }
+          return networkResponse;
+        });
+      })
     );
   }
 });
