@@ -24,11 +24,11 @@ const translations = {
     'nav.demo': 'Démo gratuite',
     
     // Hero Section
-    'hero.badge': 'Plateforme • Marchés Publics • Intelligence Artificielle',
-    'hero.title': 'Trouvez et remportez vos',
-    'hero.title.highlight': 'marchés publics',
-    'hero.title.end': 'en un clin d\'œil',
-    'hero.subtitle': 'Plus de 500 professionnels utilisent Eligibly.ai pour détecter automatiquement les appels d\'offres les plus pertinents. Une plateforme simple qui surveille 200+ sources officielles avec 94% de précision.',
+    'hero.badge': 'Seule plateforme • IA prédictive • Marchés Publics',
+    'hero.title': 'La seule IA qui',
+    'hero.title.highlight': 'prédit vos chances',
+    'hero.title.end': 'avant de candidater',
+    'hero.subtitle': 'Eligibly.ai est la première plateforme d\'intelligence artificielle prédictive qui analyse vos chances de succès sur chaque marché public. Plus de 500 professionnels nous font confiance.',
     'hero.cta.primary': 'Démarrer gratuitement',
     'hero.cta.secondary': 'Demander une démonstration',
     'hero.stats.opportunities': '+200 appels d\'offres analysés quotidiennement',
@@ -39,14 +39,14 @@ const translations = {
     'features.title': 'Fonctionnalités',
     'features.title.highlight': 'essentielles',
     'features.subtitle': 'Une plateforme complète pour optimiser votre approche des marchés publics et maximiser vos chances de succès.',
-    'features.multisource.title': 'Surveillance automatisée 24h/24',
-    'features.multisource.desc': 'Surveillance continue de plus de 200 sources officielles françaises et européennes pour ne manquer aucune opportunité',
-    'features.ai.title': 'Analyse intelligente des marchés',
-    'features.ai.desc': 'Notre technologie d\'intelligence artificielle analyse et qualifie automatiquement chaque appel d\'offres selon vos critères',
-    'features.scoring.title': 'Score de pertinence automatique',
-    'features.scoring.desc': 'Chaque marché reçoit un score de compatibilité pour vous aider à prioriser vos efforts commerciaux',
-    'features.notifications.title': 'Alertes personnalisées en temps réel',
-    'features.notifications.desc': 'Notifications instantanées par email ou Slack uniquement pour les marchés correspondant à votre profil d\'activité',
+    'features.multisource.title': 'IA prédictive exclusive',
+    'features.multisource.desc': 'La seule plateforme qui prédit vos chances de succès avant même de candidater grâce à notre algorithme propriétaire',
+    'features.ai.title': 'Analyse prédictive des marchés',
+    'features.ai.desc': 'Notre IA analyse votre profil vs les critères de chaque marché pour prédire votre probabilité de remporter l\'appel d\'offres',
+    'features.scoring.title': 'Score prédictif de réussite',
+    'features.scoring.desc': 'Chaque marché affiche votre probabilité de succès en pourcentage pour optimiser vos efforts commerciaux',
+    'features.notifications.title': 'Alertes intelligentes prédictives',
+    'features.notifications.desc': 'Notifications uniquement pour les marchés où vous avez le plus de chances de remporter le contrat',
     
     // Market Stats Section
     'market.title': 'Le marché des',
@@ -64,10 +64,10 @@ const translations = {
     'market.benefits.growth': 'Croissance stable',
     
     // CTA Section
-    'cta.title': 'Optimisez votre performance commerciale',
-    'cta.subtitle': 'Rejoignez les centaines de professionnels qui utilisent Eligibly.ai pour détecter et remporter plus de marchés publics',
-    'cta.primary': 'Commencer gratuitement',
-    'cta.secondary': 'Planifier une démonstration',
+    'cta.title': 'Ne candidatez plus à l\'aveugle',
+    'cta.subtitle': 'Rejoignez les centaines de professionnels qui utilisent la seule IA prédictive pour maximiser leurs chances de remporter des marchés publics',
+    'cta.primary': 'Découvrir mes chances',
+    'cta.secondary': 'Voir la prédiction en action',
     
     // Footer
     'footer.company': 'Société',
@@ -232,11 +232,11 @@ const translations = {
     'nav.demo': 'Free demo',
     
     // Hero Section
-    'hero.badge': 'Platform • Public Procurement • Artificial Intelligence',
-    'hero.title': 'Find and win your',
-    'hero.title.highlight': 'public tenders',
-    'hero.title.end': 'at a glance',
-    'hero.subtitle': 'Over 500 professionals use Eligibly.ai to automatically detect the most relevant tenders. A simple platform that monitors 200+ official sources with 94% accuracy.',
+    'hero.badge': 'Only platform • Predictive AI • Public Procurement',
+    'hero.title': 'The only AI that',
+    'hero.title.highlight': 'predicts your chances',
+    'hero.title.end': 'before you apply',
+    'hero.subtitle': 'Eligibly.ai is the first predictive artificial intelligence platform that analyzes your chances of success on every public tender. Over 500 professionals trust us.',
     'hero.cta.primary': 'Get started free',
     'hero.cta.secondary': 'Request demonstration',
     'hero.stats.opportunities': '+200 public tenders analyzed daily',
@@ -247,14 +247,14 @@ const translations = {
     'features.title': 'Essential',
     'features.title.highlight': 'features',
     'features.subtitle': 'A comprehensive platform to optimize your approach to public procurement and maximize your chances of success.',
-    'features.multisource.title': '24/7 automated monitoring',
-    'features.multisource.desc': 'Continuous monitoring of over 200 official French and European sources to never miss an opportunity',
-    'features.ai.title': 'Intelligent market analysis',
-    'features.ai.desc': 'Our artificial intelligence technology automatically analyzes and qualifies each tender according to your criteria',
-    'features.scoring.title': 'Automatic relevance scoring',
-    'features.scoring.desc': 'Each tender receives a compatibility score to help you prioritize your commercial efforts',
-    'features.notifications.title': 'Real-time personalized alerts',
-    'features.notifications.desc': 'Instant notifications via email or Slack only for tenders matching your business profile',
+    'features.multisource.title': 'Exclusive predictive AI',
+    'features.multisource.desc': 'The only platform that predicts your chances of success before you even apply thanks to our proprietary algorithm',
+    'features.ai.title': 'Predictive market analysis',
+    'features.ai.desc': 'Our AI analyzes your profile vs each tender criteria to predict your probability of winning the contract',
+    'features.scoring.title': 'Predictive success score',
+    'features.scoring.desc': 'Each tender displays your success probability as a percentage to optimize your commercial efforts',
+    'features.notifications.title': 'Predictive smart alerts',
+    'features.notifications.desc': 'Notifications only for tenders where you have the highest chances of winning the contract',
     
     // Market Stats Section
     'market.title': 'The',
@@ -272,10 +272,10 @@ const translations = {
     'market.benefits.growth': 'Stable growth',
     
     // CTA Section
-    'cta.title': 'Optimize your commercial performance',
-    'cta.subtitle': 'Join hundreds of professionals who use Eligibly.ai to detect and win more public tenders',
-    'cta.primary': 'Start free',
-    'cta.secondary': 'Schedule demonstration',
+    'cta.title': 'Stop applying blindly',
+    'cta.subtitle': 'Join hundreds of professionals who use the only predictive AI to maximize their chances of winning public tenders',
+    'cta.primary': 'Discover my chances',
+    'cta.secondary': 'See prediction in action',
     
     // Footer
     'footer.company': 'Company',
