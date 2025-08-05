@@ -17,7 +17,7 @@ export const COMPANY_STATS = {
   enterprises: "beta testeurs", 
   sources: "200+",
   precision: "94%",
-  timeSaved: "6h",
+  timeSaved: "10x",
   opportunitiesPerDay: "200+",
   successRate: "10x",
   marketValue: "80Md€",
@@ -40,12 +40,12 @@ export const STATS_SOURCES = {
     note: "Plateformes officielles: BOAMP, PLACE, TED, profils d'acheteurs régionaux",
     methodology: "Recensement des sources officielles françaises et européennes"
   },
-  timeSaved: {
-    value: "6h/semaine",
-    source: "Étude interne Eligibly.ai",
+  automation: {
+    value: "10x plus rapide",
+    source: "Comparaison théorique",
     year: "2024",
-    note: "Temps moyen économisé basé sur nos clients vs veille manuelle",
-    methodology: "Comparaison avant/après sur un échantillon de 50 entreprises"
+    note: "Vitesse d'analyse automatisée vs recherche manuelle",
+    methodology: "Temps de traitement algorithmique vs temps humain estimé"
   },
   precision: {
     value: "94%",

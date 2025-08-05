@@ -33,7 +33,7 @@ const translations = {
     'hero.cta.secondary': 'Voir la démonstration',
     'hero.stats.opportunities': '+200 appels d\'offres analysés quotidiennement',
     'hero.stats.time': '10x plus rapide pour qualifier un marché',
-    'hero.stats.precision': '6h économisées par semaine en moyenne',
+    'hero.stats.precision': '10x plus rapide que la recherche manuelle',
     
     // Features
     'features.title': 'Fonctionnalités',
@@ -241,7 +241,7 @@ const translations = {
     'hero.cta.secondary': 'Watch demonstration',
     'hero.stats.opportunities': '+200 public tenders analyzed daily',
     'hero.stats.time': '10x faster to qualify a tender',
-    'hero.stats.precision': '6h saved per week on average',
+    'hero.stats.precision': '10x faster than manual search',
     
     // Features
     'features.title': 'Essential',
