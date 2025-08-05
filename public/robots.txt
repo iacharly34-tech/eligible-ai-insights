@@ -12,3 +12,20 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://eligible.ai/sitemap.xml
+
+# Optimisations pour l'indexation
+Crawl-delay: 1
+
+# Bloquer les fichiers sensibles
+Disallow: /admin/
+Disallow: /api/
+Disallow: *.json$
+Disallow: /sw.js
+Disallow: /manifest.json
+
+# Autoriser les ressources importantes
+Allow: /assets/
+Allow: /src/assets/

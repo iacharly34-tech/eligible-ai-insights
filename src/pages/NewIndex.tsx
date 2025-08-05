@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
+import { updateMetaDescription, updatePageTitle, updateCanonicalUrl, SEO_CONTENT } from "@/utils/seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -47,14 +48,18 @@ const NewIndex = () => {
   useEffect(() => {
     setIsVisible(true);
     
+    // SEO optimizations
+    updatePageTitle(SEO_CONTENT.home.title);
+    updateMetaDescription(SEO_CONTENT.home.description);
+    updateCanonicalUrl(SEO_CONTENT.home.url);
+    
     // Process Charly image to remove background
     const loadCharlyImage = async () => {
       try {
         const processedImageUrl = await processCharlyImage();
         setCharlyImageUrl(processedImageUrl);
       } catch (error) {
-        console.error('Failed to process Charly image:', error);
-        // Fallback to original image
+        // Fallback to original image - silent in production
       }
     };
     

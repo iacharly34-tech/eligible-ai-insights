@@ -17,14 +17,14 @@ export const Footer = () => {
         { name: "À propos", href: "/a-propos" },
         { name: "Ressources", href: "/ressources" },
         { name: "Connexion", href: "/connexion" },
-        { name: "Contact", href: "mailto:contact@eligibly.ai" }
+        { name: "Contact", href: "mailto:contact@eligible.ai" }
       ]
     },
     {
       title: "Support",
       links: [
         { name: "Démonstration", href: "/demo" },
-        { name: "Contact", href: "mailto:contact@eligibly.ai" },
+        { name: "Contact", href: "mailto:contact@eligible.ai" },
         { name: "Aide", href: "tel:+33123456789" },
         { name: "Documentation", href: "/ressources" }
       ]
@@ -35,7 +35,7 @@ export const Footer = () => {
         { name: "Mentions légales", href: "/mentions-legales" },
         { name: "Confidentialité", href: "/confidentialite" },
         { name: "CGU", href: "/cgu" },
-        { name: "Contact", href: "mailto:contact@eligibly.ai" }
+        { name: "Contact", href: "mailto:contact@eligible.ai" }
       ]
     }
   ];
@@ -51,7 +51,7 @@ export const Footer = () => {
                 <Brain className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                eligibly.ai
+               eligible.ai
               </span>
             </div>
             
@@ -63,7 +63,7 @@ export const Footer = () => {
             <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-sm text-foreground/70">
                   <Mail className="w-4 h-4" />
-                  <span>contact@eligibly.ai</span>
+                  <span>contact@eligible.ai</span>
                 </div>
                 <div className="flex items-center space-x-3 text-sm text-foreground/70">
                   <Phone className="w-4 h-4" />
@@ -77,16 +77,20 @@ export const Footer = () => {
 
             <div className="flex space-x-4">
               <a 
-                href="#" 
+                href="https://linkedin.com/company/eligible-ai" 
                 className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-200"
-                aria-label="LinkedIn"
+                aria-label="LinkedIn - Eligible.ai"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://twitter.com/eligible_ai" 
                 className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-200"
-                aria-label="Twitter"
+                aria-label="Twitter - Eligible.ai"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Twitter className="w-5 h-5" />
               </a>
@@ -117,7 +121,7 @@ export const Footer = () => {
         <div className="mt-16 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-foreground/70">
-              © 2024 eligibly.ai. Tous droits réservés.
+              © 2024 eligible.ai. Tous droits réservés.
             </div>
             <div className="flex items-center space-x-6 text-sm text-foreground/70">
               <span>Made with ❤️ in France</span>

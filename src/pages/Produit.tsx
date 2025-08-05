@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CTAFooter } from "@/components/CTAFooter";
+import { updateMetaDescription, updatePageTitle, updateCanonicalUrl, SEO_CONTENT } from "@/utils/seo";
 import { 
   ArrowRight,
   CheckCircle,
@@ -12,6 +14,12 @@ import aiAssistantMain from "@/assets/ai-assistant-main.jpg";
 import { CORE_FEATURES, MEASURABLE_BENEFITS, HERO_MESSAGES, STANDARD_CTAS, COMPANY_STATS } from "@/data/constants";
 
 const Produit = () => {
+  useEffect(() => {
+    updatePageTitle(SEO_CONTENT.produit.title);
+    updateMetaDescription(SEO_CONTENT.produit.description);
+    updateCanonicalUrl(SEO_CONTENT.produit.url);
+  }, []);
+
   // Spécialisation : Fonctionnalités techniques détaillées uniquement
   const technicalFeatures = CORE_FEATURES.map(feature => ({
     ...feature,
