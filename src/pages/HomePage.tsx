@@ -136,7 +136,7 @@ const HomePage = () => {
                   </Button>
                 </SafeLink>
                 
-                <SafeLink to="/demo">
+                <SafeLink to="/produit#demo">
                   <Button 
                     variant="outline" 
                     size="lg" 
@@ -322,7 +322,7 @@ const HomePage = () => {
                   </Button>
                 </SafeLink>
                 
-                <SafeLink to="/demo">
+                <SafeLink to="/produit#demo">
                   <Button 
                     variant="outline" 
                     size="lg" 

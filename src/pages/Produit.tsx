@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CTAFooter } from "@/components/CTAFooter";
+import { ProcessDemo } from "@/components/ProcessDemo";
 import { SafeLink } from "@/components/SafeLink";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { updateMetaDescription, updatePageTitle, updateCanonicalUrl, SEO_CONTENT } from "@/utils/seo";
@@ -70,6 +71,9 @@ const Produit = () => {
           </div>
         </div>
       </section>
+
+      {/* Interactive Demo Section */}
+      <ProcessDemo />
 
       {/* Features Section */}
       <section className="py-20 px-4 bg-white/50">
