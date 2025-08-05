@@ -158,9 +158,9 @@ const HomePage = () => {
             </div>
 
             {/* Right Column - Dashboard Eligibly.ai */}
-            <div className="relative">
+            <div className="relative w-full">
               {/* Dashboard Container */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-200/50 p-8 space-y-6">
+              <div className="bg-white rounded-2xl shadow-xl border p-6 space-y-6 w-full min-h-[500px]">
                 
                 {/* Header Dashboard */}
                 <div className="flex items-center justify-between border-b border-gray-100 pb-4">
@@ -205,7 +205,7 @@ const HomePage = () => {
                     </div>
 
                     {/* Opportunité 2 */}
-                    <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100 hover:shadow-lg transition-all duration-300" style={{ animation: 'fade-in 0.6s ease-out 0.3s both' }}>
+                    <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100 hover:shadow-lg transition-all duration-300 animate-fade-in">
                       <div className="flex items-center justify-between mb-3">
                         <span className="text-lg font-bold text-blue-600">• 850K€</span>
                         <Badge className="bg-blue-600 text-white text-sm px-3 py-1">Score: 91%</Badge>
@@ -215,7 +215,7 @@ const HomePage = () => {
                     </div>
 
                     {/* Opportunité 3 */}
-                    <div className="bg-gradient-to-r from-cyan-50 to-teal-50 rounded-xl p-4 border border-cyan-100 hover:shadow-lg transition-all duration-300" style={{ animation: 'fade-in 0.6s ease-out 0.6s both' }}>
+                    <div className="bg-gradient-to-r from-cyan-50 to-teal-50 rounded-xl p-4 border border-cyan-100 hover:shadow-lg transition-all duration-300 animate-fade-in">
                       <div className="flex items-center justify-between mb-3">
                         <span className="text-lg font-bold text-cyan-600">• 1,2M€</span>
                         <Badge className="bg-cyan-600 text-white text-sm px-3 py-1">Score: 89%</Badge>
