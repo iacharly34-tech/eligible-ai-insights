@@ -303,54 +303,62 @@ export const ProcessDemo = () => {
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
               </div>
 
-              {/* BOAMP Interface Simulation */}
-              <div className="bg-gray-50 rounded-lg p-6 mb-6">
+              {/* Interface d'analyse en temps réel */}
+              <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg p-6 mb-6 text-white">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
-                    B
+                  <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold">
+                    🤖
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-800">BOAMP</h3>
-                    <p className="text-sm text-gray-600">Sources connectées</p>
+                    <h3 className="font-bold text-white">Charly IA</h3>
+                    <p className="text-sm text-gray-300">Analyse en cours des appels d'offres</p>
                   </div>
                   <div className="ml-auto flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-sm text-green-600 font-medium">Live</span>
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-sm text-green-400 font-medium">Analyse active</span>
                   </div>
                 </div>
 
-                {/* Data Grid */}
+                {/* Indicateurs d'analyse pertinents */}
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white rounded-lg p-4 border border-gray-200">
+                  <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-gray-600">BOAMP</span>
-                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-300">AO analysés</span>
+                      <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
                     </div>
-                    <div className="text-2xl font-bold text-blue-600">{sourceData.boamp}</div>
+                    <div className="text-2xl font-bold text-blue-400">
+                      {currentStep >= 1 ? (sourceData.boamp + sourceData.marchesPublics + sourceData.place + sourceData.awsDume) : '0'}
+                    </div>
                   </div>
                   
-                  <div className="bg-white rounded-lg p-4 border border-gray-200">
+                  <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-gray-600">Marchés Publics</span>
-                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-300">Opportunités détectées</span>
+                      <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                     </div>
-                    <div className="text-2xl font-bold text-blue-600">{sourceData.marchesPublics}</div>
+                    <div className="text-2xl font-bold text-green-400">
+                      {currentStep >= 3 ? '15+' : currentStep >= 1 ? '3' : '0'}
+                    </div>
                   </div>
                   
-                  <div className="bg-white rounded-lg p-4 border border-gray-200">
+                  <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-gray-600">PLACE</span>
-                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-300">Score moyen IA</span>
+                      <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
                     </div>
-                    <div className="text-2xl font-bold text-blue-600">{sourceData.place}</div>
+                    <div className="text-2xl font-bold text-purple-400">
+                      {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
+                    </div>
                   </div>
                   
-                  <div className="bg-white rounded-lg p-4 border border-gray-200">
+                  <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-gray-600">AWS DUME</span>
-                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-300">Temps d'analyse</span>
+                      <div className="w-3 h-3 bg-orange-400 rounded-full animate-pulse"></div>
                     </div>
-                    <div className="text-2xl font-bold text-blue-600">{sourceData.awsDume}</div>
+                    <div className="text-2xl font-bold text-orange-400">
+                      {currentStep >= 4 ? '2.1s' : currentStep >= 1 ? `${Math.floor(progress/10)}.${progress%10}s` : '-'}
+                    </div>
                   </div>
                 </div>
               </div>
