@@ -26,7 +26,7 @@ import {
   Award,
   Shield
 } from "lucide-react";
-import { MacBookSimulation } from "@/components/MacBookSimulation";
+
 import aiCharacterTechMale from "@/assets/charly-character-cutout.png";
 import { processCharlyImage } from "@/utils/processCharlyImage";
 import slackLogo from "@/assets/slack-logo-official.png";
@@ -537,22 +537,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Demo Section */}
-      <section className="py-20 px-4 bg-gradient-hero">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Démonstration</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Processus automatisé{" "}
-              <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                en action
-              </span>
-            </h2>
-          </div>
-          
-          <MacBookSimulation />
-        </div>
-      </section>
 
       {/* Sources Section */}
       <section id="sources" className="py-20 px-4 relative">
