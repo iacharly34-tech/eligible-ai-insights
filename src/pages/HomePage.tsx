@@ -136,16 +136,16 @@ const HomePage = () => {
                   </Button>
                 </SafeLink>
                 
-                <SafeLink to="/produit#demo">
+                <SafeLink to="/produit">
                   <Button 
                     variant="outline" 
                     size="lg" 
                     className="text-lg px-8 py-4 h-auto border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 w-full"
                     role="button"
-                    aria-label={t('hero.cta.secondary')}
+                    aria-label="Découvrir la solution"
                   >
                     <BarChart3 className="w-5 h-5 mr-2" />
-                    {t('hero.cta.secondary')}
+                    Découvrir la solution
                   </Button>
                 </SafeLink>
               </div>
@@ -322,13 +322,13 @@ const HomePage = () => {
                   </Button>
                 </SafeLink>
                 
-                <SafeLink to="/produit#demo">
+                <SafeLink to="/produit">
                   <Button 
                     variant="outline" 
                     size="lg" 
                     className="px-8 py-4 h-auto border-2 border-white/20 text-white hover:bg-white/10 transition-all duration-300 bg-background/10 backdrop-blur-md shadow-xl w-full"
                   >
-                    {t('cta.secondary')}
+                    Découvrir la solution
                   </Button>
                 </SafeLink>
               </div>
