@@ -15,6 +15,9 @@ import Ressources from "./pages/Ressources";
 import APropos from "./pages/APropos";
 import Connexion from "./pages/Connexion";
 import Demo from "./pages/Demo";
+import MentionsLegales from "./pages/MentionsLegales";
+import Confidentialite from "./pages/Confidentialite";
+import CGU from "./pages/CGU";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +40,9 @@ const App = () => (
             <Route path="/connexion" element={<Connexion />} />
             <Route path="/demo" element={<Demo />} />
             <Route path="/inscription" element={<Demo />} />
+            <Route path="/mentions-legales" element={<MentionsLegales />} />
+            <Route path="/confidentialite" element={<Confidentialite />} />
+            <Route path="/cgu" element={<CGU />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
