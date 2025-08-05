@@ -12,9 +12,9 @@ const CGU = () => {
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">1. Objet</h2>
             <p>
-              Les présentes Conditions Générales d'Utilisation (CGU) régissent l'utilisation de la plateforme TengoAI, 
+              Les présentes Conditions Générales d'Utilisation (CGU) régissent l'utilisation de la plateforme Eligibly, 
               solution d'intelligence artificielle dédiée à l'analyse et au traitement des marchés publics, 
-              éditée par TengoAI SAS.
+              éditée par GM2.0 SAS.
             </p>
             <p>
               L'utilisation de la plateforme implique l'acceptation pleine et entière des présentes CGU.
@@ -24,10 +24,10 @@ const CGU = () => {
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">2. Définitions</h2>
             <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Plateforme :</strong> la solution TengoAI accessible via tengoai.fr</li>
+              <li><strong>Plateforme :</strong> la solution Eligibly accessible via eligibly.ai</li>
               <li><strong>Utilisateur :</strong> toute personne physique ou morale utilisant la plateforme</li>
               <li><strong>Client :</strong> utilisateur ayant souscrit à un abonnement payant</li>
-              <li><strong>Services :</strong> ensemble des fonctionnalités proposées par TengoAI</li>
+              <li><strong>Services :</strong> ensemble des fonctionnalités proposées par GM2.0</li>
               <li><strong>Données :</strong> informations traitées par la plateforme</li>
             </ul>
           </section>
@@ -56,7 +56,7 @@ const CGU = () => {
 
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">4. Description des services</h2>
-            <p>TengoAI propose les services suivants :</p>
+            <p>GM2.0 propose les services suivants :</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Analyse automatisée des appels d'offres publics</li>
               <li>Veille personnalisée sur les marchés publics</li>
@@ -96,11 +96,11 @@ const CGU = () => {
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">7. Propriété intellectuelle</h2>
             <p>
-              TengoAI est propriétaire exclusif de tous les droits de propriété intellectuelle sur la plateforme, 
+              GM2.0 est propriétaire exclusif de tous les droits de propriété intellectuelle sur la plateforme, 
               ses algorithmes, son design et son contenu.
             </p>
             <p>
-              L'utilisateur conserve la propriété de ses données mais accorde à TengoAI une licence d'utilisation 
+              L'utilisateur conserve la propriété de ses données mais accorde à GM2.0 une licence d'utilisation 
               limitée à la fourniture des services.
             </p>
           </section>
@@ -109,7 +109,7 @@ const CGU = () => {
             <h2 className="text-2xl font-semibold text-foreground mb-4">8. Protection des données</h2>
             <p>
               Le traitement des données personnelles est régi par notre Politique de Confidentialité, 
-              conforme au RGPD. TengoAI s'engage à :
+              conforme au RGPD. GM2.0 s'engage à :
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Protéger la confidentialité des données utilisateur</li>
@@ -123,7 +123,7 @@ const CGU = () => {
             <h2 className="text-2xl font-semibold text-foreground mb-4">9. Disponibilité et maintenance</h2>
             <h3 className="text-xl font-medium text-foreground mb-3">9.1 Disponibilité</h3>
             <p>
-              TengoAI s'efforce d'assurer une disponibilité maximale de la plateforme, sans pouvoir garantir 
+              GM2.0 s'efforce d'assurer une disponibilité maximale de la plateforme, sans pouvoir garantir 
               un fonctionnement ininterrompu.
             </p>
             
@@ -141,7 +141,7 @@ const CGU = () => {
               La facturation s'effectue selon les modalités choisies lors de l'abonnement.
             </p>
             <p>
-              En cas de retard de paiement, TengoAI se réserve le droit de suspendre l'accès aux services.
+              En cas de retard de paiement, GM2.0 se réserve le droit de suspendre l'accès aux services.
             </p>
           </section>
 
@@ -153,9 +153,9 @@ const CGU = () => {
               avec un préavis selon les conditions de son contrat.
             </p>
             
-            <h3 className="text-xl font-medium text-foreground mb-3 mt-6">11.2 Résiliation par TengoAI</h3>
+            <h3 className="text-xl font-medium text-foreground mb-3 mt-6">11.2 Résiliation par GM2.0</h3>
             <p>
-              TengoAI peut résilier l'accès en cas de manquement aux présentes CGU, 
+              GM2.0 peut résilier l'accès en cas de manquement aux présentes CGU, 
               avec un préavis de 15 jours sauf cas de force majeure.
             </p>
           </section>
@@ -163,11 +163,11 @@ const CGU = () => {
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">12. Limitation de responsabilité</h2>
             <p>
-              La responsabilité de TengoAI est limitée aux dommages directs et ne peut excéder 
+              La responsabilité de GM2.0 est limitée aux dommages directs et ne peut excéder 
               le montant des sommes versées par l'utilisateur au cours des 12 derniers mois.
             </p>
             <p>
-              TengoAI ne peut être tenu responsable des décisions prises par l'utilisateur 
+              GM2.0 ne peut être tenu responsable des décisions prises par l'utilisateur 
               sur la base des informations fournies par la plateforme.
             </p>
           </section>
@@ -183,7 +183,7 @@ const CGU = () => {
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">14. Modification des CGU</h2>
             <p>
-              TengoAI se réserve le droit de modifier les présentes CGU. Les modifications importantes 
+              GM2.0 se réserve le droit de modifier les présentes CGU. Les modifications importantes 
               seront notifiées aux utilisateurs avec un préavis de 30 jours.
             </p>
             <p>
@@ -208,10 +208,9 @@ const CGU = () => {
               Pour toute question relative aux présentes CGU :
             </p>
             <p>
-              <strong>TengoAI</strong><br />
-              15 Rue de la Paix, 75001 Paris<br />
-              Email : <a href="mailto:legal@tengoai.fr" className="text-primary hover:underline">legal@tengoai.fr</a><br />
-              Téléphone : +33 1 23 45 67 89
+              <strong>GM2.0</strong><br />
+              9 Avenue de Bouvines, 75011 Paris<br />
+              Email : <a href="mailto:contact@eligibly.ai" className="text-primary hover:underline">contact@eligibly.ai</a>
             </p>
             <p className="mt-4">
               <strong>Dernière mise à jour :</strong> {new Date().toLocaleDateString('fr-FR')}

@@ -12,11 +12,11 @@ const Confidentialite = () => {
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">1. Responsable du traitement</h2>
             <p>
-              TengoAI, SAS au capital de 10 000 €, dont le siège social est situé 15 Rue de la Paix, 75001 Paris, 
-              immatriculée au RCS de Paris sous le numéro B 123 456 789, est responsable du traitement de vos données personnelles.
+              GM2.0, SAS au capital de 5 000,00 €, dont le siège social est situé 9 Avenue de Bouvines, 75011 Paris, 
+              immatriculée au RCS de Paris sous le numéro 930 166 913, est responsable du traitement de vos données personnelles.
             </p>
             <p>
-              <strong>Contact DPO :</strong> <a href="mailto:dpo@tengoai.fr" className="text-primary hover:underline">dpo@tengoai.fr</a>
+              <strong>Contact DPO :</strong> <a href="mailto:contact@eligibly.ai" className="text-primary hover:underline">contact@eligibly.ai</a>
             </p>
           </section>
 
@@ -68,7 +68,7 @@ const Confidentialite = () => {
             <h2 className="text-2xl font-semibold text-foreground mb-4">5. Destinataires des données</h2>
             <p>Vos données peuvent être communiquées à :</p>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Personnel autorisé de TengoAI</li>
+              <li>Personnel autorisé de GM2.0</li>
               <li>Prestataires techniques (hébergement, maintenance)</li>
               <li>Autorités légales sur demande judiciaire</li>
             </ul>
@@ -100,14 +100,14 @@ const Confidentialite = () => {
               <li><strong>Droit de retrait du consentement :</strong> à tout moment</li>
             </ul>
             <p className="mt-4">
-              Pour exercer ces droits : <a href="mailto:dpo@tengoai.fr" className="text-primary hover:underline">dpo@tengoai.fr</a>
+              Pour exercer ces droits : <a href="mailto:contact@eligibly.ai" className="text-primary hover:underline">contact@eligibly.ai</a>
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">8. Sécurité des données</h2>
             <p>
-              TengoAI met en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données :
+              GM2.0 met en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données :
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Chiffrement des données en transit et au repos</li>

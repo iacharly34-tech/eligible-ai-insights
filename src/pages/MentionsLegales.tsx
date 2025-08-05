@@ -12,21 +12,21 @@ const MentionsLegales = () => {
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">Éditeur du site</h2>
             <p>
-              <strong>Raison sociale :</strong> TengoAI<br />
+              <strong>Raison sociale :</strong> GM2.0<br />
               <strong>Forme juridique :</strong> SAS (Société par Actions Simplifiée)<br />
-              <strong>Capital social :</strong> 10 000 €<br />
-              <strong>Siège social :</strong> 15 Rue de la Paix, 75001 Paris, France<br />
-              <strong>RCS :</strong> Paris B 123 456 789<br />
-              <strong>SIRET :</strong> 123 456 789 00012<br />
-              <strong>TVA intracommunautaire :</strong> FR12345678901<br />
-              <strong>Téléphone :</strong> +33 1 23 45 67 89<br />
-              <strong>Email :</strong> contact@tengoai.fr
+              <strong>Capital social :</strong> 5 000,00 €<br />
+              <strong>Siège social :</strong> 9 Avenue de Bouvines, 75011 Paris, France<br />
+              <strong>RCS :</strong> Paris 930 166 913<br />
+              <strong>SIRET :</strong> 930 166 913 00010<br />
+              <strong>SIREN :</strong> 930 166 913<br />
+              <strong>TVA intracommunautaire :</strong> FR95930166913<br />
+              <strong>Email :</strong> contact@eligibly.ai
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold text-foreground mb-4">Directeur de la publication</h2>
-            <p>Le directeur de la publication est le représentant légal de TengoAI.</p>
+            <p>Le directeur de la publication est Daniel Lahyani, représentant légal de GM2.0.</p>
           </section>
 
           <section>
@@ -58,7 +58,7 @@ const MentionsLegales = () => {
               de suppression et de portabilité de vos données.
             </p>
             <p>
-              Pour exercer ces droits, contactez-nous à : <a href="mailto:dpo@tengoai.fr" className="text-primary hover:underline">dpo@tengoai.fr</a>
+              Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@eligibly.ai" className="text-primary hover:underline">contact@eligibly.ai</a>
             </p>
           </section>
 
@@ -74,7 +74,7 @@ const MentionsLegales = () => {
             <h2 className="text-2xl font-semibold text-foreground mb-4">Responsabilité</h2>
             <p>
               L'utilisateur reconnaît avoir pris connaissance des présentes mentions légales et s'engage à les respecter. 
-              TengoAI ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation du site.
+              GM2.0 ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation du site.
             </p>
           </section>
 
