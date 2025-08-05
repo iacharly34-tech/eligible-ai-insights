@@ -28,9 +28,9 @@ const translations = {
     'hero.title': 'La seule IA qui',
     'hero.title.highlight': 'prédit vos chances',
     'hero.title.end': 'avant de candidater',
-    'hero.subtitle': 'Eligibly.ai est la première plateforme d\'intelligence artificielle prédictive qui analyse vos chances de succès sur chaque marché public. Plus de 500 professionnels nous font confiance.',
-    'hero.cta.primary': 'Démarrer gratuitement',
-    'hero.cta.secondary': 'Demander une démonstration',
+    'hero.subtitle': 'Eligibly.ai est la première plateforme d\'intelligence artificielle prédictive qui analyse vos chances de succès sur chaque marché public. Rejoignez nos premiers utilisateurs.',
+    'hero.cta.primary': 'Rejoindre l\'accès anticipé',
+    'hero.cta.secondary': 'Voir la démonstration',
     'hero.stats.opportunities': '+200 appels d\'offres analysés quotidiennement',
     'hero.stats.time': '10x plus rapide pour qualifier un marché',
     'hero.stats.precision': '6h économisées par semaine en moyenne',
@@ -65,8 +65,8 @@ const translations = {
     
     // CTA Section
     'cta.title': 'Ne candidatez plus à l\'aveugle',
-    'cta.subtitle': 'Rejoignez les centaines de professionnels qui utilisent la seule IA prédictive pour maximiser leurs chances de remporter des marchés publics',
-    'cta.primary': 'Découvrir mes chances',
+    'cta.subtitle': 'Soyez parmi les premiers à utiliser la seule IA prédictive pour maximiser vos chances de remporter des marchés publics',
+    'cta.primary': 'Accès anticipé gratuit',
     'cta.secondary': 'Voir la prédiction en action',
     
     // Footer
@@ -236,9 +236,9 @@ const translations = {
     'hero.title': 'The only AI that',
     'hero.title.highlight': 'predicts your chances',
     'hero.title.end': 'before you apply',
-    'hero.subtitle': 'Eligibly.ai is the first predictive artificial intelligence platform that analyzes your chances of success on every public tender. Over 500 professionals trust us.',
-    'hero.cta.primary': 'Get started free',
-    'hero.cta.secondary': 'Request demonstration',
+    'hero.subtitle': 'Eligibly.ai is the first predictive artificial intelligence platform that analyzes your chances of success on every public tender. Join our early adopters.',
+    'hero.cta.primary': 'Join early access',
+    'hero.cta.secondary': 'Watch demonstration',
     'hero.stats.opportunities': '+200 public tenders analyzed daily',
     'hero.stats.time': '10x faster to qualify a tender',
     'hero.stats.precision': '6h saved per week on average',
@@ -273,8 +273,8 @@ const translations = {
     
     // CTA Section
     'cta.title': 'Stop applying blindly',
-    'cta.subtitle': 'Join hundreds of professionals who use the only predictive AI to maximize their chances of winning public tenders',
-    'cta.primary': 'Discover my chances',
+    'cta.subtitle': 'Be among the first to use the only predictive AI to maximize your chances of winning public tenders',
+    'cta.primary': 'Free early access',
     'cta.secondary': 'See prediction in action',
     
     // Footer

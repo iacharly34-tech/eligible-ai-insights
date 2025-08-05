@@ -13,8 +13,8 @@ import {
 
 // ============= STATISTIQUES AVEC SOURCES =============
 export const COMPANY_STATS = {
-  clients: "500+",
-  enterprises: "500+", 
+  clients: "premiers utilisateurs",
+  enterprises: "beta testeurs", 
   sources: "200+",
   precision: "94%",
   timeSaved: "6h",
