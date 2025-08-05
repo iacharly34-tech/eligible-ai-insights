@@ -75,6 +75,10 @@ const translations = {
     'accessibility.images.dashboard': 'Tableau de bord eligibly.ai',
     'accessibility.images.feature': 'Illustration de la fonctionnalité',
     'accessibility.language.switch': 'Changer la langue vers',
+    
+    // CGU Page
+    'cgu.title': 'Conditions Générales d\'Utilisation',
+    'cgu.lastUpdate': 'Dernière mise à jour',
   },
   en: {
     // Navigation
@@ -138,6 +142,10 @@ const translations = {
     'accessibility.images.dashboard': 'eligibly.ai Dashboard',
     'accessibility.images.feature': 'Feature illustration',
     'accessibility.language.switch': 'Switch language to',
+    
+    // CGU Page
+    'cgu.title': 'Terms of Service',
+    'cgu.lastUpdate': 'Last update',
   }
 } as const;
 
