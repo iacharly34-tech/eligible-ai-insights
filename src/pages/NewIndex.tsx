@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SafeLink } from "@/components/SafeLink";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   ArrowRight, 
@@ -116,27 +117,31 @@ const NewIndex = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-cta hover:shadow-glow text-white text-lg px-8 py-4 h-auto group transition-all duration-300 hover:scale-105"
-                  role="button"
-                  aria-label={t('accessibility.demo')}
-                >
-                  <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                  {STANDARD_CTAS.primary.text}
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <SafeLink to="/demo">
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-cta hover:shadow-glow text-white text-lg px-8 py-4 h-auto group transition-all duration-300 hover:scale-105 w-full"
+                    role="button"
+                    aria-label={t('accessibility.demo')}
+                  >
+                    <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                    {STANDARD_CTAS.primary.text}
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </SafeLink>
                 
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="text-lg px-8 py-4 h-auto border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
-                  role="button"
-                  aria-label={t('hero.cta.primary')}
-                >
-                  <BarChart3 className="w-5 h-5 mr-2" />
-                  {STANDARD_CTAS.demo.text}
-                </Button>
+                <SafeLink to="/demo">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="text-lg px-8 py-4 h-auto border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 w-full"
+                    role="button"
+                    aria-label={t('hero.cta.primary')}
+                  >
+                    <BarChart3 className="w-5 h-5 mr-2" />
+                    {STANDARD_CTAS.demo.text}
+                  </Button>
+                </SafeLink>
               </div>
 
               {/* Trust indicators */}
@@ -302,21 +307,25 @@ const NewIndex = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 relative z-20">
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-cta hover:shadow-glow text-white px-8 py-4 h-auto group transition-all duration-300 hover:scale-105 shadow-xl"
-                >
-                  Essayer gratuitement
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <SafeLink to="/demo">
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-cta hover:shadow-glow text-white px-8 py-4 h-auto group transition-all duration-300 hover:scale-105 shadow-xl w-full"
+                  >
+                    Essayer gratuitement
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </SafeLink>
                 
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="px-8 py-4 h-auto border-2 border-white/20 text-white hover:bg-white/10 transition-all duration-300 bg-background/10 backdrop-blur-md shadow-xl"
-                >
-                  Réserver une démo
-                </Button>
+                <SafeLink to="/demo">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="px-8 py-4 h-auto border-2 border-white/20 text-white hover:bg-white/10 transition-all duration-300 bg-background/10 backdrop-blur-md shadow-xl w-full"
+                  >
+                    Réserver une démo
+                  </Button>
+                </SafeLink>
               </div>
             </div>
 
