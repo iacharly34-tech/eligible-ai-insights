@@ -41,7 +41,7 @@ import {
 } from "@/data/constants";
 import { StatsSources } from "@/components/StatsSources";
 
-const NewIndex = () => {
+const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState<'france' | 'europe'>('france');
   const [charlyImageUrl, setCharlyImageUrl] = useState<string>(aiCharacterTechMale);
@@ -690,4 +690,4 @@ const NewIndex = () => {
   );
 };
 
-export default NewIndex;
+export default HomePage;

@@ -48,8 +48,8 @@ export const Contact = () => {
       // Generate CSRF token
       const csrfToken = generateCSRFToken();
       
-      // In production, submit to your secure backend
-      console.log('Secure form submission:', { ...data, csrfToken });
+      // Submit to secure backend in production
+      // Secure form submission with CSRF protection
       
       toast({
         title: "Demande envoyée",

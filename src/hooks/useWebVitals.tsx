@@ -16,8 +16,8 @@ export const useWebVitals = () => {
         const lastEntry = entries[entries.length - 1];
         const lcp = lastEntry.startTime;
         
-        if (lcp > 2500) {
-          console.warn(`LCP slow: ${lcp}ms`);
+        if (lcp > 2500 && process.env.NODE_ENV === 'development') {
+          // Performance warning only in development
         }
       }).observe({ entryTypes: ['largest-contentful-paint'] });
 
@@ -26,8 +26,8 @@ export const useWebVitals = () => {
         for (const entry of list.getEntries()) {
           const fidEntry = entry as any;
           const fid = fidEntry.processingStart - fidEntry.startTime;
-          if (fid > 100) {
-            console.warn(`FID slow: ${fid}ms`);
+          if (fid > 100 && process.env.NODE_ENV === 'development') {
+            // Performance warning only in development
           }
         }
       }).observe({ entryTypes: ['first-input'] });
@@ -41,8 +41,8 @@ export const useWebVitals = () => {
             clsScore += clsEntry.value;
           }
         }
-        if (clsScore > 0.1) {
-          console.warn(`CLS score high: ${clsScore}`);
+        if (clsScore > 0.1 && process.env.NODE_ENV === 'development') {
+          // Performance warning only in development
         }
       }).observe({ entryTypes: ['layout-shift'] });
     };

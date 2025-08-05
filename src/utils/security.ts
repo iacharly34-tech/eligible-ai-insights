@@ -84,7 +84,7 @@ export const secureStorage = {
       const sanitizedValue = typeof value === 'string' ? sanitizeInput(value) : value;
       localStorage.setItem(key, JSON.stringify(sanitizedValue));
     } catch (error) {
-      console.warn('Failed to save to localStorage:', error);
+      // Failed to save to localStorage - handle silently
     }
   },
   
@@ -96,7 +96,7 @@ export const secureStorage = {
       const parsed = JSON.parse(item);
       return typeof parsed === 'string' ? sanitizeInput(parsed) : parsed;
     } catch (error) {
-      console.warn('Failed to read from localStorage:', error);
+      // Failed to read from localStorage - return fallback
       return fallback;
     }
   },
@@ -105,7 +105,7 @@ export const secureStorage = {
     try {
       localStorage.removeItem(key);
     } catch (error) {
-      console.warn('Failed to remove from localStorage:', error);
+      // Failed to remove from localStorage - handle silently
     }
   }
 };

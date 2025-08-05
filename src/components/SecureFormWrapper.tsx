@@ -22,7 +22,7 @@ export const SecureFormWrapper: React.FC<SecureFormWrapperProps> = ({
     // Check for suspicious patterns
     for (const [key, value] of formData.entries()) {
       if (typeof value === 'string' && value.length > 10000) {
-        console.warn('Suspicious form input detected:', key);
+        // Suspicious input detected - block submission
         return;
       }
     }

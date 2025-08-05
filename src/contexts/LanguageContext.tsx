@@ -419,7 +419,6 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   });
 
   useEffect(() => {
-    console.log('Language changed to:', language);
     secureStorage.setItem('eligibly-language', language);
     document.documentElement.lang = language;
   }, [language]);

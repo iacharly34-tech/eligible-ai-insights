@@ -16,7 +16,7 @@ export const processCharlyImage = async (): Promise<string> => {
     
     return processedUrl;
   } catch (error) {
-    console.error('Error processing Charly image:', error);
+    // Error processing Charly image
     throw error;
   }
 };

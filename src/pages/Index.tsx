@@ -1,1 +1,1 @@
-export { default } from './NewIndex';
+export { default } from './HomePage';

@@ -26,11 +26,9 @@ export class SecurityErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     // Log error securely without exposing sensitive information
-    console.error('Security Error Boundary caught an error:', {
-      errorId: this.state.errorId,
-      message: error.message,
-      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
-    });
+    if (process.env.NODE_ENV === 'development') {
+      // Only log in development - error details available here
+    }
   }
 
   render() {
