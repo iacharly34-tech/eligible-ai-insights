@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CTAFooter } from "@/components/CTAFooter";
+import { SafeLink } from "@/components/SafeLink";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   Users, 
   Building2, 
@@ -18,6 +20,8 @@ import {
 } from "lucide-react";
 
 const Solutions = () => {
+  const { t } = useLanguage();
+  
   const solutions = [
     {
       icon: Users,
@@ -93,19 +97,18 @@ const Solutions = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200">
-              Solutions sur mesure
+              {t('solutions.badge')}
             </Badge>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Une solution pour chaque{" "}
+              {t('solutions.hero.title')}{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                profil métier
+                {t('solutions.hero.title.highlight')}
               </span>
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Notre IA s'adapte aux besoins spécifiques de votre secteur et de votre 
-              rôle pour maximiser votre performance commerciale.
+              {t('solutions.hero.subtitle')}
             </p>
           </div>
         </div>
@@ -145,10 +148,12 @@ const Solutions = () => {
                           ))}
                         </div>
                         
-                        <Button variant="default" className="w-full sm:w-auto group">
-                          {solution.cta}
-                          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                        </Button>
+                        <SafeLink to="/demo">
+                          <Button variant="default" className="w-full sm:w-auto group">
+                            {solution.cta}
+                            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                          </Button>
+                        </SafeLink>
                       </div>
                     </CardContent>
                   </Card>
@@ -178,11 +183,11 @@ const Solutions = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Cas d'usage{" "}
-              <span className="bg-gradient-highlight bg-clip-text text-transparent">clients</span>
+              {t('solutions.usecases.title')}{" "}
+              <span className="bg-gradient-highlight bg-clip-text text-transparent">{t('solutions.usecases.title.highlight')}</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Découvrez comment nos clients transforment leur performance commerciale
+              {t('solutions.usecases.subtitle')}
             </p>
           </div>
           

@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CTAFooter } from "@/components/CTAFooter";
+import { SafeLink } from "@/components/SafeLink";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   Heart,
   Shield,
@@ -22,6 +24,8 @@ import {
 } from "lucide-react";
 
 const APropos = () => {
+  const { t } = useLanguage();
+  
   const values = [
     {
       icon: Lightbulb,
@@ -111,19 +115,18 @@ const APropos = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200">
-              À propos d'Eligibly.ai
+              {t('about.badge')}
             </Badge>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Notre mission :{" "}
+              {t('about.hero.title')}{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                démocratiser l'IA
+                {t('about.hero.title.highlight')}
               </span>
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Nous développons les outils d'intelligence artificielle les plus avancés 
-              pour révolutionner la façon dont les entreprises appréhendent les marchés publics.
+              {t('about.hero.subtitle')}
             </p>
           </div>
           

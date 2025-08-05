@@ -2,6 +2,8 @@ import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SafeLink } from "@/components/SafeLink";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   CheckCircle,
   X,
@@ -18,6 +20,8 @@ import {
 } from "lucide-react";
 
 const Tarifs = () => {
+  const { t } = useLanguage();
+  
   const plans = [
     {
       name: "Starter",
@@ -106,19 +110,18 @@ const Tarifs = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200">
-              Tarifs transparents
+              {t('pricing.badge')}
             </Badge>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Choisissez votre{" "}
+              {t('pricing.hero.title')}{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                plan parfait
+                {t('pricing.hero.title.highlight')}
               </span>
             </h1>
             
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Des tarifs simples et transparents. Commencez gratuitement, 
-              évoluez selon vos besoins. Sans engagement.
+              {t('pricing.hero.subtitle')}
             </p>
             
             <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-gray-600">
@@ -209,11 +212,10 @@ const Tarifs = () => {
               <Shield className="w-10 h-10 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Garantie satisfait ou remboursé 30 jours
+              {t('pricing.guarantee.title')}
             </h2>
             <p className="text-xl text-gray-600 mb-6">
-              Nous sommes convaincus que notre IA révolutionnera votre veille commerciale. 
-              Si vous n'êtes pas satisfait, nous vous remboursons intégralement.
+              {t('pricing.guarantee.subtitle')}
             </p>
             <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-600">
               <div className="flex items-center gap-2">
@@ -238,8 +240,8 @@ const Tarifs = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Questions{" "}
-              <span className="bg-gradient-highlight bg-clip-text text-transparent">fréquentes</span>
+              {t('pricing.faq.title')}{" "}
+              <span className="bg-gradient-highlight bg-clip-text text-transparent">{t('pricing.faq.title.highlight')}</span>
             </h2>
           </div>
           

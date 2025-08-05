@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { CTAFooter } from "@/components/CTAFooter";
+import { SafeLink } from "@/components/SafeLink";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   BookOpen,
   Video,
@@ -22,6 +24,8 @@ import {
 } from "lucide-react";
 
 const Ressources = () => {
+  const { t } = useLanguage();
+  
   const articles = [
     {
       category: "Guide",
@@ -126,19 +130,18 @@ const Ressources = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200">
-              Centre de ressources
+              {t('resources.badge')}
             </Badge>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Tout pour réussir vos{" "}
+              {t('resources.hero.title')}{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                marchés publics
+                {t('resources.hero.title.highlight')}
               </span>
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Guides, tutoriels, analyses et bonnes pratiques pour maximiser 
-              votre performance commerciale dans les marchés publics.
+              {t('resources.hero.subtitle')}
             </p>
             
             <div className="max-w-md mx-auto">
@@ -158,8 +161,8 @@ const Ressources = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-2">Article à la une</h2>
-            <p className="text-muted-foreground">Notre sélection de la semaine</p>
+            <h2 className="text-3xl font-bold mb-2">{t('resources.featured.title')}</h2>
+            <p className="text-muted-foreground">{t('resources.featured.subtitle')}</p>
           </div>
           
           <Card className="hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm overflow-hidden">

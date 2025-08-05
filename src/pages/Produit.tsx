@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CTAFooter } from "@/components/CTAFooter";
+import { SafeLink } from "@/components/SafeLink";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { updateMetaDescription, updatePageTitle, updateCanonicalUrl, SEO_CONTENT } from "@/utils/seo";
 import { 
   ArrowRight,
@@ -14,6 +16,8 @@ import aiAssistantMain from "@/assets/ai-assistant-main.jpg";
 import { CORE_FEATURES, MEASURABLE_BENEFITS, HERO_MESSAGES, STANDARD_CTAS, COMPANY_STATS } from "@/data/constants";
 
 const Produit = () => {
+  const { t } = useLanguage();
+  
   useEffect(() => {
     updatePageTitle(SEO_CONTENT.produit.title);
     updateMetaDescription(SEO_CONTENT.produit.description);
@@ -38,26 +42,30 @@ const Produit = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200">
-              Intelligence Artificielle • Marchés Publics
+              {t('product.badge')}
             </Badge>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              {HERO_MESSAGES.product.title}
+              {t('product.hero.title')}
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              {HERO_MESSAGES.product.subtitle}
+              {t('product.hero.subtitle')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="px-8 py-4 h-auto group">
-                {STANDARD_CTAS.primary.text}
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="lg" className="px-8 py-4 h-auto">
-                <BarChart3 className="w-5 h-5 mr-2" />
-                {STANDARD_CTAS.demo.text}
-              </Button>
+              <SafeLink to="/demo">
+                <Button size="lg" className="px-8 py-4 h-auto group">
+                  {t('common.tryFree')}
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </SafeLink>
+              <SafeLink to="/demo">
+                <Button variant="outline" size="lg" className="px-8 py-4 h-auto">
+                  <BarChart3 className="w-5 h-5 mr-2" />
+                  {t('common.watchDemo')}
+                </Button>
+              </SafeLink>
             </div>
           </div>
         </div>
@@ -68,11 +76,11 @@ const Produit = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Fonctionnalités{" "}
-              <span className="bg-gradient-highlight bg-clip-text text-transparent">clés</span>
+              {t('product.features.title')}{" "}
+              <span className="bg-gradient-highlight bg-clip-text text-transparent">{t('product.features.title.highlight')}</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Une suite complète d'outils IA pour transformer votre approche des marchés publics
+              {t('product.features.subtitle')}
             </p>
           </div>
           
@@ -112,8 +120,8 @@ const Produit = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Résultats{" "}
-              <span className="bg-gradient-highlight bg-clip-text text-transparent">mesurables</span>
+              {t('product.benefits.title')}{" "}
+              <span className="bg-gradient-highlight bg-clip-text text-transparent">{t('product.benefits.title.highlight')}</span>
             </h2>
           </div>
           
@@ -134,10 +142,10 @@ const Produit = () => {
       </section>
 
       <CTAFooter 
-        title="Prêt à tester notre technologie ?"
-        subtitle={`Rejoignez plus de ${COMPANY_STATS.clients} professionnels qui utilisent déjà notre IA`}
-        primaryButtonText={STANDARD_CTAS.primary.text}
-        secondaryButtonText={STANDARD_CTAS.secondary.text}
+        title={t('cta.title')}
+        subtitle={t('cta.subtitle')}
+        primaryButtonText={t('cta.primary')}
+        secondaryButtonText={t('cta.secondary')}
       />
     </div>
   );
