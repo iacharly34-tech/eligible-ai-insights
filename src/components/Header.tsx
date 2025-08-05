@@ -25,7 +25,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Brand */}
           <SafeLink to="/" className="text-lg font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md" aria-label={t('accessibility.home')}>
-            eligible.ai
+            eligibly.ai
           </SafeLink>
 
           {/* Desktop Navigation */}

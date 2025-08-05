@@ -29,7 +29,7 @@ import {
 
 import aiCharacterTechMale from "@/assets/charly-character-cutout.png";
 import { processCharlyImage } from "@/utils/processCharlyImage";
-import slackLogo from "@/assets/slack-logo-official.png";
+
 import { 
   COMPANY_STATS, 
   CORE_FEATURES, 
