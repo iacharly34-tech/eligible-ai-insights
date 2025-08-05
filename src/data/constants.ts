@@ -17,7 +17,7 @@ export const COMPANY_STATS = {
   enterprises: "beta testeurs", 
   sources: "200+",
   precision: "94%",
-  timeSaved: "10x",
+  timeSaved: "80%",
   opportunitiesPerDay: "200+",
   successRate: "10x",
   marketValue: "80Md€",
@@ -40,12 +40,12 @@ export const STATS_SOURCES = {
     note: "Plateformes officielles: BOAMP, PLACE, TED, profils d'acheteurs régionaux",
     methodology: "Recensement des sources officielles françaises et européennes"
   },
-  automation: {
-    value: "10x plus rapide",
-    source: "Comparaison théorique",
+  aiEfficiency: {
+    value: "80% plus rapide",
+    source: "Oracle - AI in Procurement Study",
     year: "2024",
-    note: "Vitesse d'analyse automatisée vs recherche manuelle",
-    methodology: "Temps de traitement algorithmique vs temps humain estimé"
+    note: "L'IA peut traiter les tâches de procurement jusqu'à 80% plus rapidement",
+    methodology: "Étude Oracle sur l'efficacité de l'IA dans les processus d'achat"
   },
   precision: {
     value: "94%",
