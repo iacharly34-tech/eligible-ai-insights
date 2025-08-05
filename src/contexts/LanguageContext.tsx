@@ -31,9 +31,9 @@ const translations = {
     'hero.subtitle': 'Eligibly.ai est la première plateforme d\'intelligence artificielle prédictive qui analyse vos chances de succès sur chaque marché public. Rejoignez nos premiers utilisateurs.',
     'hero.cta.primary': 'Rejoindre l\'accès anticipé',
     'hero.cta.secondary': 'Voir la démonstration',
-    'hero.stats.opportunities': '+200 appels d\'offres analysés quotidiennement',
+    'hero.stats.opportunities': '+200 appels d\'offres analysés quotidiennement dans votre secteur',
     'hero.stats.time': '10x plus rapide pour qualifier un marché',
-    'hero.stats.precision': '80% plus rapide selon Oracle',
+    'hero.stats.precision': '50% de chance supplémentaire de gagner les marchés sélectionnés',
     
     // Features
     'features.title': 'Fonctionnalités',
@@ -239,9 +239,9 @@ const translations = {
     'hero.subtitle': 'Eligibly.ai is the first predictive artificial intelligence platform that analyzes your chances of success on every public tender. Join our early adopters.',
     'hero.cta.primary': 'Join early access',
     'hero.cta.secondary': 'Watch demonstration',
-    'hero.stats.opportunities': '+200 public tenders analyzed daily',
+    'hero.stats.opportunities': '+200 public tenders analyzed daily in your sector',
     'hero.stats.time': '10x faster to qualify a tender',
-    'hero.stats.precision': '80% faster according to Oracle',
+    'hero.stats.precision': '50% higher chance of winning selected tenders',
     
     // Features
     'features.title': 'Essential',
