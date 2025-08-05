@@ -1,9 +1,9 @@
+import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { CTAFooter } from "@/components/CTAFooter";
 import { SafeLink } from "@/components/SafeLink";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { 
@@ -12,112 +12,54 @@ import {
   FileText,
   Calendar,
   ArrowRight,
-  Download,
-  Clock,
-  User,
-  Search,
-  Filter,
   Mail,
   Play,
-  Bookmark,
-  TrendingUp
+  TrendingUp,
+  Bell,
+  Sparkles,
+  CheckCircle,
+  Zap,
+  Users,
+  Target
 } from "lucide-react";
 
 const Ressources = () => {
   const { t } = useLanguage();
-  
-  const articles = [
-    {
-      category: "Guide",
-      title: "Comment répondre efficacement à un appel d'offres public",
-      description: "Les 10 étapes clés pour maximiser vos chances de succès dans les marchés publics.",
-      readTime: "12 min",
-      author: "Équipe Eligibly.ai",
-      date: "15 jan 2025",
-      featured: true
-    },
-    {
-      category: "Analyse",
-      title: "Tendances 2025 des marchés publics en France",
-      description: "Découvrez les secteurs en croissance et les nouvelles opportunités à saisir.",
-      readTime: "8 min",
-      author: "Marie Dubois",
-      date: "10 jan 2025",
-      featured: false
-    },
-    {
-      category: "Tutoriel",
-      title: "Optimiser son scoring IA : bonnes pratiques",
-      description: "Comment configurer votre IA pour détecter les meilleures opportunités.",
-      readTime: "15 min",
-      author: "Thomas Martin",
-      date: "5 jan 2025",
-      featured: false
-    }
-  ];
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const guides = [
-    {
-      title: "Guide complet des marchés publics 2025",
-      description: "Tout savoir sur la réglementation, les procédures et les bonnes pratiques.",
-      pages: "120 pages",
-      format: "PDF",
-      icon: FileText
-    },
-    {
-      title: "Modèles de réponse aux appels d'offres",
-      description: "Templates prêts à l'emploi pour vos réponses d'appels d'offres.",
-      pages: "50 pages",
-      format: "DOCX",
-      icon: Download
-    },
-    {
-      title: "Checklist validation dossier",
-      description: "Liste de vérification pour s'assurer de la conformité de vos dossiers.",
-      pages: "15 pages",
-      format: "PDF",
-      icon: BookOpen
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setIsSubscribed(true);
+      setEmail("");
     }
-  ];
+  };
 
-  const videos = [
+  const upcomingContent = [
     {
-      title: "Prise en main rapide d'Eligibly.ai",
-      description: "Découvrez les fonctionnalités principales en 10 minutes.",
-      duration: "10:32",
-      views: "2.1k vues",
-      thumbnail: "tutorial"
+      icon: BookOpen,
+      title: "Guides pratiques AO",
+      description: "Méthodologies complètes pour répondre aux appels d'offres",
+      eta: "Mars 2025"
     },
     {
-      title: "Configurer ses alertes IA",
-      description: "Comment personnaliser vos alertes pour ne rien manquer.",
-      duration: "7:45",
-      views: "1.8k vues",
-      thumbnail: "config"
+      icon: Video,
+      title: "Webinaires experts",
+      description: "Sessions live avec des spécialistes des marchés publics",
+      eta: "Avril 2025"
     },
     {
-      title: "Analyser les résultats de scoring",
-      description: "Interpréter et optimiser les scores de votre IA.",
-      duration: "12:18",
-      views: "1.5k vues",
-      thumbnail: "analysis"
-    }
-  ];
-
-  const webinars = [
-    {
-      title: "Les secrets d'une veille commerciale efficace",
-      date: "25 jan 2025",
-      time: "14h00 - 15h30",
-      speaker: "Expert Eligibly.ai",
-      status: "upcoming"
+      icon: FileText,
+      title: "Templates & Modèles",
+      description: "Mémoires techniques, DPGF et documents prêts à utiliser",
+      eta: "Mai 2025"
     },
     {
-      title: "IA et marchés publics : retour d'expérience client",
-      date: "18 jan 2025",
-      time: "11h00 - 12h00",
-      speaker: "Client témoignage",
-      status: "replay"
+      icon: TrendingUp,
+      title: "Analyses sectorielles",
+      description: "Tendances et opportunités par secteur d'activité",
+      eta: "Juin 2025"
     }
   ];
 
@@ -127,207 +69,191 @@ const Ressources = () => {
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200">
-              {t('resources.badge')}
-            </Badge>
+        <div className="container mx-auto max-w-4xl text-center">
+          <Badge className="mb-6 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 border-purple-200">
+            <Sparkles className="w-4 h-4 mr-2" />
+            Bientôt disponible
+          </Badge>
+          
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Ne manquez pas le{" "}
+            <span className="bg-gradient-highlight bg-clip-text text-transparent">
+              contenu à venir
+            </span>
+          </h1>
+          
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Nous préparons une bibliothèque complète de ressources pour vous aider à exceller 
+            dans les marchés publics. Guides, webinaires, templates et analyses exclusives.
+          </p>
+
+          {/* Newsletter Subscription */}
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 mb-12 max-w-2xl mx-auto">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Bell className="w-5 h-5 text-purple-600" />
+              <h3 className="text-lg font-semibold text-gray-900">Soyez les premiers informés</h3>
+            </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              {t('resources.hero.title')}{" "}
-              <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                {t('resources.hero.title.highlight')}
-              </span>
-            </h1>
-            
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              {t('resources.hero.subtitle')}
-            </p>
-            
-            <div className="max-w-md mx-auto">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <Input 
-                  placeholder="Rechercher une ressource..." 
-                  className="pl-10 pr-4 h-12 bg-white/80 backdrop-blur-sm border-0 shadow-lg"
+            {!isSubscribed ? (
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+                <Input
+                  type="email"
+                  placeholder="Votre adresse email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1"
+                  required
                 />
+                <Button type="submit" className="bg-purple-600 hover:bg-purple-700 text-white">
+                  Me prévenir
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </form>
+            ) : (
+              <div className="flex items-center justify-center gap-2 text-green-600">
+                <CheckCircle className="w-5 h-5" />
+                <span className="font-medium">Merci ! Vous serez notifié dès la sortie.</span>
               </div>
+            )}
+            
+            <p className="text-sm text-gray-500 mt-3">
+              Recevez un email dès qu'une nouvelle ressource est disponible
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Upcoming Content Preview */}
+      <section className="py-20 px-4 bg-white/50">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ce qui vous attend
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Découvrez les ressources exclusives que nous préparons pour transformer 
+              votre approche des marchés publics
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {upcomingContent.map((item, index) => (
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-6">
+                    <div className="w-12 h-12 bg-gradient-cta rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <item.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-3">
+                        <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                          {item.title}
+                        </h3>
+                        <Badge variant="outline" className="text-xs text-purple-600 border-purple-300">
+                          {item.eta}
+                        </Badge>
+                      </div>
+                      <p className="text-gray-600 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Preview */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-12 text-white text-center">
+            <h2 className="text-3xl font-bold mb-6">En préparation</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div>
+                <div className="text-4xl font-bold mb-2">50+</div>
+                <div className="text-purple-100">Guides pratiques</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold mb-2">20+</div>
+                <div className="text-purple-100">Webinaires experts</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold mb-2">100+</div>
+                <div className="text-purple-100">Templates prêts</div>
+              </div>
+            </div>
+
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <SafeLink to="/demo">
+                <Button variant="secondary" size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
+                  <Play className="w-5 h-5 mr-2" />
+                  Tester Charly maintenant
+                </Button>
+              </SafeLink>
+              <SafeLink to="/tarifs">
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                  Voir nos offres
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </SafeLink>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Article */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-2">{t('resources.featured.title')}</h2>
-            <p className="text-muted-foreground">{t('resources.featured.subtitle')}</p>
-          </div>
+      {/* Contact Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl font-bold mb-6">Une question spécifique ?</h2>
+          <p className="text-xl text-gray-600 mb-8">
+            En attendant nos ressources, notre équipe est là pour vous accompagner
+          </p>
           
-          <Card className="hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm overflow-hidden">
-            <CardContent className="p-0">
-              <div className="grid lg:grid-cols-2 gap-0">
-                <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-12 text-white flex items-center">
-                  <div>
-                    <Badge className="mb-4 bg-white/20 text-white border-white/30">
-                      {articles[0].category}
-                    </Badge>
-                    <h3 className="text-3xl font-bold mb-4 leading-tight">
-                      {articles[0].title}
-                    </h3>
-                    <p className="text-blue-100 mb-6 text-lg">
-                      {articles[0].description}
-                    </p>
-                    <div className="flex items-center gap-4 text-sm text-blue-200 mb-6">
-                      <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4" />
-                        {articles[0].readTime}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <User className="w-4 h-4" />
-                        {articles[0].author}
-                      </div>
-                    </div>
-                    <Button variant="secondary">
-                      Lire l'article
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="border-0 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-6 h-6 text-blue-600" />
                 </div>
-                <div className="bg-gradient-to-br from-blue-100 to-purple-100 p-12 flex items-center justify-center">
-                  <div className="w-40 h-40 bg-white/50 rounded-2xl flex items-center justify-center">
-                    <BookOpen className="w-20 h-20 text-blue-600" />
-                  </div>
+                <h3 className="font-semibold mb-2">Support Email</h3>
+                <p className="text-sm text-gray-600 mb-4">Réponse sous 24h</p>
+                <Button variant="outline" size="sm">
+                  contact@eligibly.ai
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-6 h-6 text-green-600" />
                 </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+                <h3 className="font-semibold mb-2">Communauté</h3>
+                <p className="text-sm text-gray-600 mb-4">Échanges entre pros</p>
+                <Button variant="outline" size="sm">
+                  Rejoindre
+                </Button>
+              </CardContent>
+            </Card>
 
-      {/* Articles Grid */}
-      <section className="py-20 px-4 bg-white/50">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex items-center justify-between mb-12">
-            <div>
-              <h2 className="text-3xl font-bold mb-2">Derniers articles</h2>
-              <p className="text-muted-foreground">Conseils et analyses d'experts</p>
-            </div>
-            <Button variant="outline">
-              Voir tous les articles
-            </Button>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.slice(1).map((article, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm">
-                <CardContent className="p-0">
-                  <div className="h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    <Badge className="absolute top-4 left-4 bg-white/90 text-gray-700">
-                      {article.category}
-                    </Badge>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                      {article.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                      {article.description}
-                    </p>
-                    <div className="flex items-center justify-between text-xs text-foreground/60">
-                      <div className="flex items-center gap-3">
-                        <span>{article.readTime}</span>
-                        <span>{article.date}</span>
-                      </div>
-                      <Bookmark className="w-4 h-4 hover:text-primary cursor-pointer" />
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            <Card className="border-0 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Target className="w-6 h-6 text-purple-600" />
+                </div>
+                <h3 className="font-semibold mb-2">Consultation</h3>
+                <p className="text-sm text-gray-600 mb-4">Conseil personnalisé</p>
+                <Button variant="outline" size="sm">
+                  Prendre RDV
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
-
-      {/* Guides & Templates */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">
-              Guides et{" "}
-              <span className="bg-gradient-highlight bg-clip-text text-transparent">templates</span>
-            </h2>
-            <p className="text-muted-foreground">Ressources pratiques à télécharger</p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {guides.map((guide, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                    <guide.icon className="w-8 h-8 text-white" />
-                  </div>
-                   <h3 className="text-xl font-bold text-foreground mb-3">{guide.title}</h3>
-                  <p className="text-muted-foreground mb-6">{guide.description}</p>
-                  <div className="flex items-center justify-center gap-4 text-sm text-foreground/60 mb-6">
-                    <span>{guide.pages}</span>
-                    <span>•</span>
-                    <span>{guide.format}</span>
-                  </div>
-                  <Button className="w-full group">
-                    <Download className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                    Télécharger
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Video Tutorials */}
-      <section className="py-20 px-4 bg-white/50">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">
-              Tutoriels{" "}
-              <span className="bg-gradient-highlight bg-clip-text text-transparent">vidéo</span>
-            </h2>
-            <p className="text-muted-foreground">Apprenez à utiliser Eligibly.ai efficacement</p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {videos.map((video, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm">
-                <CardContent className="p-0">
-                  <div className="relative h-48 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                    <Play className="w-16 h-16 text-white group-hover:scale-110 transition-transform cursor-pointer" />
-                    <div className="absolute bottom-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                      {video.duration}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                     <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                      {video.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-4 text-sm">{video.description}</p>
-                    <div className="text-xs text-foreground/60">{video.views}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <CTAFooter 
-        title="Restez informé des dernières actualités"
-        subtitle="Recevez nos conseils d'experts et analyses de marché directement dans votre boîte mail"
-        primaryButtonText="S'abonner à la newsletter"
-        secondaryButtonText="Nous contacter"
-      />
     </div>
   );
 };
