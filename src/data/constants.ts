@@ -29,35 +29,35 @@ export const STATS_SOURCES = {
   marketValue: {
     value: "80Md€",
     source: "Direction des Affaires Juridiques (DAJ) - Ministère de l'Économie",
-    year: "2024",
+    year: "2025",
     note: "Volume estimé des marchés publics français (État, collectivités, hôpitaux)",
     url: "https://www.economie.gouv.fr/daj/commande-publique"
   },
   sources: {
     value: "200+",
     source: "Analyse Eligibly.ai",
-    year: "2024", 
+    year: "2025", 
     note: "Plateformes officielles: BOAMP, PLACE, TED, profils d'acheteurs régionaux",
     methodology: "Recensement des sources officielles françaises et européennes"
   },
   aiEfficiency: {
     value: "80% plus rapide",
     source: "Oracle - AI in Procurement Study",
-    year: "2024",
+    year: "2025",
     note: "L'IA peut traiter les tâches de procurement jusqu'à 80% plus rapidement",
     methodology: "Étude Oracle sur l'efficacité de l'IA dans les processus d'achat"
   },
   precision: {
     value: "94%",
     source: "Benchmark IA - Standards secteur",
-    year: "2024",
+    year: "2025",
     note: "Précision de détection basée sur validation manuelle expert",
     methodology: "Test sur 1000 appels d'offres avec validation métier"
   },
   dailyTenders: {
     value: "200+",
     source: "Data.gouv.fr - Données essentielles commande publique",
-    year: "2024",
+    year: "2025",
     note: "Moyenne d'appels d'offres analysés quotidiennement par Eligibly.ai",
     url: "https://www.data.gouv.fr/fr/datasets/608c055b35eb4e6ee20eb325/"
   }

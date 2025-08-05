@@ -78,7 +78,7 @@ const APropos = () => {
 
   const stats = [
     { number: "2020", label: "Année de création" },
-    { number: "2000+", label: "Clients satisfaits" },
+    { number: "2500+", label: "Clients satisfaits" },
     { number: "15M€", label: "Marchés remportés grâce à notre IA" },
     { number: "98%", label: "Taux de satisfaction client" }
   ];

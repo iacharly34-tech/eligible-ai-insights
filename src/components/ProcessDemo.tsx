@@ -25,9 +25,9 @@ export const ProcessDemo = () => {
   const [codeLines, setCodeLines] = useState<string[]>([]);
   const [showResults, setShowResults] = useState(false);
   const [aoResults, setAoResults] = useState([
-    { title: "Fourniture de matériel informatique", score: 94, budget: "150K€", deadline: "15/02/2024" },
-    { title: "Services de développement web", score: 87, budget: "80K€", deadline: "28/02/2024" },
-    { title: "Maintenance systèmes réseaux", score: 76, budget: "45K€", deadline: "10/03/2024" }
+    { title: "Fourniture de matériel informatique", score: 94, budget: "150K€", deadline: "15/02/2025" },
+    { title: "Services de développement web", score: 87, budget: "80K€", deadline: "28/02/2025" },
+    { title: "Maintenance systèmes réseaux", score: 76, budget: "45K€", deadline: "10/03/2025" }
   ]);
 
   const steps = [

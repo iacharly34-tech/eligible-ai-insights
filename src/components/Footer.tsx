@@ -117,7 +117,7 @@ export const Footer = () => {
         <div className="mt-8 pt-4 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             <div className="text-xs text-foreground/70">
-              © 2024 eligible.ai. Tous droits réservés.
+              © 2025 eligible.ai. Tous droits réservés.
             </div>
             <div className="flex items-center space-x-4 text-xs text-foreground/70">
               <span>Made with ❤️ in France</span>

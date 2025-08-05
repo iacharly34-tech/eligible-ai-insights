@@ -33,16 +33,16 @@ const Ressources = () => {
       description: "Les 10 étapes clés pour maximiser vos chances de succès dans les marchés publics.",
       readTime: "12 min",
       author: "Équipe Eligibly.ai",
-      date: "15 jan 2024",
+      date: "15 jan 2025",
       featured: true
     },
     {
       category: "Analyse",
-      title: "Tendances 2024 des marchés publics en France",
+      title: "Tendances 2025 des marchés publics en France",
       description: "Découvrez les secteurs en croissance et les nouvelles opportunités à saisir.",
       readTime: "8 min",
       author: "Marie Dubois",
-      date: "10 jan 2024",
+      date: "10 jan 2025",
       featured: false
     },
     {
@@ -51,14 +51,14 @@ const Ressources = () => {
       description: "Comment configurer votre IA pour détecter les meilleures opportunités.",
       readTime: "15 min",
       author: "Thomas Martin",
-      date: "5 jan 2024",
+      date: "5 jan 2025",
       featured: false
     }
   ];
 
   const guides = [
     {
-      title: "Guide complet des marchés publics 2024",
+      title: "Guide complet des marchés publics 2025",
       description: "Tout savoir sur la réglementation, les procédures et les bonnes pratiques.",
       pages: "120 pages",
       format: "PDF",
@@ -107,14 +107,14 @@ const Ressources = () => {
   const webinars = [
     {
       title: "Les secrets d'une veille commerciale efficace",
-      date: "25 jan 2024",
+      date: "25 jan 2025",
       time: "14h00 - 15h30",
       speaker: "Expert Eligibly.ai",
       status: "upcoming"
     },
     {
       title: "IA et marchés publics : retour d'expérience client",
-      date: "18 jan 2024",
+      date: "18 jan 2025",
       time: "11h00 - 12h00",
       speaker: "Client témoignage",
       status: "replay"

@@ -375,7 +375,7 @@ export const ProcessAnimation = () => {
               <CardContent className="p-6">
                 <h3 className="font-bold text-foreground mb-4 flex items-center gap-2">
                   <Database className="w-5 h-5 text-primary" />
-                  Stack Technique 2024
+                  Stack Technique 2025
                 </h3>
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div className="space-y-3">
