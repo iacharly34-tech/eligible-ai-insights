@@ -14,14 +14,14 @@ import {
 // ============= STATISTIQUES AVEC SOURCES =============
 export const COMPANY_STATS = {
   clients: "500+",
-  enterprises: "150+", 
+  enterprises: "500+", 
   sources: "200+",
   precision: "94%",
   timeSaved: "6h",
-  opportunitiesPerDay: "15+",
-  successRate: "+35%",
+  opportunitiesPerDay: "200+",
+  successRate: "10x",
   marketValue: "80Md€",
-  dailyTenders: "300+"
+  dailyTenders: "200+"
 } as const;
 
 // ============= SOURCES ET MÉTHODOLOGIE =============
@@ -55,10 +55,10 @@ export const STATS_SOURCES = {
     methodology: "Test sur 1000 appels d'offres avec validation métier"
   },
   dailyTenders: {
-    value: "300+",
+    value: "200+",
     source: "Data.gouv.fr - Données essentielles commande publique",
     year: "2024",
-    note: "Moyenne d'appels d'offres publiés quotidiennement en France",
+    note: "Moyenne d'appels d'offres analysés quotidiennement par Eligibly.ai",
     url: "https://www.data.gouv.fr/fr/datasets/608c055b35eb4e6ee20eb325/"
   }
 } as const;
@@ -68,7 +68,7 @@ export const CORE_FEATURES = [
   {
     icon: Database,
     title: "Surveillance Multi-Sources",
-    description: "Accès automatisé à plus de 200 sources officielles françaises et européennes",
+    description: "Surveillance automatisée de plus de 200 sources officielles françaises et européennes",
     shortDesc: "200+ sources surveillées automatiquement",
     details: ["BOAMP", "Marchés Publics", "TED eTendering", "PLACE", "Profils acheteurs", "Sites régionaux"],
     color: "primary",
@@ -77,8 +77,8 @@ export const CORE_FEATURES = [
   },
   {
     icon: Brain,
-    title: "Analyse IA Intelligente",
-    description: "Analyse sémantique avancée pour détecter les opportunités les plus pertinentes",
+    title: "Analyse Intelligente",
+    description: "Technologie d'intelligence artificielle pour une qualification automatique des marchés",
     shortDesc: "IA avancée pour une détection précise",
     details: ["Analyse sémantique", "Scoring intelligent", "Filtrage automatique", "Apprentissage continu"],
     color: "primary", 
