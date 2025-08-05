@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { SafeLink } from "./SafeLink";
 import { ArrowRight, Phone, Mail, MapPin, Target } from "lucide-react";
 
 interface CTAFooterProps {
@@ -35,25 +36,29 @@ export const CTAFooter = ({
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-10 py-4 h-auto font-semibold"
-            >
-              <ArrowRight className="w-5 h-5 mr-2" />
-              {primaryButtonText}
-            </Button>
-            <button 
-              className="flex items-center justify-center gap-2 rounded-xl text-lg font-semibold px-10 py-4"
-              style={{ 
-                backgroundColor: '#ffffff',
-                color: '#8b5cf6',
-                border: '2px solid #ffffff',
-                opacity: '1'
-              }}
-            >
-              <Phone className="w-5 h-5" style={{ color: '#8b5cf6' }} />
-              <span style={{ color: '#8b5cf6' }}>{secondaryButtonText}</span>
-            </button>
+            <SafeLink to="/demo">
+              <Button 
+                size="lg" 
+                className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-10 py-4 h-auto font-semibold"
+              >
+                <ArrowRight className="w-5 h-5 mr-2" />
+                {primaryButtonText}
+              </Button>
+            </SafeLink>
+            <SafeLink to="/connexion">
+              <button 
+                className="flex items-center justify-center gap-2 rounded-xl text-lg font-semibold px-10 py-4"
+                style={{ 
+                  backgroundColor: '#ffffff',
+                  color: '#8b5cf6',
+                  border: '2px solid #ffffff',
+                  opacity: '1'
+                }}
+              >
+                <Phone className="w-5 h-5" style={{ color: '#8b5cf6' }} />
+                <span style={{ color: '#8b5cf6' }}>{secondaryButtonText}</span>
+              </button>
+            </SafeLink>
           </div>
           
           <p className="text-white/70 mt-6 text-sm">
@@ -89,20 +94,20 @@ export const CTAFooter = ({
             <div>
               <h3 className="font-semibold mb-4">Produit</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/produit" className="hover:text-white transition-colors">Fonctionnalités</a></li>
-                <li><a href="/tarifs" className="hover:text-white transition-colors">Tarifs</a></li>
-                <li><a href="/demo" className="hover:text-white transition-colors">Démonstration</a></li>
-                <li><a href="/solutions" className="hover:text-white transition-colors">Solutions</a></li>
+                <li><SafeLink to="/produit" className="hover:text-white transition-colors">Fonctionnalités</SafeLink></li>
+                <li><SafeLink to="/tarifs" className="hover:text-white transition-colors">Tarifs</SafeLink></li>
+                <li><SafeLink to="/demo" className="hover:text-white transition-colors">Démonstration</SafeLink></li>
+                <li><SafeLink to="/solutions" className="hover:text-white transition-colors">Solutions</SafeLink></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Entreprise</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/a-propos" className="hover:text-white transition-colors">À propos</a></li>
-                <li><a href="/ressources" className="hover:text-white transition-colors">Blog</a></li>
-                <li><a href="/ressources" className="hover:text-white transition-colors">Ressources</a></li>
-                <li><a href="/connexion" className="hover:text-white transition-colors">Connexion</a></li>
+                <li><SafeLink to="/a-propos" className="hover:text-white transition-colors">À propos</SafeLink></li>
+                <li><SafeLink to="/ressources" className="hover:text-white transition-colors">Blog</SafeLink></li>
+                <li><SafeLink to="/ressources" className="hover:text-white transition-colors">Ressources</SafeLink></li>
+                <li><SafeLink to="/connexion" className="hover:text-white transition-colors">Connexion</SafeLink></li>
               </ul>
             </div>
             
@@ -130,15 +135,15 @@ export const CTAFooter = ({
               © 2025 Eligibly.ai. Tous droits réservés.
             </p>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="/ressources#legal" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <SafeLink to="/mentions-legales" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Mentions légales
-              </a>
-              <a href="/ressources#privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
+              </SafeLink>
+              <SafeLink to="/confidentialite" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Confidentialité
-              </a>
-              <a href="/ressources#terms" className="text-gray-400 hover:text-white text-sm transition-colors">
+              </SafeLink>
+              <SafeLink to="/cgu" className="text-gray-400 hover:text-white text-sm transition-colors">
                 CGU
-              </a>
+              </SafeLink>
             </div>
           </div>
         </div>

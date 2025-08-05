@@ -1,5 +1,5 @@
 import { Brain, Mail, Phone, MapPin, Linkedin } from "lucide-react";
-import { Link } from "react-router-dom";
+import { SafeLink } from "./SafeLink";
 
 export const Footer = () => {
   const footerSections = [
@@ -99,12 +99,12 @@ export const Footer = () => {
                         {link.name}
                       </a>
                     ) : (
-                      <Link 
+                      <SafeLink 
                         to={link.href}
                         className="text-xs text-foreground/70 hover:text-foreground transition-colors duration-200"
                       >
                         {link.name}
-                      </Link>
+                      </SafeLink>
                     )}
                   </li>
                 ))}
