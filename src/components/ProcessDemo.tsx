@@ -138,12 +138,12 @@ export const ProcessDemo = () => {
         }, i * 300);
       });
       
-      // Animation des données qui arrivent
+      // Animation croissante des données
       const step1Interval = setInterval(() => {
         setSourceData(prev => ({
           ...prev,
           boamp: Math.min(prev.boamp + Math.floor(Math.random() * 3) + 1, 250),
-          marchesPublics: Math.min(prev.marchesPublics + Math.floor(Math.random() * 2) + 1, 162)
+          marchesPublics: Math.min(prev.marchesPublics + Math.floor(Math.random() * 2) + 1, 170)
         }));
       }, 200);
       
@@ -173,8 +173,8 @@ export const ProcessDemo = () => {
       const step2Interval = setInterval(() => {
         setSourceData(prev => ({
           ...prev,
-          place: Math.min(prev.place + Math.floor(Math.random() * 2) + 1, 95),
-          awsDume: Math.min(prev.awsDume + Math.floor(Math.random() * 2) + 1, 74)
+          place: Math.min(prev.place + Math.floor(Math.random() * 2) + 1, 105),
+          awsDume: Math.min(prev.awsDume + Math.floor(Math.random() * 2) + 1, 85)
         }));
       }, 300);
       
@@ -202,12 +202,14 @@ export const ProcessDemo = () => {
         }, i * 350);
       });
       
-      // Simulation d'analyse intensive
+      // Animation croissante continue pour l'analyse IA
       const step3Interval = setInterval(() => {
         setSourceData(prev => ({
           ...prev,
-          boamp: Math.max(Math.min(prev.boamp + Math.floor(Math.random() * 4) - 1, 250), 240),
-          marchesPublics: Math.max(Math.min(prev.marchesPublics + Math.floor(Math.random() * 3) - 1, 162), 155)
+          boamp: Math.min(prev.boamp + Math.floor(Math.random() * 2) + 1, 280),
+          marchesPublics: Math.min(prev.marchesPublics + Math.floor(Math.random() * 2) + 1, 190),
+          place: Math.min(prev.place + Math.floor(Math.random() * 1) + 1, 115),
+          awsDume: Math.min(prev.awsDume + Math.floor(Math.random() * 1) + 1, 95)
         }));
       }, 150);
       
@@ -237,8 +239,10 @@ export const ProcessDemo = () => {
       const step4Interval = setInterval(() => {
         setSourceData(prev => ({
           ...prev,
-          place: Math.max(Math.min(prev.place + Math.floor(Math.random() * 2), 95), 89),
-          awsDume: Math.max(Math.min(prev.awsDume + Math.floor(Math.random() * 2), 74), 67)
+          boamp: Math.min(prev.boamp + Math.floor(Math.random() * 1) + 1, 300),
+          marchesPublics: Math.min(prev.marchesPublics + Math.floor(Math.random() * 1) + 1, 200),
+          place: Math.min(prev.place + Math.floor(Math.random() * 1) + 1, 125),
+          awsDume: Math.min(prev.awsDume + Math.floor(Math.random() * 1) + 1, 105)
         }));
       }, 250);
       
