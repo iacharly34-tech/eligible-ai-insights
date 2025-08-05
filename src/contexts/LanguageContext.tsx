@@ -25,10 +25,10 @@ const translations = {
     
     // Hero Section
     'hero.badge': 'Plateforme • Marchés Publics • Intelligence Artificielle',
-    'hero.title': 'La plateforme de veille intelligente pour les',
+    'hero.title': 'Trouvez et remportez vos',
     'hero.title.highlight': 'marchés publics',
-    'hero.title.end': '',
-    'hero.subtitle': 'Plus de 500 professionnels utilisent Eligibly.ai pour détecter et analyser automatiquement les appels d\'offres. Surveillez 200+ sources officielles avec une précision de 94%.',
+    'hero.title.end': 'en un clin d\'œil',
+    'hero.subtitle': 'Plus de 500 professionnels utilisent Eligibly.ai pour détecter automatiquement les appels d\'offres les plus pertinents. Une plateforme simple qui surveille 200+ sources officielles avec 94% de précision.',
     'hero.cta.primary': 'Démarrer gratuitement',
     'hero.cta.secondary': 'Demander une démonstration',
     'hero.stats.opportunities': '+200 appels d\'offres analysés quotidiennement',
@@ -47,6 +47,21 @@ const translations = {
     'features.scoring.desc': 'Chaque marché reçoit un score de compatibilité pour vous aider à prioriser vos efforts commerciaux',
     'features.notifications.title': 'Alertes personnalisées en temps réel',
     'features.notifications.desc': 'Notifications instantanées par email ou Slack uniquement pour les marchés correspondant à votre profil d\'activité',
+    
+    // Market Stats Section
+    'market.title': 'Le marché des',
+    'market.title.highlight': 'marchés publics',
+    'market.subtitle': 'Un secteur majeur de l\'économie française avec de nombreuses opportunités pour les entreprises',
+    'market.stats.volume': '200 milliards d\'euros',
+    'market.stats.volume.desc': 'de dépense publique par an en France',
+    'market.stats.tenders': '157 000',
+    'market.stats.tenders.desc': 'appels d\'offres publiés chaque année',
+    'market.stats.candidates': '2,5',
+    'market.stats.candidates.desc': 'entreprises candidates en moyenne par AO',
+    'market.benefits.title': 'Des garanties uniques',
+    'market.benefits.payment': 'Garantie de paiement',
+    'market.benefits.contracts': 'Contrats pluriannuels',
+    'market.benefits.growth': 'Croissance stable',
     
     // CTA Section
     'cta.title': 'Optimisez votre performance commerciale',
@@ -218,10 +233,10 @@ const translations = {
     
     // Hero Section
     'hero.badge': 'Platform • Public Procurement • Artificial Intelligence',
-    'hero.title': 'Intelligent monitoring platform for',
-    'hero.title.highlight': 'public procurement',
-    'hero.title.end': '',
-    'hero.subtitle': 'Over 500 professionals use Eligibly.ai to automatically detect and analyze public tenders. Monitor 200+ official sources with 94% accuracy.',
+    'hero.title': 'Find and win your',
+    'hero.title.highlight': 'public tenders',
+    'hero.title.end': 'at a glance',
+    'hero.subtitle': 'Over 500 professionals use Eligibly.ai to automatically detect the most relevant tenders. A simple platform that monitors 200+ official sources with 94% accuracy.',
     'hero.cta.primary': 'Get started free',
     'hero.cta.secondary': 'Request demonstration',
     'hero.stats.opportunities': '+200 public tenders analyzed daily',
@@ -240,6 +255,21 @@ const translations = {
     'features.scoring.desc': 'Each tender receives a compatibility score to help you prioritize your commercial efforts',
     'features.notifications.title': 'Real-time personalized alerts',
     'features.notifications.desc': 'Instant notifications via email or Slack only for tenders matching your business profile',
+    
+    // Market Stats Section
+    'market.title': 'The',
+    'market.title.highlight': 'public procurement',
+    'market.subtitle': 'A major sector of the French economy with numerous opportunities for businesses',
+    'market.stats.volume': '200 billion euros',
+    'market.stats.volume.desc': 'in public spending per year in France',
+    'market.stats.tenders': '157,000',
+    'market.stats.tenders.desc': 'tenders published each year',
+    'market.stats.candidates': '2.5',
+    'market.stats.candidates.desc': 'candidate companies on average per tender',
+    'market.benefits.title': 'Unique guarantees',
+    'market.benefits.payment': 'Payment guarantee',
+    'market.benefits.contracts': 'Multi-year contracts',
+    'market.benefits.growth': 'Stable growth',
     
     // CTA Section
     'cta.title': 'Optimize your commercial performance',

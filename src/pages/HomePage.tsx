@@ -435,6 +435,69 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Market Statistics Section - Inspired by marchepublic.app */}
+      <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100" aria-label="Statistiques du marché public français">
+        <div className="container mx-auto">
+          <ScrollReveal className="text-center mb-16">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Marché français</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              {t('market.title')}{" "}
+              <span className="bg-gradient-highlight bg-clip-text text-transparent">
+                {t('market.title.highlight')}
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {t('market.subtitle')}
+            </p>
+          </ScrollReveal>
+          
+          {/* Key Statistics */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <ScrollReveal delay={100}>
+              <Card className="text-center p-8 border-0 bg-white/60 backdrop-blur-sm hover:shadow-xl transition-all duration-500">
+                <div className="text-5xl font-bold text-primary mb-4">{t('market.stats.volume')}</div>
+                <p className="text-gray-600 font-medium">{t('market.stats.volume.desc')}</p>
+              </Card>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={200}>
+              <Card className="text-center p-8 border-0 bg-white/60 backdrop-blur-sm hover:shadow-xl transition-all duration-500">
+                <div className="text-5xl font-bold text-accent mb-4">{t('market.stats.tenders')}</div>
+                <p className="text-gray-600 font-medium">{t('market.stats.tenders.desc')}</p>
+              </Card>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={300}>
+              <Card className="text-center p-8 border-0 bg-white/60 backdrop-blur-sm hover:shadow-xl transition-all duration-500">
+                <div className="text-5xl font-bold text-cyan-soft mb-4">{t('market.stats.candidates')}</div>
+                <p className="text-gray-600 font-medium">{t('market.stats.candidates.desc')}</p>
+              </Card>
+            </ScrollReveal>
+          </div>
+          
+          {/* Market Benefits */}
+          <ScrollReveal delay={400}>
+            <div className="text-center">
+              <h3 className="text-2xl font-bold mb-8 text-gray-800">{t('market.benefits.title')}</h3>
+              <div className="flex flex-wrap justify-center gap-6">
+                <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-sm border border-gray-200/50">
+                  <Shield className="w-6 h-6 text-green-600" />
+                  <span className="font-medium text-gray-700">{t('market.benefits.payment')}</span>
+                </div>
+                <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-sm border border-gray-200/50">
+                  <Clock className="w-6 h-6 text-blue-600" />
+                  <span className="font-medium text-gray-700">{t('market.benefits.contracts')}</span>
+                </div>
+                <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-sm border border-gray-200/50">
+                  <TrendingUp className="w-6 h-6 text-purple-600" />
+                  <span className="font-medium text-gray-700">{t('market.benefits.growth')}</span>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section id="features" className="py-20 px-4">
         <div className="container mx-auto">
