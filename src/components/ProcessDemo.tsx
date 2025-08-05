@@ -17,8 +17,8 @@ export const ProcessDemo = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [progress, setProgress] = useState(0);
   const [sourceData, setSourceData] = useState({
-    boamp: 234,
-    marchesPublics: 156,
+    boamp: 241,
+    marchesPublics: 163,
     place: 89,
     awsDume: 67
   });
@@ -68,8 +68,8 @@ export const ProcessDemo = () => {
     setIsRunning(false);
     setProgress(0);
     setSourceData({
-      boamp: 234,
-      marchesPublics: 156,
+      boamp: 241,
+      marchesPublics: 163,
       place: 89,
       awsDume: 67
     });
@@ -80,100 +80,81 @@ export const ProcessDemo = () => {
     
     resetDemo();
     setIsRunning(true);
+    setProgress(0);
     
-    // Step-by-step progression with proper timing
-    const steps = [
-      {
-        step: 1,
-        delay: 0,
-        duration: 2500,
-        action: () => {
-          setCurrentStep(1);
-          // Simulate data collection
-          setTimeout(() => {
-            setSourceData(prev => ({
-              ...prev,
-              boamp: prev.boamp + Math.floor(Math.random() * 15) + 5,
-              marchesPublics: prev.marchesPublics + Math.floor(Math.random() * 12) + 3
-            }));
-          }, 800);
-        }
-      },
-      {
-        step: 2,
-        delay: 2500,
-        duration: 2000,
-        action: () => {
-          setCurrentStep(2);
-          // Simulate extraction
-          setTimeout(() => {
-            setSourceData(prev => ({
-              ...prev,
-              place: prev.place + Math.floor(Math.random() * 8) + 2,
-              awsDume: prev.awsDume + Math.floor(Math.random() * 6) + 1
-            }));
-          }, 600);
-        }
-      },
-      {
-        step: 3,
-        delay: 4500,
-        duration: 2200,
-        action: () => {
-          setCurrentStep(3);
-          // Simulate AI analysis with multiple data updates
-          setTimeout(() => {
-            setSourceData(prev => ({
-              ...prev,
-              boamp: prev.boamp + Math.floor(Math.random() * 8),
-            }));
-          }, 400);
-          setTimeout(() => {
-            setSourceData(prev => ({
-              ...prev,
-              marchesPublics: prev.marchesPublics + Math.floor(Math.random() * 5),
-            }));
-          }, 1200);
-        }
-      },
-      {
-        step: 4,
-        delay: 6700,
-        duration: 1800,
-        action: () => {
-          setCurrentStep(4);
-          // Final scoring
-          setTimeout(() => {
-            setSourceData(prev => ({
-              ...prev,
-              place: prev.place + Math.floor(Math.random() * 4),
-              awsDume: prev.awsDume + Math.floor(Math.random() * 3)
-            }));
-          }, 500);
-        }
-      }
-    ];
+    // Étape 1: Connexion multi-sources (0-2.5s)
+    setTimeout(() => {
+      setCurrentStep(1);
+      // Animation des données qui arrivent
+      const step1Interval = setInterval(() => {
+        setSourceData(prev => ({
+          ...prev,
+          boamp: Math.min(prev.boamp + Math.floor(Math.random() * 3) + 1, 250),
+          marchesPublics: Math.min(prev.marchesPublics + Math.floor(Math.random() * 2) + 1, 162)
+        }));
+      }, 200);
+      
+      setTimeout(() => clearInterval(step1Interval), 2000);
+    }, 100);
 
-    // Animate progress continuously
+    // Étape 2: Extraction & Parsing (2.5-5s)
+    setTimeout(() => {
+      setCurrentStep(2);
+      const step2Interval = setInterval(() => {
+        setSourceData(prev => ({
+          ...prev,
+          place: Math.min(prev.place + Math.floor(Math.random() * 2) + 1, 95),
+          awsDume: Math.min(prev.awsDume + Math.floor(Math.random() * 2) + 1, 74)
+        }));
+      }, 300);
+      
+      setTimeout(() => clearInterval(step2Interval), 2000);
+    }, 2500);
+
+    // Étape 3: Analyse IA Multi-LLM (5-7.5s)
+    setTimeout(() => {
+      setCurrentStep(3);
+      // Simulation d'analyse intensive
+      const step3Interval = setInterval(() => {
+        setSourceData(prev => ({
+          ...prev,
+          boamp: Math.max(Math.min(prev.boamp + Math.floor(Math.random() * 4) - 1, 250), 240),
+          marchesPublics: Math.max(Math.min(prev.marchesPublics + Math.floor(Math.random() * 3) - 1, 162), 155)
+        }));
+      }, 150);
+      
+      setTimeout(() => clearInterval(step3Interval), 2000);
+    }, 5000);
+
+    // Étape 4: Scoring Algorithmique (7.5-10s)
+    setTimeout(() => {
+      setCurrentStep(4);
+      const step4Interval = setInterval(() => {
+        setSourceData(prev => ({
+          ...prev,
+          place: Math.max(Math.min(prev.place + Math.floor(Math.random() * 2), 95), 89),
+          awsDume: Math.max(Math.min(prev.awsDume + Math.floor(Math.random() * 2), 74), 67)
+        }));
+      }, 250);
+      
+      setTimeout(() => clearInterval(step4Interval), 2000);
+    }, 7500);
+
+    // Progression continue
     const progressInterval = setInterval(() => {
       setProgress(prev => {
-        const newProgress = prev + 1.2;
+        const newProgress = prev + 1;
         if (newProgress >= 100) {
           clearInterval(progressInterval);
           setTimeout(() => {
             setIsRunning(false);
-            setCurrentStep(5); // Completed state
+            setCurrentStep(5); // État terminé
           }, 500);
           return 100;
         }
         return newProgress;
       });
-    }, 80);
-
-    // Execute each step
-    steps.forEach(({ delay, action }) => {
-      setTimeout(action, delay);
-    });
+    }, 100);
   };
 
   return (
