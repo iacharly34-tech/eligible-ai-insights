@@ -32,10 +32,10 @@ export const Footer = () => {
     {
       title: "Légal",
       links: [
-        { name: "Confidentialité", href: "/ressources#privacy" },
-        { name: "Conditions", href: "/ressources#terms" },
-        { name: "Cookies", href: "/ressources#cookies" },
-        { name: "RGPD", href: "/ressources#gdpr" }
+        { name: "Mentions légales", href: "/mentions-legales" },
+        { name: "Confidentialité", href: "/confidentialite" },
+        { name: "CGU", href: "/cgu" },
+        { name: "Contact", href: "mailto:contact@eligibly.ai" }
       ]
     }
   ];
