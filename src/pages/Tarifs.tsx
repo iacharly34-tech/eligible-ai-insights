@@ -84,24 +84,28 @@ const Tarifs = () => {
 
   const faq = [
     {
-      question: "L'essai gratuit est-il vraiment sans engagement ?",
-      answer: "Oui, absolument ! Vous pouvez tester toutes les fonctionnalités pendant 7 jours sans carte bancaire. Annulation en un clic."
+      question: "Quelles sources d'appels d'offres surveillez-vous ?",
+      answer: "Nous surveillons toutes les plateformes officielles : BOAMP, profils d'acheteurs, PLACE, TED Europe, AWS DUME, plus de 600 sites régionaux. Notre IA analyse en temps réel tous les nouveaux AO publiés."
     },
     {
-      question: "Puis-je changer de plan à tout moment ?",
-      answer: "Vous pouvez upgrader ou downgrader votre plan à tout moment. Les changements sont effectifs immédiatement avec facturation au prorata."
+      question: "Comment Charly détermine-t-il la compatibilité d'un appel d'offres ?",
+      answer: "Charly analyse votre profil d'entreprise (CA, secteur, références, certifications) et le compare aux critères de l'AO. Il évalue la faisabilité technique, la conformité réglementaire, et calcule vos chances de succès en fonction de vos forces."
     },
     {
-      question: "Quelles sont les méthodes de paiement acceptées ?",
-      answer: "Nous acceptons toutes les cartes bancaires, virements SEPA, et proposons des facilités de paiement pour les grandes organisations."
+      question: "L'outil fonctionne-t-il pour tous les secteurs de marchés publics ?",
+      answer: "Oui ! Charly couvre tous les domaines : informatique, BTP, services, fournitures, santé, éducation, défense. L'IA s'adapte automatiquement aux spécificités de chaque secteur et type de marché."
     },
     {
-      question: "Proposez-vous des tarifs réduits pour les associations ?",
-      answer: "Oui, nous proposons des tarifs préférentiels pour les associations, startups, et organismes publics. Contactez-nous pour en savoir plus."
+      question: "Puis-je être alerté des AO en temps réel selon mes critères ?",
+      answer: "Absolument ! Vous configurez vos critères (budget, secteur, zone géographique, mots-clés) et recevez des alertes instantanées par email, Slack ou Teams dès qu'un AO compatible est détecté."
     },
     {
       question: "Prévoyez-vous une aide à la rédaction des réponses aux appels d'offres ?",
       answer: "Excellente question ! Nous développons actuellement un nouvel agent IA spécialisé dans l'aide à la rédaction des mémoires d'AO. Cette fonctionnalité incluera : la construction automatique du mémoire technique, l'optimisation du paramétrage des prix selon les critères, et l'élaboration de stratégies environnementales personnalisées quand c'est un critère d'évaluation. Cette évolution sera disponible dès Q2 2025 pour tous nos abonnés Professional et Enterprise."
+    },
+    {
+      question: "Comment garantissez-vous la fraîcheur des données d'appels d'offres ?",
+      answer: "Notre système effectue une veille continue 24h/24. Les données sont mises à jour toutes les heures, et nos algorithmes détectent automatiquement les modifications d'AO (prolongations, annulations, avenants)."
     }
   ];
 
