@@ -13,7 +13,10 @@ export const LanguageSwitcher = () => {
       {languages.map((lang) => (
         <button
           key={lang.code}
-          onClick={() => setLanguage(lang.code)}
+          onClick={() => {
+            console.log('Switching language to:', lang.code);
+            setLanguage(lang.code);
+          }}
           className={`
             px-2 py-1 text-xs font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md
             ${language === lang.code 

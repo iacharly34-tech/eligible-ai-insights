@@ -419,12 +419,14 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   });
 
   useEffect(() => {
+    console.log('Language changed to:', language);
     secureStorage.setItem('eligibly-language', language);
     document.documentElement.lang = language;
   }, [language]);
 
   const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations[typeof language]] || key;
+    const result = translations[language][key as keyof typeof translations[typeof language]] || key;
+    return result;
   };
 
   return (
