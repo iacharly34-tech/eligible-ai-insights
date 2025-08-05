@@ -386,78 +386,71 @@ export const ProcessDemo = () => {
 
               {/* Results Display */}
               {showResults && (
-                <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-lg p-6 border-2 border-purple-200 animate-fade-in">
-                  <div className="flex items-center gap-2 mb-4">
+                <div className="bg-white rounded-lg p-6 border border-gray-200 animate-fade-in">
+                  <div className="flex items-center gap-2 mb-6">
                     <CheckCircle className="w-5 h-5 text-green-600" />
-                    <h3 className="text-lg font-bold text-purple-800">Résultats d'Analyse AO</h3>
+                    <h3 className="text-lg font-bold text-gray-800">Résultats d'Analyse AO</h3>
                     <Badge className="bg-green-600 text-white ml-auto">3 opportunités trouvées</Badge>
                   </div>
                   
                   <div className="space-y-4">
-                    {aoResults.map((ao, index) => (
+                    {aoResults.slice(0,1).map((ao, index) => (
                       <div
                         key={index}
-                        className="bg-white rounded-lg p-6 border border-purple-200 animate-fade-in"
-                        style={{ animationDelay: `${index * 0.2}s` }}
+                        className="bg-gray-50 rounded-lg p-6 border border-gray-200"
                       >
-                        <div className="flex justify-between items-start mb-4">
+                        <div className="flex justify-between items-start mb-6">
                           <div className="flex-1">
-                            <h4 className="font-semibold text-gray-800 mb-2">{ao.title}</h4>
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                            <h4 className="text-xl font-bold text-gray-900 mb-4">{ao.title}</h4>
+                            <div className="grid grid-cols-4 gap-6 text-sm">
                               <div>
-                                <span className="text-gray-500">Budget:</span>
-                                <div className="font-medium">{ao.budget}</div>
+                                <span className="text-gray-500 block mb-1">Budget:</span>
+                                <div className="font-semibold text-gray-900">{ao.budget}</div>
                               </div>
                               <div>
-                                <span className="text-gray-500">Deadline:</span>
-                                <div className="font-medium">{ao.deadline}</div>
+                                <span className="text-gray-500 block mb-1">Deadline:</span>
+                                <div className="font-semibold text-gray-900">{ao.deadline}</div>
                               </div>
                               <div>
-                                <span className="text-gray-500">Durée:</span>
-                                <div className="font-medium">{ao.duree}</div>
+                                <span className="text-gray-500 block mb-1">Durée:</span>
+                                <div className="font-semibold text-gray-900">{ao.duree}</div>
                               </div>
                               <div>
-                                <span className="text-gray-500">Titulaire:</span>
-                                <div className="font-medium text-xs">{ao.titulaire}</div>
+                                <span className="text-gray-500 block mb-1">Titulaire:</span>
+                                <div className="font-semibold text-gray-900">{ao.titulaire}</div>
                               </div>
                             </div>
                           </div>
-                          <div className="text-right ml-4">
-                            <div className={`text-2xl font-bold ${
-                              ao.score >= 90 ? 'text-green-600' : 
-                              ao.score >= 80 ? 'text-blue-600' : 
-                              'text-orange-600'
-                            }`}>
+                          <div className="text-right ml-6">
+                            <div className="text-4xl font-bold text-green-600 mb-1">
                               {ao.score}%
                             </div>
-                            <div className="text-xs text-gray-500">Score Charly</div>
+                            <div className="text-sm text-gray-500">Score Charly</div>
                           </div>
                         </div>
                         
                         {/* Critères d'évaluation */}
-                        <div className="bg-gray-50 rounded-lg p-4 mb-3">
-                          <h5 className="text-sm font-semibold text-gray-700 mb-2">Critères de l'acheteur</h5>
-                          <div className="flex items-center gap-4">
-                            <div className="flex-1">
-                              <div className="flex justify-between text-xs mb-1">
-                                <span>Prix: {ao.criteres.prix}%</span>
-                                <span>Qualité: {ao.criteres.qualite}%</span>
-                                <span>Performance: {ao.criteres.performance}%</span>
-                              </div>
-                              <div className="flex gap-1 h-2 rounded-full overflow-hidden">
-                                <div 
-                                  className="bg-red-400" 
-                                  style={{ width: `${ao.criteres.prix}%` }}
-                                ></div>
-                                <div 
-                                  className="bg-green-400" 
-                                  style={{ width: `${ao.criteres.qualite}%` }}
-                                ></div>
-                                <div 
-                                  className="bg-blue-400" 
-                                  style={{ width: `${ao.criteres.performance}%` }}
-                                ></div>
-                              </div>
+                        <div className="mb-4">
+                          <h5 className="text-sm font-semibold text-gray-700 mb-3">Critères de l'acheteur</h5>
+                          <div className="space-y-2">
+                            <div className="flex justify-between text-sm mb-2">
+                              <span className="text-gray-600">Prix: {ao.criteres.prix}%</span>
+                              <span className="text-gray-600">Qualité: {ao.criteres.qualite}%</span>
+                              <span className="text-gray-600">Performance: {ao.criteres.performance}%</span>
+                            </div>
+                            <div className="flex h-3 rounded-full overflow-hidden bg-gray-200">
+                              <div 
+                                className="bg-red-400" 
+                                style={{ width: `${ao.criteres.prix}%` }}
+                              ></div>
+                              <div 
+                                className="bg-green-400" 
+                                style={{ width: `${ao.criteres.qualite}%` }}
+                              ></div>
+                              <div 
+                                className="bg-blue-400" 
+                                style={{ width: `${ao.criteres.performance}%` }}
+                              ></div>
                             </div>
                           </div>
                         </div>
@@ -465,9 +458,7 @@ export const ProcessDemo = () => {
                         {/* Pénalités */}
                         <div className="text-sm">
                           <span className="text-gray-500">Pénalités: </span>
-                          <span className={ao.penalites.includes("Oui") ? "text-red-600 font-medium" : "text-gray-600"}>
-                            {ao.penalites}
-                          </span>
+                          <span className="text-red-600 font-medium">{ao.penalites}</span>
                         </div>
                       </div>
                     ))}
