@@ -1,4 +1,5 @@
 import { Brain, Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const footerSections = [
@@ -95,12 +96,23 @@ export const Footer = () => {
               <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a 
-                      href={link.href}
-                      className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200"
-                    >
-                      {link.name}
-                    </a>
+                    {link.href.startsWith('mailto:') || link.href.startsWith('tel:') || link.href.startsWith('http') ? (
+                      <a 
+                        href={link.href}
+                        className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200"
+                        target={link.href.startsWith('http') ? "_blank" : undefined}
+                        rel={link.href.startsWith('http') ? "noopener noreferrer" : undefined}
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link 
+                        to={link.href}
+                        className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
