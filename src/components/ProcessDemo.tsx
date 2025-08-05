@@ -22,6 +22,13 @@ export const ProcessDemo = () => {
     place: 89,
     awsDume: 67
   });
+  const [codeLines, setCodeLines] = useState<string[]>([]);
+  const [showResults, setShowResults] = useState(false);
+  const [aoResults, setAoResults] = useState([
+    { title: "Fourniture de matériel informatique", score: 94, budget: "150K€", deadline: "15/02/2024" },
+    { title: "Services de développement web", score: 87, budget: "80K€", deadline: "28/02/2024" },
+    { title: "Maintenance systèmes réseaux", score: 76, budget: "45K€", deadline: "10/03/2024" }
+  ]);
 
   const steps = [
     {
@@ -73,6 +80,8 @@ export const ProcessDemo = () => {
       place: 89,
       awsDume: 67
     });
+    setCodeLines([]);
+    setShowResults(false);
   };
 
   const startDemo = () => {
@@ -85,6 +94,23 @@ export const ProcessDemo = () => {
     // Étape 1: Connexion multi-sources (0-2.5s)
     setTimeout(() => {
       setCurrentStep(1);
+      
+      // Animation du code JavaScript
+      const codeStep1 = [
+        "// Connexion aux sources",
+        "const sources = ['BOAMP', 'MarchesPublics', 'PLACE'];",
+        "for (let source of sources) {",
+        "  await connect(source);",
+        "  console.log(`Connecté à ${source}`);",
+        "}"
+      ];
+      
+      codeStep1.forEach((line, i) => {
+        setTimeout(() => {
+          setCodeLines(prev => [...prev, line]);
+        }, i * 300);
+      });
+      
       // Animation des données qui arrivent
       const step1Interval = setInterval(() => {
         setSourceData(prev => ({
@@ -100,6 +126,23 @@ export const ProcessDemo = () => {
     // Étape 2: Extraction & Parsing (2.5-5s)
     setTimeout(() => {
       setCurrentStep(2);
+      
+      // Animation du code d'extraction
+      const codeStep2 = [
+        "",
+        "// Extraction des données",
+        "const extractedData = await extractAOData(sources);",
+        "const parsedAO = await parseStructuredData(extractedData);",
+        "console.log(`${parsedAO.length} AO extraits`);",
+        ""
+      ];
+      
+      codeStep2.forEach((line, i) => {
+        setTimeout(() => {
+          setCodeLines(prev => [...prev, line]);
+        }, i * 400);
+      });
+      
       const step2Interval = setInterval(() => {
         setSourceData(prev => ({
           ...prev,
@@ -114,6 +157,24 @@ export const ProcessDemo = () => {
     // Étape 3: Analyse IA Multi-LLM (5-7.5s)
     setTimeout(() => {
       setCurrentStep(3);
+      
+      // Animation du code d'analyse IA
+      const codeStep3 = [
+        "// Analyse IA Multi-LLM",
+        "const aiModels = ['GPT-4', 'Claude', 'Gemini'];",
+        "for (let ao of parsedAO) {",
+        "  const analysis = await analyzeWithMultiLLM(ao, aiModels);",
+        "  ao.aiScore = calculateAIScore(analysis);",
+        "  console.log(`AO ${ao.id}: Score IA = ${ao.aiScore}`);",
+        "}"
+      ];
+      
+      codeStep3.forEach((line, i) => {
+        setTimeout(() => {
+          setCodeLines(prev => [...prev, line]);
+        }, i * 350);
+      });
+      
       // Simulation d'analyse intensive
       const step3Interval = setInterval(() => {
         setSourceData(prev => ({
@@ -129,6 +190,23 @@ export const ProcessDemo = () => {
     // Étape 4: Scoring Algorithmique (7.5-10s)
     setTimeout(() => {
       setCurrentStep(4);
+      
+      // Animation du code de scoring
+      const codeStep4 = [
+        "",
+        "// Scoring final",
+        "const scoredAO = await calculateFinalScore(parsedAO);",
+        "const rankedAO = scoredAO.sort((a, b) => b.score - a.score);",
+        "console.log('Analyse terminée, affichage des résultats...');",
+        ""
+      ];
+      
+      codeStep4.forEach((line, i) => {
+        setTimeout(() => {
+          setCodeLines(prev => [...prev, line]);
+        }, i * 350);
+      });
+      
       const step4Interval = setInterval(() => {
         setSourceData(prev => ({
           ...prev,
@@ -138,6 +216,11 @@ export const ProcessDemo = () => {
       }, 250);
       
       setTimeout(() => clearInterval(step4Interval), 2000);
+      
+      // Affichage des résultats après 1.5s
+      setTimeout(() => {
+        setShowResults(true);
+      }, 1500);
     }, 7500);
 
     // Progression continue
@@ -244,6 +327,72 @@ export const ProcessDemo = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Code Console Animation */}
+              {codeLines.length > 0 && (
+                <div className="bg-gray-900 rounded-lg p-4 mb-6 border-l-4 border-purple-500">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-gray-400 text-sm font-mono">Console JavaScript</span>
+                  </div>
+                  <div className="space-y-1 max-h-64 overflow-y-auto">
+                    {codeLines.map((line, index) => (
+                      <div
+                        key={index}
+                        className="text-green-400 text-sm font-mono animate-fade-in"
+                        style={{ animationDelay: `${index * 0.1}s` }}
+                      >
+                        {line || '\u00A0'}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Results Display */}
+              {showResults && (
+                <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-lg p-6 border-2 border-purple-200 animate-fade-in">
+                  <div className="flex items-center gap-2 mb-4">
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <h3 className="text-lg font-bold text-purple-800">Résultats d'Analyse AO</h3>
+                    <Badge className="bg-green-600 text-white ml-auto">3 opportunités trouvées</Badge>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    {aoResults.map((ao, index) => (
+                      <div
+                        key={index}
+                        className="bg-white rounded-lg p-4 border border-purple-200 flex items-center justify-between animate-fade-in"
+                        style={{ animationDelay: `${index * 0.2}s` }}
+                      >
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-gray-800 mb-1">{ao.title}</h4>
+                          <div className="flex items-center gap-4 text-sm text-gray-600">
+                            <span>Budget: {ao.budget}</span>
+                            <span>Deadline: {ao.deadline}</span>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className={`text-2xl font-bold ${
+                            ao.score >= 90 ? 'text-green-600' : 
+                            ao.score >= 80 ? 'text-blue-600' : 
+                            'text-orange-600'
+                          }`}>
+                            {ao.score}%
+                          </div>
+                          <div className="text-xs text-gray-500">Score Charly</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-4 text-center">
+                    <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+                      Voir tous les résultats
+                    </Button>
+                  </div>
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>
