@@ -358,57 +358,6 @@ const Demo = () => {
               </CardContent>
             </Card>
 
-            {/* Testimonials */}
-            <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-6">
-                Ce qu'en disent nos clients
-              </h3>
-              <div className="space-y-4">
-                {testimonials.map((testimonial, index) => (
-                  <Card key={index} className="border-0 bg-white/80 backdrop-blur-sm">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
-                          {testimonial.avatar}
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-2">
-                            {[...Array(testimonial.rating)].map((_, i) => (
-                              <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                            ))}
-                          </div>
-                          <p className="text-gray-700 text-sm mb-3 leading-relaxed">
-                            "{testimonial.comment}"
-                          </p>
-                          <div>
-                            <div className="font-medium text-gray-900 text-sm">
-                              {testimonial.name}
-                            </div>
-                            <div className="text-gray-600 text-xs">
-                              {testimonial.role} • {testimonial.company}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* Urgency */}
-            <Card className="border-0 bg-gradient-to-r from-orange-50 to-red-50 border-orange-200">
-              <CardContent className="p-6 text-center">
-                <Clock className="w-12 h-12 text-orange-500 mx-auto mb-4" />
-                <h3 className="text-lg font-bold text-orange-800 mb-2">
-                  Créneaux limités cette semaine
-                </h3>
-                <p className="text-orange-700 text-sm">
-                  Forte demande pour nos démonstrations. 
-                  Réservez dès maintenant pour éviter l'attente.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
