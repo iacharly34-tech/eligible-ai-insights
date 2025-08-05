@@ -1,7 +1,7 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
-import { SecurityErrorBoundary } from './components/SecurityErrorBoundary'
+
 import './index.css'
 
 // Mesurer les performances de façon optimisée
@@ -25,7 +25,5 @@ const measureWebVitals = () => {
 measureWebVitals();
 
 createRoot(document.getElementById("root")!).render(
-  <SecurityErrorBoundary>
-    <App />
-  </SecurityErrorBoundary>
+  <App />
 );
