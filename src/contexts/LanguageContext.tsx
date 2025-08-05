@@ -76,6 +76,23 @@ const translations = {
     'accessibility.images.feature': 'Illustration de la fonctionnalité',
     'accessibility.language.switch': 'Changer la langue vers',
     
+    // Dashboard
+    'dashboard.title': 'Dashboard Eligibly.ai',
+    'dashboard.subtitle': 'Suivi en temps réel',
+    'dashboard.live': 'Live',
+    'dashboard.opportunities.detected': 'Opportunités détectées',
+    'dashboard.ai.precision': 'Précision IA',
+    'dashboard.recent.opportunities': 'Opportunités récentes',
+    'dashboard.score': 'Score',
+    'dashboard.lastAnalysis': 'Dernière analyse: il y a 2 min',
+    'dashboard.weeklyGrowth': '+6% cette semaine',
+    'dashboard.opportunity1.title': 'Système de gestion documentaire',
+    'dashboard.opportunity1.client': 'Ministère de l\'Éducation',
+    'dashboard.opportunity2.title': 'Infrastructure cloud',
+    'dashboard.opportunity2.client': 'Région Île-de-France',
+    'dashboard.opportunity3.title': 'Plateforme e-learning',
+    'dashboard.opportunity3.client': 'Université de Lyon',
+    
     // CGU Page
     'cgu.title': 'Conditions Générales d\'Utilisation',
     'cgu.lastUpdate': 'Dernière mise à jour',
@@ -251,6 +268,23 @@ const translations = {
     'accessibility.images.dashboard': 'eligibly.ai Dashboard',
     'accessibility.images.feature': 'Feature illustration',
     'accessibility.language.switch': 'Switch language to',
+    
+    // Dashboard
+    'dashboard.title': 'Dashboard Eligibly.ai',
+    'dashboard.subtitle': 'Real-time monitoring',
+    'dashboard.live': 'Live',
+    'dashboard.opportunities.detected': 'Opportunities detected',
+    'dashboard.ai.precision': 'AI precision',
+    'dashboard.recent.opportunities': 'Recent opportunities',
+    'dashboard.score': 'Score',
+    'dashboard.lastAnalysis': 'Last analysis: 2 min ago',
+    'dashboard.weeklyGrowth': '+6% this week',
+    'dashboard.opportunity1.title': 'Document management system',
+    'dashboard.opportunity1.client': 'Ministry of Education',
+    'dashboard.opportunity2.title': 'Cloud infrastructure',
+    'dashboard.opportunity2.client': 'Île-de-France Region',
+    'dashboard.opportunity3.title': 'E-learning platform',
+    'dashboard.opportunity3.client': 'University of Lyon',
     
     // CGU Page
     'cgu.title': 'Terms of Service',
