@@ -95,25 +95,31 @@ const NewIndex = () => {
             {/* Left Column - Text Content */}
             <div className={`space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                {HERO_MESSAGES.home.title}{" "}
+                {t('hero.title')}{" "}
                 <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                  {HERO_MESSAGES.home.highlight}
+                  {t('hero.title.highlight')}
                 </span>{" "}
-                {HERO_MESSAGES.home.end}
+                {t('hero.title.end')}
               </h1>
               
               <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-                {HERO_MESSAGES.home.subtitle}
+                {t('hero.subtitle')}
               </p>
 
               {/* Value Propositions */}
               <div className="space-y-3 text-sm text-muted-foreground">
-                {HERO_MESSAGES.home.features.map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span>{feature}</span>
-                  </div>
-                ))}
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span>{t('hero.stats.opportunities')}</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span>{t('hero.stats.time')}</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span>{t('hero.stats.precision')}</span>
+                </div>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -125,7 +131,7 @@ const NewIndex = () => {
                     aria-label={t('accessibility.demo')}
                   >
                     <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                    {STANDARD_CTAS.primary.text}
+                    {t('hero.cta.primary')}
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </SafeLink>
@@ -136,10 +142,10 @@ const NewIndex = () => {
                     size="lg" 
                     className="text-lg px-8 py-4 h-auto border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 w-full"
                     role="button"
-                    aria-label={t('hero.cta.primary')}
+                    aria-label={t('hero.cta.secondary')}
                   >
                     <BarChart3 className="w-5 h-5 mr-2" />
-                    {STANDARD_CTAS.demo.text}
+                    {t('hero.cta.secondary')}
                   </Button>
                 </SafeLink>
               </div>
@@ -147,7 +153,7 @@ const NewIndex = () => {
               {/* Trust indicators */}
               <div className="flex items-center gap-2 opacity-60">
                 <Shield className="w-4 h-4 text-success" />
-                <span className="text-sm text-muted-foreground">{TRUST_INDICATORS[0].text}</span>
+                <span className="text-sm text-muted-foreground">{t('common.getStarted')}</span>
               </div>
             </div>
 
@@ -184,7 +190,7 @@ const NewIndex = () => {
                 <div className="space-y-3">
                   <h4 className="text-sm font-medium text-foreground flex items-center gap-2">
                     <Target className="w-4 h-4 text-primary" />
-                    Opportunités récentes
+                    {t('features.title')} {t('features.title.highlight')}
                   </h4>
                   
                   <div className="space-y-2">
@@ -251,14 +257,13 @@ const NewIndex = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                  Découvrez{" "}
+                  {t('features.title')}{" "}
                   <span className="bg-gradient-highlight bg-clip-text text-transparent">
                     Charly
                   </span>
                 </h2>
                 <p className="text-xl text-gray-300 leading-relaxed">
-                  Votre assistant IA commercial qui analyse, détecte et vous alerte des meilleures 
-                  opportunités de marchés publics 24h/24, avec une précision inégalée.
+                  {t('features.subtitle')}
                 </p>
               </div>
 
@@ -269,8 +274,8 @@ const NewIndex = () => {
                     <Brain className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-white font-medium">Analyse IA en temps réel</h3>
-                    <p className="text-gray-400 text-sm">Traitement intelligent de 600+ sources officielles</p>
+                    <h3 className="text-white font-medium">{t('features.ai.title')}</h3>
+                    <p className="text-gray-400 text-sm">{t('features.ai.desc')}</p>
                   </div>
                 </div>
 
@@ -279,8 +284,8 @@ const NewIndex = () => {
                     <Zap className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-white font-medium">Alertes intelligentes instantanées</h3>
-                    <p className="text-gray-400 text-sm">Notifications personnalisées selon vos critères</p>
+                    <h3 className="text-white font-medium">{t('features.notifications.title')}</h3>
+                    <p className="text-gray-400 text-sm">{t('features.notifications.desc')}</p>
                   </div>
                 </div>
 
@@ -289,8 +294,8 @@ const NewIndex = () => {
                     <Target className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-white font-medium">Détection automatique d'opportunités</h3>
-                    <p className="text-gray-400 text-sm">Scoring précis et recommandations expertes</p>
+                    <h3 className="text-white font-medium">{t('features.multisource.title')}</h3>
+                    <p className="text-gray-400 text-sm">{t('features.multisource.desc')}</p>
                   </div>
                 </div>
 
@@ -299,8 +304,8 @@ const NewIndex = () => {
                     <Clock className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-white font-medium">Surveillance 24h/24, 7j/7</h3>
-                    <p className="text-gray-400 text-sm">Veille continue sans intervention manuelle</p>
+                    <h3 className="text-white font-medium">{t('features.scoring.title')}</h3>
+                    <p className="text-gray-400 text-sm">{t('features.scoring.desc')}</p>
                   </div>
                 </div>
               </div>
@@ -312,7 +317,7 @@ const NewIndex = () => {
                     size="lg" 
                     className="bg-gradient-cta hover:shadow-glow text-white px-8 py-4 h-auto group transition-all duration-300 hover:scale-105 shadow-xl w-full"
                   >
-                    Essayer gratuitement
+                    {t('cta.primary')}
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </SafeLink>
@@ -323,7 +328,7 @@ const NewIndex = () => {
                     size="lg" 
                     className="px-8 py-4 h-auto border-2 border-white/20 text-white hover:bg-white/10 transition-all duration-300 bg-background/10 backdrop-blur-md shadow-xl w-full"
                   >
-                    Réserver une démo
+                    {t('cta.secondary')}
                   </Button>
                 </SafeLink>
               </div>
@@ -642,12 +647,10 @@ const NewIndex = () => {
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="container mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Prêt à transformer votre{" "}
-            <span className="text-yellow-300">veille commerciale</span> ?
+            {t('cta.title')}
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto">
-            Rejoignez les {COMPANY_STATS.enterprises} entreprises qui font confiance à notre IA 
-            pour identifier les meilleures opportunités de marchés publics.
+            {t('cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -656,7 +659,7 @@ const NewIndex = () => {
               className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-10 py-4 h-auto font-semibold"
             >
               <Play className="w-5 h-5 mr-2" />
-              {STANDARD_CTAS.primary.text}
+              {t('cta.primary')}
             </Button>
             <button 
               className="flex items-center justify-center gap-2 rounded-xl text-lg font-semibold px-10 py-4"
@@ -667,7 +670,7 @@ const NewIndex = () => {
               }}
             >
               <Phone className="w-5 h-5" style={{ color: '#8b5cf6' }} />
-              <span style={{ color: '#8b5cf6' }}>{STANDARD_CTAS.secondary.text}</span>
+              <span style={{ color: '#8b5cf6' }}>{t('cta.secondary')}</span>
             </button>
           </div>
           
