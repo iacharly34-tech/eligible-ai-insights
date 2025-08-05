@@ -98,6 +98,10 @@ const Tarifs = () => {
     {
       question: "Proposez-vous des tarifs réduits pour les associations ?",
       answer: "Oui, nous proposons des tarifs préférentiels pour les associations, startups, et organismes publics. Contactez-nous pour en savoir plus."
+    },
+    {
+      question: "Prévoyez-vous une aide à la rédaction des réponses aux appels d'offres ?",
+      answer: "Excellente question ! Nous développons actuellement un nouvel agent IA spécialisé dans l'aide à la rédaction des mémoires d'AO. Cette fonctionnalité incluera : la construction automatique du mémoire technique, l'optimisation du paramétrage des prix selon les critères, et l'élaboration de stratégies environnementales personnalisées quand c'est un critère d'évaluation. Cette évolution sera disponible dès Q2 2024 pour tous nos abonnés Professional et Enterprise."
     }
   ];
 
