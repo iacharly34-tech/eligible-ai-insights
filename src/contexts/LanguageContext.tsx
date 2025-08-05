@@ -74,6 +74,7 @@ const translations = {
     'accessibility.images.hero': 'Interface eligibly.ai - Scoring IA des appels d\'offres publics',
     'accessibility.images.dashboard': 'Tableau de bord eligibly.ai',
     'accessibility.images.feature': 'Illustration de la fonctionnalité',
+    'accessibility.language.switch': 'Changer la langue vers',
   },
   en: {
     // Navigation
@@ -136,6 +137,7 @@ const translations = {
     'accessibility.images.hero': 'eligibly.ai Interface - AI Scoring for Public Tenders',
     'accessibility.images.dashboard': 'eligibly.ai Dashboard',
     'accessibility.images.feature': 'Feature illustration',
+    'accessibility.language.switch': 'Switch language to',
   }
 } as const;
 
