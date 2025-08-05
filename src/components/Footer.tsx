@@ -43,63 +43,56 @@ export const Footer = () => {
 
   return (
     <footer className="bg-background border-t border-border">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-5 gap-8">
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid lg:grid-cols-6 gap-6">
           {/* Logo & Description */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-3">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <Brain className="w-5 h-5 text-white" />
+              <div className="w-6 h-6 bg-gradient-primary rounded flex items-center justify-center">
+                <Brain className="w-4 h-4 text-white" />
               </div>
-              <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+              <span className="text-lg font-bold bg-gradient-primary bg-clip-text text-transparent">
                eligible.ai
               </span>
             </div>
             
-            <p className="text-muted-foreground max-w-md">
-              La plateforme IA qui transforme votre veille commerciale en identifiant automatiquement 
-              les meilleures opportunités d'appels d'offres publics.
+            <p className="text-sm text-muted-foreground max-w-sm">
+              Plateforme IA pour identifier les meilleures opportunités d'appels d'offres publics.
             </p>
 
-            <div className="space-y-3">
-                <div className="flex items-center space-x-3 text-sm text-foreground/70">
-                  <Mail className="w-4 h-4" />
-                  <span>contact@eligible.ai</span>
-                </div>
-                <div className="flex items-center space-x-3 text-sm text-foreground/70">
-                  <Phone className="w-4 h-4" />
-                  <span>+33 1 23 45 67 89</span>
-                </div>
-                <div className="flex items-center space-x-3 text-sm text-foreground/70">
-                  <MapPin className="w-4 h-4" />
-                  <span>Paris, France</span>
-                </div>
+            <div className="flex items-center space-x-6 text-xs text-foreground/70">
+              <div className="flex items-center space-x-1">
+                <Mail className="w-3 h-3" />
+                <span>contact@eligible.ai</span>
+              </div>
+              <div className="flex items-center space-x-1">
+                <MapPin className="w-3 h-3" />
+                <span>Paris</span>
+              </div>
             </div>
 
-            <div className="flex space-x-4">
-              <a 
-                href="https://www.linkedin.com/company/eligible-ai/" 
-                className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-200"
-                aria-label="LinkedIn - Eligible.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
+            <a 
+              href="https://www.linkedin.com/company/eligible-ai/" 
+              className="inline-flex w-8 h-8 bg-secondary rounded flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-200"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin className="w-4 h-4" />
+            </a>
           </div>
 
           {/* Footer Links */}
           {footerSections.map((section, index) => (
-            <div key={index} className="space-y-4">
-              <h3 className="font-semibold">{section.title}</h3>
-              <ul className="space-y-3">
+            <div key={index} className="space-y-2">
+              <h3 className="text-sm font-semibold">{section.title}</h3>
+              <ul className="space-y-1">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     {link.href.startsWith('mailto:') || link.href.startsWith('tel:') || link.href.startsWith('http') ? (
                       <a 
                         href={link.href}
-                        className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200"
+                        className="text-xs text-foreground/70 hover:text-foreground transition-colors duration-200"
                         target={link.href.startsWith('http') ? "_blank" : undefined}
                         rel={link.href.startsWith('http') ? "noopener noreferrer" : undefined}
                       >
@@ -108,7 +101,7 @@ export const Footer = () => {
                     ) : (
                       <Link 
                         to={link.href}
-                        className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200"
+                        className="text-xs text-foreground/70 hover:text-foreground transition-colors duration-200"
                       >
                         {link.name}
                       </Link>
@@ -121,12 +114,12 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-16 pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-foreground/70">
+        <div className="mt-8 pt-4 border-t border-border">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+            <div className="text-xs text-foreground/70">
               © 2024 eligible.ai. Tous droits réservés.
             </div>
-            <div className="flex items-center space-x-6 text-sm text-foreground/70">
+            <div className="flex items-center space-x-4 text-xs text-foreground/70">
               <span>Made with ❤️ in France</span>
               <span>•</span>
               <span>Propulsé par l'IA</span>
