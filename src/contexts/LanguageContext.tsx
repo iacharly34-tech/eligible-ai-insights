@@ -24,16 +24,16 @@ const translations = {
     'nav.demo': 'Démo gratuite',
     
     // Hero Section
-    'hero.badge': 'Plateforme IA • Marchés Publics • Alertes Automatisées',
-    'hero.title': 'Gagnez enfin plus',
-    'hero.title.highlight': 'd\'appels d\'offres',
-    'hero.title.end': 'avec notre IA spécialisée',
-    'hero.subtitle': 'La plateforme préférée des professionnels pour détecter, analyser et remporter les marchés publics. Notre IA scrute 600+ sources officielles 24h/24 pour vous trouver les meilleures opportunités.',
-    'hero.cta.primary': 'Commencer gratuitement',
-    'hero.cta.secondary': 'Voir une démo',
-    'hero.stats.opportunities': '+600 appels d\'offres remontés/jour',
-    'hero.stats.time': '10x plus rapide pour analyser',
-    'hero.stats.precision': '+50 000 renouvellements détectés',
+    'hero.badge': 'IA • LLM • Technologie Marchés Publics',
+    'hero.title': 'Transformez votre veille commerciale avec l\'',
+    'hero.title.highlight': 'Intelligence Artificielle',
+    'hero.title.end': 'des marchés publics',
+    'hero.subtitle': 'Rejoignez les 150+ entreprises qui utilisent notre IA pour détecter automatiquement les meilleures opportunités de marchés publics avec 94% de précision.',
+    'hero.cta.primary': 'Essai gratuit 7 jours',
+    'hero.cta.secondary': 'Voir une démonstration',
+    'hero.stats.opportunities': '15+ opportunités qualifiées détectées quotidiennement',
+    'hero.stats.time': '94% de précision grâce à notre IA avancée',
+    'hero.stats.precision': '6h économisées par semaine en automatisation',
     
     // Features
     'features.title': 'Pourquoi choisir',
@@ -218,15 +218,15 @@ const translations = {
     
     // Hero Section
     'hero.badge': 'AI • LLM • Public Procurement Technology',
-    'hero.title': 'Discover',
-    'hero.title.highlight': 'public tenders',
-    'hero.title.end': 'with advanced LLM and generative AI',
+    'hero.title': 'Transform your commercial intelligence with',
+    'hero.title.highlight': 'Artificial Intelligence',
+    'hero.title.end': 'for public procurement',
     'hero.subtitle': 'Our artificial intelligence platform leverages advanced language models (GPT-4, Claude, Mistral) to automatically analyse 600+ official sources and identify business opportunities tailored to your sector.',
-    'hero.cta.primary': 'Try AI for free',
-    'hero.cta.secondary': 'Watch LLM demo',
-    'hero.stats.opportunities': '23 AI-detected opportunities/day',
-    'hero.stats.time': '95% time saved with LLM technology',
-    'hero.stats.precision': '98% AI model accuracy',
+    'hero.cta.primary': '7-day free trial',
+    'hero.cta.secondary': 'Watch demo',
+    'hero.stats.opportunities': '15+ qualified opportunities detected daily',
+    'hero.stats.time': '94% accuracy thanks to our advanced AI',
+    'hero.stats.precision': '6h saved per week through automation',
     
     // Features
     'features.title': 'Advanced AI',
