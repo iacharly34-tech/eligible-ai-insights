@@ -101,7 +101,7 @@ const Tarifs = () => {
     },
     {
       question: "Prévoyez-vous une aide à la rédaction des réponses aux appels d'offres ?",
-      answer: "Excellente question ! Nous développons actuellement un nouvel agent IA spécialisé dans l'aide à la rédaction des mémoires d'AO. Cette fonctionnalité incluera : la construction automatique du mémoire technique, l'optimisation du paramétrage des prix selon les critères, et l'élaboration de stratégies environnementales personnalisées quand c'est un critère d'évaluation. Cette évolution sera disponible dès Q2 2025 pour tous nos abonnés Professional et Enterprise."
+      answer: "Excellente question ! Nous développons actuellement un nouvel agent IA spécialisé dans l'aide à la rédaction des mémoires d'AO. Cette fonctionnalité incluera : la construction automatique du mémoire technique, l'optimisation du paramétrage des prix selon les critères, et l'élaboration de stratégies environnementales personnalisées quand c'est un critère d'évaluation. Cette évolution sera disponible dès Q2 2026 pour tous nos abonnés Professional et Enterprise."
     },
     {
       question: "Comment garantissez-vous la fraîcheur des données d'appels d'offres ?",

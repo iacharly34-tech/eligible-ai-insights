@@ -212,7 +212,7 @@ const HomePage = () => {
                             <div className="flex items-center gap-4 text-xs text-gray-500">
                               <span className="flex items-center gap-1">
                                 <Clock className="w-3 h-3" />
-                                Fin: 15/03/2025
+                                Fin: 15/03/2026
                               </span>
                               <span className="text-green-600 font-medium">💡 Excellente opportunité selon Charly</span>
                             </div>
@@ -234,7 +234,7 @@ const HomePage = () => {
                             <div className="flex items-center gap-4 text-xs text-gray-500">
                               <span className="flex items-center gap-1">
                                 <Clock className="w-3 h-3" />
-                                Fin: 28/02/2025
+                                Fin: 28/02/2026
                               </span>
                               <span className="text-blue-600 font-medium">👍 Bonne opportunité selon Charly</span>
                             </div>
@@ -256,7 +256,7 @@ const HomePage = () => {
                             <div className="flex items-center gap-4 text-xs text-gray-500">
                               <span className="flex items-center gap-1">
                                 <Clock className="w-3 h-3" />
-                                Fin: 10/03/2025
+                                Fin: 10/03/2026
                               </span>
                               <span className="text-cyan-600 font-medium">👌 Opportunité intéressante selon Charly</span>
                             </div>
