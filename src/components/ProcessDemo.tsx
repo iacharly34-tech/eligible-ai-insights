@@ -33,7 +33,14 @@ export const ProcessDemo = () => {
       criteres: { prix: 30, qualite: 60, performance: 10 },
       penalites: "Oui - 0.5% par jour de retard",
       titulaire: "À déterminer",
-      duree: "24 mois"
+      duree: "24 mois",
+      compatibilite: {
+        ca: "✅ Marché adapté (150K€ compatible avec votre CA 5M€)",
+        secteur: "✅ Secteur IT - 100% compatible",
+        references: "✅ Expérience requise en éducation (✓ dans vos références)",
+        environnement: "✅ Critère environnemental - ISO14001 requis (✓ certifié)",
+        usages: "✅ Solutions Cloud/SaaS demandées (✓ votre expertise)"
+      }
     },
     { 
       title: "Services de développement web", 
@@ -43,7 +50,14 @@ export const ProcessDemo = () => {
       criteres: { prix: 20, qualite: 70, performance: 10 },
       penalites: "Non spécifié",
       titulaire: "Nouveau marché",
-      duree: "12 mois"
+      duree: "12 mois",
+      compatibilite: {
+        ca: "✅ Marché adapté (80K€ compatible avec votre CA)",
+        secteur: "⚠️ Secteur partiellement compatible",
+        references: "❌ Références en marketing digital non disponibles",
+        environnement: "✅ Pas de contrainte environnementale",
+        usages: "✅ Technologies web dans votre expertise"
+      }
     },
     { 
       title: "Maintenance systèmes réseaux", 
@@ -53,7 +67,14 @@ export const ProcessDemo = () => {
       criteres: { prix: 40, qualite: 50, performance: 10 },
       penalites: "Oui - Forfaitaire 500€",
       titulaire: "Renouvellement",
-      duree: "36 mois"
+      duree: "36 mois",
+      compatibilite: {
+        ca: "⚠️ Marché petit par rapport à votre CA",
+        secteur: "✅ Infrastructure IT - Compatible",
+        references: "⚠️ Références infrastructure limitées",
+        environnement: "❌ Critères environnementaux stricts non remplis",
+        usages: "⚠️ Maintenance hardware vs votre focus software"
+      }
     }
   ]);
 
@@ -187,12 +208,16 @@ export const ProcessDemo = () => {
       
       // Animation du code d'analyse IA
       const codeStep3 = [
-        "// Analyse IA Multi-LLM",
+        "// Analyse IA Multi-LLM avec critères client",
         "const aiModels = ['GPT-4', 'Claude', 'Gemini'];",
+        "const clientProfile = {",
+        "  ca: '5M€', secteur: 'IT', references: ['Education', 'Santé'],",
+        "  usages: ['Cloud', 'SaaS'], environmental: 'ISO14001'",
+        "};",
         "for (let ao of parsedAO) {",
-        "  const analysis = await analyzeWithMultiLLM(ao, aiModels);",
-        "  ao.aiScore = calculateAIScore(analysis);",
-        "  console.log(`AO ${ao.id}: Score IA = ${ao.aiScore}`);",
+        "  const analysis = await analyzeWithClientProfile(ao, clientProfile);",
+        "  ao.aiScore = calculateCompatibilityScore(analysis);",
+        "  console.log(`AO ${ao.id}: Score compatibilité = ${ao.aiScore}%`);",
         "}"
       ];
       
@@ -223,10 +248,11 @@ export const ProcessDemo = () => {
       // Animation du code de scoring
       const codeStep4 = [
         "",
-        "// Scoring final",
-        "const scoredAO = await calculateFinalScore(parsedAO);",
-        "const rankedAO = scoredAO.sort((a, b) => b.score - a.score);",
-        "console.log('Analyse terminée, affichage des résultats...');",
+        "// Scoring final personnalisé",
+        "const scoredAO = await calculatePersonalizedScore(parsedAO, clientProfile);",
+        "const rankedAO = scoredAO.sort((a, b) => b.compatibilityScore - a.compatibilityScore);",
+        "console.log('✅ Analyse terminée - Scores adaptés au profil client');",
+        "console.log('Critères pris en compte: CA, secteur, références, environnement');",
         ""
       ];
       
@@ -460,9 +486,36 @@ export const ProcessDemo = () => {
                         </div>
                         
                         {/* Pénalités */}
-                        <div className="text-sm">
+                        <div className="text-sm mb-6">
                           <span className="text-gray-500">Pénalités: </span>
                           <span className="text-red-600 font-medium">{ao.penalites}</span>
+                        </div>
+
+                        {/* Analyse de compatibilité personnalisée */}
+                        <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                          <h5 className="text-sm font-semibold text-blue-800 mb-3">💡 Analyse Charly - Compatibilité client</h5>
+                          <div className="space-y-2 text-sm">
+                            <div className="flex items-start gap-2">
+                              <span className="text-blue-600 text-xs">CA:</span>
+                              <span className="text-blue-700">{ao.compatibilite.ca}</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-blue-600 text-xs">Secteur:</span>
+                              <span className="text-blue-700">{ao.compatibilite.secteur}</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-blue-600 text-xs">Références:</span>
+                              <span className="text-blue-700">{ao.compatibilite.references}</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-blue-600 text-xs">Environnement:</span>
+                              <span className="text-blue-700">{ao.compatibilite.environnement}</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-blue-600 text-xs">Cas d'usage:</span>
+                              <span className="text-blue-700">{ao.compatibilite.usages}</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     ))}
