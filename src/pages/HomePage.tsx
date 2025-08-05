@@ -157,84 +157,84 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Right Column - Dashboard de suivi des appels d'offres */}
+            {/* Right Column - Dashboard Eligibly.ai */}
             <div className="relative">
               {/* Dashboard Container */}
-              <div className="bg-card/90 backdrop-blur-sm rounded-3xl shadow-luxury border border-border/50 p-6 space-y-6">
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-200/50 p-8 space-y-6">
                 
                 {/* Header Dashboard */}
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between border-b border-gray-100 pb-4">
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground">{t('dashboard.title')}</h3>
-                    <p className="text-sm text-muted-foreground">{t('dashboard.subtitle')}</p>
+                    <h3 className="text-xl font-bold text-gray-900">Dashboard Eligibly.ai</h3>
+                    <p className="text-sm text-gray-600">Suivi en temps réel</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
-                    <span className="text-xs text-success font-medium">{t('dashboard.live')}</span>
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs text-green-600 font-medium">Live</span>
                   </div>
                 </div>
 
                 {/* Métriques principales */}
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-primary/10 rounded-xl p-4 border border-primary/20">
-                    <div className="text-2xl font-bold text-primary">15+</div>
-                    <div className="text-xs text-primary/70">{t('dashboard.opportunities.detected')}</div>
+                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-5 border border-blue-100">
+                    <div className="text-3xl font-bold text-blue-600 mb-1">15+</div>
+                    <div className="text-sm text-blue-600">Opportunités détectées</div>
                   </div>
-                  <div className="bg-accent/10 rounded-xl p-4 border border-accent/20">
-                    <div className="text-2xl font-bold text-accent">94%</div>
-                    <div className="text-xs text-accent/70">{t('dashboard.ai.precision')}</div>
+                  <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-5 border border-purple-100">
+                    <div className="text-3xl font-bold text-purple-600 mb-1">94%</div>
+                    <div className="text-sm text-purple-600">Précision IA</div>
                   </div>
                 </div>
 
                 {/* Opportunités récentes */}
-                <div className="space-y-3">
-                  <h4 className="text-sm font-medium text-foreground flex items-center gap-2">
-                    <Target className="w-4 h-4 text-primary" />
-                    {t('dashboard.recent.opportunities')}
-                  </h4>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2">
+                    <Target className="w-5 h-5 text-purple-600" />
+                    <h4 className="text-lg font-semibold text-gray-900">Opportunités récentes</h4>
+                  </div>
                   
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     {/* Opportunité 1 */}
-                    <div className="bg-primary/5 rounded-lg p-3 border border-primary/20 animate-fade-in">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs font-medium text-primary">• 2,4M€</span>
-                        <Badge variant="outline" className="text-xs px-2 py-0.5 text-primary border-primary/30">{t('dashboard.score')}: 94%</Badge>
+                    <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-4 border border-purple-100 hover:shadow-lg transition-all duration-300">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-lg font-bold text-purple-600">• 2,4M€</span>
+                        <Badge className="bg-purple-600 text-white text-sm px-3 py-1">Score: 94%</Badge>
                       </div>
-                      <h5 className="text-sm font-medium text-foreground">{t('dashboard.opportunity1.title')}</h5>
-                      <p className="text-xs text-muted-foreground">{t('dashboard.opportunity1.client')}</p>
+                      <h5 className="font-semibold text-gray-900 mb-1">Système de gestion documentaire</h5>
+                      <p className="text-sm text-gray-600">Ministère de l'Éducation</p>
                     </div>
 
                     {/* Opportunité 2 */}
-                    <div className="bg-accent/5 rounded-lg p-3 border border-accent/20" style={{ animation: 'fade-in 0.6s ease-out 0.5s both' }}>
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs font-medium text-accent">• 850K€</span>
-                        <Badge variant="outline" className="text-xs px-2 py-0.5 text-accent border-accent/30">{t('dashboard.score')}: 91%</Badge>
+                    <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-100 hover:shadow-lg transition-all duration-300" style={{ animation: 'fade-in 0.6s ease-out 0.3s both' }}>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-lg font-bold text-blue-600">• 850K€</span>
+                        <Badge className="bg-blue-600 text-white text-sm px-3 py-1">Score: 91%</Badge>
                       </div>
-                      <h5 className="text-sm font-medium text-foreground">{t('dashboard.opportunity2.title')}</h5>
-                      <p className="text-xs text-muted-foreground">{t('dashboard.opportunity2.client')}</p>
+                      <h5 className="font-semibold text-gray-900 mb-1">Infrastructure cloud</h5>
+                      <p className="text-sm text-gray-600">Région Île-de-France</p>
                     </div>
 
                     {/* Opportunité 3 */}
-                    <div className="bg-cyan-soft/5 rounded-lg p-3 border border-cyan-soft/20" style={{ animation: 'fade-in 0.6s ease-out 1s both' }}>
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs font-medium text-cyan-soft">• 1,2M€</span>
-                        <Badge variant="outline" className="text-xs px-2 py-0.5 text-cyan-soft border-cyan-soft/30">{t('dashboard.score')}: 89%</Badge>
+                    <div className="bg-gradient-to-r from-cyan-50 to-teal-50 rounded-xl p-4 border border-cyan-100 hover:shadow-lg transition-all duration-300" style={{ animation: 'fade-in 0.6s ease-out 0.6s both' }}>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-lg font-bold text-cyan-600">• 1,2M€</span>
+                        <Badge className="bg-cyan-600 text-white text-sm px-3 py-1">Score: 89%</Badge>
                       </div>
-                      <h5 className="text-sm font-medium text-foreground">{t('dashboard.opportunity3.title')}</h5>
-                      <p className="text-xs text-muted-foreground">{t('dashboard.opportunity3.client')}</p>
+                      <h5 className="font-semibold text-gray-900 mb-1">Plateforme e-learning</h5>
+                      <p className="text-sm text-gray-600">Université de Lyon</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Stats en temps réel */}
-                <div className="flex items-center justify-between pt-2 border-t border-border/30">
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <Clock className="w-3 h-3" />
-                    <span>{t('dashboard.lastAnalysis')}</span>
+                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <div className="flex items-center gap-2 text-sm text-gray-500">
+                    <Clock className="w-4 h-4" />
+                    <span>Dernière analyse: il y a 2 min</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-primary">
-                    <TrendingUp className="w-3 h-3" />
-                    <span>{t('dashboard.weeklyGrowth')}</span>
+                  <div className="flex items-center gap-2 text-sm text-purple-600">
+                    <TrendingUp className="w-4 h-4" />
+                    <span>+6% cette semaine</span>
                   </div>
                 </div>
               </div>
