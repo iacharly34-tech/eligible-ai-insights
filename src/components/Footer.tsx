@@ -1,4 +1,4 @@
-import { Brain, Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
+import { Brain, Mail, Phone, MapPin, Linkedin } from "lucide-react";
 
 export const Footer = () => {
   const footerSections = [
@@ -77,22 +77,13 @@ export const Footer = () => {
 
             <div className="flex space-x-4">
               <a 
-                href="https://linkedin.com/company/eligible-ai" 
+                href="https://www.linkedin.com/company/eligible-ai/" 
                 className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-200"
                 aria-label="LinkedIn - Eligible.ai"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Linkedin className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://twitter.com/eligible_ai" 
-                className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-200"
-                aria-label="Twitter - Eligible.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Twitter className="w-5 h-5" />
               </a>
             </div>
           </div>
