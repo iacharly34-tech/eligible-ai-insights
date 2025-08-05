@@ -14,7 +14,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://eligible.ai/sitemap.xml
+Sitemap: https://eligibly.ai/sitemap.xml
 
 # Optimisations pour l'indexation
 Crawl-delay: 1
