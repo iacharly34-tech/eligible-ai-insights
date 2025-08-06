@@ -3,6 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CriticalResourcePreloader, PerformanceMonitor } from "./components/PerformanceOptimizer";
+import { WebVitalsMonitor } from "./components/WebVitalsMonitor";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { SkipNavigation } from "@/components/SkipNavigation";
 import { WCAGAccessibilityComponent } from "@/components/WCAGAccessibilityComponent";
@@ -28,6 +30,9 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <LanguageProvider>
       <TooltipProvider>
+        <CriticalResourcePreloader />
+        <PerformanceMonitor />
+        <WebVitalsMonitor />
         <WCAGAccessibilityComponent />
         <SkipNavigation />
         <Toaster />

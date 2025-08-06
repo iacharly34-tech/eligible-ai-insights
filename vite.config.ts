@@ -19,11 +19,17 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  esbuild: {
+    // Optimisation pour réduire la taille du JS
+    drop: mode === 'production' ? ['console', 'debugger'] : [],
+    legalComments: 'none',
+  },
   build: {
     // Optimisations de performance avancées
-    target: 'esnext',
+    target: 'es2020',
     minify: 'terser',
     cssCodeSplit: true,
+    sourcemap: mode === 'development',
     rollupOptions: {
       output: {
         manualChunks: {
@@ -35,23 +41,30 @@ export default defineConfig(({ mode }) => ({
           utils: ['clsx', 'tailwind-merge', 'class-variance-authority'],
         },
         // Optimiser les noms de fichiers pour le cache
-        entryFileNames: 'assets/[name].[hash].js',
-        chunkFileNames: 'assets/[name].[hash].js',
-        assetFileNames: 'assets/[name].[hash].[ext]',
+        entryFileNames: 'assets/[name].[hash:8].js',
+        chunkFileNames: 'assets/[name].[hash:8].js',
+        assetFileNames: 'assets/[name].[hash:8].[ext]',
       },
     },
     // Configuration terser pour une compression optimale
     terserOptions: {
       compress: {
-        drop_console: true,
+        drop_console: mode === 'production',
         drop_debugger: true,
         pure_funcs: ['console.log', 'console.info'],
+        dead_code: true,
+      },
+      mangle: {
+        safari10: true,
+      },
+      format: {
+        comments: false,
       },
     },
     // Réduire la limite de taille des chunks
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 800,
     // Optimiser les assets - inliner les petits fichiers
-    assetsInlineLimit: 8192,
+    assetsInlineLimit: 4096,
   },
   // Préchargement des dépendances critiques
   optimizeDeps: {

@@ -89,7 +89,7 @@ export const Features = () => {
 
         <div className="text-center mb-12 sm:mb-16 space-y-4 px-4">
           <h3 className="text-xl sm:text-2xl font-bold">Flux d'opportunités</h3>
-          <h4 className="text-lg sm:text-xl text-primary font-semibold">Simplifiez votre veille</h4>
+          <p className="text-lg sm:text-xl text-primary font-semibold">Simplifiez votre veille</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">

@@ -71,7 +71,7 @@ export const Header = () => {
             <SafeLink to="/demo">
               <Button 
                 size="sm" 
-                className="bg-gradient-cta hover:shadow-glow text-white text-sm font-medium px-6 py-2 h-9 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                className="bg-gradient-cta hover:shadow-glow text-white text-sm font-medium px-6 py-2 h-10 min-h-[40px] transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                 aria-label={t('accessibility.demo')}
               >
                 {t('nav.demo')}
@@ -81,7 +81,7 @@ export const Header = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            className="md:hidden p-3 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? t('accessibility.menu.close') : t('accessibility.menu.open')}
             aria-expanded={isMenuOpen}
@@ -114,7 +114,7 @@ export const Header = () => {
                   key={item.name}
                   to={item.href}
                   className={cn(
-                    "block text-sm font-medium transition-colors duration-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
+                    "block text-sm font-medium transition-colors duration-200 px-4 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[44px] flex items-center",
                     isActive 
                       ? "text-primary font-semibold bg-primary/10" 
                       : "text-foreground/70 hover:text-foreground hover:bg-gray-50"
@@ -132,7 +132,7 @@ export const Header = () => {
               </div>
               <SafeLink 
                 to="/connexion"
-                className="block w-full text-left text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md"
+                className="block w-full text-left text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200 px-3 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md min-h-[44px] flex items-center"
                 tabIndex={isMenuOpen ? 0 : -1}
                 aria-label={t('accessibility.login')}
               >
@@ -140,7 +140,7 @@ export const Header = () => {
               </SafeLink>
               <SafeLink to="/demo">
                 <Button 
-                  className="w-full bg-gradient-cta hover:shadow-glow text-white text-sm font-medium h-10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  className="w-full bg-gradient-cta hover:shadow-glow text-white text-sm font-medium h-12 min-h-[44px] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                   onClick={() => setIsMenuOpen(false)}
                   tabIndex={isMenuOpen ? 0 : -1}
                   aria-label={t('accessibility.demo')}

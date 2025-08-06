@@ -10,10 +10,10 @@ All colors MUST be HSL.
   :root {
     /* Luxury color palette with subtle tones */
     --background: 0 0% 100%;            /* Fond blanc pur */
-    --foreground: 0 0% 20%;             /* Texte très sombre pour contraste maximum */
+    --foreground: 0 0% 15%;             /* Texte très sombre pour contraste maximum */
 
     --card: 0 0% 100%;                  /* Cartes blanc pur */
-    --card-foreground: 0 0% 20%;        /* Texte sombre sur cartes */
+    --card-foreground: 0 0% 15%;        /* Texte sombre sur cartes */
 
     --popover: 258 30% 99%;
     --popover-foreground: 0 0% 10%;
@@ -23,10 +23,10 @@ All colors MUST be HSL.
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 95%;              /* Gris très clair */
-    --secondary-foreground: 0 0% 20%;   /* Texte très sombre pour maximum contraste */
+    --secondary-foreground: 0 0% 15%;   /* Texte très sombre pour maximum contraste */
 
     --muted: 0 0% 92%;                  /* Gris clair */
-    --muted-foreground: 0 0% 25%;       /* Texte sombre pour bon contraste */
+    --muted-foreground: 0 0% 20%;       /* Texte sombre pour bon contraste */
 
     --accent: 217 91% 60%;            /* Bleu intense #3B82F6 */
     --accent-foreground: 0 0% 100%;
