@@ -299,7 +299,7 @@ export const ProcessDemo = () => {
 
   return (
     <section id="demo" className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100">
-      <div className="container mx-auto max-w-5xl">
+      <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12">
           <Badge className="mb-4 bg-purple-100 text-purple-700 border-purple-200">
             Démonstration
@@ -314,79 +314,79 @@ export const ProcessDemo = () => {
 
         {/* Main Demo Interface */}
         <div className="mb-8">
-          <Card className="border-0 shadow-2xl bg-white/90 backdrop-blur-sm">
-            <CardContent className="p-8">
+          <Card className="border-0 shadow-2xl bg-white/90 backdrop-blur-sm overflow-hidden">
+            <CardContent className="p-4 md:p-6 lg:p-8">
               {/* Browser Header */}
-              <div className="flex items-center gap-2 mb-6 p-4 bg-slate-800 rounded-t-lg">
+              <div className="flex items-center gap-2 mb-6 p-3 md:p-4 bg-slate-800 rounded-t-lg">
                 <div className="flex gap-2">
                   <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                   <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
-                <div className="flex-1 mx-4">
-                  <div className="bg-white/10 rounded px-3 py-1 text-white text-sm flex items-center gap-2">
-                    <Globe className="w-4 h-4" />
-                    https://www.boamp.fr/avis
+                <div className="flex-1 mx-2 md:mx-4">
+                  <div className="bg-white/10 rounded px-2 md:px-3 py-1 text-white text-xs md:text-sm flex items-center gap-2">
+                    <Globe className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
+                    <span className="truncate">https://www.boamp.fr/avis</span>
                   </div>
                 </div>
-                <div className="text-white text-sm">100%</div>
+                <div className="text-white text-xs md:text-sm">100%</div>
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
               </div>
 
               {/* Interface d'analyse en temps réel */}
-              <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg p-6 mb-6 text-white">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold">
+              <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg p-4 md:p-6 mb-6 text-white">
+                <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                  <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm md:text-base">
                     🤖
                   </div>
-                  <div>
-                    <h3 className="font-bold text-white">Charly IA</h3>
-                    <p className="text-sm text-gray-300">Analyse en cours des appels d'offres</p>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-white text-sm md:text-base">Charly IA</h3>
+                    <p className="text-xs md:text-sm text-gray-300 truncate">Analyse en cours des appels d'offres</p>
                   </div>
-                  <div className="ml-auto flex items-center gap-2">
+                  <div className="flex items-center gap-1 md:gap-2 flex-shrink-0">
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-sm text-green-400 font-medium">Analyse active</span>
+                    <span className="text-xs md:text-sm text-green-400 font-medium hidden sm:inline">Analyse active</span>
                   </div>
                 </div>
 
                 {/* Indicateurs d'analyse pertinents */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+                  <div className="bg-white/10 rounded-lg p-3 md:p-4 backdrop-blur-sm">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-gray-300">AO analysés</span>
-                      <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                      <span className="text-xs md:text-sm font-medium text-gray-300">AO analysés</span>
+                      <div className="w-2 h-2 md:w-3 md:h-3 bg-blue-400 rounded-full animate-pulse"></div>
                     </div>
-                    <div className="text-2xl font-bold text-blue-400">
+                    <div className="text-lg md:text-2xl font-bold text-blue-400">
                       {currentStep >= 1 ? (sourceData.boamp + sourceData.marchesPublics + sourceData.place + sourceData.awsDume) : '0'}
                     </div>
                   </div>
                   
-                  <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+                  <div className="bg-white/10 rounded-lg p-3 md:p-4 backdrop-blur-sm">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-gray-300">Opportunités détectées</span>
-                      <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-xs md:text-sm font-medium text-gray-300">Opportunités détectées</span>
+                      <div className="w-2 h-2 md:w-3 md:h-3 bg-green-400 rounded-full animate-pulse"></div>
                     </div>
-                    <div className="text-2xl font-bold text-green-400">
+                    <div className="text-lg md:text-2xl font-bold text-green-400">
                       {currentStep >= 3 ? '15+' : currentStep >= 1 ? '3' : '0'}
                     </div>
                   </div>
                   
-                  <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+                  <div className="bg-white/10 rounded-lg p-3 md:p-4 backdrop-blur-sm">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-gray-300">Score moyen IA</span>
-                      <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
+                      <span className="text-xs md:text-sm font-medium text-gray-300">Score moyen IA</span>
+                      <div className="w-2 h-2 md:w-3 md:h-3 bg-purple-400 rounded-full animate-pulse"></div>
                     </div>
-                    <div className="text-2xl font-bold text-purple-400">
+                    <div className="text-lg md:text-2xl font-bold text-purple-400">
                       {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
                     </div>
                   </div>
                   
-                  <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+                  <div className="bg-white/10 rounded-lg p-3 md:p-4 backdrop-blur-sm">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-gray-300">Temps d'analyse</span>
-                      <div className="w-3 h-3 bg-orange-400 rounded-full animate-pulse"></div>
+                      <span className="text-xs md:text-sm font-medium text-gray-300">Temps d'analyse</span>
+                      <div className="w-2 h-2 md:w-3 md:h-3 bg-orange-400 rounded-full animate-pulse"></div>
                     </div>
-                    <div className="text-2xl font-bold text-orange-400">
+                    <div className="text-lg md:text-2xl font-bold text-orange-400">
                       {currentStep >= 4 ? '2.1s' : currentStep >= 1 ? `${Math.floor(progress/10)}.${progress%10}s` : '-'}
                     </div>
                   </div>
@@ -395,16 +395,16 @@ export const ProcessDemo = () => {
 
               {/* Code Console Animation */}
               {codeLines.length > 0 && (
-                <div className="bg-gray-900 rounded-lg p-4 mb-6 border-l-4 border-purple-500">
+                <div className="bg-gray-900 rounded-lg p-3 md:p-4 mb-6 border-l-4 border-purple-500">
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-gray-400 text-sm font-mono">Console JavaScript</span>
+                    <span className="text-gray-400 text-xs md:text-sm font-mono">Console JavaScript</span>
                   </div>
-                  <div className="space-y-1 max-h-64 overflow-y-auto">
+                  <div className="space-y-1 max-h-48 md:max-h-64 overflow-y-auto">
                     {codeLines.map((line, index) => (
                       <div
                         key={index}
-                        className="text-green-400 text-sm font-mono animate-fade-in"
+                        className="text-green-400 text-xs md:text-sm font-mono animate-fade-in break-all"
                         style={{ animationDelay: `${index * 0.1}s` }}
                       >
                         {line || '\u00A0'}
@@ -416,23 +416,25 @@ export const ProcessDemo = () => {
 
               {/* Results Display */}
               {showResults && (
-                <div className="bg-white rounded-lg p-6 border border-gray-200 animate-fade-in">
-                  <div className="flex items-center gap-2 mb-6">
-                    <CheckCircle className="w-5 h-5 text-green-600" />
-                    <h3 className="text-lg font-bold text-gray-800">Résultats d'Analyse AO</h3>
-                    <Badge className="bg-green-600 text-white ml-auto">3 opportunités trouvées</Badge>
+                <div className="bg-white rounded-lg p-4 md:p-6 border border-gray-200 animate-fade-in">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-6">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-600" />
+                      <h3 className="text-base md:text-lg font-bold text-gray-800">Résultats d'Analyse AO</h3>
+                    </div>
+                    <Badge className="bg-green-600 text-white sm:ml-auto w-fit">3 opportunités trouvées</Badge>
                   </div>
                   
                   <div className="space-y-4">
                     {aoResults.slice(0,1).map((ao, index) => (
                       <div
                         key={index}
-                        className="bg-gray-50 rounded-lg p-6 border border-gray-200"
+                        className="bg-gray-50 rounded-lg p-4 md:p-6 border border-gray-200"
                       >
-                        <div className="flex justify-between items-start mb-6">
-                          <div className="flex-1">
-                            <h4 className="text-xl font-bold text-gray-900 mb-4">{ao.title}</h4>
-                            <div className="grid grid-cols-4 gap-6 text-sm">
+                        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6 gap-4">
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-4">{ao.title}</h4>
+                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 text-sm">
                               <div>
                                 <span className="text-gray-500 block mb-1">Budget:</span>
                                 <div className="font-semibold text-gray-900">{ao.budget}</div>
@@ -451,8 +453,8 @@ export const ProcessDemo = () => {
                               </div>
                             </div>
                           </div>
-                          <div className="text-right ml-6">
-                            <div className="text-4xl font-bold text-green-600 mb-1">
+                          <div className="text-center lg:text-right lg:ml-6 flex-shrink-0">
+                            <div className="text-3xl md:text-4xl font-bold text-green-600 mb-1">
                               {ao.score}%
                             </div>
                             <div className="text-sm text-gray-500">Score Charly</div>
@@ -492,28 +494,28 @@ export const ProcessDemo = () => {
                         </div>
 
                         {/* Analyse de compatibilité personnalisée */}
-                        <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                        <div className="bg-blue-50 rounded-lg p-3 md:p-4 border border-blue-200">
                           <h5 className="text-sm font-semibold text-blue-800 mb-3">💡 Analyse Charly - Compatibilité client</h5>
-                          <div className="space-y-2 text-sm">
+                          <div className="space-y-2 text-xs md:text-sm">
                             <div className="flex items-start gap-2">
-                              <span className="text-blue-600 text-xs">CA:</span>
-                              <span className="text-blue-700">{ao.compatibilite.ca}</span>
+                              <span className="text-blue-600 text-xs font-medium min-w-fit">CA:</span>
+                              <span className="text-blue-700 break-words">{ao.compatibilite.ca}</span>
                             </div>
                             <div className="flex items-start gap-2">
-                              <span className="text-blue-600 text-xs">Secteur:</span>
-                              <span className="text-blue-700">{ao.compatibilite.secteur}</span>
+                              <span className="text-blue-600 text-xs font-medium min-w-fit">Secteur:</span>
+                              <span className="text-blue-700 break-words">{ao.compatibilite.secteur}</span>
                             </div>
                             <div className="flex items-start gap-2">
-                              <span className="text-blue-600 text-xs">Références:</span>
-                              <span className="text-blue-700">{ao.compatibilite.references}</span>
+                              <span className="text-blue-600 text-xs font-medium min-w-fit">Références:</span>
+                              <span className="text-blue-700 break-words">{ao.compatibilite.references}</span>
                             </div>
                             <div className="flex items-start gap-2">
-                              <span className="text-blue-600 text-xs">Environnement:</span>
-                              <span className="text-blue-700">{ao.compatibilite.environnement}</span>
+                              <span className="text-blue-600 text-xs font-medium min-w-fit">Environnement:</span>
+                              <span className="text-blue-700 break-words">{ao.compatibilite.environnement}</span>
                             </div>
                             <div className="flex items-start gap-2">
-                              <span className="text-blue-600 text-xs">Cas d'usage:</span>
-                              <span className="text-blue-700">{ao.compatibilite.usages}</span>
+                              <span className="text-blue-600 text-xs font-medium min-w-fit">Cas d'usage:</span>
+                              <span className="text-blue-700 break-words">{ao.compatibilite.usages}</span>
                             </div>
                           </div>
                         </div>
