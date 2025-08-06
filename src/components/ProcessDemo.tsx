@@ -377,9 +377,10 @@ export const ProcessDemo = () => {
                           <div className="text-center text-gray-500">
                             <div className="mb-4 flex justify-center">
                               <img 
-                                src={charlyNoBg}
+                                src={`${charlyNoBg}?v=${Date.now()}`}
                                 alt="Charly, votre assistant IA"
                                 className="w-20 h-20 object-contain animate-pulse"
+                                key={`charly-waiting-${Date.now()}`}
                               />
                             </div>
                             <div className="text-lg">En attente de l'analyse...</div>
