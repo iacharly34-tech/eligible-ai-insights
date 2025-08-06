@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { AOResults } from "./AOResults";
 import { 
   Play, 
   RotateCcw, 
@@ -24,25 +25,7 @@ export const ProcessDemo = () => {
   });
   const [codeLines, setCodeLines] = useState<string[]>([]);
   const [showResults, setShowResults] = useState(false);
-  const [aoResults, setAoResults] = useState([
-    { 
-      title: "Fourniture de matériel informatique", 
-      score: 94, 
-      budget: "150K€", 
-      deadline: "15/02/2025",
-      criteres: { prix: 30, qualite: 60, performance: 10 },
-      penalites: "Oui - 0.5% par jour de retard",
-      titulaire: "À déterminer",
-      duree: "24 mois",
-      compatibilite: {
-        ca: "✅ Marché adapté (150K€ compatible avec votre CA 5M€)",
-        secteur: "✅ Secteur IT - 100% compatible",
-        references: "✅ Expérience requise en éducation (✓ dans vos références)",
-        environnement: "✅ Critère environnemental - ISO14001 requis (✓ certifié)",
-        usages: "✅ Solutions Cloud/SaaS demandées (✓ votre expertise)"
-      }
-    }
-  ]);
+  const [showExpandedResults, setShowExpandedResults] = useState(false);
 
   const steps = [
     {
@@ -384,68 +367,10 @@ export const ProcessDemo = () => {
                     {/* Right: Results */}
                     <div className="bg-white rounded-lg border border-gray-200 p-6">
                       {showResults ? (
-                        <>
-                          <div className="flex items-center gap-2 mb-6">
-                            <CheckCircle className="w-5 h-5 text-green-600" />
-                            <h3 className="font-bold text-gray-800 text-lg">Résultats d'Analyse AO</h3>
-                            <Badge className="bg-green-600 text-white ml-auto">3 opportunités trouvées</Badge>
-                          </div>
-                          
-                          <div className="space-y-4">
-                            <div className="p-6 bg-gray-50 rounded-lg border">
-                              <div className="flex justify-between items-start mb-4">
-                                <div className="flex-1">
-                                  <h4 className="font-bold text-gray-800 mb-3">Fourniture de matériel informatique</h4>
-                                  <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
-                                    <div><span className="font-medium">Budget:</span> 150K€</div>
-                                    <div><span className="font-medium">Deadline:</span> 15/02/2025</div>
-                                    <div><span className="font-medium">Durée:</span> 24 mois</div>
-                                    <div><span className="font-medium">Titulaire:</span> À déterminer</div>
-                                  </div>
-                                </div>
-                                <div className="text-right ml-4">
-                                  <div className="text-4xl font-bold text-green-600">94%</div>
-                                  <div className="text-sm text-gray-600">Score Charly</div>
-                                </div>
-                              </div>
-
-                              <div className="space-y-3">
-                                <div>
-                                  <div className="text-sm font-medium mb-2">Critères de l'acheteur</div>
-                                  <div className="w-full bg-gray-200 rounded-full h-3 relative">
-                                    <div className="bg-red-500 h-3 rounded-l-full absolute" style={{width: '30%'}}></div>
-                                    <div className="bg-green-500 h-3 absolute" style={{width: '60%', left: '30%'}}></div>
-                                    <div className="bg-blue-500 h-3 rounded-r-full absolute" style={{width: '10%', left: '90%'}}></div>
-                                  </div>
-                                  <div className="flex justify-between text-xs mt-1">
-                                    <span>Prix: 30%</span>
-                                    <span>Qualité: 60%</span>
-                                    <span>Performance: 10%</span>
-                                  </div>
-                                </div>
-                                
-                                <div className="text-sm">
-                                  <div className="font-medium">Pénalités: <span className="font-normal text-gray-600">Oui - 0.5% par jour de retard</span></div>
-                                </div>
-
-                                <div className="space-y-1 text-sm">
-                                  <div className="text-blue-600 font-medium">📋 Analyse Charly - Compatibilité client</div>
-                                  <div className="text-green-600">✅ Marché adapté (150K€ compatible avec votre CA 5M€)</div>
-                                  <div className="text-green-600">✅ Secteur IT - 100% compatible</div>
-                                  <div className="text-green-600">✅ Expérience requise en éducation (✓ dans vos références)</div>
-                                  <div className="text-green-600">✅ Critère environnemental - ISO14001 requis (✓ certifié)</div>
-                                  <div className="text-green-600">✅ Solutions Cloud/SaaS demandées (✓ votre expertise)</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          <div className="mt-6 text-center">
-                            <Button className="bg-purple-600 hover:bg-purple-700 text-white">
-                              Voir tous les résultats
-                            </Button>
-                          </div>
-                        </>
+                        <AOResults 
+                          isExpanded={showExpandedResults}
+                          onToggleExpand={() => setShowExpandedResults(true)}
+                        />
                       ) : (
                         <div className="h-full flex items-center justify-center">
                           <div className="text-center text-gray-500">
