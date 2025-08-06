@@ -374,11 +374,11 @@ export const ProcessDemo = () => {
                     </div>
 
                     {/* Results Container - Taille optimisée pour afficher 1 résultat complet */}
-                    <div style={{ height: 'calc(100% - 80px)' }}>
+                    <div style={{ height: 'calc(100% - 60px)' }}>
                       <div 
                         className="bg-white rounded-lg border border-gray-200 overflow-hidden flex flex-col h-full"
                       >
-                        <div className="p-4 flex-1 overflow-y-auto">
+                        <div className="p-2 flex-1 overflow-y-auto">
                           {showResults ? (
                             <AOResults 
                               isExpanded={showExpandedResults}
