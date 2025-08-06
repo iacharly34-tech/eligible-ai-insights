@@ -350,32 +350,10 @@ export const ProcessDemo = () => {
                     </div>
                   </div>
 
-                  {/* Two Column Layout */}
-                  <div className="grid grid-cols-2 gap-8" style={{ height: 'calc(100% - 220px)' }}>
-                    {/* Left: Code Console */}
-                    <div className="bg-gray-900 rounded-lg p-6">
-                      <div className="flex items-center gap-2 mb-4">
-                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                        <span className="text-gray-400 font-mono">Console JavaScript</span>
-                      </div>
-                      <div className="space-y-2 h-full overflow-y-auto">
-                        {codeLines.length > 0 ? codeLines.map((line, index) => (
-                          <div
-                            key={index}
-                            className="text-green-400 text-sm font-mono"
-                          >
-                            {line || '\u00A0'}
-                          </div>
-                        )) : (
-                          <div className="text-gray-500 font-mono">Prêt à analyser...</div>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Right: Results - Avec scroll fonctionnel */}
+                  {/* Full Width Results */}
+                  <div style={{ height: 'calc(100% - 220px)' }}>
                     <div 
-                      className="bg-white rounded-lg border border-gray-200 overflow-hidden flex flex-col"
-                      style={{ height: '400px' }}
+                      className="bg-white rounded-lg border border-gray-200 overflow-hidden flex flex-col h-full"
                     >
                       <div className="p-6 flex-1 overflow-y-auto">
                         {showResults ? (
@@ -437,6 +415,28 @@ export const ProcessDemo = () => {
               <span>{progress}%</span>
             </div>
             <Progress value={progress} className="w-full" />
+          </div>
+
+          {/* Console JavaScript */}
+          <div className="w-full max-w-4xl">
+            <div className="bg-gray-900 rounded-lg p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                <span className="text-gray-400 font-mono">Console JavaScript</span>
+              </div>
+              <div className="space-y-2 h-48 overflow-y-auto">
+                {codeLines.length > 0 ? codeLines.map((line, index) => (
+                  <div
+                    key={index}
+                    className="text-green-400 text-sm font-mono"
+                  >
+                    {line || '\u00A0'}
+                  </div>
+                )) : (
+                  <div className="text-gray-500 font-mono">Prêt à analyser...</div>
+                )}
+              </div>
+            </div>
           </div>
 
           {/* Step Indicators */}
