@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { MobileDemoFlow } from "./MobileDemoFlow";
 import { AOResults } from "./AOResults";
 import charlyNoBg from "@/assets/ai-character-tech-male.png";
 import { 
@@ -264,186 +265,12 @@ export const ProcessDemo = () => {
     }, 100);
   };
 
-  // Mobile fullscreen component renderers
-  const renderMobileInitialScreen = () => (
-    <div className="fixed inset-0 w-screen h-screen bg-gradient-primary flex flex-col items-center justify-center p-6 text-white overflow-hidden">
-      <div className="text-center max-w-sm mx-auto">
-        <Badge className="mb-6 bg-white/20 text-white border-white/30 text-lg px-4 py-2">
-          Démonstration IA
-        </Badge>
-        <h1 className="text-2xl font-bold mb-4">
-          Processus automatisé Charly
-        </h1>
-        <p className="text-white/90 mb-8 text-base leading-relaxed">
-          Découvrez comment notre IA analyse les marchés publics en temps réel
-        </p>
-        
-        <div className="space-y-4">
-          <Button 
-            onClick={startDemo}
-            disabled={isRunning}
-            className="w-full h-14 text-lg font-semibold bg-white text-primary hover:bg-secondary rounded-xl"
-            size="lg"
-          >
-            <Play className="w-6 h-6 mr-3" />
-            {isRunning ? "Démarrage..." : "Commencer la démo"}
-          </Button>
-          
-          <Button 
-            onClick={resetDemo}
-            variant="outline"
-            className="w-full h-12 text-base border-white/30 text-white hover:bg-white/10"
-            size="lg"
-          >
-            <RotateCcw className="w-5 h-5 mr-2" />
-            Réinitialiser
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-
-  const renderMobileStepScreen = (stepNumber: number) => {
-    const step = steps[stepNumber - 1];
-    return (
-      <div className="fixed inset-0 w-screen h-screen bg-gradient-to-br from-background to-muted flex flex-col p-4 text-foreground overflow-hidden">
-        {/* Header avec progression */}
-        <div className="flex items-center justify-between mb-6 pt-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
-              {stepNumber}
-            </div>
-            <span className="font-semibold">Étape {stepNumber}/4</span>
-          </div>
-          <div className="text-right">
-            <div className="text-xs text-muted-foreground">Progression</div>
-            <div className="text-lg font-bold">{Math.round(progress)}%</div>
-          </div>
-        </div>
-
-        {/* Progress bar */}
-        <div className="mb-8">
-          <Progress value={progress} className="h-2" />
-        </div>
-
-        {/* Step content */}
-        <div className="flex-1 flex flex-col">
-          <div className="text-center mb-8">
-            <h2 className="text-xl font-bold mb-3">{step?.title}</h2>
-            <p className="text-muted-foreground text-base leading-relaxed">{step?.description}</p>
-          </div>
-
-          {/* Live indicators */}
-          <div className="grid grid-cols-2 gap-4 mb-8">
-            <div className="bg-accent/20 border border-accent/30 rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-accent">
-                {currentStep >= 1 ? '693' : '0'}
-              </div>
-              <div className="text-xs text-muted-foreground">AO analysés</div>
-            </div>
-            
-            <div className="bg-success/20 border border-success/30 rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-success">
-                {currentStep >= 3 ? '15+' : currentStep >= 1 ? '3' : '0'}
-              </div>
-              <div className="text-xs text-muted-foreground">Opportunités</div>
-            </div>
-            
-            <div className="bg-primary/20 border border-primary/30 rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-primary">
-                {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
-              </div>
-              <div className="text-xs text-muted-foreground">Score IA</div>
-            </div>
-            
-            <div className="bg-warning/20 border border-warning/30 rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-warning">
-                {timeElapsed.toFixed(1)}s
-              </div>
-              <div className="text-xs text-muted-foreground">Temps</div>
-            </div>
-          </div>
-
-          {/* Console simulation */}
-          <div className="bg-background/90 border border-border rounded-lg p-4 flex-1 shadow-card">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="flex gap-1">
-                <div className="w-2 h-2 bg-destructive rounded-full"></div>
-                <div className="w-2 h-2 bg-warning rounded-full"></div>
-                <div className="w-2 h-2 bg-success rounded-full"></div>
-              </div>
-              <span className="text-success text-xs font-mono">charly-analysis.js</span>
-            </div>
-            
-            <div className="space-y-1 h-32 overflow-y-auto">
-              {codeLines.slice(-8).map((line, index) => (
-                <div key={index} className="text-success text-xs font-mono">
-                  <span className="text-muted-foreground mr-2">{'>'}</span>
-                  {line}
-                </div>
-              ))}
-              {isRunning && (
-                <div className="text-success animate-pulse text-xs font-mono">
-                  <span className="text-muted-foreground mr-2">{'>'}</span>
-                  █
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  const renderMobileResultsScreen = () => (
-    <div className="fixed inset-0 w-screen h-screen bg-gradient-to-br from-background to-muted flex flex-col overflow-hidden">
-      {/* Header */}
-      <div className="bg-card/80 backdrop-blur-sm p-4 border-b border-border">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-success rounded-full flex items-center justify-center">
-              <CheckCircle className="w-5 h-5 text-success-foreground" />
-            </div>
-            <div>
-              <h2 className="text-foreground font-semibold">Analyse terminée</h2>
-              <p className="text-success text-sm">Résultats disponibles</p>
-            </div>
-          </div>
-          <Button 
-            onClick={resetDemo}
-            variant="outline"
-            className="border-border text-foreground hover:bg-muted"
-            size="sm"
-          >
-            <RotateCcw className="w-4 h-4 mr-1" />
-            Rejouer
-          </Button>
-        </div>
-      </div>
-
-      {/* Results - Full screen optimized */}
-      <div className="flex-1 p-2 overflow-hidden">
-        <div className="bg-card rounded-lg h-full p-2 border border-border shadow-card overflow-y-auto">
-          <AOResults 
-            isExpanded={true}
-            onToggleExpand={() => {}}
-          />
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <>
-      {/* Mobile Progressive Screens */}
+      {/* Mobile Progressive Demo Flow */}
       {isMobile ? (
         <div className="lg:hidden">
-          {mobileActiveScreen === 'initial' && renderMobileInitialScreen()}
-          {mobileActiveScreen === 'step1' && renderMobileStepScreen(1)}
-          {mobileActiveScreen === 'step2' && renderMobileStepScreen(2)}
-          {mobileActiveScreen === 'step3' && renderMobileStepScreen(3)}
-          {mobileActiveScreen === 'step4' && renderMobileStepScreen(4)}
-          {mobileActiveScreen === 'results' && renderMobileResultsScreen()}
+          <MobileDemoFlow />
         </div>
       ) : null}
 
