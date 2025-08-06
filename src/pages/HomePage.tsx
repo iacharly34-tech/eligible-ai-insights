@@ -516,21 +516,21 @@ const HomePage = () => {
           {/* Key Statistics */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <ScrollReveal delay={100}>
-              <Card className="text-center p-8 border-0 bg-white/60 backdrop-blur-sm hover:shadow-xl transition-all duration-500">
+              <Card className="text-center p-8 border-0 bg-white/60 backdrop-blur-sm hover:shadow-xl transition-all duration-500 h-40 flex flex-col justify-center">
                 <div className="text-5xl font-bold text-primary mb-4">{t('market.stats.volume')}</div>
                 <p className="text-gray-600 font-medium">{t('market.stats.volume.desc')}</p>
               </Card>
             </ScrollReveal>
             
             <ScrollReveal delay={200}>
-              <Card className="text-center p-8 border-0 bg-white/60 backdrop-blur-sm hover:shadow-xl transition-all duration-500">
+              <Card className="text-center p-8 border-0 bg-white/60 backdrop-blur-sm hover:shadow-xl transition-all duration-500 h-40 flex flex-col justify-center">
                 <div className="text-5xl font-bold text-accent mb-4">{t('market.stats.tenders')}</div>
                 <p className="text-gray-600 font-medium">{t('market.stats.tenders.desc')}</p>
               </Card>
             </ScrollReveal>
             
             <ScrollReveal delay={300}>
-              <Card className="text-center p-8 border-0 bg-white/60 backdrop-blur-sm hover:shadow-xl transition-all duration-500">
+              <Card className="text-center p-8 border-0 bg-white/60 backdrop-blur-sm hover:shadow-xl transition-all duration-500 h-40 flex flex-col justify-center">
                 <div className="text-5xl font-bold text-cyan-soft mb-4">{t('market.stats.candidates')}</div>
                 <p className="text-gray-600 font-medium">{t('market.stats.candidates.desc')}</p>
               </Card>
