@@ -201,7 +201,7 @@ const translations = {
     'login.subtitle': 'Accédez à votre dashboard Eligibly.ai',
     'login.welcome.title': 'Bienvenue dans votre',
     'login.welcome.title.highlight': 'espace IA',
-    'login.welcome.subtitle': 'Accédez à votre tableau de bord personnalisé et découvrez les opportunités détectées par votre assistant Charly.',
+    'login.welcome.subtitle': 'Accédez à votre tableau de bord personnalisé et découvrez les opportunités détectées par Charly, votre assistant IA d\'Eligibly.',
     'login.demo.title': 'Découvrez d\'abord notre plateforme',
     'login.demo.subtitle': 'Testez toutes les fonctionnalités pendant 7 jours, sans engagement',
     
@@ -409,7 +409,7 @@ const translations = {
     'login.subtitle': 'Access your Eligibly.ai dashboard',
     'login.welcome.title': 'Welcome to your',
     'login.welcome.title.highlight': 'AI workspace',
-    'login.welcome.subtitle': 'Access your personalized dashboard and discover opportunities detected by your assistant Charly.',
+    'login.welcome.subtitle': 'Access your personalized dashboard and discover opportunities detected by Charly, your AI assistant from Eligibly.',
     'login.demo.title': 'Discover our platform first',
     'login.demo.subtitle': 'Test all features for 7 days, no commitment',
     

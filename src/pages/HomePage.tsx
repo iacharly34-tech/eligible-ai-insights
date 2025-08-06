@@ -319,13 +319,13 @@ const HomePage = () => {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                   Rencontrez{" "}
                   <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                    Charly
+                    Charly d'Eligibly
                   </span>
                   , votre assistant aux marchés publics
                 </h2>
                 <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
-                  Charly est votre assistant IA spécialisé dans les marchés publics. Il analyse en continu 
-                  les opportunités, évalue leur pertinence et vous recommande les meilleures chances de succès.
+                  Créé par l'équipe Eligibly, Charly est votre assistant IA spécialisé dans les marchés publics. 
+                  Il analyse en continu les opportunités avec notre expertise et vous recommande les meilleures chances de succès.
                 </p>
               </div>
 

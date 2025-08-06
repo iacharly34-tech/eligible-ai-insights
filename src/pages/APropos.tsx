@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { CTAFooter } from "@/components/CTAFooter";
 import { SafeLink } from "@/components/SafeLink";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { CharlyOriginStory } from "@/components/CharlyOriginStory";
 import { 
   Heart,
   Shield,
@@ -126,7 +127,7 @@ const APropos = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Charly est bien plus qu'un outil : c'est votre partenaire d'exception, votre bras droit essentiel pour conquérir les marchés publics.
+              Charly d'Eligibly est bien plus qu'un outil : c'est votre partenaire d'exception, votre bras droit essentiel pour conquérir les marchés publics grâce à l'innovation d'Eligibly.
             </p>
           </div>
           
@@ -147,31 +148,34 @@ const APropos = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Charly, votre{" "}
+                Charly d'Eligibly, votre{" "}
                 <span className="bg-gradient-highlight bg-clip-text text-transparent">binôme idéal</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Charly est ce personnage d'une importance rare dans votre quotidien professionnel : 
+                Chez Eligibly, nous avons créé Charly comme ce personnage d'une importance rare dans votre quotidien professionnel : 
                 votre bras droit essentiel qui a toujours une réponse et facilite chaque étape.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Nous avons voulu faire de Charly le partenaire rêvé des commerciaux et chasseurs d'opportunités, 
-                celui qui transforme la complexité en simplicité.
+                L'équipe Eligibly a voulu faire de Charly le partenaire rêvé des commerciaux et chasseurs d'opportunités, 
+                celui qui transforme la complexité des marchés publics en simplicité grâce à notre expertise technologique.
               </p>
             </div>
             <div className="relative">
               <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl p-12 text-white text-center">
                 <Users className="w-20 h-20 mx-auto mb-6" />
-                <h3 className="text-2xl font-bold mb-4">Le partenaire qui vous comprend</h3>
+                <h3 className="text-2xl font-bold mb-4">L'assistant IA né de l'expertise Eligibly</h3>
                 <p className="text-blue-100 text-lg">
-                  Un binôme qui anticipe vos besoins, répond à vos questions et vous accompagne 
-                  dans chaque opportunité de marché public.
+                  Créé par notre équipe d'experts, Charly allie l'intelligence artificielle d'Eligibly 
+                  à une compréhension profonde des marchés publics pour anticiper vos besoins.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Histoire de Charly */}
+      <CharlyOriginStory />
 
       {/* Problem & Solution Section */}
       <section className="py-20 px-4">
