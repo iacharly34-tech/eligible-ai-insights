@@ -319,7 +319,7 @@ const HomePage = () => {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                   Rencontrez{" "}
                   <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                    Charly d'Eligibly
+                    Charly by Eligibly
                   </span>
                   , votre assistant aux marchés publics
                 </h2>

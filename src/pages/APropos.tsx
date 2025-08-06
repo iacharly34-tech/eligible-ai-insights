@@ -127,7 +127,7 @@ const APropos = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Charly d'Eligibly est bien plus qu'un outil : c'est votre partenaire d'exception, votre bras droit essentiel pour conquérir les marchés publics grâce à l'innovation d'Eligibly.
+              Charly by Eligibly est bien plus qu'un outil : c'est votre partenaire d'exception, votre bras droit essentiel pour conquérir les marchés publics grâce à l'innovation d'Eligibly.
             </p>
           </div>
           
@@ -148,8 +148,8 @@ const APropos = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Charly d'Eligibly, votre{" "}
-                <span className="bg-gradient-highlight bg-clip-text text-transparent">binôme idéal</span>
+                Charly, l'assistant IA{" "}
+                <span className="bg-gradient-highlight bg-clip-text text-transparent">d'Eligibly</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Chez Eligibly, nous avons créé Charly comme ce personnage d'une importance rare dans votre quotidien professionnel : 

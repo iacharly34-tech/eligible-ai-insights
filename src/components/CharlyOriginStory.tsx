@@ -32,7 +32,7 @@ export const CharlyOriginStory = () => {
     {
       icon: Zap,
       title: "La mission",
-      description: "Charly d'Eligibly transforme chaque analyse en opportunité, chaque veille en succès commercial.",
+      description: "Charly by Eligibly transforme chaque analyse en opportunité, chaque veille en succès commercial.",
       detail: "Notre objectif : multiplier par 3 votre efficacité sur les marchés publics."
     }
   ];
@@ -123,7 +123,7 @@ export const CharlyOriginStory = () => {
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl p-8 text-white">
             <h4 className="text-2xl font-bold mb-4">
-              Charly d'Eligibly : Votre avantage concurrentiel
+              Charly by Eligibly : Votre avantage concurrentiel
             </h4>
             <p className="text-lg text-blue-100 leading-relaxed">
               Derrière chaque recommandation de Charly, il y a l'expertise d'Eligibly : 
