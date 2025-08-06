@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { AOResults } from "./AOResults";
-import charlyNoBg from "@/assets/charly-character-no-bg.png";
+import charlyNoBg from "@/assets/charly-ai-assistant.png";
 import { 
   Play, 
   RotateCcw, 
