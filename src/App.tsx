@@ -36,17 +36,11 @@ const App = () => (
     <ErrorBoundary>
       <LanguageProvider>
         <TooltipProvider>
-          <SEOHead />
           <CriticalResourcePreloader />
           <PerformanceMonitor />
           <WebVitalsMonitor />
           <WCAGAccessibilityComponent />
           <SkipNavigation />
-          <HighContrastToggle />
-          <FontSizeAdjuster />
-          <FocusEnhancer />
-          <ScreenReaderAnnouncer />
-          <KeyboardNavigationEnhancer />
           <Toaster />
           <Sonner />
           <CookieConsent />
