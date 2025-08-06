@@ -41,40 +41,6 @@ export const ProcessDemo = () => {
         environnement: "✅ Critère environnemental - ISO14001 requis (✓ certifié)",
         usages: "✅ Solutions Cloud/SaaS demandées (✓ votre expertise)"
       }
-    },
-    { 
-      title: "Services de développement web", 
-      score: 87, 
-      budget: "80K€", 
-      deadline: "28/02/2025",
-      criteres: { prix: 20, qualite: 70, performance: 10 },
-      penalites: "Non spécifié",
-      titulaire: "Nouveau marché",
-      duree: "12 mois",
-      compatibilite: {
-        ca: "✅ Marché adapté (80K€ compatible avec votre CA)",
-        secteur: "⚠️ Secteur partiellement compatible",
-        references: "❌ Références en marketing digital non disponibles",
-        environnement: "✅ Pas de contrainte environnementale",
-        usages: "✅ Technologies web dans votre expertise"
-      }
-    },
-    { 
-      title: "Maintenance systèmes réseaux", 
-      score: 76, 
-      budget: "45K€", 
-      deadline: "10/03/2025",
-      criteres: { prix: 40, qualite: 50, performance: 10 },
-      penalites: "Oui - Forfaitaire 500€",
-      titulaire: "Renouvellement",
-      duree: "36 mois",
-      compatibilite: {
-        ca: "⚠️ Marché petit par rapport à votre CA",
-        secteur: "✅ Infrastructure IT - Compatible",
-        references: "⚠️ Références infrastructure limitées",
-        environnement: "❌ Critères environnementaux stricts non remplis",
-        usages: "⚠️ Maintenance hardware vs votre focus software"
-      }
     }
   ]);
 
@@ -298,354 +264,262 @@ export const ProcessDemo = () => {
   };
 
   return (
-    <section id="demo" className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100">
+    <section id="demo" className="py-12 px-4 bg-gradient-to-br from-slate-50 to-gray-100">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <Badge className="mb-4 bg-purple-100 text-purple-700 border-purple-200">
             Démonstration
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Processus automatisé en action
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Découvrez comment notre IA analyse et évalue les opportunités de marchés publics en temps réel
           </p>
         </div>
 
-        {/* Main Demo Interface */}
-        <div className="mb-8">
-          <Card className="border-0 shadow-2xl bg-white/90 backdrop-blur-sm overflow-hidden">
-            <CardContent className="p-4 md:p-6 lg:p-8">
-              {/* Browser Header */}
-              <div className="flex items-center gap-2 mb-6 p-3 md:p-4 bg-slate-800 rounded-t-lg">
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+        {/* MacBook Simulation - Résolution 1440x900 */}
+        <div className="flex justify-center mb-8">
+          <div 
+            className="relative bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg shadow-2xl mx-auto"
+            style={{ 
+              width: '1440px', 
+              height: '900px', 
+              maxWidth: '100vw',
+              transform: window.innerWidth < 1440 ? `scale(${Math.min(window.innerWidth * 0.9 / 1440, 1)})` : 'scale(1)',
+              transformOrigin: 'top center'
+            }}
+          >
+            {/* MacBook Screen Bezel */}
+            <div className="absolute inset-4 bg-black rounded-lg overflow-hidden">
+              {/* Browser Interface */}
+              <div className="h-full bg-white">
+                {/* Browser Header */}
+                <div className="flex items-center gap-2 px-4 py-3 bg-gray-100 border-b">
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  </div>
+                  <div className="flex-1 mx-4">
+                    <div className="bg-white rounded px-3 py-2 text-sm flex items-center gap-2 border">
+                      <Globe className="w-4 h-4 text-gray-500" />
+                      <span>https://www.boamp.fr/avis</span>
+                    </div>
+                  </div>
+                  <div className="text-sm text-gray-600">100%</div>
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
-                <div className="flex-1 mx-2 md:mx-4">
-                  <div className="bg-white/10 rounded px-2 md:px-3 py-1 text-white text-xs md:text-sm flex items-center gap-2">
-                    <Globe className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
-                    <span className="truncate">https://www.boamp.fr/avis</span>
-                  </div>
-                </div>
-                <div className="text-white text-xs md:text-sm">100%</div>
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-              </div>
 
-              {/* Interface d'analyse en temps réel */}
-              <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg p-4 md:p-6 mb-6 text-white">
-                <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
-                  <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm md:text-base">
-                    🤖
+                {/* Main Content - Layout exact de votre image */}
+                <div className="h-full p-8 bg-gray-50 overflow-hidden" style={{ height: 'calc(100% - 60px)' }}>
+                  {/* Top Dashboard Header */}
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                      C
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-800 text-lg">Charly IA</h3>
+                      <p className="text-gray-600">Analyse en cours des appels d'offres</p>
+                    </div>
+                    <div className="ml-auto flex items-center gap-2">
+                      <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-green-600 font-medium">Analyse active</span>
+                    </div>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-white text-sm md:text-base">Charly IA</h3>
-                    <p className="text-xs md:text-sm text-gray-300 truncate">Analyse en cours des appels d'offres</p>
-                  </div>
-                  <div className="flex items-center gap-1 md:gap-2 flex-shrink-0">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-xs md:text-sm text-green-400 font-medium hidden sm:inline">Analyse active</span>
-                  </div>
-                </div>
 
-                {/* Indicateurs d'analyse pertinents */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-                  <div className="bg-white/10 rounded-lg p-3 md:p-4 backdrop-blur-sm">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs md:text-sm font-medium text-gray-300">AO analysés</span>
-                      <div className="w-2 h-2 md:w-3 md:h-3 bg-blue-400 rounded-full animate-pulse"></div>
-                    </div>
-                    <div className="text-lg md:text-2xl font-bold text-blue-400">
-                      {currentStep >= 1 ? (sourceData.boamp + sourceData.marchesPublics + sourceData.place + sourceData.awsDume) : '0'}
-                    </div>
-                  </div>
-                  
-                  <div className="bg-white/10 rounded-lg p-3 md:p-4 backdrop-blur-sm">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs md:text-sm font-medium text-gray-300">Opportunités détectées</span>
-                      <div className="w-2 h-2 md:w-3 md:h-3 bg-green-400 rounded-full animate-pulse"></div>
-                    </div>
-                    <div className="text-lg md:text-2xl font-bold text-green-400">
-                      {currentStep >= 3 ? '15+' : currentStep >= 1 ? '3' : '0'}
-                    </div>
-                  </div>
-                  
-                  <div className="bg-white/10 rounded-lg p-3 md:p-4 backdrop-blur-sm">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs md:text-sm font-medium text-gray-300">Score moyen IA</span>
-                      <div className="w-2 h-2 md:w-3 md:h-3 bg-purple-400 rounded-full animate-pulse"></div>
-                    </div>
-                    <div className="text-lg md:text-2xl font-bold text-purple-400">
-                      {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
-                    </div>
-                  </div>
-                  
-                  <div className="bg-white/10 rounded-lg p-3 md:p-4 backdrop-blur-sm">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs md:text-sm font-medium text-gray-300">Temps d'analyse</span>
-                      <div className="w-2 h-2 md:w-3 md:h-3 bg-orange-400 rounded-full animate-pulse"></div>
-                    </div>
-                    <div className="text-lg md:text-2xl font-bold text-orange-400">
-                      {currentStep >= 4 ? '2.1s' : currentStep >= 1 ? `${Math.floor(progress/10)}.${progress%10}s` : '-'}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Code Console Animation */}
-              {codeLines.length > 0 && (
-                <div className="bg-gray-900 rounded-lg p-3 md:p-4 mb-6 border-l-4 border-purple-500">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-gray-400 text-xs md:text-sm font-mono">Console JavaScript</span>
-                  </div>
-                  <div className="space-y-1 max-h-48 md:max-h-64 overflow-y-auto">
-                    {codeLines.map((line, index) => (
-                      <div
-                        key={index}
-                        className="text-green-400 text-xs md:text-sm font-mono animate-fade-in break-all"
-                        style={{ animationDelay: `${index * 0.1}s` }}
-                      >
-                        {line || '\u00A0'}
+                  {/* Analytics Cards - Style identique à votre image */}
+                  <div className="grid grid-cols-4 gap-6 mb-8">
+                    <div className="bg-blue-600 text-white rounded-lg p-6">
+                      <div className="text-sm opacity-90 mb-2">AO analysés</div>
+                      <div className="text-3xl font-bold">
+                        {currentStep >= 1 ? '693' : '0'}
                       </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Results Display */}
-              {showResults && (
-                <div className="bg-white rounded-lg p-4 md:p-6 border border-gray-200 animate-fade-in">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-6">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-600" />
-                      <h3 className="text-base md:text-lg font-bold text-gray-800">Résultats d'Analyse AO</h3>
                     </div>
-                    <Badge className="bg-green-600 text-white sm:ml-auto w-fit">3 opportunités trouvées</Badge>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    {aoResults.slice(0,1).map((ao, index) => (
-                      <div
-                        key={index}
-                        className="bg-gray-50 rounded-lg p-4 md:p-6 border border-gray-200"
-                      >
-                        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6 gap-4">
-                          <div className="flex-1 min-w-0">
-                            <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-4">{ao.title}</h4>
-                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 text-sm">
-                              <div>
-                                <span className="text-gray-500 block mb-1">Budget:</span>
-                                <div className="font-semibold text-gray-900">{ao.budget}</div>
-                              </div>
-                              <div>
-                                <span className="text-gray-500 block mb-1">Deadline:</span>
-                                <div className="font-semibold text-gray-900">{ao.deadline}</div>
-                              </div>
-                              <div>
-                                <span className="text-gray-500 block mb-1">Durée:</span>
-                                <div className="font-semibold text-gray-900">{ao.duree}</div>
-                              </div>
-                              <div>
-                                <span className="text-gray-500 block mb-1">Titulaire:</span>
-                                <div className="font-semibold text-gray-900">{ao.titulaire}</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="text-center lg:text-right lg:ml-6 flex-shrink-0">
-                            <div className="text-3xl md:text-4xl font-bold text-green-600 mb-1">
-                              {ao.score}%
-                            </div>
-                            <div className="text-sm text-gray-500">Score Charly</div>
-                          </div>
-                        </div>
-                        
-                        {/* Critères d'évaluation */}
-                        <div className="mb-4">
-                          <h5 className="text-sm font-semibold text-gray-700 mb-3">Critères de l'acheteur</h5>
-                          <div className="space-y-2">
-                            <div className="flex justify-between text-sm mb-2">
-                              <span className="text-gray-600">Prix: {ao.criteres.prix}%</span>
-                              <span className="text-gray-600">Qualité: {ao.criteres.qualite}%</span>
-                              <span className="text-gray-600">Performance: {ao.criteres.performance}%</span>
-                            </div>
-                            <div className="flex h-3 rounded-full overflow-hidden bg-gray-200">
-                              <div 
-                                className="bg-red-400" 
-                                style={{ width: `${ao.criteres.prix}%` }}
-                              ></div>
-                              <div 
-                                className="bg-green-400" 
-                                style={{ width: `${ao.criteres.qualite}%` }}
-                              ></div>
-                              <div 
-                                className="bg-blue-400" 
-                                style={{ width: `${ao.criteres.performance}%` }}
-                              ></div>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        {/* Pénalités */}
-                        <div className="text-sm mb-6">
-                          <span className="text-gray-500">Pénalités: </span>
-                          <span className="text-red-600 font-medium">{ao.penalites}</span>
-                        </div>
-
-                        {/* Analyse de compatibilité personnalisée */}
-                        <div className="bg-blue-50 rounded-lg p-3 md:p-4 border border-blue-200">
-                          <h5 className="text-sm font-semibold text-blue-800 mb-3">💡 Analyse Charly - Compatibilité client</h5>
-                          <div className="space-y-2 text-xs md:text-sm">
-                            <div className="flex items-start gap-2">
-                              <span className="text-blue-600 text-xs font-medium min-w-fit">CA:</span>
-                              <span className="text-blue-700 break-words">{ao.compatibilite.ca}</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-blue-600 text-xs font-medium min-w-fit">Secteur:</span>
-                              <span className="text-blue-700 break-words">{ao.compatibilite.secteur}</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-blue-600 text-xs font-medium min-w-fit">Références:</span>
-                              <span className="text-blue-700 break-words">{ao.compatibilite.references}</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-blue-600 text-xs font-medium min-w-fit">Environnement:</span>
-                              <span className="text-blue-700 break-words">{ao.compatibilite.environnement}</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-blue-600 text-xs font-medium min-w-fit">Cas d'usage:</span>
-                              <span className="text-blue-700 break-words">{ao.compatibilite.usages}</span>
-                            </div>
-                          </div>
-                        </div>
+                    
+                    <div className="bg-green-600 text-white rounded-lg p-6">
+                      <div className="text-sm opacity-90 mb-2">Opportunités détectées</div>
+                      <div className="text-3xl font-bold">
+                        {currentStep >= 3 ? '15+' : currentStep >= 1 ? '3' : '0'}
                       </div>
-                    ))}
+                    </div>
+                    
+                    <div className="bg-purple-600 text-white rounded-lg p-6">
+                      <div className="text-sm opacity-90 mb-2">Score moyen IA</div>
+                      <div className="text-3xl font-bold">
+                        {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
+                      </div>
+                    </div>
+                    
+                    <div className="bg-orange-600 text-white rounded-lg p-6">
+                      <div className="text-sm opacity-90 mb-2">Temps d'analyse</div>
+                      <div className="text-3xl font-bold">
+                        {currentStep >= 4 ? '2.1s' : currentStep >= 1 ? `${Math.floor(progress/10)}.${progress%10}s` : '-'}
+                      </div>
+                    </div>
                   </div>
-                  
-                  <div className="mt-4 text-center">
-                    <Button className="bg-purple-600 hover:bg-purple-700 text-white">
-                      Voir tous les résultats
-                    </Button>
+
+                  {/* Two Column Layout */}
+                  <div className="grid grid-cols-2 gap-8" style={{ height: 'calc(100% - 220px)' }}>
+                    {/* Left: Code Console */}
+                    <div className="bg-gray-900 rounded-lg p-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span className="text-gray-400 font-mono">Console JavaScript</span>
+                      </div>
+                      <div className="space-y-2 h-full overflow-y-auto">
+                        {codeLines.length > 0 ? codeLines.map((line, index) => (
+                          <div
+                            key={index}
+                            className="text-green-400 text-sm font-mono"
+                          >
+                            {line || '\u00A0'}
+                          </div>
+                        )) : (
+                          <div className="text-gray-500 font-mono">Prêt à analyser...</div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Right: Results */}
+                    <div className="bg-white rounded-lg border border-gray-200 p-6">
+                      {showResults ? (
+                        <>
+                          <div className="flex items-center gap-2 mb-6">
+                            <CheckCircle className="w-5 h-5 text-green-600" />
+                            <h3 className="font-bold text-gray-800 text-lg">Résultats d'Analyse AO</h3>
+                            <Badge className="bg-green-600 text-white ml-auto">3 opportunités trouvées</Badge>
+                          </div>
+                          
+                          <div className="space-y-4">
+                            <div className="p-6 bg-gray-50 rounded-lg border">
+                              <div className="flex justify-between items-start mb-4">
+                                <div className="flex-1">
+                                  <h4 className="font-bold text-gray-800 mb-3">Fourniture de matériel informatique</h4>
+                                  <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
+                                    <div><span className="font-medium">Budget:</span> 150K€</div>
+                                    <div><span className="font-medium">Deadline:</span> 15/02/2025</div>
+                                    <div><span className="font-medium">Durée:</span> 24 mois</div>
+                                    <div><span className="font-medium">Titulaire:</span> À déterminer</div>
+                                  </div>
+                                </div>
+                                <div className="text-right ml-4">
+                                  <div className="text-4xl font-bold text-green-600">94%</div>
+                                  <div className="text-sm text-gray-600">Score Charly</div>
+                                </div>
+                              </div>
+
+                              <div className="space-y-3">
+                                <div>
+                                  <div className="text-sm font-medium mb-2">Critères de l'acheteur</div>
+                                  <div className="w-full bg-gray-200 rounded-full h-3 relative">
+                                    <div className="bg-red-500 h-3 rounded-l-full absolute" style={{width: '30%'}}></div>
+                                    <div className="bg-green-500 h-3 absolute" style={{width: '60%', left: '30%'}}></div>
+                                    <div className="bg-blue-500 h-3 rounded-r-full absolute" style={{width: '10%', left: '90%'}}></div>
+                                  </div>
+                                  <div className="flex justify-between text-xs mt-1">
+                                    <span>Prix: 30%</span>
+                                    <span>Qualité: 60%</span>
+                                    <span>Performance: 10%</span>
+                                  </div>
+                                </div>
+                                
+                                <div className="text-sm">
+                                  <div className="font-medium">Pénalités: <span className="font-normal text-gray-600">Oui - 0.5% par jour de retard</span></div>
+                                </div>
+
+                                <div className="space-y-1 text-sm">
+                                  <div className="text-blue-600 font-medium">📋 Analyse Charly - Compatibilité client</div>
+                                  <div className="text-green-600">✅ Marché adapté (150K€ compatible avec votre CA 5M€)</div>
+                                  <div className="text-green-600">✅ Secteur IT - 100% compatible</div>
+                                  <div className="text-green-600">✅ Expérience requise en éducation (✓ dans vos références)</div>
+                                  <div className="text-green-600">✅ Critère environnemental - ISO14001 requis (✓ certifié)</div>
+                                  <div className="text-green-600">✅ Solutions Cloud/SaaS demandées (✓ votre expertise)</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div className="mt-6 text-center">
+                            <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+                              Voir tous les résultats
+                            </Button>
+                          </div>
+                        </>
+                      ) : (
+                        <div className="h-full flex items-center justify-center">
+                          <div className="text-center text-gray-500">
+                            <div className="text-5xl mb-4">🤖</div>
+                            <div className="text-lg">En attente de l'analyse...</div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-              )}
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Controls */}
-        <div className="flex justify-center gap-4 mb-8">
-          <Button
-            onClick={startDemo}
-            disabled={isRunning}
-            className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 h-auto"
-          >
-            <Play className="w-5 h-5 mr-2" />
-            {isRunning ? "En cours..." : "Démarrer"}
-          </Button>
-          
-          <Button
-            onClick={resetDemo}
-            variant="outline"
-            className="px-8 py-3 h-auto"
-          >
-            <RotateCcw className="w-5 h-5 mr-2" />
-            Reset
-          </Button>
-        </div>
-
-        {/* Progress Section */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg">
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-sm font-medium text-gray-600">Progression</span>
-            <span className="text-sm font-medium text-gray-600">{Math.round(progress)}%</span>
+              </div>
+            </div>
           </div>
-          
-          <Progress value={progress} className="mb-8" />
+        </div>
 
-          {/* Process Steps */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {/* Control Panel */}
+        <div className="flex flex-col items-center gap-6">
+          <div className="flex items-center gap-4">
+            <Button
+              onClick={startDemo}
+              disabled={isRunning}
+              className="bg-purple-600 hover:bg-purple-700 text-white flex items-center gap-2"
+            >
+              <Play className="w-4 h-4" />
+              {isRunning ? 'Démarrage...' : 'Démarrer'}
+            </Button>
+            
+            <Button
+              onClick={resetDemo}
+              variant="outline"
+              className="flex items-center gap-2"
+            >
+              <RotateCcw className="w-4 h-4" />
+              Reset
+            </Button>
+          </div>
+
+          {/* Progress Bar */}
+          <div className="w-full max-w-md">
+            <div className="flex justify-between text-sm text-gray-600 mb-2">
+              <span>Progression</span>
+              <span>{progress}%</span>
+            </div>
+            <Progress value={progress} className="w-full" />
+          </div>
+
+          {/* Step Indicators */}
+          <div className="flex items-center justify-center gap-8 max-w-4xl">
             {steps.map((step, index) => (
-              <div
-                key={step.id}
-                className={`text-center transition-all duration-700 transform ${
+              <div key={step.id} className="flex flex-col items-center text-center max-w-48">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 transition-colors ${
                   currentStep >= step.id 
-                    ? 'opacity-100 scale-100 translate-y-0' 
-                    : 'opacity-30 scale-95 translate-y-2'
-                }`}
-              >
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-700 ${
-                  currentStep > step.id
-                    ? 'bg-green-600 text-white shadow-lg scale-110'
-                    : currentStep === step.id
-                    ? 'bg-purple-600 text-white shadow-lg scale-110 animate-pulse'
-                    : 'bg-gray-200 text-gray-400'
+                    ? 'bg-green-500 text-white' 
+                    : currentStep === step.id - 1 && isRunning
+                    ? 'bg-purple-500 text-white animate-pulse'
+                    : 'bg-gray-300 text-gray-600'
                 }`}>
-                  {currentStep > step.id ? (
-                    <CheckCircle className="w-8 h-8" />
-                  ) : currentStep === step.id ? (
-                    <div className="w-3 h-3 bg-white rounded-full animate-bounce"></div>
-                  ) : (
-                    <span className="text-lg font-bold">{step.id}</span>
-                  )}
+                  {currentStep > step.id ? <CheckCircle className="w-5 h-5" /> : step.id}
                 </div>
-                <h4 className={`font-semibold text-sm mb-2 transition-colors duration-500 ${
-                  currentStep >= step.id ? 'text-purple-700' : 'text-gray-500'
-                }`}>
-                  {step.title}
-                </h4>
-                <p className={`text-xs transition-colors duration-500 ${
-                  currentStep >= step.id ? 'text-purple-600' : 'text-gray-400'
-                }`}>
-                  {step.description}
-                </p>
-                
-                {/* Step Connection Line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gray-200 transform translate-x-1/2">
-                    <div 
-                      className={`h-full bg-purple-600 transition-all duration-1000 ${
-                        currentStep > step.id ? 'w-full' : 'w-0'
-                      }`}
-                    ></div>
-                  </div>
-                )}
+                <h4 className="font-medium text-sm mb-1">{step.title}</h4>
+                <p className="text-xs text-gray-600">{step.description}</p>
               </div>
             ))}
           </div>
 
-          {/* Current Step Info */}
-          {currentStep > 0 && currentStep <= 4 && (
-            <div className="mt-8 p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl border border-purple-200 animate-fade-in">
-              <div className="text-center">
-                <Badge className="bg-purple-600 text-white mb-3 px-4 py-2">
-                  {isRunning ? '🔄 En cours' : '✅ Terminé'} - Étape {currentStep}/4
-                </Badge>
-                <h4 className="text-lg font-bold text-purple-800 mb-2">
-                  {steps[currentStep - 1]?.title}
-                </h4>
-                <p className="text-sm text-purple-700 leading-relaxed">
-                  {steps[currentStep - 1]?.description}
-                </p>
-              </div>
-            </div>
-          )}
-          
-          {/* Completion Message */}
-          {currentStep >= 5 && (
-            <div className="mt-8 p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200 animate-fade-in">
-              <div className="text-center">
-                <Badge className="bg-green-600 text-white mb-3 px-4 py-2">
-                  ✅ Processus terminé
-                </Badge>
-                <h4 className="text-lg font-bold text-green-800 mb-2">
-                  Analyse complète
-                </h4>
-                <p className="text-sm text-green-700">
-                  Les appels d'offres ont été analysés et scorés avec succès !
-                </p>
-              </div>
+          {/* Completion Status */}
+          {currentStep === 5 && (
+            <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg text-center">
+              <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
+              <h3 className="font-bold text-green-800 mb-1">✅ Processus terminé !</h3>
+              <p className="text-green-700">
+                Les appels d'offres ont été analysés et scorés selon votre profil client !
+              </p>
             </div>
           )}
         </div>
