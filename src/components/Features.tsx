@@ -51,48 +51,48 @@ export const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-24 bg-gradient-subtle">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 space-y-4">
+    <section id="features" className="py-16 sm:py-20 lg:py-24 bg-gradient-subtle">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16 space-y-4">
           <Badge variant="outline" className="text-primary border-primary">
             Fonctionnalités
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold px-4">
             {t('features.title')}{" "}
             <span className="text-primary">
               {t('features.title.highlight')}
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             {t('features.subtitle')}
           </p>
         </div>
 
         {/* Tengo-style Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="text-center">
-            <div className="text-5xl font-bold text-primary mb-2">+600</div>
-            <div className="text-lg font-medium">Appels d'offres</div>
-            <div className="text-muted-foreground">remontés chaque jour</div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+          <div className="text-center px-4">
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-2">+600</div>
+            <div className="text-base sm:text-lg font-medium">Appels d'offres</div>
+            <div className="text-sm sm:text-base text-muted-foreground">remontés chaque jour</div>
           </div>
-          <div className="text-center">
-            <div className="text-5xl font-bold text-primary mb-2">10x</div>
-            <div className="text-lg font-medium">Plus rapide</div>
-            <div className="text-muted-foreground">pour analyser un marché</div>
+          <div className="text-center px-4">
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-2">10x</div>
+            <div className="text-base sm:text-lg font-medium">Plus rapide</div>
+            <div className="text-sm sm:text-base text-muted-foreground">pour analyser un marché</div>
           </div>
-          <div className="text-center">
-            <div className="text-5xl font-bold text-primary mb-2">+50000</div>
-            <div className="text-lg font-medium">Renouvellements</div>
-            <div className="text-muted-foreground">de marchés détectés</div>
+          <div className="text-center px-4">
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-2">+50000</div>
+            <div className="text-base sm:text-lg font-medium">Renouvellements</div>
+            <div className="text-sm sm:text-base text-muted-foreground">de marchés détectés</div>
           </div>
         </div>
 
-        <div className="text-center mb-16 space-y-4">
-          <h3 className="text-2xl font-bold">Flux d'opportunités</h3>
-          <h4 className="text-xl text-primary font-semibold">Simplifiez votre veille</h4>
+        <div className="text-center mb-12 sm:mb-16 space-y-4 px-4">
+          <h3 className="text-xl sm:text-2xl font-bold">Flux d'opportunités</h3>
+          <h4 className="text-lg sm:text-xl text-primary font-semibold">Simplifiez votre veille</h4>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {features.map((feature, index) => (
             <Card 
               key={index} 
@@ -121,21 +121,23 @@ export const Features = () => {
         </div>
 
         {/* Additional Info Section */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center space-x-8 bg-white rounded-2xl p-8 shadow-card">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">500+</div>
-              <div className="text-sm text-muted-foreground">Sources surveillées</div>
+        <div className="mt-12 sm:mt-16 text-center px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 bg-white rounded-2xl p-6 sm:p-8 shadow-card max-w-4xl mx-auto">
+            <div className="text-center min-w-0 flex-1">
+              <div className="text-xl sm:text-2xl font-bold text-primary">500+</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">Sources surveillées</div>
             </div>
-            <div className="w-px h-12 bg-border" />
-            <div className="text-center">
-              <div className="text-2xl font-bold text-accent">99.9%</div>
-              <div className="text-sm text-muted-foreground">Disponibilité</div>
+            <div className="hidden sm:block w-px h-12 bg-border" />
+            <div className="w-full sm:hidden h-px bg-border" />
+            <div className="text-center min-w-0 flex-1">
+              <div className="text-xl sm:text-2xl font-bold text-accent">99.9%</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">Disponibilité</div>
             </div>
-            <div className="w-px h-12 bg-border" />
-            <div className="text-center">
-              <div className="text-2xl font-bold text-success">15min</div>
-              <div className="text-sm text-muted-foreground">Délai moyen d'alerte</div>
+            <div className="hidden sm:block w-px h-12 bg-border" />
+            <div className="w-full sm:hidden h-px bg-border" />
+            <div className="text-center min-w-0 flex-1">
+              <div className="text-xl sm:text-2xl font-bold text-success">15min</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">Délai moyen d'alerte</div>
             </div>
           </div>
         </div>

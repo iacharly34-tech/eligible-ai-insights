@@ -89,12 +89,12 @@ const HomePage = () => {
           <div className="absolute top-1/2 right-1/3 w-80 h-80 bg-gradient-to-br from-teal-300/8 to-emerald-200/6 rounded-full blur-2xl animate-[pulse_10s_ease-in-out_infinite_4s]"></div>
         </div>
 
-        <div className="container mx-auto relative z-10">
+        <div className="container mx-auto relative z-10 px-4 sm:px-6">
           {/* Main Content - Split Layout */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Column - Text Content */}
-            <div className={`space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <div className={`space-y-6 sm:space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 {t('hero.title')}{" "}
                 <span className="bg-gradient-highlight bg-clip-text text-transparent">
                   {t('hero.title.highlight')}
@@ -102,12 +102,12 @@ const HomePage = () => {
                 {t('hero.title.end')}
               </h1>
               
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
                 {t('hero.subtitle')}
               </p>
 
               {/* Value Propositions */}
-              <div className="space-y-3 text-sm text-muted-foreground">
+              <div className="space-y-3 text-sm sm:text-base text-muted-foreground">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                   <span>{t('hero.stats.opportunities')}</span>
@@ -122,29 +122,29 @@ const HomePage = () => {
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
-                <SafeLink to="/demo">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <SafeLink to="/demo" className="w-full sm:w-auto">
                   <Button 
                     size="lg" 
-                    className="bg-gradient-cta hover:shadow-glow text-white text-lg px-8 py-4 h-auto group transition-all duration-300 hover:scale-105 w-full"
+                    className="bg-gradient-cta hover:shadow-glow text-white text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 h-auto group transition-all duration-300 hover:scale-105 w-full"
                     role="button"
                     aria-label={t('accessibility.demo')}
                   >
-                    <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                    <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
                     {t('hero.cta.primary')}
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </SafeLink>
                 
-                <SafeLink to="/produit">
+                <SafeLink to="/produit" className="w-full sm:w-auto">
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="text-lg px-8 py-4 h-auto border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 w-full"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 h-auto border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 w-full"
                     role="button"
                     aria-label="Découvrir la solution"
                   >
-                    <BarChart3 className="w-5 h-5 mr-2" />
+                    <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     Découvrir la solution
                   </Button>
                 </SafeLink>
@@ -158,49 +158,49 @@ const HomePage = () => {
             </div>
 
             {/* Right Column - Eligibly.ai Unique Dashboard */}
-            <div className="relative w-full">
+            <div className="relative w-full mt-8 lg:mt-0">
               {/* Dashboard Container - Unique Eligibly Design */}
-              <div className="bg-gradient-to-br from-white via-gray-50 to-blue-50 rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
+              <div className="bg-gradient-to-br from-white via-gray-50 to-blue-50 rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
                 
                 {/* Header Dashboard - Eligibly Style */}
-                <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 px-6 py-5 text-white">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="text-2xl font-bold flex items-center gap-3">
-                        <div className="w-8 h-8 bg-white/20 rounded-xl flex items-center justify-center">
-                          <Target className="w-5 h-5 text-white" />
+                <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 px-4 sm:px-6 py-4 sm:py-5 text-white">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-lg sm:text-2xl font-bold flex items-center gap-2 sm:gap-3">
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                          <Target className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                         </div>
-                        Charly AI Assistant
+                        <span className="truncate">Charly AI Assistant</span>
                       </h3>
-                      <p className="text-blue-100 mt-1">Détection intelligente d'opportunités</p>
+                      <p className="text-blue-100 mt-1 text-sm sm:text-base">Détection intelligente d'opportunités</p>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="flex items-center gap-2 bg-white/20 rounded-full px-4 py-2">
-                        <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-sm font-semibold">Analyse en cours</span>
+                    <div className="flex items-center gap-3 flex-shrink-0">
+                      <div className="flex items-center gap-2 bg-white/20 rounded-full px-3 sm:px-4 py-1 sm:py-2">
+                        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-xs sm:text-sm font-semibold">Analyse en cours</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Body Dashboard - Elegible.ai Original Layout */}
-                <div className="p-6 space-y-6">
+                <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
                   {/* Métriques principales - Design Eligibly */}
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-5 text-white text-center">
-                      <div className="text-3xl font-bold">23</div>
+                  <div className="grid grid-cols-3 gap-2 sm:gap-4">
+                    <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-white text-center">
+                      <div className="text-xl sm:text-3xl font-bold">23</div>
                       <div className="text-xs opacity-90 mt-1">Nouvelles opportunités</div>
-                      <div className="text-xs opacity-75 mt-1">+4 depuis hier</div>
+                      <div className="text-xs opacity-75 mt-1 hidden sm:block">+4 depuis hier</div>
                     </div>
-                    <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-5 text-white text-center">
-                      <div className="text-3xl font-bold">96%</div>
+                    <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-white text-center">
+                      <div className="text-xl sm:text-3xl font-bold">96%</div>
                       <div className="text-xs opacity-90 mt-1">Score IA moyen</div>
-                      <div className="text-xs opacity-75 mt-1">+2% ce mois</div>
+                      <div className="text-xs opacity-75 mt-1 hidden sm:block">+2% ce mois</div>
                     </div>
-                    <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl p-5 text-white text-center">
-                      <div className="text-3xl font-bold">4.2M€</div>
+                    <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-white text-center">
+                      <div className="text-xl sm:text-3xl font-bold">4.2M€</div>
                       <div className="text-xs opacity-90 mt-1">Valeur totale</div>
-                      <div className="text-xs opacity-75 mt-1">Cette semaine</div>
+                      <div className="text-xs opacity-75 mt-1 hidden sm:block">Cette semaine</div>
                     </div>
                   </div>
 
@@ -301,7 +301,7 @@ const HomePage = () => {
         </section>
 
       {/* Charly AI Assistant Section - Style "Découvrez Tom" */}
-      <section className="py-20 px-4 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden" aria-label="Découvrez Charly, votre assistant IA">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden" aria-label="Découvrez Charly, votre assistant IA">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl"></div>
@@ -309,17 +309,17 @@ const HomePage = () => {
         </div>
 
         <div className="container mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Column - Content */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                   {t('features.title')}{" "}
                   <span className="bg-gradient-highlight bg-clip-text text-transparent">
                     Charly
                   </span>
                 </h2>
-                <p className="text-xl text-gray-300 leading-relaxed">
+                <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
                   {t('features.subtitle')}
                 </p>
               </div>
