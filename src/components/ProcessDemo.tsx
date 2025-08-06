@@ -266,7 +266,7 @@ export const ProcessDemo = () => {
 
   // Mobile fullscreen component renderers
   const renderMobileInitialScreen = () => (
-    <div className="min-h-screen bg-gradient-to-br from-purple-500 to-blue-600 flex flex-col items-center justify-center p-6 text-white">
+    <div className="fixed inset-0 w-screen h-screen bg-gradient-primary flex flex-col items-center justify-center p-6 text-white overflow-hidden">
       <div className="text-center max-w-sm mx-auto">
         <Badge className="mb-6 bg-white/20 text-white border-white/30 text-lg px-4 py-2">
           Démonstration IA
@@ -282,7 +282,7 @@ export const ProcessDemo = () => {
           <Button 
             onClick={startDemo}
             disabled={isRunning}
-            className="w-full h-14 text-lg font-semibold bg-white text-purple-600 hover:bg-gray-100 rounded-xl"
+            className="w-full h-14 text-lg font-semibold bg-white text-primary hover:bg-secondary rounded-xl"
             size="lg"
           >
             <Play className="w-6 h-6 mr-3" />
@@ -306,85 +306,85 @@ export const ProcessDemo = () => {
   const renderMobileStepScreen = (stepNumber: number) => {
     const step = steps[stepNumber - 1];
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 to-gray-800 flex flex-col p-4 text-white">
+      <div className="fixed inset-0 w-screen h-screen bg-gradient-to-br from-background to-muted flex flex-col p-4 text-foreground overflow-hidden">
         {/* Header avec progression */}
         <div className="flex items-center justify-between mb-6 pt-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center font-bold">
+            <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
               {stepNumber}
             </div>
             <span className="font-semibold">Étape {stepNumber}/4</span>
           </div>
           <div className="text-right">
-            <div className="text-xs text-gray-300">Progression</div>
+            <div className="text-xs text-muted-foreground">Progression</div>
             <div className="text-lg font-bold">{Math.round(progress)}%</div>
           </div>
         </div>
 
         {/* Progress bar */}
         <div className="mb-8">
-          <Progress value={progress} className="h-2 bg-gray-700" />
+          <Progress value={progress} className="h-2" />
         </div>
 
         {/* Step content */}
         <div className="flex-1 flex flex-col">
           <div className="text-center mb-8">
             <h2 className="text-xl font-bold mb-3">{step?.title}</h2>
-            <p className="text-gray-300 text-base leading-relaxed">{step?.description}</p>
+            <p className="text-muted-foreground text-base leading-relaxed">{step?.description}</p>
           </div>
 
           {/* Live indicators */}
           <div className="grid grid-cols-2 gap-4 mb-8">
-            <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-blue-300">
+            <div className="bg-accent/20 border border-accent/30 rounded-lg p-4 text-center">
+              <div className="text-2xl font-bold text-accent">
                 {currentStep >= 1 ? '693' : '0'}
               </div>
-              <div className="text-xs text-blue-200">AO analysés</div>
+              <div className="text-xs text-muted-foreground">AO analysés</div>
             </div>
             
-            <div className="bg-green-500/20 border border-green-400/30 rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-green-300">
+            <div className="bg-success/20 border border-success/30 rounded-lg p-4 text-center">
+              <div className="text-2xl font-bold text-success">
                 {currentStep >= 3 ? '15+' : currentStep >= 1 ? '3' : '0'}
               </div>
-              <div className="text-xs text-green-200">Opportunités</div>
+              <div className="text-xs text-muted-foreground">Opportunités</div>
             </div>
             
-            <div className="bg-purple-500/20 border border-purple-400/30 rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-purple-300">
+            <div className="bg-primary/20 border border-primary/30 rounded-lg p-4 text-center">
+              <div className="text-2xl font-bold text-primary">
                 {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
               </div>
-              <div className="text-xs text-purple-200">Score IA</div>
+              <div className="text-xs text-muted-foreground">Score IA</div>
             </div>
             
-            <div className="bg-orange-500/20 border border-orange-400/30 rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-orange-300">
+            <div className="bg-warning/20 border border-warning/30 rounded-lg p-4 text-center">
+              <div className="text-2xl font-bold text-warning">
                 {timeElapsed.toFixed(1)}s
               </div>
-              <div className="text-xs text-orange-200">Temps</div>
+              <div className="text-xs text-muted-foreground">Temps</div>
             </div>
           </div>
 
           {/* Console simulation */}
-          <div className="bg-black/50 rounded-lg p-4 flex-1 border border-gray-600">
+          <div className="bg-background/90 border border-border rounded-lg p-4 flex-1 shadow-card">
             <div className="flex items-center gap-2 mb-3">
               <div className="flex gap-1">
-                <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-destructive rounded-full"></div>
+                <div className="w-2 h-2 bg-warning rounded-full"></div>
+                <div className="w-2 h-2 bg-success rounded-full"></div>
               </div>
-              <span className="text-green-400 text-xs font-mono">charly-analysis.js</span>
+              <span className="text-success text-xs font-mono">charly-analysis.js</span>
             </div>
             
             <div className="space-y-1 h-32 overflow-y-auto">
               {codeLines.slice(-8).map((line, index) => (
-                <div key={index} className="text-green-400 text-xs font-mono">
-                  <span className="text-gray-500 mr-2">{'>'}</span>
+                <div key={index} className="text-success text-xs font-mono">
+                  <span className="text-muted-foreground mr-2">{'>'}</span>
                   {line}
                 </div>
               ))}
               {isRunning && (
-                <div className="text-green-400 animate-pulse text-xs font-mono">
-                  <span className="text-gray-500 mr-2">{'>'}</span>
+                <div className="text-success animate-pulse text-xs font-mono">
+                  <span className="text-muted-foreground mr-2">{'>'}</span>
                   █
                 </div>
               )}
@@ -396,23 +396,23 @@ export const ProcessDemo = () => {
   };
 
   const renderMobileResultsScreen = () => (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-slate-800 flex flex-col">
+    <div className="fixed inset-0 w-screen h-screen bg-gradient-to-br from-background to-muted flex flex-col overflow-hidden">
       {/* Header */}
-      <div className="bg-white/10 backdrop-blur-sm p-4 border-b border-white/20">
+      <div className="bg-card/80 backdrop-blur-sm p-4 border-b border-border">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-              <CheckCircle className="w-5 h-5 text-white" />
+            <div className="w-8 h-8 bg-success rounded-full flex items-center justify-center">
+              <CheckCircle className="w-5 h-5 text-success-foreground" />
             </div>
             <div>
-              <h2 className="text-white font-semibold">Analyse terminée</h2>
-              <p className="text-green-300 text-sm">Résultats disponibles</p>
+              <h2 className="text-foreground font-semibold">Analyse terminée</h2>
+              <p className="text-success text-sm">Résultats disponibles</p>
             </div>
           </div>
           <Button 
             onClick={resetDemo}
             variant="outline"
-            className="border-white/30 text-white hover:bg-white/10"
+            className="border-border text-foreground hover:bg-muted"
             size="sm"
           >
             <RotateCcw className="w-4 h-4 mr-1" />
@@ -422,8 +422,8 @@ export const ProcessDemo = () => {
       </div>
 
       {/* Results - Full screen optimized */}
-      <div className="flex-1 p-4 overflow-y-auto">
-        <div className="bg-white rounded-lg h-full p-1">
+      <div className="flex-1 p-2 overflow-hidden">
+        <div className="bg-card rounded-lg h-full p-2 border border-border shadow-card overflow-y-auto">
           <AOResults 
             isExpanded={true}
             onToggleExpand={() => {}}
