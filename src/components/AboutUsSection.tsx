@@ -30,13 +30,13 @@ export const AboutUsSection = () => {
       icon: Building2,
       title: "Notre expertise",
       description: "Spécialistes des marchés publics depuis 2020",
-      detail: "Notre équipe combine une expertise juridique et technique pour comprendre les enjeux spécifiques de la commande publique française et européenne."
+      detail: "Des experts qui ont mis à disposition leur savoir-faire dans cette solution pour vous accompagner dans la conquête des marchés publics."
     },
     {
       icon: Users,
       title: "Notre approche",
-      description: "Technology au service de l'humain",
-      detail: "L'IA traite les données, mais c'est votre expertise métier qui fait la différence. Nous vous donnons les outils pour prendre les bonnes décisions."
+      description: "Technologie au service de l'humain",
+      detail: "L'IA ne remplace pas les métiers, elle libère du temps pour que vos équipes commerciales se concentrent sur ce qu'elles font de mieux : vendre."
     }
   ];
 
@@ -155,8 +155,8 @@ export const AboutUsSection = () => {
           <div className="text-center mb-8">
             <h3 className="text-xl sm:text-2xl font-bold mb-4">Nos sources de données officielles</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Nous collectons exclusivement depuis des sources publiques et officielles, 
-              garantissant la fiabilité et la légalité de nos informations.
+              Nous collectons les données disponibles dans les API publiques, 
+              garantissant 100% de sources publiques et légales.
             </p>
           </div>
           
