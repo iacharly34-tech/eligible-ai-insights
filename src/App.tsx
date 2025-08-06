@@ -8,6 +8,7 @@ import { WebVitalsMonitor } from "./components/WebVitalsMonitor";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { SkipNavigation } from "@/components/SkipNavigation";
 import { WCAGAccessibilityComponent } from "@/components/WCAGAccessibilityComponent";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Header } from "@/components/Header";
@@ -28,17 +29,18 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <LanguageProvider>
-      <TooltipProvider>
-        <CriticalResourcePreloader />
-        <PerformanceMonitor />
-        <WebVitalsMonitor />
-        <WCAGAccessibilityComponent />
-        <SkipNavigation />
-        <Toaster />
-        <Sonner />
-        <CookieConsent />
-        <BrowserRouter>
+    <ErrorBoundary>
+      <LanguageProvider>
+        <TooltipProvider>
+          <CriticalResourcePreloader />
+          <PerformanceMonitor />
+          <WebVitalsMonitor />
+          <WCAGAccessibilityComponent />
+          <SkipNavigation />
+          <Toaster />
+          <Sonner />
+          <CookieConsent />
+          <BrowserRouter>
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
@@ -59,6 +61,7 @@ const App = () => (
         </BrowserRouter>
       </TooltipProvider>
     </LanguageProvider>
+  </ErrorBoundary>
   </QueryClientProvider>
 );
 

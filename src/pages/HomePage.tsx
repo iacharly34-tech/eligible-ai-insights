@@ -40,6 +40,8 @@ import {
   HERO_MESSAGES 
 } from "@/data/constants";
 import { StatsSources } from "@/components/StatsSources";
+import { SectorsSection } from "@/components/SectorsSection";
+import { PrivacySection } from "@/components/PrivacySection";
 
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -783,6 +785,12 @@ const HomePage = () => {
           </p>
         </div>
       </section>
+
+      {/* Sectors Section */}
+      <SectorsSection />
+
+      {/* Privacy Section */}
+      <PrivacySection />
 
       {/* Sources des statistiques */}
       <StatsSources />
