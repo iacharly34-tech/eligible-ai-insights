@@ -39,10 +39,6 @@ import {
   TRUST_INDICATORS,
   HERO_MESSAGES 
 } from "@/data/constants";
-import { StatsSources } from "@/components/StatsSources";
-import { SectorsSection } from "@/components/SectorsSection";
-import { PrivacySection } from "@/components/PrivacySection";
-import { AboutUsSection } from "@/components/AboutUsSection";
 
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -789,17 +785,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* About Us Section */}
-      <AboutUsSection />
-
-      {/* Sectors Section */}
-      <SectorsSection />
-
-      {/* Privacy Section */}
-      <PrivacySection />
-
-      {/* Sources des statistiques */}
-      <StatsSources />
       </main>
       
       {/* Footer */}
