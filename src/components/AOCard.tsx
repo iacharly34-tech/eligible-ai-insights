@@ -55,80 +55,75 @@ interface AOCardProps {
 export const AOCard = ({ ao, isDetailed = false }: AOCardProps) => {
   return (
     <Card className="border border-gray-200 hover:shadow-lg transition-shadow">
-      <CardContent className="p-6">
-        {/* Header avec score */}
-        <div className="flex justify-between items-start mb-4">
+      <CardContent className="p-4">
+        {/* Header avec score - Compact */}
+        <div className="flex justify-between items-start mb-3">
           <div className="flex-1">
-            <div className="flex items-center gap-2 mb-2">
+            <div className="flex items-center gap-1 mb-1">
               <Badge 
                 variant={ao.statut === "publié" ? "default" : "secondary"}
-                className="text-xs"
+                className="text-xs px-2 py-0.5"
               >
                 {ao.statut}
               </Badge>
-              <Badge variant="outline" className="text-xs">
+              <Badge variant="outline" className="text-xs px-2 py-0.5">
                 {ao.source}
               </Badge>
             </div>
-            <h4 className="font-bold text-gray-800 mb-2 text-lg leading-tight">
+            <h4 className="font-bold text-gray-800 mb-1 text-base leading-tight">
               {ao.title}
             </h4>
           </div>
-          <div className="text-right ml-4">
-            <div className="text-4xl font-bold text-green-600">{ao.score}%</div>
-            <div className="text-sm text-gray-600">Score Charly</div>
+          <div className="text-right ml-3">
+            <div className="text-3xl font-bold text-green-600">{ao.score}%</div>
+            <div className="text-xs text-gray-600">Score Charly</div>
           </div>
         </div>
 
-        {/* Informations essentielles - Structure uniforme */}
-        <div className="grid grid-cols-2 gap-4 mb-4">
-          <div className="flex items-start gap-2">
-            <Euro className="w-4 h-4 text-gray-500 mt-0.5" />
+        {/* Informations essentielles - Compact */}
+        <div className="grid grid-cols-2 gap-3 mb-3">
+          <div className="flex items-start gap-1.5">
+            <Euro className="w-3 h-3 text-gray-500 mt-0.5" />
             <div className="flex-1">
-              <div className="text-sm font-medium text-gray-700">Budget</div>
-              <div className="text-sm text-gray-900">{ao.budget}</div>
-              {isDetailed && (
-                <div className="text-xs text-gray-600 mt-1">
-                  Estimation Charly: {ao.estimationInterne}
-                </div>
-              )}
+              <div className="text-xs font-medium text-gray-700">Budget</div>
+              <div className="text-xs text-gray-900">{ao.budget}</div>
             </div>
           </div>
           
-          <div className="flex items-start gap-2">
-            <Calendar className="w-4 h-4 text-gray-500 mt-0.5" />
+          <div className="flex items-start gap-1.5">
+            <Calendar className="w-3 h-3 text-gray-500 mt-0.5" />
             <div className="flex-1">
-              <div className="text-sm font-medium text-gray-700">Deadline</div>
-              <div className="text-sm text-gray-900">{ao.deadline}</div>
+              <div className="text-xs font-medium text-gray-700">Deadline</div>
+              <div className="text-xs text-gray-900">{ao.deadline}</div>
             </div>
           </div>
           
-          <div className="flex items-start gap-2">
-            <Building2 className="w-4 h-4 text-gray-500 mt-0.5" />
+          <div className="flex items-start gap-1.5">
+            <Building2 className="w-3 h-3 text-gray-500 mt-0.5" />
             <div className="flex-1">
-              <div className="text-sm font-medium text-gray-700">Durée</div>
-              <div className="text-sm text-gray-900">{ao.duree}</div>
+              <div className="text-xs font-medium text-gray-700">Durée</div>
+              <div className="text-xs text-gray-900">{ao.duree}</div>
             </div>
           </div>
           
-          <div className="flex items-start gap-2">
-            <Trophy className="w-4 h-4 text-gray-500 mt-0.5" />
+          <div className="flex items-start gap-1.5">
+            <Trophy className="w-3 h-3 text-gray-500 mt-0.5" />
             <div className="flex-1">
-              <div className="text-sm font-medium text-gray-700">Titulaire</div>
-              <div className="text-sm text-gray-900">{ao.titulaire}</div>
+              <div className="text-xs font-medium text-gray-700">Titulaire</div>
+              <div className="text-xs text-gray-900">{ao.titulaire}</div>
             </div>
           </div>
         </div>
 
-        {/* Critères de notation */}
-        <div className="mb-4">
-          <div className="text-sm font-medium mb-2">Critères de l'acheteur</div>
-          <div className="w-full bg-gray-200 rounded-full h-3 relative">
-            <div className="bg-red-500 h-3 rounded-l-full absolute" style={{width: `${ao.criteres.prix}%`}}></div>
-            <div className="bg-green-500 h-3 absolute" style={{width: `${ao.criteres.qualite}%`, left: `${ao.criteres.prix}%`}}></div>
-            <div className="bg-blue-500 h-3 rounded-r-full absolute" style={{width: `${ao.criteres.performance}%`, left: `${ao.criteres.prix + ao.criteres.qualite}%`}}></div>
+        {/* Critères de notation - Compact */}
+        <div className="mb-3">
+          <div className="text-xs font-medium mb-1">Critères de l'acheteur</div>
+          <div className="w-full bg-gray-200 rounded-full h-2 relative">
+            <div className="bg-red-500 h-2 rounded-l-full absolute" style={{width: `${ao.criteres.prix}%`}}></div>
+            <div className="bg-green-500 h-2 absolute" style={{width: `${ao.criteres.qualite}%`, left: `${ao.criteres.prix}%`}}></div>
+            <div className="bg-blue-500 h-2 rounded-r-full absolute" style={{width: `${ao.criteres.performance}%`, left: `${ao.criteres.prix + ao.criteres.qualite}%`}}></div>
           </div>
-          <div className="flex justify-between text-xs mt-1">
+          <div className="flex justify-between text-xs mt-0.5">
             <span>Prix: {ao.criteres.prix}%</span>
             <span>Qualité: {ao.criteres.qualite}%</span>
             <span>Performance: {ao.criteres.performance}%</span>
@@ -170,35 +165,35 @@ export const AOCard = ({ ao, isDetailed = false }: AOCardProps) => {
           </>
         )}
 
-        {/* Analyse de compatibilité */}
-        <div className="space-y-1 text-sm mb-4">
-          <div className="text-blue-600 font-medium mb-2">📋 Analyse Charly - Compatibilité</div>
-          <div className="text-green-600">{ao.compatibilite.ca}</div>
-          <div className="text-green-600">{ao.compatibilite.secteur}</div>
-          <div className="text-green-600">{ao.compatibilite.references}</div>
-          <div className="text-green-600">{ao.compatibilite.environnement}</div>
-          <div className="text-green-600">{ao.compatibilite.usages}</div>
+        {/* Analyse de compatibilité - Compact */}
+        <div className="space-y-0.5 text-xs mb-3">
+          <div className="text-blue-600 font-medium mb-1">📋 Analyse Charly - Compatibilité</div>
+          <div className="text-green-600">✓ {ao.compatibilite.ca}</div>
+          <div className="text-green-600">✓ {ao.compatibilite.secteur}</div>
+          <div className="text-green-600">✓ {ao.compatibilite.references}</div>
+          <div className="text-green-600">✓ {ao.compatibilite.environnement}</div>
+          <div className="text-green-600">✓ {ao.compatibilite.usages}</div>
         </div>
 
-        {/* Actions */}
-        <div className="flex flex-col gap-3">
+        {/* Actions - Compact */}
+        <div className="flex flex-col gap-2">
           {/* CTA Principal - Postuler avec Eligibly */}
-          <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white flex items-center gap-2">
-            <Rocket className="w-4 h-4" />
-            Postuler à cet appel d'offre avec Eligibly
+          <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white flex items-center gap-2 py-2 text-sm">
+            <Rocket className="w-3 h-3" />
+            Postuler avec Eligibly
           </Button>
           
           {/* Actions secondaires */}
           <div className="flex gap-2">
             {ao.dceDisponible && (
-              <Button variant="outline" size="sm" className="flex-1 flex items-center gap-2">
-                <Download className="w-4 h-4" />
-                Télécharger DCE
+              <Button variant="outline" size="sm" className="flex-1 flex items-center gap-1 text-xs py-1">
+                <Download className="w-3 h-3" />
+                DCE
               </Button>
             )}
-            <Button variant="outline" size="sm" className="flex-1 flex items-center gap-2">
-              <ExternalLink className="w-4 h-4" />
-              Voir l'AO officiel
+            <Button variant="outline" size="sm" className="flex-1 flex items-center gap-1 text-xs py-1">
+              <ExternalLink className="w-3 h-3" />
+              AO officiel
             </Button>
           </div>
         </div>
