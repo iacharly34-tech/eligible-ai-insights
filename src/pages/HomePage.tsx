@@ -42,6 +42,7 @@ import {
 import { StatsSources } from "@/components/StatsSources";
 import { SectorsSection } from "@/components/SectorsSection";
 import { PrivacySection } from "@/components/PrivacySection";
+import { AboutUsSection } from "@/components/AboutUsSection";
 
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -785,6 +786,9 @@ const HomePage = () => {
           </p>
         </div>
       </section>
+
+      {/* About Us Section */}
+      <AboutUsSection />
 
       {/* Sectors Section */}
       <SectorsSection />
