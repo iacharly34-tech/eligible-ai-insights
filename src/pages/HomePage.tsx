@@ -30,6 +30,8 @@ import {
 } from "lucide-react";
 
 import aiCharacterTechMale from "@/assets/charly-character-cutout.png";
+import charlyOptimized from "@/assets/charly-avatar-optimized.webp";
+import heroOptimized from "@/assets/eligible-ai-hero-optimized.webp";
 import { processCharlyImage } from "@/utils/processCharlyImage";
 
 import { 
@@ -53,13 +55,27 @@ const HomePage = () => {
     
     // SEO optimizations temporairement désactivées
     
-    // Process Charly image to remove background
+    // Use optimized WebP image first, fallback if needed
     const loadCharlyImage = async () => {
       try {
-        const processedImageUrl = await processCharlyImage();
-        setCharlyImageUrl(processedImageUrl);
+        // Test if WebP is supported
+        const webpSupported = await new Promise((resolve) => {
+          const img = new Image();
+          img.onload = () => resolve(true);
+          img.onerror = () => resolve(false);
+          img.src = 'data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==';
+        });
+        
+        if (webpSupported) {
+          setCharlyImageUrl(charlyOptimized);
+        } else {
+          // Fallback to PNG processing if WebP not supported
+          const processedImageUrl = await processCharlyImage();
+          setCharlyImageUrl(processedImageUrl);
+        }
       } catch (error) {
-        // Fallback to original image - silent in production
+        // Ultimate fallback to original image
+        setCharlyImageUrl(aiCharacterTechMale);
       }
     };
     

@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { SafeLink } from "@/components/SafeLink";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -306,9 +307,9 @@ const Demo = () => {
                   <p className="text-xs text-gray-500">
                     En soumettant ce formulaire, vous acceptez d'être contacté par notre équipe. 
                     Vos données sont protégées selon notre{" "}
-                    <button className="text-primary hover:underline">
+                    <SafeLink to="/confidentialite" className="text-primary hover:underline">
                       politique de confidentialité
-                    </button>
+                    </SafeLink>
                   </p>
                 </div>
               </CardContent>
