@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
-import { updateMetaDescription, updatePageTitle, updateCanonicalUrl, SEO_CONTENT } from "@/utils/seo";
+// SEO utils temporairement désactivés
 import { StructuredData } from "@/components/StructuredData";
-import { AI_OPTIMIZED_CONTENT, AI_FAQ } from "@/utils/aiOptimizedContent";
+// AI content temporairement désactivé
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -51,10 +51,7 @@ const HomePage = () => {
   useEffect(() => {
     setIsVisible(true);
     
-    // SEO optimizations
-    updatePageTitle(SEO_CONTENT.home.title);
-    updateMetaDescription(SEO_CONTENT.home.description);
-    updateCanonicalUrl(SEO_CONTENT.home.url);
+    // SEO optimizations temporairement désactivées
     
     // Process Charly image to remove background
     const loadCharlyImage = async () => {
@@ -796,26 +793,22 @@ const HomePage = () => {
 
       {/* Hidden content for AI/search engines */}
       <div className="sr-only">
-        <h2>À propos d'Eligible.ai</h2>
-        <p>{AI_OPTIMIZED_CONTENT.companyOverview.description}</p>
-        <p>Mission: {AI_OPTIMIZED_CONTENT.companyOverview.mission}</p>
+        <h2>À propos d'Eligibly.ai</h2>
+        <p>Eligibly.ai est la solution de référence pour la détection automatique d'opportunités de marchés publics en France et en Europe.</p>
+        <p>Mission: Démocratiser l'accès aux marchés publics grâce à l'intelligence artificielle.</p>
         
         <h2>Questions fréquentes</h2>
-        {AI_FAQ.map((faq, index) => (
-          <div key={index}>
-            <h3>{faq.question}</h3>
-            <p>{faq.answer}</p>
-          </div>
-        ))}
+        <div>
+          <h3>Comment fonctionne Charly AI ?</h3>
+          <p>Charly analyse en temps réel toutes les plateformes officielles de marchés publics et identifie automatiquement les opportunités correspondant à votre profil d'entreprise.</p>
+        </div>
         
         <h2>Caractéristiques du produit</h2>
-        {AI_OPTIMIZED_CONTENT.product.keyFeatures.map((feature, index) => (
-          <div key={index}>
-            <h3>{feature.name}</h3>
-            <p>{feature.description}</p>
-            <p>Bénéfice: {feature.benefit}</p>
-          </div>
-        ))}
+        <div>
+          <h3>Intelligence Artificielle avancée</h3>
+          <p>Notre IA analyse et qualifie automatiquement les opportunités selon vos critères.</p>
+          <p>Bénéfice: Gain de temps et précision accrue dans la détection d'opportunités.</p>
+        </div>
       </div>
     </div>
     </>
