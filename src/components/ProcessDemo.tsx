@@ -375,11 +375,11 @@ export const ProcessDemo = () => {
                       ) : (
                         <div className="h-full flex items-center justify-center">
                           <div className="text-center text-gray-500">
-                            <div className="mb-4">
+                            <div className="mb-4 flex justify-center">
                               <img 
                                 src={charlyNoBg}
-                                alt="Charly AI Assistant"
-                                className="w-16 h-16 mx-auto animate-pulse"
+                                alt="Charly, votre assistant IA"
+                                className="w-20 h-20 object-contain animate-pulse"
                               />
                             </div>
                             <div className="text-lg">En attente de l'analyse...</div>
