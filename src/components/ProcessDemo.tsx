@@ -269,43 +269,46 @@ export const ProcessDemo = () => {
           </p>
         </div>
 
-        {/* Layout principal avec 3 colonnes */}
-        <div className="grid grid-cols-12 gap-6 max-w-7xl mx-auto">
+        {/* Layout principal responsive */}
+        <div className="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-6 max-w-7xl mx-auto">
           
-          {/* Colonne gauche : Indicateurs compacts */}
-          <div className="col-span-2 space-y-4">
+          {/* Colonne gauche : Indicateurs compacts - mobile en haut */}
+          <div className="lg:col-span-2 order-1 lg:order-1">
             <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">Indicateurs</h3>
             
-            <div className="bg-blue-600 text-white rounded-lg p-4">
-              <div className="text-xs opacity-90 mb-1">AO analysés</div>
-              <div className="text-2xl font-bold">
-                {currentStep >= 1 ? '693' : '0'}
+            {/* Grid responsive pour les indicateurs sur mobile */}
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-1 gap-4 lg:space-y-0">
+              <div className="bg-blue-600 text-white rounded-lg p-3 lg:p-4">
+                <div className="text-xs opacity-90 mb-1">AO analysés</div>
+                <div className="text-xl lg:text-2xl font-bold">
+                  {currentStep >= 1 ? '693' : '0'}
+                </div>
               </div>
-            </div>
-            
-            <div className="bg-green-600 text-white rounded-lg p-4">
-              <div className="text-xs opacity-90 mb-1">Opportunités</div>
-              <div className="text-2xl font-bold">
-                {currentStep >= 3 ? '15+' : currentStep >= 1 ? '3' : '0'}
+              
+              <div className="bg-green-600 text-white rounded-lg p-3 lg:p-4">
+                <div className="text-xs opacity-90 mb-1">Opportunités</div>
+                <div className="text-xl lg:text-2xl font-bold">
+                  {currentStep >= 3 ? '15+' : currentStep >= 1 ? '3' : '0'}
+                </div>
               </div>
-            </div>
-            
-            <div className="bg-purple-600 text-white rounded-lg p-4">
-              <div className="text-xs opacity-90 mb-1">Score IA</div>
-              <div className="text-2xl font-bold">
-                {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
+              
+              <div className="bg-purple-600 text-white rounded-lg p-3 lg:p-4">
+                <div className="text-xs opacity-90 mb-1">Score IA</div>
+                <div className="text-xl lg:text-2xl font-bold">
+                  {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
+                </div>
               </div>
-            </div>
-            
-            <div className="bg-orange-600 text-white rounded-lg p-4">
-              <div className="text-xs opacity-90 mb-1">Temps</div>
-              <div className="text-2xl font-bold">
-                {currentStep >= 4 && !isRunning ? `${timeElapsed.toFixed(1)}s` : currentStep >= 1 ? `${timeElapsed.toFixed(1)}s` : '-'}
+              
+              <div className="bg-orange-600 text-white rounded-lg p-3 lg:p-4">
+                <div className="text-xs opacity-90 mb-1">Temps</div>
+                <div className="text-xl lg:text-2xl font-bold">
+                  {currentStep >= 4 && !isRunning ? `${timeElapsed.toFixed(1)}s` : currentStep >= 1 ? `${timeElapsed.toFixed(1)}s` : '-'}
+                </div>
               </div>
             </div>
 
-            {/* Étapes du processus */}
-            <div className="mt-8">
+            {/* Étapes du processus - masqué sur mobile, visible sur desktop */}
+            <div className="mt-8 hidden lg:block">
               <h4 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">Processus</h4>
               <div className="space-y-3">
                 {steps.map((step) => (
@@ -328,13 +331,13 @@ export const ProcessDemo = () => {
             </div>
           </div>
 
-          {/* Colonne centrale : Écran principal MacBook */}
-          <div className="col-span-7">
+          {/* Colonne centrale : Écran principal MacBook - responsive */}
+          <div className="lg:col-span-7 order-2 lg:order-2">
             <div 
               className="relative bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg shadow-2xl mx-auto"
               style={{ 
                 width: '100%',
-                height: '600px'
+                height: window.innerWidth < 768 ? '400px' : '600px'
               }}
             >
               {/* MacBook Screen Bezel */}
@@ -407,26 +410,50 @@ export const ProcessDemo = () => {
             </div>
           </div>
 
-          {/* Colonne droite : Console et contrôles */}
-          <div className="col-span-3 space-y-6">
+          {/* Colonne droite : Console et contrôles - mobile en bas */}
+          <div className="lg:col-span-3 order-3 lg:order-3 space-y-6">
+            
+            {/* Étapes du processus - visible seulement sur mobile */}
+            <div className="lg:hidden">
+              <h4 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">Étapes du processus</h4>
+              <div className="grid grid-cols-2 gap-2">
+                {steps.map((step) => (
+                  <div key={step.id} className="flex items-center gap-2 p-2 bg-white rounded-lg border">
+                    <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs transition-colors ${
+                      currentStep >= step.id 
+                        ? 'bg-green-500 text-white' 
+                        : currentStep === step.id - 1 && isRunning
+                        ? 'bg-purple-500 text-white animate-pulse'
+                        : 'bg-gray-300 text-gray-600'
+                    }`}>
+                      {currentStep > step.id ? <CheckCircle className="w-2 h-2" /> : step.id}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-xs font-medium text-gray-800 truncate">{step.title}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* Console JavaScript */}
             <div>
               <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">Console</h3>
-              <div className="bg-gray-900 rounded-lg p-4">
+              <div className="bg-gray-900 rounded-lg p-3 lg:p-4">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   <span className="text-gray-400 font-mono text-xs">JavaScript</span>
                 </div>
-                <div className="space-y-0.5 h-56 overflow-y-auto">
+                <div className="space-y-0.5 h-40 lg:h-56 overflow-y-auto">
                   {codeLines.length > 0 ? codeLines.map((line, index) => (
                     <div
                       key={index}
-                      className="text-green-400 text-sm font-mono leading-tight break-words"
+                      className="text-green-400 text-xs lg:text-sm font-mono leading-tight break-words"
                     >
                       {line || '\u00A0'}
                     </div>
                   )) : (
-                    <div className="text-gray-500 font-mono text-sm">Prêt à analyser...</div>
+                    <div className="text-gray-500 font-mono text-xs lg:text-sm">Prêt à analyser...</div>
                   )}
                 </div>
               </div>
@@ -436,7 +463,7 @@ export const ProcessDemo = () => {
             <div>
               <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">Contrôles</h3>
               <div className="space-y-4">
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-2">
                   <Button
                     onClick={startDemo}
                     disabled={isRunning}
@@ -451,7 +478,7 @@ export const ProcessDemo = () => {
                     onClick={resetDemo}
                     variant="outline"
                     size="sm"
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-2 sm:w-auto"
                   >
                     <RotateCcw className="w-3 h-3" />
                     Reset
