@@ -1,9 +1,9 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { useEcoOptimizedEffect } from '@/hooks/useEcoOptimizedEffect';
 
-// Lazy loading components
-export const LazyFeatures = lazy(() => import('./Features').then(module => ({ default: module.Features })));
-export const LazyHero = lazy(() => import('./Hero').then(module => ({ default: module.Hero })));
+// Lazy-loaded components for better performance
+export const LazyFeatures = lazy(() => import('@/components/Features').then(module => ({ default: module.Features })));
+export const LazyHero = lazy(() => import('@/components/Hero').then(module => ({ default: module.Hero })));
 
 // Critical resource preloader
 export const CriticalResourcePreloader = () => {
@@ -11,38 +11,49 @@ export const CriticalResourcePreloader = () => {
     // Preload critical fonts
     const fontLink = document.createElement('link');
     fontLink.rel = 'preload';
-    fontLink.href = '/fonts/inter-latin-400-normal.woff2';
+    fontLink.href = 'https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2';
     fontLink.as = 'font';
     fontLink.type = 'font/woff2';
     fontLink.crossOrigin = 'anonymous';
     document.head.appendChild(fontLink);
 
     // Preconnect to external domains
-    const preconnects = [
+    const preconnectDomains = [
       'https://fonts.googleapis.com',
-      'https://fonts.gstatic.com'
+      'https://fonts.gstatic.com',
+      'https://api.eligible.ai'
     ];
 
-    preconnects.forEach(domain => {
-      const link = document.createElement('link');
-      link.rel = 'preconnect';
-      link.href = domain;
-      link.crossOrigin = 'anonymous';
-      document.head.appendChild(link);
+    preconnectDomains.forEach(domain => {
+      if (!document.querySelector(`link[rel="preconnect"][href="${domain}"]`)) {
+        const link = document.createElement('link');
+        link.rel = 'preconnect';
+        link.href = domain;
+        if (domain.includes('fonts.gstatic.com')) {
+          link.crossOrigin = 'anonymous';
+        }
+        document.head.appendChild(link);
+      }
     });
 
     // DNS prefetch for external resources
-    const dnsPrefetch = [
-      'https://www.google-analytics.com',
-      'https://cdn.jsdelivr.net'
+    const dnsPrefetchDomains = [
+      '//eligible.ai',
+      '//cdn.eligible.ai'
     ];
 
-    dnsPrefetch.forEach(domain => {
-      const link = document.createElement('link');
-      link.rel = 'dns-prefetch';
-      link.href = domain;
-      document.head.appendChild(link);
+    dnsPrefetchDomains.forEach(domain => {
+      if (!document.querySelector(`link[rel="dns-prefetch"][href="${domain}"]`)) {
+        const link = document.createElement('link');
+        link.rel = 'dns-prefetch';
+        link.href = domain;
+        document.head.appendChild(link);
+      }
     });
+
+    return () => {
+      // Cleanup if needed
+    };
   }, [], true);
 
   return null;

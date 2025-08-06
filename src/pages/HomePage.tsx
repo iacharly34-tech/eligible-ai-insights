@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { updateMetaDescription, updatePageTitle, updateCanonicalUrl, SEO_CONTENT } from "@/utils/seo";
+import { StructuredData } from "@/components/StructuredData";
+import { AI_OPTIMIZED_CONTENT, AI_FAQ } from "@/utils/aiOptimizedContent";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -70,9 +72,11 @@ const HomePage = () => {
   // Utilisation des données centralisées au lieu des définitions locales
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
-      {/* Header - Clean minimal style like Loris.ai */}
-      <Header />
+    <>
+      <StructuredData page="home" />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
+        {/* Header - Clean minimal style like Loris.ai */}
+        <Header />
 
       <main id="main-content" tabIndex={-1} className="focus:outline-none" role="main">
         {/* Hero Section - Split Layout like Loris.ai */}
@@ -789,7 +793,32 @@ const HomePage = () => {
       
       {/* Footer */}
       <Footer />
+
+      {/* Hidden content for AI/search engines */}
+      <div className="sr-only">
+        <h2>À propos d'Eligible.ai</h2>
+        <p>{AI_OPTIMIZED_CONTENT.companyOverview.description}</p>
+        <p>Mission: {AI_OPTIMIZED_CONTENT.companyOverview.mission}</p>
+        
+        <h2>Questions fréquentes</h2>
+        {AI_FAQ.map((faq, index) => (
+          <div key={index}>
+            <h3>{faq.question}</h3>
+            <p>{faq.answer}</p>
+          </div>
+        ))}
+        
+        <h2>Caractéristiques du produit</h2>
+        {AI_OPTIMIZED_CONTENT.product.keyFeatures.map((feature, index) => (
+          <div key={index}>
+            <h3>{feature.name}</h3>
+            <p>{feature.description}</p>
+            <p>Bénéfice: {feature.benefit}</p>
+          </div>
+        ))}
+      </div>
     </div>
+    </>
   );
 };
 

@@ -10,6 +10,9 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { SkipNavigation } from "@/components/SkipNavigation";
 import { WCAGAccessibilityComponent } from "@/components/WCAGAccessibilityComponent";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { StructuredData } from "@/components/StructuredData";
+import { SEOHead } from "@/components/SEOHead";
+import { HighContrastToggle, FontSizeAdjuster, FocusEnhancer, ScreenReaderAnnouncer, KeyboardNavigationEnhancer } from "@/components/AccessibilityEnhancer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Header } from "@/components/Header";
@@ -33,11 +36,17 @@ const App = () => (
     <ErrorBoundary>
       <LanguageProvider>
         <TooltipProvider>
+          <SEOHead />
           <CriticalResourcePreloader />
           <PerformanceMonitor />
           <WebVitalsMonitor />
           <WCAGAccessibilityComponent />
           <SkipNavigation />
+          <HighContrastToggle />
+          <FontSizeAdjuster />
+          <FocusEnhancer />
+          <ScreenReaderAnnouncer />
+          <KeyboardNavigationEnhancer />
           <Toaster />
           <Sonner />
           <CookieConsent />

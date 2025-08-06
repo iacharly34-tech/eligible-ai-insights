@@ -1,31 +1,43 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://eligibly.ai/sitemap.xml
+# Optimized for AI crawlers
+User-agent: GPTBot
+Allow: /
 
-# Optimisations pour l'indexation
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Perplexitybot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Block private areas
+Disallow: /admin/
+Disallow: /api/private/
+Disallow: /_next/
+Disallow: /tmp/
+
+# Important resources for AI understanding
+Allow: /sitemap.xml
+Allow: /manifest.json
+
+# Crawl delay for politeness
 Crawl-delay: 1
 
-# Bloquer les fichiers sensibles
-Disallow: /admin/
-Disallow: /api/
-Disallow: *.json$
-Disallow: /sw.js
-Disallow: /manifest.json
-
-# Autoriser les ressources importantes
-Allow: /assets/
-Allow: /src/assets/
+# Sitemap location
+Sitemap: https://eligible.ai/sitemap.xml
