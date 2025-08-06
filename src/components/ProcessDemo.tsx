@@ -18,6 +18,7 @@ export const ProcessDemo = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [timeElapsed, setTimeElapsed] = useState(0);
   const [sourceData, setSourceData] = useState({
     boamp: 241,
     marchesPublics: 163,
@@ -72,6 +73,7 @@ export const ProcessDemo = () => {
     setCurrentStep(0);
     setIsRunning(false);
     setProgress(0);
+    setTimeElapsed(0);
     setSourceData({
       boamp: 241,
       marchesPublics: 163,
@@ -80,6 +82,7 @@ export const ProcessDemo = () => {
     });
     setCodeLines([]);
     setShowResults(false);
+    setShowExpandedResults(false);
   };
 
   const startDemo = () => {
@@ -230,8 +233,12 @@ export const ProcessDemo = () => {
       }, 1500);
     }, 7500);
 
-    // Progression continue
+    // Progression continue avec timer réel
+    const startTime = Date.now();
     const progressInterval = setInterval(() => {
+      const elapsed = (Date.now() - startTime) / 1000;
+      setTimeElapsed(elapsed);
+      
       setProgress(prev => {
         const newProgress = prev + 1;
         if (newProgress >= 100) {
@@ -262,15 +269,15 @@ export const ProcessDemo = () => {
           </p>
         </div>
 
-        {/* MacBook Simulation - Résolution 1440x900 */}
+        {/* MacBook Simulation - Stable Layout */}
         <div className="flex justify-center mb-8">
           <div 
             className="relative bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg shadow-2xl mx-auto"
             style={{ 
-              width: '1440px', 
-              height: '900px', 
-              maxWidth: '100vw',
-              transform: window.innerWidth < 1440 ? `scale(${Math.min(window.innerWidth * 0.9 / 1440, 1)})` : 'scale(1)',
+              width: '1200px', 
+              height: '750px', 
+              maxWidth: '95vw',
+              transform: window.innerWidth < 1200 ? `scale(${Math.min(window.innerWidth * 0.95 / 1200, 1)})` : 'scale(1)',
               transformOrigin: 'top center'
             }}
           >
@@ -338,7 +345,7 @@ export const ProcessDemo = () => {
                     <div className="bg-orange-600 text-white rounded-lg p-6">
                       <div className="text-sm opacity-90 mb-2">Temps d'analyse</div>
                       <div className="text-3xl font-bold">
-                        {currentStep >= 4 ? '2.1s' : currentStep >= 1 ? `${Math.floor(progress/10)}.${progress%10}s` : '-'}
+                        {currentStep >= 4 && !isRunning ? `${timeElapsed.toFixed(1)}s` : currentStep >= 1 ? `${timeElapsed.toFixed(1)}s` : '-'}
                       </div>
                     </div>
                   </div>
@@ -365,29 +372,34 @@ export const ProcessDemo = () => {
                       </div>
                     </div>
 
-                    {/* Right: Results - Avec scroll */}
-                    <div className="bg-white rounded-lg border border-gray-200 p-6 overflow-y-auto" style={{ maxHeight: '100%' }}>
-                      {showResults ? (
-                        <AOResults 
-                          isExpanded={showExpandedResults}
-                          onToggleExpand={() => setShowExpandedResults(true)}
-                        />
-                      ) : (
-                        <div className="h-full flex items-center justify-center">
-                          <div className="text-center text-gray-500">
-                            <div className="mb-4 flex justify-center">
-                              <img 
-                                src={charlyNoBg}
-                                alt="Charly, votre assistant IA"
-                                className="w-20 h-20 object-contain animate-pulse"
-                                onLoad={() => console.log('Charly image loaded')}
-                                onError={() => console.log('Charly image error')}
-                              />
+                    {/* Right: Results - Avec scroll fonctionnel */}
+                    <div 
+                      className="bg-white rounded-lg border border-gray-200 overflow-hidden flex flex-col"
+                      style={{ height: '400px' }}
+                    >
+                      <div className="p-6 flex-1 overflow-y-auto">
+                        {showResults ? (
+                          <AOResults 
+                            isExpanded={showExpandedResults}
+                            onToggleExpand={() => setShowExpandedResults(true)}
+                          />
+                        ) : (
+                          <div className="h-full flex items-center justify-center min-h-[300px]">
+                            <div className="text-center text-gray-500">
+                              <div className="mb-4 flex justify-center">
+                                <img 
+                                  src={charlyNoBg}
+                                  alt="Charly, votre assistant IA"
+                                  className="w-20 h-20 object-contain animate-pulse"
+                                  onLoad={() => console.log('Charly image loaded')}
+                                  onError={() => console.log('Charly image error')}
+                                />
+                              </div>
+                              <div className="text-lg">En attente de l'analyse...</div>
                             </div>
-                            <div className="text-lg">En attente de l'analyse...</div>
                           </div>
-                        </div>
-                      )}
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
