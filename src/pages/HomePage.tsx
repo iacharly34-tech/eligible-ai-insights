@@ -317,13 +317,15 @@ const HomePage = () => {
             <div className="space-y-6 sm:space-y-8">
               <div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-                  {t('features.title')}{" "}
+                  Rencontrez{" "}
                   <span className="bg-gradient-highlight bg-clip-text text-transparent">
                     Charly
                   </span>
+                  , votre assistant aux marchés publics
                 </h2>
                 <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
-                  {t('features.subtitle')}
+                  Charly est votre assistant IA spécialisé dans les marchés publics. Il analyse en continu 
+                  les opportunités, évalue leur pertinence et vous recommande les meilleures chances de succès.
                 </p>
               </div>
 
