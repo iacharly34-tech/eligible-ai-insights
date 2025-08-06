@@ -417,16 +417,16 @@ export const ProcessDemo = () => {
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   <span className="text-gray-400 font-mono text-xs">JavaScript</span>
                 </div>
-                <div className="space-y-1 h-32 overflow-y-auto">
+                <div className="space-y-1 h-48 overflow-y-auto">
                   {codeLines.length > 0 ? codeLines.map((line, index) => (
                     <div
                       key={index}
-                      className="text-green-400 text-xs font-mono"
+                      className="text-green-400 text-sm font-mono leading-tight"
                     >
                       {line || '\u00A0'}
                     </div>
                   )) : (
-                    <div className="text-gray-500 font-mono text-xs">Prêt à analyser...</div>
+                    <div className="text-gray-500 font-mono text-sm">Prêt à analyser...</div>
                   )}
                 </div>
               </div>

@@ -80,38 +80,42 @@ export const AOCard = ({ ao, isDetailed = false }: AOCardProps) => {
           </div>
         </div>
 
-        {/* Informations essentielles */}
-        <div className="grid grid-cols-2 gap-3 mb-4 text-sm">
-          <div className="flex items-center gap-2">
-            <Euro className="w-4 h-4 text-gray-500" />
-            <div>
-              <span className="font-medium">Budget:</span> {ao.budget}
+        {/* Informations essentielles - Structure uniforme */}
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="flex items-start gap-2">
+            <Euro className="w-4 h-4 text-gray-500 mt-0.5" />
+            <div className="flex-1">
+              <div className="text-sm font-medium text-gray-700">Budget</div>
+              <div className="text-sm text-gray-900">{ao.budget}</div>
               {isDetailed && (
-                <div className="text-xs text-gray-600">
+                <div className="text-xs text-gray-600 mt-1">
                   Estimation Charly: {ao.estimationInterne}
                 </div>
               )}
             </div>
           </div>
           
-          <div className="flex items-center gap-2">
-            <Calendar className="w-4 h-4 text-gray-500" />
-            <div>
-              <span className="font-medium">Deadline:</span> {ao.deadline}
+          <div className="flex items-start gap-2">
+            <Calendar className="w-4 h-4 text-gray-500 mt-0.5" />
+            <div className="flex-1">
+              <div className="text-sm font-medium text-gray-700">Deadline</div>
+              <div className="text-sm text-gray-900">{ao.deadline}</div>
             </div>
           </div>
           
-          <div className="flex items-center gap-2">
-            <Building2 className="w-4 h-4 text-gray-500" />
-            <div>
-              <span className="font-medium">Durée:</span> {ao.duree}
+          <div className="flex items-start gap-2">
+            <Building2 className="w-4 h-4 text-gray-500 mt-0.5" />
+            <div className="flex-1">
+              <div className="text-sm font-medium text-gray-700">Durée</div>
+              <div className="text-sm text-gray-900">{ao.duree}</div>
             </div>
           </div>
           
-          <div className="flex items-center gap-2">
-            <Trophy className="w-4 h-4 text-gray-500" />
-            <div>
-              <span className="font-medium">Titulaire:</span> {ao.titulaire}
+          <div className="flex items-start gap-2">
+            <Trophy className="w-4 h-4 text-gray-500 mt-0.5" />
+            <div className="flex-1">
+              <div className="text-sm font-medium text-gray-700">Titulaire</div>
+              <div className="text-sm text-gray-900">{ao.titulaire}</div>
             </div>
           </div>
         </div>
