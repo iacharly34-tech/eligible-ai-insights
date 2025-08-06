@@ -269,206 +269,219 @@ export const ProcessDemo = () => {
           </p>
         </div>
 
-        {/* MacBook Simulation - Stable Layout */}
-        <div className="flex justify-center mb-8">
-          <div 
-            className="relative bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg shadow-2xl mx-auto"
-            style={{ 
-              width: '1200px', 
-              height: '750px', 
-              maxWidth: '95vw',
-              transform: window.innerWidth < 1200 ? `scale(${Math.min(window.innerWidth * 0.95 / 1200, 1)})` : 'scale(1)',
-              transformOrigin: 'top center'
-            }}
-          >
-            {/* MacBook Screen Bezel */}
-            <div className="absolute inset-4 bg-black rounded-lg overflow-hidden">
-              {/* Browser Interface */}
-              <div className="h-full bg-white">
-                {/* Browser Header */}
-                <div className="flex items-center gap-2 px-4 py-3 bg-gray-100 border-b">
-                  <div className="flex gap-2">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  </div>
-                  <div className="flex-1 mx-4">
-                    <div className="bg-white rounded px-3 py-2 text-sm flex items-center gap-2 border">
-                      <Globe className="w-4 h-4 text-gray-500" />
-                      <span>https://app.eligibly.ai</span>
-                    </div>
-                  </div>
-                  <div className="text-sm text-gray-600">100%</div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                </div>
-
-                {/* Main Content - Layout exact de votre image */}
-                <div className="h-full p-8 bg-gray-50 overflow-hidden" style={{ height: 'calc(100% - 60px)' }}>
-                  {/* Top Dashboard Header */}
-                  <div className="flex items-center gap-3 mb-8">
-                    <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                      C
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-800 text-lg">Charly IA</h3>
-                      <p className="text-gray-600">Analyse en cours des appels d'offres</p>
-                    </div>
-                    <div className="ml-auto flex items-center gap-2">
-                      <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                      <span className="text-green-600 font-medium">Analyse active</span>
-                    </div>
-                  </div>
-
-                  {/* Analytics Cards - Style identique à votre image */}
-                  <div className="grid grid-cols-4 gap-6 mb-8">
-                    <div className="bg-blue-600 text-white rounded-lg p-6">
-                      <div className="text-sm opacity-90 mb-2">AO analysés</div>
-                      <div className="text-3xl font-bold">
-                        {currentStep >= 1 ? '693' : '0'}
-                      </div>
-                    </div>
-                    
-                    <div className="bg-green-600 text-white rounded-lg p-6">
-                      <div className="text-sm opacity-90 mb-2">Opportunités détectées</div>
-                      <div className="text-3xl font-bold">
-                        {currentStep >= 3 ? '15+' : currentStep >= 1 ? '3' : '0'}
-                      </div>
-                    </div>
-                    
-                    <div className="bg-purple-600 text-white rounded-lg p-6">
-                      <div className="text-sm opacity-90 mb-2">Score moyen IA</div>
-                      <div className="text-3xl font-bold">
-                        {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
-                      </div>
-                    </div>
-                    
-                    <div className="bg-orange-600 text-white rounded-lg p-6">
-                      <div className="text-sm opacity-90 mb-2">Temps d'analyse</div>
-                      <div className="text-3xl font-bold">
-                        {currentStep >= 4 && !isRunning ? `${timeElapsed.toFixed(1)}s` : currentStep >= 1 ? `${timeElapsed.toFixed(1)}s` : '-'}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Full Width Results */}
-                  <div style={{ height: 'calc(100% - 220px)' }}>
-                    <div 
-                      className="bg-white rounded-lg border border-gray-200 overflow-hidden flex flex-col h-full"
-                    >
-                      <div className="p-6 flex-1 overflow-y-auto">
-                        {showResults ? (
-                          <AOResults 
-                            isExpanded={showExpandedResults}
-                            onToggleExpand={() => setShowExpandedResults(true)}
-                          />
-                        ) : (
-                          <div className="h-full flex items-center justify-center min-h-[300px]">
-                            <div className="text-center text-gray-500">
-                              <div className="mb-4 flex justify-center">
-                                <img 
-                                  src={charlyNoBg}
-                                  alt="Charly, votre assistant IA"
-                                  className="w-20 h-20 object-contain animate-pulse"
-                                  onLoad={() => console.log('Charly image loaded')}
-                                  onError={() => console.log('Charly image error')}
-                                />
-                              </div>
-                              <div className="text-lg">En attente de l'analyse...</div>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Control Panel */}
-        <div className="flex flex-col items-center gap-6">
-          <div className="flex items-center gap-4">
-            <Button
-              onClick={startDemo}
-              disabled={isRunning}
-              className="bg-purple-600 hover:bg-purple-700 text-white flex items-center gap-2"
-            >
-              <Play className="w-4 h-4" />
-              {isRunning ? 'Démarrage...' : 'Démarrer'}
-            </Button>
+        {/* Layout principal avec 3 colonnes */}
+        <div className="grid grid-cols-12 gap-6 max-w-7xl mx-auto">
+          
+          {/* Colonne gauche : Indicateurs compacts */}
+          <div className="col-span-2 space-y-4">
+            <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">Indicateurs</h3>
             
-            <Button
-              onClick={resetDemo}
-              variant="outline"
-              className="flex items-center gap-2"
-            >
-              <RotateCcw className="w-4 h-4" />
-              Reset
-            </Button>
-          </div>
-
-          {/* Progress Bar */}
-          <div className="w-full max-w-md">
-            <div className="flex justify-between text-sm text-gray-600 mb-2">
-              <span>Progression</span>
-              <span>{progress}%</span>
-            </div>
-            <Progress value={progress} className="w-full" />
-          </div>
-
-          {/* Console JavaScript */}
-          <div className="w-full max-w-4xl">
-            <div className="bg-gray-900 rounded-lg p-6">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-gray-400 font-mono">Console JavaScript</span>
+            <div className="bg-blue-600 text-white rounded-lg p-4">
+              <div className="text-xs opacity-90 mb-1">AO analysés</div>
+              <div className="text-2xl font-bold">
+                {currentStep >= 1 ? '693' : '0'}
               </div>
-              <div className="space-y-2 h-48 overflow-y-auto">
-                {codeLines.length > 0 ? codeLines.map((line, index) => (
-                  <div
-                    key={index}
-                    className="text-green-400 text-sm font-mono"
-                  >
-                    {line || '\u00A0'}
+            </div>
+            
+            <div className="bg-green-600 text-white rounded-lg p-4">
+              <div className="text-xs opacity-90 mb-1">Opportunités</div>
+              <div className="text-2xl font-bold">
+                {currentStep >= 3 ? '15+' : currentStep >= 1 ? '3' : '0'}
+              </div>
+            </div>
+            
+            <div className="bg-purple-600 text-white rounded-lg p-4">
+              <div className="text-xs opacity-90 mb-1">Score IA</div>
+              <div className="text-2xl font-bold">
+                {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
+              </div>
+            </div>
+            
+            <div className="bg-orange-600 text-white rounded-lg p-4">
+              <div className="text-xs opacity-90 mb-1">Temps</div>
+              <div className="text-2xl font-bold">
+                {currentStep >= 4 && !isRunning ? `${timeElapsed.toFixed(1)}s` : currentStep >= 1 ? `${timeElapsed.toFixed(1)}s` : '-'}
+              </div>
+            </div>
+
+            {/* Étapes du processus */}
+            <div className="mt-8">
+              <h4 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">Processus</h4>
+              <div className="space-y-3">
+                {steps.map((step) => (
+                  <div key={step.id} className="flex items-center gap-2">
+                    <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs transition-colors ${
+                      currentStep >= step.id 
+                        ? 'bg-green-500 text-white' 
+                        : currentStep === step.id - 1 && isRunning
+                        ? 'bg-purple-500 text-white animate-pulse'
+                        : 'bg-gray-300 text-gray-600'
+                    }`}>
+                      {currentStep > step.id ? <CheckCircle className="w-3 h-3" /> : step.id}
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-xs font-medium text-gray-800">{step.title}</div>
+                    </div>
                   </div>
-                )) : (
-                  <div className="text-gray-500 font-mono">Prêt à analyser...</div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Colonne centrale : Écran principal MacBook */}
+          <div className="col-span-7">
+            <div 
+              className="relative bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg shadow-2xl mx-auto"
+              style={{ 
+                width: '100%',
+                height: '600px'
+              }}
+            >
+              {/* MacBook Screen Bezel */}
+              <div className="absolute inset-3 bg-black rounded-lg overflow-hidden">
+                {/* Browser Interface */}
+                <div className="h-full bg-white">
+                  {/* Browser Header */}
+                  <div className="flex items-center gap-2 px-3 py-2 bg-gray-100 border-b">
+                    <div className="flex gap-1">
+                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    </div>
+                    <div className="flex-1 mx-3">
+                      <div className="bg-white rounded px-2 py-1 text-xs flex items-center gap-1 border">
+                        <Globe className="w-3 h-3 text-gray-500" />
+                        <span>app.eligibly.ai</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Main Content */}
+                  <div className="h-full p-4 bg-gray-50 overflow-hidden" style={{ height: 'calc(100% - 40px)' }}>
+                    {/* Header */}
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                        C
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-800 text-sm">Charly IA</h3>
+                        <p className="text-gray-600 text-xs">Analyse des appels d'offres</p>
+                      </div>
+                      <div className="ml-auto flex items-center gap-1">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-green-600 font-medium text-xs">Actif</span>
+                      </div>
+                    </div>
+
+                    {/* Results Container - Taille optimisée pour afficher 1 résultat complet */}
+                    <div style={{ height: 'calc(100% - 80px)' }}>
+                      <div 
+                        className="bg-white rounded-lg border border-gray-200 overflow-hidden flex flex-col h-full"
+                      >
+                        <div className="p-4 flex-1 overflow-y-auto">
+                          {showResults ? (
+                            <AOResults 
+                              isExpanded={showExpandedResults}
+                              onToggleExpand={() => setShowExpandedResults(true)}
+                            />
+                          ) : (
+                            <div className="h-full flex items-center justify-center">
+                              <div className="text-center text-gray-500">
+                                <div className="mb-3 flex justify-center">
+                                  <img 
+                                    src={charlyNoBg}
+                                    alt="Charly, votre assistant IA"
+                                    className="w-16 h-16 object-contain animate-pulse"
+                                  />
+                                </div>
+                                <div className="text-sm">En attente de l'analyse...</div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Colonne droite : Console et contrôles */}
+          <div className="col-span-3 space-y-6">
+            {/* Console JavaScript */}
+            <div>
+              <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">Console</h3>
+              <div className="bg-gray-900 rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-gray-400 font-mono text-xs">JavaScript</span>
+                </div>
+                <div className="space-y-1 h-32 overflow-y-auto">
+                  {codeLines.length > 0 ? codeLines.map((line, index) => (
+                    <div
+                      key={index}
+                      className="text-green-400 text-xs font-mono"
+                    >
+                      {line || '\u00A0'}
+                    </div>
+                  )) : (
+                    <div className="text-gray-500 font-mono text-xs">Prêt à analyser...</div>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Contrôles */}
+            <div>
+              <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">Contrôles</h3>
+              <div className="space-y-4">
+                <div className="flex gap-2">
+                  <Button
+                    onClick={startDemo}
+                    disabled={isRunning}
+                    className="bg-purple-600 hover:bg-purple-700 text-white flex items-center gap-2 flex-1"
+                    size="sm"
+                  >
+                    <Play className="w-3 h-3" />
+                    {isRunning ? 'En cours...' : 'Démarrer'}
+                  </Button>
+                  
+                  <Button
+                    onClick={resetDemo}
+                    variant="outline"
+                    size="sm"
+                    className="flex items-center gap-2"
+                  >
+                    <RotateCcw className="w-3 h-3" />
+                    Reset
+                  </Button>
+                </div>
+
+                {/* Progress Bar */}
+                <div>
+                  <div className="flex justify-between text-xs text-gray-600 mb-1">
+                    <span>Progression</span>
+                    <span>{progress}%</span>
+                  </div>
+                  <Progress value={progress} className="w-full" />
+                </div>
+
+                {/* Completion Status */}
+                {currentStep === 5 && (
+                  <div className="p-3 bg-green-50 border border-green-200 rounded-lg text-center">
+                    <CheckCircle className="w-5 h-5 text-green-600 mx-auto mb-1" />
+                    <h3 className="font-bold text-green-800 text-xs mb-1">✅ Terminé !</h3>
+                    <p className="text-green-700 text-xs">
+                      AO analysés et scorés !
+                    </p>
+                  </div>
                 )}
               </div>
             </div>
           </div>
-
-          {/* Step Indicators */}
-          <div className="flex items-center justify-center gap-8 max-w-4xl">
-            {steps.map((step, index) => (
-              <div key={step.id} className="flex flex-col items-center text-center max-w-48">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 transition-colors ${
-                  currentStep >= step.id 
-                    ? 'bg-green-500 text-white' 
-                    : currentStep === step.id - 1 && isRunning
-                    ? 'bg-purple-500 text-white animate-pulse'
-                    : 'bg-gray-300 text-gray-600'
-                }`}>
-                  {currentStep > step.id ? <CheckCircle className="w-5 h-5" /> : step.id}
-                </div>
-                <h4 className="font-medium text-sm mb-1">{step.title}</h4>
-                <p className="text-xs text-gray-600">{step.description}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Completion Status */}
-          {currentStep === 5 && (
-            <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg text-center">
-              <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
-              <h3 className="font-bold text-green-800 mb-1">✅ Processus terminé !</h3>
-              <p className="text-green-700">
-                Les appels d'offres ont été analysés et scorés selon votre profil client !
-              </p>
-            </div>
-          )}
         </div>
+
       </div>
     </section>
   );
