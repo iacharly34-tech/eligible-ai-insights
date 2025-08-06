@@ -287,7 +287,7 @@ export const ProcessDemo = () => {
                   <div className="flex-1 mx-4">
                     <div className="bg-white rounded px-3 py-2 text-sm flex items-center gap-2 border">
                       <Globe className="w-4 h-4 text-gray-500" />
-                      <span>https://www.boamp.fr/avis</span>
+                      <span>https://app.eligibly.ai</span>
                     </div>
                   </div>
                   <div className="text-sm text-gray-600">100%</div>
