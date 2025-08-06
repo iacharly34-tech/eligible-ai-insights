@@ -426,7 +426,7 @@ export const MacBookSimulation = () => {
               </div>
               <div className="flex-1 bg-white rounded-md px-3 py-1.5 text-sm text-gray-600 flex items-center gap-2 border">
                 <Globe className="w-4 h-4" />
-                https://www.boamp.fr/avis
+                https://app.eligibly.ai
                 <div className="ml-auto text-green-600">🔒</div>
               </div>
             </div>
