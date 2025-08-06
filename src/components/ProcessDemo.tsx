@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { AOResults } from "./AOResults";
-import charlyNoBg from "@/assets/charly-ai-assistant.png";
+import charlyNoBg from "@/assets/ai-character-tech-male.png";
 import { 
   Play, 
   RotateCcw, 
@@ -380,6 +380,8 @@ export const ProcessDemo = () => {
                                 src={charlyNoBg}
                                 alt="Charly, votre assistant IA"
                                 className="w-20 h-20 object-contain animate-pulse"
+                                onLoad={() => console.log('Charly image loaded')}
+                                onError={() => console.log('Charly image error')}
                               />
                             </div>
                             <div className="text-lg">En attente de l'analyse...</div>
