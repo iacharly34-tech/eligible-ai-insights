@@ -4,17 +4,20 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { AOResults } from "./AOResults";
 import charlyNoBg from "@/assets/ai-character-tech-male.png";
 import { 
   Play, 
   RotateCcw, 
   Globe,
-  CheckCircle
+  CheckCircle,
+  Terminal
 } from "lucide-react";
 
 export const ProcessDemo = () => {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
   const [currentStep, setCurrentStep] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -269,48 +272,90 @@ export const ProcessDemo = () => {
           </p>
         </div>
 
-        {/* Layout principal responsive */}
-        <div className="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-6 max-w-7xl mx-auto">
+        {/* Layout principal responsive - mobile first */}
+        <div className="space-y-6 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-6 max-w-7xl mx-auto">
           
-          {/* Colonne gauche : Indicateurs compacts - mobile en haut */}
-          <div className="lg:col-span-2 order-1 lg:order-1">
-            <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">Indicateurs</h3>
-            
-            {/* Grid responsive pour les indicateurs sur mobile */}
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-1 gap-4 lg:space-y-0">
-              <div className="bg-blue-600 text-white rounded-lg p-3 lg:p-4">
-                <div className="text-xs opacity-90 mb-1">AO analysés</div>
-                <div className="text-xl lg:text-2xl font-bold">
-                  {currentStep >= 1 ? '693' : '0'}
-                </div>
-              </div>
-              
-              <div className="bg-green-600 text-white rounded-lg p-3 lg:p-4">
-                <div className="text-xs opacity-90 mb-1">Opportunités</div>
-                <div className="text-xl lg:text-2xl font-bold">
-                  {currentStep >= 3 ? '15+' : currentStep >= 1 ? '3' : '0'}
-                </div>
-              </div>
-              
-              <div className="bg-purple-600 text-white rounded-lg p-3 lg:p-4">
-                <div className="text-xs opacity-90 mb-1">Score IA</div>
-                <div className="text-xl lg:text-2xl font-bold">
-                  {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
-                </div>
-              </div>
-              
-              <div className="bg-orange-600 text-white rounded-lg p-3 lg:p-4">
-                <div className="text-xs opacity-90 mb-1">Temps</div>
-                <div className="text-xl lg:text-2xl font-bold">
-                  {currentStep >= 4 && !isRunning ? `${timeElapsed.toFixed(1)}s` : currentStep >= 1 ? `${timeElapsed.toFixed(1)}s` : '-'}
+          {/* Mobile Priority 1: Boutons de contrôle - TOUJOURS EN PREMIER SUR MOBILE */}
+          <div className="lg:col-span-3 order-1 lg:order-3">
+            <div className="space-y-4">
+              {/* Contrôles - Priorité absolue sur mobile */}
+              <div className="bg-white rounded-lg border shadow-sm p-4">
+                <h3 className="font-bold text-gray-800 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
+                  <Play className="w-4 h-4" />
+                  Contrôles
+                </h3>
+                
+                <div className="space-y-3">
+                  <div className="flex gap-3">
+                    <Button 
+                      onClick={startDemo}
+                      disabled={isRunning}
+                      className="flex-1 h-12 text-base font-medium touch-manipulation"
+                      size="lg"
+                    >
+                      <Play className="w-5 h-5 mr-2" />
+                      {isRunning ? "En cours..." : "Démarrer"}
+                    </Button>
+                    
+                    <Button 
+                      onClick={resetDemo}
+                      variant="outline"
+                      className="flex-1 h-12 text-base font-medium touch-manipulation"
+                      size="lg"
+                    >
+                      <RotateCcw className="w-5 h-5 mr-2" />
+                      Reset
+                    </Button>
+                  </div>
+                  
+                  {/* Barre de progression visible et large */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600">Progression</span>
+                      <span className="font-medium">{Math.round(progress)}%</span>
+                    </div>
+                    <Progress value={progress} className="h-3" />
+                    <div className="text-xs text-gray-500 text-center">
+                      {isRunning ? `Étape ${currentStep}/4` : currentStep === 5 ? "Terminé ✓" : "Prêt à démarrer"}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Étapes du processus - masqué sur mobile, visible sur desktop */}
-            <div className="mt-8 hidden lg:block">
-              <h4 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">Processus</h4>
-              <div className="space-y-3">
+          {/* Mobile Priority 2: Étapes & Console - Affiché en second sur mobile */}
+          <div className="lg:col-span-2 order-2 lg:order-1">
+            
+            {/* Étapes du processus - Optimisé mobile */}
+            <div className="bg-white rounded-lg border shadow-sm p-4 mb-6">
+              <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">
+                Étapes du processus
+              </h3>
+              
+              {/* Mobile: Layout vertical compact */}
+              <div className="lg:hidden space-y-3">
+                {steps.map((step) => (
+                  <div key={step.id} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border">
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all ${
+                      currentStep >= step.id 
+                        ? 'bg-green-500 text-white shadow-lg' 
+                        : currentStep === step.id - 1 && isRunning
+                        ? 'bg-purple-500 text-white animate-pulse shadow-lg'
+                        : 'bg-gray-300 text-gray-600'
+                    }`}>
+                      {currentStep > step.id ? <CheckCircle className="w-4 h-4" /> : step.id}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-sm font-medium text-gray-800 leading-tight">{step.title}</div>
+                      <div className="text-xs text-gray-600 mt-1 leading-tight">{step.description}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Desktop: Layout compact */}
+              <div className="hidden lg:block space-y-3">
                 {steps.map((step) => (
                   <div key={step.id} className="flex items-center gap-2">
                     <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs transition-colors ${
@@ -329,181 +374,169 @@ export const ProcessDemo = () => {
                 ))}
               </div>
             </div>
-          </div>
 
-          {/* Colonne centrale : Écran principal MacBook - responsive */}
-          <div className="lg:col-span-7 order-2 lg:order-2">
-            <div 
-              className="relative bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg shadow-2xl mx-auto"
-              style={{ 
-                width: '100%',
-                height: window.innerWidth < 768 ? '400px' : '600px'
-              }}
-            >
-              {/* MacBook Screen Bezel */}
-              <div className="absolute inset-3 bg-black rounded-lg overflow-hidden">
-                {/* Browser Interface */}
-                <div className="h-full bg-white">
-                  {/* Browser Header */}
-                  <div className="flex items-center gap-2 px-3 py-2 bg-gray-100 border-b">
-                    <div className="flex gap-1">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    </div>
-                    <div className="flex-1 mx-3">
-                      <div className="bg-white rounded px-2 py-1 text-xs flex items-center gap-1 border">
-                        <Globe className="w-3 h-3 text-gray-500" />
-                        <span>app.eligibly.ai</span>
-                      </div>
-                    </div>
+            {/* Mobile Priority 3: Indicateurs de collecte - Affiché en troisième */}
+            <div className="bg-white rounded-lg border shadow-sm p-4">
+              <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">
+                Indicateurs temps réel
+              </h3>
+              
+              {/* Mobile: Grid 2x2 avec icônes */}
+              <div className="grid grid-cols-2 gap-3 lg:grid-cols-1 lg:gap-4">
+                <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg p-3 text-center">
+                  <div className="text-lg font-bold">
+                    {currentStep >= 1 ? '693' : '0'}
                   </div>
-
-                  {/* Main Content */}
-                  <div className="h-full p-4 bg-gray-50 overflow-hidden" style={{ height: 'calc(100% - 40px)' }}>
-                    {/* Header */}
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                        C
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-gray-800 text-sm">Charly IA</h3>
-                        <p className="text-gray-600 text-xs">Analyse des appels d'offres</p>
-                      </div>
-                      <div className="ml-auto flex items-center gap-1">
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-green-600 font-medium text-xs">Actif</span>
-                      </div>
-                    </div>
-
-                    {/* Results Container - Taille optimisée pour afficher 1 résultat complet */}
-                    <div style={{ height: 'calc(100% - 60px)' }}>
-                      <div 
-                        className="bg-white rounded-lg border border-gray-200 overflow-hidden flex flex-col h-full"
-                      >
-                        <div className="p-2 flex-1 overflow-y-auto">
-                          {showResults ? (
-                            <AOResults 
-                              isExpanded={showExpandedResults}
-                              onToggleExpand={() => setShowExpandedResults(true)}
-                            />
-                          ) : (
-                            <div className="h-full flex items-center justify-center">
-                              <div className="text-center text-gray-500">
-                                <div className="mb-3 flex justify-center">
-                                  <img 
-                                    src={charlyNoBg}
-                                    alt="Charly, votre assistant IA"
-                                    className="w-16 h-16 object-contain animate-pulse"
-                                  />
-                                </div>
-                                <div className="text-sm">En attente de l'analyse...</div>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
+                  <div className="text-xs opacity-90">AO analysés</div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg p-3 text-center">
+                  <div className="text-lg font-bold">
+                    {currentStep >= 3 ? '15+' : currentStep >= 1 ? '3' : '0'}
                   </div>
+                  <div className="text-xs opacity-90">Opportunités</div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg p-3 text-center">
+                  <div className="text-lg font-bold">
+                    {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
+                  </div>
+                  <div className="text-xs opacity-90">Score IA</div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg p-3 text-center">
+                  <div className="text-lg font-bold">
+                    {currentStep >= 4 && !isRunning ? `${timeElapsed.toFixed(1)}s` : currentStep >= 1 ? `${timeElapsed.toFixed(1)}s` : '-'}
+                  </div>
+                  <div className="text-xs opacity-90">Temps</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Colonne droite : Console et contrôles - mobile en bas */}
-          <div className="lg:col-span-3 order-3 lg:order-3 space-y-6">
+          {/* Mobile Priority 4: Écran ordinateur - Affiché en dernier sur mobile */}
+          <div className="lg:col-span-7 order-3 lg:order-2">
             
-            {/* Étapes du processus - visible seulement sur mobile */}
-            <div className="lg:hidden">
-              <h4 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">Étapes du processus</h4>
-              <div className="grid grid-cols-2 gap-2">
-                {steps.map((step) => (
-                  <div key={step.id} className="flex items-center gap-2 p-2 bg-white rounded-lg border">
-                    <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs transition-colors ${
-                      currentStep >= step.id 
-                        ? 'bg-green-500 text-white' 
-                        : currentStep === step.id - 1 && isRunning
-                        ? 'bg-purple-500 text-white animate-pulse'
-                        : 'bg-gray-300 text-gray-600'
-                    }`}>
-                      {currentStep > step.id ? <CheckCircle className="w-2 h-2" /> : step.id}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-xs font-medium text-gray-800 truncate">{step.title}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Console JavaScript */}
-            <div>
-              <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">Console</h3>
-              <div className="bg-gray-900 rounded-lg p-3 lg:p-4">
+            {/* Console JavaScript - Optimisée pour mobile */}
+            <div className="bg-white rounded-lg border shadow-sm p-4 mb-6">
+              <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
+                <Terminal className="w-4 h-4" />
+                Console JavaScript
+              </h3>
+              <div className="bg-gray-900 rounded-lg p-3">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-gray-400 font-mono text-xs">JavaScript</span>
+                  <div className="flex gap-1">
+                    <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  </div>
+                  <span className="text-green-400 text-xs font-mono">node charly-analysis.js</span>
                 </div>
-                <div className="space-y-0.5 h-40 lg:h-56 overflow-y-auto">
-                  {codeLines.length > 0 ? codeLines.map((line, index) => (
-                    <div
-                      key={index}
-                      className="text-green-400 text-xs lg:text-sm font-mono leading-tight break-words"
-                    >
-                      {line || '\u00A0'}
+                
+                {/* Console optimisée pour mobile */}
+                <div className="space-y-1 text-xs font-mono h-32 lg:h-48 overflow-y-auto bg-black/20 rounded p-2">
+                  {codeLines.map((line, index) => (
+                    <div key={index} className="text-green-400 break-all">
+                      <span className="text-gray-500 mr-1 text-xs">{index + 1}.</span>
+                      <span className="text-xs">{line}</span>
                     </div>
-                  )) : (
-                    <div className="text-gray-500 font-mono text-xs lg:text-sm">Prêt à analyser...</div>
+                  ))}
+                  {codeLines.length > 0 && isRunning && (
+                    <div className="text-green-400 animate-pulse">
+                      <span className="text-gray-500 mr-1 text-xs">{codeLines.length + 1}.</span>
+                      <span className="text-xs">█</span>
+                    </div>
+                  )}
+                  {codeLines.length === 0 && (
+                    <div className="text-gray-500 text-xs italic">
+                      En attente du démarrage de l'analyse...
+                    </div>
                   )}
                 </div>
               </div>
             </div>
 
-            {/* Contrôles */}
-            <div>
-              <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">Contrôles</h3>
-              <div className="space-y-4">
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <Button
-                    onClick={startDemo}
-                    disabled={isRunning}
-                    className="bg-purple-600 hover:bg-purple-700 text-white flex items-center gap-2 flex-1"
-                    size="sm"
-                  >
-                    <Play className="w-3 h-3" />
-                    {isRunning ? 'En cours...' : 'Démarrer'}
-                  </Button>
-                  
-                  <Button
-                    onClick={resetDemo}
-                    variant="outline"
-                    size="sm"
-                    className="flex items-center gap-2 sm:w-auto"
-                  >
-                    <RotateCcw className="w-3 h-3" />
-                    Reset
-                  </Button>
-                </div>
+            {/* Simulation MacBook - Optimisée pour mobile */}
+            <div className="bg-white rounded-lg border shadow-sm p-4">
+              <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
+                <Globe className="w-4 h-4" />
+                Interface Charly IA
+              </h3>
+              
+              <div 
+                className="relative bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg shadow-xl mx-auto"
+                style={{ 
+                  width: '100%',
+                  height: isMobile ? '350px' : '500px'
+                }}
+              >
+                {/* MacBook Screen Bezel */}
+                <div className="absolute inset-3 bg-black rounded-lg overflow-hidden">
+                  {/* Browser Interface */}
+                  <div className="h-full bg-white">
+                    {/* Browser Header */}
+                    <div className="flex items-center gap-2 px-3 py-2 bg-gray-100 border-b">
+                      <div className="flex gap-1">
+                        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                        <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      </div>
+                      <div className="flex-1 mx-3">
+                        <div className="bg-white rounded px-2 py-1 text-xs flex items-center gap-1 border">
+                          <Globe className="w-3 h-3 text-gray-500" />
+                          <span>app.eligibly.ai</span>
+                        </div>
+                      </div>
+                    </div>
 
-                {/* Progress Bar */}
-                <div>
-                  <div className="flex justify-between text-xs text-gray-600 mb-1">
-                    <span>Progression</span>
-                    <span>{progress}%</span>
-                  </div>
-                  <Progress value={progress} className="w-full" />
-                </div>
+                    {/* Main Content */}
+                    <div className="h-full p-4 bg-gray-50 overflow-hidden" style={{ height: 'calc(100% - 40px)' }}>
+                      {/* Header */}
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                          C
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-gray-800 text-sm">Charly IA</h3>
+                          <p className="text-gray-600 text-xs">Analyse des appels d'offres</p>
+                        </div>
+                        <div className="ml-auto flex items-center gap-1">
+                          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                          <span className="text-green-600 font-medium text-xs">Actif</span>
+                        </div>
+                      </div>
 
-                {/* Completion Status */}
-                {currentStep === 5 && (
-                  <div className="p-3 bg-green-50 border border-green-200 rounded-lg text-center">
-                    <CheckCircle className="w-5 h-5 text-green-600 mx-auto mb-1" />
-                    <h3 className="font-bold text-green-800 text-xs mb-1">✅ Terminé !</h3>
-                    <p className="text-green-700 text-xs">
-                      AO analysés et scorés !
-                    </p>
+                      {/* Results Container - Optimisé mobile */}
+                      <div style={{ height: 'calc(100% - 60px)' }}>
+                        <div 
+                          className="bg-white rounded-lg border border-gray-200 overflow-hidden flex flex-col h-full"
+                        >
+                          <div className="p-2 flex-1 overflow-y-auto">
+                            {showResults ? (
+                              <AOResults 
+                                isExpanded={showExpandedResults}
+                                onToggleExpand={() => setShowExpandedResults(true)}
+                              />
+                            ) : (
+                              <div className="h-full flex items-center justify-center">
+                                <div className="text-center text-gray-500">
+                                  <div className="mb-3 flex justify-center">
+                                    <img 
+                                      src={charlyNoBg}
+                                      alt="Charly, votre assistant IA"
+                                      className="w-16 h-16 object-contain animate-pulse"
+                                    />
+                                  </div>
+                                  <div className="text-sm">En attente de l'analyse...</div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             </div>
           </div>
