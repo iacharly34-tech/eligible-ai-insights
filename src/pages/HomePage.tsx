@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
 import { updateMetaDescription, updatePageTitle, updateCanonicalUrl, SEO_CONTENT } from "@/utils/seo";
 import { Button } from "@/components/ui/button";
