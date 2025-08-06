@@ -590,7 +590,7 @@ export const MacBookSimulation = () => {
                 </div>
 
                 {/* MacBook Screen */}
-                <div className="h-80 bg-white rounded-b-lg overflow-hidden relative">
+                <div className="h-96 bg-white rounded-b-lg overflow-auto relative">
                   {renderMacBookContent()}
                 </div>
               </div>

@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { AOResults } from "./AOResults";
+import charlyNoBg from "@/assets/charly-character-no-bg.png";
 import { 
   Play, 
   RotateCcw, 
@@ -374,7 +375,13 @@ export const ProcessDemo = () => {
                       ) : (
                         <div className="h-full flex items-center justify-center">
                           <div className="text-center text-gray-500">
-                            <div className="text-5xl mb-4">🤖</div>
+                            <div className="mb-4">
+                              <img 
+                                src={charlyNoBg}
+                                alt="Charly AI Assistant"
+                                className="w-16 h-16 mx-auto animate-pulse"
+                              />
+                            </div>
                             <div className="text-lg">En attente de l'analyse...</div>
                           </div>
                         </div>
