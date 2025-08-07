@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Badge } from "@/components/ui/badge";
 import { CTAFooter } from "@/components/CTAFooter";
-import { ProcessDemo } from "@/components/ProcessDemo";
+import { DemoPersonas } from "@/components/DemoPersonas";
 import { ProductHero } from "@/components/product/ProductHero";
 import { ProductFeatures } from "@/components/product/ProductFeatures";
 import { ProductSolutions } from "@/components/product/ProductSolutions";
@@ -26,8 +26,8 @@ const Produit = () => {
       {/* Hero Section */}
       <ProductHero />
 
-      {/* Interactive Demo Section */}
-      <ProcessDemo />
+      {/* Demo Personas Section */}
+      <DemoPersonas />
 
       {/* Features Section */}
       <ProductFeatures />
