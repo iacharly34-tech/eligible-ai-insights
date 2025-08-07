@@ -169,7 +169,7 @@ export const DemoPersonas = () => {
         {/* Layout principal : Démo + Contenu contextualisé */}
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           
-          {/* Zone de démo - toujours visible */}
+          {/* Zone de démo interactive - toujours visible */}
           <div className="order-2 lg:order-1">
             <Card className="border-border shadow-card">
               <CardContent className="p-6">
@@ -183,8 +183,38 @@ export const DemoPersonas = () => {
                   </div>
                 </div>
 
-                {/* Intégration du vrai composant ProcessDemo */}
-                <ProcessDemo />
+                {/* Démo intégrée avec persona context */}
+                <div className="bg-gradient-to-br from-muted/30 to-muted/50 rounded-xl p-6">
+                  <div className="text-center mb-6">
+                    <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Play className="w-8 h-8 text-primary" />
+                    </div>
+                    <p className="text-muted-foreground mb-2">
+                      Découvrez le processus adapté à votre profil :
+                    </p>
+                    <p className="font-semibold text-primary text-lg">
+                      {selectedPersonaData.title}
+                    </p>
+                  </div>
+                  
+                  {/* Bouton CTA principal */}
+                  <div className="text-center">
+                    <Button 
+                      size="lg"
+                      onClick={() => {
+                        // Scroll vers la section demo si elle existe
+                        const demoSection = document.getElementById('process-demo');
+                        if (demoSection) {
+                          demoSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                      className="bg-primary text-white hover:bg-primary/90 font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105"
+                    >
+                      <Play className="w-5 h-5 mr-2" />
+                      Lancer la démonstration
+                    </Button>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
