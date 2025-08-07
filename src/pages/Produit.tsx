@@ -5,7 +5,7 @@ import { CTAFooter } from "@/components/CTAFooter";
 import { DemoPersonas } from "@/components/DemoPersonas";
 import { ProductHero } from "@/components/product/ProductHero";
 import { ProductFeatures } from "@/components/product/ProductFeatures";
-import { ProductSolutions } from "@/components/product/ProductSolutions";
+
 import { ProductBenefits } from "@/components/product/ProductBenefits";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { updateMetaDescription, updatePageTitle, updateCanonicalUrl, SEO_CONTENT } from "@/utils/seo";
@@ -32,8 +32,6 @@ const Produit = () => {
       {/* Features Section */}
       <ProductFeatures />
 
-      {/* Solutions Section */}
-      <ProductSolutions />
 
       {/* Benefits Section */}
       <ProductBenefits />

@@ -31,9 +31,10 @@ const personas: Persona[] = [
     icon: UserCheck,
     description: "Vous gérez les processus d'achat et de sélection des prestataires pour votre collectivité ou administration. Votre enjeu : identifier rapidement les entreprises les plus qualifiées et optimiser vos procédures.",
     benefits: [
-      "Présélection automatique des candidats les plus pertinents",
-      "Réduction de 70% du temps d'analyse des dossiers",
-      "Amélioration de la qualité des réponses reçues"
+      "Benchmarks automatisés des fournisseurs",
+      "Analyse comparative des candidatures",
+      "Optimisation des achats publics",
+      "Conformité réglementaire garantie"
     ],
     actions: [
       "Sélectionne et qualifie les prestataires potentiels",
@@ -49,7 +50,8 @@ const personas: Persona[] = [
     benefits: [
       "Vue d'ensemble consolidée de tous les marchés en cours",
       "Comparaison objective et automatisée des réponses",
-      "Traçabilité complète des décisions et critères"
+      "Traçabilité complète des décisions et critères",
+      "Optimisation des processus d'achat"
     ],
     actions: [
       "Compare et consolide les différentes réponses",
@@ -63,9 +65,10 @@ const personas: Persona[] = [
     icon: TrendingUp,
     description: "Vous développez le portefeuille clients de votre PME/ESN dans le secteur public. Votre objectif : détecter les opportunités les plus prometteuses et maximiser vos taux de réussite.",
     benefits: [
-      "Détection précoce des opportunités compatibles",
-      "Scoring prédictif de vos chances de succès",
-      "Optimisation du ROI sur vos réponses d'appels d'offres"
+      "Détection automatique des AO compatibles",
+      "Score de pertinence en temps réel",
+      "Alertes personnalisées par secteur",
+      "Historique et suivi des candidatures"
     ],
     actions: [
       "Filtre et surveille les opportunités par secteur",
@@ -79,9 +82,10 @@ const personas: Persona[] = [
     icon: BookOpen,
     description: "Vous accompagnez vos clients dans leur stratégie de développement sur les marchés publics. Votre valeur ajoutée : l'expertise et la veille stratégique pour maximiser leurs succès.",
     benefits: [
-      "Veille concurrentielle automatisée et exhaustive",
-      "Analyses prédictives pour conseiller vos clients",
-      "Accès privilégié aux DCE et documents techniques"
+      "Veille sectorielle exhaustive",
+      "Analyse concurrentielle avancée",
+      "Rapports automatisés pour clients",
+      "Intelligence de marché en temps réel"
     ],
     actions: [
       "Effectue une veille marché complète et ciblée",
