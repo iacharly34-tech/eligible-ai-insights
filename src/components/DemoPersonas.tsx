@@ -166,43 +166,47 @@ export const DemoPersonas = () => {
           </div>
         </div>
 
-        {/* Layout principal : Démo + Contenu contextualisé */}
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
+        {/* Layout principal optimisé grand écran : Démo + Contenu contextualisé */}
+        <div className="grid lg:grid-cols-5 gap-8 xl:gap-12 items-start">
           
-          {/* Zone de démo interactive - toujours visible */}
-          <div className="order-2 lg:order-1">
-            <Card className="border-border shadow-card">
-              <CardContent className="p-6">
+          {/* Zone de démonstration - Colonne principale (3/5) */}
+          <div className="order-2 lg:order-1 lg:col-span-3">
+            <Card className="border-border shadow-card h-fit">
+              <CardContent className="p-6 xl:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center">
                     <Play className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-foreground">Démonstration interactive</h3>
-                    <p className="text-muted-foreground">Processus automatisé en temps réel</p>
+                    <p className="text-muted-foreground">Scénario adapté à votre profil</p>
                   </div>
                 </div>
 
-                {/* Démo intégrée avec persona context */}
-                <div className="bg-gradient-to-br from-muted/30 to-muted/50 rounded-xl p-6">
+                {/* Démo contextuelle intégrée */}
+                <div className="bg-gradient-to-br from-muted/30 to-muted/50 rounded-xl p-4 xl:p-6 min-h-[400px] xl:min-h-[500px]">
                   <div className="text-center mb-6">
                     <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Play className="w-8 h-8 text-primary" />
+                      <IconComponent className="w-8 h-8 text-primary" />
                     </div>
                     <p className="text-muted-foreground mb-2">
-                      Découvrez le processus adapté à votre profil :
+                      Processus optimisé pour :
                     </p>
-                    <p className="font-semibold text-primary text-lg">
+                    <p className="font-semibold text-primary text-lg mb-4">
                       {selectedPersonaData.title}
                     </p>
                   </div>
                   
-                  {/* Bouton CTA principal */}
+                  {/* Intégration ProcessDemo avec contexte */}
+                  <div className="mb-6">
+                    <ProcessDemo />
+                  </div>
+                  
+                  {/* CTA contextualisé */}
                   <div className="text-center">
                     <Button 
                       size="lg"
                       onClick={() => {
-                        // Scroll vers la section demo si elle existe
                         const demoSection = document.getElementById('process-demo');
                         if (demoSection) {
                           demoSection.scrollIntoView({ behavior: 'smooth' });
@@ -211,7 +215,7 @@ export const DemoPersonas = () => {
                       className="bg-primary text-white hover:bg-primary/90 font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105"
                     >
                       <Play className="w-5 h-5 mr-2" />
-                      Lancer la démonstration
+                      Voir la démo complète
                     </Button>
                   </div>
                 </div>
@@ -219,46 +223,49 @@ export const DemoPersonas = () => {
             </Card>
           </div>
 
-          {/* Contenu contextualisé par persona */}
-          <div className="order-1 lg:order-2">
-            <Card className="border-border shadow-card">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center">
-                    <IconComponent className="w-6 h-6 text-white" />
+          {/* Contenu métier contextualisé - Colonne secondaire (2/5) */}
+          <div className="order-1 lg:order-2 lg:col-span-2">
+            <div className="space-y-6">
+              {/* En-tête persona */}
+              <Card className="border-border shadow-card">
+                <CardContent className="p-4 xl:p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+                      <IconComponent className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-foreground text-lg leading-tight">{selectedPersonaData.title}</h3>
+                      <Badge variant="outline" className="mt-1 text-xs">Profil sélectionné</Badge>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground">{selectedPersonaData.title}</h3>
-                    <Badge variant="outline" className="mt-1">Profil sélectionné</Badge>
-                  </div>
-                </div>
-
-                {/* Description contextualisée */}
-                <div className="mb-6">
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     {selectedPersonaData.description}
                   </p>
-                </div>
+                </CardContent>
+              </Card>
 
-                {/* Bénéfices spécifiques */}
-                <div className="mb-6">
-                  <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+              {/* Bloc Bénéfices - Séparé visuellement */}
+              <Card className="border-border shadow-card bg-success/5 border-success/20">
+                <CardContent className="p-4 xl:p-6">
+                  <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-success" />
                     Bénéfices clés pour votre métier
                   </h4>
                   <ul className="space-y-2">
                     {selectedPersonaData.benefits.map((benefit, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                        <span className="text-muted-foreground">{benefit}</span>
+                        <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0" />
+                        <span className="text-muted-foreground text-sm">{benefit}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
+                </CardContent>
+              </Card>
 
-                {/* Actions dans l'outil */}
-                <div className="mb-6">
-                  <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+              {/* Bloc Actions - Séparé visuellement */}
+              <Card className="border-border shadow-card bg-primary/5 border-primary/20">
+                <CardContent className="p-4 xl:p-6">
+                  <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
                     <Target className="w-5 h-5 text-primary" />
                     Actions typiques dans Eligibly
                   </h4>
@@ -266,13 +273,13 @@ export const DemoPersonas = () => {
                     {selectedPersonaData.actions.map((action, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-muted-foreground">{action}</span>
+                        <span className="text-muted-foreground text-sm">{action}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
 
