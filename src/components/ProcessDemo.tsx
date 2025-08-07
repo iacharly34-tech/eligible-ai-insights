@@ -292,11 +292,40 @@ export const ProcessDemo = () => {
             </p>
           </div>
 
-          {/* Optimized Full-Width Layout - Above the fold design */}
-          <div className="space-y-4 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-6 max-w-full mx-auto min-h-[500px]">
+          {/* Horizontal Layout - Full Width Utilization */}
+          <div className="grid lg:grid-cols-5 gap-6 w-full min-h-[500px]">
             
-            {/* Compact Controls - Optimized for space */}
-            <div className="lg:col-span-3 order-1 lg:order-3">
+            {/* Steps Process - Left Side */}
+            <div className="lg:col-span-1 order-1">
+              <div className="bg-white rounded-lg border shadow-sm p-4 h-fit">
+                <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">
+                  Processus IA
+                </h3>
+                
+                <div className="space-y-2">
+                  {steps.map((step) => (
+                    <div key={step.id} className="flex items-center gap-2">
+                      <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs transition-colors ${
+                        currentStep >= step.id 
+                          ? 'bg-green-500 text-white' 
+                          : currentStep === step.id - 1 && isRunning
+                          ? 'bg-purple-500 text-white animate-pulse'
+                          : 'bg-gray-300 text-gray-600'
+                      }`}>
+                        {currentStep > step.id ? <CheckCircle className="w-3 h-3" /> : step.id}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs font-medium text-gray-800 line-clamp-1">{step.title}</div>
+                        <div className="text-xs text-gray-500 line-clamp-1">{step.description}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Controls - Right Side */}
+            <div className="lg:col-span-1 order-3">
               <div className="bg-white rounded-lg border shadow-sm p-4 h-fit">
                 <h3 className="font-bold text-gray-800 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
                   <Play className="w-4 h-4" />
@@ -310,7 +339,7 @@ export const ProcessDemo = () => {
                     className="w-full h-12 text-sm font-semibold bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     <Play className="w-4 h-4 mr-2" />
-                    {isRunning ? "Analyse..." : "Démarrer l'IA"}
+                    {isRunning ? "Analyse..." : "Lancer IA"}
                   </Button>
                   
                   <Button 
@@ -339,56 +368,27 @@ export const ProcessDemo = () => {
                   <h4 className="font-bold text-gray-700 text-xs uppercase tracking-wide mb-3">
                     Temps réel
                   </h4>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 gap-2">
                     <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-md p-2 text-center">
                       <div className="text-sm font-bold">
                         {currentStep >= 1 ? '693' : '0'}
                       </div>
-                      <div className="text-xs opacity-90">AO</div>
+                      <div className="text-xs opacity-90">AO trouvés</div>
                     </div>
                     
                     <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-md p-2 text-center">
                       <div className="text-sm font-bold">
                         {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
                       </div>
-                      <div className="text-xs opacity-90">Score</div>
+                      <div className="text-xs opacity-90">Score moy.</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Compact Steps - Streamlined */}
-            <div className="lg:col-span-3 order-2 lg:order-1">
-              <div className="bg-white rounded-lg border shadow-sm p-4 h-fit">
-                <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">
-                  Processus IA
-                </h3>
-                
-                <div className="space-y-2">
-                  {steps.map((step) => (
-                    <div key={step.id} className="flex items-center gap-2">
-                      <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs transition-colors ${
-                        currentStep >= step.id 
-                          ? 'bg-green-500 text-white' 
-                          : currentStep === step.id - 1 && isRunning
-                          ? 'bg-purple-500 text-white animate-pulse'
-                          : 'bg-gray-300 text-gray-600'
-                      }`}>
-                        {currentStep > step.id ? <CheckCircle className="w-3 h-3" /> : step.id}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="text-xs font-medium text-gray-800 line-clamp-1">{step.title}</div>
-                        <div className="text-xs text-gray-500 line-clamp-1">{step.description}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Extended Console and Results - Maximum width utilization */}
-            <div className="lg:col-span-6 order-3 lg:order-2">
+            {/* Extended Console and Results - Center Area */}
+            <div className="lg:col-span-3 order-2">
               <div className="space-y-4">
                 {/* Compact Console */}
                 <div className="bg-white rounded-lg border shadow-sm p-4">
