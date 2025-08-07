@@ -183,18 +183,8 @@ export const DemoPersonas = () => {
                   </div>
                 </div>
 
-                {/* Intégration de la démo existante sans les contrôles mobiles */}
-                <div className="bg-gradient-to-br from-muted/30 to-muted/50 rounded-xl p-6">
-                  <div className="aspect-video bg-card rounded-lg border border-border flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Play className="w-8 h-8 text-primary" />
-                      </div>
-                      <p className="text-muted-foreground mb-4">Cliquez pour voir la démo adaptée à votre profil :</p>
-                      <p className="font-semibold text-primary">{selectedPersonaData.title}</p>
-                    </div>
-                  </div>
-                </div>
+                {/* Intégration du vrai composant ProcessDemo */}
+                <ProcessDemo />
               </CardContent>
             </Card>
           </div>
