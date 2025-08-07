@@ -292,67 +292,83 @@ export const ProcessDemo = () => {
             </p>
           </div>
 
-          {/* Desktop grid layout - Redesigned pour plus d'espace */}
-          <div className="space-y-6 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-8 max-w-full mx-auto">
+          {/* Optimized Full-Width Layout - Above the fold design */}
+          <div className="space-y-4 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-6 max-w-full mx-auto min-h-[500px]">
             
-            {/* Desktop controls - Plus large */}
+            {/* Compact Controls - Optimized for space */}
             <div className="lg:col-span-3 order-1 lg:order-3">
-              <div className="space-y-4">
-                <div className="bg-white rounded-lg border shadow-sm p-6">
-                  <h3 className="font-bold text-gray-800 text-base uppercase tracking-wide mb-6 flex items-center gap-2">
-                    <Play className="w-5 h-5" />
-                    Contrôles
-                  </h3>
+              <div className="bg-white rounded-lg border shadow-sm p-4 h-fit">
+                <h3 className="font-bold text-gray-800 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
+                  <Play className="w-4 h-4" />
+                  Contrôles
+                </h3>
+                
+                <div className="space-y-3">
+                  <Button 
+                    onClick={startDemo}
+                    disabled={isRunning}
+                    className="w-full h-12 text-sm font-semibold bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <Play className="w-4 h-4 mr-2" />
+                    {isRunning ? "Analyse..." : "Démarrer l'IA"}
+                  </Button>
                   
-                  <div className="space-y-4">
-                    <div className="flex flex-col gap-3">
-                      <Button 
-                        onClick={startDemo}
-                        disabled={isRunning}
-                        className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
-                        size="lg"
-                      >
-                        <Play className="w-6 h-6 mr-3" />
-                        {isRunning ? "Analyse en cours..." : "Démarrer l'analyse IA"}
-                      </Button>
-                      
-                      <Button 
-                        onClick={resetDemo}
-                        variant="outline"
-                        className="w-full h-12 text-base font-medium border-border hover:bg-muted/50"
-                        size="lg"
-                      >
-                        <RotateCcw className="w-5 h-5 mr-2" />
-                        Réinitialiser
-                      </Button>
+                  <Button 
+                    onClick={resetDemo}
+                    variant="outline"
+                    className="w-full h-10 text-sm font-medium border-border hover:bg-muted/50"
+                  >
+                    <RotateCcw className="w-4 h-4 mr-2" />
+                    Reset
+                  </Button>
+                  
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-gray-600">Progression</span>
+                      <span className="font-medium">{Math.round(progress)}%</span>
+                    </div>
+                    <Progress value={progress} className="h-2" />
+                    <div className="text-xs text-gray-500 text-center">
+                      {isRunning ? `Étape ${currentStep}/4` : currentStep === 5 ? "Terminé ✓" : "Prêt"}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Compact Indicators */}
+                <div className="mt-4 pt-4 border-t border-border">
+                  <h4 className="font-bold text-gray-700 text-xs uppercase tracking-wide mb-3">
+                    Temps réel
+                  </h4>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-md p-2 text-center">
+                      <div className="text-sm font-bold">
+                        {currentStep >= 1 ? '693' : '0'}
+                      </div>
+                      <div className="text-xs opacity-90">AO</div>
                     </div>
                     
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">Progression</span>
-                        <span className="font-medium">{Math.round(progress)}%</span>
+                    <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-md p-2 text-center">
+                      <div className="text-sm font-bold">
+                        {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
                       </div>
-                      <Progress value={progress} className="h-3" />
-                      <div className="text-xs text-gray-500 text-center">
-                        {isRunning ? `Étape ${currentStep}/4` : currentStep === 5 ? "Terminé ✓" : "Prêt à démarrer"}
-                      </div>
+                      <div className="text-xs opacity-90">Score</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Desktop steps and indicators - Plus large */}
+            {/* Compact Steps - Streamlined */}
             <div className="lg:col-span-3 order-2 lg:order-1">
-              <div className="bg-white rounded-lg border shadow-sm p-5 mb-6">
-                <h3 className="font-bold text-gray-700 text-base uppercase tracking-wide mb-5">
-                  Étapes du processus
+              <div className="bg-white rounded-lg border shadow-sm p-4 h-fit">
+                <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">
+                  Processus IA
                 </h3>
                 
-                <div className="space-y-3">
+                <div className="space-y-2">
                   {steps.map((step) => (
                     <div key={step.id} className="flex items-center gap-2">
-                      <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs transition-colors ${
+                      <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs transition-colors ${
                         currentStep >= step.id 
                           ? 'bg-green-500 text-white' 
                           : currentStep === step.id - 1 && isRunning
@@ -361,98 +377,66 @@ export const ProcessDemo = () => {
                       }`}>
                         {currentStep > step.id ? <CheckCircle className="w-3 h-3" /> : step.id}
                       </div>
-                      <div className="flex-1">
-                        <div className="text-xs font-medium text-gray-800">{step.title}</div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs font-medium text-gray-800 line-clamp-1">{step.title}</div>
+                        <div className="text-xs text-gray-500 line-clamp-1">{step.description}</div>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-
-              <div className="bg-white rounded-lg border shadow-sm p-5">
-                <h3 className="font-bold text-gray-700 text-base uppercase tracking-wide mb-5">
-                  Indicateurs temps réel
-                </h3>
-                
-                <div className="grid grid-cols-1 gap-4">
-                  <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg p-3 text-center">
-                    <div className="text-lg font-bold">
-                      {currentStep >= 1 ? '693' : '0'}
-                    </div>
-                    <div className="text-xs opacity-90">AO analysés</div>
-                  </div>
-                  
-                  <div className="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg p-3 text-center">
-                    <div className="text-lg font-bold">
-                      {currentStep >= 3 ? '15+' : currentStep >= 1 ? '3' : '0'}
-                    </div>
-                    <div className="text-xs opacity-90">Opportunités</div>
-                  </div>
-                  
-                  <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg p-3 text-center">
-                    <div className="text-lg font-bold">
-                      {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
-                    </div>
-                    <div className="text-xs opacity-90">Score IA</div>
-                  </div>
-                  
-                  <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg p-3 text-center">
-                    <div className="text-lg font-bold">
-                      {currentStep >= 4 && !isRunning ? `${timeElapsed.toFixed(1)}s` : currentStep >= 1 ? `${timeElapsed.toFixed(1)}s` : '-'}
-                    </div>
-                    <div className="text-xs opacity-90">Temps</div>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            {/* Desktop console and results - Interface Charly élargie */}
+            {/* Extended Console and Results - Maximum width utilization */}
             <div className="lg:col-span-6 order-3 lg:order-2">
-              <div className="bg-white rounded-lg border shadow-sm p-5 mb-6">
-                <h3 className="font-bold text-gray-700 text-base uppercase tracking-wide mb-5 flex items-center gap-2">
-                  <Terminal className="w-5 h-5" />
-                  Console JavaScript
-                </h3>
-                <div className="bg-gray-900 rounded-lg p-3">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="flex gap-1">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <div className="space-y-4">
+                {/* Compact Console */}
+                <div className="bg-white rounded-lg border shadow-sm p-4">
+                  <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-3 flex items-center gap-2">
+                    <Terminal className="w-4 h-4" />
+                    Console Charly IA
+                  </h3>
+                  <div className="bg-gray-900 rounded-lg p-3">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="flex gap-1">
+                        <div className="w-1.5 h-1.5 bg-red-500 rounded-full"></div>
+                        <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                      </div>
+                      <span className="text-green-400 text-xs font-mono">charly-analysis.js</span>
                     </div>
-                    <span className="text-green-400 text-xs font-mono">node charly-analysis.js</span>
-                  </div>
-                  
-                  <div className="space-y-1 text-xs font-mono h-48 overflow-y-auto bg-black/20 rounded p-2">
-                    {codeLines.map((line, index) => (
-                      <div key={index} className="text-green-400 break-all">
-                        <span className="text-gray-500 mr-1 text-xs">{index + 1}.</span>
-                        <span className="text-xs">{line}</span>
-                      </div>
-                    ))}
-                    {codeLines.length > 0 && isRunning && (
-                      <div className="text-green-400 animate-pulse">
-                        <span className="text-gray-500 mr-1 text-xs">{codeLines.length + 1}.</span>
-                        <span className="text-xs">█</span>
-                      </div>
-                    )}
-                    {codeLines.length === 0 && (
-                      <div className="text-gray-500 text-xs italic">
-                        En attente du démarrage de l'analyse...
-                      </div>
-                    )}
+                    
+                    <div className="space-y-0.5 text-xs font-mono h-32 overflow-y-auto bg-black/20 rounded p-2">
+                      {codeLines.map((line, index) => (
+                        <div key={index} className="text-green-400 break-all">
+                          <span className="text-gray-500 mr-1 text-xs">{index + 1}.</span>
+                          <span className="text-xs">{line}</span>
+                        </div>
+                      ))}
+                      {codeLines.length > 0 && isRunning && (
+                        <div className="text-green-400 animate-pulse">
+                          <span className="text-gray-500 mr-1 text-xs">{codeLines.length + 1}.</span>
+                          <span className="text-xs">█</span>
+                        </div>
+                      )}
+                      {codeLines.length === 0 && (
+                        <div className="text-gray-500 text-xs italic">
+                          Charly IA en attente...
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="bg-white rounded-lg border shadow-sm p-5">
-                <h3 className="font-bold text-gray-700 text-base uppercase tracking-wide mb-5 flex items-center gap-2">
-                  <Globe className="w-5 h-5" />
-                  Interface Charly IA
-                </h3>
-                
-                {/* Extended Charly Interface - Maximum width and height */}
-                <div className="bg-gradient-to-br from-slate-50 to-gray-100 rounded-lg border border-gray-200 min-h-[800px] w-full relative overflow-hidden">
+                {/* Results Section - Full Width */}
+                <div className="bg-white rounded-lg border shadow-sm p-4">
+                  <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
+                    <Globe className="w-4 h-4" />
+                    Interface Charly IA
+                  </h3>
+                  
+                  {/* Extended Charly Interface - Maximum width and optimized height */}
+                  <div className="bg-gradient-to-br from-slate-50 to-gray-100 rounded-lg border border-gray-200 min-h-[400px] w-full relative overflow-hidden">
                   {/* Simulated browser header */}
                   <div className="bg-gray-100 rounded-t-xl px-4 py-3 border-b border-gray-200">
                     <div className="flex items-center gap-2">
@@ -485,8 +469,8 @@ export const ProcessDemo = () => {
                     </div>
                   </div>
                   
-                  {/* Content area - Much larger */}
-                  <div className="p-6 flex-1 min-h-[500px] bg-gradient-to-b from-white to-gray-50">
+                  {/* Content area - Optimized size */}
+                  <div className="p-4 flex-1 min-h-[300px] bg-gradient-to-b from-white to-gray-50">
                     {!showResults ? (
                       <div className="flex flex-col items-center justify-center h-full text-center space-y-6">
                         <div className="w-24 h-24 mx-auto">
@@ -552,27 +536,28 @@ export const ProcessDemo = () => {
                         </div>
                         
                         {/* AOResults component with enhanced display */}
-                        <div className="bg-gray-50 rounded-lg p-4">
+                        <div className="bg-gray-50 rounded-lg p-3">
                           <AOResults 
-                            isExpanded={showExpandedResults}
+                            isExpanded={true}
                           />
                         </div>
                         
                         {/* Action buttons */}
-                        <div className="flex gap-3 pt-4 border-t">
-                          <Button className="flex-1 bg-purple-600 hover:bg-purple-700">
-                            Télécharger DCE
+                        <div className="flex gap-2 pt-3 border-t">
+                          <Button size="sm" className="flex-1 bg-purple-600 hover:bg-purple-700">
+                            DCE
                           </Button>
-                          <Button variant="outline" className="flex-1">
-                            Programmer suivi
+                          <Button variant="outline" size="sm" className="flex-1">
+                            Suivi
                           </Button>
-                          <Button variant="outline" className="flex-1">
-                            Exporter analyse
+                          <Button variant="outline" size="sm" className="flex-1">
+                            Export
                           </Button>
                         </div>
                       </div>
                     )}
                   </div>
+                </div>
                 </div>
               </div>
             </div>

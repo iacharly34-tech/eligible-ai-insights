@@ -167,66 +167,7 @@ export const DemoPersonas = () => {
           </div>
         </div>
 
-        {/* Persona Content Blocks - Horizontal Layout for Desktop */}
-        <div className="mb-12">
-          <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {/* Persona Description */}
-            <Card className="border-border shadow-card bg-card/80 backdrop-blur-sm">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
-                    <IconComponent className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-foreground text-sm leading-tight">{selectedPersonaData.title}</h3>
-                    <Badge variant="outline" className="mt-1 text-xs border-primary/30 text-primary">Profil sélectionné</Badge>
-                  </div>
-                </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {selectedPersonaData.description}
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Benefits Block */}
-            <Card className="border-success/30 shadow-card bg-gradient-to-br from-success/5 to-success/10">
-              <CardContent className="p-6">
-                <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-success" />
-                  Bénéfices clés
-                </h4>
-                <ul className="space-y-3">
-                  {selectedPersonaData.benefits.map((benefit, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <div className="w-2 h-2 bg-success rounded-full mt-2 flex-shrink-0" />
-                      <span className="text-muted-foreground text-sm leading-relaxed">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-
-            {/* Actions Block */}
-            <Card className="border-primary/30 shadow-card bg-gradient-to-br from-primary/5 to-primary/10">
-              <CardContent className="p-6">
-                <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                  <Target className="w-5 h-5 text-primary" />
-                  Actions dans Eligibly
-                </h4>
-                <ul className="space-y-3">
-                  {selectedPersonaData.actions.map((action, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground text-sm leading-relaxed">{action}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
-        {/* Main Demo Section - Full Width and Prominent */}
+        {/* Full-width Integrated Demo Section - Optimized Layout */}
         <div className="mb-12">
           <Card className="border-border shadow-luxury bg-card/50 backdrop-blur-sm">
             <CardContent className="p-8">
@@ -241,8 +182,70 @@ export const DemoPersonas = () => {
                 </div>
               </div>
               
-              {/* Demo Content - Enhanced Size */}
-              <div className="bg-gradient-to-br from-muted/10 to-muted/20 rounded-xl p-8 min-h-[600px]">
+              {/* Persona Content Blocks - Horizontal Above Demo */}
+              <div className="mb-8">
+                <div className="grid lg:grid-cols-3 gap-4 max-w-full mx-auto">
+                  {/* Persona Description */}
+                  <Card className="border-border shadow-card bg-card/80 backdrop-blur-sm">
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
+                          <IconComponent className="w-5 h-5 text-white" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-bold text-foreground text-sm leading-tight line-clamp-2">{selectedPersonaData.title}</h3>
+                          <Badge variant="outline" className="mt-1 text-xs border-primary/30 text-primary">Profil sélectionné</Badge>
+                        </div>
+                      </div>
+                      <p className="text-muted-foreground text-xs leading-relaxed line-clamp-3">
+                        {selectedPersonaData.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  {/* Benefits Block */}
+                  <Card className="border-success/30 shadow-card bg-gradient-to-br from-success/5 to-success/10">
+                    <CardContent className="p-4">
+                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-success" />
+                        Bénéfices clés
+                      </h4>
+                      <ul className="space-y-2">
+                        {selectedPersonaData.benefits.slice(0, 3).map((benefit, index) => (
+                          <li key={index} className="flex items-start gap-2">
+                            <div className="w-1.5 h-1.5 bg-success rounded-full mt-1.5 flex-shrink-0" />
+                            <span className="text-muted-foreground text-xs leading-relaxed line-clamp-2">{benefit}</span>
+                          </li>
+                        ))}
+                        {selectedPersonaData.benefits.length > 3 && (
+                          <li className="text-success text-xs font-medium">+{selectedPersonaData.benefits.length - 3} autres bénéfices</li>
+                        )}
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  {/* Actions Block */}
+                  <Card className="border-primary/30 shadow-card bg-gradient-to-br from-primary/5 to-primary/10">
+                    <CardContent className="p-4">
+                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                        <Target className="w-4 h-4 text-primary" />
+                        Actions dans Eligibly
+                      </h4>
+                      <ul className="space-y-2">
+                        {selectedPersonaData.actions.map((action, index) => (
+                          <li key={index} className="flex items-start gap-2">
+                            <ArrowRight className="w-3 h-3 text-primary mt-1 flex-shrink-0" />
+                            <span className="text-muted-foreground text-xs leading-relaxed line-clamp-2">{action}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+              
+              {/* Demo Content - Full Width and Optimized Height */}
+              <div className="bg-gradient-to-br from-muted/10 to-muted/20 rounded-xl p-6">
                 <ProcessDemo />
               </div>
             </CardContent>
