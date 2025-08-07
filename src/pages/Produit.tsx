@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { CTAFooter } from "@/components/CTAFooter";
 import { DemoPersonas } from "@/components/DemoPersonas";
 import { ProductHero } from "@/components/product/ProductHero";
-import { ProcessDemo } from "@/components/ProcessDemo";
+
 import { ProductFeatures } from "@/components/product/ProductFeatures";
 
 import { ProductBenefits } from "@/components/product/ProductBenefits";
