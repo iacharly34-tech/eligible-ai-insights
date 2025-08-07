@@ -451,65 +451,127 @@ export const ProcessDemo = () => {
                   Interface Charly IA
                 </h3>
                 
-                <div className="relative bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg shadow-xl mx-auto" style={{ width: '100%', height: '500px' }}>
-                  <div className="absolute inset-3 bg-black rounded-lg overflow-hidden">
-                    <div className="h-full bg-white">
-                      <div className="flex items-center gap-2 px-3 py-2 bg-gray-100 border-b">
-                        <div className="flex gap-1">
-                          <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                          <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        </div>
-                        <div className="flex-1 mx-3">
-                          <div className="bg-white rounded px-2 py-1 text-xs flex items-center gap-1 border">
-                            <Globe className="w-3 h-3 text-gray-500" />
-                            <span>app.eligibly.ai</span>
-                          </div>
-                        </div>
+                {/* Extended Charly Interface - Larger size */}
+                <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl border-2 border-gray-200 shadow-inner min-h-[700px]">
+                  {/* Simulated browser header */}
+                  <div className="bg-gray-100 rounded-t-xl px-4 py-3 border-b border-gray-200">
+                    <div className="flex items-center gap-2">
+                      <div className="flex gap-1">
+                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                       </div>
-
-                      <div className="h-full p-4 bg-gray-50 overflow-hidden" style={{ height: 'calc(100% - 40px)' }}>
-                        <div className="flex items-center gap-2 mb-4">
-                          <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                            C
-                          </div>
-                          <div>
-                            <h3 className="font-bold text-gray-800 text-sm">Charly IA</h3>
-                            <p className="text-gray-600 text-xs">Analyse des appels d'offres</p>
-                          </div>
-                          <div className="ml-auto flex items-center gap-1">
-                            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                            <span className="text-green-600 font-medium text-xs">Actif</span>
-                          </div>
-                        </div>
-
-                        <div style={{ height: 'calc(100% - 60px)' }}>
-                          <div className="bg-white rounded-lg border border-gray-200 overflow-hidden flex flex-col h-full">
-                            <div className="p-2 flex-1 overflow-y-auto">
-                              {showResults ? (
-                                <AOResults 
-                                  isExpanded={showExpandedResults}
-                                  onToggleExpand={() => setShowExpandedResults(true)}
-                                />
-                              ) : (
-                                <div className="h-full flex items-center justify-center">
-                                  <div className="text-center text-gray-500">
-                                    <div className="mb-3 flex justify-center">
-                                      <img 
-                                        src={charlyNoBg}
-                                        alt="Charly, votre assistant IA"
-                                        className="w-16 h-16 object-contain animate-pulse"
-                                      />
-                                    </div>
-                                    <div className="text-sm">En attente de l'analyse...</div>
-                                  </div>
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        </div>
+                      <div className="flex-1 bg-white rounded px-3 py-1 text-xs text-gray-600 border">
+                        app.eligibly.ai
                       </div>
                     </div>
+                  </div>
+                  
+                  {/* Charly header */}
+                  <div className="p-6 border-b bg-white">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                          C
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 text-base">Charly IA</h4>
+                          <p className="text-sm text-gray-600">Analyse des appels d'offres</p>
+                        </div>
+                      </div>
+                      <Badge className="bg-green-100 text-green-700 border-green-200 text-xs px-3 py-1">
+                        Actif
+                      </Badge>
+                    </div>
+                  </div>
+                  
+                  {/* Content area - Much larger */}
+                  <div className="p-6 flex-1 min-h-[500px] bg-gradient-to-b from-white to-gray-50">
+                    {!showResults ? (
+                      <div className="flex flex-col items-center justify-center h-full text-center space-y-6">
+                        <div className="w-24 h-24 mx-auto">
+                          <img 
+                            src={charlyNoBg} 
+                            alt="Charly Assistant" 
+                            className="w-full h-full object-contain opacity-80"
+                          />
+                        </div>
+                        
+                        <div className="space-y-3">
+                          <h5 className="text-xl font-medium text-gray-700">
+                            {isRunning 
+                              ? currentStep === 1 ? "Collecte en cours..." 
+                              : currentStep === 2 ? "Analyse des données..."
+                              : currentStep === 3 ? "Intelligence artificielle au travail..."
+                              : currentStep === 4 ? "Calcul des scores..."
+                              : "En attente de l'analyse..."
+                              : "En attente de l'analyse..."
+                            }
+                          </h5>
+                          
+                          <p className="text-sm text-gray-500 max-w-md leading-relaxed">
+                            {isRunning 
+                              ? currentStep === 1 ? "Connexion aux plateformes officielles et extraction des données..."
+                              : currentStep === 2 ? "Traitement et structuration des appels d'offres collectés..."
+                              : currentStep === 3 ? "Analyse approfondie avec nos modèles d'IA spécialisés..."
+                              : currentStep === 4 ? "Génération des scores de compatibilité personnalisés..."
+                              : "Charly va analyser et évaluer les opportunités selon vos critères."
+                              : "Charly va analyser et évaluer les opportunités selon vos critères."
+                            }
+                          </p>
+                        </div>
+                        
+                        {isRunning && (
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-purple-500 rounded-full animate-bounce"></div>
+                            <div className="w-2 h-2 bg-purple-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                            <div className="w-2 h-2 bg-purple-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="space-y-6">
+                        {/* Results header */}
+                        <div className="flex items-center justify-between pb-4 border-b">
+                          <div>
+                            <h5 className="text-lg font-semibold text-gray-900">
+                              Résultats d'analyse - {new Date().toLocaleDateString()}
+                            </h5>
+                            <p className="text-sm text-gray-600 mt-1">
+                              15 opportunités détectées • Score moyen: 78%
+                            </p>
+                          </div>
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            onClick={() => setShowExpandedResults(!showExpandedResults)}
+                            className="text-xs"
+                          >
+                            {showExpandedResults ? 'Vue résumée' : 'Voir détails'}
+                          </Button>
+                        </div>
+                        
+                        {/* AOResults component with enhanced display */}
+                        <div className="bg-gray-50 rounded-lg p-4">
+                          <AOResults 
+                            isExpanded={showExpandedResults}
+                          />
+                        </div>
+                        
+                        {/* Action buttons */}
+                        <div className="flex gap-3 pt-4 border-t">
+                          <Button className="flex-1 bg-purple-600 hover:bg-purple-700">
+                            Télécharger DCE
+                          </Button>
+                          <Button variant="outline" className="flex-1">
+                            Programmer suivi
+                          </Button>
+                          <Button variant="outline" className="flex-1">
+                            Exporter analyse
+                          </Button>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
