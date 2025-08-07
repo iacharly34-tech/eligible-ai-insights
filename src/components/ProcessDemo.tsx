@@ -292,38 +292,38 @@ export const ProcessDemo = () => {
             </p>
           </div>
 
-          {/* Desktop grid layout */}
-          <div className="space-y-6 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-6 max-w-7xl mx-auto">
+          {/* Desktop grid layout - Redesigned pour plus d'espace */}
+          <div className="space-y-6 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-8 max-w-full mx-auto">
             
-            {/* Desktop controls */}
+            {/* Desktop controls - Plus large */}
             <div className="lg:col-span-3 order-1 lg:order-3">
               <div className="space-y-4">
-                <div className="bg-white rounded-lg border shadow-sm p-4">
-                  <h3 className="font-bold text-gray-800 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
-                    <Play className="w-4 h-4" />
+                <div className="bg-white rounded-lg border shadow-sm p-6">
+                  <h3 className="font-bold text-gray-800 text-base uppercase tracking-wide mb-6 flex items-center gap-2">
+                    <Play className="w-5 h-5" />
                     Contrôles
                   </h3>
                   
-                  <div className="space-y-3">
-                    <div className="flex gap-3">
+                  <div className="space-y-4">
+                    <div className="flex flex-col gap-3">
                       <Button 
                         onClick={startDemo}
                         disabled={isRunning}
-                        className="flex-1 h-12 text-base font-medium"
+                        className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
                         size="lg"
                       >
-                        <Play className="w-5 h-5 mr-2" />
-                        {isRunning ? "En cours..." : "Démarrer"}
+                        <Play className="w-6 h-6 mr-3" />
+                        {isRunning ? "Analyse en cours..." : "Démarrer l'analyse IA"}
                       </Button>
                       
                       <Button 
                         onClick={resetDemo}
                         variant="outline"
-                        className="flex-1 h-12 text-base font-medium"
+                        className="w-full h-12 text-base font-medium border-border hover:bg-muted/50"
                         size="lg"
                       >
                         <RotateCcw className="w-5 h-5 mr-2" />
-                        Reset
+                        Réinitialiser
                       </Button>
                     </div>
                     
@@ -342,10 +342,10 @@ export const ProcessDemo = () => {
               </div>
             </div>
 
-            {/* Desktop steps and indicators */}
-            <div className="lg:col-span-2 order-2 lg:order-1">
-              <div className="bg-white rounded-lg border shadow-sm p-4 mb-6">
-                <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">
+            {/* Desktop steps and indicators - Plus large */}
+            <div className="lg:col-span-3 order-2 lg:order-1">
+              <div className="bg-white rounded-lg border shadow-sm p-5 mb-6">
+                <h3 className="font-bold text-gray-700 text-base uppercase tracking-wide mb-5">
                   Étapes du processus
                 </h3>
                 
@@ -369,8 +369,8 @@ export const ProcessDemo = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-lg border shadow-sm p-4">
-                <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">
+              <div className="bg-white rounded-lg border shadow-sm p-5">
+                <h3 className="font-bold text-gray-700 text-base uppercase tracking-wide mb-5">
                   Indicateurs temps réel
                 </h3>
                 
@@ -406,11 +406,11 @@ export const ProcessDemo = () => {
               </div>
             </div>
 
-            {/* Desktop console and results */}
-            <div className="lg:col-span-7 order-3 lg:order-2">
-              <div className="bg-white rounded-lg border shadow-sm p-4 mb-6">
-                <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
-                  <Terminal className="w-4 h-4" />
+            {/* Desktop console and results - Interface Charly élargie */}
+            <div className="lg:col-span-6 order-3 lg:order-2">
+              <div className="bg-white rounded-lg border shadow-sm p-5 mb-6">
+                <h3 className="font-bold text-gray-700 text-base uppercase tracking-wide mb-5 flex items-center gap-2">
+                  <Terminal className="w-5 h-5" />
                   Console JavaScript
                 </h3>
                 <div className="bg-gray-900 rounded-lg p-3">
@@ -445,14 +445,14 @@ export const ProcessDemo = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-lg border shadow-sm p-4">
-                <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
-                  <Globe className="w-4 h-4" />
+              <div className="bg-white rounded-lg border shadow-sm p-5">
+                <h3 className="font-bold text-gray-700 text-base uppercase tracking-wide mb-5 flex items-center gap-2">
+                  <Globe className="w-5 h-5" />
                   Interface Charly IA
                 </h3>
                 
-                {/* Extended Charly Interface - Larger size */}
-                <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl border-2 border-gray-200 shadow-inner min-h-[700px]">
+                {/* Extended Charly Interface - Maximum width and height */}
+                <div className="bg-gradient-to-br from-slate-50 to-gray-100 rounded-lg border border-gray-200 min-h-[800px] w-full relative overflow-hidden">
                   {/* Simulated browser header */}
                   <div className="bg-gray-100 rounded-t-xl px-4 py-3 border-b border-gray-200">
                     <div className="flex items-center gap-2">

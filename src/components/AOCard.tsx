@@ -10,7 +10,10 @@ import {
   Trophy,
   ExternalLink,
   Download,
-  Rocket
+  Rocket,
+  Star,
+  CheckCircle2,
+  AlertCircle
 } from "lucide-react";
 
 interface AOData {
@@ -53,80 +56,117 @@ interface AOCardProps {
 }
 
 export const AOCard = ({ ao, isDetailed = false }: AOCardProps) => {
+  const getScoreColor = (score: number) => {
+    if (score >= 80) return "text-success";
+    if (score >= 60) return "text-warning";
+    return "text-destructive";
+  };
+
+  const getScoreIcon = (score: number) => {
+    if (score >= 80) return <Star className="w-4 h-4 fill-current" />;
+    if (score >= 60) return <AlertCircle className="w-4 h-4" />;
+    return <AlertCircle className="w-4 h-4" />;
+  };
+
   return (
-    <Card className="border border-gray-200 hover:shadow-lg transition-shadow">
-      <CardContent className="p-3">
-        {/* Header avec score - Ultra compact */}
-        <div className="flex justify-between items-start mb-2">
-          <div className="flex-1">
-            <div className="flex items-center gap-1 mb-1">
-              <Badge 
-                variant={ao.statut === "publié" ? "default" : "secondary"}
-                className="text-xs px-1.5 py-0.5 h-4"
-              >
-                {ao.statut}
-              </Badge>
-              <Badge variant="outline" className="text-xs px-1.5 py-0.5 h-4">
-                {ao.source}
-              </Badge>
+    <Card className="border border-border hover:shadow-card transition-all duration-300 hover:scale-[1.02] bg-card">
+      <CardContent className="p-4">
+        {/* Titre principal mis en valeur */}
+        <div className="mb-3">
+          <div className="flex items-start justify-between gap-3 mb-2">
+            <div className="flex-1 min-w-0">
+              <h3 className="text-lg font-bold text-foreground leading-tight mb-2 line-clamp-2">
+                {ao.title}
+              </h3>
+              <div className="flex items-center gap-2 flex-wrap">
+                <Badge 
+                  variant={ao.statut === "publié" ? "default" : "secondary"}
+                  className="text-xs px-2 py-1 font-medium"
+                >
+                  {ao.statut}
+                </Badge>
+                <Badge variant="outline" className="text-xs px-2 py-1 flex items-center gap-1">
+                  <FileText className="w-3 h-3" />
+                  {ao.source}
+                </Badge>
+              </div>
             </div>
-            <h4 className="font-bold text-gray-800 text-sm leading-tight">
-              {ao.title}
-            </h4>
-          </div>
-          <div className="text-right ml-2">
-            <div className="text-2xl font-bold text-green-600">{ao.score}%</div>
-            <div className="text-xs text-gray-600">Score</div>
-          </div>
-        </div>
-
-        {/* Informations essentielles - Ultra compact */}
-        <div className="grid grid-cols-2 gap-2 mb-2">
-          <div className="flex items-center gap-1">
-            <Euro className="w-3 h-3 text-gray-500" />
-            <div className="text-xs">
-              <span className="font-medium">{ao.budget}</span>
-            </div>
-          </div>
-          
-          <div className="flex items-center gap-1">
-            <Calendar className="w-3 h-3 text-gray-500" />
-            <div className="text-xs">
-              <span className="font-medium">{ao.deadline}</span>
-            </div>
-          </div>
-          
-          <div className="flex items-center gap-1">
-            <Building2 className="w-3 h-3 text-gray-500" />
-            <div className="text-xs">
-              <span className="font-medium">{ao.duree}</span>
-            </div>
-          </div>
-          
-          <div className="flex items-center gap-1">
-            <Trophy className="w-3 h-3 text-gray-500" />
-            <div className="text-xs">
-              <span className="font-medium">{ao.titulaire}</span>
+            
+            {/* Score avec icône et légende */}
+            <div className="text-center bg-gradient-to-br from-muted/50 to-accent/10 rounded-lg p-3 min-w-[80px]">
+              <div className={`flex items-center justify-center gap-1 mb-1 ${getScoreColor(ao.score)}`}>
+                {getScoreIcon(ao.score)}
+                <span className="text-2xl font-bold">{ao.score}%</span>
+              </div>
+              <div className="text-xs text-muted-foreground font-medium">
+                Score de compatibilité IA
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Critères de notation - Ultra compact */}
-        <div className="mb-2">
-          <div className="flex justify-between items-center mb-1">
-            <div className="text-xs font-medium">Critères</div>
-            <div className="flex gap-2 text-xs">
-              <span>Prix: {ao.criteres.prix}%</span>
-              <span>Qualité: {ao.criteres.qualite}%</span>
-              <span>Performance: {ao.criteres.performance}%</span>
+        {/* Critères acheteur - Remonté et mis en valeur */}
+        <div className="mb-4 p-3 bg-gradient-to-r from-primary/5 to-accent/5 rounded-lg border border-border/50">
+          <h4 className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
+            <Trophy className="w-4 h-4 text-primary" />
+            Critères d'évaluation
+          </h4>
+          <div className="grid grid-cols-3 gap-2 text-xs mb-2">
+            <div className="text-center">
+              <div className="font-bold text-destructive">{ao.criteres.prix}%</div>
+              <div className="text-muted-foreground">Prix</div>
+            </div>
+            <div className="text-center">
+              <div className="font-bold text-success">{ao.criteres.qualite}%</div>
+              <div className="text-muted-foreground">Qualité</div>
+            </div>
+            <div className="text-center">
+              <div className="font-bold text-accent">{ao.criteres.performance}%</div>
+              <div className="text-muted-foreground">Performance</div>
             </div>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-1.5 relative">
-            <div className="bg-red-500 h-1.5 rounded-l-full absolute" style={{width: `${ao.criteres.prix}%`}}></div>
-            <div className="bg-green-500 h-1.5 absolute" style={{width: `${ao.criteres.qualite}%`, left: `${ao.criteres.prix}%`}}></div>
-            <div className="bg-blue-500 h-1.5 rounded-r-full absolute" style={{width: `${ao.criteres.performance}%`, left: `${ao.criteres.prix + ao.criteres.qualite}%`}}></div>
+          <div className="w-full bg-muted rounded-full h-2 relative overflow-hidden">
+            <div className="bg-destructive h-2 rounded-l-full absolute transition-all" style={{width: `${ao.criteres.prix}%`}}></div>
+            <div className="bg-success h-2 absolute transition-all" style={{width: `${ao.criteres.qualite}%`, left: `${ao.criteres.prix}%`}}></div>
+            <div className="bg-accent h-2 rounded-r-full absolute transition-all" style={{width: `${ao.criteres.performance}%`, left: `${ao.criteres.prix + ao.criteres.qualite}%`}}></div>
           </div>
         </div>
+
+        {/* Informations pratiques - Compactes et uniformisées */}
+        <div className="grid grid-cols-2 gap-3 mb-4">
+          <div className="flex items-center gap-2 p-2 bg-muted/30 rounded-md">
+            <Euro className="w-4 h-4 text-primary flex-shrink-0" />
+            <div className="text-sm min-w-0">
+              <div className="text-xs text-muted-foreground">Budget</div>
+              <div className="font-semibold text-foreground truncate">{ao.budget}</div>
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-2 p-2 bg-muted/30 rounded-md">
+            <Calendar className="w-4 h-4 text-accent flex-shrink-0" />
+            <div className="text-sm min-w-0">
+              <div className="text-xs text-muted-foreground">Échéance</div>
+              <div className="font-semibold text-foreground truncate">{ao.deadline}</div>
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-2 p-2 bg-muted/30 rounded-md">
+            <Building2 className="w-4 h-4 text-success flex-shrink-0" />
+            <div className="text-sm min-w-0">
+              <div className="text-xs text-muted-foreground">Durée</div>
+              <div className="font-semibold text-foreground truncate">{ao.duree}</div>
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-2 p-2 bg-muted/30 rounded-md">
+            <Trophy className="w-4 h-4 text-warning flex-shrink-0" />
+            <div className="text-sm min-w-0">
+              <div className="text-xs text-muted-foreground">Titulaire</div>
+              <div className="font-semibold text-foreground truncate">{ao.titulaire}</div>
+            </div>
+          </div>
+        </div>
+
 
         {isDetailed && (
           <>
@@ -163,36 +203,54 @@ export const AOCard = ({ ao, isDetailed = false }: AOCardProps) => {
           </>
         )}
 
-        {/* Analyse de compatibilité - Ultra compact */}
-        <div className="mb-2">
-          <div className="text-xs font-medium text-blue-600 mb-1">📋 Compatibilité Charly</div>
-          <div className="grid grid-cols-1 gap-0.5 text-xs">
-            <div className="text-green-600">✓ {ao.compatibilite.ca}</div>
-            <div className="text-green-600">✓ {ao.compatibilite.secteur}</div>
-            <div className="text-green-600">✓ {ao.compatibilite.references}</div>
-            <div className="text-green-600">✓ {ao.compatibilite.environnement}</div>
-            <div className="text-green-600">✓ {ao.compatibilite.usages}</div>
+        {/* Analyse de compatibilité - Toujours visible et claire */}
+        <div className="mb-4 p-3 bg-gradient-to-r from-success/5 to-cyan-soft/5 rounded-lg border border-success/20">
+          <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-success" />
+            Analyse de compatibilité
+          </h4>
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 text-sm">
+              <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0" />
+              <span className="text-foreground">{ao.compatibilite.ca}</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm">
+              <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0" />
+              <span className="text-foreground">{ao.compatibilite.secteur}</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm">
+              <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0" />
+              <span className="text-foreground">{ao.compatibilite.references}</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm">
+              <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0" />
+              <span className="text-foreground">{ao.compatibilite.environnement}</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm">
+              <CheckCircle2 className="w-4 h-4 text-success flex-shrink-0" />
+              <span className="text-foreground">{ao.compatibilite.usages}</span>
+            </div>
           </div>
         </div>
 
-        {/* Actions - Ultra compact */}
-        <div className="space-y-1.5">
-          {/* CTA Principal - Postuler avec Eligibly */}
-          <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white flex items-center gap-1.5 py-1.5 text-xs h-8">
-            <Rocket className="w-3 h-3" />
+        {/* Actions - Redesignées avec plus d'impact */}
+        <div className="space-y-3">
+          {/* CTA Principal - Plus visible */}
+          <Button className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground font-semibold flex items-center justify-center gap-2 py-3 text-sm h-12 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+            <Rocket className="w-4 h-4" />
             Postuler avec Eligibly
           </Button>
           
-          {/* Actions secondaires */}
-          <div className="flex gap-1.5">
+          {/* Actions secondaires - Horizontales sur desktop */}
+          <div className="grid grid-cols-2 gap-2">
             {ao.dceDisponible && (
-              <Button variant="outline" size="sm" className="flex-1 flex items-center gap-1 text-xs py-1 h-7">
-                <Download className="w-3 h-3" />
-                DCE
+              <Button variant="outline" className="flex items-center justify-center gap-2 py-2 text-sm border-border hover:bg-muted/50 transition-colors">
+                <Download className="w-4 h-4" />
+                <span className="hidden sm:inline">Télécharger</span> DCE
               </Button>
             )}
-            <Button variant="outline" size="sm" className="flex-1 flex items-center gap-1 text-xs py-1 h-7">
-              <ExternalLink className="w-3 h-3" />
+            <Button variant="outline" className="flex items-center justify-center gap-2 py-2 text-sm border-border hover:bg-muted/50 transition-colors">
+              <ExternalLink className="w-4 h-4" />
               AO officiel
             </Button>
           </div>
