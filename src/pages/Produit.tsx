@@ -30,11 +30,6 @@ const Produit = () => {
       {/* Demo Personas Section */}
       <DemoPersonas />
 
-      {/* Full Process Demo Section */}
-      <section id="process-demo">
-        <ProcessDemo />
-      </section>
-
       {/* Features Section */}
       <ProductFeatures />
 
