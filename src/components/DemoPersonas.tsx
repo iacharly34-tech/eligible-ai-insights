@@ -113,24 +113,25 @@ export const DemoPersonas = () => {
   return (
     <section 
       id="demo" 
-      className="py-16 px-4 bg-gradient-to-br from-slate-50 to-gray-100"
+      className="py-20 px-4 bg-gradient-subtle"
     >
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-12">
-          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 font-medium">
             Démonstration produit
           </Badge>
-          <h2 className="text-4xl font-bold mb-4 text-foreground">
+          <h2 className="text-5xl font-bold mb-6 text-foreground">
             Solutions par profil métier
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Découvrez comment Eligibly s'adapte à votre rôle dans l'écosystème des marchés publics
           </p>
         </div>
 
-        {/* Navigation des personas */}
-        <div className="mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+        {/* Persona Navigation */}
+        <div className="mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {personas.map((persona) => {
               const PersonaIcon = persona.icon;
               const isSelected = selectedPersona === persona.id;
@@ -139,24 +140,24 @@ export const DemoPersonas = () => {
                 <button
                   key={persona.id}
                   onClick={() => setSelectedPersona(persona.id)}
-                  className={`p-4 rounded-2xl border-2 text-left transition-all duration-300 hover:scale-105 ${
+                  className={`group p-6 rounded-2xl border-2 text-left transition-all duration-300 transform hover:scale-105 hover:shadow-glow ${
                     isSelected 
-                      ? 'border-primary bg-primary/5 shadow-lg' 
-                      : 'border-border bg-card hover:border-primary/30'
+                      ? 'border-primary bg-gradient-to-br from-primary/5 to-primary/10 shadow-glow' 
+                      : 'border-border bg-card hover:border-primary/30 hover:bg-primary/5'
                   }`}
                 >
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                      isSelected ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                      isSelected ? 'bg-primary text-white shadow-glow' : 'bg-muted text-muted-foreground group-hover:bg-primary/20 group-hover:text-primary'
                     }`}>
-                      <PersonaIcon className="w-5 h-5" />
+                      <PersonaIcon className="w-6 h-6" />
                     </div>
                     {isSelected && (
-                      <CheckCircle className="w-5 h-5 text-primary" />
+                      <CheckCircle className="w-6 h-6 text-primary animate-scale-in" />
                     )}
                   </div>
-                  <h3 className={`font-semibold text-sm leading-tight ${
-                    isSelected ? 'text-primary' : 'text-foreground'
+                  <h3 className={`font-semibold text-sm leading-tight transition-colors duration-300 ${
+                    isSelected ? 'text-primary' : 'text-foreground group-hover:text-primary'
                   }`}>
                     {persona.title}
                   </h3>
@@ -166,76 +167,75 @@ export const DemoPersonas = () => {
           </div>
         </div>
 
-        {/* Layout principal optimisé grand écran : Démo + Contenu contextualisé */}
-        <div className="grid lg:grid-cols-5 gap-8 xl:gap-12 items-start">
+        {/* Main Demo Layout - Optimized for Large Screens */}
+        <div className="grid lg:grid-cols-3 gap-12 items-start">
           
-          {/* Zone de démonstration - Colonne principale (3/5) */}
-          <div className="order-2 lg:order-1 lg:col-span-3">
-            <Card className="border-border shadow-card h-fit">
-              <CardContent className="p-6 xl:p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center">
-                    <Play className="w-6 h-6 text-white" />
+          {/* Demo Section - Main Column (2/3) */}
+          <div className="lg:col-span-2">
+            <Card className="border-border shadow-elegant bg-card/50 backdrop-blur-sm">
+              <CardContent className="p-8">
+                {/* Demo Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-glow">
+                    <Play className="w-7 h-7 text-white" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground">Démonstration interactive</h3>
-                    <p className="text-muted-foreground">Scénario adapté à votre profil</p>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-foreground mb-2">Démonstration interactive</h3>
+                    <p className="text-muted-foreground">Scénario adapté à votre profil métier</p>
                   </div>
                 </div>
 
-                {/* Démo contextuelle intégrée */}
-                <div className="bg-gradient-to-br from-muted/30 to-muted/50 rounded-xl p-4 xl:p-6 min-h-[400px] xl:min-h-[500px]">
-                  <div className="text-center mb-6">
-                    <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className="w-8 h-8 text-primary" />
+                {/* Persona Context */}
+                <div className="mb-8 p-6 bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl border border-primary/20">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                      <IconComponent className="w-6 h-6 text-primary" />
                     </div>
-                    <p className="text-muted-foreground mb-2">
-                      Processus optimisé pour :
-                    </p>
-                    <p className="font-semibold text-primary text-lg mb-4">
-                      {selectedPersonaData.title}
-                    </p>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Processus optimisé pour :</p>
+                      <p className="font-semibold text-primary text-lg">{selectedPersonaData.title}</p>
+                    </div>
                   </div>
-                  
-                  {/* Intégration ProcessDemo avec contexte */}
-                  <div className="mb-6">
-                    <ProcessDemo />
-                  </div>
-                  
-                  {/* CTA contextualisé */}
-                  <div className="text-center">
-                    <Button 
-                      size="lg"
-                      onClick={() => {
-                        const demoSection = document.getElementById('process-demo');
-                        if (demoSection) {
-                          demoSection.scrollIntoView({ behavior: 'smooth' });
-                        }
-                      }}
-                      className="bg-primary text-white hover:bg-primary/90 font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105"
-                    >
-                      <Play className="w-5 h-5 mr-2" />
-                      Voir la démo complète
-                    </Button>
-                  </div>
+                </div>
+                
+                {/* Integrated ProcessDemo */}
+                <div className="bg-gradient-to-br from-muted/20 to-muted/30 rounded-2xl p-8 min-h-[600px]">
+                  <ProcessDemo />
+                </div>
+                
+                {/* CTA Button */}
+                <div className="text-center mt-8">
+                  <Button 
+                    size="lg"
+                    onClick={() => {
+                      const demoSection = document.getElementById('process-demo');
+                      if (demoSection) {
+                        demoSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                    className="bg-gradient-primary text-white hover:shadow-glow font-semibold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105"
+                  >
+                    <Play className="w-5 h-5 mr-2" />
+                    Voir la démo complète
+                  </Button>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          {/* Contenu métier contextualisé - Colonne secondaire (2/5) */}
-          <div className="order-1 lg:order-2 lg:col-span-2">
-            <div className="space-y-6">
-              {/* En-tête persona */}
-              <Card className="border-border shadow-card">
-                <CardContent className="p-4 xl:p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                      <IconComponent className="w-5 h-5 text-white" />
+          {/* Persona Content - Side Column (1/3) */}
+          <div className="lg:col-span-1">
+            <div className="space-y-6 sticky top-8">
+              {/* Persona Header */}
+              <Card className="border-border shadow-card bg-card/80 backdrop-blur-sm">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-glow">
+                      <IconComponent className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-bold text-foreground text-lg leading-tight">{selectedPersonaData.title}</h3>
-                      <Badge variant="outline" className="mt-1 text-xs">Profil sélectionné</Badge>
+                      <Badge variant="outline" className="mt-2 text-xs border-primary/30 text-primary">Profil sélectionné</Badge>
                     </div>
                   </div>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -244,36 +244,36 @@ export const DemoPersonas = () => {
                 </CardContent>
               </Card>
 
-              {/* Bloc Bénéfices - Séparé visuellement */}
-              <Card className="border-border shadow-card bg-success/5 border-success/20">
-                <CardContent className="p-4 xl:p-6">
-                  <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+              {/* Benefits Block */}
+              <Card className="border-success/30 shadow-card bg-gradient-to-br from-success/5 to-success/10">
+                <CardContent className="p-6">
+                  <h4 className="font-semibold text-foreground mb-4 flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-success" />
-                    Bénéfices clés pour votre métier
+                    Bénéfices clés
                   </h4>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {selectedPersonaData.benefits.map((benefit, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0" />
-                        <span className="text-muted-foreground text-sm">{benefit}</span>
+                      <li key={index} className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-success rounded-full mt-2 flex-shrink-0" />
+                        <span className="text-muted-foreground text-sm leading-relaxed">{benefit}</span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
               </Card>
 
-              {/* Bloc Actions - Séparé visuellement */}
-              <Card className="border-border shadow-card bg-primary/5 border-primary/20">
-                <CardContent className="p-4 xl:p-6">
-                  <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+              {/* Actions Block */}
+              <Card className="border-primary/30 shadow-card bg-gradient-to-br from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <h4 className="font-semibold text-foreground mb-4 flex items-center gap-3">
                     <Target className="w-5 h-5 text-primary" />
-                    Actions typiques dans Eligibly
+                    Actions dans Eligibly
                   </h4>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {selectedPersonaData.actions.map((action, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-muted-foreground text-sm">{action}</span>
+                      <li key={index} className="flex items-start gap-3">
+                        <ArrowRight className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                        <span className="text-muted-foreground text-sm leading-relaxed">{action}</span>
                       </li>
                     ))}
                   </ul>
@@ -283,18 +283,18 @@ export const DemoPersonas = () => {
           </div>
         </div>
 
-        {/* CTA global */}
-        <div className="text-center mt-12">
-          <div className="bg-gradient-primary rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
+        {/* Global CTA */}
+        <div className="text-center mt-20">
+          <div className="bg-gradient-primary rounded-3xl p-12 text-white shadow-luxury">
+            <h3 className="text-3xl font-bold mb-6">
               Eligibly s'adapte à votre rôle
             </h3>
-            <p className="text-white/90 mb-6 max-w-2xl mx-auto">
+            <p className="text-white/90 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
               Découvrez votre scénario métier personnalisé dans une démonstration adaptée à vos besoins spécifiques.
             </p>
             <Button 
               size="lg"
-              className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-3 rounded-xl"
+              className="bg-white text-primary hover:bg-white/90 hover:shadow-glow font-semibold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105"
             >
               Planifier une démo personnalisée
             </Button>
