@@ -68,7 +68,7 @@ const HomePage = () => {
         });
         
         if (webpSupported) {
-          setCharlyImageUrl(charlyOptimized);
+          setCharlyImageUrl('/lovable-uploads/88c13d27-df1a-465f-b610-57a3eda94d28.png');
         } else {
           // Fallback to PNG processing if WebP not supported
           const processedImageUrl = await processCharlyImage();
@@ -154,16 +154,16 @@ const HomePage = () => {
                   </Button>
                 </SafeLink>
                 
-                <SafeLink to="/produit" className="w-full sm:w-auto">
+                <SafeLink to="/demo" className="w-full sm:w-auto">
                   <Button 
                     variant="outline" 
                     size="lg" 
                     className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 h-auto border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 w-full"
                     role="button"
-                    aria-label="Découvrir la solution"
+                    aria-label={t('accessibility.demo')}
                   >
                     <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    Découvrir la solution
+                    {t('cta.secondary')}
                   </Button>
                 </SafeLink>
               </div>

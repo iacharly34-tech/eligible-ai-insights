@@ -33,7 +33,7 @@ const translations = {
     'hero.cta.secondary': 'Voir la démonstration',
     'hero.stats.opportunities': '+200 appels d\'offres analysés quotidiennement dans votre secteur',
     'hero.stats.time': '10x plus rapide pour qualifier un marché',
-    'hero.stats.precision': '50% de chance supplémentaire de gagner les marchés sélectionnés',
+    'hero.stats.precision': "Aide à la décision: placez l'investissement au bon niveau grâce au pourcentage de succès",
     
     // Features
     'features.title': 'Fonctionnalités',
@@ -241,7 +241,7 @@ const translations = {
     'hero.cta.secondary': 'Watch demonstration',
     'hero.stats.opportunities': '+200 public tenders analyzed daily in your sector',
     'hero.stats.time': '10x faster to qualify a tender',
-    'hero.stats.precision': '50% higher chance of winning selected tenders',
+    'hero.stats.precision': 'Decision support: invest exactly where it matters with your success percentage',
     
     // Features
     'features.title': 'Essential',
