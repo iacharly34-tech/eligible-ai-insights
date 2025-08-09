@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CTAFooter } from "@/components/CTAFooter";
 import { SafeLink } from "@/components/SafeLink";
+import { SEOHead } from "@/components/SEOHead";
+import { StructuredData } from "@/components/StructuredData";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   Users, 
@@ -89,10 +91,13 @@ const Solutions = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
-      <Header />
-      
-      {/* Hero Section */}
+    <>
+      <SEOHead />
+      <StructuredData page="solutions" />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
+        <Header />
+        
+        {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
@@ -217,6 +222,7 @@ const Solutions = () => {
         secondaryButtonText="Démonstration personnalisée"
       />
     </div>
+  </>
   );
 };
 

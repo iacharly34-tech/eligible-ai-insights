@@ -15,6 +15,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import { useState } from "react";
+import { SEOHead } from "@/components/SEOHead";
 
 const Connexion = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -40,8 +41,10 @@ const Connexion = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
-      <Header />
+    <>
+      <SEOHead noindex />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
+        <Header />
       
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-6xl">
@@ -242,6 +245,7 @@ const Connexion = () => {
         </div>
       </section>
     </div>
+  </>
   );
 };
 

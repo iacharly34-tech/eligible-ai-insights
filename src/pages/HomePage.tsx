@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { ScrollReveal } from "@/hooks/useScrollReveal";
-// SEO utils temporairement désactivés
+// SEO
+import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
-// AI content temporairement désactivé
+// UI
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -86,6 +87,7 @@ const HomePage = () => {
 
   return (
     <>
+      <SEOHead />
       <StructuredData page="home" />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
         {/* Header - Clean minimal style like Loris.ai */}

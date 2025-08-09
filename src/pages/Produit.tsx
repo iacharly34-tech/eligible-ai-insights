@@ -9,21 +9,19 @@ import { ProductFeatures } from "@/components/product/ProductFeatures";
 
 import { ProductBenefits } from "@/components/product/ProductBenefits";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { updateMetaDescription, updatePageTitle, updateCanonicalUrl, SEO_CONTENT } from "@/utils/seo";
+import { SEOHead } from "@/components/SEOHead";
+import { StructuredData } from "@/components/StructuredData";
 
 const Produit = () => {
   const { t } = useLanguage();
   
-  useEffect(() => {
-    updatePageTitle(SEO_CONTENT.produit.title);
-    updateMetaDescription(SEO_CONTENT.produit.description);
-    updateCanonicalUrl(SEO_CONTENT.produit.url);
-  }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
-      <Header />
-      
+    <>
+      <SEOHead />
+      <StructuredData page="product" />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
+        <Header />
       {/* Hero Section */}
       <ProductHero />
 
@@ -44,6 +42,7 @@ const Produit = () => {
         secondaryButtonText={t('cta.secondary')}
       />
     </div>
+  </>
   );
 };
 

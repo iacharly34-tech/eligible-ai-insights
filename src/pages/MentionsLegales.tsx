@@ -1,10 +1,13 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SEOHead } from "@/components/SEOHead";
 
 const MentionsLegales = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <>
+      <SEOHead noindex />
+      <div className="min-h-screen bg-background">
+        <Header />
       <main className="container mx-auto px-4 py-16 max-w-4xl">
         <h1 className="text-4xl font-bold text-foreground mb-8">Mentions Légales</h1>
         
@@ -89,6 +92,7 @@ const MentionsLegales = () => {
       </main>
       <Footer />
     </div>
+  </>
   );
 };
 

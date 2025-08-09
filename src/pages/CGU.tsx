@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { SEOHead } from "@/components/SEOHead";
 
 const CGU = () => {
   const { t, language } = useLanguage();
@@ -172,14 +173,17 @@ const CGU = () => {
   );
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="container mx-auto px-4 py-16 max-w-4xl">
-        <h1 className="text-4xl font-bold text-foreground mb-8">{t('cgu.title')}</h1>
-        {language === 'en' ? englishContent : frenchContent}
-      </main>
-      <Footer />
-    </div>
+    <>
+      <SEOHead noindex />
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main className="container mx-auto px-4 py-16 max-w-4xl">
+          <h1 className="text-4xl font-bold text-foreground mb-8">{t('cgu.title')}</h1>
+          {language === 'en' ? englishContent : frenchContent}
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 

@@ -1,4 +1,6 @@
 import { Header } from "@/components/Header";
+import { SEOHead } from "@/components/SEOHead";
+import { StructuredData } from "@/components/StructuredData";
 import { SafeLink } from "@/components/SafeLink";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -95,8 +97,11 @@ const Demo = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
-      <Header />
+    <>
+      <SEOHead />
+      <StructuredData page="demo" />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
+        <Header />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
@@ -363,6 +368,7 @@ const Demo = () => {
         </div>
       </div>
     </div>
+  </>
   );
 };
 
