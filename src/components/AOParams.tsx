@@ -181,7 +181,7 @@ export const AOParams = () => {
               )}
             </Button>
           </HoverCardTrigger>
-          <HoverCardContent className="w-[min(96vw,1200px)] p-0">
+          <HoverCardContent className="w-[min(96vw,1200px)] max-h-[70vh] overflow-y-auto z-[60] bg-background p-0 shadow-xl border">
             <ParamsPanel />
           </HoverCardContent>
         </HoverCard>
@@ -201,7 +201,7 @@ export const AOParams = () => {
               )}
             </Button>
           </PopoverTrigger>
-          <PopoverContent align="center" className="w-[96vw] p-0">
+          <PopoverContent align="center" className="w-[96vw] max-h-[85vh] overflow-y-auto z-[60] bg-background p-0 shadow-xl border">
             <ParamsPanel />
           </PopoverContent>
         </Popover>
