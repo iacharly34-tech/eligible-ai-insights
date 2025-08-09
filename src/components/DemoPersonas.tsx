@@ -113,18 +113,18 @@ export const DemoPersonas = () => {
   return (
     <section 
       id="demo" 
-      className="py-16 px-4 bg-gradient-subtle"
+      className="py-10 px-4 bg-gradient-subtle"
     >
       <div className="container mx-auto max-w-7xl w-full">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 font-medium">
+        <div className="text-center mb-8">
+          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 font-medium">
             Démonstration produit
           </Badge>
-          <h2 className="text-4xl font-bold mb-6 text-foreground">
+          <h2 className="text-3xl font-bold mb-4 text-foreground">
             Solutions par profil métier
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             Découvrez comment Eligibly s'adapte à votre rôle dans l'écosystème des marchés publics
           </p>
         </div>
@@ -170,17 +170,7 @@ export const DemoPersonas = () => {
         {/* Full-width Integrated Demo Section - Optimized Layout */}
         <div className="mb-12">
           <Card className="border-border shadow-luxury bg-card/50 backdrop-blur-sm">
-            <CardContent className="p-8">
-              {/* Demo Header */}
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center shadow-glow">
-                  <Play className="w-8 h-8 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Processus automatisé en action</h3>
-                  <p className="text-muted-foreground">Découvrez comment notre IA analyse et évalue les opportunités de marchés publics en temps réel</p>
-                </div>
-              </div>
+            <CardContent className="p-6">
               
               {/* Persona Content Blocks - Horizontal Above Demo */}
               <div className="mb-8">

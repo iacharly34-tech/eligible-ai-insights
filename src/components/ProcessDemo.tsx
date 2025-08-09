@@ -277,9 +277,9 @@ export const ProcessDemo = () => {
       {/* Desktop Layout */}
       <section 
         id="demo" 
-        className={`${isMobile ? 'hidden' : 'block'} py-12 px-4 bg-gradient-to-br from-slate-50 to-gray-100`}
+        className={`${isMobile ? 'hidden' : 'block'} py-6 px-4 bg-gradient-to-br from-slate-50 to-gray-100`}
       >
-        <div className="container mx-auto max-w-7xl">
+        <div className="container mx-auto max-w-[1400px]">
           <div className="text-center mb-8">
             <Badge className="mb-4 bg-purple-100 text-purple-700 border-purple-200">
               Démonstration
@@ -436,7 +436,7 @@ export const ProcessDemo = () => {
                   </h3>
                   
                   {/* Extended Charly Interface - Maximum width and optimized height */}
-                  <div className="bg-gradient-to-br from-slate-50 to-gray-100 rounded-lg border border-gray-200 min-h-[400px] w-full relative overflow-hidden">
+                  <div className="bg-gradient-to-br from-slate-50 to-gray-100 rounded-lg border border-gray-200 min-h-[360px] w-full relative overflow-hidden">
                   {/* Simulated browser header */}
                   <div className="bg-gray-100 rounded-t-xl px-4 py-3 border-b border-gray-200">
                     <div className="flex items-center gap-2">

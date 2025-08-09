@@ -26,7 +26,7 @@ export const ProductHero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <SafeLink to="/demo">
               <Button size="lg" className="px-8 py-4 h-auto group">
-                {t('common.tryFree')}
+                {t('common.bookDemo')}
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </SafeLink>

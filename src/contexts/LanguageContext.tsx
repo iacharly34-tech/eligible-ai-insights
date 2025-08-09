@@ -21,7 +21,7 @@ const translations = {
     'nav.resources': 'Ressources',
     'nav.about': 'À propos',
     'nav.login': 'Se connecter',
-    'nav.demo': 'Démo gratuite',
+    'nav.demo': 'Demander une démo',
     
     // Hero Section
     'hero.badge': 'Seule plateforme • IA prédictive • Marchés Publics',
@@ -84,7 +84,7 @@ const translations = {
     'accessibility.menu.open': 'Ouvrir le menu',
     'accessibility.menu.close': 'Fermer le menu',
     'accessibility.login': 'Se connecter à eligibly.ai',
-    'accessibility.demo': 'Essayer la démo gratuite',
+    'accessibility.demo': 'Demander une démo',
     'accessibility.images.logo': 'Logo eligibly.ai',
     'accessibility.images.hero': 'Interface eligibly.ai - Scoring IA des appels d\'offres publics',
     'accessibility.images.dashboard': 'Tableau de bord eligibly.ai',
@@ -229,7 +229,7 @@ const translations = {
     'nav.resources': 'Resources',
     'nav.about': 'About',
     'nav.login': 'Sign in',
-    'nav.demo': 'Free demo',
+    'nav.demo': 'Request a demo',
     
     // Hero Section
     'hero.badge': 'Only platform • Predictive AI • Public Procurement',
@@ -292,7 +292,7 @@ const translations = {
     'accessibility.menu.open': 'Open menu',
     'accessibility.menu.close': 'Close menu',
     'accessibility.login': 'Login to eligibly.ai',
-    'accessibility.demo': 'Try free demo',
+    'accessibility.demo': 'Request a demo',
     'accessibility.images.logo': 'eligibly.ai Logo',
     'accessibility.images.hero': 'eligibly.ai Interface - AI Scoring for Public Tenders',
     'accessibility.images.dashboard': 'eligibly.ai Dashboard',
