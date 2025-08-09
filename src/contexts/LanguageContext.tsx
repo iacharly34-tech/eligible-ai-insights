@@ -40,17 +40,17 @@ const translations = {
     'features.title.highlight': 'essentielles',
     'features.subtitle': 'Une plateforme complète pour optimiser votre approche des marchés publics et maximiser vos chances de succès.',
     'features.multisource.title': 'IA prédictive exclusive',
-    'features.multisource.desc': 'La seule plateforme qui prédit vos chances de succès avant même de candidater grâce à notre algorithme propriétaire',
-    'features.ai.title': 'Analyse prédictive des marchés',
-    'features.ai.desc': 'Notre IA analyse votre profil vs les critères de chaque marché pour prédire votre probabilité de remporter l\'appel d\'offres',
+    'features.multisource.desc': 'La seule plateforme qui prédit vos chances avant même de candidater et prémâche certains critères clés (prix optimal, engagements environnementaux, etc.) pour maximiser vos chances.',
+    'features.ai.title': 'Analyse de compatibilité automatique',
+    'features.ai.desc': 'Analyse votre profil vs les critères de chaque marché pour évaluer la compatibilité et prioriser les dossiers à traiter',
     'features.scoring.title': 'Score prédictif de réussite',
-    'features.scoring.desc': 'Chaque marché affiche votre probabilité de succès en pourcentage pour optimiser vos efforts commerciaux',
+    'features.scoring.desc': 'Affiche un pourcentage de succès pour placer le curseur d’investissement commercial exactement où il faut — un véritable outil d’aide à la décision.',
     'features.notifications.title': 'Alertes intelligentes prédictives',
-    'features.notifications.desc': 'Notifications uniquement pour les marchés où vous avez le plus de chances de remporter le contrat',
+    'features.notifications.desc': 'Alertes avec présélection volontaire pour éviter la surcharge d’informations et vous garder concentré sur vos objectifs de conversion',
     
     // Market Stats Section
-    'market.title': 'Le marché des',
-    'market.title.highlight': 'marchés publics',
+    'market.title': 'Le terrain des',
+    'market.title.highlight': 'opportunités publiques',
     'market.subtitle': 'Un secteur majeur de l\'économie française avec de nombreuses opportunités pour les entreprises',
     'market.stats.volume': '200 milliards d\'euros',
     'market.stats.volume.desc': 'de dépense publique par an en France',
@@ -64,10 +64,10 @@ const translations = {
     'market.benefits.growth': 'Croissance stable',
     
     // CTA Section
-    'cta.title': 'Ne candidatez plus à l\'aveugle',
-    'cta.subtitle': 'Soyez parmi les premiers à utiliser la seule IA prédictive pour maximiser vos chances de remporter des marchés publics — plus de compétitivité, donc de meilleures affaires pour l\'achat public.',
+    'cta.title': 'Décidez plus vite, gagnez plus',
+    'cta.subtitle': 'Gagnez en compétitivité et accélérez vos décisions grâce à notre IA prédictive des marchés publics.',
     'cta.primary': 'Accès anticipé',
-    'cta.secondary': 'Voir la prédiction en action',
+    'cta.secondary': 'Découvrez votre score de succès en direct',
     
     // Footer
     'footer.company': 'Société',
@@ -248,17 +248,17 @@ const translations = {
     'features.title.highlight': 'features',
     'features.subtitle': 'A comprehensive platform to optimize your approach to public procurement and maximize your chances of success.',
     'features.multisource.title': 'Exclusive predictive AI',
-    'features.multisource.desc': 'The only platform that predicts your chances of success before you even apply thanks to our proprietary algorithm',
-    'features.ai.title': 'Predictive market analysis',
-    'features.ai.desc': 'Our AI analyzes your profile vs each tender criteria to predict your probability of winning the contract',
+    'features.multisource.desc': 'The only platform that predicts your chances before you apply and pre‑checks key criteria (optimal pricing, environmental commitments, etc.) to maximize your odds.',
+    'features.ai.title': 'Automatic compatibility analysis',
+    'features.ai.desc': 'Analyzes your profile against each tender’s criteria to assess fit and prioritize the right bids',
     'features.scoring.title': 'Predictive success score',
-    'features.scoring.desc': 'Each tender displays your success probability as a percentage to optimize your commercial efforts',
+    'features.scoring.desc': 'Displays a success percentage to set your commercial investment exactly where it matters — a true decision-support tool',
     'features.notifications.title': 'Predictive smart alerts',
-    'features.notifications.desc': 'Notifications only for tenders where you have the highest chances of winning the contract',
+    'features.notifications.desc': 'Opt‑in predictive alerts to avoid information overload and keep you focused on conversions',
     
     // Market Stats Section
     'market.title': 'The',
-    'market.title.highlight': 'public procurement',
+    'market.title.highlight': 'public opportunity landscape',
     'market.subtitle': 'A major sector of the French economy with numerous opportunities for businesses',
     'market.stats.volume': '200 billion euros',
     'market.stats.volume.desc': 'in public spending per year in France',
@@ -272,10 +272,10 @@ const translations = {
     'market.benefits.growth': 'Stable growth',
     
     // CTA Section
-    'cta.title': 'Stop applying blindly',
-    'cta.subtitle': 'Be among the first to use the only predictive AI to maximize your chances of winning public tenders',
+    'cta.title': 'Decide faster, win more',
+    'cta.subtitle': 'Gain a competitive edge and make faster decisions with our predictive tender AI.',
     'cta.primary': 'Free early access',
-    'cta.secondary': 'See prediction in action',
+    'cta.secondary': 'See your live success score',
     
     // Footer
     'footer.company': 'Company',

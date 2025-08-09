@@ -650,8 +650,7 @@ const HomePage = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Surveillance automatique de toutes les plateformes officielles 
-              de marchés publics, mises à jour en temps réel.
+              Couverture nationale (France) et européenne aujourd’hui, mise à jour en temps réel — plan d’expansion mondiale en cours.
             </p>
             
             {/* Enhanced Tabs */}

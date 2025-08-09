@@ -68,12 +68,12 @@ export const CORE_FEATURES = [
   {
     icon: Database,
     title: "Surveillance Multi-Sources",
-    description: "Surveillance automatisée de plus de 200 sources officielles françaises et européennes",
+    description: "Surveillance automatisée de plus de 200 sources officielles en France et en Europe",
     shortDesc: "200+ sources surveillées automatiquement",
     details: ["BOAMP", "Marchés Publics", "TED eTendering", "PLACE", "Profils acheteurs", "Sites régionaux"],
     color: "primary",
     stat: COMPANY_STATS.sources,
-    benefit: "Couverture exhaustive du marché français et européen"
+    benefit: "Couverture nationale (France) et européenne aujourd’hui — expansion mondiale à venir"
   },
   {
     icon: Brain,
@@ -98,12 +98,12 @@ export const CORE_FEATURES = [
   {
     icon: Zap,
     title: "Alertes Instantanées",
-    description: "Notifications en temps réel via vos canaux de communication préférés",
+    description: "Alertes prédictives avec présélection volontaire pour éviter la surcharge d’informations — notifications sur vos canaux préférés",
     shortDesc: "Notifications multi-canaux en temps réel",
     details: ["Slack", "Email", "Microsoft Teams", "Mobile", "API", "Webhooks"],
     color: "primary",
     stat: "Instantané",
-    benefit: "Réactivité maximale sur les nouvelles opportunités"
+    benefit: "Réactivité maximale sans bruit inutile"
   }
 ] as const;
 
@@ -127,7 +127,7 @@ export const MEASURABLE_BENEFITS = [
   },
   {
     icon: Globe,
-    title: "Surveillez tout le marché",
+    title: "Surveillez toutes les opportunités en cours et à venir",
     description: `${COMPANY_STATS.sources} sources officielles surveillées automatiquement`,
     stat: COMPANY_STATS.sources,
     color: "primary",

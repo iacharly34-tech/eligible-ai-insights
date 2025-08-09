@@ -45,20 +45,22 @@ export const CTAFooter = ({
                 {primaryButtonText}
               </Button>
             </SafeLink>
-            <SafeLink to="/connexion">
-              <button 
-                className="flex items-center justify-center gap-2 rounded-xl text-lg font-semibold px-10 py-4"
-                style={{ 
-                  backgroundColor: '#ffffff',
-                  color: '#8b5cf6',
-                  border: '2px solid #ffffff',
-                  opacity: '1'
-                }}
-              >
-                <Phone className="w-5 h-5" style={{ color: '#8b5cf6' }} />
-                <span style={{ color: '#8b5cf6' }}>{secondaryButtonText}</span>
-              </button>
-            </SafeLink>
+            {secondaryButtonText && (
+              <SafeLink to="/connexion">
+                <button 
+                  className="flex items-center justify-center gap-2 rounded-xl text-lg font-semibold px-10 py-4"
+                  style={{ 
+                    backgroundColor: '#ffffff',
+                    color: '#8b5cf6',
+                    border: '2px solid #ffffff',
+                    opacity: '1'
+                  }}
+                >
+                  <Phone className="w-5 h-5" style={{ color: '#8b5cf6' }} />
+                  <span style={{ color: '#8b5cf6' }}>{secondaryButtonText}</span>
+                </button>
+              </SafeLink>
+            )}
           </div>
           
           <p className="text-white/70 mt-6 text-sm">

@@ -26,17 +26,16 @@ const personas: Persona[] = [
     id: "acheteur",
     title: "Responsable des marchés publics / Acheteur public",
     icon: UserCheck,
-    description: "Vous gérez les processus d'achat et de sélection des prestataires pour votre collectivité ou administration. Votre enjeu : identifier rapidement les entreprises les plus qualifiées et optimiser vos procédures.",
+    description: "Vous supervisez les achats et sélectionnez les meilleurs prestataires pour votre collectivité ou administration. Votre défi : identifier rapidement les entreprises les plus pertinentes et sécuriser vos choix.",
     benefits: [
-      "Benchmarks automatisés des fournisseurs",
-      "Analyse comparative des candidatures",
-      "Optimisation des achats publics",
-      "Conformité réglementaire garantie"
+      "Comparez automatiquement vos fournisseurs",
+      "Analysez et classez les candidatures en un clic",
+      "Optimisez vos achats pour plus d’efficacité"
     ],
     actions: [
-      "Sélectionne et qualifie les prestataires potentiels",
-      "Publie et suit la présélection des appels d'offres",
-      "Valide la conformité technique et administrative"
+      "Identifiez et qualifiez vos prestataires idéaux",
+      "Gérez et suivez facilement vos présélections",
+      "Vérifiez automatiquement la conformité technique et administrative"
     ]
   },
   {

@@ -30,12 +30,6 @@ export const ProductHero = () => {
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </SafeLink>
-            <SafeLink to="#demo">
-              <Button variant="outline" size="lg" className="px-8 py-4 h-auto">
-                <BarChart3 className="w-5 h-5 mr-2" />
-                Découvrir la démo
-              </Button>
-            </SafeLink>
           </div>
         </div>
       </div>

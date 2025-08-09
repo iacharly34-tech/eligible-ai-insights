@@ -375,10 +375,9 @@ const APropos = () => {
       </section>
 
       <CTAFooter 
-        title="Rencontrons-nous"
+        title="Discutons ensemble"
         subtitle="Une question ? Un projet ? Notre équipe est là pour vous accompagner."
-        primaryButtonText="Planifier un rendez-vous"
-        secondaryButtonText="Nous contacter"
+        primaryButtonText="Contactez-nous"
       />
     </div>
   </>
