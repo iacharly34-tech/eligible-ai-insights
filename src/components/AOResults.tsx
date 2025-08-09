@@ -103,13 +103,14 @@ const mockAOData = [
 interface AOResultsProps {
   isExpanded?: boolean;
   onToggleExpand?: () => void;
+  startIndex?: number;
 }
 
-export const AOResults = ({ isExpanded = false, onToggleExpand }: AOResultsProps) => {
+export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0 }: AOResultsProps) => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [showDetailed, setShowDetailed] = useState(false);
 
-  const displayedAOs = isExpanded ? mockAOData : mockAOData.slice(0, 1);
+  const displayedAOs = isExpanded ? mockAOData.slice(startIndex) : mockAOData.slice(startIndex, startIndex + 1);
 
   return (
     <div className="space-y-6">

@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { MobileDemoFlow } from "./MobileDemoFlow";
@@ -280,289 +281,141 @@ export const ProcessDemo = () => {
         className={`${isMobile ? 'hidden' : 'block'} py-6 px-4 bg-gradient-to-br from-slate-50 to-gray-100`}
       >
         <div className="container mx-auto max-w-[1400px]">
-          <div className="text-center mb-8">
-            <Badge className="mb-4 bg-purple-100 text-purple-700 border-purple-200">
-              Démonstration
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Processus automatisé en action
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Découvrez comment notre IA analyse et évalue les opportunités de marchés publics en temps réel
-            </p>
+          {/* Full-width Interface on top - no header to save vertical space */}
+          <div className="rounded-xl border bg-card shadow-card p-4 md:p-6">
+            <h3 className="font-bold text-foreground text-base md:text-lg mb-3 flex items-center gap-2">
+              <Globe className="w-4 h-4" />
+              Interface Charly IA
+            </h3>
+            {/* Full width, single AO visible above the fold */}
+            <div className="w-full">
+              <AOResults isExpanded={false} startIndex={0} />
+            </div>
           </div>
 
-          {/* Horizontal Layout - Full Width Utilization */}
-          <div className="grid lg:grid-cols-5 gap-6 w-full min-h-[500px]">
-            
-            {/* Steps Process - Left Side */}
-            <div className="lg:col-span-1 order-1">
-              <div className="bg-white rounded-lg border shadow-sm p-4 h-fit">
-                <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">
-                  Processus IA
-                </h3>
-                
-                <div className="space-y-2">
-                  {steps.map((step) => (
-                    <div key={step.id} className="flex items-center gap-2">
-                      <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs transition-colors ${
-                        currentStep >= step.id 
-                          ? 'bg-green-500 text-white' 
-                          : currentStep === step.id - 1 && isRunning
-                          ? 'bg-purple-500 text-white animate-pulse'
-                          : 'bg-gray-300 text-gray-600'
-                      }`}>
-                        {currentStep > step.id ? <CheckCircle className="w-3 h-3" /> : step.id}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="text-xs font-medium text-gray-800 line-clamp-1">{step.title}</div>
-                        <div className="text-xs text-gray-500 line-clamp-1">{step.description}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+          {/* Other AO results - scrollable zone below the fold */}
+          <div className="mt-4 rounded-xl border bg-card shadow-card p-4 md:p-6">
+            <h4 className="font-semibold text-foreground mb-3">Autres résultats AO</h4>
+            <div className="max-h-[42vh] overflow-y-auto pr-1">
+              <AOResults isExpanded={true} startIndex={1} />
             </div>
+          </div>
 
-            {/* Controls - Right Side */}
-            <div className="lg:col-span-1 order-3">
-              <div className="bg-white rounded-lg border shadow-sm p-4 h-fit">
-                <h3 className="font-bold text-gray-800 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
-                  <Play className="w-4 h-4" />
-                  Contrôles
-                </h3>
-                
-                <div className="space-y-3">
-                  <Button 
-                    onClick={startDemo}
-                    disabled={isRunning}
-                    className="w-full h-12 text-sm font-semibold bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    <Play className="w-4 h-4 mr-2" />
-                    {isRunning ? "Analyse..." : "Lancer IA"}
-                  </Button>
-                  
-                  <Button 
-                    onClick={resetDemo}
-                    variant="outline"
-                    className="w-full h-10 text-sm font-medium border-border hover:bg-muted/50"
-                  >
-                    <RotateCcw className="w-4 h-4 mr-2" />
-                    Reset
-                  </Button>
-                  
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-xs">
-                      <span className="text-gray-600">Progression</span>
-                      <span className="font-medium">{Math.round(progress)}%</span>
+          {/* Process, Console and Controls moved below in a collapsible area */}
+          <div className="mt-6">
+            <Accordion type="single" collapsible>
+              <AccordionItem value="tech">
+                <AccordionTrigger className="text-left">Processus IA, Console et Contrôles</AccordionTrigger>
+                <AccordionContent>
+                  <div className="grid lg:grid-cols-3 gap-6">
+                    {/* Steps Process */}
+                    <div className="lg:col-span-1 order-1">
+                      <div className="bg-white rounded-lg border shadow-sm p-4 h-fit">
+                        <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">
+                          Processus IA
+                        </h3>
+                        <div className="space-y-2">
+                          {steps.map((step) => (
+                            <div key={step.id} className="flex items-center gap-2">
+                              <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs transition-colors ${
+                                currentStep >= step.id 
+                                  ? 'bg-green-500 text-white' 
+                                  : currentStep === step.id - 1 && isRunning
+                                  ? 'bg-purple-500 text-white animate-pulse'
+                                  : 'bg-gray-300 text-gray-600'
+                              }`}>
+                                {currentStep > step.id ? <CheckCircle className="w-3 h-3" /> : step.id}
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <div className="text-xs font-medium text-gray-800 line-clamp-1">{step.title}</div>
+                                <div className="text-xs text-gray-500 line-clamp-1">{step.description}</div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                    <Progress value={progress} className="h-2" />
-                    <div className="text-xs text-gray-500 text-center">
-                      {isRunning ? `Étape ${currentStep}/4` : currentStep === 5 ? "Terminé ✓" : "Prêt"}
-                    </div>
-                  </div>
-                </div>
 
-                {/* Compact Indicators */}
-                <div className="mt-4 pt-4 border-t border-border">
-                  <h4 className="font-bold text-gray-700 text-xs uppercase tracking-wide mb-3">
-                    Temps réel
-                  </h4>
-                  <div className="grid grid-cols-1 gap-2">
-                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-md p-2 text-center">
-                      <div className="text-sm font-bold">
-                        {currentStep >= 1 ? '693' : '0'}
+                    {/* Console + Controls */}
+                    <div className="lg:col-span-2 order-2 space-y-4">
+                      {/* Console */}
+                      <div className="bg-white rounded-lg border shadow-sm p-4">
+                        <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-3 flex items-center gap-2">
+                          <Terminal className="w-4 h-4" />
+                          Console Charly IA
+                        </h3>
+                        <div className="bg-gray-900 rounded-lg p-3">
+                          <div className="flex items-center gap-2 mb-2">
+                            <div className="flex gap-1">
+                              <div className="w-1.5 h-1.5 bg-red-500 rounded-full"></div>
+                              <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
+                              <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                            </div>
+                            <span className="text-green-400 text-xs font-mono">charly-analysis.js</span>
+                          </div>
+                          <div className="space-y-0.5 text-xs font-mono h-32 overflow-y-auto bg-black/20 rounded p-2">
+                            {codeLines.map((line, index) => (
+                              <div key={index} className="text-green-400 break-all">
+                                <span className="text-gray-500 mr-1 text-xs">{index + 1}.</span>
+                                <span className="text-xs">{line}</span>
+                              </div>
+                            ))}
+                            {codeLines.length > 0 && isRunning && (
+                              <div className="text-green-400 animate-pulse">
+                                <span className="text-gray-500 mr-1 text-xs">{codeLines.length + 1}.</span>
+                                <span className="text-xs">█</span>
+                              </div>
+                            )}
+                            {codeLines.length === 0 && (
+                              <div className="text-gray-500 text-xs italic">
+                                Charly IA en attente...
+                              </div>
+                            )}
+                          </div>
+                        </div>
                       </div>
-                      <div className="text-xs opacity-90">AO trouvés</div>
-                    </div>
-                    
-                    <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-md p-2 text-center">
-                      <div className="text-sm font-bold">
-                        {currentStep >= 4 ? '91%' : currentStep >= 3 ? '87%' : currentStep >= 1 ? '45%' : '-'}
-                      </div>
-                      <div className="text-xs opacity-90">Score moy.</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            {/* Extended Console and Results - Center Area */}
-            <div className="lg:col-span-3 order-2">
-              <div className="space-y-4">
-                {/* Compact Console */}
-                <div className="bg-white rounded-lg border shadow-sm p-4">
-                  <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-3 flex items-center gap-2">
-                    <Terminal className="w-4 h-4" />
-                    Console Charly IA
-                  </h3>
-                  <div className="bg-gray-900 rounded-lg p-3">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="flex gap-1">
-                        <div className="w-1.5 h-1.5 bg-red-500 rounded-full"></div>
-                        <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
-                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                      </div>
-                      <span className="text-green-400 text-xs font-mono">charly-analysis.js</span>
-                    </div>
-                    
-                    <div className="space-y-0.5 text-xs font-mono h-32 overflow-y-auto bg-black/20 rounded p-2">
-                      {codeLines.map((line, index) => (
-                        <div key={index} className="text-green-400 break-all">
-                          <span className="text-gray-500 mr-1 text-xs">{index + 1}.</span>
-                          <span className="text-xs">{line}</span>
-                        </div>
-                      ))}
-                      {codeLines.length > 0 && isRunning && (
-                        <div className="text-green-400 animate-pulse">
-                          <span className="text-gray-500 mr-1 text-xs">{codeLines.length + 1}.</span>
-                          <span className="text-xs">█</span>
-                        </div>
-                      )}
-                      {codeLines.length === 0 && (
-                        <div className="text-gray-500 text-xs italic">
-                          Charly IA en attente...
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Results Section - Full Width */}
-                <div className="bg-white rounded-lg border shadow-sm p-4">
-                  <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
-                    <Globe className="w-4 h-4" />
-                    Interface Charly IA
-                  </h3>
-                  
-                  {/* Extended Charly Interface - Maximum width and optimized height */}
-                  <div className="bg-gradient-to-br from-slate-50 to-gray-100 rounded-lg border border-gray-200 min-h-[360px] w-full relative overflow-hidden">
-                  {/* Simulated browser header */}
-                  <div className="bg-gray-100 rounded-t-xl px-4 py-3 border-b border-gray-200">
-                    <div className="flex items-center gap-2">
-                      <div className="flex gap-1">
-                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                      </div>
-                      <div className="flex-1 bg-white rounded px-3 py-1 text-xs text-gray-600 border">
-                        app.eligibly.ai
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Charly header */}
-                  <div className="p-6 border-b bg-white">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                          C
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-gray-900 text-base">Charly IA</h4>
-                          <p className="text-sm text-gray-600">Analyse des appels d'offres</p>
-                        </div>
-                      </div>
-                      <Badge className="bg-green-100 text-green-700 border-green-200 text-xs px-3 py-1">
-                        Actif
-                      </Badge>
-                    </div>
-                  </div>
-                  
-                  {/* Content area - Optimized size */}
-                  <div className="p-4 flex-1 min-h-[300px] bg-gradient-to-b from-white to-gray-50">
-                    {!showResults ? (
-                      <div className="flex flex-col items-center justify-center h-full text-center space-y-6">
-                        <div className="w-24 h-24 mx-auto">
-                          <img 
-                            src={charlyNoBg} 
-                            alt="Charly Assistant" 
-                            className="w-full h-full object-contain opacity-80"
-                          />
-                        </div>
-                        
+                      {/* Controls */}
+                      <div className="bg-white rounded-lg border shadow-sm p-4 h-fit">
+                        <h3 className="font-bold text-gray-800 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
+                          <Play className="w-4 h-4" />
+                          Contrôles
+                        </h3>
                         <div className="space-y-3">
-                          <h5 className="text-xl font-medium text-gray-700">
-                            {isRunning 
-                              ? currentStep === 1 ? "Collecte en cours..." 
-                              : currentStep === 2 ? "Analyse des données..."
-                              : currentStep === 3 ? "Intelligence artificielle au travail..."
-                              : currentStep === 4 ? "Calcul des scores..."
-                              : "En attente de l'analyse..."
-                              : "En attente de l'analyse..."
-                            }
-                          </h5>
-                          
-                          <p className="text-sm text-gray-500 max-w-md leading-relaxed">
-                            {isRunning 
-                              ? currentStep === 1 ? "Connexion aux plateformes officielles et extraction des données..."
-                              : currentStep === 2 ? "Traitement et structuration des appels d'offres collectés..."
-                              : currentStep === 3 ? "Analyse approfondie avec nos modèles d'IA spécialisés..."
-                              : currentStep === 4 ? "Génération des scores de compatibilité personnalisés..."
-                              : "Charly va analyser et évaluer les opportunités selon vos critères."
-                              : "Charly va analyser et évaluer les opportunités selon vos critères."
-                            }
-                          </p>
-                        </div>
-                        
-                        {isRunning && (
-                          <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 bg-purple-500 rounded-full animate-bounce"></div>
-                            <div className="w-2 h-2 bg-purple-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                            <div className="w-2 h-2 bg-purple-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <div className="space-y-6">
-                        {/* Results header */}
-                        <div className="flex items-center justify-between pb-4 border-b">
-                          <div>
-                            <h5 className="text-lg font-semibold text-gray-900">
-                              Résultats d'analyse - {new Date().toLocaleDateString()}
-                            </h5>
-                            <p className="text-sm text-gray-600 mt-1">
-                              15 opportunités détectées • Score moyen: 78%
-                            </p>
-                          </div>
                           <Button 
-                            variant="outline" 
-                            size="sm"
-                            onClick={() => setShowExpandedResults(!showExpandedResults)}
-                            className="text-xs"
+                            onClick={startDemo}
+                            disabled={isRunning}
+                            className="w-full h-12 text-sm font-semibold bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
                           >
-                            {showExpandedResults ? 'Vue résumée' : 'Voir détails'}
+                            <Play className="w-4 h-4 mr-2" />
+                            {isRunning ? "Analyse..." : "Lancer IA"}
                           </Button>
-                        </div>
-                        
-                        {/* AOResults component with enhanced display */}
-                        <div className="bg-gray-50 rounded-lg p-3">
-                          <AOResults 
-                            isExpanded={true}
-                          />
-                        </div>
-                        
-                        {/* Action buttons */}
-                        <div className="flex gap-2 pt-3 border-t">
-                          <Button size="sm" className="flex-1 bg-purple-600 hover:bg-purple-700">
-                            DCE
+                          <Button 
+                            onClick={resetDemo}
+                            variant="outline"
+                            className="w-full h-10 text-sm font-medium border-border hover:bg-muted/50"
+                          >
+                            <RotateCcw className="w-4 h-4 mr-2" />
+                            Reset
                           </Button>
-                          <Button variant="outline" size="sm" className="flex-1">
-                            Suivi
-                          </Button>
-                          <Button variant="outline" size="sm" className="flex-1">
-                            Export
-                          </Button>
+                          <div className="space-y-2">
+                            <div className="flex justify-between text-xs">
+                              <span className="text-gray-600">Progression</span>
+                              <span className="font-medium">{Math.round(progress)}%</span>
+                            </div>
+                            <Progress value={progress} className="h-2" />
+                            <div className="text-xs text-gray-500 text-center">
+                              {isRunning ? `Étape ${currentStep}/4` : currentStep === 5 ? "Terminé ✓" : "Prêt"}
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    )}
+                    </div>
                   </div>
-                </div>
-                </div>
-              </div>
-            </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
-        </div>
       </section>
     </>
   );
