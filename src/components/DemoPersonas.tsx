@@ -2,8 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { useIsMobile } from "@/hooks/use-mobile";
-import { MobileDemoFlow } from "./MobileDemoFlow";
 import { ProcessDemo } from "./ProcessDemo";
 import { 
   UserCheck, 
@@ -11,8 +9,7 @@ import {
   TrendingUp, 
   BookOpen,
   CheckCircle,
-  ArrowRight,
-  Play
+  ArrowRight
 } from "lucide-react";
 
 interface Persona {
@@ -97,18 +94,11 @@ const personas: Persona[] = [
 
 export const DemoPersonas = () => {
   const [selectedPersona, setSelectedPersona] = useState<string>("acheteur");
-  const isMobile = useIsMobile();
 
   const selectedPersonaData = personas.find(p => p.id === selectedPersona) || personas[0];
   const IconComponent = selectedPersonaData.icon;
 
-  if (isMobile) {
-    return (
-      <div className="bg-gradient-to-br from-background to-muted">
-        <MobileDemoFlow />
-      </div>
-    );
-  }
+  // Mobile and desktop share the same unified demo layout.
 
   return (
     <section 

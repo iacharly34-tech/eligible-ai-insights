@@ -117,26 +117,28 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
   return (
     <div className="space-y-6">
       {/* Header avec statistiques */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <CheckCircle className="w-6 h-6 text-green-600" />
-          <div>
-            <h3 className="font-bold text-gray-800 text-lg">Résultats d'Analyse AO</h3>
-            <p className="text-sm text-gray-600">
-              {mockAOData.length} opportunités trouvées • Score moyen: 88%
-            </p>
+      {!hideHeader && (
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <CheckCircle className="w-6 h-6 text-green-600" />
+            <div>
+              <h3 className="font-bold text-gray-800 text-lg">Résultats d'Analyse AO</h3>
+              <p className="text-sm text-gray-600">
+                {mockAOData.length} opportunités trouvées • Score moyen: 88%
+              </p>
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-2">
+            <Badge className="bg-green-600 text-white">
+              {mockAOData.filter(ao => ao.score >= 90).length} excellentes
+            </Badge>
+            <Badge variant="outline">
+              {mockAOData.filter(ao => ao.score >= 80 && ao.score < 90).length} bonnes
+            </Badge>
           </div>
         </div>
-        
-        <div className="flex items-center gap-2">
-          <Badge className="bg-green-600 text-white">
-            {mockAOData.filter(ao => ao.score >= 90).length} excellentes
-          </Badge>
-          <Badge variant="outline">
-            {mockAOData.filter(ao => ao.score >= 80 && ao.score < 90).length} bonnes
-          </Badge>
-        </div>
-      </div>
+      )}
 
       {/* Filtres et options d'affichage */}
       {isExpanded && (
