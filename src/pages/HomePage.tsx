@@ -48,7 +48,7 @@ import {
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState<'france' | 'europe'>('france');
-  const [charlyImageUrl, setCharlyImageUrl] = useState<string>(aiCharacterTechMale);
+  const [charlyImageUrl, setCharlyImageUrl] = useState<string>('/lovable-uploads/4a1e0822-b495-482b-b3c5-ac4311f6f8e4.png');
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -68,11 +68,9 @@ const HomePage = () => {
         });
         
         if (webpSupported) {
-          setCharlyImageUrl('/lovable-uploads/88c13d27-df1a-465f-b610-57a3eda94d28.png');
+          setCharlyImageUrl('/lovable-uploads/4a1e0822-b495-482b-b3c5-ac4311f6f8e4.png');
         } else {
-          // Fallback to PNG processing if WebP not supported
-          const processedImageUrl = await processCharlyImage();
-          setCharlyImageUrl(processedImageUrl);
+          setCharlyImageUrl('/lovable-uploads/4a1e0822-b495-482b-b3c5-ac4311f6f8e4.png');
         }
       } catch (error) {
         // Ultimate fallback to original image
