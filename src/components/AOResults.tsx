@@ -104,9 +104,11 @@ interface AOResultsProps {
   isExpanded?: boolean;
   onToggleExpand?: () => void;
   startIndex?: number;
+  forceDetailed?: boolean;
+  hideHeader?: boolean;
 }
 
-export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0 }: AOResultsProps) => {
+export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, forceDetailed = false, hideHeader = false }: AOResultsProps) => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [showDetailed, setShowDetailed] = useState(false);
 
@@ -174,7 +176,7 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0 }
           <AOCard 
             key={ao.id} 
             ao={ao} 
-            isDetailed={showDetailed && isExpanded}
+            isDetailed={forceDetailed || (showDetailed && isExpanded)}
           />
         ))}
       </div>
