@@ -19,7 +19,7 @@ export const PricingSection = () => {
         "Tableau de bord simple",
         "Alertes par email"
       ],
-      cta: "Commencer gratuitement",
+      cta: "Commencer maintenant",
       variant: "outline" as const,
       popular: false
     },
@@ -40,7 +40,7 @@ export const PricingSection = () => {
         "Rapports personnalisés",
         "API disponible"
       ],
-      cta: "Essayer 14 jours gratuit",
+      cta: "Essayer 14 jours",
       variant: "default" as const,
       popular: true
     },
@@ -82,8 +82,8 @@ export const PricingSection = () => {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Commencez gratuitement et évoluez selon vos besoins. 
-            Tous les plans incluent un essai gratuit de 14 jours.
+            Commencez dès aujourd'hui et évoluez selon vos besoins. 
+            Tous les plans incluent un essai de 14 jours.
           </p>
         </div>
 
@@ -159,8 +159,8 @@ export const PricingSection = () => {
               <p className="text-sm text-muted-foreground">Aucun frais de setup. Vous ne payez que votre abonnement mensuel, sans engagement.</p>
             </div>
             <div>
-              <h4 className="font-semibold text-foreground mb-2">Que se passe-t-il après l'essai gratuit ?</h4>
-              <p className="text-sm text-muted-foreground">Vous pouvez continuer avec un plan payant ou revenir au plan gratuit limité. Aucune carte bancaire requise pour l'essai.</p>
+              <h4 className="font-semibold text-foreground mb-2">Que se passe-t-il après l'essai ?</h4>
+              <p className="text-sm text-muted-foreground">Vous pouvez continuer avec un plan payant ou revenir à un plan d'entrée limité. Aucune carte bancaire requise pour l'essai.</p>
             </div>
             <div>
               <h4 className="font-semibold text-foreground mb-2">Support technique inclus ?</h4>
@@ -174,7 +174,7 @@ export const PricingSection = () => {
           <div className="inline-flex items-center gap-4 bg-card rounded-2xl p-6 shadow-card border border-border/50">
             <div className="text-center">
               <div className="text-2xl font-bold text-primary">14 jours</div>
-              <div className="text-sm text-muted-foreground">Essai gratuit</div>
+              <div className="text-sm text-muted-foreground">Essai</div>
             </div>
             <div className="w-px h-12 bg-border"></div>
             <div className="text-center">

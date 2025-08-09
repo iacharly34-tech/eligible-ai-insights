@@ -15,7 +15,7 @@ export const CTASection = () => {
           {/* Urgency Badge */}
           <Badge variant="outline" className="text-primary border-primary/20 bg-primary/10 mb-8 px-6 py-2">
             <Timer className="w-4 h-4 mr-2" />
-            Essai gratuit • Résultats garantis
+            Essai 14 jours • Résultats mesurables
           </Badge>
 
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
@@ -31,7 +31,7 @@ export const CTASection = () => {
             <div className="flex items-start gap-3 text-left">
               <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
               <div>
-                <div className="font-semibold text-foreground">Essai gratuit 14 jours</div>
+                <div className="font-semibold text-foreground">Essai 14 jours</div>
                 <div className="text-sm text-muted-foreground">Aucune carte bancaire requise</div>
               </div>
             </div>

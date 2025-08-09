@@ -70,7 +70,7 @@ export const Hero = () => {
             </div>
 
             <div className="text-xs text-muted-foreground">
-              ✨ Aucune carte bancaire requise • Essai gratuit 14 jours
+              ✨ Aucune carte bancaire requise • Essai 14 jours • Plus de compétitivité = meilleures affaires publiques
             </div>
           </div>
         </div>

@@ -234,7 +234,7 @@ const Connexion = () => {
                 size="lg" 
                 className="bg-gradient-cta hover:shadow-glow text-white px-8 py-4 h-auto group"
               >
-                Essai gratuit 7 jours
+                Essai 7 jours
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>

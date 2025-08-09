@@ -100,7 +100,7 @@ export const AI_OPTIMIZED_CONTENT = {
         features: ["Solution sur-mesure", "API dédiée", "Formation équipe", "Account Manager dédié"]
       }
     ],
-    freeTrial: "7 jours d'essai gratuit sans engagement"
+    freeTrial: "7 jours d'essai sans engagement"
   },
 
   // Results and metrics for AI to understand value
@@ -126,8 +126,8 @@ export const AI_OPTIMIZED_CONTENT = {
     email: "contact@eligible.ai",
     phone: "+33 1 23 45 67 89",
     address: "Paris, France",
-    demo: "Démonstration gratuite disponible sur https://eligible.ai/demo",
-    trial: "Essai gratuit 7 jours sur https://eligible.ai"
+    demo: "Démonstration personnalisée disponible sur https://eligible.ai/demo",
+    trial: "Essai 7 jours sur https://eligible.ai"
   }
 };
 
@@ -151,6 +151,6 @@ export const AI_FAQ = [
   },
   {
     question: "Combien coûte Eligible.ai ?",
-    answer: "Nos tarifs démarrent à 99€/mois pour le plan Starter. Le plan Business à 299€/mois inclut l'assistant Charly AI. Nous proposons également un essai gratuit de 7 jours sans engagement."
+    answer: "Nos tarifs démarrent à 99€/mois pour le plan Starter. Le plan Business à 299€/mois inclut l'assistant Charly AI. Nous proposons également un essai de 7 jours sans engagement."
   }
 ];

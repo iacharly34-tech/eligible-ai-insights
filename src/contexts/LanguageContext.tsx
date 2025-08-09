@@ -65,8 +65,8 @@ const translations = {
     
     // CTA Section
     'cta.title': 'Ne candidatez plus à l\'aveugle',
-    'cta.subtitle': 'Soyez parmi les premiers à utiliser la seule IA prédictive pour maximiser vos chances de remporter des marchés publics',
-    'cta.primary': 'Accès anticipé gratuit',
+    'cta.subtitle': 'Soyez parmi les premiers à utiliser la seule IA prédictive pour maximiser vos chances de remporter des marchés publics — plus de compétitivité, donc de meilleures affaires pour l\'achat public.',
+    'cta.primary': 'Accès anticipé',
     'cta.secondary': 'Voir la prédiction en action',
     
     // Footer
@@ -147,7 +147,7 @@ const translations = {
     'pricing.badge': 'Tarifs transparents',
     'pricing.hero.title': 'Choisissez votre',
     'pricing.hero.title.highlight': 'plan parfait',
-    'pricing.hero.subtitle': 'Des tarifs simples et transparents. Commencez gratuitement, évoluez selon vos besoins. Sans engagement.',
+    'pricing.hero.subtitle': 'Des tarifs simples et transparents. Commencez dès aujourd\'hui, évoluez selon vos besoins. Sans engagement.',
     'pricing.guarantee.title': 'Garantie satisfait ou remboursé 30 jours',
     'pricing.guarantee.subtitle': 'Nous sommes convaincus que notre IA révolutionnera votre veille commerciale. Si vous n\'êtes pas satisfait, nous vous remboursons intégralement.',
     'pricing.faq.title': 'Questions',
@@ -206,13 +206,13 @@ const translations = {
     'login.demo.subtitle': 'Testez toutes les fonctionnalités pendant 7 jours, sans engagement',
     
     // Common elements
-    'common.getStarted': 'Commencer gratuitement',
+    'common.getStarted': 'Commencer',
     'common.bookDemo': 'Réserver une démo',
     'common.learnMore': 'En savoir plus',
     'common.download': 'Télécharger',
     'common.readMore': 'Lire la suite',
     'common.viewAll': 'Voir tout',
-    'common.tryFree': 'Essayer gratuitement',
+    'common.tryFree': 'Essayer',
     'common.contact': 'Nous contacter',
     'common.login': 'Se connecter',
     'common.signUp': 'S\'inscrire',

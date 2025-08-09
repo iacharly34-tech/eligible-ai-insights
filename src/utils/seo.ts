@@ -38,7 +38,7 @@ export const SEO_CONTENT = {
   },
   tarifs: {
     title: "Tarifs Eligible.ai - Plans et pricing de notre IA",
-    description: "Découvrez nos offres transparentes pour accéder à notre plateforme IA de veille des marchés publics. Essai gratuit 7 jours sans engagement.",
+    description: "Découvrez nos offres transparentes pour accéder à notre plateforme IA de veille des marchés publics. Essai 7 jours sans engagement.",
     url: "https://eligible.ai/tarifs"
   },
   ressources: {
@@ -52,8 +52,8 @@ export const SEO_CONTENT = {
     url: "https://eligible.ai/a-propos"
   },
   demo: {
-    title: "Démo Eligible.ai - Testez notre IA gratuitement",
-    description: "Réservez votre démonstration personnalisée de notre plateforme IA pour les marchés publics. Essai gratuit 7 jours inclus.",
+    title: "Démo Eligible.ai - Testez notre IA",
+    description: "Réservez votre démonstration personnalisée de notre plateforme IA pour les marchés publics. Essai 7 jours inclus.",
     url: "https://eligible.ai/demo"
   },
   connexion: {

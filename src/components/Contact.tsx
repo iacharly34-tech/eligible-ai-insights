@@ -122,7 +122,7 @@ export const Contact = () => {
                       <MessageCircle className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground">Consultation gratuite</h4>
+                      <h4 className="font-semibold text-foreground">Consultation personnalisée</h4>
                       <p className="text-sm text-muted-foreground">Analyse de vos besoins spécifiques</p>
                     </div>
                   </div>

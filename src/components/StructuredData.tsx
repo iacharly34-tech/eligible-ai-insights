@@ -48,8 +48,8 @@ export const StructuredData = ({ page }: StructuredDataProps) => {
               "@type": "Offer",
               "price": "0",
               "priceCurrency": "EUR",
-              "name": "Essai gratuit 7 jours",
-              "description": "Accès complet sans engagement"
+            "name": "Essai 7 jours",
+            "description": "Accès complet sans engagement"
             },
             "featureList": [
               "Analyse IA des appels d'offres",

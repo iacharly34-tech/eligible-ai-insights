@@ -146,7 +146,7 @@ export const MEASURABLE_BENEFITS = [
 // ============= CTA STANDARDISÉS =============
 export const STANDARD_CTAS = {
   primary: {
-    text: "Essai gratuit 7 jours",
+    text: "Essai 7 jours",
     description: "Testez toutes les fonctionnalités sans engagement"
   },
   secondary: {

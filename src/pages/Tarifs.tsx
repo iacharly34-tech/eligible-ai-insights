@@ -58,7 +58,7 @@ const Tarifs = () => {
         { name: "Support téléphonique", included: false },
         { name: "Formation personnalisée", included: false }
       ],
-      cta: "Essayer gratuitement",
+      cta: "Essayer 14 jours",
       gradient: "from-purple-500 to-pink-500"
     },
     {
@@ -135,7 +135,7 @@ const Tarifs = () => {
             <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-gray-600">
               <div className="flex items-center gap-2">
                 <Shield className="w-5 h-5 text-green-500" />
-                <span>7 jours d'essai gratuit</span>
+                <span>7 jours d'essai</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-blue-500" />
@@ -236,7 +236,7 @@ const Tarifs = () => {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5 text-green-500" />
-                <span>Migration de données gratuite</span>
+                <span>Migration de données incluse</span>
               </div>
             </div>
           </div>

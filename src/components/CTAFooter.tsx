@@ -12,7 +12,7 @@ interface CTAFooterProps {
 export const CTAFooter = ({ 
   title = "Prêt à transformer votre veille commerciale ?",
   subtitle = "Rejoignez les 500+ entreprises qui font confiance à notre IA pour identifier les meilleures opportunités de marchés publics.",
-  primaryButtonText = "Essai gratuit 7 jours",
+  primaryButtonText = "Essai 7 jours",
   secondaryButtonText = "Démonstration personnalisée"
 }: CTAFooterProps) => {
   return (
