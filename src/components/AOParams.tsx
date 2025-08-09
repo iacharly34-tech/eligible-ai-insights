@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
+import { SlidersHorizontal, Mail, MessageSquare, Wand2 } from "lucide-react";
 
 export const AOParams = () => {
   const [keywords, setKeywords] = useState("");
@@ -24,10 +25,15 @@ export const AOParams = () => {
   return (
     <section aria-label="Paramétrage des AO ciblés" className="mb-4 md:mb-6">
       <Card className="border">
-        <CardContent className="p-4">
-          <h3 className="font-bold text-gray-800 text-sm uppercase tracking-wide mb-3">Paramétrage des AO ciblés</h3>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3">
+        <CardHeader className="pb-2">
+          <div className="flex items-center gap-2">
+            <SlidersHorizontal className="h-4 w-4 text-primary" aria-hidden="true" />
+            <CardTitle className="text-sm uppercase tracking-wide">Paramétrage des AO ciblés</CardTitle>
+          </div>
+          <CardDescription>Définissez vos critères pour des résultats ultra-pertinents</CardDescription>
+        </CardHeader>
+        <CardContent className="px-4 pb-4 pt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
             {/* Mots-clés */}
             <div className="space-y-1">
               <Label htmlFor="keywords">Mots-clés</Label>
@@ -107,22 +113,34 @@ export const AOParams = () => {
               <div className="flex items-center gap-4 flex-wrap">
                 <div className="flex items-center gap-2">
                   <Checkbox id="alert-email" checked={alerts.email} onCheckedChange={() => toggleAlert("email")} />
-                  <Label htmlFor="alert-email" className="font-normal">Email</Label>
+                  <Label htmlFor="alert-email" className="font-normal flex items-center gap-1.5">
+                    <Mail className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
+                    Email
+                  </Label>
                 </div>
                 <div className="flex items-center gap-2">
                   <Checkbox id="alert-slack" checked={alerts.slack} onCheckedChange={() => toggleAlert("slack")} />
-                  <Label htmlFor="alert-slack" className="font-normal">Slack</Label>
+                  <Label htmlFor="alert-slack" className="font-normal flex items-center gap-1.5">
+                    <MessageSquare className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
+                    Slack
+                  </Label>
                 </div>
                 <div className="flex items-center gap-2">
                   <Checkbox id="alert-teams" checked={alerts.teams} onCheckedChange={() => toggleAlert("teams")} />
-                  <Label htmlFor="alert-teams" className="font-normal">Teams</Label>
+                  <Label htmlFor="alert-teams" className="font-normal flex items-center gap-1.5">
+                    <MessageSquare className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
+                    Teams
+                  </Label>
                 </div>
               </div>
             </div>
 
             {/* Action */}
             <div className="flex items-end justify-start sm:justify-end">
-              <Button className="h-9">Appliquer</Button>
+              <Button className="h-9" variant="accent">
+                <Wand2 className="mr-2 h-4 w-4" aria-hidden="true" />
+                Appliquer
+              </Button>
             </div>
           </div>
         </CardContent>
