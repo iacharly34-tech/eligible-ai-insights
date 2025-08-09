@@ -11,7 +11,7 @@ import {
   Eye
 } from "lucide-react";
 
-const mockAOData = [
+export const mockAOData = [
   {
     id: "ao-001",
     title: "Fourniture de matériel informatique pour établissements scolaires",

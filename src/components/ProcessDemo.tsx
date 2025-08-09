@@ -7,6 +7,8 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 import { AOResults } from "./AOResults";
 import { AOParams } from "./AOParams";
+import { mockAOData } from "./AOResults";
+import { HeroAOCardMobile } from "./HeroAOCardMobile";
 
 
 import { 
@@ -37,7 +39,9 @@ export const ProcessDemo = () => {
   const [mobileActiveScreen, setMobileActiveScreen] = useState<'initial' | 'step1' | 'step2' | 'step3' | 'step4' | 'results'>('initial');
   const [showFullConsole, setShowFullConsole] = useState(false);
   const [activeTab, setActiveTab] = useState<'process' | 'console' | 'controls'>('process');
-  const [showTabContent, setShowTabContent] = useState(false);
+const [showTabContent, setShowTabContent] = useState(false);
+const [mobileTab, setMobileTab] = useState<'process' | 'console' | 'controls' | null>(null);
+const [mobilePanelOpen, setMobilePanelOpen] = useState(false);
 
   const steps = [
     {

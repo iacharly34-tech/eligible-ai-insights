@@ -53,9 +53,10 @@ interface AOData {
 interface AOCardProps {
   ao: AOData;
   isDetailed?: boolean;
+  variant?: 'default' | 'heroMobile';
 }
 
-export const AOCard = ({ ao, isDetailed = false }: AOCardProps) => {
+export const AOCard = ({ ao, isDetailed = false, variant = 'default' }: AOCardProps) => {
   const getScoreColor = (score: number) => {
     if (score >= 80) return "text-success";
     if (score >= 60) return "text-warning";
