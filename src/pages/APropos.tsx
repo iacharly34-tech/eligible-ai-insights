@@ -268,7 +268,7 @@ const APropos = () => {
               <span className="bg-gradient-highlight bg-clip-text text-transparent">équipe</span>
             </h2>
              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Une équipe anonyme mais experte qui analyse et maîtrise la pipeline de ce marché
+              Conçue par des experts des marchés publics, data scientists et ingénieurs IA, l’intelligence de Charly maîtrise toute la chaîne des appels d’offres et démocratise un univers trop souvent réservé aux mêmes, pour ouvrir l’accès aux acteurs légitimes, accroître la compétitivité et soutenir la croissance.
             </p>
           </div>
           
