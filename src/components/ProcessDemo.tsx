@@ -5,6 +5,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 import { AOResults } from "./AOResults";
+import { AOParams } from "./AOParams";
+
 
 import { 
   Play, 
@@ -31,6 +33,7 @@ export const ProcessDemo = () => {
   const [showResults, setShowResults] = useState(false);
   const [showExpandedResults, setShowExpandedResults] = useState(false);
   const [mobileActiveScreen, setMobileActiveScreen] = useState<'initial' | 'step1' | 'step2' | 'step3' | 'step4' | 'results'>('initial');
+  const [showFullConsole, setShowFullConsole] = useState(false);
 
   const steps = [
     {
@@ -271,6 +274,8 @@ export const ProcessDemo = () => {
         className="py-6 px-4 bg-gradient-to-br from-slate-50 to-gray-100"
       >
         <div className="container mx-auto max-w-[1400px]">
+          {/* Paramétrage des AO ciblés */}
+          <AOParams />
           {/* Top row: Processus IA, Console et Contrôles */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             {/* Processus IA */}
@@ -301,10 +306,15 @@ export const ProcessDemo = () => {
 
             {/* Console Charly IA */}
             <div className="bg-white rounded-lg border shadow-sm p-4">
-              <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-3 flex items-center gap-2">
-                <Terminal className="w-4 h-4" />
-                Console Charly IA
-              </h3>
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide flex items-center gap-2 m-0">
+                  <Terminal className="w-4 h-4" />
+                  Console Charly IA
+                </h3>
+                <Button variant="outline" size="sm" onClick={() => setShowFullConsole((v) => !v)} className="h-8">
+                  {showFullConsole ? "Voir moins" : "Voir plus"}
+                </Button>
+              </div>
               <div className="bg-gray-900 rounded-lg p-3">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="flex gap-1">
@@ -314,7 +324,7 @@ export const ProcessDemo = () => {
                   </div>
                   <span className="text-green-400 text-xs font-mono">charly-analysis.js</span>
                 </div>
-                <div className="space-y-0.5 text-xs font-mono h-24 sm:h-28 md:h-32 lg:h-40 overflow-y-auto bg-black/20 rounded p-2">
+                <div className={`space-y-0.5 text-xs font-mono ${showFullConsole ? "h-48 sm:h-56 md:h-64 lg:h-72" : "h-24 sm:h-28 md:h-32 lg:h-40"} overflow-y-auto bg-black/20 rounded p-2`}>
                   {codeLines.map((line, index) => (
                     <div key={index} className="text-green-400 break-all">
                       <span className="text-gray-500 mr-1 text-xs">{index + 1}.</span>
