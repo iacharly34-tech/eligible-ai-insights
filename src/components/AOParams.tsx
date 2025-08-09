@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -19,6 +19,14 @@ export const AOParams = () => {
   const [region, setRegion] = useState<string | undefined>(undefined);
   const [frequency, setFrequency] = useState<string | undefined>("quotidienne");
   const [alerts, setAlerts] = useState<{ email: boolean; slack: boolean; teams: boolean }>({ email: true, slack: false, teams: false });
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    const seen = localStorage.getItem("aoParamsSeen");
+    if (!seen) {
+      setOpen(true);
+      localStorage.setItem("aoParamsSeen", "1");
+    }
+  }, []);
 
   const toggleAlert = (key: keyof typeof alerts) => {
     setAlerts((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -163,7 +171,7 @@ export const AOParams = () => {
     <section aria-label="Paramétrage des AO ciblés" className="mb-4 md:mb-6">
       {/* Desktop: Hover to open */}
       <div className="hidden md:block">
-        <HoverCard openDelay={100}>
+        <HoverCard open={open} onOpenChange={setOpen} openDelay={100}>
           <HoverCardTrigger asChild>
             <Button variant="secondary" className="h-9">
               <SlidersHorizontal className="mr-2 h-4 w-4" aria-hidden="true" />
@@ -173,7 +181,7 @@ export const AOParams = () => {
               )}
             </Button>
           </HoverCardTrigger>
-          <HoverCardContent className="w-[min(92vw,1100px)] p-0">
+          <HoverCardContent className="w-[min(96vw,1200px)] p-0">
             <ParamsPanel />
           </HoverCardContent>
         </HoverCard>
@@ -181,7 +189,7 @@ export const AOParams = () => {
 
       {/* Mobile: Click to open */}
       <div className="md:hidden">
-        <Popover>
+        <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
             <Button variant="secondary" className="h-10 w-full justify-between">
               <span className="flex items-center">
@@ -193,7 +201,7 @@ export const AOParams = () => {
               )}
             </Button>
           </PopoverTrigger>
-          <PopoverContent align="center" className="w-[92vw] p-0">
+          <PopoverContent align="center" className="w-[96vw] p-0">
             <ParamsPanel />
           </PopoverContent>
         </Popover>

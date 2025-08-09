@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -13,7 +14,8 @@ import {
   RotateCcw, 
   Globe,
   CheckCircle,
-  Terminal
+  Terminal,
+  Brain
 } from "lucide-react";
 
 export const ProcessDemo = () => {
@@ -34,6 +36,8 @@ export const ProcessDemo = () => {
   const [showExpandedResults, setShowExpandedResults] = useState(false);
   const [mobileActiveScreen, setMobileActiveScreen] = useState<'initial' | 'step1' | 'step2' | 'step3' | 'step4' | 'results'>('initial');
   const [showFullConsole, setShowFullConsole] = useState(false);
+  const [activeTab, setActiveTab] = useState<'process' | 'console' | 'controls'>('process');
+  const [showTabContent, setShowTabContent] = useState(false);
 
   const steps = [
     {
@@ -399,6 +403,17 @@ export const ProcessDemo = () => {
             <h4 className="font-semibold text-foreground mb-3">Autres résultats AO</h4>
             <div className="max-h-[42vh] overflow-y-auto pr-1 scroll-smooth">
               <AOResults isExpanded={true} startIndex={1} />
+            </div>
+          </div>
+
+          {/* Zone Actions (footer) */}
+          <div className="mt-4 md:mt-6">
+            <div className="sticky bottom-2 z-30 md:static">
+              <div className="bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border rounded-xl shadow-lg p-3 flex gap-2">
+                <Button className="flex-1">Ouvrir l'AO</Button>
+                <Button className="flex-1" variant="outline" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Modifier filtres</Button>
+                <Button className="flex-1" variant="secondary" onClick={startDemo}>Relancer</Button>
+              </div>
             </div>
           </div>
         </div>
