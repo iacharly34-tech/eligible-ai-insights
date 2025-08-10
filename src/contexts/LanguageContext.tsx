@@ -86,8 +86,8 @@ const translations = {
     'features.flow.subtitle': 'Simplifiez votre veille',
     
     // Market Stats Section
-    'market.title': 'Le terrain des',
-    'market.title.highlight': 'opportunités publiques',
+    'market.title': 'Les chiffres clés des',
+    'market.title.highlight': 'marchés publics',
     'market.subtitle': 'Un secteur majeur de l\'économie française avec de nombreuses opportunités pour les entreprises',
     'market.stats.volume': '200 milliards d\'euros',
     'market.stats.volume.desc': 'de dépense publique par an en France',
