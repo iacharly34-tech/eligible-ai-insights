@@ -41,6 +41,15 @@ const translations = {
     'charly.meet.title.suffix': ', votre assistant aux marchés publics',
     'charly.meet.subtitle': "Créé par l'équipe Eligibly, Charly est votre assistant IA spécialisé dans les marchés publics. Il analyse en continu les opportunités avec notre expertise et vous recommande les meilleures chances de succès.",
     
+    // Coverage Section
+    'coverage.badge.sources': 'Sources de données',
+    'coverage.badge.realtime': 'Mise à jour en temps réel',
+    'coverage.title': 'Couverture',
+    'coverage.title.highlight': 'exhaustive',
+    'coverage.subtitle': "Couverture nationale (France) et européenne aujourd’hui, mise à jour en temps réel — plan d’expansion mondiale en cours.",
+    'coverage.tab.france': 'France',
+    'coverage.tab.europe': 'Europe',
+    
     // Features
     'features.title': 'Fonctionnalités',
     'features.title.highlight': 'essentielles',
@@ -347,13 +356,16 @@ const translations = {
     'features.core.alerts.title': 'Instant alerts',
     'features.core.alerts.desc': 'Predictive opt‑in alerts to avoid information overload — notifications on your preferred channels',
     
+    // Coverage Section
+    'coverage.badge.sources': 'Data sources',
+    'coverage.badge.realtime': 'Real‑time updates',
+    'coverage.title': 'Comprehensive',
+    'coverage.title.highlight': 'coverage',
+    'coverage.subtitle': 'National (France) and European coverage today, updated in real time — global expansion plan underway.',
+    'coverage.tab.france': 'France',
+    'coverage.tab.europe': 'Europe',
     
-    // Features Heading
-    'features.heading.prefix': 'A complete platform for your',
-    'features.heading.highlight': 'growth',
-    'features.heading.suffix': '',
-    
-    'features.multisource.title': 'Exclusive predictive AI',
+    // Features
     'features.multisource.desc': 'The only platform that predicts your chances before you apply and pre‑checks key criteria (optimal pricing, environmental commitments, etc.) to maximise your odds.',
     'features.ai.title': 'Automatic compatibility analysis',
     'features.ai.desc': 'Analyses your profile against each tender’s criteria to assess fit and prioritise the right bids',

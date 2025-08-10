@@ -623,20 +623,20 @@ const HomePage = () => {
         <div className="container mx-auto relative z-10">
           <ScrollReveal className="text-center mb-16">
             <div className="flex justify-center items-center gap-3 mb-4">
-              <Badge className="bg-cyan-soft/10 text-cyan-soft border-cyan-soft/20">Sources de données</Badge>
+              <Badge className="bg-cyan-soft/10 text-cyan-soft border-cyan-soft/20">{t('coverage.badge.sources')}</Badge>
               <div className="flex items-center gap-2 bg-cyan-soft/10 text-cyan-soft px-3 py-1 rounded-full text-sm border border-cyan-soft/20 animate-pulse">
                 <div className="w-2 h-2 bg-cyan-soft rounded-full animate-ping"></div>
-                Mise à jour en temps réel
+                {t('coverage.badge.realtime')}
               </div>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Couverture{" "}
+              {t('coverage.title')}{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                exhaustive
+                {t('coverage.title.highlight')}
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Couverture nationale (France) et européenne aujourd’hui, mise à jour en temps réel — plan d’expansion mondiale en cours.
+              {t('coverage.subtitle')}
             </p>
             
             {/* Enhanced Tabs */}
