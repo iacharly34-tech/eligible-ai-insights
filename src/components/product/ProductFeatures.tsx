@@ -6,13 +6,12 @@ import { CORE_FEATURES } from "@/data/constants";
 export const ProductFeatures = () => {
   const { t } = useLanguage();
 
-  // Spécialisation : Fonctionnalités techniques détaillées uniquement
-  const technicalFeatures = CORE_FEATURES.map(feature => ({
+  const technicalFeatures = CORE_FEATURES.map((feature) => ({
     ...feature,
     // Ajout de détails techniques spécifiques pour la page Produit
     technicalDetails: feature.details,
-    integrations: feature.title === "Alertes Instantanées" ? ['Slack', 'Microsoft Teams', 'Email', 'Webhooks'] : [],
-    apiAccess: feature.title === "Surveillance Multi-Sources" ? true : false
+    integrations: (feature as any).key === 'alerts' ? ['Slack', 'Microsoft Teams', 'Email', 'Webhooks'] : [],
+    apiAccess: (feature as any).key === 'surveillance'
   }));
 
   return (
@@ -38,10 +37,10 @@ export const ProductFeatures = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
-                      {feature.title}
+                      {t(`features.core.${(feature as any).key}.title`)}
                     </h3>
                     <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {feature.description}
+                      {t(`features.core.${(feature as any).key}.desc`)}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {feature.technicalDetails.map((detail, i) => (
