@@ -622,8 +622,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   }, [language]);
 
   const t = (key: string): string => {
-    const result = translations[language][key as keyof typeof translations[typeof language]] || key;
-    return result;
+    const dict = translations[language] as Record<string, string>;
+    if (Object.prototype.hasOwnProperty.call(dict, key)) {
+      return dict[key] as string; // can be empty string
+    }
+    return key;
   };
 
   return (
