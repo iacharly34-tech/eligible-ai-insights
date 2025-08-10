@@ -152,18 +152,6 @@ const HomePage = () => {
                   </Button>
                 </SafeLink>
                 
-                <SafeLink to="/demo" className="w-full sm:w-auto">
-                  <Button 
-                    variant="outline" 
-                    size="lg" 
-                    className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 h-11 sm:h-auto border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 w-full"
-                    role="button"
-                    aria-label={t('accessibility.demo')}
-                  >
-                    <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    {t('cta.secondary')}
-                  </Button>
-                </SafeLink>
               </div>
 
               {/* Trust indicators */}
