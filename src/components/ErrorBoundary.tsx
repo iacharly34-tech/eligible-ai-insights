@@ -24,12 +24,17 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: any) {
-    console.error('ErrorBoundary caught an error:', error, errorInfo);
-    
-    // Log to monitoring service in production
-    if (process.env.NODE_ENV === 'production') {
-      // Here you would send to your monitoring service
-      this.logErrorToService(error, errorInfo);
+    const isDev = (typeof import.meta !== 'undefined' && (import.meta as any).env && (import.meta as any).env.MODE === 'development') || (typeof process !== 'undefined' && (process as any).env?.NODE_ENV === 'development');
+    const isProd = (typeof import.meta !== 'undefined' && (import.meta as any).env && (import.meta as any).env.MODE === 'production') || (typeof process !== 'undefined' && (process as any).env?.NODE_ENV === 'production');
+
+    // Only log verbose details in development
+    if (isDev) {
+      console.error('ErrorBoundary caught an error:', error?.message);
+    }
+
+    // Privacy-preserving reporting in production
+    if (isProd) {
+      this.logErrorToService(error, null);
     }
   }
 
@@ -86,10 +91,12 @@ export class ErrorBoundary extends Component<Props, State> {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="text-sm text-muted-foreground bg-muted p-3 rounded-md">
-                <strong>Détails techniques :</strong><br />
-                {this.state.error?.message || 'Erreur inconnue'}
-              </div>
+              {(typeof import.meta !== 'undefined' && (import.meta as any).env && (import.meta as any).env.MODE === 'development') && (
+                <div className="text-sm text-muted-foreground bg-muted p-3 rounded-md">
+                  <strong>Détails techniques :</strong><br />
+                  {this.state.error?.message || 'Erreur inconnue'}
+                </div>
+              )}
               
               <div className="flex flex-col sm:flex-row gap-2">
                 <Button 
