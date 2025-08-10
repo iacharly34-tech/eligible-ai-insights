@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
 import { SafeLink } from "@/components/SafeLink";
+import { MobileDemoFlow } from "@/components/MobileDemoFlow";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -23,7 +24,7 @@ import {
   Play,
   Shield
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Demo = () => {
@@ -39,6 +40,14 @@ const Demo = () => {
     newsletter: false
   });
   const { t } = useLanguage();
+  const [showTopCTA, setShowTopCTA] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowTopCTA(window.scrollY > 60);
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const benefits = [
     {
@@ -72,6 +81,18 @@ const Demo = () => {
       <StructuredData page="demo" />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
         <Header />
+        {showTopCTA && (
+          <div className="md:hidden fixed top-16 left-0 right-0 z-40 px-3">
+            <Button 
+              variant="tengo"
+              className="w-full h-12 text-base font-semibold rounded-2xl shadow-glow"
+              aria-label={t('accessibility.demo')}
+              onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+            >
+              {t('nav.demo')}
+            </Button>
+          </div>
+        )}
       
       {/* Hero Section */}
       <section className="pt-24 md:pt-32 pb-16 md:pb-20 px-4">
@@ -110,6 +131,8 @@ const Demo = () => {
           </div>
         </div>
       </section>
+
+      <div className="md:hidden -mt-2 mb-10"><MobileDemoFlow /></div>
 
       <div className="container mx-auto max-w-7xl px-4 pb-28 md:pb-20">
         <div className="grid lg:grid-cols-2 gap-16">
@@ -362,16 +385,6 @@ const Demo = () => {
 
           </div>
         </div>
-      </div>
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-t border-border p-4">
-        <Button 
-          variant="tengo"
-          className="w-full h-12 text-base font-semibold"
-          aria-label={t('accessibility.demo')}
-          onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-        >
-          {t('nav.demo')}
-        </Button>
       </div>
     </div>
   </>
