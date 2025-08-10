@@ -13,16 +13,47 @@ export const LanguageSwitcher = () => {
 
   const handleSwitch = (code: 'fr' | 'en') => {
     if (language === code) return;
-    // Compute new path preserving query and hash
     const { pathname, search, hash } = location;
+
+    // Explicit slug mapping between FR and EN to avoid 404s
+    const frToEn: Record<string, string> = {
+      '/': '/en',
+      '/produit': '/en/product',
+      '/solutions': '/en/solutions',
+      '/tarifs': '/en/pricing',
+      '/ressources': '/en/resources',
+      '/a-propos': '/en/about',
+      '/connexion': '/en/login',
+      '/demo': '/en/demo',
+      '/inscription': '/en/demo',
+      '/mentions-legales': '/en/legal',
+      '/confidentialite': '/en/privacy',
+      '/cgu': '/en/terms',
+    };
+
+    const enToFr: Record<string, string> = {
+      '/en': '/',
+      '/en/': '/',
+      '/en/product': '/produit',
+      '/en/solutions': '/solutions',
+      '/en/pricing': '/tarifs',
+      '/en/resources': '/ressources',
+      '/en/about': '/a-propos',
+      '/en/login': '/connexion',
+      '/en/demo': '/demo',
+      '/en/legal': '/mentions-legales',
+      '/en/privacy': '/confidentialite',
+      '/en/terms': '/cgu',
+    };
+
     let newPath = pathname;
     if (code === 'en') {
-      newPath = pathname.startsWith('/en') ? pathname : `/en${pathname}`;
+      newPath = frToEn[pathname] ?? (pathname.startsWith('/en') ? pathname : `/en${pathname}`);
     } else {
-      newPath = pathname.startsWith('/en') ? pathname.replace(/^\/en/, '') || '/' : pathname;
+      newPath = enToFr[pathname] ?? (pathname.startsWith('/en') ? pathname.replace(/^\/en/, '') || '/' : pathname);
     }
+
     setLanguage(code);
-    // Navigate to keep LanguageSync consistent with URL
     navigate({ pathname: newPath, search, hash }, { replace: true });
   };
 

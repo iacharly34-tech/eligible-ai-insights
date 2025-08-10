@@ -9,14 +9,17 @@ import { useLocation } from "react-router-dom";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const location = useLocation();
 
+  const base = language === 'en' ? '/en' : '';
+  const homePath = base || '/';
+
   const navigation = [
-    { name: t('nav.product'), href: "/produit" },
-    { name: t('nav.pricing'), href: "/tarifs" },
-    { name: t('nav.resources'), href: "/ressources" },
-    { name: t('nav.about'), href: "/a-propos" },
+    { name: t('nav.product'), href: language === 'en' ? '/en/product' : '/produit' },
+    { name: t('nav.pricing'), href: language === 'en' ? '/en/pricing' : '/tarifs' },
+    { name: t('nav.resources'), href: language === 'en' ? '/en/resources' : '/ressources' },
+    { name: t('nav.about'), href: language === 'en' ? '/en/about' : '/a-propos' },
   ];
 
   return (
@@ -24,7 +27,7 @@ export const Header = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Brand */}
-          <SafeLink to="/" className="text-lg font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md" aria-label={t('accessibility.home')}>
+          <SafeLink to={homePath} className="text-lg font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md" aria-label={t('accessibility.home')}>
             eligibly.ai
           </SafeLink>
 
@@ -61,7 +64,7 @@ export const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-3">
             <LanguageSwitcher />
-            <SafeLink to="/demo">
+            <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
               <Button 
                 size="sm" 
                 className="bg-gradient-cta hover:shadow-glow text-white text-sm font-medium px-6 py-2 h-10 min-h-[40px] transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
@@ -123,7 +126,7 @@ export const Header = () => {
               <div className="flex justify-center mb-3">
                 <LanguageSwitcher />
               </div>
-              <SafeLink to="/demo">
+              <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
                 <Button 
                   className="w-full bg-gradient-cta hover:shadow-glow text-white text-sm font-medium h-12 min-h-[44px] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                   onClick={() => setIsMenuOpen(false)}
