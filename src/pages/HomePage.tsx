@@ -49,7 +49,9 @@ const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState<'france' | 'europe'>('france');
   const [charlyImageUrl, setCharlyImageUrl] = useState<string>('/lovable-uploads/4a1e0822-b495-482b-b3c5-ac4311f6f8e4.png');
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const demoHref = language === 'en' ? '/en/demo' : '/demo';
+  const loginHref = language === 'en' ? '/en/login' : '/connexion';
 
   useEffect(() => {
     setIsVisible(true);
@@ -409,6 +411,7 @@ const HomePage = () => {
                   role="img"
                   loading="lazy"
                   decoding="async"
+                  sizes="(min-width: 768px) 480px, 100vw"
                 />
                 </div>
               </div>
@@ -762,24 +765,23 @@ const HomePage = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-10 py-4 h-auto font-semibold"
-            >
-              <Play className="w-5 h-5 mr-2" />
-              {t('cta.primary')}
-            </Button>
-            <button 
-              className="flex items-center justify-center gap-2 rounded-xl text-lg font-semibold px-10 py-4"
-              style={{ 
-                backgroundColor: '#ffffff',
-                color: '#8b5cf6',
-                border: '2px solid #ffffff'
-              }}
-            >
-              <Phone className="w-5 h-5" style={{ color: '#8b5cf6' }} />
-              <span style={{ color: '#8b5cf6' }}>{t('cta.secondary')}</span>
-            </button>
+            <SafeLink to={demoHref}>
+              <Button 
+                size="lg" 
+                variant="tengo"
+                className="text-lg px-10 py-4 h-auto font-semibold"
+                aria-label={t('accessibility.demo')}
+              >
+                <Play className="w-5 h-5 mr-2" />
+                {t('cta.primary')}
+              </Button>
+            </SafeLink>
+            <SafeLink to={loginHref}>
+              <Button variant="outline" size="lg" className="px-10 py-4 h-auto text-lg font-semibold">
+                <Phone className="w-5 h-5 mr-2" />
+                {t('cta.secondary')}
+              </Button>
+            </SafeLink>
           </div>
           
           <p className="text-white/70 mt-6 text-sm">

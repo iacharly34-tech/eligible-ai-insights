@@ -5,9 +5,10 @@ import { SafeLink } from "@/components/SafeLink";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight, CheckCircle, Building2, Users, Briefcase } from "lucide-react";
 import aiAssistantMain from "@/assets/ai-assistant-main.jpg";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 export const ProductSolutions = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   // Solutions data from the original Solutions page
   const solutions = [
@@ -54,6 +55,8 @@ export const ProductSolutions = () => {
       ]
     }
   ];
+
+  const demoHref = language === 'en' ? '/en/demo' : '/demo';
 
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100">
@@ -104,7 +107,7 @@ export const ProductSolutions = () => {
                         ))}
                       </div>
                       
-                      <SafeLink to="/demo">
+                      <SafeLink to={demoHref}>
                         <Button className="w-full group">
                           {solution.cta}
                           <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -117,7 +120,7 @@ export const ProductSolutions = () => {
               
               <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
                 <div className="relative">
-                  <img
+                  <OptimizedImage
                     src={aiAssistantMain}
                     alt={`Solution ${solution.title}`}
                     className="w-full h-auto rounded-2xl shadow-2xl"
