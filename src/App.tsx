@@ -17,6 +17,8 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { CookieConsent } from "@/components/CookieConsent";
 import { LazyLoadEnhancer } from "@/components/LazyLoadEnhancer";
 import { Header } from "@/components/Header";
+import { WebVitalsReporter } from "@/components/WebVitalsReporter";
+import { FormUXEnhancer } from "@/components/FormUXEnhancer";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Produit from "./pages/Produit";
@@ -41,7 +43,9 @@ const App = () => (
           <CriticalResourcePreloader />
           <PerformanceMonitor />
           <WebVitalsMonitor />
+          <WebVitalsReporter />
           <LazyLoadEnhancer />
+          <FormUXEnhancer />
           <WCAGAccessibilityComponent />
           <SkipNavigation />
           <Toaster />
