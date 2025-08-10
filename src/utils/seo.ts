@@ -77,3 +77,61 @@ export const SEO_CONTENT = {
     url: "https://eligible.ai/cgu"
   }
 } as const;
+
+export const SEO_CONTENT_EN = {
+  home: {
+    title: 'Eligible.ai – AI for public tenders | Predictive scoring',
+    description: 'UK public procurement AI: detect tenders, predictive win scoring, smart alerts. 200+ sources monitored. Try free.',
+    url: 'https://eligible.ai/en'
+  },
+  produit: {
+    title: 'Product – AI platform for public procurement | Eligible.ai',
+    description: 'Full AI suite: multi‑source monitoring, predictive scoring, smart alerts to optimise your bids and responses.',
+    url: 'https://eligible.ai/en/product'
+  },
+  solutions: {
+    title: 'Solutions – Sector‑ready AI for public procurement',
+    description: 'Tailored AI per sector and role to detect UK public tenders, qualify faster and improve win rates.',
+    url: 'https://eligible.ai/en/solutions'
+  },
+  tarifs: {
+    title: 'Pricing – Plans for AI tender monitoring | Eligible.ai',
+    description: 'Transparent pricing. Start free, scale as you grow. 7‑day trial, no commitment.',
+    url: 'https://eligible.ai/en/pricing'
+  },
+  ressources: {
+    title: 'Resource centre – Guides & insights | Eligible.ai',
+    description: 'Guides, tutorials and best practices to succeed in UK public procurement with AI.',
+    url: 'https://eligible.ai/en/resources'
+  },
+  apropos: {
+    title: 'About Eligible.ai – Mission & AI team',
+    description: 'We help UK organisations win more public tenders with predictive AI and high‑quality market intelligence.',
+    url: 'https://eligible.ai/en/about'
+  },
+  demo: {
+    title: 'Book a live demo – Eligible.ai',
+    description: '30‑minute personalised demo: see predictive scoring, tender detection and alerts in action.',
+    url: 'https://eligible.ai/en/demo'
+  },
+  connexion: {
+    title: 'Sign in – Eligible.ai',
+    description: 'Access your Eligible.ai dashboard and manage tender alerts and scoring.',
+    url: 'https://eligible.ai/en/login'
+  },
+  mentionslegales: {
+    title: 'Legal information – Eligible.ai',
+    description: 'Legal information for Eligible.ai, the AI platform for public procurement.',
+    url: 'https://eligible.ai/en/legal'
+  },
+  confidentialite: {
+    title: 'Privacy policy – Eligible.ai',
+    description: 'How we protect your personal data. GDPR‑compliant.',
+    url: 'https://eligible.ai/en/privacy'
+  },
+  cgu: {
+    title: 'Terms & Conditions – Eligible.ai',
+    description: 'Terms for using the Eligible.ai platform for public procurement.',
+    url: 'https://eligible.ai/en/terms'
+  }
+} as const;

@@ -28,6 +28,7 @@ import Demo from "./pages/Demo";
 import MentionsLegales from "./pages/MentionsLegales";
 import Confidentialite from "./pages/Confidentialite";
 import CGU from "./pages/CGU";
+import { LanguageSync } from "@/components/LanguageSync";
 
 const queryClient = new QueryClient();
 
@@ -45,27 +46,49 @@ const App = () => (
           <Sonner />
           <CookieConsent />
           <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/produit" element={<Produit />} />
-            <Route path="/solutions" element={<Produit />} />
-            <Route path="/tarifs" element={<Tarifs />} />
-            <Route path="/ressources" element={<Ressources />} />
-            <Route path="/a-propos" element={<APropos />} />
-            <Route path="/connexion" element={<Connexion />} />
-            <Route path="/demo" element={<Demo />} />
-            <Route path="/inscription" element={<Demo />} />
-            <Route path="/mentions-legales" element={<MentionsLegales />} />
-            <Route path="/confidentialite" element={<Confidentialite />} />
-            <Route path="/cgu" element={<CGU />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </LanguageProvider>
-  </ErrorBoundary>
+            <ScrollToTop />
+            {/* Sync language with /en prefix */}
+            <Header />
+            {/* We render Header here to ensure locale-aware nav; remove duplicates from pages if any */}
+            {/* LanguageSync adjusts language based on route prefix */}
+            {/* eslint-disable-next-line @typescript-eslint/no-var-requires */}
+            {require('./components/LanguageSync') && require('./components/LanguageSync')}
+            {/* Routes */}
+            <Routes>
+              {/* FR routes */}
+              <Route path="/" element={<Index />} />
+              <Route path="/produit" element={<Produit />} />
+              <Route path="/solutions" element={<Produit />} />
+              <Route path="/tarifs" element={<Tarifs />} />
+              <Route path="/ressources" element={<Ressources />} />
+              <Route path="/a-propos" element={<APropos />} />
+              <Route path="/connexion" element={<Connexion />} />
+              <Route path="/demo" element={<Demo />} />
+              <Route path="/inscription" element={<Demo />} />
+              <Route path="/mentions-legales" element={<MentionsLegales />} />
+              <Route path="/confidentialite" element={<Confidentialite />} />
+              <Route path="/cgu" element={<CGU />} />
+
+              {/* EN routes */}
+              <Route path="/en" element={<Index />} />
+              <Route path="/en/product" element={<Produit />} />
+              <Route path="/en/solutions" element={<Produit />} />
+              <Route path="/en/pricing" element={<Tarifs />} />
+              <Route path="/en/resources" element={<Ressources />} />
+              <Route path="/en/about" element={<APropos />} />
+              <Route path="/en/login" element={<Connexion />} />
+              <Route path="/en/demo" element={<Demo />} />
+              <Route path="/en/legal" element={<MentionsLegales />} />
+              <Route path="/en/privacy" element={<Confidentialite />} />
+              <Route path="/en/terms" element={<CGU />} />
+
+              {/* CATCH-ALL */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </LanguageProvider>
+    </ErrorBoundary>
   </QueryClientProvider>
 );
 
