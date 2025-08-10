@@ -22,7 +22,7 @@ export const SEOHead = ({
   title,
   description,
   canonical,
-  ogImage = 'https://eligible.ai/assets/eligible-ai-opengraph.png',
+  ogImage,
   ogType = 'website',
   noindex = false,
   articleMeta
@@ -55,6 +55,8 @@ export const SEOHead = ({
     const finalTitle = title || pageSEO.title;
     const finalDescription = description || pageSEO.description;
     const finalCanonical = canonical || pageSEO.url;
+    const defaultOg = `${window?.location?.origin || 'https://eligibly.ai'}/assets/eligible-ai-opengraph.png`;
+    const finalOgImage = ogImage || defaultOg;
 
     // Update document title
     document.title = finalTitle;
@@ -83,15 +85,15 @@ export const SEOHead = ({
     updateOrCreateMeta('meta[property="og:description"]', 'content', finalDescription);
     updateOrCreateMeta('meta[property="og:url"]', 'content', finalCanonical);
     updateOrCreateMeta('meta[property="og:type"]', 'content', ogType);
-    updateOrCreateMeta('meta[property="og:image"]', 'content', ogImage);
-    updateOrCreateMeta('meta[property="og:site_name"]', 'content', 'Eligible.ai');
+    updateOrCreateMeta('meta[property="og:image"]', 'content', finalOgImage);
+    updateOrCreateMeta('meta[property="og:site_name"]', 'content', 'eligibly.ai');
     updateOrCreateMeta('meta[property="og:locale"]', 'content', 'fr_FR');
 
     // Twitter Card meta tags
     updateOrCreateMeta('meta[name="twitter:card"]', 'content', 'summary_large_image');
     updateOrCreateMeta('meta[name="twitter:title"]', 'content', finalTitle);
     updateOrCreateMeta('meta[name="twitter:description"]', 'content', finalDescription);
-    updateOrCreateMeta('meta[name="twitter:image"]', 'content', ogImage);
+    updateOrCreateMeta('meta[name="twitter:image"]', 'content', finalOgImage);
     updateOrCreateMeta('meta[name="twitter:site"]', 'content', '@eligible_ai');
 
     // Article meta tags if provided

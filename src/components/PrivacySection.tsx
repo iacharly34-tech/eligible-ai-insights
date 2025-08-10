@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Shield, Eye, Lock, Database, UserCheck, FileText } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-
+import { SafeLink } from "@/components/SafeLink";
 export const PrivacySection = () => {
   const { t } = useLanguage();
   
@@ -128,24 +128,24 @@ export const PrivacySection = () => {
         <div className="text-center space-y-4">
           <h3 className="text-lg sm:text-xl font-semibold">Documents légaux</h3>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center text-sm">
-            <a 
-              href="/confidentialite" 
+            <SafeLink 
+              to="/confidentialite" 
               className="text-primary hover:text-primary/80 transition-colors underline decoration-primary/30 hover:decoration-primary/80"
             >
               Politique de confidentialité
-            </a>
-            <a 
-              href="/cgu" 
+            </SafeLink>
+            <SafeLink 
+              to="/cgu" 
               className="text-primary hover:text-primary/80 transition-colors underline decoration-primary/30 hover:decoration-primary/80"
             >
               Conditions générales d'utilisation
-            </a>
-            <a 
-              href="/mentions-legales" 
+            </SafeLink>
+            <SafeLink 
+              to="/mentions-legales" 
               className="text-primary hover:text-primary/80 transition-colors underline decoration-primary/30 hover:decoration-primary/80"
             >
               Mentions légales
-            </a>
+            </SafeLink>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">
             Pour toute question relative à vos données personnelles, contactez notre DPO à{" "}

@@ -28,13 +28,9 @@ export const LazyLoadEnhancer = () => {
           img.alt = t('accessibility.images.feature') || 'Image';
         }
       }
-      // Ensure width/height to reduce CLS if provided via attributes
-      if (!img.width && img.naturalWidth) {
-        img.width = img.naturalWidth;
-      }
-      if (!img.height && img.naturalHeight) {
-        img.height = img.naturalHeight;
-      }
+      // Avoid mutating width/height post-load to prevent late layout shifts
+      // Prefer explicit width/height in markup or CSS aspect-ratio on containers
+
     });
 
     // Defer iframes by lazy loading where safe

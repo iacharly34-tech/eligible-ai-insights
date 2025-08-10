@@ -11,33 +11,9 @@ export const WCAGAccessibilityComponent = () => {
       document.documentElement.lang = 'fr';
     }
 
-    // Add viewport meta tag if not present
-    if (!document.querySelector('meta[name="viewport"]')) {
-      const viewport = document.createElement('meta');
-      viewport.name = 'viewport';
-      viewport.content = 'width=device-width, initial-scale=1.0';
-      document.head.appendChild(viewport);
-    }
+    // SEO handled by SEOHead component; avoid duplicating meta tags
+    // Removed viewport, charset, title, and description injections to prevent conflicts
 
-    // Add charset meta tag if not present
-    if (!document.querySelector('meta[charset]')) {
-      const charset = document.createElement('meta');
-      charset.setAttribute('charset', 'UTF-8');
-      document.head.insertBefore(charset, document.head.firstChild);
-    }
-
-    // Add title if not present or empty
-    if (!document.title || document.title.trim() === '') {
-      document.title = 'eligibly.ai - IA pour les marchés publics';
-    }
-
-    // Add meta description if not present
-    if (!document.querySelector('meta[name="description"]')) {
-      const description = document.createElement('meta');
-      description.name = 'description';
-      description.content = 'Plateforme IA pour détecter, analyser et remporter les marchés publics. Notre intelligence artificielle scrute 600+ sources officielles pour trouver les meilleures opportunités.';
-      document.head.appendChild(description);
-    }
 
     // Keyboard navigation enhancement
     const handleKeyboardNavigation = (e: KeyboardEvent) => {

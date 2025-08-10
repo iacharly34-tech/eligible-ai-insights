@@ -11,6 +11,7 @@ import { ProductBenefits } from "@/components/product/ProductBenefits";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { MobileCTABar } from "@/components/MobileCTABar";
 
 const Produit = () => {
   const { t } = useLanguage();
@@ -22,13 +23,12 @@ const Produit = () => {
       <StructuredData page="product" />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
         <Header />
+        <MobileCTABar />
       {/* Hero Section */}
       <ProductHero />
 
       {/* Demo Personas Section */}
       <DemoPersonas />
-
-      {/* Features Section */}
       <ProductFeatures />
 
 

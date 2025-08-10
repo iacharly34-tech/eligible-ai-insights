@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { SafeLink } from "@/components/SafeLink";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { MobileCTABar } from "@/components/MobileCTABar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   CheckCircle,
@@ -117,6 +118,7 @@ const Tarifs = () => {
       <StructuredData page="pricing" />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
         <Header />
+        <MobileCTABar />
         
         {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
