@@ -61,13 +61,6 @@ export const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-3">
             <LanguageSwitcher />
-            <SafeLink 
-              to="/connexion"
-              className="text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md"
-              aria-label={t('accessibility.login')}
-            >
-              {t('nav.login')}
-            </SafeLink>
             <SafeLink to="/demo">
               <Button 
                 size="sm" 
@@ -130,14 +123,6 @@ export const Header = () => {
               <div className="flex justify-center mb-3">
                 <LanguageSwitcher />
               </div>
-              <SafeLink 
-                to="/connexion"
-                className="block w-full text-left text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200 px-3 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md min-h-[44px] flex items-center"
-                tabIndex={isMenuOpen ? 0 : -1}
-                aria-label={t('accessibility.login')}
-              >
-                {t('nav.login')}
-              </SafeLink>
               <SafeLink to="/demo">
                 <Button 
                   className="w-full bg-gradient-cta hover:shadow-glow text-white text-sm font-medium h-12 min-h-[44px] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"

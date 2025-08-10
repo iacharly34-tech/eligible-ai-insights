@@ -224,7 +224,7 @@ export const DemoPersonas = () => {
               </div>
               
               {/* Demo Content - Full Width and Optimized Height */}
-              <div className="bg-gradient-to-br from-muted/10 to-muted/20 rounded-xl p-6">
+              <div className="bg-gradient-to-br from-muted/10 to-muted/20 rounded-xl p-0 sm:p-6">
                 <ProcessDemo />
               </div>
             </CardContent>

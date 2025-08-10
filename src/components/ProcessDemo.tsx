@@ -42,6 +42,7 @@ export const ProcessDemo = () => {
 const [showTabContent, setShowTabContent] = useState(false);
 const [mobileTab, setMobileTab] = useState<'process' | 'console' | 'controls' | null>(null);
 const [mobilePanelOpen, setMobilePanelOpen] = useState(false);
+const [showMoreResults, setShowMoreResults] = useState(false);
 
   const steps = [
     {
@@ -98,6 +99,7 @@ const [mobilePanelOpen, setMobilePanelOpen] = useState(false);
     setShowResults(false);
     setShowExpandedResults(false);
     setMobileActiveScreen('initial');
+    setShowMoreResults(false);
   };
 
   const startDemo = () => {
@@ -279,7 +281,7 @@ const [mobilePanelOpen, setMobilePanelOpen] = useState(false);
       {/* Démo responsive unifiée */}
       <section 
         id="demo" 
-        className="py-6 px-4 bg-gradient-to-br from-slate-50 to-gray-100"
+        className="py-6 px-0 sm:px-4 bg-gradient-to-br from-slate-50 to-gray-100"
       >
         <div className="container mx-auto max-w-[1400px]">
           {/* Paramétrage des AO ciblés */}
@@ -293,9 +295,18 @@ const [mobilePanelOpen, setMobilePanelOpen] = useState(false);
                 <HeroAOCardMobile ao={mockAOData[0]} />
               </div>
 
+              {/* Bouton Voir plus pour révéler les autres AO */}
+              {showResults && !showMoreResults && (
+                <div className="mb-3 px-3">
+                  <Button variant="outline" className="w-full h-10 text-sm" onClick={() => setShowMoreResults(true)}>
+                    Voir plus
+                  </Button>
+                </div>
+              )}
+
               {/* Autres résultats AO - zone scrollable */}
-              <div className={`rounded-xl border bg-card shadow-card p-3 ${!showResults ? 'hidden' : ''}`}>
-                <h4 className="font-semibold text-foreground mb-2 text-sm">Autres résultats</h4>
+              <div className={`rounded-xl border bg-card shadow-card p-0 sm:p-3 ${!showResults || !showMoreResults ? 'hidden' : ''}`}>
+                <h4 className="font-semibold text-foreground mb-2 text-sm px-3 pt-3">Autres résultats</h4>
                 <div className="max-h-[48vh] overflow-y-auto pr-1 scroll-smooth">
                   <AOResults isExpanded={true} startIndex={1} />
                 </div>

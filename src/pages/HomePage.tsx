@@ -275,7 +275,7 @@ const HomePage = () => {
                               </div>
                             </div>
                             <h5 className="font-bold text-gray-900 mb-2">Infrastructure cloud hybride</h5>
-                            <p className="text-sm text-gray-600 mb-2">🌍 Région Île-de-France</p>
+                            <p className="text-sm text-gray-600 mb-2 flex items-center gap-2 break-words">🌍 Région Île-de-France</p>
                             <div className="flex items-center gap-4 text-xs text-gray-500">
                               <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-full">
                                 <Clock className="w-3 h-3" />
