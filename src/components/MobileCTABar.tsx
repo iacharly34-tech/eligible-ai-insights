@@ -7,12 +7,23 @@ export const MobileCTABar: React.FC = () => {
   const { t } = useLanguage();
   const navigate = useNavigate();
   const [visible, setVisible] = useState(false);
+  const [topOffset, setTopOffset] = useState<number>(64);
 
   useEffect(() => {
+    const computeTop = () => {
+      const header = document.querySelector('header');
+      const h = header ? (header as HTMLElement).clientHeight : 64;
+      setTopOffset(h);
+    };
     const onScroll = () => setVisible(window.scrollY > 60);
+    computeTop();
     onScroll();
+    window.addEventListener('resize', computeTop);
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('resize', computeTop);
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
   const handleClick = () => {
@@ -27,7 +38,7 @@ export const MobileCTABar: React.FC = () => {
   if (!visible) return null;
 
   return (
-    <div className="md:hidden fixed top-16 left-0 right-0 z-40 px-3">
+    <div className="md:hidden fixed left-0 right-0 z-50 px-3" style={{ top: `calc(${topOffset}px + env(safe-area-inset-top))` }}>
       <Button
         variant="tengo"
         className="w-full h-12 text-base font-semibold rounded-2xl shadow-glow"
