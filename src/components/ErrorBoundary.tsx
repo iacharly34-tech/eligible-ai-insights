@@ -33,25 +33,30 @@ export class ErrorBoundary extends Component<Props, State> {
     }
   }
 
-  private logErrorToService = (error: Error, errorInfo: any) => {
-    // Implementation for error monitoring service
-    const errorData = {
-      message: error.message,
-      stack: error.stack,
-      componentStack: errorInfo.componentStack,
-      timestamp: new Date().toISOString(),
-      userAgent: navigator.userAgent,
-      url: window.location.href
-    };
-    
-    // Send to monitoring service
-    fetch('/api/errors', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(errorData)
-    }).catch(() => {
-      // Silently fail if error reporting fails
-    });
+  private logErrorToService = (error: Error, _errorInfo: any) => {
+    // Privacy-preserving error reporting
+    try {
+      const sanitizedUrl = `${window.location.origin}${window.location.pathname}`;
+      const payload = {
+        message: String(error?.message || 'Unknown error'),
+        timestamp: new Date().toISOString(),
+        url: sanitizedUrl,
+      };
+
+      const data = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+      if ('sendBeacon' in navigator) {
+        navigator.sendBeacon('/api/errors', data);
+      } else {
+        fetch('/api/errors', {
+          method: 'POST',
+          body: JSON.stringify(payload),
+          headers: { 'Content-Type': 'application/json' },
+          keepalive: true,
+        }).catch(() => {/* noop */});
+      }
+    } catch {
+      // Silently ignore reporting failures
+    }
   };
 
   private handleRetry = () => {

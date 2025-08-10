@@ -48,9 +48,7 @@ function isValidOrigin(url) {
   try {
     const requestUrl = new URL(url);
     const allowedOrigins = [
-      self.location.origin,
-      'https://eligibly.ai',
-      'https://www.eligibly.ai'
+      self.location.origin
     ];
     return allowedOrigins.includes(requestUrl.origin);
   } catch {
@@ -75,6 +73,14 @@ self.addEventListener('fetch', (event) => {
 
   // Skip non-GET requests for security
   if (event.request.method !== 'GET') {
+    return;
+  }
+
+  // Avoid caching navigation requests to prevent sensitive data leakage
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).catch(() => caches.match('/'))
+    );
     return;
   }
 

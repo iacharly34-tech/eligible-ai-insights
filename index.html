@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https:; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -15,8 +15,7 @@
     <!-- Performance optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <style>
       @font-face {
         font-family: 'Inter';
@@ -74,13 +73,7 @@
   <link rel="preload" href="/src/components/Hero.tsx" as="script">
   
   <!-- Service Worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js');
-      });
-    }
-  </script>
+  <script src="/scripts/sw-register.js" defer></script>
   </head>
 
   <body>
@@ -88,19 +81,6 @@
     <script type="module" src="/src/main.tsx"></script>
     
     <!-- Performance optimizations -->
-    <script>
-      // Preload next page on hover
-      const preloadedLinks = new Set();
-      document.addEventListener('mouseover', (e) => {
-        const link = e.target.closest('a[href]');
-        if (link && link.hostname === location.hostname && !preloadedLinks.has(link.href)) {
-          preloadedLinks.add(link.href);
-          const prefetch = document.createElement('link');
-          prefetch.rel = 'prefetch';
-          prefetch.href = link.href;
-          document.head.appendChild(prefetch);
-        }
-      });
-    </script>
+    <script src="/scripts/hover-preload.js" defer></script>
   </body>
 </html>

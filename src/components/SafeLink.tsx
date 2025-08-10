@@ -54,6 +54,22 @@ export const SafeLink = ({ to, children, className, onClick, tabIndex, 'aria-lab
 
   const localizedTo = mappedPath;
 
+  if (isExternal) {
+    return (
+      <a 
+        href={to}
+        className={className}
+        onClick={onClick}
+        tabIndex={tabIndex}
+        aria-label={ariaLabel}
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+      >
+        {children}
+      </a>
+    );
+  }
+
   try {
     // Test if we're inside a Router context
     useLocation();
