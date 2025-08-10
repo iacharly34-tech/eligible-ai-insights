@@ -15,6 +15,7 @@ import {
   CheckCircle2,
   AlertCircle
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface AOData {
   id: string;
@@ -57,6 +58,7 @@ interface AOCardProps {
 }
 
 export const AOCard = ({ ao, isDetailed = false, variant = 'default' }: AOCardProps) => {
+  const { t } = useLanguage();
   const getScoreColor = (score: number) => {
     if (score >= 80) return "text-success";
     if (score >= 60) return "text-warning";
@@ -84,7 +86,7 @@ export const AOCard = ({ ao, isDetailed = false, variant = 'default' }: AOCardPr
                   variant={ao.statut === "publié" ? "default" : "secondary"}
                   className="text-xs px-2 py-1 font-medium"
                 >
-                  {ao.statut}
+                  {ao.statut === 'publié' ? t('ao.status.published') : t('ao.status.upcoming')}
                 </Badge>
                 <Badge variant="outline" className="text-xs px-2 py-1 flex items-center gap-1">
                   <FileText className="w-3 h-3" />
@@ -100,7 +102,7 @@ export const AOCard = ({ ao, isDetailed = false, variant = 'default' }: AOCardPr
                 <span className="text-2xl font-bold">{ao.score}%</span>
               </div>
               <div className="text-xs text-muted-foreground font-medium">
-                Score de compatibilité IA
+                {t('ao.aiCompatibilityScore')}
               </div>
             </div>
           </div>
@@ -110,20 +112,20 @@ export const AOCard = ({ ao, isDetailed = false, variant = 'default' }: AOCardPr
         <div className="mb-4 p-3 bg-gradient-to-r from-primary/5 to-accent/5 rounded-lg border border-border/50">
           <h4 className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
             <Trophy className="w-4 h-4 text-primary" />
-            Critères d'évaluation
+            {t('ao.criteria.title')}
           </h4>
           <div className="grid grid-cols-3 gap-2 text-xs mb-2">
             <div className="text-center">
               <div className="font-bold text-destructive">{ao.criteres.prix}%</div>
-              <div className="text-muted-foreground">Prix</div>
+              <div className="text-muted-foreground">{t('ao.criteria.price')}</div>
             </div>
             <div className="text-center">
               <div className="font-bold text-success">{ao.criteres.qualite}%</div>
-              <div className="text-muted-foreground">Qualité</div>
+              <div className="text-muted-foreground">{t('ao.criteria.quality')}</div>
             </div>
             <div className="text-center">
               <div className="font-bold text-accent">{ao.criteres.performance}%</div>
-              <div className="text-muted-foreground">Performance</div>
+              <div className="text-muted-foreground">{t('ao.criteria.performance')}</div>
             </div>
           </div>
           <div className="w-full bg-muted rounded-full h-2 relative overflow-hidden">
@@ -138,7 +140,7 @@ export const AOCard = ({ ao, isDetailed = false, variant = 'default' }: AOCardPr
           <div className="flex items-center gap-2 p-2 bg-muted/30 rounded-md">
             <Euro className="w-4 h-4 text-primary flex-shrink-0" />
             <div className="text-sm min-w-0">
-              <div className="text-xs text-muted-foreground">Budget</div>
+              <div className="text-xs text-muted-foreground">{t('ao.budget')}</div>
               <div className="font-semibold text-foreground truncate">{ao.budget}</div>
             </div>
           </div>
@@ -146,7 +148,7 @@ export const AOCard = ({ ao, isDetailed = false, variant = 'default' }: AOCardPr
           <div className="flex items-center gap-2 p-2 bg-muted/30 rounded-md">
             <Calendar className="w-4 h-4 text-accent flex-shrink-0" />
             <div className="text-sm min-w-0">
-              <div className="text-xs text-muted-foreground">Échéance</div>
+              <div className="text-xs text-muted-foreground">{t('ao.deadline')}</div>
               <div className="font-semibold text-foreground truncate">{ao.deadline}</div>
             </div>
           </div>
@@ -154,7 +156,7 @@ export const AOCard = ({ ao, isDetailed = false, variant = 'default' }: AOCardPr
           <div className="flex items-center gap-2 p-2 bg-muted/30 rounded-md">
             <Building2 className="w-4 h-4 text-success flex-shrink-0" />
             <div className="text-sm min-w-0">
-              <div className="text-xs text-muted-foreground">Durée</div>
+              <div className="text-xs text-muted-foreground">{t('ao.duration')}</div>
               <div className="font-semibold text-foreground truncate">{ao.duree}</div>
             </div>
           </div>
@@ -162,7 +164,7 @@ export const AOCard = ({ ao, isDetailed = false, variant = 'default' }: AOCardPr
           <div className="flex items-center gap-2 p-2 bg-muted/30 rounded-md">
             <Trophy className="w-4 h-4 text-warning flex-shrink-0" />
             <div className="text-sm min-w-0">
-              <div className="text-xs text-muted-foreground">Titulaire</div>
+              <div className="text-xs text-muted-foreground">{t('ao.holder')}</div>
               <div className="font-semibold text-foreground truncate">{ao.titulaire}</div>
             </div>
           </div>
