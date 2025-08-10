@@ -35,10 +35,20 @@ const translations = {
     'hero.stats.time': '10x plus rapide pour qualifier un marché',
     'hero.stats.precision': "Aide à la décision: placez l'investissement au bon niveau grâce au pourcentage de succès",
     
+    // Charly Section (Meet Charly)
+    'charly.meet.title.prefix': 'Rencontrez',
+    'charly.meet.title.highlight': 'Charly by Eligibly',
+    'charly.meet.title.suffix': ', votre assistant aux marchés publics',
+    'charly.meet.subtitle': "Créé par l'équipe Eligibly, Charly est votre assistant IA spécialisé dans les marchés publics. Il analyse en continu les opportunités avec notre expertise et vous recommande les meilleures chances de succès.",
+    
     // Features
     'features.title': 'Fonctionnalités',
     'features.title.highlight': 'essentielles',
     'features.subtitle': 'Une plateforme complète pour optimiser votre approche des marchés publics et maximiser vos chances de succès.',
+    // Features Heading (HomePage)
+    'features.heading.prefix': 'Une plateforme complète pour votre',
+    'features.heading.highlight': 'croissance',
+    'features.heading.suffix': '',
     // Core features i18n
     'features.core.surveillance.title': 'Surveillance Multi-Sources',
     'features.core.surveillance.desc': 'Surveillance automatisée de plus de 200 sources officielles en France et en Europe',
@@ -316,6 +326,12 @@ const translations = {
     'hero.stats.opportunities': '+200 public tenders analysed daily in your sector',
     'hero.stats.time': '10x faster to qualify a tender',
     'hero.stats.precision': 'Decision support: invest exactly where it matters with your success percentage',
+    
+    // Charly Section (Meet Charly)
+    'charly.meet.title.prefix': 'Meet',
+    'charly.meet.title.highlight': 'Charly by Eligibly',
+    'charly.meet.title.suffix': ', your public tender assistant',
+    'charly.meet.subtitle': 'Created by the Eligibly team, Charly is your AI assistant specialised in public procurement. It continuously analyses opportunities with our expertise and recommends your best chances of success.',
     
     // Features
     'features.title': 'Essential',
