@@ -76,7 +76,7 @@ export const Footer = () => {
             </div>
 
             <a 
-              href="https://www.linkedin.com/company/eligibly-ai/" 
+              href="https://www.linkedin.com/company/eligible-ai/" 
               className="inline-flex w-8 h-8 bg-secondary rounded flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-200"
               aria-label="LinkedIn"
               target="_blank"
