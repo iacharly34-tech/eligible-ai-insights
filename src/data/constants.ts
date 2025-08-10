@@ -66,8 +66,8 @@ export const STATS_SOURCES = {
 // ============= FONCTIONNALITÉS CORE =============
 export const CORE_FEATURES = [
   {
+    key: "surveillance",
     icon: Database,
-    title: "Surveillance Multi-Sources",
     description: "Surveillance automatisée de plus de 200 sources officielles en France et en Europe",
     shortDesc: "200+ sources surveillées automatiquement",
     details: ["BOAMP", "Marchés Publics", "TED eTendering", "PLACE", "Profils acheteurs", "Sites régionaux"],
@@ -76,8 +76,8 @@ export const CORE_FEATURES = [
     benefit: "Couverture nationale (France) et européenne aujourd’hui — expansion mondiale à venir"
   },
   {
+    key: "ai",
     icon: Brain,
-    title: "Analyse Intelligente",
     description: "Technologie d'intelligence artificielle pour une qualification automatique des marchés",
     shortDesc: "IA avancée pour une détection précise",
     details: ["Analyse sémantique", "Scoring intelligent", "Filtrage automatique", "Apprentissage continu"],
@@ -86,8 +86,8 @@ export const CORE_FEATURES = [
     benefit: "Précision maximale dans la détection d'opportunités"
   },
   {
+    key: "detection",
     icon: Target,
-    title: "Détection Ciblée",
     description: "Identification automatique des appels d'offres correspondant à votre expertise",
     shortDesc: "Ciblage précis selon vos critères métier",
     details: ["Critères personnalisés", "Matching intelligent", "Score de compatibilité", "Priorisation automatique"],
@@ -96,8 +96,8 @@ export const CORE_FEATURES = [
     benefit: "Focus sur les marchés à fort potentiel"
   },
   {
+    key: "alerts",
     icon: Zap,
-    title: "Alertes Instantanées",
     description: "Alertes prédictives avec présélection volontaire pour éviter la surcharge d’informations — notifications sur vos canaux préférés",
     shortDesc: "Notifications multi-canaux en temps réel",
     details: ["Slack", "Email", "Microsoft Teams", "Mobile", "API", "Webhooks"],

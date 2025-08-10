@@ -39,6 +39,15 @@ const translations = {
     'features.title': 'Fonctionnalités',
     'features.title.highlight': 'essentielles',
     'features.subtitle': 'Une plateforme complète pour optimiser votre approche des marchés publics et maximiser vos chances de succès.',
+    // Core features i18n
+    'features.core.surveillance.title': 'Surveillance Multi-Sources',
+    'features.core.surveillance.desc': 'Surveillance automatisée de plus de 200 sources officielles en France et en Europe',
+    'features.core.ai.title': 'Analyse Intelligente',
+    'features.core.ai.desc': "Technologie d'intelligence artificielle pour une qualification automatique des marchés",
+    'features.core.detection.title': 'Détection Ciblée',
+    'features.core.detection.desc': "Identification automatique des appels d'offres correspondant à votre expertise",
+    'features.core.alerts.title': 'Alertes Instantanées',
+    'features.core.alerts.desc': 'Alertes prédictives avec présélection volontaire pour éviter la surcharge d’informations — notifications sur vos canaux préférés',
     'features.multisource.title': 'IA prédictive exclusive',
     'features.multisource.desc': 'La seule plateforme qui prédit vos chances avant même de candidater et prémâche certains critères clés (prix optimal, engagements environnementaux, etc.) pour maximiser vos chances.',
     'features.ai.title': 'Analyse de compatibilité automatique',
@@ -187,6 +196,13 @@ const translations = {
     'resources.videos.title': 'Tutoriels',
     'resources.videos.title.highlight': 'vidéo',
     'resources.videos.subtitle': 'Apprenez à utiliser Eligibly.ai efficacement',
+    // Resources Coming soon
+    'resources.comingSoon': 'Bientôt disponible',
+    'resources.dontMiss': 'Ne manquez pas le',
+    'resources.notifyMe': 'Me prévenir',
+    'resources.emailPlaceholder': 'Votre adresse email',
+    'resources.notifyThanks': 'Merci ! Vous serez notifié dès la sortie.',
+    'resources.notifyHelp': "Recevez un email dès qu'une nouvelle ressource est disponible",
     
     // About Page
     'about.badge': 'À propos d\'Eligibly.ai',
@@ -305,6 +321,12 @@ const translations = {
     'features.title': 'Essential',
     'features.title.highlight': 'features',
     'features.subtitle': 'A comprehensive platform to optimise your approach to public procurement and maximise your chances of success.',
+    
+    // Features Heading
+    'features.heading.prefix': 'A complete platform for your',
+    'features.heading.highlight': 'growth',
+    'features.heading.suffix': '',
+    
     'features.multisource.title': 'Exclusive predictive AI',
     'features.multisource.desc': 'The only platform that predicts your chances before you apply and pre‑checks key criteria (optimal pricing, environmental commitments, etc.) to maximise your odds.',
     'features.ai.title': 'Automatic compatibility analysis',
@@ -453,6 +475,13 @@ const translations = {
     'resources.videos.title': 'Video',
     'resources.videos.title.highlight': 'tutorials',
     'resources.videos.subtitle': 'Learn to use Eligibly.ai effectively',
+    // Resources Coming soon
+    'resources.comingSoon': 'Coming soon',
+    'resources.dontMiss': "Don't miss the",
+    'resources.notifyMe': 'Notify me',
+    'resources.emailPlaceholder': 'Your email address',
+    'resources.notifyThanks': 'Thank you! You will be notified as soon as it is released.',
+    'resources.notifyHelp': 'Receive an email as soon as a new resource is available',
     
     // About Page
     'about.badge': 'About Eligibly.ai',

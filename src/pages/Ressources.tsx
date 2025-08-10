@@ -70,18 +70,18 @@ const Ressources = () => {
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
         <Header />
         
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
+        {/* Hero Section */}
+        <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <Badge className="mb-6 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 border-purple-200">
             <Sparkles className="w-4 h-4 mr-2" />
-            Bientôt disponible
+            {t('resources.comingSoon')}
           </Badge>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Ne manquez pas le{" "}
+            {t('resources.dontMiss')}{" "}
             <span className="bg-gradient-highlight bg-clip-text text-transparent">
-              contenu à venir
+              {t('resources.hero.title.highlight')}
             </span>
           </h1>
           
@@ -101,26 +101,26 @@ const Ressources = () => {
               <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
                 <Input
                   type="email"
-                  placeholder="Votre adresse email"
+                  placeholder={t('resources.emailPlaceholder')}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="flex-1"
                   required
                 />
                 <Button type="submit" className="bg-purple-600 hover:bg-purple-700 text-white">
-                  Me prévenir
+                  {t('resources.notifyMe')}
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </form>
             ) : (
               <div className="flex items-center justify-center gap-2 text-green-600">
                 <CheckCircle className="w-5 h-5" />
-                <span className="font-medium">Merci ! Vous serez notifié dès la sortie.</span>
+                <span className="font-medium">{t('resources.notifyThanks')}</span>
               </div>
             )}
             
             <p className="text-sm text-gray-500 mt-3">
-              Recevez un email dès qu'une nouvelle ressource est disponible
+              {t('resources.notifyHelp')}
             </p>
           </div>
         </div>

@@ -279,7 +279,7 @@ const [showMoreResults, setShowMoreResults] = useState(false);
               {showResults && !showMoreResults && (
                 <div className="mb-3 px-3">
                   <Button variant="outline" className="w-full h-10 text-sm" onClick={() => setShowMoreResults(true)}>
-                    Voir plus
+                    {t('demo.seeMore')}
                   </Button>
                 </div>
               )}
@@ -398,23 +398,23 @@ const [showMoreResults, setShowMoreResults] = useState(false);
                             className="w-full h-11 text-sm font-semibold bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground"
                           >
                             <Play className="w-4 h-4 mr-2" />
-                            {isRunning ? 'Analyse...' : 'Lancer IA'}
+                            {isRunning ? t('demo.analyzing') : t('demo.launch')}
                           </Button>
                           <Button 
                             onClick={resetDemo}
                             variant="outline"
                             className="w-full h-10 text-sm font-medium border-border hover:bg-muted/50"
                           >
-                            Reset
+                            {t('demo.reset')}
                           </Button>
                           <div className="space-y-2">
                             <div className="flex justify-between text-xs">
-                              <span className="text-muted-foreground">Progression</span>
+                              <span className="text-muted-foreground">{t('demo.progress')}</span>
                               <span className="font-medium">{Math.round(progress)}%</span>
                             </div>
                             <Progress value={progress} className="h-2" />
                             <div className="text-xs text-muted-foreground text-center">
-                              {isRunning ? `Étape ${currentStep}/4` : currentStep === 5 ? 'Terminé ✓' : 'Prêt'}
+                              {isRunning ? `${t('demo.step')} ${currentStep}/4` : currentStep === 5 ? t('demo.done') : t('demo.ready')}
                             </div>
                           </div>
                         </div>

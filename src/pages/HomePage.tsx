@@ -286,15 +286,15 @@ const HomePage = () => {
                         <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
                           <Brain className="w-4 h-4 text-purple-600" />
                         </div>
-                        <div>
-                          <div className="font-semibold text-gray-900">Charly AI en action</div>
-                          <div className="text-xs text-gray-500">Dernière analyse: il y a 3 min</div>
+                          <div>
+                            <div className="font-semibold text-gray-900">{t('home.charlyInAction')}</div>
+                            <div className="text-xs text-gray-500">{t('home.lastAnalysis')}</div>
+                          </div>
                         </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm font-semibold">
-                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span className="text-green-600">+12 opportunités détectées</span>
-                      </div>
+                        <div className="flex items-center gap-2 text-sm font-semibold">
+                          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                          <span className="text-green-600">{t('home.detectedMore')}</span>
+                        </div>
                     </div>
                   </div>
                 </div>
@@ -318,15 +318,14 @@ const HomePage = () => {
             <div className="space-y-6 sm:space-y-8">
               <div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-                  Rencontrez{" "}
+                  {t('charly.meet.title.prefix')}{" "}
                   <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                    Charly by Eligibly
+                    {t('charly.meet.title.highlight')}
                   </span>
-                  , votre assistant aux marchés publics
+                  {t('charly.meet.title.suffix')}
                 </h2>
                 <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
-                  Créé par l'équipe Eligibly, Charly est votre assistant IA spécialisé dans les marchés publics. 
-                  Il analyse en continu les opportunités avec notre expertise et vous recommande les meilleures chances de succès.
+                  {t('charly.meet.subtitle')}
                 </p>
               </div>
 
@@ -565,12 +564,13 @@ const HomePage = () => {
       <section id="features" className="py-20 px-4">
         <div className="container mx-auto">
           <ScrollReveal className="text-center mb-16">
-            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Fonctionnalités</Badge>
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">{t('features.title')}</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Une plateforme complète pour votre{" "}
+              {t('features.heading.prefix')}{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                croissance
+                {t('features.heading.highlight')}
               </span>
+              {t('features.heading.suffix')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               De la détection à la notification, notre IA gère l'intégralité 
@@ -587,10 +587,10 @@ const HomePage = () => {
                       <feature.icon className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">
-                      {feature.title}
+                      {t(`features.core.${(feature as any).key}.title`)}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
-                      {feature.description}
+                      {t(`features.core.${(feature as any).key}.desc`)}
                     </p>
                   </CardContent>
                 </Card>
