@@ -10,6 +10,7 @@ import {
   TrendingUp,
   Eye
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const mockAOData = [
   {
@@ -111,6 +112,7 @@ interface AOResultsProps {
 export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, forceDetailed = false, hideHeader = false }: AOResultsProps) => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [showDetailed, setShowDetailed] = useState(false);
+  const { t } = useLanguage();
 
   const displayedAOs = isExpanded ? mockAOData.slice(startIndex) : mockAOData.slice(startIndex, startIndex + 1);
 
@@ -122,19 +124,19 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
           <div className="flex items-center gap-3">
             <CheckCircle className="w-6 h-6 text-green-600" />
             <div>
-              <h3 className="font-bold text-gray-800 text-lg">Résultats d'Analyse AO</h3>
+              <h3 className="font-bold text-gray-800 text-lg">{t('ao.results.title')}</h3>
               <p className="text-sm text-gray-600">
-                {mockAOData.length} opportunités trouvées • Score moyen: 88%
+                {mockAOData.length} {t('ao.results.found')} • {t('ao.results.avgScore')}: 88%
               </p>
             </div>
           </div>
           
           <div className="flex items-center gap-2">
             <Badge className="bg-green-600 text-white">
-              {mockAOData.filter(ao => ao.score >= 90).length} excellentes
+              {mockAOData.filter(ao => ao.score >= 90).length} {t('ao.results.excellent')}
             </Badge>
             <Badge variant="outline">
-              {mockAOData.filter(ao => ao.score >= 80 && ao.score < 90).length} bonnes
+              {mockAOData.filter(ao => ao.score >= 80 && ao.score < 90).length} {t('ao.results.good')}
             </Badge>
           </div>
         </div>
@@ -148,11 +150,11 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
               <div className="flex items-center gap-4">
                 <Button variant="outline" size="sm" className="flex items-center gap-2">
                   <Filter className="w-4 h-4" />
-                  Filtres
+                  {t('ao.results.filters')}
                 </Button>
                 <Button variant="outline" size="sm" className="flex items-center gap-2">
                   <Search className="w-4 h-4" />
-                  Recherche
+                  {t('ao.results.search')}
                 </Button>
               </div>
               
@@ -164,7 +166,7 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
                   className="flex items-center gap-2"
                 >
                   <Eye className="w-4 h-4" />
-                  Vue détaillée
+                  {t('ao.results.detailedView')}
                 </Button>
               </div>
             </div>
@@ -186,13 +188,13 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
       {/* Bouton d'expansion */}
       {!isExpanded && onToggleExpand && (
         <div className="text-center">
-          <Button 
-            onClick={onToggleExpand}
-            className="bg-purple-600 hover:bg-purple-700 text-white flex items-center gap-2 mx-auto"
-          >
-            <TrendingUp className="w-4 h-4" />
-            Voir tous les résultats ({mockAOData.length})
-          </Button>
+            <Button 
+              onClick={onToggleExpand}
+              className="bg-purple-600 hover:bg-purple-700 text-white flex items-center gap-2 mx-auto"
+            >
+              <TrendingUp className="w-4 h-4" />
+              {t('ao.results.viewAll')} ({mockAOData.length})
+            </Button>
         </div>
       )}
 
@@ -200,25 +202,25 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
       {isExpanded && (
         <Card className="border border-gray-200 bg-gradient-to-r from-purple-50 to-blue-50">
           <CardContent className="p-6">
-            <h4 className="font-bold text-gray-800 mb-4">📊 Analyse complète</h4>
+            <h4 className="font-bold text-gray-800 mb-4">📊 {t('ao.results.fullAnalysis')}</h4>
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
                 <div className="text-2xl font-bold text-purple-600">
                   {mockAOData.reduce((sum, ao) => sum + parseInt(ao.budget.replace(/[^\d]/g, '')), 0) / 1000}K€
                 </div>
-                <div className="text-sm text-gray-600">Budget total disponible</div>
+                <div className="text-sm text-gray-600">{t('ao.results.totalBudget')}</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-green-600">
                   {Math.round(mockAOData.reduce((sum, ao) => sum + ao.score, 0) / mockAOData.length)}%
                 </div>
-                <div className="text-sm text-gray-600">Score moyen de compatibilité</div>
+                <div className="text-sm text-gray-600">{t('ao.results.avgCompatibility')}</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-blue-600">
                   {mockAOData.filter(ao => ao.statut === "publié").length}
                 </div>
-                <div className="text-sm text-gray-600">AO publiés (candidature possible)</div>
+                <div className="text-sm text-gray-600">{t('ao.results.publishedCount')}</div>
               </div>
             </div>
           </CardContent>

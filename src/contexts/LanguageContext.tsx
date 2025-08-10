@@ -287,7 +287,29 @@ const translations = {
     'ao.budget': 'Budget',
     'ao.deadline': 'Échéance',
     'ao.duration': 'Durée',
-    'ao.apply': 'Postuler avec Eligibly',
+    'ao.holder': 'Titulaire',
+    
+    // AO results section
+    'ao.results.title': "Résultats d'Analyse AO",
+    'ao.results.found': 'opportunités trouvées',
+    'ao.results.avgScore': 'Score moyen',
+    'ao.results.excellent': 'excellentes',
+    'ao.results.good': 'bonnes',
+    'ao.results.filters': 'Filtres',
+    'ao.results.search': 'Recherche',
+    'ao.results.detailedView': 'Vue détaillée',
+    'ao.results.viewAll': 'Voir tous les résultats',
+    'ao.results.fullAnalysis': 'Analyse complète',
+    'ao.results.totalBudget': 'Budget total disponible',
+    'ao.results.avgCompatibility': 'Score moyen de compatibilité',
+    'ao.results.publishedCount': 'AO publiés (candidature possible)',
+    'ao.status.published': 'publié',
+    'ao.status.upcoming': 'à venir',
+    'ao.aiCompatibilityScore': 'Score de compatibilité IA',
+    'ao.criteria.title': "Critères d'évaluation",
+    'ao.criteria.price': 'Prix',
+    'ao.criteria.quality': 'Qualité',
+    'ao.criteria.performance': 'Performance',
     
     // Login Page
     'login.title': 'Connexion à votre espace',
@@ -584,8 +606,20 @@ const translations = {
     'demo.form.privacy': 'By submitting this form, you agree to be contacted by our team. Your data is protected under our ',
     'demo.form.privacy.link': 'privacy policy',
     
-    // Login Page
-    'login.title': 'Access your workspace',
+    // AO labels
+    'ao.compatibility': 'Compatibility',
+    'ao.budget': 'Budget',
+    'ao.deadline': 'Deadline',
+    'ao.duration': 'Duration',
+    'ao.holder': 'Awardee',
+    'ao.apply': 'Apply with Eligibly',
+    'ao.status.published': 'published',
+    'ao.status.upcoming': 'upcoming',
+    'ao.aiCompatibilityScore': 'AI compatibility score',
+    'ao.criteria.title': 'Evaluation criteria',
+    'ao.criteria.price': 'Price',
+    'ao.criteria.quality': 'Quality',
+    'ao.criteria.performance': 'Performance',
     'login.subtitle': 'Access your Eligibly.ai dashboard',
     'login.welcome.title': 'Welcome to your',
     'login.welcome.title.highlight': 'AI workspace',
@@ -607,7 +641,21 @@ const translations = {
     'common.readArticle': 'Read article',
     'common.watchDemo': 'Watch demo',
     'common.schedule': 'Schedule',
-    'common.subscribe': 'Subscribe',
+    
+    // AO results section
+    'ao.results.title': 'Tender analysis results',
+    'ao.results.found': 'opportunities found',
+    'ao.results.avgScore': 'Average score',
+    'ao.results.excellent': 'excellent',
+    'ao.results.good': 'good',
+    'ao.results.filters': 'Filters',
+    'ao.results.search': 'Search',
+    'ao.results.detailedView': 'Detailed view',
+    'ao.results.viewAll': 'View all results',
+    'ao.results.fullAnalysis': 'Full analysis',
+    'ao.results.totalBudget': 'Total available budget',
+    'ao.results.avgCompatibility': 'Average compatibility score',
+    'ao.results.publishedCount': 'Published tenders (applications possible)',
   }
 } as const;
 

@@ -650,20 +650,20 @@ const HomePage = () => {
                       : 'text-gray-600 hover:text-gray-800 hover:bg-white/50'
                   }`}
                 >
-                  🇫🇷 France
-                  {activeTab === 'france' && <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>}
-                </button>
-                <button
-                  onClick={() => setActiveTab('europe')}
-                  className={`px-8 py-4 rounded-full transition-all duration-300 flex items-center gap-2 font-medium ${
-                    activeTab === 'europe' 
-                      ? 'bg-white shadow-lg text-blue-600 font-semibold transform scale-105' 
-                      : 'text-gray-600 hover:text-gray-800 hover:bg-white/50'
-                  }`}
-                >
-                  🇪🇺 Europe
-                  {activeTab === 'europe' && <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>}
-                </button>
+                {t('coverage.tab.france')}
+                {activeTab === 'france' && <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>}
+              </button>
+              <button
+                onClick={() => setActiveTab('europe')}
+                className={`px-8 py-4 rounded-full transition-all duration-300 flex items-center gap-2 font-medium ${
+                  activeTab === 'europe' 
+                    ? 'bg-white shadow-lg text-blue-600 font-semibold transform scale-105' 
+                    : 'text-gray-600 hover:text-gray-800 hover:bg-white/50'
+                }`}
+              >
+                {t('coverage.tab.europe')}
+                {activeTab === 'europe' && <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>}
+              </button>
               </div>
             </div>
           </ScrollReveal>
