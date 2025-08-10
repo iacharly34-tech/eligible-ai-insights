@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SafeLink } from "@/components/SafeLink";
+import { MobileCTABar } from "@/components/MobileCTABar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   ArrowRight, 
@@ -92,6 +93,8 @@ const HomePage = () => {
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
         {/* Header - Clean minimal style like Loris.ai */}
         <Header />
+        <MobileCTABar />
+
 
       <main id="main-content" tabIndex={-1} className="focus:outline-none" role="main">
         {/* Hero Section - Split Layout like Loris.ai */}

@@ -7,6 +7,7 @@ import { SafeLink } from "@/components/SafeLink";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
 import { MobileCTABar } from "@/components/MobileCTABar";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   Users, 
@@ -124,63 +125,111 @@ const Solutions = () => {
       {/* Solutions Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-7xl">
-          <div className="space-y-16">
-            {solutions.map((solution, index) => (
-              <div key={index} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm overflow-hidden">
-                    <CardContent className="p-0">
-                      <div className={`h-2 bg-gradient-to-r ${solution.gradient}`}></div>
-                      <div className="p-8">
-                        <div className="flex items-center gap-4 mb-6">
-                          <div className={`w-16 h-16 bg-gradient-to-r ${solution.gradient} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                            <solution.icon className="w-8 h-8 text-white" />
-                          </div>
-                          <div>
-                             <h3 className="text-2xl font-bold text-foreground">{solution.title}</h3>
-                            <p className="text-muted-foreground">{solution.subtitle}</p>
-                          </div>
-                        </div>
-                        
-                        <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
-                          {solution.description}
-                        </p>
-                        
-                        <div className="space-y-3 mb-8">
-                          {solution.benefits.map((benefit, i) => (
-                            <div key={i} className="flex items-center gap-3">
-                              <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                              <span className="text-muted-foreground">{benefit}</span>
+          {/* Mobile Carousel */}
+          <div className="md:hidden">
+            <Carousel opts={{ align: 'start' }}>
+              <CarouselContent>
+                {solutions.map((solution, index) => (
+                  <CarouselItem key={index} className="basis-[85%]">
+                    <Card className="border-0 bg-white/80 backdrop-blur-sm shadow-xl">
+                      <CardContent className="p-0">
+                        <div className={`h-2 bg-gradient-to-r ${solution.gradient}`}></div>
+                        <div className="p-6">
+                          <div className="flex items-center gap-4 mb-4">
+                            <div className={`w-12 h-12 bg-gradient-to-r ${solution.gradient} rounded-xl flex items-center justify-center`}>
+                              <solution.icon className="w-6 h-6 text-white" />
                             </div>
-                          ))}
+                            <div>
+                              <h3 className="text-xl font-bold text-foreground">{solution.title}</h3>
+                              <p className="text-muted-foreground text-sm">{solution.subtitle}</p>
+                            </div>
+                          </div>
+                          <p className="text-muted-foreground mb-4">
+                            {solution.description}
+                          </p>
+                          <div className="space-y-2 mb-6">
+                            {solution.benefits.slice(0, 3).map((benefit, i) => (
+                              <div key={i} className="flex items-center gap-2 text-sm">
+                                <CheckCircle className="w-4 h-4 text-green-500" />
+                                <span className="text-muted-foreground">{benefit}</span>
+                              </div>
+                            ))}
+                          </div>
+                          <SafeLink to="/demo">
+                            <Button className="w-full group">
+                              {solution.cta}
+                              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                          </SafeLink>
                         </div>
-                        
-                        <SafeLink to="/demo">
-                          <Button variant="default" className="w-full sm:w-auto group">
-                            {solution.cta}
-                            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                          </Button>
-                        </SafeLink>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-                
-                <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                  <div className="relative">
-                    <div className={`w-full h-96 bg-gradient-to-br ${solution.gradient} rounded-3xl opacity-20`}></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
-                        <div className={`w-20 h-20 bg-gradient-to-r ${solution.gradient} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                          <solution.icon className="w-10 h-10 text-white" />
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden md:block">
+            <div className="space-y-16">
+              {solutions.map((solution, index) => (
+                <div key={index} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                    <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm overflow-hidden">
+                      <CardContent className="p-0">
+                        <div className={`h-2 bg-gradient-to-r ${solution.gradient}`}></div>
+                        <div className="p-8">
+                          <div className="flex items-center gap-4 mb-6">
+                            <div className={`w-16 h-16 bg-gradient-to-r ${solution.gradient} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                              <solution.icon className="w-8 h-8 text-white" />
+                            </div>
+                            <div>
+                               <h3 className="text-2xl font-bold text-foreground">{solution.title}</h3>
+                              <p className="text-muted-foreground">{solution.subtitle}</p>
+                            </div>
+                          </div>
+                          
+                          <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
+                            {solution.description}
+                          </p>
+                          
+                          <div className="space-y-3 mb-8">
+                            {solution.benefits.map((benefit, i) => (
+                              <div key={i} className="flex items-center gap-3">
+                                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                                <span className="text-muted-foreground">{benefit}</span>
+                              </div>
+                            ))}
+                          </div>
+                          
+                          <SafeLink to="/demo">
+                            <Button variant="default" className="w-full sm:w-auto group">
+                              {solution.cta}
+                              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                          </SafeLink>
                         </div>
-                        <h4 className="text-xl font-bold text-center text-foreground">{solution.title}</h4>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  
+                  <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
+                    <div className="relative">
+                      <div className={`w-full h-96 bg-gradient-to-br ${solution.gradient} rounded-3xl opacity-20`}></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+                          <div className={`w-20 h-20 bg-gradient-to-r ${solution.gradient} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
+                            <solution.icon className="w-10 h-10 text-white" />
+                          </div>
+                          <h4 className="text-xl font-bold text-center text-foreground">{solution.title}</h4>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -141,10 +141,14 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     overflow-wrap: break-word;
+  }
+
+  html {
+    overflow-x: hidden;
   }
 
   /* Grid pattern for background */
