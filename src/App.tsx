@@ -15,6 +15,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { HighContrastToggle, FontSizeAdjuster, FocusEnhancer, ScreenReaderAnnouncer, KeyboardNavigationEnhancer } from "@/components/AccessibilityEnhancer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { CookieConsent } from "@/components/CookieConsent";
+import { LazyLoadEnhancer } from "@/components/LazyLoadEnhancer";
 import { Header } from "@/components/Header";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
