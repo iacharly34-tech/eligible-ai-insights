@@ -19,6 +19,7 @@ import {
   Terminal,
   Brain
 } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 export const ProcessDemo = () => {
   const { t } = useLanguage();
@@ -38,11 +39,6 @@ export const ProcessDemo = () => {
   const [showExpandedResults, setShowExpandedResults] = useState(false);
   const [mobileActiveScreen, setMobileActiveScreen] = useState<'initial' | 'step1' | 'step2' | 'step3' | 'step4' | 'results'>('initial');
   const [showFullConsole, setShowFullConsole] = useState(false);
-  const [activeTab, setActiveTab] = useState<'process' | 'console' | 'controls'>('process');
-const [showTabContent, setShowTabContent] = useState(false);
-const [mobileTab, setMobileTab] = useState<'process' | 'console' | 'controls' | null>(null);
-const [mobilePanelOpen, setMobilePanelOpen] = useState(false);
-const [showMoreResults, setShowMoreResults] = useState(false);
 
   const steps = [
     { id: 1, title: t('demo.steps.1.title'), description: t('demo.steps.1.desc'), isActive: false },
@@ -78,8 +74,6 @@ const [showMoreResults, setShowMoreResults] = useState(false);
     setCodeLines([]);
     setShowResults(false);
     setShowExpandedResults(false);
-    setMobileActiveScreen('initial');
-    setShowMoreResults(false);
   };
 
   const startDemo = () => {
@@ -228,11 +222,6 @@ const [showMoreResults, setShowMoreResults] = useState(false);
       
       setTimeout(() => clearInterval(step4Interval), 2000);
       
-      // Affichage des résultats après 1.5s
-      setTimeout(() => {
-        setShowResults(true);
-        if (isMobile) setMobileActiveScreen('results');
-      }, 1500);
     }, 7500);
 
     // Progression continue avec timer réel
@@ -245,6 +234,8 @@ const [showMoreResults, setShowMoreResults] = useState(false);
         const newProgress = prev + 1;
         if (newProgress >= 100) {
           clearInterval(progressInterval);
+          setShowResults(true);
+          if (isMobile) setMobileActiveScreen('results');
           setTimeout(() => {
             setIsRunning(false);
             setCurrentStep(5); // État terminé
@@ -270,73 +261,15 @@ const [showMoreResults, setShowMoreResults] = useState(false);
           {/* Contenu principal - différencié mobile / desktop */}
           {isMobile ? (
             <>
-              {/* AO héro au-dessus de la ligne de flottaison */}
-              <div className={`mb-3 ${!showResults ? 'hidden' : ''}`}>
-                <HeroAOCardMobile ao={mockAOData[0]} />
-              </div>
-
-              {/* Bouton Voir plus pour révéler les autres AO */}
-              {showResults && !showMoreResults && (
-                <div className="mb-3 px-3">
-                  <Button variant="outline" className="w-full h-10 text-sm" onClick={() => setShowMoreResults(true)}>
-                    {t('demo.seeMore')}
-                  </Button>
-                </div>
-              )}
-
-              {/* Autres résultats AO - zone scrollable */}
-              <div className={`rounded-xl border bg-card shadow-card p-0 sm:p-3 ${!showResults || !showMoreResults ? 'hidden' : ''}`}>
-                <h4 className="font-semibold text-foreground mb-2 text-sm px-3 pt-3">{t('demo.otherResults')}</h4>
-                <div className="max-h-[48vh] overflow-y-auto pr-1 scroll-smooth">
-                  <AOResults isExpanded={true} startIndex={1} />
-                </div>
-              </div>
-
-              {/* NAVIGATION ÉTAPES IA - barre fixe bas */}
-              <nav className="fixed bottom-0 left-0 right-0 z-40 md:hidden">
-                <div className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/75 border-t">
-                  <div className="max-w-[1400px] mx-auto px-4 py-2 grid grid-cols-3 gap-2">
-                    <Button
-                      variant={mobileTab === 'process' ? 'default' : 'outline'}
-                      className="h-10 text-xs font-medium"
-                      onClick={() => { setMobileTab('process'); setMobilePanelOpen(true); }}
-                    >
-                      <Brain className="w-4 h-4 mr-2" />
-                      {t('demo.process')}
-                    </Button>
-                    <Button
-                      variant={mobileTab === 'console' ? 'default' : 'outline'}
-                      className="h-10 text-xs font-medium"
-                      onClick={() => { setMobileTab('console'); setMobilePanelOpen(true); }}
-                    >
-                      <Terminal className="w-4 h-4 mr-2" />
-                      {t('demo.console')}
-                    </Button>
-                    <Button
-                      variant={mobileTab === 'controls' ? 'default' : 'outline'}
-                      className="h-10 text-xs font-medium"
-                      onClick={() => { setMobileTab('controls'); setMobilePanelOpen(true); }}
-                    >
-                      <Play className="w-4 h-4 mr-2" />
-                      {t('demo.controls')}
-                    </Button>
-                  </div>
-                </div>
-              </nav>
-
-              {/* PANNEAU CONTENU ÉTAPES - slide up léger */}
-              {mobilePanelOpen && (
-                <div className="fixed inset-x-0 bottom-14 z-40 md:hidden px-4">
-                  <div className="bg-background border shadow-xl rounded-xl overflow-hidden">
-                    {/* Barre d'action */}
-                    <div className="flex items-center justify-between px-3 py-2 border-b">
-                      <div className="text-xs text-muted-foreground">{mobileTab === 'process' ? t('demo.process') : mobileTab === 'console' ? t('demo.console') : t('demo.controls')}</div>
-                      <Button variant="ghost" size="sm" className="h-8 px-2 text-xs" onClick={() => setMobilePanelOpen(false)}>{t('demo.close')}</Button>
-                    </div>
-
-                    {/* Contenu selon l’onglet */}
-                    <div className="p-3 max-h-[45vh] overflow-y-auto">
-                      {mobileTab === 'process' && (
+              {/* Carrousel: Processus IA, Console, Contrôles (mobile) */}
+              <div className="mb-3">
+                <Carousel>
+                  <CarouselContent>
+                    <CarouselItem className="basis-full">
+                      <div className="bg-white rounded-lg border shadow-sm p-3">
+                        <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-3">
+                          {t('demo.process')}
+                        </h3>
                         <div className="space-y-2">
                           {steps.map((step) => (
                             <div key={step.id} className="flex items-center gap-2">
@@ -350,15 +283,20 @@ const [showMoreResults, setShowMoreResults] = useState(false);
                                 {currentStep > step.id ? <CheckCircle className="w-3 h-3" /> : step.id}
                               </div>
                               <div className="flex-1 min-w-0">
-                                <div className="text-xs font-medium text-foreground line-clamp-1">{step.title}</div>
-                                <div className="text-[11px] text-muted-foreground line-clamp-1">{step.description}</div>
+                                <div className="text-xs font-medium text-gray-800 line-clamp-1">{step.title}</div>
+                                <div className="text-[11px] text-gray-500 line-clamp-1">{step.description}</div>
                               </div>
                             </div>
                           ))}
                         </div>
-                      )}
+                      </div>
+                    </CarouselItem>
 
-                      {mobileTab === 'console' && (
+                    <CarouselItem className="basis-full">
+                      <div className="bg-white rounded-lg border shadow-sm p-3">
+                        <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-3">
+                          {t('demo.console')}
+                        </h3>
                         <div className="bg-gray-900 rounded-lg p-3">
                           <div className="flex items-center gap-2 mb-2">
                             <div className="flex gap-1">
@@ -381,16 +319,21 @@ const [showMoreResults, setShowMoreResults] = useState(false);
                                 <span className="text-xs">█</span>
                               </div>
                             )}
-                              {codeLines.length === 0 && (
-                                <div className="text-gray-500 text-xs italic">
-                                  {t('demo.console.waiting')}
-                                </div>
-                              )}
+                            {codeLines.length === 0 && (
+                              <div className="text-gray-500 text-xs italic">
+                                {t('demo.console.waiting')}
+                              </div>
+                            )}
                           </div>
                         </div>
-                      )}
+                      </div>
+                    </CarouselItem>
 
-                      {mobileTab === 'controls' && (
+                    <CarouselItem className="basis-full">
+                      <div className="bg-white rounded-lg border shadow-sm p-3">
+                        <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-3">
+                          {t('demo.controls')}
+                        </h3>
                         <div className="space-y-3">
                           <Button 
                             onClick={startDemo}
@@ -418,14 +361,28 @@ const [showMoreResults, setShowMoreResults] = useState(false);
                             </div>
                           </div>
                         </div>
-                      )}
+                      </div>
+                    </CarouselItem>
+                  </CarouselContent>
+                  <CarouselPrevious className="left-2" />
+                  <CarouselNext className="right-2" />
+                </Carousel>
+              </div>
+
+              {/* Interface Charly IA en dessous, pleine largeur */}
+              {showResults && (
+                <>
+                  <div className="mb-3 animate-fade-in">
+                    <HeroAOCardMobile ao={mockAOData[0]} />
+                  </div>
+                  <div className="rounded-xl border bg-card shadow-card p-0">
+                    <h4 className="font-semibold text-foreground mb-2 text-sm px-3 pt-3">{t('demo.otherResults')}</h4>
+                    <div className="max-h-[48vh] overflow-y-auto pr-1 scroll-smooth">
+                      <AOResults isExpanded={true} startIndex={1} />
                     </div>
                   </div>
-                </div>
+                </>
               )}
-
-              {/* Espace pour ne pas masquer le contenu derrière la nav */}
-              <div className="h-16" />
             </>
           ) : (
             <>
@@ -535,35 +492,29 @@ const [showMoreResults, setShowMoreResults] = useState(false);
                 </div>
               </div>
 
-              {/* Interface Charly IA - pleine largeur */}
-              <div className="mt-6 rounded-xl border bg-card shadow-card p-4 md:p-6">
-                <h3 className="font-bold text-foreground text-base md:text-lg mb-3 flex items-center gap-2">
-                  <Globe className="w-4 h-4" />
-                  {t('demo.interface')}
-                </h3>
-                <div className="w-full">
-                  <AOResults isExpanded={false} startIndex={0} forceDetailed hideHeader />
-                </div>
-              </div>
-
-              {/* Autres résultats AO - zone scrollable */}
-              <div className="mt-4 rounded-xl border bg-card shadow-card p-4 md:p-6">
-                <h4 className="font-semibold text-foreground mb-3">{t('demo.otherResultsAO')}</h4>
-                <div className="max-h-[42vh] overflow-y-auto pr-1 scroll-smooth">
-                  <AOResults isExpanded={true} startIndex={1} />
-                </div>
-              </div>
-
-              {/* Zone Actions (footer) */}
-              <div className="mt-4 md:mt-6">
-                <div className="sticky bottom-2 z-30 md:static">
-                  <div className="bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border rounded-xl shadow-lg p-3 flex gap-2">
-                    <Button className="flex-1">{t('demo.openAO')}</Button>
-                    <Button className="flex-1" variant="outline" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{t('demo.editFilters')}</Button>
-                    <Button className="flex-1" variant="secondary" onClick={startDemo}>{t('demo.rerun')}</Button>
+              {/* Interface Charly IA - pleine largeur (affichée à 100%) */}
+              {showResults && (
+                <>
+                  <div className="mt-6 rounded-xl border bg-card shadow-card p-4 md:p-6 animate-fade-in">
+                    <h3 className="font-bold text-foreground text-base md:text-lg mb-3 flex items-center gap-2">
+                      <Globe className="w-4 h-4" />
+                      {t('demo.interface')}
+                    </h3>
+                    <div className="w-full">
+                      <AOResults isExpanded={false} startIndex={0} forceDetailed hideHeader />
+                    </div>
                   </div>
-                </div>
-              </div>
+
+                  {/* Autres résultats AO - zone scrollable */}
+                  <div className="mt-4 rounded-xl border bg-card shadow-card p-4 md:p-6">
+                    <h4 className="font-semibold text-foreground mb-3">{t('demo.otherResultsAO')}</h4>
+                    <div className="max-h-[42vh] overflow-y-auto pr-1 scroll-smooth">
+                      <AOResults isExpanded={true} startIndex={1} />
+                    </div>
+                  </div>
+                </>
+              )}
+
             </>
           )}
 
