@@ -93,7 +93,7 @@ const HomePage = () => {
 
       <main id="main-content" tabIndex={-1} className="focus:outline-none" role="main">
         {/* Hero Section - Split Layout like Loris.ai */}
-        <section className="pt-20 pb-16 px-4 relative overflow-hidden min-h-[85vh] flex items-center" aria-label={t('hero.badge')}>
+        <section className="pt-20 pb-16 px-4 relative overflow-hidden min-h-[85vh] flex items-center isolate" aria-label={t('hero.badge')}>
         {/* Animated Background - Style Loris.ai */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Main gradient background */}
@@ -109,7 +109,7 @@ const HomePage = () => {
           {/* Main Content - Split Layout */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Column - Text Content */}
-            <div className={`space-y-6 sm:space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <div className={`space-y-6 sm:space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} relative z-10`}>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 {t('hero.title')}{" "}
                 <span className="bg-gradient-highlight bg-clip-text text-transparent">
@@ -142,7 +142,7 @@ const HomePage = () => {
                 <SafeLink to="/demo" className="w-full sm:w-auto">
                   <Button 
                     size="lg" 
-                    className="bg-gradient-cta hover:shadow-glow text-white text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 h-auto group transition-all duration-300 hover:scale-105 w-full"
+                    className="bg-gradient-cta hover:shadow-glow text-white text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 h-11 sm:h-auto group transition-all duration-300 hover:scale-105 w-full"
                     role="button"
                     aria-label={t('accessibility.demo')}
                   >
@@ -156,7 +156,7 @@ const HomePage = () => {
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 h-auto border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 w-full"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 h-11 sm:h-auto border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 w-full"
                     role="button"
                     aria-label={t('accessibility.demo')}
                   >
@@ -174,7 +174,7 @@ const HomePage = () => {
             </div>
 
             {/* Right Column - Eligibly.ai Unique Dashboard */}
-            <div className="relative w-full mt-8 lg:mt-0 lg:scale-[0.95] xl:scale-100 lg:origin-right">
+            <div className="relative z-0 w-full mt-8 lg:mt-0 lg:scale-[0.95] xl:scale-100 lg:origin-right lg:max-w-[600px] xl:max-w-[640px] 2xl:max-w-[680px] ml-auto">
               {/* Dashboard Container - Unique Eligibly Design */}
               <div className="bg-gradient-to-br from-white via-gray-50 to-blue-50 rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
                 
@@ -200,7 +200,7 @@ const HomePage = () => {
                 </div>
 
                 {/* Body Dashboard - Elegible.ai Original Layout */}
-                <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+                <div className="p-4 sm:p-6 space-y-4 sm:space-y-6 break-words">
                   {/* Métriques principales - Design Eligibly */}
                   <div className="grid grid-cols-3 gap-2 sm:gap-4">
                     <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-white text-center">
@@ -248,7 +248,7 @@ const HomePage = () => {
                               </div>
                             </div>
                             <h5 className="font-bold text-gray-900 mb-2">Plateforme de gestion documentaire</h5>
-                            <p className="text-sm text-gray-600 mb-2">🏛️ Ministère de l'Éducation Nationale</p>
+                            <p className="text-sm text-gray-600 mb-2 flex items-center gap-2 break-words">🏛️ Ministère de l'Éducation Nationale</p>
                             <div className="flex items-center gap-4 text-xs text-gray-500">
                               <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-full">
                                 <Clock className="w-3 h-3" />
