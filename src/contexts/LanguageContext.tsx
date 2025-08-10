@@ -336,7 +336,17 @@ const translations = {
     // Features
     'features.title': 'Essential',
     'features.title.highlight': 'features',
-    'features.subtitle': 'A comprehensive platform to optimise your approach to public procurement and maximise your chances of success.',
+    
+    // Core features i18n
+    'features.core.surveillance.title': 'Multi‑source monitoring',
+    'features.core.surveillance.desc': 'Automated monitoring of 200+ official sources in France and Europe',
+    'features.core.ai.title': 'Intelligent analysis',
+    'features.core.ai.desc': 'Artificial‑intelligence technology for automatic tender qualification',
+    'features.core.detection.title': 'Targeted detection',
+    'features.core.detection.desc': 'Automatic identification of tenders matching your expertise',
+    'features.core.alerts.title': 'Instant alerts',
+    'features.core.alerts.desc': 'Predictive opt‑in alerts to avoid information overload — notifications on your preferred channels',
+    
     
     // Features Heading
     'features.heading.prefix': 'A complete platform for your',
