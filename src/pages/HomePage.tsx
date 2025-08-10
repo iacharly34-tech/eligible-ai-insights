@@ -404,15 +404,18 @@ const HomePage = () => {
               <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl p-12 backdrop-blur-sm border border-white/10 relative">
                 {/* Charly Image - Center */}
                 <div className="flex justify-center">
-                <img 
-                  src={charlyImageUrl} 
-                  alt="Charly, l'assistant IA d'Eligibly.ai dans sa présentation complète montrant l'interface d'analyse des marchés publics" 
-                  className="w-full h-auto max-w-sm"
-                  role="img"
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(min-width: 768px) 480px, 100vw"
-                />
+                <picture>
+                  <source srcSet={charlyOptimized} type="image/webp" />
+                  <img 
+                    src={charlyImageUrl} 
+                    alt="Charly, l'assistant IA d'Eligibly.ai dans sa présentation complète montrant l'interface d'analyse des marchés publics" 
+                    className="w-full h-auto max-w-sm"
+                    role="img"
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(min-width: 768px) 480px, 100vw"
+                  />
+                </picture>
                 </div>
               </div>
               
