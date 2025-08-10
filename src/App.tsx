@@ -47,12 +47,7 @@ const App = () => (
           <CookieConsent />
           <BrowserRouter>
             <ScrollToTop />
-            {/* Sync language with /en prefix */}
-            <Header />
-            {/* We render Header here to ensure locale-aware nav; remove duplicates from pages if any */}
-            {/* LanguageSync adjusts language based on route prefix */}
-            {/* eslint-disable-next-line @typescript-eslint/no-var-requires */}
-            {require('./components/LanguageSync') && require('./components/LanguageSync')}
+            <LanguageSync />
             {/* Routes */}
             <Routes>
               {/* FR routes */}
