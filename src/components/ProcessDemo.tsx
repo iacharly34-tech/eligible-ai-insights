@@ -289,12 +289,12 @@ const [mobilePanelOpen, setMobilePanelOpen] = useState(false);
           {isMobile ? (
             <>
               {/* AO héro au-dessus de la ligne de flottaison */}
-              <div className="mb-3">
+              <div className={`mb-3 ${!showResults ? 'hidden' : ''}`}>
                 <HeroAOCardMobile ao={mockAOData[0]} />
               </div>
 
               {/* Autres résultats AO - zone scrollable */}
-              <div className="rounded-xl border bg-card shadow-card p-3">
+              <div className={`rounded-xl border bg-card shadow-card p-3 ${!showResults ? 'hidden' : ''}`}>
                 <h4 className="font-semibold text-foreground mb-2 text-sm">Autres résultats</h4>
                 <div className="max-h-[48vh] overflow-y-auto pr-1 scroll-smooth">
                   <AOResults isExpanded={true} startIndex={1} />

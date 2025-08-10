@@ -174,7 +174,7 @@ const HomePage = () => {
             </div>
 
             {/* Right Column - Eligibly.ai Unique Dashboard */}
-            <div className="relative w-full mt-8 lg:mt-0">
+            <div className="relative w-full mt-8 lg:mt-0 lg:scale-[0.95] xl:scale-100 lg:origin-right">
               {/* Dashboard Container - Unique Eligibly Design */}
               <div className="bg-gradient-to-br from-white via-gray-50 to-blue-50 rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
                 

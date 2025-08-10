@@ -386,3 +386,13 @@ All colors MUST be HSL.
     to { opacity: 1; transform: translateY(0); }
   }
 }
+
+/* Hide Lovable editor badge in production */
+.lovable-editor-badge,
+.lovable-badge,
+[data-lovable-badge],
+a[aria-label*="Lovable"],
+a[href*="lovable.app"],
+a[href*="lovable.dev"] {
+  display: none !important;
+}
