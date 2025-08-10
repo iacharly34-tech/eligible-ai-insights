@@ -195,6 +195,45 @@ const translations = {
     'demo.form.subtitle': 'Complétez ce formulaire et nos experts vous contacteront sous 2h',
     'demo.benefits.title': 'Ce que vous découvrirez',
     'demo.program.title': 'Au programme de votre démo',
+
+    // Demo UI Labels
+    'demo.process': 'Processus IA',
+    'demo.console': 'Console Charly IA',
+    'demo.controls': 'Contrôles',
+    'demo.console.waiting': 'Charly IA en attente...',
+    'demo.seeMore': 'Voir plus',
+    'demo.seeLess': 'Voir moins',
+    'demo.close': 'Fermer',
+    'demo.launch': 'Lancer IA',
+    'demo.analyzing': 'Analyse...',
+    'demo.reset': 'Réinitialiser',
+    'demo.progress': 'Progression',
+    'demo.step': 'Étape',
+    'demo.done': 'Terminé ✓',
+    'demo.ready': 'Prêt',
+    'demo.interface': 'Interface Charly IA',
+    'demo.otherResults': 'Autres résultats',
+    'demo.otherResultsAO': 'Autres résultats AO',
+    'demo.openAO': "Ouvrir l'AO",
+    'demo.editFilters': 'Modifier filtres',
+    'demo.rerun': 'Relancer',
+
+    // Demo Steps
+    'demo.steps.1.title': 'Connexion multi-sources',
+    'demo.steps.1.desc': 'Collecte automatique depuis toutes les plateformes officielles',
+    'demo.steps.2.title': 'Extraction & Parsing',
+    'demo.steps.2.desc': "Analyse et structuration des données d'appels d'offres",
+    'demo.steps.3.title': 'Analyse IA Multi-LLM',
+    'demo.steps.3.desc': "Intelligence artificielle prédictive pour évaluer la compatibilité",
+    'demo.steps.4.title': 'Scoring Algorithmique',
+    'demo.steps.4.desc': "Attribution d'un score de chance de réussite personnalisé",
+
+    // AO labels
+    'ao.compatibility': 'Compatibilité',
+    'ao.budget': 'Budget',
+    'ao.deadline': 'Échéance',
+    'ao.duration': 'Durée',
+    'ao.apply': 'Postuler avec Eligibly',
     
     // Login Page
     'login.title': 'Connexion à votre espace',

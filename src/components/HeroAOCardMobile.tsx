@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { FileText, CheckCircle2, Euro, Calendar, Building2, Rocket } from "lucide-react";
 import React from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export type HeroAO = {
   id: string;
@@ -24,6 +25,7 @@ interface Props {
 }
 
 export const HeroAOCardMobile: React.FC<Props> = ({ ao }) => {
+  const { t } = useLanguage();
   const scoreColor = ao.score >= 80 ? "text-success" : ao.score >= 60 ? "text-warning" : "text-destructive";
 
   return (
@@ -48,21 +50,21 @@ export const HeroAOCardMobile: React.FC<Props> = ({ ao }) => {
             <div className={`flex items-center justify-center gap-1 ${scoreColor}`}>
               <span className="text-xl font-bold">{ao.score}%</span>
             </div>
-            <div className="text-[10px] text-muted-foreground">Compatibilité</div>
+            <div className="text-[10px] text-muted-foreground">{t('ao.compatibility')}</div>
           </div>
         </div>
 
         <div className="grid grid-cols-3 gap-2 mb-3">
           <div className="p-2 bg-muted/30 rounded-md">
-            <div className="text-[10px] text-muted-foreground">Budget</div>
+            <div className="text-[10px] text-muted-foreground">{t('ao.budget')}</div>
             <div className="text-sm font-semibold text-foreground">{ao.budget}</div>
           </div>
           <div className="p-2 bg-muted/30 rounded-md">
-            <div className="text-[10px] text-muted-foreground">Échéance</div>
+            <div className="text-[10px] text-muted-foreground">{t('ao.deadline')}</div>
             <div className="text-sm font-semibold text-foreground">{ao.deadline}</div>
           </div>
           <div className="p-2 bg-muted/30 rounded-md">
-            <div className="text-[10px] text-muted-foreground">Durée</div>
+            <div className="text-[10px] text-muted-foreground">{t('ao.duration')}</div>
             <div className="text-sm font-semibold text-foreground">{ao.duree}</div>
           </div>
         </div>
@@ -80,7 +82,7 @@ export const HeroAOCardMobile: React.FC<Props> = ({ ao }) => {
 
         <Button className="w-full h-11 text-sm font-semibold bg-gradient-to-r from-primary to-accent text-primary-foreground">
           <Rocket className="w-4 h-4 mr-2" />
-          Postuler avec Eligibly
+          {t('ao.apply')}
         </Button>
       </CardContent>
     </Card>

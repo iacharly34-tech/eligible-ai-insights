@@ -1,5 +1,6 @@
 import { Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface DemoConsoleProps {
   codeLines: string[];
@@ -9,15 +10,16 @@ interface DemoConsoleProps {
 }
 
 export const DemoConsole = ({ codeLines, isRunning, showFull, onToggleShowFull }: DemoConsoleProps) => {
+  const { t } = useLanguage();
   return (
     <div className="bg-white rounded-lg border shadow-sm p-4">
       <div className="flex items-center justify-between mb-3">
         <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide flex items-center gap-2 m-0">
           <Terminal className="w-4 h-4" />
-          Console Charly IA
+          {t('demo.console')}
         </h3>
         <Button variant="outline" size="sm" onClick={onToggleShowFull} className="h-8">
-          {showFull ? "Voir moins" : "Voir plus"}
+          {showFull ? t('demo.seeLess') : t('demo.seeMore')}
         </Button>
       </div>
       <div className="bg-gray-900 rounded-lg p-3">
@@ -43,7 +45,7 @@ export const DemoConsole = ({ codeLines, isRunning, showFull, onToggleShowFull }
             </div>
           )}
           {codeLines.length === 0 && (
-            <div className="text-gray-500 text-xs italic">Charly IA en attente...</div>
+            <div className="text-gray-500 text-xs italic">{t('demo.console.waiting')}</div>
           )}
         </div>
       </div>

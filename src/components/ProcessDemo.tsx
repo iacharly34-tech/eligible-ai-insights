@@ -45,30 +45,10 @@ const [mobilePanelOpen, setMobilePanelOpen] = useState(false);
 const [showMoreResults, setShowMoreResults] = useState(false);
 
   const steps = [
-    {
-      id: 1,
-      title: "Connexion multi-sources",
-      description: "Collecte automatique depuis toutes les plateformes officielles",
-      isActive: false
-    },
-    {
-      id: 2,
-      title: "Extraction & Parsing",
-      description: "Analyse et structuration des données d'appels d'offres",
-      isActive: false
-    },
-    {
-      id: 3,
-      title: "Analyse IA Multi-LLM",
-      description: "Intelligence artificielle prédictive pour évaluer la compatibilité",
-      isActive: false
-    },
-    {
-      id: 4,
-      title: "Scoring Algorithmique",
-      description: "Attribution d'un score de chance de réussite personnalisé",
-      isActive: false
-    }
+    { id: 1, title: t('demo.steps.1.title'), description: t('demo.steps.1.desc'), isActive: false },
+    { id: 2, title: t('demo.steps.2.title'), description: t('demo.steps.2.desc'), isActive: false },
+    { id: 3, title: t('demo.steps.3.title'), description: t('demo.steps.3.desc'), isActive: false },
+    { id: 4, title: t('demo.steps.4.title'), description: t('demo.steps.4.desc'), isActive: false },
   ];
 
   
@@ -306,7 +286,7 @@ const [showMoreResults, setShowMoreResults] = useState(false);
 
               {/* Autres résultats AO - zone scrollable */}
               <div className={`rounded-xl border bg-card shadow-card p-0 sm:p-3 ${!showResults || !showMoreResults ? 'hidden' : ''}`}>
-                <h4 className="font-semibold text-foreground mb-2 text-sm px-3 pt-3">Autres résultats</h4>
+                <h4 className="font-semibold text-foreground mb-2 text-sm px-3 pt-3">{t('demo.otherResults')}</h4>
                 <div className="max-h-[48vh] overflow-y-auto pr-1 scroll-smooth">
                   <AOResults isExpanded={true} startIndex={1} />
                 </div>
@@ -322,7 +302,7 @@ const [showMoreResults, setShowMoreResults] = useState(false);
                       onClick={() => { setMobileTab('process'); setMobilePanelOpen(true); }}
                     >
                       <Brain className="w-4 h-4 mr-2" />
-                      PROCESSUS IA
+                      {t('demo.process')}
                     </Button>
                     <Button
                       variant={mobileTab === 'console' ? 'default' : 'outline'}
@@ -330,7 +310,7 @@ const [showMoreResults, setShowMoreResults] = useState(false);
                       onClick={() => { setMobileTab('console'); setMobilePanelOpen(true); }}
                     >
                       <Terminal className="w-4 h-4 mr-2" />
-                      CONSOLE
+                      {t('demo.console')}
                     </Button>
                     <Button
                       variant={mobileTab === 'controls' ? 'default' : 'outline'}
@@ -338,7 +318,7 @@ const [showMoreResults, setShowMoreResults] = useState(false);
                       onClick={() => { setMobileTab('controls'); setMobilePanelOpen(true); }}
                     >
                       <Play className="w-4 h-4 mr-2" />
-                      CONTRÔLES
+                      {t('demo.controls')}
                     </Button>
                   </div>
                 </div>
@@ -350,8 +330,8 @@ const [showMoreResults, setShowMoreResults] = useState(false);
                   <div className="bg-background border shadow-xl rounded-xl overflow-hidden">
                     {/* Barre d'action */}
                     <div className="flex items-center justify-between px-3 py-2 border-b">
-                      <div className="text-xs text-muted-foreground">{mobileTab === 'process' ? 'Processus IA' : mobileTab === 'console' ? 'Console Charly IA' : 'Contrôles'}</div>
-                      <Button variant="ghost" size="sm" className="h-8 px-2 text-xs" onClick={() => setMobilePanelOpen(false)}>Fermer</Button>
+                      <div className="text-xs text-muted-foreground">{mobileTab === 'process' ? t('demo.process') : mobileTab === 'console' ? t('demo.console') : t('demo.controls')}</div>
+                      <Button variant="ghost" size="sm" className="h-8 px-2 text-xs" onClick={() => setMobilePanelOpen(false)}>{t('demo.close')}</Button>
                     </div>
 
                     {/* Contenu selon l’onglet */}
@@ -401,11 +381,11 @@ const [showMoreResults, setShowMoreResults] = useState(false);
                                 <span className="text-xs">█</span>
                               </div>
                             )}
-                            {codeLines.length === 0 && (
-                              <div className="text-gray-500 text-xs italic">
-                                Charly IA en attente...
-                              </div>
-                            )}
+                              {codeLines.length === 0 && (
+                                <div className="text-gray-500 text-xs italic">
+                                  {t('demo.console.waiting')}
+                                </div>
+                              )}
                           </div>
                         </div>
                       )}
@@ -454,7 +434,7 @@ const [showMoreResults, setShowMoreResults] = useState(false);
                 {/* Processus IA */}
                 <div className="bg-white rounded-lg border shadow-sm p-4 h-fit">
                   <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">
-                    Processus IA
+                    {t('demo.process')}
                   </h3>
                   <div className="space-y-2">
                     {steps.map((step) => (
@@ -482,10 +462,10 @@ const [showMoreResults, setShowMoreResults] = useState(false);
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide flex items-center gap-2 m-0">
                       <Terminal className="w-4 h-4" />
-                      Console Charly IA
+                      {t('demo.console')}
                     </h3>
                     <Button variant="outline" size="sm" onClick={() => setShowFullConsole((v) => !v)} className="h-8">
-                      {showFullConsole ? 'Voir moins' : 'Voir plus'}
+                      {showFullConsole ? t('demo.seeLess') : t('demo.seeMore')}
                     </Button>
                   </div>
                   <div className="bg-gray-900 rounded-lg p-3">
@@ -512,7 +492,7 @@ const [showMoreResults, setShowMoreResults] = useState(false);
                       )}
                       {codeLines.length === 0 && (
                         <div className="text-gray-500 text-xs italic">
-                          Charly IA en attente...
+                          {t('demo.console.waiting')}
                         </div>
                       )}
                     </div>
@@ -523,7 +503,7 @@ const [showMoreResults, setShowMoreResults] = useState(false);
                 <div className="bg-white rounded-lg border shadow-sm p-4 h-fit">
                   <h3 className="font-bold text-gray-800 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
                     <Play className="w-4 h-4" />
-                    Contrôles
+                    {t('demo.controls')}
                   </h3>
                   <div className="space-y-3">
                     <Button 
@@ -532,23 +512,23 @@ const [showMoreResults, setShowMoreResults] = useState(false);
                       className="w-full h-12 text-sm font-semibold bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                       <Play className="w-4 h-4 mr-2" />
-                      {isRunning ? 'Analyse...' : 'Lancer IA'}
+                      {isRunning ? t('demo.analyzing') : t('demo.launch')}
                     </Button>
                     <Button 
                       onClick={resetDemo}
                       variant="outline"
                       className="w-full h-10 text-sm font-medium border-border hover:bg-muted/50"
                     >
-                      Reset
+                      {t('demo.reset')}
                     </Button>
                     <div className="space-y-2">
                       <div className="flex justify-between text-xs">
-                        <span className="text-gray-600">Progression</span>
+                        <span className="text-gray-600">{t('demo.progress')}</span>
                         <span className="font-medium">{Math.round(progress)}%</span>
                       </div>
                       <Progress value={progress} className="h-2" />
                       <div className="text-xs text-gray-500 text-center">
-                        {isRunning ? `Étape ${currentStep}/4` : currentStep === 5 ? 'Terminé ✓' : 'Prêt'}
+                        {isRunning ? `${t('demo.step')} ${currentStep}/4` : currentStep === 5 ? t('demo.done') : t('demo.ready')}
                       </div>
                     </div>
                   </div>
@@ -559,7 +539,7 @@ const [showMoreResults, setShowMoreResults] = useState(false);
               <div className="mt-6 rounded-xl border bg-card shadow-card p-4 md:p-6">
                 <h3 className="font-bold text-foreground text-base md:text-lg mb-3 flex items-center gap-2">
                   <Globe className="w-4 h-4" />
-                  Interface Charly IA
+                  {t('demo.interface')}
                 </h3>
                 <div className="w-full">
                   <AOResults isExpanded={false} startIndex={0} forceDetailed hideHeader />
@@ -568,7 +548,7 @@ const [showMoreResults, setShowMoreResults] = useState(false);
 
               {/* Autres résultats AO - zone scrollable */}
               <div className="mt-4 rounded-xl border bg-card shadow-card p-4 md:p-6">
-                <h4 className="font-semibold text-foreground mb-3">Autres résultats AO</h4>
+                <h4 className="font-semibold text-foreground mb-3">{t('demo.otherResultsAO')}</h4>
                 <div className="max-h-[42vh] overflow-y-auto pr-1 scroll-smooth">
                   <AOResults isExpanded={true} startIndex={1} />
                 </div>
@@ -578,9 +558,9 @@ const [showMoreResults, setShowMoreResults] = useState(false);
               <div className="mt-4 md:mt-6">
                 <div className="sticky bottom-2 z-30 md:static">
                   <div className="bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border rounded-xl shadow-lg p-3 flex gap-2">
-                    <Button className="flex-1">Ouvrir l'AO</Button>
-                    <Button className="flex-1" variant="outline" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Modifier filtres</Button>
-                    <Button className="flex-1" variant="secondary" onClick={startDemo}>Relancer</Button>
+                    <Button className="flex-1">{t('demo.openAO')}</Button>
+                    <Button className="flex-1" variant="outline" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{t('demo.editFilters')}</Button>
+                    <Button className="flex-1" variant="secondary" onClick={startDemo}>{t('demo.rerun')}</Button>
                   </div>
                 </div>
               </div>
