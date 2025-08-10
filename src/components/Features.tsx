@@ -36,15 +36,15 @@ export const Features = () => {
     },
     {
       icon: BarChart3,
-      title: "Analytics Complets",
-      description: "Tableaux de bord détaillés avec métriques de performance, taux de succès et analyse de la concurrence.",
+      title: t('features.analytics.title'),
+      description: t('features.analytics.desc'),
       badge: "Insights",
       color: "bg-secondary"
     },
     {
       icon: Shield,
-      title: "Conformité Assurée",
-      description: "Vérification automatique des critères d'éligibilité et de conformité pour éviter les erreurs coûteuses.",
+      title: t('features.compliance.title'),
+      description: t('features.compliance.desc'),
       badge: "Sécurisé",
       color: "bg-destructive"
     }
@@ -55,7 +55,7 @@ export const Features = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16 space-y-4">
           <Badge variant="outline" className="text-primary border-primary">
-            Fonctionnalités
+            {t('features.badge')}
           </Badge>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold px-4">
             {t('features.title')}{" "}
@@ -88,8 +88,8 @@ export const Features = () => {
         </div>
 
         <div className="text-center mb-12 sm:mb-16 space-y-4 px-4">
-          <h3 className="text-xl sm:text-2xl font-bold">Flux d'opportunités</h3>
-          <p className="text-lg sm:text-xl text-primary font-semibold">Simplifiez votre veille</p>
+          <h3 className="text-xl sm:text-2xl font-bold">{t('features.flow.title')}</h3>
+          <p className="text-lg sm:text-xl text-primary font-semibold">{t('features.flow.subtitle')}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">

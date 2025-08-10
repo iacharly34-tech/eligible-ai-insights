@@ -86,8 +86,7 @@ const Ressources = () => {
           </h1>
           
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Nous préparons une bibliothèque complète de ressources pour vous aider à exceller 
-            dans les marchés publics. Guides, webinaires, templates et analyses exclusives.
+            {t('resources.hero.blurb')}
           </p>
 
           {/* Newsletter Subscription */}
@@ -131,11 +130,10 @@ const Ressources = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ce qui vous attend
+              {t('resources.upcoming.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Découvrez les ressources exclusives que nous préparons pour transformer 
-              votre approche des marchés publics
+              {t('resources.upcoming.subtitle')}
             </p>
           </div>
           
@@ -172,7 +170,7 @@ const Ressources = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-12 text-white text-center">
-            <h2 className="text-3xl font-bold mb-6">En préparation</h2>
+            <h2 className="text-3xl font-bold mb-6">{t('resources.stats.preparing')}</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
@@ -210,9 +208,9 @@ const Ressources = () => {
       {/* Contact Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-6">Une question spécifique ?</h2>
+          <h2 className="text-3xl font-bold mb-6">{t('resources.contact.title')}</h2>
           <p className="text-xl text-gray-600 mb-8">
-            En attendant nos ressources, notre équipe est là pour vous accompagner
+            {t('resources.contact.subtitle')}
           </p>
           
           <div className="grid md:grid-cols-3 gap-6">
@@ -221,8 +219,8 @@ const Ressources = () => {
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Mail className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="font-semibold mb-2">Support Email</h3>
-                <p className="text-sm text-gray-600 mb-4">Réponse sous 24h</p>
+                <h3 className="font-semibold mb-2">{t('resources.contact.supportEmail')}</h3>
+                <p className="text-sm text-gray-600 mb-4">{t('resources.contact.response')}</p>
                 <Button variant="outline" size="sm">
                   contact@eligibly.ai
                 </Button>
@@ -234,10 +232,10 @@ const Ressources = () => {
                 <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Users className="w-6 h-6 text-green-600" />
                 </div>
-                <h3 className="font-semibold mb-2">Communauté</h3>
-                <p className="text-sm text-gray-600 mb-4">Échanges entre pros</p>
+                <h3 className="font-semibold mb-2">{t('resources.contact.community')}</h3>
+                <p className="text-sm text-gray-600 mb-4">{t('resources.contact.chat')}</p>
                 <Button variant="outline" size="sm">
-                  Rejoindre
+                  {t('resources.contact.join')}
                 </Button>
               </CardContent>
             </Card>
@@ -247,10 +245,10 @@ const Ressources = () => {
                 <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Target className="w-6 h-6 text-purple-600" />
                 </div>
-                <h3 className="font-semibold mb-2">Consultation</h3>
-                <p className="text-sm text-gray-600 mb-4">Conseil personnalisé</p>
+                <h3 className="font-semibold mb-2">{t('resources.contact.consulting')}</h3>
+                <p className="text-sm text-gray-600 mb-4">{t('resources.contact.advice')}</p>
                 <Button variant="outline" size="sm">
-                  Prendre RDV
+                  {t('resources.contact.book')}
                 </Button>
               </CardContent>
             </Card>

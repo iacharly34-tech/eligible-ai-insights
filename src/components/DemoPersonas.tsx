@@ -11,6 +11,7 @@ import {
   CheckCircle,
   ArrowRight
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Persona {
   id: string;
@@ -24,77 +25,78 @@ interface Persona {
 const personas: Persona[] = [
   {
     id: "acheteur",
-    title: "Responsable des marchés publics / Acheteur public",
+    title: "",
     icon: UserCheck,
-    description: "Vous supervisez les achats et sélectionnez les meilleurs prestataires pour votre collectivité ou administration. Votre défi : identifier rapidement les entreprises les plus pertinentes et sécuriser vos choix.",
-    benefits: [
-      "Comparez automatiquement vos fournisseurs",
-      "Analysez et classez les candidatures en un clic",
-      "Optimisez vos achats pour plus d’efficacité"
-    ],
-    actions: [
-      "Identifiez et qualifiez vos prestataires idéaux",
-      "Gérez et suivez facilement vos présélections",
-      "Vérifiez automatiquement la conformité technique et administrative"
-    ]
+    description: "",
+    benefits: [],
+    actions: []
   },
   {
     id: "chef-projet",
-    title: "Chef de projet / Pilote marché",
+    title: "",
     icon: Target,
-    description: "Vous coordonnez les projets d'achat public et pilotez les consultations. Votre défi : garantir la cohérence entre besoins métier et offres du marché tout en respectant les délais.",
-    benefits: [
-      "Vue d'ensemble consolidée de tous les marchés en cours",
-      "Comparaison objective et automatisée des réponses",
-      "Traçabilité complète des décisions et critères",
-      "Optimisation des processus d'achat"
-    ],
-    actions: [
-      "Compare et consolide les différentes réponses",
-      "Valide l'adéquation offre/besoin métier",
-      "Coordonne les équipes et respecte les échéances"
-    ]
+    description: "",
+    benefits: [],
+    actions: []
   },
   {
     id: "commercial",
-    title: "Responsable commercial / Business Developer",
+    title: "",
     icon: TrendingUp,
-    description: "Vous développez le portefeuille clients de votre PME/ESN dans le secteur public. Votre objectif : détecter les opportunités les plus prometteuses et maximiser vos taux de réussite.",
-    benefits: [
-      "Détection automatique des AO compatibles",
-      "Score de pertinence en temps réel",
-      "Alertes personnalisées par secteur",
-      "Historique et suivi des candidatures"
-    ],
-    actions: [
-      "Filtre et surveille les opportunités par secteur",
-      "Analyse la concurrence et les critères de sélection",
-      "Propose une stratégie de réponse personnalisée"
-    ]
+    description: "",
+    benefits: [],
+    actions: []
   },
   {
     id: "consultant",
-    title: "Consultant / Cabinet de conseil",
+    title: "",
     icon: BookOpen,
-    description: "Vous accompagnez vos clients dans leur stratégie de développement sur les marchés publics. Votre valeur ajoutée : l'expertise et la veille stratégique pour maximiser leurs succès.",
-    benefits: [
-      "Veille sectorielle exhaustive",
-      "Analyse concurrentielle avancée",
-      "Rapports automatisés pour clients",
-      "Intelligence de marché en temps réel"
-    ],
-    actions: [
-      "Effectue une veille marché complète et ciblée",
-      "Prépare les réponses stratégiques optimisées",
-      "Télécharge et analyse les DCE pertinents"
-    ]
+    description: "",
+    benefits: [],
+    actions: []
   }
 ];
 
 export const DemoPersonas = () => {
+  const { t } = useLanguage();
   const [selectedPersona, setSelectedPersona] = useState<string>("acheteur");
 
-  const selectedPersonaData = personas.find(p => p.id === selectedPersona) || personas[0];
+  const i18nPersonas: Persona[] = [
+    {
+      id: "acheteur",
+      title: t('product.demo.persona.acheteur.title'),
+      icon: UserCheck,
+      description: t('product.demo.persona.acheteur.desc'),
+      benefits: [t('product.demo.persona.acheteur.b1'), t('product.demo.persona.acheteur.b2'), t('product.demo.persona.acheteur.b3')],
+      actions: [t('product.demo.persona.acheteur.a1'), t('product.demo.persona.acheteur.a2'), t('product.demo.persona.acheteur.a3')]
+    },
+    {
+      id: "chef-projet",
+      title: t('product.demo.persona.chef.title'),
+      icon: Target,
+      description: t('product.demo.persona.chef.desc'),
+      benefits: [t('product.demo.persona.chef.b1'), t('product.demo.persona.chef.b2'), t('product.demo.persona.chef.b3')],
+      actions: [t('product.demo.persona.chef.a1'), t('product.demo.persona.chef.a2'), t('product.demo.persona.chef.a3')]
+    },
+    {
+      id: "commercial",
+      title: t('product.demo.persona.commercial.title'),
+      icon: TrendingUp,
+      description: t('product.demo.persona.commercial.desc'),
+      benefits: [t('product.demo.persona.commercial.b1'), t('product.demo.persona.commercial.b2'), t('product.demo.persona.commercial.b3')],
+      actions: [t('product.demo.persona.commercial.a1'), t('product.demo.persona.commercial.a2'), t('product.demo.persona.commercial.a3')]
+    },
+    {
+      id: "consultant",
+      title: t('product.demo.persona.consultant.title'),
+      icon: BookOpen,
+      description: t('product.demo.persona.consultant.desc'),
+      benefits: [t('product.demo.persona.consultant.b1'), t('product.demo.persona.consultant.b2'), t('product.demo.persona.consultant.b3')],
+      actions: [t('product.demo.persona.consultant.a1'), t('product.demo.persona.consultant.a2'), t('product.demo.persona.consultant.a3')]
+    }
+  ];
+
+  const selectedPersonaData = i18nPersonas.find(p => p.id === selectedPersona) || i18nPersonas[0];
   const IconComponent = selectedPersonaData.icon;
 
   // Mobile and desktop share the same unified demo layout.
@@ -108,13 +110,13 @@ export const DemoPersonas = () => {
         {/* Header Section */}
         <div className="text-center mb-8">
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 font-medium">
-            Démonstration produit
+            {t('product.demo.badge')}
           </Badge>
           <h2 className="text-3xl font-bold mb-4 text-foreground">
-            Solutions par profil métier
+            {t('product.demo.title')}
           </h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            Découvrez comment Eligibly s'adapte à votre rôle dans l'écosystème des marchés publics
+            {t('product.demo.subtitle')}
           </p>
         </div>
 
@@ -173,7 +175,7 @@ export const DemoPersonas = () => {
                         </div>
                         <div className="flex-1 min-w-0">
                           <h3 className="font-bold text-foreground text-sm leading-tight line-clamp-2">{selectedPersonaData.title}</h3>
-                          <Badge variant="outline" className="mt-1 text-xs border-primary/30 text-primary">Profil sélectionné</Badge>
+                          <Badge variant="outline" className="mt-1 text-xs border-primary/30 text-primary">{t('product.demo.profileSelected')}</Badge>
                         </div>
                       </div>
                       <p className="text-muted-foreground text-xs leading-relaxed line-clamp-3">
@@ -187,7 +189,7 @@ export const DemoPersonas = () => {
                     <CardContent className="p-4">
                       <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-success" />
-                        Bénéfices clés
+                        {t('product.demo.benefits')}
                       </h4>
                       <ul className="space-y-2">
                         {selectedPersonaData.benefits.slice(0, 3).map((benefit, index) => (
@@ -208,7 +210,7 @@ export const DemoPersonas = () => {
                     <CardContent className="p-4">
                       <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
                         <Target className="w-4 h-4 text-primary" />
-                        Actions dans Eligibly
+                        {t('product.demo.actions')}
                       </h4>
                       <ul className="space-y-2">
                         {selectedPersonaData.actions.map((action, index) => (
@@ -235,16 +237,16 @@ export const DemoPersonas = () => {
         <div className="text-center">
           <div className="bg-gradient-primary rounded-2xl p-8 text-white shadow-luxury max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold mb-4">
-              Eligibly s'adapte à votre rôle
+              {t('product.demo.cta.title')}
             </h3>
             <p className="text-white/90 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
-              Découvrez votre scénario métier personnalisé dans une démonstration adaptée à vos besoins spécifiques.
+              {t('product.demo.cta.subtitle')}
             </p>
             <Button 
               size="lg"
               className="bg-white text-primary hover:bg-white/90 hover:shadow-glow font-semibold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105 text-lg"
             >
-              Planifier une démo personnalisée
+              {t('product.demo.cta.button')}
             </Button>
           </div>
         </div>

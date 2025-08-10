@@ -125,14 +125,11 @@ const APropos = () => {
             </Badge>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Pourquoi{" "}
-              <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                Charly by Eligibly ?
-              </span>
+              {t('about.hero.why')}
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Charly by Eligibly est bien plus qu'un outil : c'est votre partenaire d'exception, votre bras droit essentiel pour conquérir les marchés publics grâce à l'innovation d'Eligibly.
+              {t('about.hero.desc')}
             </p>
           </div>
           
@@ -188,8 +185,7 @@ const APropos = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Le{" "}
-                <span className="bg-gradient-highlight bg-clip-text text-transparent">problème</span>
+                {t('about.problem.title')}
               </h2>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -208,8 +204,8 @@ const APropos = () => {
             </div>
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Notre{" "}
-                <span className="bg-gradient-highlight bg-clip-text text-transparent">vision</span>
+                {t('about.vision.title')} 
+                <span className="bg-gradient-highlight bg-clip-text text-transparent">{t('about.vision.title.highlight')}</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Cela ne doit plus être un effort d'entrer sur les marchés français, européens et internationaux 
