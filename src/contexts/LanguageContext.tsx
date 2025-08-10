@@ -68,6 +68,25 @@ const translations = {
     'cta.subtitle': 'Gagnez en compétitivité et accélérez vos décisions grâce à notre IA prédictive des marchés publics.',
     'cta.primary': 'Accès anticipé',
     'cta.secondary': 'Découvrez votre score de succès en direct',
+
+    // Home (dashboard card)
+    'home.aiDetection': "Détection intelligente d'opportunités",
+    'home.analysisInProgress': 'Analyse en cours',
+    'home.metrics.new': 'Nouvelles opportunités',
+    'home.metrics.fromYesterday': '+4 depuis hier',
+    'home.metrics.avgScore': 'Score IA moyen',
+    'home.metrics.thisMonth': '+2% ce mois',
+    'home.metrics.totalValue': 'Valeur totale',
+    'home.metrics.thisWeek': 'Cette semaine',
+    'home.priorityOpportunities': 'Opportunités prioritaires',
+    'home.recommendedByCharly': 'Recommandé par Charly',
+    'home.matchPerfect': 'Match parfait',
+    'home.renewal': 'Renouvellement',
+    'home.charlyRecommendation': 'Recommandation Charly',
+    'home.goodCompatibility': 'Bonne compatibilité',
+    'home.charlyInAction': 'Charly AI en action',
+    'home.lastAnalysis': 'Dernière analyse: il y a 3 min',
+    'home.detectedMore': '+12 opportunités détectées',
     
     // Footer
     'footer.company': 'Société',
@@ -315,6 +334,25 @@ const translations = {
     'cta.subtitle': 'Gain a competitive edge and make faster decisions with our predictive tender AI.',
     'cta.primary': 'Free early access',
     'cta.secondary': 'See your live success score',
+
+    // Home (dashboard card)
+    'home.aiDetection': 'Intelligent opportunity detection',
+    'home.analysisInProgress': 'Analysis in progress',
+    'home.metrics.new': 'New opportunities',
+    'home.metrics.fromYesterday': '+4 since yesterday',
+    'home.metrics.avgScore': 'Average AI score',
+    'home.metrics.thisMonth': '+2% this month',
+    'home.metrics.totalValue': 'Total value',
+    'home.metrics.thisWeek': 'This week',
+    'home.priorityOpportunities': 'Priority opportunities',
+    'home.recommendedByCharly': 'Recommended by Charly',
+    'home.matchPerfect': 'Perfect match',
+    'home.renewal': 'Renewal',
+    'home.charlyRecommendation': 'Charly recommendation',
+    'home.goodCompatibility': 'Good compatibility',
+    'home.charlyInAction': 'Charly AI in action',
+    'home.lastAnalysis': 'Last analysis: 3 min ago',
+    'home.detectedMore': '+12 opportunities detected',
     
     // Footer
     'footer.company': 'Company',

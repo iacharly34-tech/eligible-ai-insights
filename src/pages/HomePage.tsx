@@ -176,12 +176,12 @@ const HomePage = () => {
                         </div>
                         <span className="truncate">Charly AI Assistant</span>
                       </h3>
-                      <p className="text-blue-100 mt-1 text-sm sm:text-base">Détection intelligente d'opportunités</p>
+                      <p className="text-blue-100 mt-1 text-sm sm:text-base">{t('home.aiDetection')}</p>
                     </div>
                     <div className="flex items-center gap-3 flex-shrink-0">
                       <div className="flex items-center gap-2 bg-white/20 rounded-full px-3 sm:px-4 py-1 sm:py-2">
                         <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-xs sm:text-sm font-semibold">Analyse en cours</span>
+                        <span className="text-xs sm:text-sm font-semibold">{t('home.analysisInProgress')}</span>
                       </div>
                     </div>
                   </div>
@@ -193,18 +193,18 @@ const HomePage = () => {
                   <div className="grid grid-cols-3 gap-2 sm:gap-4">
                     <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-white text-center">
                       <div className="text-xl sm:text-3xl font-bold">23</div>
-                      <div className="text-xs opacity-90 mt-1">Nouvelles opportunités</div>
-                      <div className="text-xs opacity-75 mt-1 hidden sm:block">+4 depuis hier</div>
+                      <div className="text-xs opacity-90 mt-1">{t('home.metrics.new')}</div>
+                      <div className="text-xs opacity-75 mt-1 hidden sm:block">{t('home.metrics.fromYesterday')}</div>
                     </div>
                     <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-white text-center">
                       <div className="text-xl sm:text-3xl font-bold">96%</div>
-                      <div className="text-xs opacity-90 mt-1">Score IA moyen</div>
-                      <div className="text-xs opacity-75 mt-1 hidden sm:block">+2% ce mois</div>
+                      <div className="text-xs opacity-90 mt-1">{t('home.metrics.avgScore')}</div>
+                      <div className="text-xs opacity-75 mt-1 hidden sm:block">{t('home.metrics.thisMonth')}</div>
                     </div>
                     <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-white text-center">
                       <div className="text-xl sm:text-3xl font-bold">4.2M€</div>
-                      <div className="text-xs opacity-90 mt-1">Valeur totale</div>
-                      <div className="text-xs opacity-75 mt-1 hidden sm:block">Cette semaine</div>
+                      <div className="text-xs opacity-90 mt-1">{t('home.metrics.totalValue')}</div>
+                      <div className="text-xs opacity-75 mt-1 hidden sm:block">{t('home.metrics.thisWeek')}</div>
                     </div>
                   </div>
 
@@ -215,10 +215,10 @@ const HomePage = () => {
                         <div className="w-6 h-6 bg-purple-100 rounded-lg flex items-center justify-center">
                           <Target className="w-4 h-4 text-purple-600" />
                         </div>
-                        Opportunités prioritaires
+                        {t('home.priorityOpportunities')}
                       </h4>
                       <Badge className="bg-purple-100 text-purple-700 text-xs px-3 py-1">
-                        Recommandé par Charly
+                        {t('home.recommendedByCharly')}
                       </Badge>
                     </div>
                     
@@ -232,18 +232,18 @@ const HomePage = () => {
                                 2,4M€
                               </div>
                               <div className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">
-                                🎯 Match parfait • 94%
+                                🎯 {t('home.matchPerfect')} • 94%
                               </div>
                             </div>
-                            <h5 className="font-bold text-gray-900 mb-2">Plateforme de gestion documentaire</h5>
-                            <p className="text-sm text-gray-600 mb-2 flex items-center gap-2 break-words">🏛️ Ministère de l'Éducation Nationale</p>
+                            <h5 className="font-bold text-gray-900 mb-2">{t('dashboard.opportunity1.title')}</h5>
+                            <p className="text-sm text-gray-600 mb-2 flex items-center gap-2 break-words">🏛️ {t('dashboard.opportunity1.client')}</p>
                             <div className="flex items-center gap-4 text-xs text-gray-500">
                               <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-full">
                                 <Clock className="w-3 h-3" />
-                                Échéance: 15/03/2026
+                                {t('ao.deadline')}: 15/03/2026
                               </span>
                               <span className="text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">
-                                ✨ Recommandation Charly
+                                ✨ {t('home.charlyRecommendation')}
                               </span>
                             </div>
                           </div>
@@ -259,18 +259,18 @@ const HomePage = () => {
                                 890K€
                               </div>
                               <div className="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded-full">
-                                🔄 Renouvellement • 91%
+                                🔄 {t('home.renewal')} • 91%
                               </div>
                             </div>
-                            <h5 className="font-bold text-gray-900 mb-2">Infrastructure cloud hybride</h5>
-                            <p className="text-sm text-gray-600 mb-2 flex items-center gap-2 break-words">🌍 Région Île-de-France</p>
+                            <h5 className="font-bold text-gray-900 mb-2">{t('dashboard.opportunity2.title')}</h5>
+                            <p className="text-sm text-gray-600 mb-2 flex items-center gap-2 break-words">🌍 {t('dashboard.opportunity2.client')}</p>
                             <div className="flex items-center gap-4 text-xs text-gray-500">
                               <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-full">
                                 <Clock className="w-3 h-3" />
-                                Échéance: 28/02/2026
+                                {t('ao.deadline')}: 28/02/2026
                               </span>
                               <span className="text-blue-600 font-medium bg-blue-50 px-2 py-1 rounded-full">
-                                👍 Bonne compatibilité
+                                👍 {t('home.goodCompatibility')}
                               </span>
                             </div>
                           </div>

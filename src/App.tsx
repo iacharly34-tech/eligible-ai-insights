@@ -53,7 +53,7 @@ const App = () => (
               {/* FR routes */}
               <Route path="/" element={<Index />} />
               <Route path="/produit" element={<Produit />} />
-              <Route path="/solutions" element={<Produit />} />
+              <Route path="/solutions" element={<Solutions />} />
               <Route path="/tarifs" element={<Tarifs />} />
               <Route path="/ressources" element={<Ressources />} />
               <Route path="/a-propos" element={<APropos />} />
@@ -67,7 +67,7 @@ const App = () => (
               {/* EN routes */}
               <Route path="/en" element={<Index />} />
               <Route path="/en/product" element={<Produit />} />
-              <Route path="/en/solutions" element={<Produit />} />
+              <Route path="/en/solutions" element={<Solutions />} />
               <Route path="/en/pricing" element={<Tarifs />} />
               <Route path="/en/resources" element={<Ressources />} />
               <Route path="/en/about" element={<APropos />} />

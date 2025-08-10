@@ -16,9 +16,43 @@ export const SafeLink = ({ to, children, className, onClick, tabIndex, 'aria-lab
   const { language } = useLanguage();
   const isExternal = /^(https?:)?\/\//.test(to);
   const isEnglish = language === 'en';
-  const localizedTo = !isExternal && isEnglish
-    ? (to.startsWith('/en') ? to : `/en${to}`)
-    : (to.startsWith('/en') && !isEnglish ? to.replace(/^\/en/, '') : to);
+
+  const frToEn: Record<string, string> = {
+    '/': '/en',
+    '/produit': '/en/product',
+    '/solutions': '/en/solutions',
+    '/tarifs': '/en/pricing',
+    '/ressources': '/en/resources',
+    '/a-propos': '/en/about',
+    '/connexion': '/en/login',
+    '/demo': '/en/demo',
+    '/mentions-legales': '/en/legal',
+    '/confidentialite': '/en/privacy',
+    '/cgu': '/en/terms',
+  };
+  const enToFr: Record<string, string> = Object.fromEntries(
+    Object.entries(frToEn).map(([fr, en]) => [en, fr])
+  );
+
+  const [pathOnly, rest] = to.split(/(?=[?#])/);
+
+  const mappedPath = (() => {
+    if (isExternal) return to;
+    if (isEnglish) {
+      // Map FR slugs to EN
+      if (frToEn[pathOnly]) return frToEn[pathOnly] + (rest || '');
+      // Ensure /en prefix if not mapped
+      return (pathOnly.startsWith('/en') ? pathOnly : `/en${pathOnly}`) + (rest || '');
+    } else {
+      // Map EN slugs to FR
+      if (enToFr[pathOnly]) return enToFr[pathOnly] + (rest || '');
+      // Remove /en prefix if present
+      const frPath = pathOnly.startsWith('/en') ? pathOnly.replace(/^\/en/, '') || '/' : pathOnly;
+      return frPath + (rest || '');
+    }
+  })();
+
+  const localizedTo = mappedPath;
 
   try {
     // Test if we're inside a Router context
