@@ -41,6 +41,7 @@ const App = () => (
           <CriticalResourcePreloader />
           <PerformanceMonitor />
           <WebVitalsMonitor />
+          <LazyLoadEnhancer />
           <WCAGAccessibilityComponent />
           <SkipNavigation />
           <Toaster />

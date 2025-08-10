@@ -81,11 +81,8 @@ export const CTAFooter = ({
                 L'intelligence artificielle au service de votre développement commercial.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://www.linkedin.com/company/eligibly-ai/" className="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                   LinkedIn
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Twitter
                 </a>
               </div>
             </div>

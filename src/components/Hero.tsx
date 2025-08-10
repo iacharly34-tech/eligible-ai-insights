@@ -6,9 +6,10 @@ import bannerGradient from "@/assets/banner-gradient.jpg";
 import { ArrowRight, Zap, Target, Brain, Play, CheckCircle, TrendingUp } from "lucide-react";
 
 import { useLanguage } from "@/contexts/LanguageContext";
+import { SafeLink } from "@/components/SafeLink";
 
 export const Hero = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   return (
     <section className="bg-gradient-hero pt-8 pb-16 relative overflow-hidden min-h-[85vh] flex items-center">
       {/* Background Pattern */}
@@ -59,14 +60,18 @@ export const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-              <Button variant="premium" size="xl" className="text-sm sm:text-base px-8 sm:px-12 py-3 sm:py-4 h-11 sm:h-auto group w-full sm:w-auto">
-                {t('hero.cta.primary')}
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="xl" className="text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 h-11 sm:h-auto flex items-center gap-2 w-full sm:w-auto">
-                <Play className="w-4 h-4" />
-                {t('hero.cta.secondary')}
-              </Button>
+              <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
+                <Button variant="premium" size="xl" className="text-sm sm:text-base px-8 sm:px-12 py-3 sm:py-4 h-11 sm:h-auto group w-full sm:w-auto">
+                  {t('hero.cta.primary')}
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </SafeLink>
+              <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
+                <Button variant="outline" size="xl" className="text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 h-11 sm:h-auto flex items-center gap-2 w-full sm:w-auto">
+                  <Play className="w-4 h-4" />
+                  {t('hero.cta.secondary')}
+                </Button>
+              </SafeLink>
             </div>
 
             <div className="text-xs text-muted-foreground">
