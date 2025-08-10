@@ -74,22 +74,22 @@ const Demo = () => {
         <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
+      <section className="pt-24 md:pt-32 pb-16 md:pb-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-16 animate-fade-in">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Play className="w-4 h-4" />
               {t('demo.badge')}
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight">
               {t('demo.hero.title')}{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">
                 {t('demo.hero.title.highlight')}
               </span>
             </h1>
             
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
               {t('demo.hero.subtitle')}
             </p>
             
@@ -111,11 +111,11 @@ const Demo = () => {
         </div>
       </section>
 
-      <div className="container mx-auto max-w-7xl px-4 pb-20">
+      <div className="container mx-auto max-w-7xl px-4 pb-28 md:pb-20">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left Column - Form */}
           <div>
-            <Card className="border-0 bg-white/80 backdrop-blur-sm shadow-2xl">
+            <Card id="demo-form" className="border-0 bg-white/80 backdrop-blur-sm shadow-2xl">
               <CardContent className="p-8">
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-2">
@@ -362,6 +362,16 @@ const Demo = () => {
 
           </div>
         </div>
+      </div>
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-t border-border p-4">
+        <Button 
+          variant="tengo"
+          className="w-full h-12 text-base font-semibold"
+          aria-label={t('accessibility.demo')}
+          onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+        >
+          {t('nav.demo')}
+        </Button>
       </div>
     </div>
   </>
