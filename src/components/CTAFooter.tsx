@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "./SafeLink";
 import { ArrowRight, Phone, Mail, MapPin, Target } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface CTAFooterProps {
   title?: string;
@@ -15,6 +16,9 @@ export const CTAFooter = ({
   primaryButtonText = "Essai 7 jours",
   secondaryButtonText = "Démonstration personnalisée"
 }: CTAFooterProps) => {
+  const { language } = useLanguage();
+  const demoHref = language === 'en' ? '/en/demo' : '/demo';
+  const loginHref = language === 'en' ? '/en/login' : '/connexion';
   return (
     <>
       {/* CTA Section */}
@@ -36,29 +40,22 @@ export const CTAFooter = ({
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <SafeLink to="/demo">
+            <SafeLink to={demoHref}>
               <Button 
                 size="lg" 
-                className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-10 py-4 h-auto font-semibold"
+                variant="tengo"
+                className="text-lg px-10 py-4 h-auto font-semibold"
               >
                 <ArrowRight className="w-5 h-5 mr-2" />
                 {primaryButtonText}
               </Button>
             </SafeLink>
             {secondaryButtonText && (
-              <SafeLink to="/connexion">
-                <button 
-                  className="flex items-center justify-center gap-2 rounded-xl text-lg font-semibold px-10 py-4"
-                  style={{ 
-                    backgroundColor: '#ffffff',
-                    color: '#8b5cf6',
-                    border: '2px solid #ffffff',
-                    opacity: '1'
-                  }}
-                >
-                  <Phone className="w-5 h-5" style={{ color: '#8b5cf6' }} />
-                  <span style={{ color: '#8b5cf6' }}>{secondaryButtonText}</span>
-                </button>
+              <SafeLink to={loginHref}>
+                <Button variant="outline" size="lg" className="px-10 py-4 h-auto text-lg font-semibold">
+                  <Phone className="w-5 h-5 mr-2" />
+                  {secondaryButtonText}
+                </Button>
               </SafeLink>
             )}
           </div>

@@ -573,8 +573,7 @@ const HomePage = () => {
               {t('features.heading.suffix')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              De la détection à la notification, notre IA gère l'intégralité 
-              de votre veille commerciale avec une précision inégalée.
+              {t('features.subtitle')}
             </p>
           </ScrollReveal>
           

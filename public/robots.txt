@@ -40,4 +40,4 @@ Allow: /manifest.json
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://eligible.ai/sitemap.xml
+Sitemap: https://eligibly.ai/sitemap.xml

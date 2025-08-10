@@ -67,7 +67,8 @@ export const Header = () => {
             <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
               <Button 
                 size="sm" 
-                className="bg-gradient-cta hover:shadow-glow text-white text-sm font-medium px-6 py-2 h-10 min-h-[40px] transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                variant="tengo"
+                className="text-sm font-medium px-6 py-2 h-10 min-h-[40px]"
                 aria-label={t('accessibility.demo')}
               >
                 {t('nav.demo')}
@@ -128,7 +129,8 @@ export const Header = () => {
               </div>
               <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
                 <Button 
-                  className="w-full bg-gradient-cta hover:shadow-glow text-white text-sm font-medium h-12 min-h-[44px] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  variant="tengo"
+                  className="w-full text-sm font-medium h-12 min-h-[44px]"
                   onClick={() => setIsMenuOpen(false)}
                   tabIndex={isMenuOpen ? 0 : -1}
                   aria-label={t('accessibility.demo')}

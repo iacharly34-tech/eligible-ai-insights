@@ -1,44 +1,48 @@
-import { Brain, Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Brain, Mail, MapPin, Linkedin } from "lucide-react";
 import { SafeLink } from "./SafeLink";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Footer = () => {
+  const { t, language } = useLanguage();
+  const base = language === 'en' ? '/en' : '';
+
   const footerSections = [
     {
-      title: "Produit",
+      title: t('footer.product'),
       links: [
-        { name: "Produit", href: "/produit" },
-        { name: "Solutions", href: "/solutions" },
-        { name: "Tarifs", href: "/tarifs" },
-        { name: "Démonstration", href: "/demo" }
-      ]
+        { name: t('nav.product'), href: language === 'en' ? '/en/product' : '/produit' },
+        { name: t('nav.solutions'), href: language === 'en' ? '/en/solutions' : '/solutions' },
+        { name: t('nav.pricing'), href: language === 'en' ? '/en/pricing' : '/tarifs' },
+        { name: t('nav.demo'), href: language === 'en' ? '/en/demo' : '/demo' },
+      ],
     },
     {
-      title: "Entreprise",
+      title: t('footer.company'),
       links: [
-        { name: "À propos", href: "/a-propos" },
-        { name: "Ressources", href: "/ressources" },
-        { name: "Connexion", href: "/connexion" },
-        { name: "Contact", href: "mailto:contact@eligibly.ai" }
-      ]
+        { name: t('nav.about'), href: language === 'en' ? '/en/about' : '/a-propos' },
+        { name: t('nav.resources'), href: language === 'en' ? '/en/resources' : '/ressources' },
+        { name: t('nav.login'), href: language === 'en' ? '/en/login' : '/connexion' },
+        { name: 'Contact', href: 'mailto:contact@eligibly.ai' },
+      ],
     },
     {
-      title: "Support",
+      title: t('footer.support'),
       links: [
-        { name: "Démonstration", href: "/demo" },
-        { name: "Contact", href: "mailto:contact@eligibly.ai" },
-        { name: "Aide", href: "tel:+33123456789" },
-        { name: "Documentation", href: "/ressources" }
-      ]
+        { name: t('nav.demo'), href: language === 'en' ? '/en/demo' : '/demo' },
+        { name: 'Email', href: 'mailto:contact@eligibly.ai' },
+        { name: 'Tel', href: 'tel:+33123456789' },
+        { name: t('nav.resources'), href: language === 'en' ? '/en/resources' : '/ressources' },
+      ],
     },
     {
-      title: "Légal",
+      title: t('footer.legal'),
       links: [
-        { name: "Mentions légales", href: "/mentions-legales" },
-        { name: "Confidentialité", href: "/confidentialite" },
-        { name: "CGU", href: "/cgu" },
-        { name: "Contact", href: "mailto:contact@eligibly.ai" }
-      ]
-    }
+        { name: language === 'en' ? 'Legal notice' : 'Mentions légales', href: language === 'en' ? '/en/legal' : '/mentions-legales' },
+        { name: language === 'en' ? 'Privacy' : 'Confidentialité', href: language === 'en' ? '/en/privacy' : '/confidentialite' },
+        { name: language === 'en' ? 'Terms' : 'CGU', href: language === 'en' ? '/en/terms' : '/cgu' },
+        { name: 'Contact', href: 'mailto:contact@eligibly.ai' },
+      ],
+    },
   ];
 
   return (
@@ -57,7 +61,7 @@ export const Footer = () => {
             </div>
             
             <p className="text-sm text-muted-foreground max-w-sm">
-              Plateforme IA pour identifier les meilleures opportunités d'appels d'offres publics.
+              {language === 'en' ? 'AI platform to identify the best public tender opportunities.' : "Plateforme IA pour identifier les meilleures opportunités d'appels d'offres publics."}
             </p>
 
             <div className="flex items-center space-x-6 text-xs text-foreground/70">
@@ -73,7 +77,7 @@ export const Footer = () => {
 
             <a 
               href="https://www.linkedin.com/company/eligibly-ai/" 
-              className="inline-flex w-8 h-8 bg-secondary rounded flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-200"
+              className="inline-flex w-8 h-8 bg-secondary rounded flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-200"
               aria-label="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
@@ -117,12 +121,12 @@ export const Footer = () => {
         <div className="mt-8 pt-4 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             <div className="text-xs text-foreground/70">
-              © 2025 eligibly.ai. Tous droits réservés.
+              {t('footer.copyright')}
             </div>
             <div className="flex items-center space-x-4 text-xs text-foreground/70">
-              <span>Made with ❤️ in France</span>
+              <span>{t('footer.madeIn')}</span>
               <span>•</span>
-              <span>Propulsé par l'IA</span>
+              <span>{t('footer.poweredByAI')}</span>
             </div>
           </div>
         </div>

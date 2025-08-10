@@ -131,6 +131,8 @@ const translations = {
     'footer.support': 'Support',
     'footer.legal': 'Légal',
     'footer.copyright': '© 2025 Eligibly.ai. Tous droits réservés.',
+    'footer.madeIn': 'Fait avec ❤️ en France',
+    'footer.poweredByAI': 'Propulsé par l\'IA',
     
     // Accessibility
     'accessibility.skipToContent': 'Aller au contenu principal',
@@ -146,6 +148,11 @@ const translations = {
     'accessibility.images.dashboard': 'Tableau de bord eligibly.ai',
     'accessibility.images.feature': 'Illustration de la fonctionnalité',
     'accessibility.language.switch': 'Changer la langue vers',
+    
+    // Not Found Page
+    'notfound.title': 'Page introuvable',
+    'notfound.description': "Oups ! La page demandée n'existe pas ou a été déplacée.",
+    'notfound.backHome': 'Retour à l\'accueil',
     
     // Dashboard
     'dashboard.title': 'Dashboard Eligibly.ai',
@@ -503,6 +510,11 @@ const translations = {
     'features.title': 'Essential',
     'features.title.highlight': 'features',
     'features.badge': 'Features',
+    'features.subtitle': 'A complete platform to optimise your approach to public procurement and maximise your win rate.',
+    // Features Heading (HomePage)
+    'features.heading.prefix': 'A complete platform for your',
+    'features.heading.highlight': 'growth',
+    'features.heading.suffix': '',
     
     // Core features i18n
     'features.core.surveillance.title': 'Multi‑source monitoring',
@@ -583,6 +595,8 @@ const translations = {
     'footer.support': 'Support',
     'footer.legal': 'Legal',
     'footer.copyright': '© 2025 Eligibly.ai. All rights reserved.',
+    'footer.madeIn': 'Made with ❤️ in France',
+    'footer.poweredByAI': 'Powered by AI',
     
     // Accessibility
     'accessibility.skipToContent': 'Skip to main content',
@@ -598,6 +612,11 @@ const translations = {
     'accessibility.images.dashboard': 'eligibly.ai Dashboard',
     'accessibility.images.feature': 'Feature illustration',
     'accessibility.language.switch': 'Switch language to',
+    
+    // Not Found Page
+    'notfound.title': 'Page not found',
+    'notfound.description': 'Oops! The page you are looking for does not exist or has been moved.',
+    'notfound.backHome': 'Back to home',
     
     // Dashboard
     'dashboard.title': 'Eligibly.ai dashboard',
