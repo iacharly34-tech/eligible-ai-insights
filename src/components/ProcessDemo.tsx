@@ -6,7 +6,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 import { AOResults } from "./AOResults";
-import { AOParams } from "./AOParams";
 import { mockAOData } from "./AOResults";
 import { HeroAOCardMobile } from "./HeroAOCardMobile";
 
