@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ProcessDemo } from "./ProcessDemo";
-import { AOParams } from "./AOParams";
+
 import { 
   UserCheck, 
   Target, 
@@ -164,10 +164,6 @@ export const DemoPersonas = () => {
           <Card className="border-border shadow-luxury bg-card/50 backdrop-blur-sm">
             <CardContent className="p-6">
               
-              {/* Paramétrage des AO ciblés au niveau produit uniquement */}
-              <div className="mb-8">
-                <AOParams />
-              </div>
               
               {/* Persona Content Blocks - Horizontal Above Demo */}
               <div className="mb-8">
