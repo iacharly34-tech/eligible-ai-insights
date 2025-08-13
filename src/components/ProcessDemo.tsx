@@ -255,9 +255,6 @@ export const ProcessDemo = () => {
         className="py-6 px-0 sm:px-4 bg-gradient-to-br from-slate-50 to-gray-100"
       >
         <div className="container mx-auto max-w-[1400px]">
-          {/* Paramétrage des AO ciblés */}
-          <AOParams />
-
           {/* Contenu principal - différencié mobile / desktop */}
           {isMobile ? (
             <>
