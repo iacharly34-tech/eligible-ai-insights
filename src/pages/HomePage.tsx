@@ -49,7 +49,7 @@ import {
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState<'france' | 'europe'>('france');
-  const [charlyImageUrl, setCharlyImageUrl] = useState<string>(charlyOptimized);
+  const [charlyImageUrl, setCharlyImageUrl] = useState<string>('/lovable-uploads/52171019-502d-4f0b-9117-b722aef1845b.png');
   const { t, language } = useLanguage();
   const demoHref = language === 'en' ? '/en/demo' : '/demo';
   const loginHref = language === 'en' ? '/en/login' : '/connexion';
