@@ -49,7 +49,7 @@ import {
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState<'france' | 'europe'>('france');
-  const [charlyImageUrl, setCharlyImageUrl] = useState<string>('/lovable-uploads/f9783c9c-a783-4655-87f1-df0ac6edf5d8.png');
+  const [charlyImageUrl, setCharlyImageUrl] = useState<string>('/lovable-uploads/a8f4af97-47b6-45cb-950f-c7db91c343c6.png');
   const { t, language } = useLanguage();
   const demoHref = language === 'en' ? '/en/demo' : '/demo';
   const loginHref = language === 'en' ? '/en/login' : '/connexion';
@@ -71,9 +71,9 @@ const HomePage = () => {
         });
         
         if (webpSupported) {
-          setCharlyImageUrl('/lovable-uploads/f9783c9c-a783-4655-87f1-df0ac6edf5d8.png');
+          setCharlyImageUrl('/lovable-uploads/a8f4af97-47b6-45cb-950f-c7db91c343c6.png');
         } else {
-          setCharlyImageUrl('/lovable-uploads/f9783c9c-a783-4655-87f1-df0ac6edf5d8.png');
+          setCharlyImageUrl('/lovable-uploads/a8f4af97-47b6-45cb-950f-c7db91c343c6.png');
         }
       } catch (error) {
         // Ultimate fallback to original image
@@ -402,9 +402,9 @@ const HomePage = () => {
             </div>
 
             {/* Right Column - Charly Illustration */}
-            <div className="relative">
+            <div className="relative lg:order-last">
               {/* Gradient background card for Charly */}
-              <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl p-12 backdrop-blur-sm border border-white/10 relative">
+              <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 backdrop-blur-sm border border-white/10 relative">
                 {/* Charly Image - Center */}
                 <div className="flex justify-center">
                 <picture>
@@ -412,69 +412,69 @@ const HomePage = () => {
                   <img 
                     src={charlyImageUrl} 
                     alt="Charly, l'assistant IA d'Eligibly.ai dans sa présentation complète montrant l'interface d'analyse des marchés publics" 
-                    className="w-full h-auto max-w-sm"
+                    className="w-full h-auto max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-sm object-contain"
                     role="img"
                     loading="lazy"
                     decoding="async"
-                    sizes="(min-width: 768px) 480px, 100vw"
+                    sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, (max-width: 1024px) 380px, 480px"
                   />
                 </picture>
                 </div>
               </div>
               
-              {/* Floating Cards - Outside the image */}
-              {/* Top Right Card - Refonte visuelle */}
-              <div className="absolute -top-4 -right-12 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-4 max-w-xs animate-fade-in">
+              {/* Floating Cards - Responsive positioning */}
+              {/* Top Right Card - Hidden on mobile */}
+              <div className="absolute -top-2 -right-4 sm:-top-4 sm:-right-8 lg:-right-12 bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl border border-white/20 p-3 sm:p-4 max-w-[200px] sm:max-w-xs animate-fade-in hidden sm:block">
                 {/* Header avec logo et badge Live */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-cta rounded-xl flex items-center justify-center shadow-lg">
-                      <Brain className="w-5 h-5 text-white" />
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-cta rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg">
+                      <Brain className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900 text-base">Eligibly.ai</h3>
-                      <p className="text-sm text-gray-600">IA Analysis</p>
+                      <h3 className="font-bold text-gray-900 text-sm sm:text-base">Eligibly.ai</h3>
+                      <p className="text-xs sm:text-sm text-gray-600">IA Analysis</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1.5 bg-green-100 px-2.5 py-1 rounded-full">
+                  <div className="flex items-center gap-1.5 bg-green-100 px-2 sm:px-2.5 py-1 rounded-full">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                     <span className="text-xs font-medium text-green-700">Live</span>
                   </div>
                 </div>
                 
                 {/* Statistiques clés - Bloc mis en avant */}
-                <div className="bg-gradient-to-r from-gray-50 to-gray-100/80 rounded-xl p-4 mb-4 border border-gray-200/60">
-                  <div className="grid grid-cols-2 gap-4">
+                <div className="bg-gradient-to-r from-gray-50 to-gray-100/80 rounded-lg sm:rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border border-gray-200/60">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-blue-600 mb-1">2,4M€</div>
+                      <div className="text-xl sm:text-2xl font-bold text-blue-600 mb-1">2,4M€</div>
                       <div className="text-xs font-medium text-gray-600">Marché détecté</div>
                     </div>
-                    <div className="text-center border-l border-gray-300 pl-4">
-                      <div className="text-2xl font-bold text-emerald-600 mb-1">98%</div>
+                    <div className="text-center border-l border-gray-300 pl-3 sm:pl-4">
+                      <div className="text-xl sm:text-2xl font-bold text-emerald-600 mb-1">98%</div>
                       <div className="text-xs font-medium text-gray-600">Score match</div>
                     </div>
                   </div>
                 </div>
               </div>
               
-              {/* Bottom Left Card - Refonte visuelle */}
-              <div className="absolute -bottom-4 -left-12 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-4 max-w-xs animate-fade-in">
-                <div className="bg-gradient-to-r from-green-50/90 to-emerald-50/90 rounded-xl p-4 border border-green-200/60">
-                  <div className="flex items-center justify-between mb-3">
+              {/* Bottom Left Card - Hidden on mobile */}
+              <div className="absolute -bottom-2 -left-4 sm:-bottom-4 sm:-left-8 lg:-left-12 bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl border border-white/20 p-3 sm:p-4 max-w-[200px] sm:max-w-xs animate-fade-in hidden sm:block">
+                <div className="bg-gradient-to-r from-green-50/90 to-emerald-50/90 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-green-200/60">
+                  <div className="flex items-center justify-between mb-2 sm:mb-3">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 bg-green-600 rounded-lg flex items-center justify-center">
-                        <Award className="w-3.5 h-3.5 text-white" />
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-600 rounded-md sm:rounded-lg flex items-center justify-center">
+                        <Award className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" />
                       </div>
-                      <span className="text-sm font-semibold text-green-800">Opportunité Premium</span>
+                      <span className="text-xs sm:text-sm font-semibold text-green-800">Opportunité Premium</span>
                     </div>
                     <Badge className="bg-green-600 text-white text-xs font-medium px-2 py-1">Nouveau</Badge>
                   </div>
-                  <h4 className="font-semibold text-gray-900 text-base mb-2">Système de gestion documentaire</h4>
-                  <p className="text-sm text-gray-700 font-medium">Ministère de l'Éducation Nationale</p>
+                  <h4 className="font-semibold text-gray-900 text-sm sm:text-base mb-2">Système de gestion documentaire</h4>
+                  <p className="text-xs sm:text-sm text-gray-700 font-medium">Ministère de l'Éducation Nationale</p>
                 </div>
               </div>
               
-              {/* Right Side Card */}
+              {/* Right Side Card - Hidden on mobile and tablet */}
               <div className="absolute top-1/2 -right-16 transform -translate-y-1/2 bg-white rounded-2xl shadow-2xl border border-gray-100 p-3 hidden xl:block animate-fade-in">
                 <div className="text-center">
                   <div className="w-10 h-10 bg-gradient-cta rounded-full flex items-center justify-center mx-auto mb-2">
@@ -489,7 +489,7 @@ const HomePage = () => {
                 </div>
               </div>
               
-              {/* Left Side Notification */}
+              {/* Left Side Notification - Hidden on mobile and tablet */}
               <div className="absolute top-1/4 -left-16 bg-white rounded-2xl shadow-2xl border border-gray-100 p-3 hidden xl:block animate-fade-in">
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 bg-orange-500 rounded-lg flex items-center justify-center">
