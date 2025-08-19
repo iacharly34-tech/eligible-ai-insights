@@ -38,10 +38,10 @@ export const MobileCTABar: React.FC = () => {
   if (!visible) return null;
 
   return (
-    <div className="md:hidden fixed left-0 right-0 z-50 px-3" style={{ top: `calc(${topOffset}px + env(safe-area-inset-top))` }}>
+    <div className="md:hidden fixed left-0 right-0 z-50 px-2 sm:px-3" style={{ top: `calc(${topOffset}px + env(safe-area-inset-top))` }}>
       <Button
         variant="tengo"
-        className="w-full h-12 text-base font-semibold rounded-2xl shadow-glow"
+        className="w-full h-10 sm:h-12 text-sm sm:text-base font-semibold rounded-2xl shadow-glow"
         aria-label={t('accessibility.demo')}
         onClick={handleClick}
       >

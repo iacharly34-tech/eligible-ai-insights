@@ -98,7 +98,7 @@ const HomePage = () => {
 
       <main id="main-content" tabIndex={-1} className="focus:outline-none" role="main">
         {/* Hero Section - Split Layout like Loris.ai */}
-        <section className="pt-20 pb-16 px-4 relative overflow-hidden min-h-[85vh] flex items-center isolate" aria-label={t('hero.badge')}>
+        <section className="pt-20 pb-16 px-2 sm:px-4 relative overflow-hidden min-h-[70vh] sm:min-h-[85vh] flex items-center isolate" aria-label={t('hero.badge')}>
         {/* Animated Background - Style Loris.ai */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Main gradient background */}
@@ -110,12 +110,12 @@ const HomePage = () => {
           <div className="absolute top-1/2 right-1/3 w-80 h-80 bg-gradient-to-br from-teal-300/8 to-emerald-200/6 rounded-full blur-2xl animate-[pulse_10s_ease-in-out_infinite_4s]"></div>
         </div>
 
-        <div className="container mx-auto relative z-10 px-4 sm:px-6">
+        <div className="container mx-auto relative z-10 px-2 sm:px-6">
           {/* Main Content - Split Layout */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-12 items-center">
             {/* Left Column - Text Content */}
-            <div className={`space-y-6 sm:space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} relative z-10`}>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <div className={`space-y-4 sm:space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} relative z-10`}>
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight break-words">
                 {t('hero.title')}{" "}
                 <span className="bg-gradient-highlight bg-clip-text text-transparent">
                   {t('hero.title.highlight')}
@@ -123,23 +123,23 @@ const HomePage = () => {
                 {t('hero.title.end')}
               </h1>
               
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
+              <p className="text-sm sm:text-lg text-muted-foreground leading-relaxed max-w-xl break-words">
                 {t('hero.subtitle')}
               </p>
 
               {/* Value Propositions */}
-              <div className="space-y-3 text-sm sm:text-base text-muted-foreground">
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span>{t('hero.stats.opportunities')}</span>
+              <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-primary flex-shrink-0" />
+                  <span className="break-words">{t('hero.stats.opportunities')}</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span>{t('hero.stats.time')}</span>
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-primary flex-shrink-0" />
+                  <span className="break-words">{t('hero.stats.time')}</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span>{t('hero.stats.precision')}</span>
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-primary flex-shrink-0" />
+                  <span className="break-words">{t('hero.stats.precision')}</span>
                 </div>
               </div>
               
@@ -147,7 +147,7 @@ const HomePage = () => {
                 <SafeLink to="/demo" className="w-full sm:w-auto">
                   <Button 
                     size="lg" 
-                    className="bg-gradient-cta hover:shadow-glow text-white text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 h-11 sm:h-auto group transition-all duration-300 hover:scale-105 w-full"
+                    className="bg-gradient-cta hover:shadow-glow text-white text-sm sm:text-lg px-4 sm:px-8 py-3 sm:py-4 h-auto group transition-all duration-300 hover:scale-105 w-full"
                     role="button"
                     aria-label={t('accessibility.demo')}
                   >
@@ -162,92 +162,92 @@ const HomePage = () => {
               {/* Trust indicators */}
               <div className="flex items-center gap-2 opacity-60">
                 <Shield className="w-4 h-4 text-success" />
-                <span className="text-sm text-muted-foreground">{t('common.getStarted')}</span>
+                <span className="text-sm text-muted-foreground break-words">{t('common.getStarted')}</span>
               </div>
             </div>
 
             {/* Right Column - Eligibly.ai Unique Dashboard */}
             <div className="relative z-0 w-full mt-8 lg:mt-0 lg:scale-[0.95] xl:scale-100 lg:origin-right lg:max-w-[600px] xl:max-w-[640px] 2xl:max-w-[680px] ml-auto">
               {/* Dashboard Container - Unique Eligibly Design */}
-              <div className="bg-gradient-to-br from-white via-gray-50 to-blue-50 rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
+              <div className="bg-gradient-to-br from-white via-gray-50 to-blue-50 rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
                 
                 {/* Header Dashboard - Eligibly Style */}
-                <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 px-4 sm:px-6 py-4 sm:py-5 text-white">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 px-3 sm:px-6 py-3 sm:py-5 text-white">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-lg sm:text-2xl font-bold flex items-center gap-2 sm:gap-3">
-                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                          <Target className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                      <h3 className="text-base sm:text-2xl font-bold flex items-center gap-2 sm:gap-3">
+                        <div className="w-5 h-5 sm:w-8 sm:h-8 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                          <Target className="w-3 h-3 sm:w-5 sm:h-5 text-white" />
                         </div>
                         <span className="truncate">Charly AI Assistant</span>
                       </h3>
-                      <p className="text-blue-100 mt-1 text-sm sm:text-base">{t('home.aiDetection')}</p>
+                      <p className="text-blue-100 mt-1 text-xs sm:text-base break-words">{t('home.aiDetection')}</p>
                     </div>
                     <div className="flex items-center gap-3 flex-shrink-0">
-                      <div className="flex items-center gap-2 bg-white/20 rounded-full px-3 sm:px-4 py-1 sm:py-2">
-                        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-xs sm:text-sm font-semibold">{t('home.analysisInProgress')}</span>
+                      <div className="flex items-center gap-1 sm:gap-2 bg-white/20 rounded-full px-2 sm:px-4 py-1 sm:py-2">
+                        <div className="w-1.5 h-1.5 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-[10px] sm:text-sm font-semibold break-words">{t('home.analysisInProgress')}</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Body Dashboard - Elegible.ai Original Layout */}
-                <div className="p-4 sm:p-6 space-y-4 sm:space-y-6 break-words">
+                {/* Body Dashboard - Eligibly.ai Original Layout */}
+                <div className="p-3 sm:p-6 space-y-3 sm:space-y-6 break-words">
                   {/* Métriques principales - Design Eligibly */}
-                  <div className="grid grid-cols-3 gap-2 sm:gap-4">
-                    <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-white text-center">
-                      <div className="text-xl sm:text-3xl font-bold">23</div>
-                      <div className="text-xs opacity-90 mt-1">{t('home.metrics.new')}</div>
-                      <div className="text-xs opacity-75 mt-1 hidden sm:block">{t('home.metrics.fromYesterday')}</div>
+                  <div className="grid grid-cols-3 gap-1 sm:gap-4">
+                    <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg sm:rounded-2xl p-2 sm:p-5 text-white text-center">
+                      <div className="text-lg sm:text-3xl font-bold">23</div>
+                      <div className="text-[10px] sm:text-xs opacity-90 mt-1 break-words">{t('home.metrics.new')}</div>
+                      <div className="text-[9px] sm:text-xs opacity-75 mt-1 hidden sm:block break-words">{t('home.metrics.fromYesterday')}</div>
                     </div>
-                    <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-white text-center">
-                      <div className="text-xl sm:text-3xl font-bold">96%</div>
-                      <div className="text-xs opacity-90 mt-1">{t('home.metrics.avgScore')}</div>
-                      <div className="text-xs opacity-75 mt-1 hidden sm:block">{t('home.metrics.thisMonth')}</div>
+                    <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg sm:rounded-2xl p-2 sm:p-5 text-white text-center">
+                      <div className="text-lg sm:text-3xl font-bold">96%</div>
+                      <div className="text-[10px] sm:text-xs opacity-90 mt-1 break-words">{t('home.metrics.avgScore')}</div>
+                      <div className="text-[9px] sm:text-xs opacity-75 mt-1 hidden sm:block break-words">{t('home.metrics.thisMonth')}</div>
                     </div>
-                    <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-white text-center">
-                      <div className="text-xl sm:text-3xl font-bold">4.2M€</div>
-                      <div className="text-xs opacity-90 mt-1">{t('home.metrics.totalValue')}</div>
-                      <div className="text-xs opacity-75 mt-1 hidden sm:block">{t('home.metrics.thisWeek')}</div>
+                    <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg sm:rounded-2xl p-2 sm:p-5 text-white text-center">
+                      <div className="text-sm sm:text-3xl font-bold">4.2M€</div>
+                      <div className="text-[10px] sm:text-xs opacity-90 mt-1 break-words">{t('home.metrics.totalValue')}</div>
+                      <div className="text-[9px] sm:text-xs opacity-75 mt-1 hidden sm:block break-words">{t('home.metrics.thisWeek')}</div>
                     </div>
                   </div>
 
                   {/* Section Opportunités - Unique Eligibly Style */}
-                  <div className="space-y-4">
+                  <div className="space-y-3 sm:space-y-4">
                     <div className="flex items-center justify-between">
-                      <h4 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-                        <div className="w-6 h-6 bg-purple-100 rounded-lg flex items-center justify-center">
-                          <Target className="w-4 h-4 text-purple-600" />
+                      <h4 className="text-sm sm:text-lg font-bold text-gray-900 flex items-center gap-1 sm:gap-2">
+                        <div className="w-4 h-4 sm:w-6 sm:h-6 bg-purple-100 rounded-lg flex items-center justify-center">
+                          <Target className="w-3 h-3 sm:w-4 sm:h-4 text-purple-600" />
                         </div>
-                        {t('home.priorityOpportunities')}
+                        <span className="break-words">{t('home.priorityOpportunities')}</span>
                       </h4>
-                      <Badge className="bg-purple-100 text-purple-700 text-xs px-3 py-1">
-                        {t('home.recommendedByCharly')}
+                      <Badge className="bg-purple-100 text-purple-700 text-[10px] sm:text-xs px-2 sm:px-3 py-1">
+                        <span className="break-words">{t('home.recommendedByCharly')}</span>
                       </Badge>
                     </div>
                     
-                    <div className="space-y-3">
+                    <div className="space-y-2 sm:space-y-3">
                       {/* Opportunité 1 - Design original Eligibly */}
-                      <div className="bg-white rounded-2xl p-5 border-l-4 border-l-green-500 shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div className="flex items-start justify-between mb-3">
+                      <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-5 border-l-4 border-l-green-500 shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div className="flex items-start justify-between mb-2 sm:mb-3">
                           <div className="flex-1">
-                            <div className="flex items-center gap-3 mb-3">
-                              <div className="bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-full">
+                            <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 flex-wrap">
+                              <div className="bg-green-500 text-white text-xs sm:text-sm font-bold px-2 sm:px-3 py-1 rounded-full">
                                 2,4M€
                               </div>
-                              <div className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">
+                              <div className="bg-green-100 text-green-700 text-[10px] sm:text-xs font-semibold px-1 sm:px-2 py-1 rounded-full">
                                 🎯 {t('home.matchPerfect')} • 94%
                               </div>
                             </div>
-                            <h5 className="font-bold text-gray-900 mb-2">{t('dashboard.opportunity1.title')}</h5>
-                            <p className="text-sm text-gray-600 mb-2 flex items-center gap-2 break-words">🏛️ {t('dashboard.opportunity1.client')}</p>
-                            <div className="flex items-center gap-4 text-xs text-gray-500">
-                              <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-full">
-                                <Clock className="w-3 h-3" />
-                                {t('ao.deadline')}: 15/03/2026
+                            <h5 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base break-words">{t('dashboard.opportunity1.title')}</h5>
+                            <p className="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 flex items-center gap-1 sm:gap-2 break-words">🏛️ {t('dashboard.opportunity1.client')}</p>
+                            <div className="flex items-center gap-2 sm:gap-4 text-[10px] sm:text-xs text-gray-500 flex-wrap">
+                              <span className="flex items-center gap-1 bg-gray-100 px-1 sm:px-2 py-1 rounded-full">
+                                <Clock className="w-2 h-2 sm:w-3 sm:h-3" />
+                                <span className="break-words">{t('ao.deadline')}: 15/03/2026</span>
                               </span>
-                              <span className="text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">
+                              <span className="text-green-600 font-medium bg-green-50 px-1 sm:px-2 py-1 rounded-full break-words">
                                 ✨ {t('home.charlyRecommendation')}
                               </span>
                             </div>
@@ -256,25 +256,25 @@ const HomePage = () => {
                       </div>
 
                       {/* Opportunité 2 - Design original Eligibly */}
-                      <div className="bg-white rounded-2xl p-5 border-l-4 border-l-blue-500 shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div className="flex items-start justify-between mb-3">
+                      <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-5 border-l-4 border-l-blue-500 shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div className="flex items-start justify-between mb-2 sm:mb-3">
                           <div className="flex-1">
-                            <div className="flex items-center gap-3 mb-3">
-                              <div className="bg-blue-500 text-white text-sm font-bold px-3 py-1 rounded-full">
+                            <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 flex-wrap">
+                              <div className="bg-blue-500 text-white text-xs sm:text-sm font-bold px-2 sm:px-3 py-1 rounded-full">
                                 890K€
                               </div>
-                              <div className="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded-full">
+                              <div className="bg-blue-100 text-blue-700 text-[10px] sm:text-xs font-semibold px-1 sm:px-2 py-1 rounded-full">
                                 🔄 {t('home.renewal')} • 91%
                               </div>
                             </div>
-                            <h5 className="font-bold text-gray-900 mb-2">{t('dashboard.opportunity2.title')}</h5>
-                            <p className="text-sm text-gray-600 mb-2 flex items-center gap-2 break-words">🌍 {t('dashboard.opportunity2.client')}</p>
-                            <div className="flex items-center gap-4 text-xs text-gray-500">
-                              <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-full">
-                                <Clock className="w-3 h-3" />
-                                {t('ao.deadline')}: 28/02/2026
+                            <h5 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base break-words">{t('dashboard.opportunity2.title')}</h5>
+                            <p className="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 flex items-center gap-1 sm:gap-2 break-words">🌍 {t('dashboard.opportunity2.client')}</p>
+                            <div className="flex items-center gap-2 sm:gap-4 text-[10px] sm:text-xs text-gray-500 flex-wrap">
+                              <span className="flex items-center gap-1 bg-gray-100 px-1 sm:px-2 py-1 rounded-full">
+                                <Clock className="w-2 h-2 sm:w-3 sm:h-3" />
+                                <span className="break-words">{t('ao.deadline')}: 28/02/2026</span>
                               </span>
-                              <span className="text-blue-600 font-medium bg-blue-50 px-2 py-1 rounded-full">
+                              <span className="text-blue-600 font-medium bg-blue-50 px-1 sm:px-2 py-1 rounded-full break-words">
                                 👍 {t('home.goodCompatibility')}
                               </span>
                             </div>
@@ -285,20 +285,20 @@ const HomePage = () => {
                   </div>
 
                   {/* Footer Stats - Design unique Eligibly */}
-                  <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-4 border border-gray-200">
+                  <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-gray-200">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3 text-sm text-gray-600">
-                        <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                          <Brain className="w-4 h-4 text-purple-600" />
+                      <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600">
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                          <Brain className="w-3 h-3 sm:w-4 sm:h-4 text-purple-600" />
                         </div>
                           <div>
-                            <div className="font-semibold text-gray-900">{t('home.charlyInAction')}</div>
-                            <div className="text-xs text-gray-500">{t('home.lastAnalysis')}</div>
+                            <div className="font-semibold text-gray-900 text-xs sm:text-base break-words">{t('home.charlyInAction')}</div>
+                            <div className="text-[10px] sm:text-xs text-gray-500 break-words">{t('home.lastAnalysis')}</div>
                           </div>
                         </div>
-                        <div className="flex items-center gap-2 text-sm font-semibold">
-                          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                          <span className="text-green-600">{t('home.detectedMore')}</span>
+                        <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm font-semibold">
+                          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse"></div>
+                          <span className="text-green-600 break-words">{t('home.detectedMore')}</span>
                         </div>
                     </div>
                   </div>
@@ -310,7 +310,7 @@ const HomePage = () => {
         </section>
 
       {/* Charly AI Assistant Section - Style "Découvrez Tom" */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden" aria-label="Découvrez Charly, votre assistant IA">
+      <section className="py-12 sm:py-20 px-2 sm:px-6 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden" aria-label="Découvrez Charly, votre assistant IA">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl"></div>
@@ -318,18 +318,18 @@ const HomePage = () => {
         </div>
 
         <div className="container mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center">
             {/* Left Column - Content */}
-            <div className="space-y-6 sm:space-y-8">
+            <div className="space-y-4 sm:space-y-8">
               <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-6 leading-tight break-words">
                   {t('charly.meet.title.prefix')}{" "}
                   <span className="bg-gradient-highlight bg-clip-text text-transparent">
                     {t('charly.meet.title.highlight')}
                   </span>
                   {t('charly.meet.title.suffix')}
                 </h2>
-                <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
+                <p className="text-sm sm:text-xl text-gray-300 leading-relaxed break-words">
                   {t('charly.meet.subtitle')}
                 </p>
               </div>
