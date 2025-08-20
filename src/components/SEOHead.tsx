@@ -94,7 +94,7 @@ export const SEOHead = ({
     updateOrCreateMeta('meta[name="twitter:title"]', 'content', finalTitle);
     updateOrCreateMeta('meta[name="twitter:description"]', 'content', finalDescription);
     updateOrCreateMeta('meta[name="twitter:image"]', 'content', finalOgImage);
-    updateOrCreateMeta('meta[name="twitter:site"]', 'content', '@eligible_ai');
+    updateOrCreateMeta('meta[name="twitter:site"]', 'content', '@eligibly_ai');
 
     // Article meta tags if provided
     if (articleMeta) {

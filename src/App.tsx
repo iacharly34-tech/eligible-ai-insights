@@ -19,6 +19,7 @@ import { LazyLoadEnhancer } from "@/components/LazyLoadEnhancer";
 import { Header } from "@/components/Header";
 import { WebVitalsReporter } from "@/components/WebVitalsReporter";
 import { FormUXEnhancer } from "@/components/FormUXEnhancer";
+import { SpaServerConfig } from "@/components/SpaServerConfig";
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Produit = lazy(() => import("./pages/Produit"));
@@ -46,6 +47,7 @@ const App = () => (
           <WebVitalsReporter />
           <LazyLoadEnhancer />
           <FormUXEnhancer />
+          <SpaServerConfig />
           <WCAGAccessibilityComponent />
           <SkipNavigation />
           <Toaster />

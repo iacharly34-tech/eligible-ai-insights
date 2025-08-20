@@ -57,7 +57,7 @@ const HomePage = () => {
   useEffect(() => {
     setIsVisible(true);
     
-    // SEO optimizations temporairement désactivées
+    // SEO optimizations are now active
     
     // Use optimized WebP image first, fallback if needed
     const loadCharlyImage = async () => {
