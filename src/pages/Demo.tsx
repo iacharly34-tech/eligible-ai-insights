@@ -81,50 +81,110 @@ const Demo = () => {
       <StructuredData page="demo" />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
         <Header />
+        
+        {/* Fixed CTA for mobile - CORRECTED POSITIONING */}
         {showTopCTA && (
-          <div className="md:hidden fixed top-16 left-0 right-0 z-40 px-3">
+          <div 
+            className="md:hidden fixed left-0 right-0 z-[999] px-3"
+            style={{ top: 'calc(var(--header-height) + 0.5rem)' }}
+          >
             <Button 
               variant="tengo"
-              className="w-full h-12 text-base font-semibold rounded-2xl shadow-glow"
+              className="w-full h-12 text-base font-semibold rounded-2xl shadow-glow cta-button"
               aria-label={t('accessibility.demo')}
-              onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+              onClick={() => {
+                const form = document.getElementById('demo-form');
+                if (form) {
+                  form.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                  });
+                  // Add offset for header
+                  setTimeout(() => {
+                    window.scrollBy(0, -80);
+                  }, 300);
+                }
+              }}
             >
               {t('nav.demo')}
             </Button>
           </div>
         )}
       
-      {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-16 md:pb-20 px-4">
+      {/* Hero Section - IMPROVED SPACING */}
+      <section className="page-container section-spacing px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12 md:mb-16 animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="text-center mb-8 md:mb-12 animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-4 md:mb-6">
               <Play className="w-4 h-4" />
               {t('demo.badge')}
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="font-bold mb-4 md:mb-6 leading-tight">
               {t('demo.hero.title')}{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">
                 {t('demo.hero.title.highlight')}
               </span>
             </h1>
             
-            <p className="text-base sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-muted-foreground mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
               {t('demo.hero.subtitle')}
             </p>
             
-            <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-gray-600">
+            {/* CTA Buttons - Above the fold */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 md:mb-12">
+              <Button 
+                variant="tengo"
+                className="cta-button w-full sm:w-auto order-1"
+                onClick={() => {
+                  const form = document.getElementById('demo-form');
+                  if (form) {
+                    form.scrollIntoView({ 
+                      behavior: 'smooth', 
+                      block: 'start' 
+                    });
+                    setTimeout(() => {
+                      window.scrollBy(0, -80);
+                    }, 300);
+                  }
+                }}
+                aria-label={t('accessibility.demo')}
+              >
+                {t('demo.cta.primary')}
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+              
+              <Button 
+                variant="outline"
+                className="cta-button w-full sm:w-auto order-2"
+                onClick={() => {
+                  const form = document.getElementById('demo-form');
+                  if (form) {
+                    form.scrollIntoView({ 
+                      behavior: 'smooth', 
+                      block: 'start' 
+                    });
+                    setTimeout(() => {
+                      window.scrollBy(0, -80);
+                    }, 300);
+                  }
+                }}
+              >
+                {t('demo.cta.secondary')}
+              </Button>
+            </div>
+            
+            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-blue-500" />
+                <Clock className="w-4 h-4 md:w-5 md:h-5 text-blue-500" />
                 <span>{t('demo.hero.detail.duration')}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-green-500" />
+                <Calendar className="w-4 h-4 md:w-5 md:h-5 text-green-500" />
                 <span>{t('demo.hero.detail.slots')}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5 text-purple-500" />
+                <Shield className="w-4 h-4 md:w-5 md:h-5 text-purple-500" />
                 <span>{t('demo.hero.detail.nocommit')}</span>
               </div>
             </div>
@@ -132,19 +192,23 @@ const Demo = () => {
         </div>
       </section>
 
-      <div className="md:hidden -mt-2 mb-10"><MobileDemoFlow /></div>
+      <div className="md:hidden mb-8"><MobileDemoFlow /></div>
 
-      <div className="container mx-auto max-w-7xl px-4 pb-28 md:pb-20">
-        <div className="grid lg:grid-cols-2 gap-16">
+      <div className="container mx-auto max-w-7xl px-4 pb-8 md:pb-20" style={{ paddingBottom: 'calc(4rem + env(safe-area-inset-bottom))' }}>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Left Column - Form */}
           <div>
-            <Card id="demo-form" className="border-0 bg-white/80 backdrop-blur-sm shadow-2xl">
-              <CardContent className="p-8">
-                <div className="mb-8">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">
+            <Card 
+              id="demo-form" 
+              className="border-0 bg-white/80 backdrop-blur-sm shadow-2xl scroll-mt-20"
+              style={{ scrollMarginTop: 'calc(var(--header-height) + 1rem)' }}
+            >
+              <CardContent className="p-6 md:p-8">
+                <div className="mb-6 md:mb-8">
+                  <h2 className="font-bold text-foreground mb-2">
                     {t('demo.form.title')}
                   </h2>
-                  <p className="text-gray-600">
+                  <p className="text-muted-foreground">
                     {t('demo.form.subtitle')}
                   </p>
                 </div>
@@ -293,10 +357,12 @@ const Demo = () => {
 
                   <Button 
                     type="submit" 
-                    className="w-full h-12 bg-gradient-cta hover:shadow-glow text-white text-base group transition-all duration-300"
+                    variant="tengo"
+                    className="w-full cta-button group transition-all duration-300"
+                    style={{ minHeight: '44px' }}
                   >
                     {t('demo.form.submit')}
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </form>
 

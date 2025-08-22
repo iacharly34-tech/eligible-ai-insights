@@ -11,11 +11,11 @@ import { SafeLink } from "@/components/SafeLink";
 export const Hero = () => {
   const { t, language } = useLanguage();
   return (
-    <section className="bg-gradient-hero pt-8 pb-16 relative overflow-hidden min-h-[85vh] flex items-center">
+    <section className="section-spacing bg-gradient-hero relative overflow-hidden min-h-[70vh] sm:min-h-[85vh] flex items-center">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative">
+      <div className="container mx-auto relative">
         {/* Social Proof Banner */}
         <div className="text-center mb-6 sm:mb-8">
           <Badge variant="outline" className="text-primary border-primary/20 bg-primary/5 px-3 sm:px-4 py-2 text-xs sm:text-sm">
@@ -59,16 +59,16 @@ export const Hero = () => {
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
-                <Button variant="premium" size="xl" className="text-sm sm:text-base px-8 sm:px-12 py-3 sm:py-4 h-11 sm:h-auto group w-full sm:w-auto">
+                <Button variant="tengo" className="cta-button group w-full sm:w-auto">
                   {t('hero.cta.primary')}
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </SafeLink>
               <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
-                <Button variant="outline" size="xl" className="text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 h-11 sm:h-auto flex items-center gap-2 w-full sm:w-auto">
-                  <Play className="w-4 h-4" />
+                <Button variant="outline" className="cta-button w-full sm:w-auto">
+                  <Play className="w-4 h-4 mr-2" />
                   {t('hero.cta.secondary')}
                 </Button>
               </SafeLink>

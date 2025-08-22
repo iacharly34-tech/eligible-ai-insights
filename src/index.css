@@ -145,6 +145,169 @@ All colors MUST be HSL.
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     overflow-wrap: break-word;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      font-size: 18px;
+    }
+  }
+
+  /* Typography hierarchy */
+  h1 {
+    font-size: 1.75rem; /* 28px mobile */
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 480px) {
+    h1 {
+      font-size: 2rem; /* 32px SM */
+    }
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 2.25rem; /* 36px MD+ */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 2.5rem; /* 40px LG+ */
+    }
+  }
+
+  h2 {
+    font-size: 1.375rem; /* 22px mobile */
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+  }
+
+  @media (min-width: 480px) {
+    h2 {
+      font-size: 1.5rem; /* 24px SM */
+    }
+  }
+
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 1.75rem; /* 28px MD+ */
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 2rem; /* 32px LG+ */
+    }
+  }
+
+  h3 {
+    font-size: 1.125rem; /* 18px mobile */
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (min-width: 480px) {
+    h3 {
+      font-size: 1.25rem; /* 20px SM */
+    }
+  }
+
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 1.375rem; /* 22px MD+ */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h3 {
+      font-size: 1.5rem; /* 24px LG+ */
+    }
+  }
+
+  p {
+    font-size: 0.875rem; /* 14px mobile */
+    line-height: 1.6;
+    max-width: 65ch;
+  }
+
+  @media (min-width: 480px) {
+    p {
+      font-size: 1rem; /* 16px SM */
+    }
+  }
+
+  @media (min-width: 768px) {
+    p {
+      font-size: 1.125rem; /* 18px MD+ */
+      max-width: 75ch;
+    }
+  }
+
+  /* Header height variables */
+  :root {
+    --header-height: 56px;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --header-height: 64px;
+    }
+  }
+
+  /* Page padding to prevent header overlap */
+  .page-container {
+    padding-top: calc(var(--header-height) + 1rem);
+  }
+
+  /* CTA button standardization */
+  .cta-button {
+    min-height: 44px;
+    min-width: 140px;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: var(--transition-smooth);
+  }
+
+  @media (min-width: 768px) {
+    .cta-button {
+      min-width: 160px;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.75rem;
+    }
+  }
+
+  /* Section spacing */
+  .section-spacing {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  @media (min-width: 480px) {
+    .section-spacing {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .section-spacing {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-spacing {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
   }
 
   html {

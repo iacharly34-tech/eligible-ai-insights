@@ -12,9 +12,17 @@ export default {
 	theme: {
 		container: {
 			center: true,
-			padding: '2rem',
+			padding: {
+				DEFAULT: '1rem',     // 16px pour XS/SM
+				sm: '1.5rem',        // 24px pour MD  
+				lg: '2rem'           // 32px pour LG+
+			},
 			screens: {
-				'2xl': '1400px'
+				sm: '480px',         // SM: 480-767px
+				md: '768px',         // MD: 768-1023px  
+				lg: '1024px',        // LG: 1024-1439px
+				xl: '1440px',        // XL: 1440px+
+				'2xl': '1280px'      // Container max-width
 			}
 		},
 		extend: {

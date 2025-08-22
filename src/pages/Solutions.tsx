@@ -100,6 +100,8 @@ const Solutions = () => {
         <Header />
         <MobileCTABar />
         
+        <main className="page-container">
+        
         {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-6xl">
@@ -266,13 +268,14 @@ const Solutions = () => {
         </div>
       </section>
 
-      <CTAFooter 
-        title="Quelle que soit votre activité, nous avons la solution"
-        subtitle="Planifiez une démonstration personnalisée selon votre secteur"
-        primaryButtonText="Découvrir ma solution"
-        secondaryButtonText="Démonstration personnalisée"
-      />
-    </div>
+          <CTAFooter 
+            title="Quelle que soit votre activité, nous avons la solution"
+            subtitle="Planifiez une démonstration personnalisée selon votre secteur"
+            primaryButtonText="Découvrir ma solution"
+            secondaryButtonText="Démonstration personnalisée"
+          />
+        </main>
+      </div>
   </>
   );
 };

@@ -120,6 +120,8 @@ const Tarifs = () => {
         <Header />
         <MobileCTABar />
         
+        <main className="page-container">
+        
         {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-6xl">
@@ -286,7 +288,8 @@ const Tarifs = () => {
           </div>
         </div>
       </section>
-    </div>
+        </main>
+      </div>
   </>
   );
 };

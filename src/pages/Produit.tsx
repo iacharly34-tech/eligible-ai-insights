@@ -24,8 +24,10 @@ const Produit = () => {
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
         <Header />
         <MobileCTABar />
-      {/* Hero Section */}
-      <ProductHero />
+        
+        <main className="page-container">
+          {/* Hero Section */}
+          <ProductHero />
 
       {/* Demo Personas Section */}
       <DemoPersonas />
@@ -35,13 +37,14 @@ const Produit = () => {
       {/* Benefits Section */}
       <ProductBenefits />
 
-      <CTAFooter 
-        title={t('cta.title')}
-        subtitle={t('cta.subtitle')}
-        primaryButtonText={t('cta.primary')}
-        secondaryButtonText={t('cta.secondary')}
-      />
-    </div>
+          <CTAFooter 
+            title={t('cta.title')}
+            subtitle={t('cta.subtitle')}
+            primaryButtonText={t('cta.primary')}
+            secondaryButtonText={t('cta.secondary')}
+          />
+        </main>
+      </div>
   </>
   );
 };

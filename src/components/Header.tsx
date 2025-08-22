@@ -38,11 +38,19 @@ export const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[70] bg-white/95 backdrop-blur-sm border-b border-border/50 shadow-sm" role="banner">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16">
+    <header 
+      className="fixed top-0 left-0 right-0 z-[1000] bg-background border-b border-border shadow-sm" 
+      role="banner"
+      style={{ height: 'var(--header-height)' }}
+    >
+      <div className="container mx-auto">
+        <div className="flex items-center justify-between" style={{ height: 'var(--header-height)' }}>
           {/* Brand */}
-          <SafeLink to={homePath} className="text-lg font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md" aria-label={t('accessibility.home')}>
+          <SafeLink 
+            to={homePath} 
+            className="text-lg md:text-xl font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md ml-4 md:ml-6 h-10 leading-10" 
+            aria-label={t('accessibility.home')}
+          >
             eligibly.ai
           </SafeLink>
 
@@ -91,13 +99,14 @@ export const Header = () => {
             </SafeLink>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle - CRITICAL FIX */}
           <button
-            className="md:hidden p-3 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="md:hidden fixed top-2 right-4 z-[1100] w-11 h-11 hover:bg-muted rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center bg-background border border-border shadow-sm"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? t('accessibility.menu.close') : t('accessibility.menu.open')}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
+            style={{ minWidth: '44px', minHeight: '44px' }}
           >
             {isMenuOpen ? (
               <X className="w-5 h-5" aria-hidden="true" />
@@ -107,71 +116,70 @@ export const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Full screen overlay */}
         {isMenuOpen && (
-          <button
-            className="fixed inset-0 top-16 z-40 bg-background/60 backdrop-blur-sm"
-            aria-hidden="true"
-            onClick={() => setIsMenuOpen(false)}
-          />
-        )}
-
-        <div
-          className={cn(
-            "md:hidden fixed top-16 left-0 right-0 z-50 bg-background border-b border-border/50 shadow-md transition-transform duration-300 ease-in-out will-change-transform",
-            isMenuOpen ? "translate-y-0" : "-translate-y-full"
-          )}
-          id="mobile-navigation"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="mobile-navigation-label"
-        >
-          <h2 id="mobile-navigation-label" className="sr-only">{t('accessibility.navigation.mobile')}</h2>
-          <nav 
-            className="py-2"
-            role="navigation" 
-            aria-label={t('accessibility.navigation.mobile')}
-          >
-            <ul className="py-2">
-              {navigation.map((item) => {
-                const isActive = location.pathname === item.href;
-                return (
-                  <li key={item.name}>
-                    <SafeLink
-                      to={item.href}
-                      className={cn(
-                        "block text-base font-medium transition-colors duration-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[44px]",
-                        isActive 
-                          ? "text-primary font-semibold bg-primary/10" 
-                          : "text-foreground/80 hover:text-foreground hover:bg-muted"
-                      )}
+          <>
+            <div
+              className="fixed inset-0 z-[1050] bg-background/80 backdrop-blur-sm"
+              aria-hidden="true"
+              onClick={() => setIsMenuOpen(false)}
+            />
+            <div
+              className="fixed inset-0 z-[1060] bg-background shadow-luxury md:hidden"
+              id="mobile-navigation"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="mobile-navigation-label"
+            >
+              <h2 id="mobile-navigation-label" className="sr-only">{t('accessibility.navigation.mobile')}</h2>
+              <nav 
+                className="h-full flex flex-col justify-center p-6"
+                role="navigation" 
+                aria-label={t('accessibility.navigation.mobile')}
+              >
+                <ul className="space-y-4 mb-8">
+                  {navigation.map((item) => {
+                    const isActive = location.pathname === item.href;
+                    return (
+                      <li key={item.name}>
+                        <SafeLink
+                          to={item.href}
+                          className={cn(
+                            "block text-lg font-medium transition-colors duration-200 px-6 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[44px] text-center",
+                            isActive 
+                              ? "text-primary font-semibold bg-primary/10" 
+                              : "text-foreground/80 hover:text-foreground hover:bg-muted"
+                          )}
+                          onClick={() => setIsMenuOpen(false)}
+                          tabIndex={isMenuOpen ? 0 : -1}
+                        >
+                          {item.name}
+                        </SafeLink>
+                      </li>
+                    );
+                  })}
+                </ul>
+                
+                <div className="space-y-4 px-6">
+                  <div className="flex justify-center">
+                    <LanguageSwitcher />
+                  </div>
+                  <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
+                    <Button 
+                      variant="tengo"
+                      className="w-full text-lg font-semibold h-14 min-h-[44px] rounded-xl"
                       onClick={() => setIsMenuOpen(false)}
                       tabIndex={isMenuOpen ? 0 : -1}
+                      aria-label={t('accessibility.demo')}
                     >
-                      {item.name}
-                    </SafeLink>
-                  </li>
-                );
-              })}
-            </ul>
-            <div className="pt-2 px-4 pb-4 border-t border-border/30">
-              <div className="flex justify-center mb-3">
-                <LanguageSwitcher />
-              </div>
-              <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
-                <Button 
-                  variant="tengo"
-                  className="w-full text-base font-medium h-12 min-h-[44px]"
-                  onClick={() => setIsMenuOpen(false)}
-                  tabIndex={isMenuOpen ? 0 : -1}
-                  aria-label={t('accessibility.demo')}
-                >
-                  {t('nav.demo')}
-                </Button>
-              </SafeLink>
+                      {t('nav.demo')}
+                    </Button>
+                  </SafeLink>
+                </div>
+              </nav>
             </div>
-          </nav>
-        </div>
+          </>
+        )}
       </div>
     </header>
   );

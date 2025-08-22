@@ -95,8 +95,7 @@ const HomePage = () => {
         <Header />
         <MobileCTABar />
 
-
-      <main id="main-content" tabIndex={-1} className="focus:outline-none" role="main">
+      <main id="main-content" tabIndex={-1} className="focus:outline-none page-container" role="main">
         {/* Hero Section - Split Layout like Loris.ai */}
         <section className="pt-20 pb-16 px-2 sm:px-4 relative overflow-hidden min-h-[70vh] sm:min-h-[85vh] flex items-center isolate" aria-label={t('hero.badge')}>
         {/* Animated Background - Style Loris.ai */}
@@ -146,14 +145,14 @@ const HomePage = () => {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <SafeLink to="/demo" className="w-full sm:w-auto">
                   <Button 
-                    size="lg" 
-                    className="bg-gradient-cta hover:shadow-glow text-white text-sm sm:text-lg px-4 sm:px-8 py-3 sm:py-4 h-auto group transition-all duration-300 hover:scale-105 w-full"
+                    variant="tengo"
+                    className="cta-button group w-full"
                     role="button"
                     aria-label={t('accessibility.demo')}
                   >
-                    <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
+                    <Play className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                     {t('hero.cta.primary')}
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </SafeLink>
                 
