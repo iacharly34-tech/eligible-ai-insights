@@ -49,7 +49,7 @@ import {
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState<'france' | 'europe'>('france');
-  const [charlyImageUrl, setCharlyImageUrl] = useState<string>('/lovable-uploads/a8f4af97-47b6-45cb-950f-c7db91c343c6.png');
+  const [charlyImageUrl, setCharlyImageUrl] = useState<string>('/lovable-uploads/af990dfd-97a4-4967-ad67-feda4748cff7.png');
   const { t, language } = useLanguage();
   const demoHref = language === 'en' ? '/en/demo' : '/demo';
   const loginHref = language === 'en' ? '/en/login' : '/connexion';
@@ -71,9 +71,9 @@ const HomePage = () => {
         });
         
         if (webpSupported) {
-          setCharlyImageUrl('/lovable-uploads/a8f4af97-47b6-45cb-950f-c7db91c343c6.png');
+          setCharlyImageUrl('/lovable-uploads/af990dfd-97a4-4967-ad67-feda4748cff7.png');
         } else {
-          setCharlyImageUrl('/lovable-uploads/a8f4af97-47b6-45cb-950f-c7db91c343c6.png');
+          setCharlyImageUrl('/lovable-uploads/af990dfd-97a4-4967-ad67-feda4748cff7.png');
         }
       } catch (error) {
         // Ultimate fallback to original image
