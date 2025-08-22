@@ -44,6 +44,7 @@ export const StructuredData = ({ page }: StructuredDataProps) => {
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web",
             "description": "Intelligence artificielle pour l'analyse et le scoring des appels d'offres publics",
+            "image": "https://eligible.ai/assets/hero-dashboard.jpg",
             "offers": {
               "@type": "Offer",
               "price": "0",
@@ -77,6 +78,7 @@ export const StructuredData = ({ page }: StructuredDataProps) => {
             "@type": "Product",
             "name": "Eligible.ai Platform",
             "description": "Plateforme complète d'intelligence artificielle pour la veille et l'analyse des marchés publics",
+            "image": "https://eligible.ai/assets/hero-dashboard.jpg",
             "brand": {
               "@type": "Brand",
               "name": "Eligible.ai"
