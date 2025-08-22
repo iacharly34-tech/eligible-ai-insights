@@ -81,12 +81,38 @@ export const StructuredData = ({ page }: StructuredDataProps) => {
               "@type": "Brand",
               "name": "Eligible.ai"
             },
-            "offers": {
-              "@type": "Offer",
-              "url": "https://eligible.ai/tarifs",
-              "priceCurrency": "EUR",
-              "availability": "https://schema.org/InStock"
-            }
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Plan Starter",
+                "description": "Plan d'entrée pour PME",
+                "price": "99",
+                "priceCurrency": "EUR",
+                "url": "https://eligible.ai/tarifs",
+                "availability": "https://schema.org/InStock",
+                "validFrom": "2024-01-01"
+              },
+              {
+                "@type": "Offer",
+                "name": "Plan Business", 
+                "description": "Plan professionnel pour entreprises",
+                "price": "299",
+                "priceCurrency": "EUR",
+                "url": "https://eligible.ai/tarifs",
+                "availability": "https://schema.org/InStock",
+                "validFrom": "2024-01-01"
+              },
+              {
+                "@type": "Offer",
+                "name": "Plan Enterprise",
+                "description": "Solution sur mesure",
+                "price": "999",
+                "priceCurrency": "EUR", 
+                "url": "https://eligible.ai/tarifs",
+                "availability": "https://schema.org/InStock",
+                "validFrom": "2024-01-01"
+              }
+            ]
           }
         ];
 
