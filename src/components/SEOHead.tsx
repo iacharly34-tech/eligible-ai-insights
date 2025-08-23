@@ -1,145 +1,153 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { SEO_CONTENT } from '@/utils/seo';
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useLocation } from "react-router-dom";
 
-interface SEOHeadProps {
-  title?: string;
-  description?: string;
-  canonical?: string;
-  ogImage?: string;
-  ogType?: string;
-  noindex?: boolean;
-  articleMeta?: {
-    publishedTime?: string;
-    modifiedTime?: string;
-    author?: string;
-    section?: string;
-    tags?: string[];
-  };
-}
-
-export const SEOHead = ({
-  title,
-  description,
-  canonical,
-  ogImage,
-  ogType = 'website',
-  noindex = false,
-  articleMeta
-}: SEOHeadProps) => {
+export const SEOHead = () => {
+  const { language } = useLanguage();
   const location = useLocation();
   
-  useEffect(() => {
-    // Auto-detect page based on route if no explicit title provided
-    const getPageSEO = () => {
-      const path = location.pathname;
-      const pathMap: Record<string, keyof typeof SEO_CONTENT> = {
-        '/': 'home',
-        '/produit': 'produit',
-        '/solutions': 'solutions',
-        '/tarifs': 'tarifs',
-        '/ressources': 'ressources',
-        '/a-propos': 'apropos',
-        '/demo': 'demo',
-        '/connexion': 'connexion',
-        '/mentions-legales': 'mentionslegales',
-        '/confidentialite': 'confidentialite',
-        '/cgu': 'cgu'
-      };
-      
-      const pageKey = pathMap[path];
-      return pageKey ? SEO_CONTENT[pageKey] : SEO_CONTENT.home;
-    };
-
-    const pageSEO = getPageSEO();
-    const finalTitle = title || pageSEO.title;
-    const finalDescription = description || pageSEO.description;
-    const finalCanonical = canonical || pageSEO.url;
-    const defaultOg = `${window?.location?.origin || 'https://eligibly.ai'}/assets/eligible-ai-opengraph.png`;
-    const finalOgImage = ogImage || defaultOg;
-
-    // Update document title
-    document.title = finalTitle;
-
-    // Update or create meta tags
-    const updateOrCreateMeta = (selector: string, attribute: string, value: string) => {
-      let meta = document.querySelector(selector) as HTMLMetaElement;
-      if (!meta) {
-        meta = document.createElement('meta');
-        if (selector.includes('[name=')) {
-          meta.name = selector.match(/name="([^"]+)"/)?.[1] || '';
-        } else if (selector.includes('[property=')) {
-          meta.setAttribute('property', selector.match(/property="([^"]+)"/)?.[1] || '');
-        }
-        document.head.appendChild(meta);
-      }
-      meta.setAttribute(attribute, value);
-    };
-
-    // Basic meta tags
-    updateOrCreateMeta('meta[name="description"]', 'content', finalDescription);
-    updateOrCreateMeta('meta[name="robots"]', 'content', noindex ? 'noindex, nofollow' : 'index, follow');
+  const getPageSEO = () => {
+    const path = location.pathname;
     
-    // Open Graph meta tags
-    updateOrCreateMeta('meta[property="og:title"]', 'content', finalTitle);
-    updateOrCreateMeta('meta[property="og:description"]', 'content', finalDescription);
-    updateOrCreateMeta('meta[property="og:url"]', 'content', finalCanonical);
-    updateOrCreateMeta('meta[property="og:type"]', 'content', ogType);
-    updateOrCreateMeta('meta[property="og:image"]', 'content', finalOgImage);
-    updateOrCreateMeta('meta[property="og:site_name"]', 'content', 'eligibly.ai');
-    updateOrCreateMeta('meta[property="og:locale"]', 'content', 'fr_FR');
-
-    // Twitter Card meta tags
-    updateOrCreateMeta('meta[name="twitter:card"]', 'content', 'summary_large_image');
-    updateOrCreateMeta('meta[name="twitter:title"]', 'content', finalTitle);
-    updateOrCreateMeta('meta[name="twitter:description"]', 'content', finalDescription);
-    updateOrCreateMeta('meta[name="twitter:image"]', 'content', finalOgImage);
-    updateOrCreateMeta('meta[name="twitter:site"]', 'content', '@eligibly_ai');
-
-    // Article meta tags if provided
-    if (articleMeta) {
-      if (articleMeta.publishedTime) {
-        updateOrCreateMeta('meta[property="article:published_time"]', 'content', articleMeta.publishedTime);
+    if (language === 'en') {
+      switch (path) {
+        case '/en':
+        case '/en/':
+          return {
+            title: "Eligibly – AI for Public Tenders and Government Contracts",
+            description: "Eligibly analyzes your success chances on public tenders and government contracts. Test our predictive AI specialized in public procurement.",
+            keywords: "eligibly, public tenders, government contracts, AI, procurement, bid analysis"
+          };
+        case '/en/product':
+          return {
+            title: "Eligibly Product – Save Time on Public Tenders",
+            description: "Discover how Eligibly qualifies government contracts and maximizes your chances on each public tender.",
+            keywords: "eligibly product, public tender analysis, government contracts, AI qualification"
+          };
+        case '/en/demo':
+          return {
+            title: "Eligibly Demo – AI Analysis of Your Public Tenders",
+            description: "Launch an Eligibly demo and test our AI to evaluate your opportunities on government contracts.",
+            keywords: "eligibly demo, public tender demo, AI analysis, government contracts"
+          };
+        case '/en/pricing':
+          return {
+            title: "Eligibly Pricing – AI for Public Tenders",
+            description: "Discover Eligibly pricing plans for public tender analysis and government contract optimization.",
+            keywords: "eligibly pricing, public tender pricing, government contracts AI"
+          };
+        case '/en/solutions':
+          return {
+            title: "Eligibly Solutions – Public Tender AI Platform",
+            description: "Eligibly solutions for public tender analysis and government contract optimization.",
+            keywords: "eligibly solutions, public tender platform, government contracts AI"
+          };
+        case '/en/resources':
+          return {
+            title: "Eligibly Resources – Public Tender Guides",
+            description: "Resources and guides for winning public tenders and government contracts with Eligibly.",
+            keywords: "eligibly resources, public tender guides, government contracts tips"
+          };
+        case '/en/about':
+          return {
+            title: "About Eligibly – Public Tender AI Experts",
+            description: "Learn about Eligibly, the AI platform transforming public tender analysis and government contracts.",
+            keywords: "about eligibly, public tender experts, government contracts AI"
+          };
+        default:
+          return {
+            title: "Eligibly – AI for Public Tenders and Government Contracts",
+            description: "Eligibly analyzes your success chances on public tenders and government contracts. Test our predictive AI specialized in public procurement.",
+            keywords: "eligibly, public tenders, government contracts, AI, procurement"
+          };
       }
-      if (articleMeta.modifiedTime) {
-        updateOrCreateMeta('meta[property="article:modified_time"]', 'content', articleMeta.modifiedTime);
-      }
-      if (articleMeta.author) {
-        updateOrCreateMeta('meta[property="article:author"]', 'content', articleMeta.author);
-      }
-      if (articleMeta.section) {
-        updateOrCreateMeta('meta[property="article:section"]', 'content', articleMeta.section);
-      }
-      if (articleMeta.tags) {
-        articleMeta.tags.forEach(tag => {
-          const meta = document.createElement('meta');
-          meta.setAttribute('property', 'article:tag');
-          meta.content = tag;
-          document.head.appendChild(meta);
-        });
+    } else {
+      // French pages
+      switch (path) {
+        case '/':
+        case '/accueil':
+          return {
+            title: "Eligibly – IA pour appels d'offres publics (AO) et marchés publics",
+            description: "Eligibly analyse vos chances de succès sur les appels d'offres publics et marchés publics. Testez notre IA prédictive spécialisée dans les AO.",
+            keywords: "eligibly, appels d'offres publics, AO, marchés publics, IA, analyse"
+          };
+        case '/produit':
+          return {
+            title: "Produit Eligibly – Gagnez du temps sur vos appels d'offres publics (AO)",
+            description: "Découvrez comment Eligibly qualifie les marchés publics et maximise vos chances sur chaque AO.",
+            keywords: "produit eligibly, analyse AO, appels d'offres publics, marchés publics"
+          };
+        case '/demo':
+          return {
+            title: "Démo Eligibly – Analyse IA de vos appels d'offres publics",
+            description: "Lancez une démo Eligibly et testez notre IA pour évaluer vos opportunités sur les marchés publics.",
+            keywords: "démo eligibly, test AO, appels d'offres publics, analyse IA"
+          };
+        case '/tarifs':
+          return {
+            title: "Tarifs Eligibly – IA pour appels d'offres publics et marchés",
+            description: "Découvrez les tarifs Eligibly pour l'analyse d'appels d'offres publics et l'optimisation des marchés publics.",
+            keywords: "tarifs eligibly, prix AO, appels d'offres publics, marchés publics"
+          };
+        case '/solutions':
+          return {
+            title: "Solutions Eligibly – Plateforme IA pour appels d'offres publics",
+            description: "Solutions Eligibly pour l'analyse d'appels d'offres publics et l'optimisation des marchés publics.",
+            keywords: "solutions eligibly, plateforme AO, appels d'offres publics, marchés publics"
+          };
+        case '/ressources':
+          return {
+            title: "Ressources Eligibly – Guides appels d'offres publics",
+            description: "Ressources et guides pour gagner vos appels d'offres publics et marchés publics avec Eligibly.",
+            keywords: "ressources eligibly, guides AO, appels d'offres publics, conseils marchés"
+          };
+        case '/a-propos':
+          return {
+            title: "À propos Eligibly – Experts IA appels d'offres publics",
+            description: "Découvrez Eligibly, la plateforme IA qui transforme l'analyse des appels d'offres publics et marchés publics.",
+            keywords: "à propos eligibly, experts AO, appels d'offres publics, IA marchés"
+          };
+        default:
+          return {
+            title: "Eligibly – IA pour appels d'offres publics (AO) et marchés publics",
+            description: "Eligibly analyse vos chances de succès sur les appels d'offres publics et marchés publics. Testez notre IA prédictive spécialisée dans les AO.",
+            keywords: "eligibly, appels d'offres publics, AO, marchés publics, IA"
+          };
       }
     }
+  };
 
-    // Update canonical URL
-    let canonical_link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-    if (!canonical_link) {
-      canonical_link = document.createElement('link');
-      canonical_link.rel = 'canonical';
-      document.head.appendChild(canonical_link);
-    }
-    canonical_link.href = finalCanonical;
+  const seo = getPageSEO();
+  const canonicalUrl = `https://eligibly.ai${location.pathname}`;
 
-    // Add hreflang for internationalization if needed
-    let hreflang = document.querySelector('link[rel="alternate"][hreflang="fr"]') as HTMLLinkElement;
-    if (!hreflang) {
-      hreflang = document.createElement('link');
-      hreflang.rel = 'alternate';
-      hreflang.setAttribute('hreflang', 'fr');
-      hreflang.href = finalCanonical;
-      document.head.appendChild(hreflang);
-    }
-
-  }, [title, description, canonical, ogImage, ogType, noindex, articleMeta, location.pathname]);
-
-  return null; // This component only manages head tags
+  return (
+    <>
+      <title>{seo.title}</title>
+      <meta name="description" content={seo.description} />
+      <meta name="keywords" content={seo.keywords} />
+      <link rel="canonical" href={canonicalUrl} />
+      
+      {/* Open Graph */}
+      <meta property="og:title" content={seo.title} />
+      <meta property="og:description" content={seo.description} />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://eligibly.ai/assets/eligible-ai-opengraph.png" />
+      <meta property="og:locale" content={language === 'en' ? 'en_US' : 'fr_FR'} />
+      
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content="https://eligibly.ai/assets/eligible-ai-opengraph.png" />
+      
+      {/* Language alternatives */}
+      <link rel="alternate" hrefLang="fr" href={`https://eligibly.ai${location.pathname.replace('/en', '')}`} />
+      <link rel="alternate" hrefLang="en" href={`https://eligibly.ai/en${location.pathname}`} />
+      <link rel="alternate" hrefLang="x-default" href="https://eligibly.ai/" />
+      
+      {/* Preload critical resources */}
+      <link rel="preload" as="image" href="/assets/eligible-ai-hero-optimized.webp" />
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    </>
+  );
 };

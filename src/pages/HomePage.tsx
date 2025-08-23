@@ -34,6 +34,7 @@ import {
 import aiCharacterTechMale from "@/assets/charly-character-cutout.png";
 import charlyOptimized from "@/assets/charly-avatar-optimized.webp";
 import heroOptimized from "@/assets/eligible-ai-hero-optimized.webp";
+import { FAQSection } from "@/components/FAQSection";
 import { processCharlyImage } from "@/utils/processCharlyImage";
 
 import { 

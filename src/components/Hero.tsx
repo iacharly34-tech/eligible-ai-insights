@@ -32,15 +32,15 @@ export const Hero = () => {
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight tracking-tight px-2">
-              {t('hero.title')}{" "}
+              Eligibly : IA pour les{" "}
               <span className="text-primary font-medium bg-gradient-primary bg-clip-text text-transparent">
-                {t('hero.title.highlight')}
+                appels d'offres publics (AO)
               </span>{" "}
-              {t('hero.title.end')}
+              et marchés publics
             </h1>
             
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-light max-w-2xl mx-auto px-4">
-              {t('hero.subtitle')}
+              Eligibly est la première IA spécialisée dans les appels d'offres publics (AO) et les marchés publics, qui prédit vos chances de succès avant de candidater.
             </p>
 
             {/* Value Propositions */}

@@ -1,204 +1,161 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 
 interface StructuredDataProps {
-  page: 'home' | 'product' | 'solutions' | 'pricing' | 'about' | 'demo';
+  page?: string;
 }
 
-export const StructuredData = ({ page }: StructuredDataProps) => {
-  const { t } = useLanguage();
+export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
+  const { language } = useLanguage();
 
-  const generateStructuredData = () => {
-    const baseOrganization = {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Eligible.ai",
-      "url": "https://eligible.ai",
-      "logo": "https://eligible.ai/assets/eligibly-logo-main.png",
-      "description": "Plateforme IA pour l'analyse et la veille des marchés publics français et européens",
-      "foundingDate": "2024",
-      "sameAs": [
-        "https://linkedin.com/company/eligible-ai",
-        "https://twitter.com/eligible_ai"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+33-1-23-45-67-89",
-        "contactType": "customer service",
-        "availableLanguage": ["French", "English"]
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "FR",
-        "addressLocality": "Paris"
-      }
-    };
+  const organizationData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Eligibly",
+    "description": language === 'en' 
+      ? "AI platform for public tender analysis and government contract optimization"
+      : "Plateforme IA pour l'analyse des appels d'offres publics (AO) et l'optimisation des marchés publics",
+    "url": "https://eligibly.ai",
+    "logo": "https://eligibly.ai/assets/eligibly-logo-main.png",
+    "image": "https://eligibly.ai/assets/eligible-ai-opengraph.png",
+    "foundingDate": "2023",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "FR"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "contact@eligibly.ai"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/eligibly"
+    ]
+  };
 
-    switch (page) {
-      case 'home':
-        return [
-          baseOrganization,
-          {
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "Eligible.ai",
-            "applicationCategory": "BusinessApplication",
-            "operatingSystem": "Web",
-            "description": "Intelligence artificielle pour l'analyse et le scoring des appels d'offres publics",
-            "image": "https://eligible.ai/assets/hero-dashboard.jpg",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "EUR",
-            "name": "Essai 7 jours",
-            "description": "Accès complet sans engagement"
-            },
-            "featureList": [
-              "Analyse IA des appels d'offres",
-              "Scoring automatique des opportunités",
-              "Veille commerciale automatisée",
-              "Intégrations CRM",
-              "Alertes personnalisées"
-            ],
-            "screenshot": "https://eligible.ai/assets/hero-dashboard.jpg",
-            "softwareVersion": "2.0",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "reviewCount": "127",
-              "bestRating": "5"
-            }
-          }
-        ];
-
-      case 'product':
-        return [
-          baseOrganization,
-          {
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "name": "Eligible.ai Platform",
-            "description": "Plateforme complète d'intelligence artificielle pour la veille et l'analyse des marchés publics",
-            "image": "https://eligible.ai/assets/hero-dashboard.jpg",
-            "brand": {
-              "@type": "Brand",
-              "name": "Eligible.ai"
-            },
-            "offers": [
-              {
-                "@type": "Offer",
-                "name": "Plan Starter",
-                "description": "Plan d'entrée pour PME",
-                "price": "99",
-                "priceCurrency": "EUR",
-                "url": "https://eligible.ai/tarifs",
-                "availability": "https://schema.org/InStock",
-                "validFrom": "2024-01-01"
-              },
-              {
-                "@type": "Offer",
-                "name": "Plan Business", 
-                "description": "Plan professionnel pour entreprises",
-                "price": "299",
-                "priceCurrency": "EUR",
-                "url": "https://eligible.ai/tarifs",
-                "availability": "https://schema.org/InStock",
-                "validFrom": "2024-01-01"
-              },
-              {
-                "@type": "Offer",
-                "name": "Plan Enterprise",
-                "description": "Solution sur mesure",
-                "price": "999",
-                "priceCurrency": "EUR", 
-                "url": "https://eligible.ai/tarifs",
-                "availability": "https://schema.org/InStock",
-                "validFrom": "2024-01-01"
-              }
-            ]
-          }
-        ];
-
-      case 'pricing':
-        return [
-          baseOrganization,
-          {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Eligible.ai Services",
-            "description": "Services d'intelligence artificielle pour les marchés publics",
-            "provider": baseOrganization,
-            "serviceType": "AI Software",
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Plans Eligible.ai",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Plan Starter"
-                  },
-                  "price": "99",
-                  "priceCurrency": "EUR"
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Plan Business"
-                  },
-                  "price": "299",
-                  "priceCurrency": "EUR"
-                }
-              ]
-            }
-          }
-        ];
-
-      case 'about':
-        return [
-          {
-            ...baseOrganization,
-            "founder": {
-              "@type": "Person",
-              "name": "Équipe Eligible.ai"
-            },
-            "numberOfEmployees": "15-25",
-            "industry": "Artificial Intelligence"
-          }
-        ];
-
-      case 'demo':
-        return [
-          baseOrganization,
-          {
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            "name": "Démonstration Eligible.ai",
-            "description": "Démonstration interactive de la plateforme IA Eligible.ai",
-            "applicationCategory": "DemoApplication",
-            "operatingSystem": "Web Browser"
-          }
-        ];
-
-      default:
-        return [baseOrganization];
+  const websiteData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Eligibly",
+    "description": language === 'en'
+      ? "AI for public tenders and government contracts"
+      : "IA pour appels d'offres publics (AO) et marchés publics",
+    "url": "https://eligibly.ai",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://eligibly.ai/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     }
   };
 
-  const structuredDataArray = generateStructuredData();
+  const softwareApplicationData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Eligibly",
+    "description": language === 'en'
+      ? "AI platform that analyzes public tenders and predicts success probability for government contracts"
+      : "Plateforme IA qui analyse les appels d'offres publics (AO) et prédit les chances de succès sur les marchés publics",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://eligibly.ai",
+    "image": "https://eligibly.ai/assets/eligible-ai-hero-optimized.webp",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "description": language === 'en' ? "Free trial available" : "Essai gratuit disponible"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "250",
+      "bestRating": "5"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Eligibly"
+    }
+  };
+
+  const productData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Eligibly AI",
+    "description": language === 'en'
+      ? "AI solution for public tender analysis and government contract optimization"
+      : "Solution IA pour l'analyse des appels d'offres publics et l'optimisation des marchés publics",
+    "image": "https://eligibly.ai/assets/eligible-ai-hero-optimized.webp",
+    "brand": {
+      "@type": "Brand",
+      "name": "Eligibly"
+    },
+    "category": "AI Software",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "priceValidUntil": "2025-12-31",
+      "seller": {
+        "@type": "Organization",
+        "name": "Eligibly"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "250",
+      "bestRating": "5"
+    }
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": language === 'en' ? "Home" : "Accueil",
+        "item": "https://eligibly.ai/"
+      }
+    ]
+  };
+
+  // Add page-specific breadcrumbs
+  if (page === "product") {
+    breadcrumbData.itemListElement.push({
+      "@type": "ListItem",
+      "position": 2,
+      "name": language === 'en' ? "Product" : "Produit",
+      "item": `https://eligibly.ai/${language === 'en' ? 'en/product' : 'produit'}`
+    });
+  } else if (page === "demo") {
+    breadcrumbData.itemListElement.push({
+      "@type": "ListItem",
+      "position": 2,
+      "name": language === 'en' ? "Demo" : "Démo",
+      "item": `https://eligibly.ai/${language === 'en' ? 'en/demo' : 'demo'}`
+    });
+  }
 
   return (
     <>
-      {structuredDataArray.map((data, index) => (
-        <script
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(data, null, 2)
-          }}
-        />
-      ))}
+      <script type="application/ld+json">
+        {JSON.stringify(organizationData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(websiteData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(softwareApplicationData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(productData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbData)}
+      </script>
     </>
   );
 };
