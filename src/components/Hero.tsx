@@ -59,15 +59,15 @@ export const Hero = () => {
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <div className="cta-row">
               <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
-                <Button variant="tengo" className="cta-button group w-full sm:w-auto">
+                <Button variant="tengo" className="cta-button group">
                   {t('hero.cta.primary')}
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </SafeLink>
               <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
-                <Button variant="outline" className="cta-button w-full sm:w-auto">
+                <Button variant="outline" className="cta-button">
                   <Play className="w-4 h-4 mr-2" />
                   {t('hero.cta.secondary')}
                 </Button>

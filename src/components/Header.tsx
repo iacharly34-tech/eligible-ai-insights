@@ -99,9 +99,9 @@ export const Header = () => {
             </SafeLink>
           </div>
 
-          {/* Mobile Menu Toggle - CRITICAL FIX */}
+          {/* Mobile Menu Toggle - FIXED POSITIONING */}
           <button
-            className="md:hidden fixed top-2 right-4 z-[1100] w-11 h-11 hover:bg-muted rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center bg-background border border-border shadow-sm"
+            className="md:hidden absolute top-2 right-4 z-[1100] w-11 h-11 hover:bg-muted rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center bg-background border border-border shadow-sm"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? t('accessibility.menu.close') : t('accessibility.menu.open')}
             aria-expanded={isMenuOpen}

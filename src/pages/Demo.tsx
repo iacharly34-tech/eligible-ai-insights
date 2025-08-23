@@ -3,6 +3,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
 import { SafeLink } from "@/components/SafeLink";
 import { MobileDemoFlow } from "@/components/MobileDemoFlow";
+import { DemoStepper } from "@/components/DemoStepper";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -132,10 +133,10 @@ const Demo = () => {
             </p>
             
             {/* CTA Buttons - Above the fold */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 md:mb-12">
+            <div className="cta-row mb-8 md:mb-12">
               <Button 
                 variant="tengo"
-                className="cta-button w-full sm:w-auto order-1"
+                className="cta-button order-1"
                 onClick={() => {
                   const form = document.getElementById('demo-form');
                   if (form) {
@@ -156,7 +157,7 @@ const Demo = () => {
               
               <Button 
                 variant="outline"
-                className="cta-button w-full sm:w-auto order-2"
+                className="cta-button order-2"
                 onClick={() => {
                   const form = document.getElementById('demo-form');
                   if (form) {
@@ -192,7 +193,10 @@ const Demo = () => {
         </div>
       </section>
 
-      <div className="md:hidden mb-8"><MobileDemoFlow /></div>
+      {/* Enhanced Demo Stepper for Mobile */}
+      <div className="md:hidden mb-8">
+        <DemoStepper />
+      </div>
 
       <div className="container mx-auto max-w-7xl px-4 pb-8 md:pb-20" style={{ paddingBottom: 'calc(4rem + env(safe-area-inset-bottom))' }}>
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
