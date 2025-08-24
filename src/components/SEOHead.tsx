@@ -28,6 +28,14 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
         keywords: "appels d'offres, marchés publics, détection, veille automatisée, IA, PME, filtrage AO"
       };
     }
+
+    if (path === '/erreurs-ao') {
+      return {
+        title: "Les 7 plus grosses erreurs des PME qui répondent aux marchés publics | Eligibly", 
+        description: "Guide pratique pour éviter les pièges administratifs et techniques qui éliminent 60% des candidatures aux appels d'offres publics.",
+        keywords: "erreurs appels d'offres, PME, mémoire technique, stratégie AO, marchés publics"
+      };
+    }
     
     if (language === 'en') {
       switch (path) {
