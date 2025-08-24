@@ -31,7 +31,7 @@ import {
   Shield
 } from "lucide-react";
 
-import aiCharacterTechMale from "@/assets/charly-character-cutout.png";
+import charlyCharacterFinal from "@/assets/charly-character-final.png";
 import charlyOptimized from "@/assets/charly-avatar-optimized.webp";
 import heroOptimized from "@/assets/eligible-ai-hero-optimized.webp";
 import { FAQSection } from "@/components/FAQSection";
@@ -50,7 +50,7 @@ import {
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState<'france' | 'europe'>('france');
-  const [charlyImageUrl, setCharlyImageUrl] = useState<string>('/lovable-uploads/af990dfd-97a4-4967-ad67-feda4748cff7.png');
+  const [charlyImageUrl, setCharlyImageUrl] = useState<string>(charlyCharacterFinal);
   const { t, language } = useLanguage();
   const demoHref = language === 'en' ? '/en/demo' : '/demo';
   const loginHref = language === 'en' ? '/en/login' : '/connexion';
@@ -60,29 +60,8 @@ const HomePage = () => {
     
     // SEO optimizations are now active
     
-    // Use optimized WebP image first, fallback if needed
-    const loadCharlyImage = async () => {
-      try {
-        // Test if WebP is supported
-        const webpSupported = await new Promise((resolve) => {
-          const img = new Image();
-          img.onload = () => resolve(true);
-          img.onerror = () => resolve(false);
-          img.src = 'data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==';
-        });
-        
-        if (webpSupported) {
-          setCharlyImageUrl('/lovable-uploads/af990dfd-97a4-4967-ad67-feda4748cff7.png');
-        } else {
-          setCharlyImageUrl('/lovable-uploads/af990dfd-97a4-4967-ad67-feda4748cff7.png');
-        }
-      } catch (error) {
-        // Ultimate fallback to original image
-        setCharlyImageUrl(aiCharacterTechMale);
-      }
-    };
-    
-    loadCharlyImage();
+    // Set Charly image directly
+    setCharlyImageUrl(charlyCharacterFinal);
   }, []);
 
   // Utilisation des données centralisées au lieu des définitions locales
