@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { SafeLink } from "@/components/SafeLink";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SocialShare } from "@/components/ui/social-share";
 import { 
   BookOpen,
   Calendar,
@@ -164,14 +165,14 @@ const Ressources = () => {
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-4">
           <div className="container mx-auto max-w-6xl text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
               Décoder les{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">
                 marchés publics
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed">
               Des contenus experts, des stratégies éprouvées et des données actualisées pour maximiser vos chances de succès sur les appels d'offres publics.
             </p>
 
@@ -213,10 +214,10 @@ const Ressources = () => {
                 <Sparkles className="w-4 h-4 mr-2" />
                 Articles phares
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">
                 Nos guides les plus consultés
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
                 Les contenus essentiels pour comprendre et maîtriser les marchés publics
               </p>
             </div>
@@ -247,13 +248,22 @@ const Ressources = () => {
                         <span>{article.date}</span>
                       </div>
                       
-                      <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-base font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors">
                         {article.title}
                       </h3>
                       
-                      <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                      <p className="text-gray-600 text-xs leading-relaxed mb-4">
                         {article.description}
                       </p>
+                      
+                      <div className="mb-4">
+                        <SocialShare 
+                          title={article.title}
+                          url={article.url}
+                          variant="minimal"
+                          size="sm"
+                        />
+                      </div>
                       
                       <SafeLink to={article.url}>
                         <Button variant="outline" size="sm" className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all">
@@ -277,10 +287,10 @@ const Ressources = () => {
                 <Filter className="w-4 h-4 mr-2" />
                 Explorer par thématiques
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">
                 Choisissez votre domaine d'expertise
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
                 Retrouvez facilement les contenus qui correspondent à vos besoins et votre secteur d'activité
               </p>
             </div>
@@ -320,13 +330,22 @@ const Ressources = () => {
                               <span>{article.date}</span>
                             </div>
                             
-                            <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                            <h3 className="text-base font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors">
                               {article.title}
                             </h3>
                             
-                            <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                            <p className="text-gray-600 text-xs leading-relaxed mb-4 flex-grow">
                               {article.description}
                             </p>
+                            
+                            <div className="mb-4">
+                              <SocialShare 
+                                title={article.title}
+                                url={article.url}
+                                variant="minimal"
+                                size="sm"
+                              />
+                            </div>
                             
                             <SafeLink to={article.url} className="mt-auto">
                               <Button variant="outline" size="sm" className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all">
@@ -352,7 +371,7 @@ const Ressources = () => {
                 <BarChart3 className="w-4 h-4 mr-2" />
                 Données clés du secteur
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">
                 Ce que révèlent les chiffres
               </h2>
             </div>
@@ -362,10 +381,10 @@ const Ressources = () => {
                 <div className="flex items-start gap-4">
                   <Quote className="w-8 h-8 text-blue-600 flex-shrink-0 mt-1" />
                   <div>
-                    <p className="text-2xl font-bold text-gray-900 mb-2">
+                    <p className="text-lg font-bold text-gray-900 mb-2">
                       "59,9% des marchés sont remportés par des PME, mais seulement 27,2% du montant total leur est attribué."
                     </p>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-xs text-gray-600">
                       — Observatoire Économique de la Commande Publique (OECP) 2023
                     </p>
                   </div>
@@ -376,10 +395,10 @@ const Ressources = () => {
                 <div className="flex items-start gap-4">
                   <Quote className="w-8 h-8 text-green-600 flex-shrink-0 mt-1" />
                   <div>
-                    <p className="text-2xl font-bold text-gray-900 mb-2">
+                    <p className="text-lg font-bold text-gray-900 mb-2">
                       "On passe 5 heures par semaine à trier des AO… pour en écarter 80%."
                     </p>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-xs text-gray-600">
                       — Dirigeant PME secteur IT, interview terrain Eligibly
                     </p>
                   </div>
@@ -412,10 +431,10 @@ const Ressources = () => {
         <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100">
           <div className="container mx-auto max-w-7xl">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">
                 Tous nos articles experts
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
                 Chaque semaine, Eligibly décrypte les marchés publics pour vous aider à anticiper les opportunités et maximiser vos chances de succès.
               </p>
             </div>
@@ -442,13 +461,22 @@ const Ressources = () => {
                       <span>Par Charly, votre copilote AO</span>
                     </div>
                     
-                    <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-base font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors">
                       {article.title}
                     </h3>
                     
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                    <p className="text-gray-600 text-xs leading-relaxed mb-4 flex-grow">
                       {article.description}
                     </p>
+                    
+                    <div className="mb-4">
+                      <SocialShare 
+                        title={article.title}
+                        url={article.url}
+                        variant="default"
+                        size="sm"
+                      />
+                    </div>
                     
                     <SafeLink to={article.url} className="mt-auto">
                       <Button variant="outline" size="sm" className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all">
