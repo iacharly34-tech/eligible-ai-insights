@@ -197,19 +197,43 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
       {noindex && <meta name="robots" content="noindex, nofollow" />}
       <link rel="canonical" href={canonicalUrl} />
       
+      {/* Géolocalisation pour SEO local */}
+      <meta name="geo.region" content="FR-IDF" />
+      <meta name="geo.placename" content="Paris, France" />
+      <meta name="geo.position" content="48.8566;2.3522" />
+      <meta name="ICBM" content="48.8566, 2.3522" />
+      
       {/* Open Graph */}
       <meta property="og:title" content={seo.title} />
       <meta property="og:description" content={seo.description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="https://eligibly.ai/assets/eligible-ai-opengraph.png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:locale" content={language === 'en' ? 'en_US' : 'fr_FR'} />
+      <meta property="og:site_name" content="Eligibly.ai" />
+      
+      {/* Article spécifique */}
+      {location.pathname.includes('/') && !location.pathname.includes('/en') && location.pathname !== '/' && (
+        <>
+          <meta property="article:published_time" content="2025-08-20T10:00:00Z" />
+          <meta property="article:modified_time" content="2025-08-24T15:30:00Z" />
+          <meta property="article:author" content="Équipe Eligibly" />
+          <meta property="article:section" content="Marchés Publics" />
+          <meta property="article:tag" content="appels d'offres publics" />
+          <meta property="article:tag" content="IA" />
+          <meta property="article:tag" content="marchés publics" />
+        </>
+      )}
       
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content="https://eligibly.ai/assets/eligible-ai-opengraph.png" />
+      <meta name="twitter:site" content="@eligibly_ai" />
+      <meta name="twitter:creator" content="@eligibly_ai" />
       
       {/* Language alternatives */}
       <link rel="alternate" hrefLang="fr" href={`https://eligibly.ai${location.pathname.replace('/en', '')}`} />
@@ -219,6 +243,11 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
       {/* Preload critical resources */}
       <link rel="preload" as="image" href="/assets/eligible-ai-hero-optimized.webp" />
       <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+      
+      {/* Enhanced meta pour Google Discover */}
+      <meta name="news_keywords" content="appels d'offres publics, IA, marchés publics, intelligence artificielle" />
+      <meta name="author" content="Eligibly Team" />
+      <meta name="publisher" content="Eligibly.ai" />
     </>
   );
 };

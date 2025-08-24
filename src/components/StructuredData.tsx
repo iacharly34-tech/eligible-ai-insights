@@ -167,6 +167,69 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "keywords": "eligibly, appels d'offres publics, AO, marchés publics, IA"
   } : null;
 
+  // LocalBusiness pour SEO local
+  const localBusinessData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Eligibly",
+    "image": "https://eligibly.ai/assets/eligible-ai-opengraph.png",
+    "telephone": "+33-1-XX-XX-XX-XX",
+    "email": "contact@eligibly.ai",
+    "url": "https://eligibly.ai",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Tour Eiffel",
+      "addressLocality": "Paris", 
+      "addressRegion": "Île-de-France",
+      "postalCode": "75007",
+      "addressCountry": "FR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "48.8566",
+      "longitude": "2.3522"
+    },
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "priceRange": "€€",
+    "servesCuisine": "Technology",
+    "serviceArea": {
+      "@type": "Place",
+      "name": "France"
+    }
+  };
+
+  // FAQ Schema pour améliorer les featured snippets
+  const faqData = page === "homepage" ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce qu'Eligibly.ai ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Eligibly.ai est une plateforme d'intelligence artificielle spécialisée dans l'analyse des appels d'offres publics. Elle aide les entreprises à identifier les meilleures opportunités et à optimiser leurs chances de succès."
+        }
+      },
+      {
+        "@type": "Question", 
+        "name": "Comment l'IA d'Eligibly analyse-t-elle les appels d'offres ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Notre IA analyse plus de 600 sources d'appels d'offres publics, évalue la compatibilité avec votre profil d'entreprise et calcule un score de probabilité de succès pour chaque opportunité."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Eligibly est-il gratuit ?",
+        "acceptedAnswer": {
+          "@type": "Answer", 
+          "text": "Eligibly propose un essai gratuit de 14 jours. Ensuite, plusieurs plans sont disponibles selon vos besoins d'analyse d'appels d'offres."
+        }
+      }
+    ]
+  } : null;
+
   return (
     <>
       <script type="application/ld+json">
@@ -187,6 +250,14 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
       {articleData && (
         <script type="application/ld+json">
           {JSON.stringify(articleData)}
+        </script>
+      )}
+      <script type="application/ld+json">
+        {JSON.stringify(localBusinessData)}
+      </script>
+      {faqData && (
+        <script type="application/ld+json">
+          {JSON.stringify(faqData)}
         </script>
       )}
     </>
