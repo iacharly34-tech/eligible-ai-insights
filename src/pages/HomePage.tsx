@@ -32,7 +32,7 @@ import {
 } from "lucide-react";
 
 import charlyCharacterCorrect from "@/assets/charly-character-correct.png";
-import charlyOptimized from "@/assets/charly-avatar-optimized.webp";
+import charlyOptimized from "/lovable-uploads/6537d5ff-d496-4132-a49b-75e2d127ec58.png";
 import heroOptimized from "@/assets/eligible-ai-hero-optimized.webp";
 import { FAQSection } from "@/components/FAQSection";
 import { processCharlyImage } from "@/utils/processCharlyImage";
@@ -378,10 +378,9 @@ const HomePage = () => {
               <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 backdrop-blur-sm border border-white/10 relative">
                 {/* Charly Image - Center */}
                 <div className="flex justify-center">
-                <picture>
-                  <source srcSet={charlyOptimized} type="image/webp" />
-                  <img 
-                    src={charlyImageUrl} 
+                 <picture>
+                   <img
+                    src="/lovable-uploads/6537d5ff-d496-4132-a49b-75e2d127ec58.png" 
                     alt="Charly, l'assistant IA d'Eligibly.ai dans sa présentation complète montrant l'interface d'analyse des marchés publics" 
                     className="w-full h-auto max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-sm object-contain"
                     role="img"
