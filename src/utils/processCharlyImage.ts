@@ -1,12 +1,10 @@
-import { removeBackground, loadImage } from './backgroundRemoval';
-import aiCharacterTechMale from '../assets/ai-character-tech-male.png';
+import { removeBackground, loadImageFromUrl } from './backgroundRemoval';
 
 export const processCharlyImage = async (): Promise<string> => {
   try {
-    // Load the original tech male character image
-    const response = await fetch(aiCharacterTechMale);
-    const blob = await response.blob();
-    const imageElement = await loadImage(blob);
+    // Load the current Charly image from the uploaded file
+    const charlyImageUrl = '/lovable-uploads/6537d5ff-d496-4132-a49b-75e2d127ec58.png';
+    const imageElement = await loadImageFromUrl(charlyImageUrl);
     
     // Remove background using the AI segmentation
     const resultBlob = await removeBackground(imageElement);
@@ -16,7 +14,8 @@ export const processCharlyImage = async (): Promise<string> => {
     
     return processedUrl;
   } catch (error) {
-    // Error processing Charly image
-    throw error;
+    console.error('Error processing Charly image:', error);
+    // Return original image as fallback
+    return '/lovable-uploads/6537d5ff-d496-4132-a49b-75e2d127ec58.png';
   }
 };

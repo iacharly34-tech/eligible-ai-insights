@@ -60,8 +60,10 @@ const HomePage = () => {
     
     // SEO optimizations are now active
     
-    // Set Charly image directly
-    setCharlyImageUrl('/lovable-uploads/3b99063c-b9f2-4ac4-88a9-0bf7e68f0f43.png');
+    // Process Charly image to remove background
+    processCharlyImage()
+      .then(setCharlyImageUrl)
+      .catch(() => setCharlyImageUrl('/lovable-uploads/6537d5ff-d496-4132-a49b-75e2d127ec58.png'));
   }, []);
 
   // Utilisation des données centralisées au lieu des définitions locales
@@ -380,7 +382,7 @@ const HomePage = () => {
                 <div className="flex justify-center">
                  <picture>
                    <img
-                    src="/lovable-uploads/6537d5ff-d496-4132-a49b-75e2d127ec58.png" 
+                     src={charlyImageUrl}
                     alt="Charly, l'assistant IA d'Eligibly.ai dans sa présentation complète montrant l'interface d'analyse des marchés publics" 
                     className="w-full h-auto max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-sm object-contain"
                     role="img"
