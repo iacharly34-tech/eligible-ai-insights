@@ -143,20 +143,19 @@ const HomePage = () => {
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <div className="flex flex-col gap-3 w-full max-w-sm mx-auto sm:max-w-none sm:mx-0 sm:flex-row sm:gap-4">
                 <SafeLink to="/demo" className="w-full sm:w-auto">
                   <Button 
                     variant="tengo"
-                    className="cta-button group w-full"
+                    className="w-full h-12 text-sm font-semibold px-6 group min-h-[44px] whitespace-nowrap overflow-hidden"
                     role="button"
                     aria-label={t('accessibility.demo')}
                   >
-                    <Play className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                    {t('hero.cta.primary')}
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    <Play className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform flex-shrink-0" />
+                    <span className="truncate">{t('hero.cta.primary')}</span>
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                   </Button>
                 </SafeLink>
-                
               </div>
 
               {/* Trust indicators */}
@@ -166,140 +165,133 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Right Column - Eligibly.ai Unique Dashboard */}
-            <div className="relative z-0 w-full mt-8 lg:mt-0 lg:scale-[0.95] xl:scale-100 lg:origin-right lg:max-w-[600px] xl:max-w-[640px] 2xl:max-w-[680px] ml-auto">
-              {/* Dashboard Container - Unique Eligibly Design */}
-              <div className="bg-gradient-to-br from-white via-gray-50 to-blue-50 rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
+            {/* Right Column - Dashboard optimisé responsive */}
+            <div className="relative z-0 w-full mt-8 lg:mt-0 max-w-full overflow-hidden">
+              {/* Dashboard Container - Design responsive amélioré */}
+              <div className="bg-gradient-to-br from-white via-gray-50 to-blue-50 rounded-xl shadow-2xl border border-gray-200 overflow-hidden w-full max-w-full">
                 
                 {/* Header Dashboard - Eligibly Style */}
-                <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 px-3 sm:px-6 py-3 sm:py-5 text-white">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">
-                    <div className="min-w-0 flex-1">
-                      <h3 className="text-base sm:text-2xl font-bold flex items-center gap-2 sm:gap-3">
-                        <div className="w-5 h-5 sm:w-8 sm:h-8 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                          <Target className="w-3 h-3 sm:w-5 sm:h-5 text-white" />
-                        </div>
-                        <span className="truncate">Charly AI Assistant</span>
-                      </h3>
-                      <p className="text-blue-100 mt-1 text-xs sm:text-base break-words">{t('home.aiDetection')}</p>
-                    </div>
-                    <div className="flex items-center gap-3 flex-shrink-0">
-                      <div className="flex items-center gap-1 sm:gap-2 bg-white/20 rounded-full px-2 sm:px-4 py-1 sm:py-2">
-                        <div className="w-1.5 h-1.5 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-[10px] sm:text-sm font-semibold break-words">{t('home.analysisInProgress')}</span>
+                <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 px-4 py-4 text-white">
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="min-w-0 flex-1">
+                        <h3 className="text-lg font-bold flex items-center gap-2">
+                          <div className="w-6 h-6 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Target className="w-4 h-4 text-white" />
+                          </div>
+                          <span className="truncate">Charly AI Assistant</span>
+                        </h3>
+                        <p className="text-blue-100 text-sm break-words">{t('home.aiDetection')}</p>
+                      </div>
+                      <div className="flex items-center gap-2 bg-white/20 rounded-full px-3 py-1 flex-shrink-0">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-xs font-semibold whitespace-nowrap">{t('home.analysisInProgress')}</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Body Dashboard - Eligibly.ai Original Layout */}
-                <div className="p-3 sm:p-6 space-y-3 sm:space-y-6 break-words">
-                  {/* Métriques principales - Design Eligibly */}
-                  <div className="grid grid-cols-3 gap-1 sm:gap-4">
-                    <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg sm:rounded-2xl p-2 sm:p-5 text-white text-center">
-                      <div className="text-lg sm:text-3xl font-bold">23</div>
-                      <div className="text-[10px] sm:text-xs opacity-90 mt-1 break-words">{t('home.metrics.new')}</div>
-                      <div className="text-[9px] sm:text-xs opacity-75 mt-1 hidden sm:block break-words">{t('home.metrics.fromYesterday')}</div>
+                <div className="p-4 space-y-4 w-full overflow-hidden">
+                  {/* Métriques principales - Layout responsive */}
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg p-3 text-white text-center min-w-0">
+                      <div className="text-xl font-bold">23</div>
+                      <div className="text-xs opacity-90 mt-1 truncate">{t('home.metrics.new')}</div>
                     </div>
-                    <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg sm:rounded-2xl p-2 sm:p-5 text-white text-center">
-                      <div className="text-lg sm:text-3xl font-bold">96%</div>
-                      <div className="text-[10px] sm:text-xs opacity-90 mt-1 break-words">{t('home.metrics.avgScore')}</div>
-                      <div className="text-[9px] sm:text-xs opacity-75 mt-1 hidden sm:block break-words">{t('home.metrics.thisMonth')}</div>
+                    <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg p-3 text-white text-center min-w-0">
+                      <div className="text-xl font-bold">96%</div>
+                      <div className="text-xs opacity-90 mt-1 truncate">{t('home.metrics.avgScore')}</div>
                     </div>
-                    <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg sm:rounded-2xl p-2 sm:p-5 text-white text-center">
-                      <div className="text-sm sm:text-3xl font-bold">4.2M€</div>
-                      <div className="text-[10px] sm:text-xs opacity-90 mt-1 break-words">{t('home.metrics.totalValue')}</div>
-                      <div className="text-[9px] sm:text-xs opacity-75 mt-1 hidden sm:block break-words">{t('home.metrics.thisWeek')}</div>
+                    <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg p-3 text-white text-center min-w-0">
+                      <div className="text-lg font-bold">4.2M€</div>
+                      <div className="text-xs opacity-90 mt-1 truncate">{t('home.metrics.totalValue')}</div>
                     </div>
                   </div>
 
-                  {/* Section Opportunités - Unique Eligibly Style */}
-                  <div className="space-y-3 sm:space-y-4">
-                    <div className="flex items-center justify-between">
-                      <h4 className="text-sm sm:text-lg font-bold text-gray-900 flex items-center gap-1 sm:gap-2">
-                        <div className="w-4 h-4 sm:w-6 sm:h-6 bg-purple-100 rounded-lg flex items-center justify-center">
-                          <Target className="w-3 h-3 sm:w-4 sm:h-4 text-purple-600" />
+                  {/* Section Opportunités - Layout responsive */}
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between gap-2">
+                      <h4 className="text-sm font-bold text-gray-900 flex items-center gap-2 min-w-0">
+                        <div className="w-5 h-5 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Target className="w-3 h-3 text-purple-600" />
                         </div>
-                        <span className="break-words">{t('home.priorityOpportunities')}</span>
+                        <span className="truncate">{t('home.priorityOpportunities')}</span>
                       </h4>
-                      <Badge className="bg-purple-100 text-purple-700 text-[10px] sm:text-xs px-2 sm:px-3 py-1">
-                        <span className="break-words">{t('home.recommendedByCharly')}</span>
+                      <Badge className="bg-purple-100 text-purple-700 text-xs px-2 py-1 flex-shrink-0">
+                        <span className="truncate">{t('home.recommendedByCharly')}</span>
                       </Badge>
                     </div>
                     
-                    <div className="space-y-2 sm:space-y-3">
-                      {/* Opportunité 1 - Design original Eligibly */}
-                      <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-5 border-l-4 border-l-green-500 shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div className="flex items-start justify-between mb-2 sm:mb-3">
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 flex-wrap">
-                              <div className="bg-green-500 text-white text-xs sm:text-sm font-bold px-2 sm:px-3 py-1 rounded-full">
-                                2,4M€
-                              </div>
-                              <div className="bg-green-100 text-green-700 text-[10px] sm:text-xs font-semibold px-1 sm:px-2 py-1 rounded-full">
-                                🎯 {t('home.matchPerfect')} • 94%
-                              </div>
+                    <div className="space-y-3">
+                      {/* Opportunité 1 - Responsive design */}
+                      <div className="bg-white rounded-xl p-4 border-l-4 border-l-green-500 shadow-lg hover:shadow-xl transition-all duration-300 w-full overflow-hidden">
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <div className="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full flex-shrink-0">
+                              2,4M€
                             </div>
-                            <h5 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base break-words">{t('dashboard.opportunity1.title')}</h5>
-                            <p className="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 flex items-center gap-1 sm:gap-2 break-words">🏛️ {t('dashboard.opportunity1.client')}</p>
-                            <div className="flex items-center gap-2 sm:gap-4 text-[10px] sm:text-xs text-gray-500 flex-wrap">
-                              <span className="flex items-center gap-1 bg-gray-100 px-1 sm:px-2 py-1 rounded-full">
-                                <Clock className="w-2 h-2 sm:w-3 sm:h-3" />
-                                <span className="break-words">{t('ao.deadline')}: 15/03/2026</span>
-                              </span>
-                              <span className="text-green-600 font-medium bg-green-50 px-1 sm:px-2 py-1 rounded-full break-words">
-                                ✨ {t('home.charlyRecommendation')}
-                              </span>
+                            <div className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full flex-shrink-0">
+                              🎯 {t('home.matchPerfect')} • 94%
                             </div>
+                          </div>
+                          <h5 className="font-bold text-gray-900 text-sm line-clamp-2">{t('dashboard.opportunity1.title')}</h5>
+                          <p className="text-xs text-gray-600 flex items-center gap-2 truncate">🏛️ {t('dashboard.opportunity1.client')}</p>
+                          <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500">
+                            <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-full flex-shrink-0">
+                              <Clock className="w-2 h-2 flex-shrink-0" />
+                              <span className="whitespace-nowrap">{t('ao.deadline')}: 15/03/2026</span>
+                            </span>
+                            <span className="text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full flex-shrink-0 whitespace-nowrap">
+                              ✨ {t('home.charlyRecommendation')}
+                            </span>
                           </div>
                         </div>
                       </div>
 
-                      {/* Opportunité 2 - Design original Eligibly */}
-                      <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-5 border-l-4 border-l-blue-500 shadow-lg hover:shadow-xl transition-all duration-300">
-                        <div className="flex items-start justify-between mb-2 sm:mb-3">
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 flex-wrap">
-                              <div className="bg-blue-500 text-white text-xs sm:text-sm font-bold px-2 sm:px-3 py-1 rounded-full">
-                                890K€
-                              </div>
-                              <div className="bg-blue-100 text-blue-700 text-[10px] sm:text-xs font-semibold px-1 sm:px-2 py-1 rounded-full">
-                                🔄 {t('home.renewal')} • 91%
-                              </div>
+                      {/* Opportunité 2 - Responsive design */}
+                      <div className="bg-white rounded-xl p-4 border-l-4 border-l-blue-500 shadow-lg hover:shadow-xl transition-all duration-300 w-full overflow-hidden">
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <div className="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full flex-shrink-0">
+                              890K€
                             </div>
-                            <h5 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base break-words">{t('dashboard.opportunity2.title')}</h5>
-                            <p className="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2 flex items-center gap-1 sm:gap-2 break-words">🌍 {t('dashboard.opportunity2.client')}</p>
-                            <div className="flex items-center gap-2 sm:gap-4 text-[10px] sm:text-xs text-gray-500 flex-wrap">
-                              <span className="flex items-center gap-1 bg-gray-100 px-1 sm:px-2 py-1 rounded-full">
-                                <Clock className="w-2 h-2 sm:w-3 sm:h-3" />
-                                <span className="break-words">{t('ao.deadline')}: 28/02/2026</span>
-                              </span>
-                              <span className="text-blue-600 font-medium bg-blue-50 px-1 sm:px-2 py-1 rounded-full break-words">
-                                👍 {t('home.goodCompatibility')}
-                              </span>
+                            <div className="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded-full flex-shrink-0">
+                              🔄 {t('home.renewal')} • 91%
                             </div>
+                          </div>
+                          <h5 className="font-bold text-gray-900 text-sm line-clamp-2">{t('dashboard.opportunity2.title')}</h5>
+                          <p className="text-xs text-gray-600 flex items-center gap-2 truncate">🌍 {t('dashboard.opportunity2.client')}</p>
+                          <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500">
+                            <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-full flex-shrink-0">
+                              <Clock className="w-2 h-2 flex-shrink-0" />
+                              <span className="whitespace-nowrap">{t('ao.deadline')}: 28/02/2026</span>
+                            </span>
+                            <span className="text-blue-600 font-medium bg-blue-50 px-2 py-1 rounded-full flex-shrink-0 whitespace-nowrap">
+                              👍 {t('home.goodCompatibility')}
+                            </span>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Footer Stats - Design unique Eligibly */}
-                  <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-gray-200">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600">
-                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                          <Brain className="w-3 h-3 sm:w-4 sm:h-4 text-purple-600" />
+                  {/* Footer Stats - Design responsive */}
+                  <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl p-3 border border-gray-200">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-2 text-xs text-gray-600 min-w-0">
+                        <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Brain className="w-3 h-3 text-purple-600" />
                         </div>
-                          <div>
-                            <div className="font-semibold text-gray-900 text-xs sm:text-base break-words">{t('home.charlyInAction')}</div>
-                            <div className="text-[10px] sm:text-xs text-gray-500 break-words">{t('home.lastAnalysis')}</div>
-                          </div>
+                        <div className="min-w-0">
+                          <div className="font-semibold text-gray-900 text-sm truncate">{t('home.charlyInAction')}</div>
+                          <div className="text-xs text-gray-500 truncate">{t('home.lastAnalysis')}</div>
                         </div>
-                        <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm font-semibold">
-                          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse"></div>
-                          <span className="text-green-600 break-words">{t('home.detectedMore')}</span>
-                        </div>
+                      </div>
+                      <div className="flex items-center gap-1 text-xs font-semibold flex-shrink-0">
+                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span className="text-green-600 whitespace-nowrap">{t('home.detectedMore')}</span>
+                      </div>
                     </div>
                   </div>
                 </div>

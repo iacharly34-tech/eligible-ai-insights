@@ -207,15 +207,17 @@ All colors MUST be HSL.
   /* Robust CTA styling - prevents overflow */
   .cta-button {
     @apply inline-flex items-center justify-center box-border;
-    @apply min-h-[44px] w-full max-w-full px-5 py-3;
-    @apply text-base font-semibold leading-tight text-center;
+    @apply min-h-[44px] w-full max-w-full px-4 py-3;
+    @apply text-sm font-semibold leading-tight text-center;
     @apply rounded-xl transition-all duration-200;
-    white-space: normal;
-    overflow-wrap: anywhere;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 
   .cta-row {
-    @apply flex flex-col gap-3 items-stretch;
+    @apply flex flex-col gap-3 items-stretch w-full;
   }
 
   @media (min-width: 640px) {
@@ -223,7 +225,8 @@ All colors MUST be HSL.
       @apply flex-row items-center justify-center;
     }
     .cta-button {
-      @apply w-auto min-w-[160px];
+      @apply w-auto min-w-[160px] max-w-[280px];
+      white-space: normal;
     }
   }
 
@@ -453,6 +456,27 @@ All colors MUST be HSL.
     background: white;
     border-radius: 12px;
     padding: 8px;
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  body, html {
+    overflow-x: hidden;
+  }
+
+  /* Fix for text wrapping and overflow */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Better mobile spacing */
+  @media (max-width: 640px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
 
   /* Respect reduced motion preferences */

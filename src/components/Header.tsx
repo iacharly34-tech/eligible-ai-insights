@@ -99,9 +99,9 @@ export const Header = () => {
             </SafeLink>
           </div>
 
-          {/* Mobile Menu Toggle - FIXED POSITIONING */}
+          {/* Mobile Menu Toggle - Position fixe améliorée */}
           <button
-            className="md:hidden absolute top-2 right-4 z-[1100] w-11 h-11 hover:bg-muted rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center bg-background border border-border shadow-sm"
+            className="md:hidden fixed top-2 right-4 z-[1100] w-11 h-11 hover:bg-muted rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center bg-background border border-border shadow-lg"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? t('accessibility.menu.close') : t('accessibility.menu.open')}
             aria-expanded={isMenuOpen}
@@ -161,13 +161,13 @@ export const Header = () => {
                 </ul>
                 
                 <div className="space-y-4 px-6">
-                  <div className="flex justify-center">
+                  <div className="flex justify-center mb-4">
                     <LanguageSwitcher />
                   </div>
                   <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
                     <Button 
                       variant="tengo"
-                      className="w-full text-lg font-semibold h-14 min-h-[44px] rounded-xl"
+                      className="w-full h-12 text-sm font-semibold rounded-xl"
                       onClick={() => setIsMenuOpen(false)}
                       tabIndex={isMenuOpen ? 0 : -1}
                       aria-label={t('accessibility.demo')}

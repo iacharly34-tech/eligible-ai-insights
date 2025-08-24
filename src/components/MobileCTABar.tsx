@@ -38,11 +38,11 @@ export const MobileCTABar: React.FC = () => {
     >
       <Button
         variant="tengo"
-        className="w-full cta-button shadow-glow"
+        className="w-full h-12 text-sm font-semibold px-4 shadow-glow rounded-xl overflow-hidden"
         aria-label={t('accessibility.demo')}
         onClick={handleClick}
       >
-        {t('nav.demo')}
+        <span className="truncate">{t('nav.demo')}</span>
       </Button>
     </div>
   );

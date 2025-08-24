@@ -59,17 +59,17 @@ export const Hero = () => {
               </div>
             </div>
             
-            <div className="cta-row">
+            <div className="flex flex-col gap-3 w-full max-w-sm mx-auto sm:max-w-none sm:mx-0 sm:flex-row sm:gap-4">
               <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
-                <Button variant="tengo" className="cta-button group">
+                <Button variant="tengo" className="w-full h-12 text-sm font-semibold px-6 group min-h-[44px] whitespace-nowrap overflow-hidden">
                   {t('hero.cta.primary')}
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </Button>
               </SafeLink>
               <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
-                <Button variant="outline" className="cta-button">
-                  <Play className="w-4 h-4 mr-2" />
-                  {t('hero.cta.secondary')}
+                <Button variant="outline" className="w-full h-12 text-sm font-semibold px-6 group min-h-[44px] whitespace-nowrap overflow-hidden">
+                  <Play className="w-4 h-4 mr-2 flex-shrink-0" />
+                  <span className="truncate">{t('hero.cta.secondary')}</span>
                 </Button>
               </SafeLink>
             </div>
