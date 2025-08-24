@@ -9,6 +9,7 @@ import { MobileCTABar } from "@/components/MobileCTABar";
 import { Input } from "@/components/ui/input";
 import { SafeLink } from "@/components/SafeLink";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
   BookOpen,
   Calendar,
@@ -25,7 +26,11 @@ import {
   Shield,
   Brain,
   Lightbulb,
-  AlertTriangle
+  AlertTriangle,
+  Clock,
+  Filter,
+  BarChart3,
+  Quote
 } from "lucide-react";
 
 const Ressources = () => {
@@ -50,7 +55,8 @@ const Ressources = () => {
       date: "12 septembre 2025",
       readTime: "8 min",
       icon: Brain,
-      category: "Innovation & Prospective"
+      category: "IA & automatisation",
+      isFeatured: true
     },
     {
       title: "Critères environnementaux et sociaux : comment les intégrer",
@@ -59,7 +65,8 @@ const Ressources = () => {
       date: "28 août 2025",
       readTime: "8 min",
       icon: Sparkles,
-      category: "RSE & Durabilité"
+      category: "Critères RSE & innovation",
+      isFeatured: true
     },
     {
       title: "PME, comment rivaliser avec les grands groupes sur les AO",
@@ -68,7 +75,8 @@ const Ressources = () => {
       date: "19 août 2025",
       readTime: "7 min",
       icon: Users,
-      category: "Stratégies PME"
+      category: "Répondre efficacement aux AO",
+      isFeatured: true
     },
     {
       title: "Marchés publics et innovation : où se cachent les vraies opportunités",
@@ -77,7 +85,7 @@ const Ressources = () => {
       date: "5 août 2025",
       readTime: "8 min",
       icon: Lightbulb,
-      category: "Innovation & Prospective"
+      category: "Tendances & data clés"
     },
     {
       title: "Pourquoi 3 appels d'offres sur 5 sont perdus d'avance",
@@ -86,7 +94,8 @@ const Ressources = () => {
       date: "22 juillet 2025",
       readTime: "6 min",
       icon: AlertTriangle,
-      category: "Pièges à éviter"
+      category: "Tendances & data clés",
+      isFeatured: true
     },
     {
       title: "Anticiper les appels d'offres : le vrai avantage compétitif",
@@ -95,7 +104,7 @@ const Ressources = () => {
       date: "18 juillet 2025",
       readTime: "7 min",
       icon: TrendingUp,
-      category: "Stratégies avancées"
+      category: "Répondre efficacement aux AO"
     },
     {
       title: "Les signaux faibles qui trahissent un marché public verrouillé",
@@ -104,7 +113,7 @@ const Ressources = () => {
       date: "8 juillet 2025",
       readTime: "8 min",
       icon: Shield,
-      category: "Pièges à éviter"
+      category: "Répondre efficacement aux AO"
     },
     {
       title: "Comment bâtir une vraie stratégie AO basée sur les données",
@@ -113,7 +122,7 @@ const Ressources = () => {
       date: "2 juillet 2025",
       readTime: "7 min",
       icon: Brain,
-      category: "Stratégies avancées"
+      category: "Tendances & data clés"
     },
     {
       title: "Les 7 plus grosses erreurs des PME sur les marchés publics",
@@ -122,7 +131,7 @@ const Ressources = () => {
       date: "25 juin 2025",
       readTime: "6 min",
       icon: AlertTriangle,
-      category: "Pièges à éviter"
+      category: "Répondre efficacement aux AO"
     },
     {
       title: "Comment détecter les bons appels d'offres sans perdre des heures",
@@ -131,8 +140,16 @@ const Ressources = () => {
       date: "15 juin 2025",
       readTime: "7 min",
       icon: Eye,
-      category: "Stratégies de base"
+      category: "IA & automatisation"
     }
+  ];
+
+  const featuredArticles = allArticles.filter(article => article.isFeatured);
+  const thematicCategories = [
+    "Répondre efficacement aux AO",
+    "Tendances & data clés", 
+    "Critères RSE & innovation",
+    "IA & automatisation"
   ];
 
   const categories = [...new Set(allArticles.map(article => article.category))];
@@ -145,79 +162,267 @@ const Ressources = () => {
         <MobileCTABar />
         
         {/* Hero Section */}
-        <section className="pt-32 pb-16 px-4">
-          <div className="container mx-auto max-w-5xl text-center">
-            <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 border-blue-200">
-              <BookOpen className="w-4 h-4 mr-2" />
-              10 articles experts disponibles
-            </Badge>
-            
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Maîtrisez les{" "}
+        <section className="pt-32 pb-20 px-4">
+          <div className="container mx-auto max-w-6xl text-center">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              Décoder les{" "}
               <span className="bg-gradient-highlight bg-clip-text text-transparent">
                 marchés publics
               </span>
             </h1>
             
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Guides pratiques, stratégies expertes et analyses approfondies pour maximiser vos chances de succès sur les appels d'offres publics. Rédigés par nos spécialistes.
+            <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed">
+              Des contenus experts, des stratégies éprouvées et des données actualisées pour maximiser vos chances de succès sur les appels d'offres publics.
             </p>
-          </div>
-        </section>
 
-        {/* Newsletter */}
-        <section className="pb-16 px-4">
-          <div className="container mx-auto max-w-2xl">
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Bell className="w-5 h-5 text-blue-600" />
-                <h3 className="text-lg font-semibold text-gray-900">Restez informé des nouveaux articles</h3>
-              </div>
-              
+            {/* Newsletter inline dans le hero */}
+            <div className="max-w-md mx-auto">
               {!isSubscribed ? (
-                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+                <form onSubmit={handleSubscribe} className="flex gap-3">
                   <Input
                     type="email"
                     placeholder="votre@email.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1"
+                    className="flex-1 text-base"
                     required
                   />
-                  <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white">
-                    M'abonner
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                  <Button type="submit" size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6">
+                    📩 Recevoir
                   </Button>
                 </form>
               ) : (
-                <div className="flex items-center justify-center gap-2 text-green-600">
+                <div className="flex items-center justify-center gap-2 text-green-600 bg-green-50 rounded-lg p-4">
                   <CheckCircle className="w-5 h-5" />
-                  <span className="font-medium">Merci ! Vous recevrez nos nouveaux articles par email.</span>
+                  <span className="font-medium">Merci ! Vous recevrez nos analyses chaque semaine.</span>
                 </div>
               )}
               
-              <p className="text-sm text-gray-500 mt-3 text-center">
-                Un nouvel article expert chaque semaine dans votre boîte mail
+              <p className="text-sm text-gray-500 mt-3">
+                Analyses d'experts • Tendances du marché • Guides pratiques
               </p>
             </div>
           </div>
         </section>
 
-        {/* Articles Grid - Chronologique décroissant */}
-        <section className="py-16 px-4 bg-white/60">
+        {/* Articles phares */}
+        <section className="py-20 px-4 bg-white">
           <div className="container mx-auto max-w-7xl">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Articles experts par ordre chronologique
+            <div className="text-center mb-16">
+              <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 border-blue-200 text-sm px-4 py-2">
+                <Sparkles className="w-4 h-4 mr-2" />
+                Articles phares
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Nos guides les plus consultés
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Retrouvez tous nos guides pratiques, du plus récent au plus ancien
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Les contenus essentiels pour comprendre et maîtriser les marchés publics
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {featuredArticles.map((article, index) => (
+                <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white shadow-lg h-full hover:-translate-y-2">
+                  <CardContent className="p-0">
+                    <div className="h-48 bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700 relative overflow-hidden rounded-t-lg">
+                      <div className="absolute inset-0 bg-black/20"></div>
+                      <div className="absolute top-4 left-4">
+                        <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
+                          {article.isFeatured && "Guide complet"}
+                        </Badge>
+                      </div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-3">
+                          <article.icon className="w-8 h-8 text-white" />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 text-xs text-gray-500 mb-3">
+                        <Clock className="w-3 h-3" />
+                        <span>{article.readTime}</span>
+                        <span>•</span>
+                        <span>{article.date}</span>
+                      </div>
+                      
+                      <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                        {article.title}
+                      </h3>
+                      
+                      <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                        {article.description}
+                      </p>
+                      
+                      <SafeLink to={article.url}>
+                        <Button variant="outline" size="sm" className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all">
+                          Lire le guide
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Button>
+                      </SafeLink>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Explorer par thématiques */}
+        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100">
+          <div className="container mx-auto max-w-7xl">
+            <div className="text-center mb-16">
+              <Badge className="mb-6 bg-gradient-to-r from-green-100 to-blue-100 text-green-700 border-green-200 text-sm px-4 py-2">
+                <Filter className="w-4 h-4 mr-2" />
+                Explorer par thématiques
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Choisissez votre domaine d'expertise
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Retrouvez facilement les contenus qui correspondent à vos besoins et votre secteur d'activité
+              </p>
+            </div>
+
+            <Tabs defaultValue={thematicCategories[0]} className="w-full">
+              <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 mb-12 bg-white/60 backdrop-blur-sm p-2 rounded-2xl">
+                {thematicCategories.map((category) => (
+                  <TabsTrigger 
+                    key={category} 
+                    value={category} 
+                    className="data-[state=active]:bg-white data-[state=active]:shadow-lg rounded-xl py-3 px-4 text-sm font-medium"
+                  >
+                    {category}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+
+              {thematicCategories.map((category) => (
+                <TabsContent key={category} value={category} className="mt-0">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {allArticles
+                      .filter(article => article.category === category)
+                      .map((article, index) => (
+                        <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm h-full hover:-translate-y-1">
+                          <CardContent className="p-6 flex flex-col h-full">
+                            <div className="flex items-start justify-between mb-4">
+                              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <article.icon className="w-6 h-6 text-white" />
+                              </div>
+                              <Badge variant="outline" className="text-xs text-blue-600 border-blue-300">
+                                {article.readTime}
+                              </Badge>
+                            </div>
+                            
+                            <div className="flex items-center gap-2 text-xs text-gray-500 mb-3">
+                              <Calendar className="w-3 h-3" />
+                              <span>{article.date}</span>
+                            </div>
+                            
+                            <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                              {article.title}
+                            </h3>
+                            
+                            <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                              {article.description}
+                            </p>
+                            
+                            <SafeLink to={article.url} className="mt-auto">
+                              <Button variant="outline" size="sm" className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all">
+                                Lire l'article
+                                <ArrowRight className="w-4 h-4 ml-2" />
+                              </Button>
+                            </SafeLink>
+                          </CardContent>
+                        </Card>
+                      ))}
+                  </div>
+                </TabsContent>
+              ))}
+            </Tabs>
+          </div>
+        </section>
+
+        {/* Micro-contenus contextuels avec stats */}
+        <section className="py-20 px-4 bg-white">
+          <div className="container mx-auto max-w-6xl">
+            <div className="text-center mb-16">
+              <Badge className="mb-6 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 border-purple-200 text-sm px-4 py-2">
+                <BarChart3 className="w-4 h-4 mr-2" />
+                Données clés du secteur
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Ce que révèlent les chiffres
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <Card className="border-0 bg-gradient-to-r from-blue-50 to-indigo-50 p-8">
+                <div className="flex items-start gap-4">
+                  <Quote className="w-8 h-8 text-blue-600 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-2xl font-bold text-gray-900 mb-2">
+                      "59,9% des marchés sont remportés par des PME, mais seulement 27,2% du montant total leur est attribué."
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      — Observatoire Économique de la Commande Publique (OECP) 2023
+                    </p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="border-0 bg-gradient-to-r from-green-50 to-emerald-50 p-8">
+                <div className="flex items-start gap-4">
+                  <Quote className="w-8 h-8 text-green-600 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-2xl font-bold text-gray-900 mb-2">
+                      "On passe 5 heures par semaine à trier des AO… pour en écarter 80%."
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      — Dirigeant PME secteur IT, interview terrain Eligibly
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-2">110 Mds€</div>
+                <div className="text-sm text-gray-600">Budget annuel marchés publics</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-600 mb-2">3,2M</div>
+                <div className="text-sm text-gray-600">Appels d'offres publiés/an</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-purple-600 mb-2">40%</div>
+                <div className="text-sm text-gray-600">Marchés publics dématérialisés</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-orange-600 mb-2">25j</div>
+                <div className="text-sm text-gray-600">Délai moyen de réponse</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Tous les articles */}
+        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100">
+          <div className="container mx-auto max-w-7xl">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Tous nos articles experts
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Chaque semaine, Eligibly décrypte les marchés publics pour vous aider à anticiper les opportunités et maximiser vos chances de succès.
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {allArticles.map((article, index) => (
-                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-white backdrop-blur-sm h-full">
+                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm h-full hover:-translate-y-1">
                   <CardContent className="p-6 flex flex-col h-full">
                     <div className="flex items-start justify-between mb-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -233,9 +438,11 @@ const Ressources = () => {
                       <span>{article.date}</span>
                       <span>•</span>
                       <span>{article.readTime}</span>
+                      <span>•</span>
+                      <span>Par Charly, votre copilote AO</span>
                     </div>
                     
-                    <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors flex-grow">
+                    <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors">
                       {article.title}
                     </h3>
                     
@@ -253,23 +460,16 @@ const Ressources = () => {
                 </Card>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Categories Filter - Optional future enhancement */}
-        <section className="py-16 px-4 bg-gradient-to-r from-slate-50 to-gray-100">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-2xl font-bold mb-6">Parcourir par thématique</h2>
-            <div className="flex flex-wrap gap-3 justify-center">
-              {categories.map((category, index) => (
-                <Badge key={index} variant="outline" className="px-4 py-2 text-sm hover:bg-blue-50 cursor-pointer transition-colors">
-                  {category}
-                </Badge>
-              ))}
+            
+            <div className="text-center mt-12">
+              <p className="text-gray-600 mb-6">
+                Les marchés publics évoluent vite. Les critères changent. La concurrence s'intensifie.<br/>
+                <strong>Charly, votre agent intelligent</strong>, lit pour vous plus de 600 sources et partage ici les meilleures analyses, stratégies et tendances.
+              </p>
+              <p className="text-lg font-semibold text-gray-900">
+                L'objectif : vous aider à consacrer moins de temps à chercher… et plus à gagner.
+              </p>
             </div>
-            <p className="text-gray-600 mt-4 text-sm">
-              Filtrage par catégorie bientôt disponible
-            </p>
           </div>
         </section>
 
