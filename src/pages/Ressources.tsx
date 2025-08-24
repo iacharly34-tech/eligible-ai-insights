@@ -11,6 +11,8 @@ import { SafeLink } from "@/components/SafeLink";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SocialShare } from "@/components/ui/social-share";
+import { ExpertArticleCarousel } from "@/components/ExpertArticleCarousel";
+import { ArticleCard } from "@/components/ArticleCard";
 import { 
   BookOpen,
   Calendar,
@@ -224,56 +226,16 @@ const Ressources = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {featuredArticles.map((article, index) => (
-                <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white shadow-lg h-full hover:-translate-y-2">
-                  <CardContent className="p-0">
-                    <div className="h-48 bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700 relative overflow-hidden rounded-t-lg">
-                      <div className="absolute inset-0 bg-black/20"></div>
-                      <div className="absolute top-4 left-4">
-                        <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
-                          {article.isFeatured && "Guide complet"}
-                        </Badge>
-                      </div>
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-3">
-                          <article.icon className="w-8 h-8 text-white" />
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="p-6">
-                      <div className="flex items-center gap-2 text-xs text-gray-500 mb-3">
-                        <Clock className="w-3 h-3" />
-                        <span>{article.readTime}</span>
-                        <span>•</span>
-                        <span>{article.date}</span>
-                      </div>
-                      
-                      <h3 className="text-base font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors">
-                        {article.title}
-                      </h3>
-                      
-                      <p className="text-gray-600 text-xs leading-relaxed mb-4">
-                        {article.description}
-                      </p>
-                      
-                      <div className="mb-4">
-                        <SocialShare 
-                          title={article.title}
-                          url={article.url}
-                          variant="minimal"
-                          size="sm"
-                        />
-                      </div>
-                      
-                      <SafeLink to={article.url}>
-                        <Button variant="outline" size="sm" className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all">
-                          Lire le guide
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
-                      </SafeLink>
-                    </div>
-                  </CardContent>
-                </Card>
+                <ArticleCard
+                  key={index}
+                  title={article.title}
+                  description={article.description}
+                  category={article.category}
+                  date={article.date}
+                  readTime={article.readTime}
+                  url={article.url}
+                  variant="featured"
+                />
               ))}
             </div>
           </div>
@@ -427,79 +389,12 @@ const Ressources = () => {
           </div>
         </section>
 
-        {/* Tous les articles */}
-        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100">
-          <div className="container mx-auto max-w-7xl">
-            <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">
-                Tous nos articles experts
-              </h2>
-              <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-                Chaque semaine, Eligibly décrypte les marchés publics pour vous aider à anticiper les opportunités et maximiser vos chances de succès.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {allArticles.map((article, index) => (
-                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm h-full hover:-translate-y-1">
-                  <CardContent className="p-6 flex flex-col h-full">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <article.icon className="w-6 h-6 text-white" />
-                      </div>
-                      <Badge variant="outline" className="text-xs text-blue-600 border-blue-300">
-                        {article.category}
-                      </Badge>
-                    </div>
-                    
-                    <div className="flex items-center gap-2 text-xs text-gray-500 mb-3">
-                      <Calendar className="w-3 h-3" />
-                      <span>{article.date}</span>
-                      <span>•</span>
-                      <span>{article.readTime}</span>
-                      <span>•</span>
-                      <span>Par Charly, votre copilote AO</span>
-                    </div>
-                    
-                    <h3 className="text-base font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors">
-                      {article.title}
-                    </h3>
-                    
-                    <p className="text-gray-600 text-xs leading-relaxed mb-4 flex-grow">
-                      {article.description}
-                    </p>
-                    
-                    <div className="mb-4">
-                      <SocialShare 
-                        title={article.title}
-                        url={article.url}
-                        variant="default"
-                        size="sm"
-                      />
-                    </div>
-                    
-                    <SafeLink to={article.url} className="mt-auto">
-                      <Button variant="outline" size="sm" className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all">
-                        Lire l'article
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </Button>
-                    </SafeLink>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            
-            <div className="text-center mt-12">
-              <p className="text-gray-600 mb-6">
-                Les marchés publics évoluent vite. Les critères changent. La concurrence s'intensifie.<br/>
-                <strong>Charly, votre agent intelligent</strong>, lit pour vous plus de 600 sources et partage ici les meilleures analyses, stratégies et tendances.
-              </p>
-              <p className="text-lg font-semibold text-gray-900">
-                L'objectif : vous aider à consacrer moins de temps à chercher… et plus à gagner.
-              </p>
-            </div>
-          </div>
-        </section>
+        <ExpertArticleCarousel
+          articles={allArticles}
+          title="Tous nos articles experts"
+          subtitle="Chaque semaine, Eligibly décrypte les marchés publics pour vous aider à anticiper les opportunités et maximiser vos chances de succès."
+          variant="standard"
+        />
 
         {/* Stats & CTA */}
         <section className="py-20 px-4">
