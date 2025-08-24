@@ -12,12 +12,20 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
   const getPageSEO = () => {
     const path = location.pathname;
     
-    // Page article spécialisée
+    // Pages articles spécialisées
     if (path === '/appels-d-offres-publics') {
       return {
         title: "Comment l'IA transforme les appels d'offres publics (AO) en 2025 | Eligibly",
         description: "Découvrez comment Eligibly révolutionne l'analyse des appels d'offres publics et marchés publics grâce à l'IA. +40% de taux de succès, -75% de temps d'analyse.",
         keywords: "eligibly, appels d'offres publics, AO, marchés publics, IA, intelligence artificielle, analyse automatique"
+      };
+    }
+    
+    if (path === '/detection-appels-offres') {
+      return {
+        title: "Comment détecter les bons appels d'offres sans perdre des heures | Eligibly",
+        description: "Découvrez comment identifier efficacement les appels d'offres pertinents grâce à l'IA. Stratégies et outils pour optimiser votre veille marchés publics en 2025.",
+        keywords: "appels d'offres, marchés publics, détection, veille automatisée, IA, PME, filtrage AO"
       };
     }
     
