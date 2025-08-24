@@ -13,6 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SocialShare } from "@/components/ui/social-share";
 import { ExpertArticleCarousel } from "@/components/ExpertArticleCarousel";
 import { ArticleCard } from "@/components/ArticleCard";
+import { EligiblyButton, CTAButton } from "@/components/EligiblyButton";
 import { 
   BookOpen,
   Calendar,
@@ -190,9 +191,9 @@ const Ressources = () => {
                     className="flex-1 text-base"
                     required
                   />
-                  <Button type="submit" size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6">
+                  <EligiblyButton type="submit" size="lg" className="px-6">
                     📩 Recevoir
-                  </Button>
+                  </EligiblyButton>
                 </form>
               ) : (
                 <div className="flex items-center justify-center gap-2 text-green-600 bg-green-50 rounded-lg p-4">
@@ -419,16 +420,16 @@ const Ressources = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <SafeLink to="/demo">
-                  <Button variant="secondary" size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+                  <EligiblyButton variant="secondary" size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
                     <Zap className="w-5 h-5 mr-2" />
                     Tester Charly gratuitement
-                  </Button>
+                  </EligiblyButton>
                 </SafeLink>
                 <SafeLink to="/tarifs">
-                  <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                  <EligiblyButton variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
                     Découvrir nos offres
                     <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
+                  </EligiblyButton>
                 </SafeLink>
               </div>
             </div>

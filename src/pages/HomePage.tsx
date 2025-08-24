@@ -5,6 +5,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
 // UI
 import { Button } from "@/components/ui/button";
+import { EligiblyButton, CTAButton, SecondaryButton } from "@/components/EligiblyButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/Header";
@@ -126,16 +127,13 @@ const HomePage = () => {
               
               <div className="flex flex-col gap-3 w-full max-w-sm mx-auto sm:max-w-none sm:mx-0 sm:flex-row sm:gap-4">
                 <SafeLink to="/demo" className="w-full sm:w-auto">
-                  <Button 
-                    variant="tengo"
-                    className="w-full h-12 text-sm font-semibold px-6 group min-h-[44px] whitespace-nowrap overflow-hidden"
-                    role="button"
+                  <CTAButton 
+                    size="lg"
+                    className="w-full h-12 text-sm font-semibold px-6 min-h-[44px] whitespace-nowrap"
                     aria-label={t('accessibility.demo')}
                   >
-                    <Play className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform flex-shrink-0" />
-                    <span className="truncate">{t('hero.cta.primary')}</span>
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform flex-shrink-0" />
-                  </Button>
+                    {t('hero.cta.primary')}
+                  </CTAButton>
                 </SafeLink>
               </div>
 
@@ -353,23 +351,21 @@ const HomePage = () => {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 relative z-20">
                 <SafeLink to="/demo">
-                  <Button 
+                  <CTAButton 
                     size="lg" 
-                    className="bg-gradient-cta hover:shadow-glow text-white px-8 py-4 h-auto group transition-all duration-300 hover:scale-105 shadow-xl w-full"
+                    className="px-8 py-4 h-auto w-full hover:scale-105 shadow-xl"
                   >
                     {t('cta.primary')}
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  </CTAButton>
                 </SafeLink>
                 
                 <SafeLink to="/produit">
-                  <Button 
-                    variant="outline" 
+                  <SecondaryButton 
                     size="lg" 
-                    className="px-8 py-4 h-auto border-2 border-white/20 text-white hover:bg-white/10 transition-all duration-300 bg-background/10 backdrop-blur-md shadow-xl w-full"
+                    className="px-8 py-4 h-auto border-2 border-white/20 text-white hover:bg-white/10 bg-background/10 backdrop-blur-md shadow-xl w-full"
                   >
                     Découvrir la solution
-                  </Button>
+                  </SecondaryButton>
                 </SafeLink>
               </div>
             </div>
@@ -744,21 +740,23 @@ const HomePage = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <SafeLink to={demoHref}>
-              <Button 
+              <CTAButton 
                 size="lg" 
-                variant="tengo"
                 className="text-lg px-10 py-4 h-auto font-semibold"
                 aria-label={t('accessibility.demo')}
               >
-                <Play className="w-5 h-5 mr-2" />
                 {t('cta.primary')}
-              </Button>
+              </CTAButton>
             </SafeLink>
             <SafeLink to={loginHref}>
-              <Button variant="outline" size="lg" className="px-10 py-4 h-auto text-lg font-semibold">
-                <Phone className="w-5 h-5 mr-2" />
+              <SecondaryButton 
+                size="lg" 
+                className="px-10 py-4 h-auto text-lg font-semibold"
+                icon={Phone}
+                iconPosition="left"
+              >
                 {t('cta.secondary')}
-              </Button>
+              </SecondaryButton>
             </SafeLink>
           </div>
           
