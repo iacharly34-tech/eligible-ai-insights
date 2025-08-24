@@ -5,6 +5,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { TrendingUp, Clock, Target, Zap, Calendar, CheckCircle } from "lucide-react";
+import { ArticleRecommendations } from "@/components/ArticleRecommendations";
 
 export default function AnticipationAO() {
   return (
@@ -370,6 +371,12 @@ export default function AnticipationAO() {
             </div>
           </article>
         </main>
+
+        {/* Articles recommandés */}
+        <ArticleRecommendations 
+          currentArticleUrl="/anticipation-ao" 
+          currentCategory="Répondre efficacement aux AO"
+        />
 
         <Footer />
       </div>

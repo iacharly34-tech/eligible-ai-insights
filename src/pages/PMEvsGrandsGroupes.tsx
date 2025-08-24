@@ -5,6 +5,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Target, Shield, TrendingUp, CheckCircle, Lightbulb } from "lucide-react";
+import { ArticleRecommendations } from "@/components/ArticleRecommendations";
 
 export default function PMEvsGrandsGroupes() {
   return (
@@ -374,6 +375,12 @@ export default function PMEvsGrandsGroupes() {
             </div>
           </article>
         </main>
+
+        {/* Articles recommandés */}
+        <ArticleRecommendations 
+          currentArticleUrl="/pme-vs-grands-groupes" 
+          currentCategory="Répondre efficacement aux AO"
+        />
 
         <Footer />
       </div>

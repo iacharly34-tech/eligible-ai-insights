@@ -5,6 +5,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle, XCircle, Eye, Shield, CheckCircle } from "lucide-react";
+import { ArticleRecommendations } from "@/components/ArticleRecommendations";
 
 export default function AOPerdusAvance() {
   return (
@@ -147,6 +148,12 @@ export default function AOPerdusAvance() {
             </div>
           </article>
         </main>
+
+        {/* Articles recommandés */}
+        <ArticleRecommendations 
+          currentArticleUrl="/ao-perdus-avance" 
+          currentCategory="Tendances & data clés"
+        />
 
         <Footer />
       </div>

@@ -5,6 +5,8 @@ import { StructuredData } from "@/components/StructuredData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Leaf, Users, Award, CheckCircle, AlertTriangle, TrendingUp } from "lucide-react";
+import { ArticleRecommendations } from "@/components/ArticleRecommendations";
+import { GreenmetricsPartnership } from "@/components/GreenmetricsPartnership";
 
 export default function CriteresRSE() {
   return (
@@ -422,6 +424,15 @@ export default function CriteresRSE() {
             </div>
           </article>
         </main>
+
+        {/* Section partenariat Greenmetrics */}
+        <GreenmetricsPartnership />
+
+        {/* Articles recommandés */}
+        <ArticleRecommendations 
+          currentArticleUrl="/criteres-rse" 
+          currentCategory="Critères RSE & innovation"
+        />
 
         <Footer />
       </div>

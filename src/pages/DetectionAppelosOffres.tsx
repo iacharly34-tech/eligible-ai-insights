@@ -5,6 +5,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Search, Clock, Target, TrendingDown, AlertTriangle } from "lucide-react";
+import { ArticleRecommendations } from "@/components/ArticleRecommendations";
 
 export default function DetectionAppelosOffres() {
   return (
@@ -271,6 +272,12 @@ export default function DetectionAppelosOffres() {
             </div>
           </article>
         </main>
+
+        {/* Articles recommandés */}
+        <ArticleRecommendations 
+          currentArticleUrl="/detection-appels-offres" 
+          currentCategory="IA & automatisation"
+        />
 
         <Footer />
       </div>

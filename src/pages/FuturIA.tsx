@@ -5,6 +5,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Bot, Zap, Brain, TrendingUp, CheckCircle, Rocket } from "lucide-react";
+import { ArticleRecommendations } from "@/components/ArticleRecommendations";
 
 export default function FuturIA() {
   return (
@@ -353,6 +354,12 @@ export default function FuturIA() {
             </div>
           </article>
         </main>
+
+        {/* Articles recommandés */}
+        <ArticleRecommendations 
+          currentArticleUrl="/futur-ia" 
+          currentCategory="IA & automatisation"
+        />
 
         <Footer />
       </div>

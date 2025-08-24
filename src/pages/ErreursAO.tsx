@@ -5,6 +5,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { XCircle, CheckCircle, AlertTriangle, FileText, Clock, Shield } from "lucide-react";
+import { ArticleRecommendations } from "@/components/ArticleRecommendations";
 
 export default function ErreursAO() {
   return (
@@ -345,6 +346,12 @@ export default function ErreursAO() {
             </div>
           </article>
         </main>
+
+        {/* Articles recommandés */}
+        <ArticleRecommendations 
+          currentArticleUrl="/erreurs-ao" 
+          currentCategory="Répondre efficacement aux AO"
+        />
 
         <Footer />
       </div>

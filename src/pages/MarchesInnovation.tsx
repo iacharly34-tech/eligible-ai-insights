@@ -5,6 +5,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Lightbulb, Rocket, TrendingUp, Euro, CheckCircle, Zap } from "lucide-react";
+import { ArticleRecommendations } from "@/components/ArticleRecommendations";
 
 export default function MarchesInnovation() {
   return (
@@ -371,6 +372,12 @@ export default function MarchesInnovation() {
             </div>
           </article>
         </main>
+
+        {/* Articles recommandés */}
+        <ArticleRecommendations 
+          currentArticleUrl="/marches-innovation" 
+          currentCategory="Tendances & data clés"
+        />
 
         <Footer />
       </div>

@@ -5,6 +5,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Eye, AlertTriangle, Search, Shield, TrendingUp } from "lucide-react";
+import { ArticleRecommendations } from "@/components/ArticleRecommendations";
 
 export default function SignauxFaibles() {
   return (
@@ -339,6 +340,12 @@ export default function SignauxFaibles() {
             </div>
           </article>
         </main>
+
+        {/* Articles recommandés */}
+        <ArticleRecommendations 
+          currentArticleUrl="/signaux-faibles" 
+          currentCategory="Répondre efficacement aux AO"
+        />
 
         <Footer />
       </div>

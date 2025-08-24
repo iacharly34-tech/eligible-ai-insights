@@ -5,6 +5,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BarChart3, Database, Target, TrendingUp, Brain, CheckCircle } from "lucide-react";
+import { ArticleRecommendations } from "@/components/ArticleRecommendations";
 
 export default function StrategieDonnees() {
   return (
@@ -414,6 +415,12 @@ export default function StrategieDonnees() {
             </div>
           </article>
         </main>
+
+        {/* Articles recommandés */}
+        <ArticleRecommendations 
+          currentArticleUrl="/strategie-donnees" 
+          currentCategory="Tendances & data clés"
+        />
 
         <Footer />
       </div>
