@@ -139,6 +139,34 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     });
   }
 
+  // Article structured data
+  const articleData = page === "article" ? {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Comment l'IA transforme les appels d'offres publics (AO) en 2025",
+    "description": "Découvrez comment Eligibly révolutionne l'analyse des appels d'offres publics et marchés publics grâce à l'IA",
+    "image": "https://eligibly.ai/assets/eligible-ai-hero-optimized.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "Eligibly"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Eligibly",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://eligibly.ai/assets/eligibly-logo-main.png"
+      }
+    },
+    "datePublished": "2025-08-20",
+    "dateModified": "2025-08-20",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://eligibly.ai/appels-d-offres-publics"
+    },
+    "keywords": "eligibly, appels d'offres publics, AO, marchés publics, IA"
+  } : null;
+
   return (
     <>
       <script type="application/ld+json">
@@ -156,6 +184,11 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
       <script type="application/ld+json">
         {JSON.stringify(breadcrumbData)}
       </script>
+      {articleData && (
+        <script type="application/ld+json">
+          {JSON.stringify(articleData)}
+        </script>
+      )}
     </>
   );
 };

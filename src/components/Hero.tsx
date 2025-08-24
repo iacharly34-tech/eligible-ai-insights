@@ -73,6 +73,14 @@ export const Hero = () => {
                 </Button>
               </SafeLink>
             </div>
+            
+            <div className="mt-8 text-center">
+              <p className="text-sm text-muted-foreground">
+                En savoir plus : <a href="/appels-d-offres-publics" className="text-primary hover:underline">
+                  Comment l'IA transforme les appels d'offres publics
+                </a>
+              </p>
+            </div>
 
             <div className="text-xs text-muted-foreground">
               ✨ Aucune carte bancaire requise • Essai 14 jours • Plus de compétitivité = meilleures affaires publiques
