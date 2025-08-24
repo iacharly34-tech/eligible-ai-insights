@@ -31,7 +31,7 @@ import {
   Shield
 } from "lucide-react";
 
-import charlyCharacterFinal from "@/assets/charly-character-final.png";
+import charlyCharacterCorrect from "@/assets/charly-character-correct.png";
 import charlyOptimized from "@/assets/charly-avatar-optimized.webp";
 import heroOptimized from "@/assets/eligible-ai-hero-optimized.webp";
 import { FAQSection } from "@/components/FAQSection";
@@ -50,7 +50,7 @@ import {
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState<'france' | 'europe'>('france');
-  const [charlyImageUrl, setCharlyImageUrl] = useState<string>(charlyCharacterFinal);
+  const [charlyImageUrl, setCharlyImageUrl] = useState<string>('/lovable-uploads/3b99063c-b9f2-4ac4-88a9-0bf7e68f0f43.png');
   const { t, language } = useLanguage();
   const demoHref = language === 'en' ? '/en/demo' : '/demo';
   const loginHref = language === 'en' ? '/en/login' : '/connexion';
@@ -61,7 +61,7 @@ const HomePage = () => {
     // SEO optimizations are now active
     
     // Set Charly image directly
-    setCharlyImageUrl(charlyCharacterFinal);
+    setCharlyImageUrl('/lovable-uploads/3b99063c-b9f2-4ac4-88a9-0bf7e68f0f43.png');
   }, []);
 
   // Utilisation des données centralisées au lieu des définitions locales
