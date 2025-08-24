@@ -32,6 +32,20 @@ const Demo = lazy(() => import("./pages/Demo"));
 const MentionsLegales = lazy(() => import("./pages/MentionsLegales"));
 const Confidentialite = lazy(() => import("./pages/Confidentialite"));
 const CGU = lazy(() => import("./pages/CGU"));
+
+// Lazy load blog articles
+const AppelosOffresPublics = lazy(() => import("./pages/AppelosOffresPublics"));
+const DetectionAppelosOffres = lazy(() => import("./pages/DetectionAppelosOffres"));
+const ErreursAO = lazy(() => import("./pages/ErreursAO"));
+const SignauxFaibles = lazy(() => import("./pages/SignauxFaibles"));
+const AnticipationAO = lazy(() => import("./pages/AnticipationAO"));
+const CriteresRSE = lazy(() => import("./pages/CriteresRSE"));
+const StrategieDonnees = lazy(() => import("./pages/StrategieDonnees"));
+const AOPerdusAvance = lazy(() => import("./pages/AOPerdusAvance"));
+const MarchesInnovation = lazy(() => import("./pages/MarchesInnovation"));
+const PMEvsGrandsGroupes = lazy(() => import("./pages/PMEvsGrandsGroupes"));
+const FuturIA = lazy(() => import("./pages/FuturIA"));
+
 import { LanguageSync } from "@/components/LanguageSync";
 
 const queryClient = new QueryClient();
@@ -72,6 +86,19 @@ const App = () => (
                 <Route path="/mentions-legales" element={<MentionsLegales />} />
                 <Route path="/confidentialite" element={<Confidentialite />} />
                 <Route path="/cgu" element={<CGU />} />
+                
+                {/* Blog Articles */}
+                <Route path="/appels-d-offres-publics" element={<AppelosOffresPublics />} />
+                <Route path="/detection-appels-offres" element={<DetectionAppelosOffres />} />
+                <Route path="/erreurs-ao" element={<ErreursAO />} />
+                <Route path="/signaux-faibles" element={<SignauxFaibles />} />
+                <Route path="/anticipation-ao" element={<AnticipationAO />} />
+                <Route path="/criteres-rse" element={<CriteresRSE />} />
+                <Route path="/strategie-donnees" element={<StrategieDonnees />} />
+                <Route path="/ao-perdus-avance" element={<AOPerdusAvance />} />
+                <Route path="/marches-innovation" element={<MarchesInnovation />} />
+                <Route path="/pme-vs-grands-groupes" element={<PMEvsGrandsGroupes />} />
+                <Route path="/futur-ia" element={<FuturIA />} />
 
                 {/* EN routes */}
                 <Route path="/en" element={<Index />} />

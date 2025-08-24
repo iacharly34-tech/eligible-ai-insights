@@ -21,20 +21,61 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
       };
     }
     
-    if (path === '/detection-appels-offres') {
-      return {
+    const articlesRoutes = {
+      '/detection-appels-offres': {
         title: "Comment détecter les bons appels d'offres sans perdre des heures | Eligibly",
         description: "Découvrez comment identifier efficacement les appels d'offres pertinents grâce à l'IA. Stratégies et outils pour optimiser votre veille marchés publics en 2025.",
         keywords: "appels d'offres, marchés publics, détection, veille automatisée, IA, PME, filtrage AO"
-      };
-    }
-
-    if (path === '/erreurs-ao') {
-      return {
+      },
+      '/erreurs-ao': {
         title: "Les 7 plus grosses erreurs des PME qui répondent aux marchés publics | Eligibly", 
         description: "Guide pratique pour éviter les pièges administratifs et techniques qui éliminent 60% des candidatures aux appels d'offres publics.",
         keywords: "erreurs appels d'offres, PME, mémoire technique, stratégie AO, marchés publics"
-      };
+      },
+      '/signaux-faibles': {
+        title: "Les signaux faibles qui trahissent un marché public verrouillé | Eligibly",
+        description: "Comment détecter les appels d'offres truqués et éviter de perdre du temps sur des procédures biaisées. Guide complet des indices révélateurs.",
+        keywords: "favoritisme AO, marchés publics verrouillés, signaux faibles, transparence"
+      },
+      '/anticipation-ao': {
+        title: "Anticiper les appels d'offres : le vrai avantage compétitif des entreprises gagnantes | Eligibly",
+        description: "Pourquoi les leaders du marché ne réagissent plus aux publications d'AO mais les anticipent. Stratégies et outils pour prendre une longueur d'avance.",
+        keywords: "anticipation AO, stratégie commerciale, veille marchés publics"
+      },
+      '/criteres-rse': {
+        title: "Critères environnementaux et sociaux : comment les intégrer pour maximiser ses chances | Eligibly",
+        description: "Guide complet pour réussir sur les marchés publics durables. Nouvelles obligations RSE, stratégies gagnantes et outils d'accompagnement en 2025.",
+        keywords: "critères environnementaux, RSE, marchés publics, AO durables"
+      },
+      '/strategie-donnees': {
+        title: "Comment bâtir une vraie stratégie AO basée sur les données | Eligibly",
+        description: "De l'intuition à la science : comment les données transforment l'approche des marchés publics et maximisent le ROI commercial des PME et grands groupes.",
+        keywords: "stratégie AO, données AO, IA marchés publics"
+      },
+      '/ao-perdus-avance': {
+        title: "Pourquoi 3 appels d'offres sur 5 sont perdus d'avance | Eligibly",
+        description: "Décryptage des mécanismes cachés qui rendent 60% des AO impossibles à gagner. Comment détecter et éviter ces pièges pour optimiser vos efforts commerciaux.",
+        keywords: "AO perdus d'avance, filtrage AO, marchés publics IA"
+      },
+      '/marches-innovation': {
+        title: "Marchés publics et innovation : où se cachent les vraies opportunités | Eligibly",
+        description: "Décryptage des secteurs porteurs et des nouvelles opportunités dans la commande publique innovante. Guide 2025 pour identifier et conquérir les marchés d'avenir.",
+        keywords: "marchés publics innovants, appels d'offres innovation, tech publique"
+      },
+      '/pme-vs-grands-groupes': {
+        title: "PME, comment rivaliser avec les grands groupes sur les appels d'offres | Eligibly",
+        description: "Stratégies concrètes pour que les PME tirent leur épingle du jeu face aux mastodontes. Groupements, niches, différenciation : tous les leviers pour inverser le rapport de force.",
+        keywords: "PME marchés publics, concurrencer grands groupes, groupements AO"
+      },
+      '/futur-ia': {
+        title: "Le futur de la réponse aux AO : IA, automatisation et stratégie humaine | Eligibly",
+        description: "Vision prospective de l'évolution des marchés publics à l'ère de l'intelligence artificielle. Comment l'humain et la machine vont transformer ensemble l'approche des appels d'offres.",
+        keywords: "IA marchés publics, automatisation AO, futur appels d'offres"
+      }
+    };
+
+    if (articlesRoutes[path]) {
+      return articlesRoutes[path];
     }
     
     if (language === 'en') {
