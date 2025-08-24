@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
+import { EligiblyButton } from "@/components/EligiblyButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CTAFooter } from "@/components/CTAFooter";
@@ -158,10 +159,10 @@ const Solutions = () => {
                             ))}
                           </div>
                           <SafeLink to="/demo">
-                            <Button className="w-full group">
+                            <EligiblyButton className="w-full group">
                               {solution.cta}
                               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                            </Button>
+                            </EligiblyButton>
                           </SafeLink>
                         </div>
                       </CardContent>
@@ -206,10 +207,10 @@ const Solutions = () => {
                           </div>
                           
                           <SafeLink to="/demo">
-                            <Button variant="default" className="w-full sm:w-auto group">
+                            <EligiblyButton className="w-full sm:w-auto group">
                               {solution.cta}
                               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                            </Button>
+                            </EligiblyButton>
                           </SafeLink>
                         </div>
                       </CardContent>

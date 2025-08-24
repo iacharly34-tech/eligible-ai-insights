@@ -310,11 +310,11 @@ const Ressources = () => {
                               />
                             </div>
                             
-                            <SafeLink to={article.url} className="mt-auto">
-                              <Button variant="outline" size="sm" className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all">
+                             <SafeLink to={article.url} className="mt-auto">
+                              <EligiblyButton variant="secondary" size="sm" className="w-full">
                                 Lire l'article
                                 <ArrowRight className="w-4 h-4 ml-2" />
-                              </Button>
+                              </EligiblyButton>
                             </SafeLink>
                           </CardContent>
                         </Card>
@@ -465,9 +465,9 @@ const Ressources = () => {
                   </div>
                   <h3 className="font-semibold mb-2">Communauté Eligibly</h3>
                   <p className="text-sm text-gray-600 mb-4">Échangez avec 500+ professionnels AO</p>
-                  <Button variant="outline" size="sm">
+                  <EligiblyButton variant="secondary" size="sm">
                     Rejoindre la communauté
-                  </Button>
+                  </EligiblyButton>
                 </CardContent>
               </Card>
 
@@ -478,9 +478,9 @@ const Ressources = () => {
                   </div>
                   <h3 className="font-semibold mb-2">Accompagnement personnalisé</h3>
                   <p className="text-sm text-gray-600 mb-4">Audit gratuit de votre stratégie AO</p>
-                  <Button variant="outline" size="sm">
+                  <EligiblyButton variant="secondary" size="sm">
                     Réserver un audit gratuit
-                  </Button>
+                  </EligiblyButton>
                 </CardContent>
               </Card>
             </div>

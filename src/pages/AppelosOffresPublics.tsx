@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
 import { Button } from "@/components/ui/button";
+import { EligiblyButton } from "@/components/EligiblyButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, TrendingUp, FileCheck, Timer } from "lucide-react";
 
@@ -154,9 +155,9 @@ export default function AppelosOffresPublics() {
                 <Button size="lg" asChild>
                   <a href="/demo">Tester gratuitement</a>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                <EligiblyButton variant="secondary" size="lg" asChild>
                   <a href="/produit">Découvrir le produit</a>
-                </Button>
+                </EligiblyButton>
               </div>
             </div>
           </article>

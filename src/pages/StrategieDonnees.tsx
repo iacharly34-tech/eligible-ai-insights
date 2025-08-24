@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
 import { Button } from "@/components/ui/button";
+import { EligiblyButton } from "@/components/EligiblyButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { BarChart3, Database, Target, TrendingUp, Brain, CheckCircle } from "lucide-react";
 import { ArticleRecommendations } from "@/components/ArticleRecommendations";
@@ -408,9 +409,9 @@ export default function StrategieDonnees() {
                 <Button size="lg" asChild>
                   <a href="/demo">Analyser ma stratégie</a>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                <EligiblyButton variant="secondary" size="lg" asChild>
                   <a href="/produit">Découvrir Charly</a>
-                </Button>
+                </EligiblyButton>
               </div>
             </div>
           </article>
