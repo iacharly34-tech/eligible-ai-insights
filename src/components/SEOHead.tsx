@@ -1,7 +1,11 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useLocation } from "react-router-dom";
 
-export const SEOHead = () => {
+interface SEOHeadProps {
+  noindex?: boolean;
+}
+
+export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
   const { language } = useLanguage();
   const location = useLocation();
   
@@ -124,6 +128,7 @@ export const SEOHead = () => {
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="keywords" content={seo.keywords} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       <link rel="canonical" href={canonicalUrl} />
       
       {/* Open Graph */}
