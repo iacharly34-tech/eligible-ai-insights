@@ -15,6 +15,7 @@ import type { z } from "zod";
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export const Contact = () => {
+  const [zapierWebhook, setZapierWebhook] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   
@@ -32,7 +33,7 @@ export const Contact = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     // Rate limiting check
-    const clientIP = 'user-session'; // In production, use actual IP
+    const clientIP = 'user-session';
     if (!rateLimiter.checkLimit(clientIP)) {
       toast({
         title: "Trop de tentatives",
@@ -42,25 +43,49 @@ export const Contact = () => {
       return;
     }
 
+    if (!zapierWebhook) {
+      toast({
+        title: "Configuration manquante",
+        description: "Veuillez configurer l'URL Zapier pour recevoir les formulaires.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     
     try {
-      // Generate CSRF token
-      const csrfToken = generateCSRFToken();
-      
-      // Submit to secure backend in production
-      // Secure form submission with CSRF protection
-      
+      // Send to Zapier webhook
+      await fetch(zapierWebhook, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify({
+          type: "contact_form",
+          timestamp: new Date().toISOString(),
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          company: data.company,
+          sector: data.sector,
+          message: data.message,
+          source: "eligibly.ai"
+        }),
+      });
+
       toast({
         title: "Demande envoyée",
-        description: "Nous vous contacterons bientôt pour votre démonstration."
+        description: "Nous vous contacterons bientôt. Vérifiez votre boîte mail contact@eligibly.ai pour confirmer la réception."
       });
       
       form.reset();
     } catch (error) {
+      console.error("Error sending form:", error);
       toast({
         title: "Erreur",
-        description: "Une erreur s'est produite. Veuillez réessayer.",
+        description: "Une erreur s'est produite. Contactez-nous directement à contact@eligibly.ai",
         variant: "destructive"
       });
     } finally {
@@ -166,6 +191,19 @@ export const Contact = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
+              {/* Configuration Zapier pour admin */}
+              <div className="border-b pb-4 mb-4">
+                <Input
+                  type="url"
+                  placeholder="URL Zapier webhook (admin uniquement)"
+                  value={zapierWebhook}
+                  onChange={(e) => setZapierWebhook(e.target.value)}
+                  className="text-xs"
+                />
+                <p className="text-xs text-gray-500 mt-1">
+                  Configurez votre webhook Zapier pour recevoir les formulaires sur contact@eligibly.ai
+                </p>
+              </div>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
