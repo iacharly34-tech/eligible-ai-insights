@@ -32,6 +32,7 @@ const Demo = lazy(() => import("./pages/Demo"));
 const MentionsLegales = lazy(() => import("./pages/MentionsLegales"));
 const Confidentialite = lazy(() => import("./pages/Confidentialite"));
 const CGU = lazy(() => import("./pages/CGU"));
+const Newsletter = lazy(() => import("./pages/Newsletter"));
 
 // Lazy load blog articles
 const AppelosOffresPublics = lazy(() => import("./pages/AppelosOffresPublics"));
@@ -86,6 +87,8 @@ const App = () => (
                 <Route path="/mentions-legales" element={<MentionsLegales />} />
                 <Route path="/confidentialite" element={<Confidentialite />} />
                 <Route path="/cgu" element={<CGU />} />
+                <Route path="/newsletter" element={<Newsletter />} />
+                
                 
                 {/* Blog Articles */}
                 <Route path="/appels-d-offres-publics" element={<AppelosOffresPublics />} />

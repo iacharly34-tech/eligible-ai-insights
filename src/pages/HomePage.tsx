@@ -36,6 +36,7 @@ import charlyCharacterCorrect from "@/assets/charly-character-correct.png";
 import charlyOptimized from "/lovable-uploads/6537d5ff-d496-4132-a49b-75e2d127ec58.png";
 import heroOptimized from "@/assets/eligible-ai-hero-optimized.webp";
 import { FAQSection } from "@/components/FAQSection";
+import { NewsletterSubscription } from "@/components/newsletter/NewsletterSubscription";
 import { processCharlyImage } from "@/utils/processCharlyImage";
 
 import { 

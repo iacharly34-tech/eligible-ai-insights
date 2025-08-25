@@ -7,8 +7,9 @@ import { Calendar, Mail, MessageCircle, Phone, ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { contactFormSchema, rateLimiter, generateCSRFToken } from "@/utils/security";
+import { contactFormSchema, rateLimiter } from "@/utils/security";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/lib/supabase";
 import { useState } from "react";
 import type { z } from "zod";
 
@@ -43,41 +44,53 @@ export const Contact = () => {
       return;
     }
 
-    if (!zapierWebhook) {
-      toast({
-        title: "Configuration manquante",
-        description: "Veuillez configurer l'URL Zapier pour recevoir les formulaires.",
-        variant: "destructive",
-      });
-      return;
-    }
-
     setIsSubmitting(true);
     
     try {
-      // Send to Zapier webhook
-      await fetch(zapierWebhook, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "no-cors",
-        body: JSON.stringify({
-          type: "contact_form",
-          timestamp: new Date().toISOString(),
-          firstName: data.firstName,
-          lastName: data.lastName,
-          email: data.email,
-          company: data.company,
-          sector: data.sector,
-          message: data.message,
-          source: "eligibly.ai"
-        }),
-      });
+      // Save to Supabase database
+      const { error: dbError } = await supabase
+        .from('newsletter_subscribers')
+        .insert([
+          {
+            email: data.email,
+            first_name: data.firstName,
+            last_name: data.lastName,
+            company: data.company,
+            sector: data.sector,
+            source: 'contact_form',
+            status: 'active'
+          }
+        ]);
+
+      if (dbError && dbError.code !== '23505') { // Ignore unique constraint violations
+        console.error('Database error:', dbError);
+      }
+
+      // Send to Zapier webhook if configured
+      if (zapierWebhook) {
+        await fetch(zapierWebhook, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          mode: "no-cors",
+          body: JSON.stringify({
+            type: "contact_form",
+            timestamp: new Date().toISOString(),
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            company: data.company,
+            sector: data.sector,
+            message: data.message,
+            source: "eligibly.ai"
+          }),
+        });
+      }
 
       toast({
         title: "Demande envoyée",
-        description: "Nous vous contacterons bientôt. Vérifiez votre boîte mail contact@eligibly.ai pour confirmer la réception."
+        description: "Nous vous contacterons bientôt. Votre contact a été sauvegardé."
       });
       
       form.reset();
@@ -191,17 +204,17 @@ export const Contact = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              {/* Configuration Zapier pour admin */}
+              {/* Configuration Zapier pour admin (optionnel) */}
               <div className="border-b pb-4 mb-4">
                 <Input
                   type="url"
-                  placeholder="URL Zapier webhook (admin uniquement)"
+                  placeholder="URL Zapier webhook (optionnel)"
                   value={zapierWebhook}
                   onChange={(e) => setZapierWebhook(e.target.value)}
                   className="text-xs"
                 />
                 <p className="text-xs text-gray-500 mt-1">
-                  Configurez votre webhook Zapier pour recevoir les formulaires sur contact@eligibly.ai
+                  Configurez un webhook Zapier pour recevoir les formulaires par email (optionnel)
                 </p>
               </div>
               <Form {...form}>
