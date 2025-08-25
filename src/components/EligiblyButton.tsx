@@ -25,25 +25,27 @@ export const EligiblyButton = forwardRef<HTMLButtonElement, EligiblyButtonProps>
           transition-all duration-300 
           font-semibold 
           rounded-lg 
-          flex items-center gap-2 
+          flex items-center justify-center gap-2 
           group
+          text-ellipsis overflow-hidden
+          min-w-0
           ${className}
         `}
         disabled={loading}
         {...props}
       >
         {loading && (
-          <div className="animate-spin rounded-full h-4 w-4 border-2 border-b-transparent mr-2" />
+          <div className="animate-spin rounded-full h-4 w-4 border-2 border-b-transparent flex-shrink-0" />
         )}
         
         {Icon && iconPosition === 'left' && (
-          <Icon size={iconSize} className="group-hover:-translate-x-0.5 transition-transform" />
+          <Icon size={iconSize} className="group-hover:-translate-x-0.5 transition-transform flex-shrink-0" />
         )}
         
-        <span className="truncate">{children}</span>
+        <span className="truncate min-w-0 text-center flex-grow">{children}</span>
         
         {Icon && iconPosition === 'right' && (
-          <Icon size={iconSize} className="group-hover:translate-x-0.5 transition-transform" />
+          <Icon size={iconSize} className="group-hover:translate-x-0.5 transition-transform flex-shrink-0" />
         )}
       </ShadcnButton>
     );
