@@ -1,7 +1,4 @@
-import { useState } from "react";
 import { ArticleCard } from "@/components/ArticleCard";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 interface Article {
@@ -28,15 +25,6 @@ export const ExpertArticleCarousel = ({
   subtitle,
   variant = "standard" 
 }: ExpertArticleCarouselProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handlePrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? articles.length - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev === articles.length - 1 ? 0 : prev + 1));
-  };
 
   return (
     <section className={`py-20 px-4 ${variant === "featured" ? "bg-white" : "bg-gradient-to-br from-slate-50 to-gray-100"}`}>
@@ -78,19 +66,6 @@ export const ExpertArticleCarousel = ({
             </CarouselContent>
             <div className="flex justify-center items-center gap-4 mt-8">
               <CarouselPrevious className="relative translate-y-0 left-0" />
-              <div className="flex gap-2">
-                {articles.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      index === currentIndex 
-                        ? "bg-blue-600 w-8" 
-                        : "bg-gray-300 hover:bg-gray-400"
-                    }`}
-                    onClick={() => setCurrentIndex(index)}
-                  />
-                ))}
-              </div>
               <CarouselNext className="relative translate-y-0 right-0" />
             </div>
           </Carousel>
