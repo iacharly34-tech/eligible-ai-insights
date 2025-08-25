@@ -33,6 +33,7 @@ const MentionsLegales = lazy(() => import("./pages/MentionsLegales"));
 const Confidentialite = lazy(() => import("./pages/Confidentialite"));
 const CGU = lazy(() => import("./pages/CGU"));
 const Newsletter = lazy(() => import("./pages/Newsletter"));
+const NewsletterConfig = lazy(() => import("./pages/NewsletterConfig"));
 
 // Lazy load blog articles
 const AppelosOffresPublics = lazy(() => import("./pages/AppelosOffresPublics"));
@@ -88,6 +89,7 @@ const App = () => (
                 <Route path="/confidentialite" element={<Confidentialite />} />
                 <Route path="/cgu" element={<CGU />} />
                 <Route path="/newsletter" element={<Newsletter />} />
+                <Route path="/newsletter-config" element={<NewsletterConfig />} />
                 
                 
                 {/* Blog Articles */}

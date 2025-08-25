@@ -28,7 +28,7 @@ const sectors = [
   'Autre'
 ];
 
-export const NewsletterSubscription = () => {
+export const NewsletterSubscription = ({ zapierWebhook = "" }: { zapierWebhook?: string }) => {
   const [formData, setFormData] = useState<SubscriptionFormData>({
     email: '',
     firstName: '',
@@ -73,6 +73,31 @@ export const NewsletterSubscription = () => {
           throw error;
         }
       } else {
+        // Envoyer à Zapier si configuré pour email de remerciement
+        if (zapierWebhook) {
+          try {
+            await fetch(zapierWebhook, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              mode: "no-cors",
+              body: JSON.stringify({
+                type: "newsletter_subscription",
+                timestamp: new Date().toISOString(),
+                firstName: formData.firstName,
+                lastName: formData.lastName,
+                email: formData.email,
+                company: formData.company,
+                sector: formData.sector,
+                source: "eligibly.ai"
+              }),
+            });
+          } catch (error) {
+            console.error('Error sending to Zapier:', error);
+          }
+        }
+
         toast({
           title: "🎉 Merci ! Vous êtes inscrit.",
           description: "Votre première analyse arrive bientôt dans votre boîte mail.",
