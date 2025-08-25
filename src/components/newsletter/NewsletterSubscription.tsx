@@ -74,8 +74,8 @@ export const NewsletterSubscription = () => {
         }
       } else {
         toast({
-          title: "Inscription réussie !",
-          description: "Vous êtes maintenant abonné à notre newsletter Eligibly.",
+          title: "🎉 Merci ! Vous êtes inscrit.",
+          description: "Votre première analyse arrive bientôt dans votre boîte mail.",
         });
         
         // Reset form
@@ -100,12 +100,16 @@ export const NewsletterSubscription = () => {
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto">
-      <CardHeader>
-        <CardTitle className="text-center">Newsletter Eligibly</CardTitle>
-        <p className="text-sm text-muted-foreground text-center">
-          Restez informé des dernières actualités sur les appels d'offres et l'IA
-        </p>
+    <Card className="w-full max-w-md mx-auto border-0 shadow-lg">
+      <CardHeader className="text-center space-y-4">
+        <div className="space-y-3">
+          <h3 className="text-xl font-bold text-foreground">
+            📩 Recevez chaque semaine nos analyses exclusives
+          </h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            pour anticiper les appels d'offres et détecter les meilleures opportunités.
+          </p>
+        </div>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -133,13 +137,15 @@ export const NewsletterSubscription = () => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email">Email *</Label>
+            <Label htmlFor="email">Email professionnel *</Label>
             <Input
               id="email"
               type="email"
+              placeholder="ex : julie@startup.com"
               value={formData.email}
               onChange={(e) => handleInputChange('email', e.target.value)}
               required
+              className="h-12"
             />
           </div>
 
@@ -169,17 +175,18 @@ export const NewsletterSubscription = () => {
             </Select>
           </div>
 
-          <Button 
-            type="submit" 
-            className="w-full" 
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'Inscription...' : "S'abonner à la newsletter"}
-          </Button>
-
-          <p className="text-xs text-muted-foreground text-center">
-            En vous inscrivant, vous acceptez de recevoir nos emails et pouvez vous désabonner à tout moment.
-          </p>
+          <div className="text-center space-y-3">
+            <p className="text-xs text-muted-foreground">
+              Zéro spam. Désinscription en un clic.
+            </p>
+            <Button 
+              type="submit" 
+              className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-semibold" 
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Inscription...' : "🚀 Recevoir mes analyses"}
+            </Button>
+          </div>
         </form>
       </CardContent>
     </Card>

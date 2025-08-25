@@ -89,8 +89,8 @@ export const Contact = () => {
       }
 
       toast({
-        title: "Demande envoyée",
-        description: "Nous vous contacterons bientôt. Votre contact a été sauvegardé."
+        title: "✅ Merci ! Votre message a bien été reçu.",
+        description: "L'équipe Eligibly revient vers vous sous 24 heures."
       });
       
       form.reset();
@@ -114,14 +114,13 @@ export const Contact = () => {
             Contact
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Prêt à transformer votre{" "}
+            Une question ? Un projet ?{" "}
             <span className="text-primary">
-              veille commerciale ?
+              Parlons-en.
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Découvrez comment eligibly.ai peut identifier les meilleures opportunités 
-            d'appels d'offres pour votre entreprise.
+            Laissez-nous un message, notre équipe vous répond sous 24 heures.
           </p>
         </div>
 
@@ -219,43 +218,28 @@ export const Contact = () => {
               </div>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-2 gap-4">
-                    <FormField
-                      control={form.control}
-                      name="firstName"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Prénom</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Jean" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="lastName"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Nom</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Dupont" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
+                  <FormField
+                    control={form.control}
+                    name="firstName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Votre nom (facultatif)</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Jean Dupont" className="h-12" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
                   <FormField
                     control={form.control}
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email professionnel</FormLabel>
+                        <FormLabel>Votre email professionnel</FormLabel>
                         <FormControl>
-                          <Input type="email" placeholder="jean.dupont@entreprise.com" {...field} />
+                          <Input type="email" placeholder="jean.dupont@entreprise.com" className="h-12" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -295,11 +279,12 @@ export const Contact = () => {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Message (optionnel)</FormLabel>
+                        <FormLabel>Votre message</FormLabel>
                         <FormControl>
                           <Textarea 
-                            placeholder="Décrivez vos besoins en matière d'appels d'offres..."
+                            placeholder="Dites-nous comment nous pouvons vous aider : démo, support, accompagnement personnalisé…"
                             rows={4}
+                            className="min-h-[100px]"
                             {...field}
                           />
                         </FormControl>
@@ -308,16 +293,21 @@ export const Contact = () => {
                     )}
                   />
 
-                  <Button 
-                    variant="tengo" 
-                    className="w-full" 
-                    size="lg" 
-                    type="submit"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? "Envoi en cours..." : "Demandez votre accès"}
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
+                  <div className="space-y-3">
+                    <p className="text-xs text-muted-foreground text-center">
+                      Vos données restent confidentielles et ne seront jamais revendues.
+                    </p>
+                    <Button 
+                      variant="tengo" 
+                      className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-semibold" 
+                      size="lg" 
+                      type="submit"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? "Envoi en cours..." : "🚀 Demander une démo gratuite"}
+                      <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </div>
                 </form>
               </Form>
 
