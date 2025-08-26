@@ -83,9 +83,9 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
         case '/en':
         case '/en/':
           return {
-            title: "Eligibly – AI for Public Tenders and Government Contracts",
-            description: "Eligibly analyzes your success chances on public tenders and government contracts. Test our predictive AI specialized in public procurement.",
-            keywords: "eligibly, public tenders, government contracts, AI, procurement, bid analysis"
+            title: "Eligibly - AI Platform for Public Tender Success",
+            description: "Eligibly is the leading AI solution to analyze and win more public tenders. Increase your success rate by +47% with our predictive technology.",
+            keywords: "eligibly, eligibly platform, public tenders, AI procurement, eligibly solution"
           };
         case '/en/product':
           return {
@@ -136,9 +136,9 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
         case '/':
         case '/accueil':
           return {
-            title: "Eligibly – IA pour appels d'offres publics (AO) et marchés publics",
-            description: "Eligibly analyse vos chances de succès sur les appels d'offres publics et marchés publics. Testez notre IA prédictive spécialisée dans les AO.",
-            keywords: "eligibly, appels d'offres publics, AO, marchés publics, IA, analyse"
+            title: "Eligibly - Plateforme IA pour optimiser vos appels d'offres publics",
+            description: "Eligibly est la solution IA leader pour analyser et gagner plus d'appels d'offres publics. Augmentez votre taux de succès de +47% avec notre technologie prédictive.",
+            keywords: "eligibly, plateforme eligibly, appels d'offres publics, IA marchés publics, solution eligibly"
           };
         case '/produit':
           return {
