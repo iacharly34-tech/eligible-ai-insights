@@ -70,13 +70,6 @@ const Demo = () => {
     }
   ];
 
-  // Logos partenaires (simulation)
-  const partnerLogos = [
-    { name: "HubSpot", src: "/assets/hubspot-logo-official.png" },
-    { name: "Salesforce", src: "/assets/salesforce-logo-official.png" },
-    { name: "Teams", src: "/assets/teams-logo-official.png" }
-  ];
-
   // Bénéfices produits
   const productBenefits = [
     {
@@ -112,7 +105,7 @@ const Demo = () => {
             {/* Badge */}
             <Badge variant="outline" className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-primary/10 border-primary/20 text-primary">
               <Rocket className="w-4 h-4" />
-              Démo personnalisée gratuite
+              Démonstration personnalisée
             </Badge>
             
             {/* Titre Hero */}
@@ -138,7 +131,7 @@ const Demo = () => {
                 style={{ backgroundColor: '#5B36F5' }}
                 onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                🚀 Réserver ma démo personnalisée
+                🚀 Réserver ma démonstration
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               
@@ -149,7 +142,7 @@ const Demo = () => {
                 style={{ borderColor: '#5B36F5', color: '#5B36F5' }}
                 onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                En savoir plus sur la démo
+                Découvrir Charly IA
               </Button>
             </div>
             
@@ -263,14 +256,14 @@ const Demo = () => {
                           className="w-full h-12"
                           style={{ backgroundColor: '#5B36F5' }}
                         >
-                          🚀 Réserver ma démo personnalisée
+                          🚀 Réserver ma démonstration
                           <ArrowRight className="w-5 h-5 ml-2" />
                         </Button>
 
                         {/* Réassurance sous le formulaire */}
                         <div className="text-center">
                           <p className="text-sm text-muted-foreground">
-                            ✅ Démo gratuite, sans engagement. Réponse sous 24h.
+                            ✅ Démonstration personnalisée, sans engagement. Réponse sous 24h.
                           </p>
                         </div>
                       </SecureFormWrapper>
@@ -281,9 +274,9 @@ const Demo = () => {
                       <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <CheckCircle className="w-8 h-8 text-green-600" />
                       </div>
-                      <h3 className="text-xl font-bold mb-2">✅ Merci !</h3>
+                      <h3 className="text-xl font-bold mb-2">✅ C'est noté !</h3>
                       <p className="text-muted-foreground">
-                        Notre équipe revient vers vous sous 24h avec votre démo personnalisée.
+                        Notre équipe revient vers vous sous 24h pour organiser votre démonstration personnalisée.
                       </p>
                     </div>
                   )}
@@ -301,18 +294,6 @@ const Demo = () => {
                     <Star className="w-5 h-5 text-yellow-500" />
                     Ils nous font confiance
                   </h3>
-                  
-                  {/* Logos partenaires */}
-                  <div className="flex flex-wrap justify-center gap-6 mb-6 opacity-60">
-                    {partnerLogos.map((logo) => (
-                      <img 
-                        key={logo.name}
-                        src={logo.src} 
-                        alt={logo.name}
-                        className="h-8 grayscale hover:grayscale-0 transition-all duration-300"
-                      />
-                    ))}
-                  </div>
                   
                   {/* Témoignage */}
                   <div className="bg-white/50 p-4 rounded-lg border border-primary/10">
@@ -360,7 +341,7 @@ const Demo = () => {
                     className="w-full"
                     style={{ backgroundColor: '#5B36F5' }}
                   >
-                    🚀 Réserver ma démo personnalisée
+                    🚀 Réserver ma démonstration
                   </Button>
                 </CardContent>
               </Card>
@@ -382,7 +363,7 @@ const Demo = () => {
               size="lg"
               onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              🚀 Réserver ma démo personnalisée
+              🚀 Réserver ma démonstration
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </div>
