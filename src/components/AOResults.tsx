@@ -180,17 +180,6 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
 
   return (
     <div className="space-y-6">
-      {/* Bandeau "Analyse complète" en tête */}
-      {isExpanded && (
-        <AOAnalysisBanner 
-          totalBudget="555K€"
-          publishedAOCount={2}
-          upcomingAOCount={3}
-          rejectedAOCount={12}
-          averageDeadline={21}
-        />
-      )}
-
       {/* Header avec statistiques */}
       {!hideHeader && (
         <div className="flex items-center justify-between">
@@ -213,6 +202,17 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
             </Badge>
           </div>
         </div>
+      )}
+
+      {/* Bandeau "Analyse complète" - positionné avant l'interface Charly IA */}
+      {isExpanded && (
+        <AOAnalysisBanner 
+          totalBudget="555K€"
+          publishedAOCount={2}
+          upcomingAOCount={3}
+          rejectedAOCount={12}
+          averageDeadline={21}
+        />
       )}
 
       {/* Filtres et options d'affichage */}
