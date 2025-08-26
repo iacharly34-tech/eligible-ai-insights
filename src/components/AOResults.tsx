@@ -280,34 +280,6 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
         </div>
       )}
 
-      {/* Statistiques détaillées en mode étendu */}
-      {isExpanded && (
-        <Card className="border border-gray-200 bg-gradient-to-r from-purple-50 to-blue-50">
-          <CardContent className="p-6">
-            <h4 className="font-bold text-gray-800 mb-4">📊 {t('ao.results.fullAnalysis')}</h4>
-            <div className="grid grid-cols-3 gap-6 text-center">
-              <div>
-                <div className="text-2xl font-bold text-purple-600">
-                  555K€
-                </div>
-                <div className="text-sm text-gray-600">{t('ao.results.totalBudget')}</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-green-600">
-                  {Math.round(mockAOData.reduce((sum, ao) => sum + ao.score, 0) / mockAOData.length)}%
-                </div>
-                <div className="text-sm text-gray-600">{t('ao.results.avgCompatibility')}</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-blue-600">
-                  {mockAOData.filter(ao => ao.statut === "publié").length}
-                </div>
-                <div className="text-sm text-gray-600">{t('ao.results.publishedCount')}</div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      )}
     </div>
   );
 };
