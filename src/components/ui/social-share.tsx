@@ -13,7 +13,8 @@ interface SocialShareProps {
 export const SocialShare = ({ title, url, size = "md", variant = "default" }: SocialShareProps) => {
   const [copied, setCopied] = useState(false);
   
-  const fullUrl = `${window.location.origin}${url}`;
+  // Sécuriser l'accès à window
+  const fullUrl = typeof window !== 'undefined' ? `${window.location.origin}${url}` : url;
   const encodedTitle = encodeURIComponent(title);
   const encodedUrl = encodeURIComponent(fullUrl);
   
@@ -24,16 +25,20 @@ export const SocialShare = ({ title, url, size = "md", variant = "default" }: So
 
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText(fullUrl);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      if (typeof navigator !== 'undefined' && navigator.clipboard) {
+        await navigator.clipboard.writeText(fullUrl);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      }
     } catch (err) {
       console.error('Failed to copy: ', err);
     }
   };
 
   const handleShare = (platform: keyof typeof shareLinks) => {
-    window.open(shareLinks[platform], '_blank', 'width=600,height=400');
+    if (typeof window !== 'undefined') {
+      window.open(shareLinks[platform], '_blank', 'width=600,height=400');
+    }
   };
 
   const sizeClasses = {
