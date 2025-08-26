@@ -117,49 +117,63 @@ const Demo = () => {
             
             {/* Titre Hero */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              🚀 Découvrez{" "}
+              Découvrez votre{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Charly en action
+                potentiel IA
               </span>
+              {" "}avec Charly
             </h1>
             
             {/* Sous-titre */}
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Votre copilote IA qui détecte, filtre et anticipe les marchés publics.
+              Réservez une démonstration personnalisée de 30 minutes et voyez comment Charly peut transformer votre approche des marchés publics.
             </p>
             
             {/* CTA immédiat */}
-            <Button 
-              variant="default"
-              size="lg"
-              className="mb-8"
-              onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              📅 Demander ma démo gratuite
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+              <Button 
+                variant="default"
+                size="lg"
+                className="min-w-[280px] h-12"
+                style={{ backgroundColor: '#5B36F5' }}
+                onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                🚀 Réserver ma démo personnalisée
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              
+              <Button 
+                variant="outline"
+                size="lg"
+                className="min-w-[250px] h-12 border-2"
+                style={{ borderColor: '#5B36F5', color: '#5B36F5' }}
+                onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                En savoir plus sur la démo
+              </Button>
+            </div>
             
-            {/* Détails rapides */}
+            {/* Détails rapides - juste sous les CTA */}
             <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-primary" />
-                <span>30 minutes</span>
+                <span className="text-lg">⏱️</span>
+                <span>30 minutes personnalisées</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-primary" />
-                <span>Disponible immédiatement</span>
+                <span className="text-lg">📅</span>
+                <span>Créneaux disponibles</span>
               </div>
               <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-primary" />
-                <span>Aucune carte bancaire requise</span>
+                <span className="text-lg">🔒</span>
+                <span>Sans engagement</span>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Section principale */}
-        <div className="container mx-auto max-w-7xl px-4 pb-20">
-          <div className="grid lg:grid-cols-2 gap-12">
+        {/* Section principale - espacement réduit */}
+        <div className="container mx-auto max-w-7xl px-4 pb-20 pt-8">
+          <div className="grid lg:grid-cols-2 gap-8">{/* espace entre Hero et contenu réduit */}
             
             {/* Colonne gauche - Formulaire */}
             <div>
@@ -249,14 +263,16 @@ const Demo = () => {
                           className="w-full h-12"
                           style={{ backgroundColor: '#5B36F5' }}
                         >
-                          Demander ma démo gratuite
+                          🚀 Réserver ma démo personnalisée
                           <ArrowRight className="w-5 h-5 ml-2" />
                         </Button>
 
-                        {/* Micro-copy rassurante */}
-                        <p className="text-xs text-center text-muted-foreground">
-                          Aucune carte bancaire requise. Réponse sous 24h.
-                        </p>
+                        {/* Réassurance sous le formulaire */}
+                        <div className="text-center">
+                          <p className="text-sm text-muted-foreground">
+                            ✅ Démo gratuite, sans engagement. Réponse sous 24h.
+                          </p>
+                        </div>
                       </SecureFormWrapper>
                     </>
                   ) : (
@@ -344,7 +360,7 @@ const Demo = () => {
                     className="w-full"
                     style={{ backgroundColor: '#5B36F5' }}
                   >
-                    Demander une démo gratuite
+                    🚀 Réserver ma démo personnalisée
                   </Button>
                 </CardContent>
               </Card>
@@ -366,7 +382,7 @@ const Demo = () => {
               size="lg"
               onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Demander ma démo gratuite
+              🚀 Réserver ma démo personnalisée
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </div>
