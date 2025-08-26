@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* Optimized font loading for ecodesign */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -79,15 +80,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Luxury color palette with subtle tones */
-    --background: 0 0% 100%;            /* Fond blanc pur */
-    --foreground: 0 0% 15%;             /* Texte très sombre pour contraste maximum */
-
-    --card: 0 0% 100%;                  /* Cartes blanc pur */
-    --card-foreground: 0 0% 15%;        /* Texte sombre sur cartes */
-
-    --popover: 258 30% 99%;
-    --popover-foreground: 0 0% 10%;
+    /* Optimized color palette - reduced duplicates */
 
     /* Harmonized Violet/Blue modern palette */
     --primary: 258 89% 66%;           /* Violet intense #A855F7 */
@@ -497,6 +490,37 @@ All colors MUST be HSL.
   .high-contrast * {
     text-shadow: none !important;
     box-shadow: none !important;
+  }
+
+  /* Eco mode styles for reduced energy consumption */
+  .eco-mode {
+    --transition-smooth: none;
+    --transition-fast: none;
+    --transition-luxury: none;
+  }
+
+  .eco-mode * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .eco-mode img {
+    filter: none !important;
+  }
+
+  /* Performance optimizations */
+  .lazy-load {
+    content-visibility: auto;
+    contain-intrinsic-size: 200px;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
   .high-contrast button,

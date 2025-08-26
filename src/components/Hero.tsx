@@ -1,17 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { OptimizedImage } from "@/components/OptimizedImage";
-import heroImage from "@/assets/js-development-workspace.jpg";
-import bannerGradient from "@/assets/banner-gradient.jpg";
-import { ArrowRight, Zap, Target, Brain, Play, CheckCircle, TrendingUp } from "lucide-react";
-
+import { ArrowRight, Play, CheckCircle, TrendingUp } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SafeLink } from "@/components/SafeLink";
+import { useOptimizedAnimation } from "@/hooks/useOptimizedAnimation";
 
 export const Hero = () => {
   const { t, language } = useLanguage();
+  const { getAnimationClass, getTransition } = useOptimizedAnimation();
   return (
-    <section className="section-spacing bg-gradient-hero relative overflow-hidden min-h-[70vh] sm:min-h-[85vh] flex items-center">
+    <section 
+      className="section-spacing bg-gradient-hero relative overflow-hidden min-h-[70vh] sm:min-h-[85vh] flex items-center"
+      style={{ transition: getTransition('var(--transition-smooth)') }}
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       
@@ -25,7 +26,7 @@ export const Hero = () => {
         </div>
 
         {/* Main Content - Centered Layout */}
-        <div className="max-w-4xl mx-auto text-center">
+        <div className={`max-w-4xl mx-auto text-center ${getAnimationClass('animate-fade-in')}`}>
           <div className="space-y-6 sm:space-y-8">
             <div className="text-xs sm:text-sm font-medium text-muted-foreground tracking-widest uppercase">
               {t('hero.badge')}

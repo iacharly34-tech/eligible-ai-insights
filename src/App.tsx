@@ -20,6 +20,7 @@ import { Header } from "@/components/Header";
 import { WebVitalsReporter } from "@/components/WebVitalsReporter";
 import { FormUXEnhancer } from "@/components/FormUXEnhancer";
 import { SpaServerConfig } from "@/components/SpaServerConfig";
+import { ResourceOptimizer } from "@/utils/resourceOptimizer";
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Produit = lazy(() => import("./pages/Produit"));
@@ -51,6 +52,12 @@ const FuturIA = lazy(() => import("./pages/FuturIA"));
 import { LanguageSync } from "@/components/LanguageSync";
 
 const queryClient = new QueryClient();
+
+// Initialize resource optimizer
+if (typeof window !== 'undefined') {
+  const optimizer = ResourceOptimizer.getInstance();
+  optimizer.preloadCriticalResources();
+}
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
