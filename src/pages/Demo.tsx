@@ -100,16 +100,16 @@ const Demo = () => {
         <Header />
         
         {/* Hero Section */}
-        <section className="relative pt-20 pb-16 lg:pt-32 lg:pb-24 px-4">
+        <section className="relative pt-20 pb-8 lg:pt-32 lg:pb-12 px-4">
           <div className="container mx-auto max-w-6xl text-center">
             {/* Badge */}
-            <Badge variant="outline" className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-primary/10 border-primary/20 text-primary">
-              <Rocket className="w-4 h-4" />
+            <Badge variant="outline" className="inline-flex items-center gap-2 mb-4 lg:mb-6 px-3 py-2 bg-primary/10 border-primary/20 text-primary text-xs sm:text-sm">
+              <Rocket className="w-3 h-3 sm:w-4 sm:h-4" />
               Démonstration personnalisée
             </Badge>
             
             {/* Titre Hero */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 lg:mb-6 leading-tight px-2">
               Découvrez votre{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 potentiel IA
@@ -118,27 +118,27 @@ const Demo = () => {
             </h1>
             
             {/* Sous-titre */}
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-6 lg:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
               Réservez une démonstration personnalisée de 30 minutes et voyez comment Charly peut transformer votre approche des marchés publics.
             </p>
             
             {/* CTA immédiat */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+            <div className="flex flex-col gap-3 sm:gap-4 justify-center items-center mb-4 lg:mb-6 px-4">
               <Button 
                 variant="default"
                 size="lg"
-                className="min-w-[280px] h-12"
+                className="w-full sm:w-auto sm:min-w-[280px] h-12 text-sm sm:text-base"
                 style={{ backgroundColor: '#5B36F5' }}
                 onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 🚀 Réserver ma démonstration
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
               </Button>
               
               <Button 
                 variant="outline"
                 size="lg"
-                className="min-w-[250px] h-12 border-2"
+                className="w-full sm:w-auto sm:min-w-[250px] h-12 border-2 text-sm sm:text-base"
                 style={{ borderColor: '#5B36F5', color: '#5B36F5' }}
                 onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
@@ -147,17 +147,17 @@ const Demo = () => {
             </div>
             
             {/* Détails rapides - juste sous les CTA */}
-            <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-muted-foreground">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-6 text-xs sm:text-sm text-muted-foreground px-4">
               <div className="flex items-center gap-2">
-                <span className="text-lg">⏱️</span>
+                <span className="text-base sm:text-lg">⏱️</span>
                 <span>30 minutes personnalisées</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-lg">📅</span>
+                <span className="text-base sm:text-lg">📅</span>
                 <span>Créneaux disponibles</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-lg">🔒</span>
+                <span className="text-base sm:text-lg">🔒</span>
                 <span>Sans engagement</span>
               </div>
             </div>
@@ -165,8 +165,8 @@ const Demo = () => {
         </section>
 
         {/* Section principale - espacement réduit */}
-        <div className="container mx-auto max-w-7xl px-4 pb-20 pt-8">
-          <div className="grid lg:grid-cols-2 gap-8">{/* espace entre Hero et contenu réduit */}
+        <div className="container mx-auto max-w-7xl px-4 pb-16 lg:pb-20 pt-4 lg:pt-8">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">{/* espace entre Hero et contenu réduit */}
             
             {/* Colonne gauche - Formulaire */}
             <div>
@@ -285,14 +285,14 @@ const Demo = () => {
             </div>
 
             {/* Colonne droite - Réassurance & Bénéfices */}
-            <div className="space-y-8">
+            <div className="space-y-6 lg:space-y-8 mt-8 lg:mt-0">
               
               {/* Témoignage client */}
-              <Card className="p-6 bg-gradient-to-br from-primary/5 to-accent/5 border-primary/10">
+              <Card className="p-4 lg:p-6 bg-gradient-to-br from-primary/5 to-accent/5 border-primary/10">
                 <CardContent className="p-0">
-                  <div className="bg-white/50 p-4 rounded-lg border border-primary/10">
-                    <MessageSquare className="w-5 h-5 text-primary mb-2" />
-                    <blockquote className="text-sm italic mb-2">
+                  <div className="bg-white/50 p-3 lg:p-4 rounded-lg border border-primary/10">
+                    <MessageSquare className="w-4 h-4 lg:w-5 lg:h-5 text-primary mb-2" />
+                    <blockquote className="text-xs lg:text-sm italic mb-2">
                       "{testimonials[0].quote}"
                     </blockquote>
                     <cite className="text-xs text-muted-foreground">
@@ -304,18 +304,18 @@ const Demo = () => {
 
               {/* Bénéfices produits */}
               <div>
-                <h3 className="text-xl font-bold mb-6">
+                <h3 className="text-lg lg:text-xl font-bold mb-4 lg:mb-6">
                   Pourquoi choisir Charly ?
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-3 lg:space-y-4">
                   {productBenefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start gap-4">
-                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${benefit.color} flex items-center justify-center flex-shrink-0`}>
-                        <benefit.icon className="w-6 h-6 text-white" />
+                    <div key={index} className="flex items-start gap-3 lg:gap-4">
+                      <div className={`w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-r ${benefit.color} flex items-center justify-center flex-shrink-0`}>
+                        <benefit.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-bold mb-1">{benefit.title}</h4>
-                        <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                        <h4 className="font-bold mb-1 text-sm lg:text-base">{benefit.title}</h4>
+                        <p className="text-xs lg:text-sm text-muted-foreground">{benefit.description}</p>
                       </div>
                     </div>
                   ))}
@@ -323,16 +323,16 @@ const Demo = () => {
               </div>
 
               {/* CTA répété */}
-              <Card className="p-6 bg-gradient-to-r from-primary/10 to-accent/10 border-primary/20">
+              <Card className="p-4 lg:p-6 bg-gradient-to-r from-primary/10 to-accent/10 border-primary/20">
                 <CardContent className="p-0 text-center">
-                  <h4 className="font-bold mb-2">Prêt à découvrir Charly ?</h4>
-                  <p className="text-sm text-muted-foreground mb-4">
+                  <h4 className="font-bold mb-2 text-sm lg:text-base">Prêt à découvrir Charly ?</h4>
+                  <p className="text-xs lg:text-sm text-muted-foreground mb-3 lg:mb-4">
                     Rejoignez les entreprises qui optimisent leur prospection avec l'IA.
                   </p>
                   <Button 
                     variant="default"
                     onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="w-full"
+                    className="w-full text-sm lg:text-base"
                     style={{ backgroundColor: '#5B36F5' }}
                   >
                     🚀 Réserver ma démonstration
@@ -344,21 +344,22 @@ const Demo = () => {
         </div>
 
         {/* Footer CTA */}
-        <section className="bg-gradient-to-r from-primary to-accent text-white py-16">
+        <section className="bg-gradient-to-r from-primary to-accent text-white py-12 lg:py-16">
           <div className="container mx-auto max-w-4xl text-center px-4">
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 lg:mb-4">
               Transformez votre prospection dès aujourd'hui
             </h2>
-            <p className="text-xl opacity-90 mb-8">
+            <p className="text-lg sm:text-xl opacity-90 mb-6 lg:mb-8 px-4">
               Découvrez comment Charly peut vous faire gagner du temps et augmenter vos chances de succès.
             </p>
             <Button 
               variant="secondary"
               size="lg"
               onClick={() => document.getElementById('demo-form')?.scrollIntoView({ behavior: 'smooth' })}
+              className="w-full sm:w-auto text-sm sm:text-base"
             >
               🚀 Réserver ma démonstration
-              <ArrowRight className="w-5 h-5 ml-2" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
             </Button>
           </div>
         </section>
