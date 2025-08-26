@@ -25,8 +25,8 @@ const translations = {
     
     // Hero Section
     'hero.badge': 'Seule plateforme • IA prédictive • Marchés Publics',
-    'hero.title': 'La seule IA qui',
-    'hero.title.highlight': 'prédit vos chances',
+    'hero.title': 'La seule IA qui prédit vos chances',
+    'hero.title.highlight': 'sur les marchés publics',
     'hero.title.end': 'avant de candidater',
     'hero.subtitle': 'Eligibly.ai est la première plateforme d\'intelligence artificielle prédictive qui analyse vos chances de succès sur chaque marché public. Rejoignez nos premiers utilisateurs.',
     'hero.cta.primary': 'Faites partie des premiers à essayer notre produit',
