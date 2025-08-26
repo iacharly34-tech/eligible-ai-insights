@@ -287,15 +287,9 @@ const Demo = () => {
             {/* Colonne droite - Réassurance & Bénéfices */}
             <div className="space-y-8">
               
-              {/* Bloc de réassurance */}
+              {/* Témoignage client */}
               <Card className="p-6 bg-gradient-to-br from-primary/5 to-accent/5 border-primary/10">
                 <CardContent className="p-0">
-                  <h3 className="font-bold mb-4 flex items-center gap-2">
-                    <Star className="w-5 h-5 text-yellow-500" />
-                    Ils nous font confiance
-                  </h3>
-                  
-                  {/* Témoignage */}
                   <div className="bg-white/50 p-4 rounded-lg border border-primary/10">
                     <MessageSquare className="w-5 h-5 text-primary mb-2" />
                     <blockquote className="text-sm italic mb-2">
