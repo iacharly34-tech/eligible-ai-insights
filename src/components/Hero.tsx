@@ -33,11 +33,10 @@ export const Hero = () => {
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight tracking-tight px-2">
-              Eligibly : IA pour les{" "}
               <span className="text-primary font-medium bg-gradient-primary bg-clip-text text-transparent">
-                appels d'offres publics (AO)
+                La seule IA qui prédit vos chances
               </span>{" "}
-              et marchés publics
+              sur les marchés publics avant de candidater
             </h1>
             
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-light max-w-2xl mx-auto px-4">
