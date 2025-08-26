@@ -48,8 +48,8 @@ export const AOAnalysisBanner = ({ totalBudget, averageScore, publishedAOCount }
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          <TooltipProvider>
+        <TooltipProvider>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             <Tooltip>
               <TooltipTrigger asChild>
                 <div className="text-center p-4 bg-card rounded-lg border hover:shadow-md transition-shadow cursor-help">
@@ -65,9 +65,7 @@ export const AOAnalysisBanner = ({ totalBudget, averageScore, publishedAOCount }
                 <p>Somme des montants estimés des AO encore ouverts</p>
               </TooltipContent>
             </Tooltip>
-          </TooltipProvider>
 
-          <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
                 <div className="text-center p-4 bg-card rounded-lg border hover:shadow-md transition-shadow cursor-help">
@@ -83,9 +81,7 @@ export const AOAnalysisBanner = ({ totalBudget, averageScore, publishedAOCount }
                 <p>Matching évalué sur 18 critères (taille, NAF/CPV, références, RSE, zone, délais...)</p>
               </TooltipContent>
             </Tooltip>
-          </TooltipProvider>
 
-          <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
                 <div className="text-center p-4 bg-card rounded-lg border hover:shadow-md transition-shadow cursor-help">
@@ -101,8 +97,8 @@ export const AOAnalysisBanner = ({ totalBudget, averageScore, publishedAOCount }
                 <p>Nombre d'AO encore ouverts où votre score ≥ seuil d'éligibilité</p>
               </TooltipContent>
             </Tooltip>
-          </TooltipProvider>
-        </div>
+          </div>
+        </TooltipProvider>
 
         <div className="text-center">
           <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
