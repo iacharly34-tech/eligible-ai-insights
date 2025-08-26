@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AOCard } from "./AOCard";
+import { AOAnalysisBanner } from "./AOAnalysisBanner";
+import { IncompatibleAOCard } from "./IncompatibleAOCard";
 import { 
   CheckCircle, 
   Filter, 
@@ -11,6 +13,54 @@ import {
   Eye
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+
+// AO "pièges" - Données incompatibles mais attractives au premier regard
+export const mockIncompatibleAOData = [
+  {
+    id: "AO-PIEGE-REFS",
+    title: "Maintenance informatique réseau régional",
+    acheteur: "Région Île-de-France",
+    budget: 250000,
+    lieu: "Île-de-France",
+    echeance: "J-45",
+    score: 62,
+    etat: "Incompatible" as const,
+    raisons: [
+      "Références exigées: 3 projets > 500k€ chacun sur 36 mois (vous: 2 projets à 380k€)",
+      "Capacité financière: moyenne de CA sur 3 ans ≥ 1M€ (vous: 720k€)"
+    ],
+    suggestion: {
+      type: "ALTERNATIVE" as const,
+      id: "AO-ALT-EDU-IDF",
+      title: "Support systèmes et postes enseignants – Académie IDF",
+      budget: 210000,
+      compat_score: 86,
+      motif: "Seuils références alignés; lot 2 ouvert aux PME sans ISO 20000 obligatoire"
+    }
+  },
+  {
+    id: "AO-PIEGE-RSE",
+    title: "Fourniture de matériel éducatif durable",
+    acheteur: "Ville de Lyon",
+    budget: 150000,
+    lieu: "Auvergne-Rhône-Alpes",
+    echeance: "J-32",
+    score: 58,
+    etat: "Incompatible" as const,
+    raisons: [
+      "Certifications obligatoires: ISO 14001 + preuve bilan GES scope 1–3",
+      "Traçabilité matière première niveau 2 exigée (non couverte par vos fournisseurs actuels)"
+    ],
+    suggestion: {
+      type: "ALTERNATIVE" as const,
+      id: "AO-ALT-REGION",
+      title: "Équipements pédagogiques région – lot consommables",
+      budget: 130000,
+      compat_score: 90,
+      motif: "Écolabels acceptés en équivalences; clause environnementale pondérée (10%)"
+    }
+  }
+];
 
 export const mockAOData = [
   {
@@ -114,10 +164,31 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
   const [showDetailed, setShowDetailed] = useState(false);
   const { t } = useLanguage();
 
+  // Combine AO data with incompatible AOs for demonstration
+  const allAOData = [
+    ...mockAOData,
+    ...mockIncompatibleAOData
+  ];
+
   const displayedAOs = isExpanded ? mockAOData.slice(startIndex) : mockAOData.slice(startIndex, startIndex + 1);
+  const displayedIncompatibleAOs = isExpanded ? mockIncompatibleAOData : [];
+
+  const handleViewAlternative = (alternativeId: string) => {
+    // TODO: Implement navigation to alternative AO
+    console.log('Viewing alternative:', alternativeId);
+  };
 
   return (
     <div className="space-y-6">
+      {/* Bandeau "Analyse complète" en tête */}
+      {isExpanded && (
+        <AOAnalysisBanner 
+          totalBudget="555K€"
+          averageScore={88}
+          publishedAOCount={2}
+        />
+      )}
+
       {/* Header avec statistiques */}
       {!hideHeader && (
         <div className="flex items-center justify-between">
@@ -183,6 +254,15 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
             isDetailed={forceDetailed || (showDetailed && isExpanded)}
           />
         ))}
+        
+        {/* AO "pièges" affichés en mode étendu */}
+        {displayedIncompatibleAOs.map((ao) => (
+          <IncompatibleAOCard 
+            key={ao.id} 
+            ao={ao}
+            onViewAlternative={handleViewAlternative}
+          />
+        ))}
       </div>
 
       {/* Bouton d'expansion */}
@@ -193,7 +273,7 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
               className="bg-purple-600 hover:bg-purple-700 text-white flex items-center gap-2 mx-auto"
             >
               <TrendingUp className="w-4 h-4" />
-              {t('ao.results.viewAll')} ({mockAOData.length})
+              {t('ao.results.viewAll')} ({allAOData.length})
             </Button>
         </div>
       )}
@@ -206,7 +286,7 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
                 <div className="text-2xl font-bold text-purple-600">
-                  {mockAOData.reduce((sum, ao) => sum + parseInt(ao.budget.replace(/[^\d]/g, '')), 0) / 1000}K€
+                  555K€
                 </div>
                 <div className="text-sm text-gray-600">{t('ao.results.totalBudget')}</div>
               </div>
