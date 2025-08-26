@@ -48,6 +48,7 @@ const AOPerdusAvance = lazy(() => import("./pages/AOPerdusAvance"));
 const MarchesInnovation = lazy(() => import("./pages/MarchesInnovation"));
 const PMEvsGrandsGroupes = lazy(() => import("./pages/PMEvsGrandsGroupes"));
 const FuturIA = lazy(() => import("./pages/FuturIA"));
+const AProposEligibly = lazy(() => import("./pages/AProposEligibly"));
 
 import { LanguageSync } from "@/components/LanguageSync";
 
@@ -89,6 +90,7 @@ const App = () => (
                 <Route path="/tarifs" element={<Tarifs />} />
                 <Route path="/ressources" element={<Ressources />} />
                 <Route path="/a-propos" element={<APropos />} />
+                <Route path="/a-propos-eligibly" element={<AProposEligibly />} />
                 <Route path="/connexion" element={<Connexion />} />
                 <Route path="/demo" element={<Demo />} />
                 <Route path="/inscription" element={<Demo />} />
@@ -119,6 +121,7 @@ const App = () => (
                 <Route path="/en/pricing" element={<Tarifs />} />
                 <Route path="/en/resources" element={<Ressources />} />
                 <Route path="/en/about" element={<APropos />} />
+                <Route path="/en/about-eligibly" element={<AProposEligibly />} />
                 <Route path="/en/login" element={<Connexion />} />
                 <Route path="/en/demo" element={<Demo />} />
                 <Route path="/en/legal" element={<MentionsLegales />} />

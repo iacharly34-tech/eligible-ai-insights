@@ -123,6 +123,12 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
             description: "Learn about Eligibly, the AI platform transforming public tender analysis and government contracts.",
             keywords: "about eligibly, public tender experts, government contracts AI"
           };
+        case '/en/about-eligibly':
+          return {
+            title: "Eligibly - Leading AI for Public Tenders and Government Contracts",
+            description: "Eligibly revolutionizes public tenders with AI. +47% success rate, predictive analysis of government contracts, public procurement optimization. Complete solution for businesses.",
+            keywords: "eligibly, public tenders, government contracts, AI, artificial intelligence, predictive analysis, public procurement, tender process, bid opportunities, contract bidding, public sector contracts, tender documentation, procurement strategy, tender success, competitive bidding, procurement opportunities, tender qualification, bid preparation, procurement analysis, tender intelligence"
+          };
         default:
           return {
             title: "Eligibly – AI for Public Tenders and Government Contracts",
@@ -175,6 +181,12 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
             title: "À propos Eligibly – Experts IA appels d'offres publics",
             description: "Découvrez Eligibly, la plateforme IA qui transforme l'analyse des appels d'offres publics et marchés publics.",
             keywords: "à propos eligibly, experts AO, appels d'offres publics, IA marchés"
+          };
+        case '/a-propos-eligibly':
+          return {
+            title: "Eligibly - Leader IA pour Appels d'Offres Publics et Marchés Publics",
+            description: "Eligibly révolutionne les appels d'offres publics avec l'IA. +47% de succès, analyse prédictive des AO, optimisation marchés publics. Solution complète pour PME et grands groupes.",
+            keywords: "eligibly, appels d'offres publics, AO, marchés publics, IA, intelligence artificielle, analyse prédictive, consultation publique, procédure appel d'offres, mémoire technique, code marchés publics, achat public, commande publique, veille marchés publics, stratégie AO, AAPC, dossier candidature, critères attribution, secteurs prioritaires, opportunités commerciales"
           };
         default:
           return {
