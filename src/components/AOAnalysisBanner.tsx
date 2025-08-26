@@ -1,15 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
-import { Info, BarChart3, Euro, FileCheck, Target } from "lucide-react";
+import { Target, Euro, FileCheck, Clock, XCircle, Eye } from "lucide-react";
 import { useState } from "react";
 
 interface AOAnalysisBannerProps {
   totalBudget: string;
-  averageScore: number;
   publishedAOCount: number;
+  upcomingAOCount: number;
+  rejectedAOCount: number;
+  averageDeadline: number;
 }
 
 const scoringCriteria = [
@@ -33,79 +34,102 @@ const scoringCriteria = [
   { title: "Flexibilité", description: "Capacité d'adaptation aux évolutions du marché" }
 ];
 
-export const AOAnalysisBanner = ({ totalBudget, averageScore, publishedAOCount }: AOAnalysisBannerProps) => {
+export const AOAnalysisBanner = ({ 
+  totalBudget, 
+  publishedAOCount, 
+  upcomingAOCount, 
+  rejectedAOCount, 
+  averageDeadline 
+}: AOAnalysisBannerProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const indicators = [
+    {
+      icon: "💰",
+      value: totalBudget,
+      label: "Budget total accessible",
+      description: "Montant total des marchés accessibles pour vous aujourd'hui.",
+      color: "text-primary",
+      bgColor: "bg-primary/10"
+    },
+    {
+      icon: "📑",
+      value: publishedAOCount,
+      label: "AO publiés compatibles",
+      description: "Appels d'offres ouverts où vous pouvez candidater dès maintenant.",
+      color: "text-emerald-600",
+      bgColor: "bg-emerald-50"
+    },
+    {
+      icon: "🔮",
+      value: upcomingAOCount,
+      label: "AO à venir sous 30 jours",
+      description: "Marchés détectés avant publication officielle, pour vous préparer en avance.",
+      color: "text-blue-600",
+      bgColor: "bg-blue-50"
+    },
+    {
+      icon: "🚫",
+      value: rejectedAOCount,
+      label: "AO écartés par Charly",
+      description: "Opportunités non pertinentes filtrées pour vous faire gagner du temps.",
+      color: "text-red-600",
+      bgColor: "bg-red-50"
+    },
+    {
+      icon: "⏳",
+      value: `${averageDeadline} jours`,
+      label: "Délai moyen restant",
+      description: "Temps moyen restant avant la clôture des AO compatibles.",
+      color: "text-orange-600",
+      bgColor: "bg-orange-50"
+    }
+  ];
+
   return (
-    <Card className="bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20 shadow-lg mb-6">
-      <CardContent className="p-6">
-        <div className="text-center mb-6">
-          <h2 className="text-xl font-bold text-foreground mb-2">
-            📊 Analyse complète
+    <Card className="bg-gradient-to-br from-primary/5 via-accent/5 to-background border-primary/20 shadow-xl mb-8">
+      <CardContent className="p-8">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl font-bold text-foreground mb-3 flex items-center justify-center gap-2">
+            🚀 Votre potentiel marché avec Charly
           </h2>
-          <p className="text-muted-foreground text-sm">
-            Voici votre potentiel sur les opportunités détectées
+          <p className="text-muted-foreground text-base max-w-2xl mx-auto">
+            Une vision claire de vos opportunités pour optimiser votre stratégie commerciale
           </p>
         </div>
 
-        <TooltipProvider>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div className="text-center p-4 bg-card rounded-lg border hover:shadow-md transition-shadow cursor-help">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <Euro className="w-5 h-5 text-primary" />
-                    <Info className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                  <div className="text-2xl font-bold text-primary">{totalBudget}</div>
-                  <div className="text-sm text-muted-foreground">Budget total disponible</div>
-                </div>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Somme des montants estimés des AO encore ouverts</p>
-              </TooltipContent>
-            </Tooltip>
-
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div className="text-center p-4 bg-card rounded-lg border hover:shadow-md transition-shadow cursor-help">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <BarChart3 className="w-5 h-5 text-success" />
-                    <Info className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                  <div className="text-2xl font-bold text-success">{averageScore}%</div>
-                  <div className="text-sm text-muted-foreground">Score moyen de compatibilité</div>
-                </div>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Matching évalué sur 18 critères (taille, NAF/CPV, références, RSE, zone, délais...)</p>
-              </TooltipContent>
-            </Tooltip>
-
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div className="text-center p-4 bg-card rounded-lg border hover:shadow-md transition-shadow cursor-help">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <FileCheck className="w-5 h-5 text-accent" />
-                    <Info className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                  <div className="text-2xl font-bold text-accent">{publishedAOCount}</div>
-                  <div className="text-sm text-muted-foreground">AO publiés (candidature possible)</div>
-                </div>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Nombre d'AO encore ouverts où votre score ≥ seuil d'éligibilité</p>
-              </TooltipContent>
-            </Tooltip>
-          </div>
-        </TooltipProvider>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
+          {indicators.map((indicator, index) => (
+            <div 
+              key={index}
+              className={`text-center p-6 rounded-xl border-2 border-transparent hover:border-primary/30 transition-all duration-300 hover:scale-105 ${indicator.bgColor} group`}
+            >
+              <div className="text-3xl mb-3 transform group-hover:scale-110 transition-transform duration-300">
+                {indicator.icon}
+              </div>
+              <div className={`text-3xl font-bold mb-2 ${indicator.color}`}>
+                {indicator.value}
+              </div>
+              <div className="text-sm font-semibold text-foreground mb-2">
+                {indicator.label}
+              </div>
+              <div className="text-xs text-muted-foreground leading-relaxed">
+                {indicator.description}
+              </div>
+            </div>
+          ))}
+        </div>
 
         <div className="text-center">
           <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
             <DialogTrigger asChild>
-              <Button variant="outline" className="flex items-center gap-2">
-                <Target className="w-4 h-4" />
-                Voir ma méthode de scoring
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="flex items-center gap-2 hover:bg-primary hover:text-primary-foreground transition-colors duration-300 shadow-lg"
+              >
+                <Eye className="w-5 h-5" />
+                🔎 Voir comment Charly calcule vos scores
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">

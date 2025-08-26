@@ -184,8 +184,10 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
       {isExpanded && (
         <AOAnalysisBanner 
           totalBudget="555K€"
-          averageScore={88}
           publishedAOCount={2}
+          upcomingAOCount={3}
+          rejectedAOCount={12}
+          averageDeadline={21}
         />
       )}
 
