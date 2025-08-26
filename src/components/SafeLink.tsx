@@ -29,6 +29,18 @@ export const SafeLink = ({ to, children, className, onClick, tabIndex, 'aria-lab
     '/mentions-legales': '/en/legal',
     '/confidentialite': '/en/privacy',
     '/cgu': '/en/terms',
+    // Articles - keeping same URLs for both languages for now
+    '/futur-ia': '/futur-ia',
+    '/criteres-rse': '/criteres-rse', 
+    '/pme-vs-grands-groupes': '/pme-vs-grands-groupes',
+    '/marches-innovation': '/marches-innovation',
+    '/ao-perdus-avance': '/ao-perdus-avance',
+    '/anticipation-ao': '/anticipation-ao',
+    '/signaux-faibles': '/signaux-faibles',
+    '/strategie-donnees': '/strategie-donnees',
+    '/erreurs-ao': '/erreurs-ao',
+    '/detection-appels-offres': '/detection-appels-offres',
+    '/appels-d-offres-publics': '/appels-d-offres-publics'
   };
   const enToFr: Record<string, string> = Object.fromEntries(
     Object.entries(frToEn).map(([fr, en]) => [en, fr])
