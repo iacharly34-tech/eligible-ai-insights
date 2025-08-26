@@ -334,8 +334,12 @@ export default function SignauxFaibles() {
                 <Button size="lg" asChild>
                   <a href="/demo">Analyser un AO</a>
                 </Button>
-                <EligiblyButton variant="secondary" size="lg" asChild>
-                  <a href="/produit">Découvrir Charly</a>
+                <EligiblyButton 
+                  variant="secondary" 
+                  size="lg" 
+                  onClick={() => window.location.href = '/produit'}
+                >
+                  Découvrir Charly
                 </EligiblyButton>
               </div>
             </div>

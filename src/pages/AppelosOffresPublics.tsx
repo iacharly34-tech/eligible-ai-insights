@@ -155,8 +155,12 @@ export default function AppelosOffresPublics() {
                 <Button size="lg" asChild>
                   <a href="/demo">Tester gratuitement</a>
                 </Button>
-                <EligiblyButton variant="secondary" size="lg" asChild>
-                  <a href="/produit">Découvrir le produit</a>
+                <EligiblyButton 
+                  variant="secondary" 
+                  size="lg" 
+                  onClick={() => window.location.href = '/produit'}
+                >
+                  Découvrir le produit
                 </EligiblyButton>
               </div>
             </div>

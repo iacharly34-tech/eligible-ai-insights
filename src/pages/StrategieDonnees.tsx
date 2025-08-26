@@ -409,8 +409,12 @@ export default function StrategieDonnees() {
                 <Button size="lg" asChild>
                   <a href="/demo">Analyser ma stratégie</a>
                 </Button>
-                <EligiblyButton variant="secondary" size="lg" asChild>
-                  <a href="/produit">Découvrir Charly</a>
+                <EligiblyButton 
+                  variant="secondary" 
+                  size="lg" 
+                  onClick={() => window.location.href = '/produit'}
+                >
+                  Découvrir Charly
                 </EligiblyButton>
               </div>
             </div>

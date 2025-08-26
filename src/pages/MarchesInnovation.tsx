@@ -366,8 +366,12 @@ export default function MarchesInnovation() {
                 <Button size="lg" asChild>
                   <a href="/demo">Explorer l'innovation</a>
                 </Button>
-                <EligiblyButton variant="secondary" size="lg" asChild>
-                  <a href="/produit">Découvrir Charly</a>
+                <EligiblyButton 
+                  variant="secondary" 
+                  size="lg" 
+                  onClick={() => window.location.href = '/produit'}
+                >
+                  Découvrir Charly
                 </EligiblyButton>
               </div>
             </div>
