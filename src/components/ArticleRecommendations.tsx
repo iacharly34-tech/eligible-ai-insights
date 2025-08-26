@@ -180,12 +180,17 @@ export const ArticleRecommendations = ({ currentArticleUrl, currentCategory }: A
                     />
                   </div>
                   
-                  <SafeLink to={article.url} className="block">
-                    <Button variant="outline" size="sm" className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all"
+                    asChild
+                  >
+                    <SafeLink to={article.url}>
                       Lire l'article
                       <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </SafeLink>
+                    </SafeLink>
+                  </Button>
                 </div>
               </CardContent>
             </Card>

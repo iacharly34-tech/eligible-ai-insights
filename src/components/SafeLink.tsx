@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { ReactNode } from 'react';
+import { ReactNode, forwardRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SafeLinkProps {
@@ -12,7 +12,7 @@ interface SafeLinkProps {
   'aria-label'?: string;
 }
 
-export const SafeLink = ({ to, children, className, onClick, tabIndex, 'aria-label': ariaLabel }: SafeLinkProps) => {
+export const SafeLink = forwardRef<HTMLAnchorElement, SafeLinkProps>(({ to, children, className, onClick, tabIndex, 'aria-label': ariaLabel }, ref) => {
   const { language } = useLanguage();
   const isExternal = /^(https?:)?\/\//.test(to);
   const isEnglish = language === 'en';
@@ -69,6 +69,7 @@ export const SafeLink = ({ to, children, className, onClick, tabIndex, 'aria-lab
   if (isExternal) {
     return (
       <a 
+        ref={ref}
         href={to}
         className={className}
         onClick={onClick}
@@ -87,6 +88,7 @@ export const SafeLink = ({ to, children, className, onClick, tabIndex, 'aria-lab
     useLocation();
     return (
       <Link 
+        ref={ref}
         to={localizedTo} 
         className={className} 
         onClick={onClick} 
@@ -100,6 +102,7 @@ export const SafeLink = ({ to, children, className, onClick, tabIndex, 'aria-lab
     // Fallback to regular anchor tag if Router context is not available
     return (
       <a 
+        ref={ref}
         href={localizedTo} 
         className={className} 
         onClick={onClick} 
@@ -110,4 +113,4 @@ export const SafeLink = ({ to, children, className, onClick, tabIndex, 'aria-lab
       </a>
     );
   }
-};
+});
