@@ -122,14 +122,14 @@ const Demo = () => {
               {t('demo.badge')}
             </div>
             
-            <h1 className="font-bold mb-4 md:mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
               {t('demo.hero.title')}{" "}
-              <span className="bg-gradient-highlight bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 {t('demo.hero.title.highlight')}
               </span>
             </h1>
             
-            <p className="text-muted-foreground mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
               {t('demo.hero.subtitle')}
             </p>
             
@@ -210,10 +210,10 @@ const Demo = () => {
             >
               <CardContent className="p-6 md:p-8">
                 <div className="mb-6 md:mb-8">
-                  <h2 className="font-bold text-foreground mb-2">
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
                     {t('demo.form.title')}
                   </h2>
-                  <p className="text-muted-foreground">
+                  <p className="text-base text-muted-foreground">
                     {t('demo.form.subtitle')}
                   </p>
                 </div>
