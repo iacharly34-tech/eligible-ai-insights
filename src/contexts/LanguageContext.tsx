@@ -391,6 +391,9 @@ const translations = {
     'demo.form.subtitle': 'Complétez ce formulaire et nos experts vous contacteront sous 2h',
     'demo.benefits.title': 'Ce que vous découvrirez',
     'demo.program.title': 'Au programme de votre démo',
+    'demo.hero.detail.duration': '30 minutes personnalisées',
+    'demo.hero.detail.slots': 'Créneaux disponibles',
+    'demo.hero.detail.nocommit': 'Sans engagement',
 
     // Demo Form Fields (FR)
     'demo.form.firstName': 'Prénom *',

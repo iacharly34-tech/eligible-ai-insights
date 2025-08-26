@@ -1,13 +1,13 @@
-/* Optimized font loading for ecodesign */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789');
+/* Design System - Eligibly.ai */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Design System - Eligibly.ai */
+/* Font System */
 @layer base {
   * {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
   
   :root {
