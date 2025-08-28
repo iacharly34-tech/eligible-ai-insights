@@ -44,7 +44,34 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
       "@type": "SearchAction",
       "target": "https://eligibly.ai/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
-    }
+    },
+    "mainEntity": [
+      {
+        "@type": "WebPage",
+        "name": language === 'en' ? "Public Tender Analysis" : "Analyse Appels d'Offres Publics",
+        "url": "https://eligibly.ai/appels-d-offres-publics"
+      },
+      {
+        "@type": "WebPage", 
+        "name": language === 'en' ? "Product" : "Produit",
+        "url": "https://eligibly.ai/produit"
+      },
+      {
+        "@type": "WebPage",
+        "name": language === 'en' ? "Demo" : "Démo",
+        "url": "https://eligibly.ai/demo"
+      },
+      {
+        "@type": "WebPage",
+        "name": language === 'en' ? "Solutions" : "Solutions", 
+        "url": "https://eligibly.ai/solutions"
+      },
+      {
+        "@type": "WebPage",
+        "name": language === 'en' ? "Pricing" : "Tarifs",
+        "url": "https://eligibly.ai/tarifs"
+      }
+    ]
   };
 
   const softwareApplicationData = {

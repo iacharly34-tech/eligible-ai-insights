@@ -11,6 +11,7 @@ import { SkipNavigation } from "@/components/SkipNavigation";
 import { WCAGAccessibilityComponent } from "@/components/WCAGAccessibilityComponent";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { StructuredData } from "@/components/StructuredData";
+import { SitelinksStructuredData } from "@/components/SitelinksStructuredData";
 import { SEOHead } from "@/components/SEOHead";
 import { HighContrastToggle, FontSizeAdjuster, FocusEnhancer, ScreenReaderAnnouncer, KeyboardNavigationEnhancer } from "@/components/AccessibilityEnhancer";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -78,6 +79,7 @@ const App = () => (
           <Sonner />
           <CookieConsent />
           <BrowserRouter>
+            <SitelinksStructuredData />
             <ScrollToTop />
             <LanguageSync />
             {/* Routes */}
