@@ -28,6 +28,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ContextualLinks } from "@/components/ContextualLinks";
 import { SecureFormWrapper } from "@/components/SecureFormWrapper";
 import { useToast } from "@/hooks/use-toast";
 
@@ -340,6 +341,11 @@ const Demo = () => {
                 </CardContent>
               </Card>
             </div>
+          </div>
+          
+          {/* Maillage interne contextuel */}
+          <div className="container mx-auto max-w-6xl px-4 mt-16">
+            <ContextualLinks currentPage="/demo" context="demo" />
           </div>
         </div>
 

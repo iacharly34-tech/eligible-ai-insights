@@ -11,36 +11,37 @@ export const Footer = () => {
       title: t('footer.product'),
       links: [
         { name: t('nav.product'), href: language === 'en' ? '/en/product' : '/produit' },
-        { name: t('nav.solutions'), href: language === 'en' ? '/en/solutions' : '/solutions' },
-        { name: t('nav.pricing'), href: language === 'en' ? '/en/pricing' : '/tarifs' },
+        { name: 'Appels d\'offres publics', href: '/appels-d-offres-publics' },
         { name: t('nav.demo'), href: language === 'en' ? '/en/demo' : '/demo' },
+        { name: t('nav.pricing'), href: language === 'en' ? '/en/pricing' : '/tarifs' },
+      ],
+    },
+    {
+      title: 'Guides & Ressources',
+      links: [
+        { name: 'Guide AO publics', href: '/appels-d-offres-publics' },
+        { name: 'Détecter les AO', href: '/detection-appels-offres' },
+        { name: 'Éviter les erreurs', href: '/erreurs-ao' },
+        { name: 'Stratégie données', href: '/strategie-donnees' },
+        { name: 'Marchés innovation', href: '/marches-innovation' },
+      ],
+    },
+    {
+      title: 'Secteurs',
+      links: [
+        { name: 'Marchés BTP', href: '/appels-d-offres-publics#btp' },
+        { name: 'Services IT', href: '/appels-d-offres-publics#informatique' },
+        { name: 'Fournitures', href: '/appels-d-offres-publics#fournitures' },
+        { name: 'Conseil & Formation', href: '/appels-d-offres-publics#conseil' },
       ],
     },
     {
       title: t('footer.company'),
       links: [
         { name: t('nav.about'), href: language === 'en' ? '/en/about' : '/a-propos' },
-        { name: t('nav.resources'), href: language === 'en' ? '/en/resources' : '/ressources' },
         { name: t('nav.login'), href: language === 'en' ? '/en/login' : '/connexion' },
         { name: 'Contact', href: 'mailto:contact@eligibly.ai' },
-      ],
-    },
-    {
-      title: t('footer.support'),
-      links: [
-        { name: t('nav.demo'), href: language === 'en' ? '/en/demo' : '/demo' },
-        { name: 'Email', href: 'mailto:contact@eligibly.ai' },
-        { name: 'Tel', href: 'tel:+33123456789' },
-        { name: t('nav.resources'), href: language === 'en' ? '/en/resources' : '/ressources' },
-      ],
-    },
-    {
-      title: t('footer.legal'),
-      links: [
         { name: language === 'en' ? 'Legal notice' : 'Mentions légales', href: language === 'en' ? '/en/legal' : '/mentions-legales' },
-        { name: language === 'en' ? 'Privacy' : 'Confidentialité', href: language === 'en' ? '/en/privacy' : '/confidentialite' },
-        { name: language === 'en' ? 'Terms' : 'CGU', href: language === 'en' ? '/en/terms' : '/cgu' },
-        { name: 'Contact', href: 'mailto:contact@eligibly.ai' },
       ],
     },
   ];

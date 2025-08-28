@@ -13,6 +13,7 @@ import { Footer } from "@/components/Footer";
 import { SafeLink } from "@/components/SafeLink";
 import { MobileCTABar } from "@/components/MobileCTABar";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { InternalLinksManager } from "@/components/InternalLinksManager";
 import { 
   ArrowRight, 
   Target, 
@@ -36,6 +37,7 @@ import charlyCharacterCorrect from "@/assets/charly-character-correct.png";
 import charlyOptimized from "/lovable-uploads/6537d5ff-d496-4132-a49b-75e2d127ec58.png";
 import heroOptimized from "@/assets/eligible-ai-hero-optimized.webp";
 import { FAQSection } from "@/components/FAQSection";
+import { QuickLinksSection } from "@/components/QuickLinksSection";
 import { NewsletterSubscription } from "@/components/newsletter/NewsletterSubscription";
 import { processCharlyImage } from "@/utils/processCharlyImage";
 
@@ -769,6 +771,9 @@ const HomePage = () => {
 
       </main>
       
+      {/* Section liens rapides pour maillage interne */}
+      <QuickLinksSection />
+      
       {/* Footer */}
       <Footer />
 
@@ -789,6 +794,12 @@ const HomePage = () => {
           <h3>Intelligence Artificielle avancée</h3>
           <p>Notre IA analyse et qualifie automatiquement les opportunités selon vos critères.</p>
           <p>Bénéfice: Gain de temps et précision accrue dans la détection d'opportunités.</p>
+        </div>
+        
+        {/* Maillage interne optimisé */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold mb-6">Ressources recommandées</h2>
+          <InternalLinksManager currentPage="homepage" maxLinks={4} variant="inline" />
         </div>
       </div>
     </div>

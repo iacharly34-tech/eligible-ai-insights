@@ -11,6 +11,7 @@ import { ProductBenefits } from "@/components/product/ProductBenefits";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { ContextualLinks } from "@/components/ContextualLinks";
 import { MobileCTABar } from "@/components/MobileCTABar";
 
 const Produit = () => {
@@ -36,6 +37,11 @@ const Produit = () => {
 
       {/* Benefits Section */}
       <ProductBenefits />
+      
+      {/* Liens contextuels pour le maillage interne */}
+      <div className="container mx-auto px-4 py-16">
+        <ContextualLinks currentPage="/produit" context="product" />
+      </div>
 
           <CTAFooter 
             title={t('cta.title')}

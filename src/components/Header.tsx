@@ -17,9 +17,10 @@ export const Header = () => {
 
   const navigation = [
     { name: t('nav.product'), href: language === 'en' ? '/en/product' : '/produit' },
+    { name: t('nav.solutions'), href: language === 'en' ? '/en/solutions' : '/solutions' },
     { name: t('nav.pricing'), href: language === 'en' ? '/en/pricing' : '/tarifs' },
+    { name: 'Appels d\'offres publics', href: '/appels-d-offres-publics' },
     { name: t('nav.resources'), href: language === 'en' ? '/en/resources' : '/ressources' },
-    { name: t('nav.about'), href: language === 'en' ? '/en/about' : '/a-propos' },
   ];
 
   // Lock background scroll and add ESC key support when mobile menu is open
