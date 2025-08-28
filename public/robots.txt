@@ -32,6 +32,11 @@ Disallow: /api/private/
 Disallow: /_next/
 Disallow: /tmp/
 
+# Pages prioritaires pour ranking "Appels d'offres publics"
+Allow: /appels-d-offres-publics
+Allow: /produit  
+Allow: /demo
+
 # Important resources for AI understanding
 Allow: /sitemap.xml
 Allow: /manifest.json

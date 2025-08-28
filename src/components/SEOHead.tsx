@@ -15,9 +15,9 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
     // Pages articles spécialisées
     if (path === '/appels-d-offres-publics') {
       return {
-        title: "Comment l'IA transforme les appels d'offres publics (AO) en 2025 | Eligibly",
-        description: "Découvrez comment Eligibly révolutionne l'analyse des appels d'offres publics et marchés publics grâce à l'IA. +40% de taux de succès, -75% de temps d'analyse.",
-        keywords: "eligibly, appels d'offres publics, AO, marchés publics, IA, intelligence artificielle, analyse automatique"
+        title: "Appels d'offres publics : Guide complet 2025 | Eligibly IA",
+        description: "Guide expert appels d'offres publics : stratégies, analyse IA, conseils pour remporter vos marchés publics. +40% de succès avec Eligibly. Secteurs BTP, IT, services.",
+        keywords: "appels d'offres publics, appels d'offre publics, AO publics, marchés publics, appel d'offre public, procédure appel d'offres, code des marchés publics, achat public, commande publique, eligibly, IA"
       };
     }
     
