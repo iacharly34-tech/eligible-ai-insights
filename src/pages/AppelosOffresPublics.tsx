@@ -19,10 +19,10 @@ export default function AppelosOffresPublics() {
           <article>
             <header className="text-center mb-12">
               <h1 className="text-4xl font-bold text-foreground mb-6">
-                Comment l'IA transforme les appels d'offres publics (AO) en 2025
+                Appels d'offres publics : Guide complet pour réussir vos marchés publics en 2025
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Découvrez comment Eligibly révolutionne l'analyse des appels d'offres publics et des marchés publics grâce à l'intelligence artificielle prédictive.
+                Découvrez comment analyser et remporter vos appels d'offres publics grâce à l'IA. Guide expert sur les marchés publics, stratégies gagnantes et optimisation de vos candidatures AO.
               </p>
               <div className="flex items-center justify-center gap-4 mt-6 text-sm text-muted-foreground">
                 <span>Publié le 20 août 2025</span>
@@ -32,14 +32,23 @@ export default function AppelosOffresPublics() {
             </header>
 
             <div className="prose prose-lg max-w-none">
-              <h2>Qu'est-ce qu'un appel d'offres public (AO) ?</h2>
+              <h2>Appels d'offres publics : définition et enjeux des marchés publics</h2>
               <p>
-                Un appel d'offres public (AO) est une procédure par laquelle les administrations publiques et collectivités 
-                mettent en concurrence plusieurs entreprises pour l'attribution d'un marché public. Ces marchés publics 
-                représentent plus de 200 milliards d'euros par an en France.
+                Les <strong>appels d'offres publics</strong> (AO) constituent la procédure principale d'attribution des <strong>marchés publics</strong> en France. Ces appels d'offres permettent aux administrations publiques, collectivités territoriales et établissements publics de sélectionner les meilleures offres pour leurs projets. Le marché des appels d'offres publics représente plus de 200 milliards d'euros annuels, soit une opportunité majeure pour les entreprises de tous secteurs.
               </p>
+              
+              <h3>Types d'appels d'offres publics</h3>
+              <p>
+                Les appels d'offres publics se déclinent en plusieurs catégories selon les seuils et procédures :
+              </p>
+              <ul>
+                <li><strong>Appel d'offres ouvert</strong> : procédure la plus courante pour les marchés publics</li>
+                <li><strong>Appel d'offres restreint</strong> : avec présélection des candidats</li>
+                <li><strong>Procédure négociée</strong> : pour des marchés publics spécifiques</li>
+                <li><strong>Dialogue compétitif</strong> : pour les projets complexes d'appels d'offres publics</li>
+              </ul>
 
-              <h2>Les défis traditionnels des appels d'offres publics</h2>
+              <h2>Défis et complexité des appels d'offres publics</h2>
               <div className="grid md:grid-cols-2 gap-6 my-8">
                 <Card>
                   <CardContent className="p-6">
@@ -61,10 +70,9 @@ export default function AppelosOffresPublics() {
                 </Card>
               </div>
 
-              <h2>Comment Eligibly transforme l'analyse des AO</h2>
+              <h2>Solutions IA pour optimiser vos appels d'offres publics</h2>
               <p>
-                <strong>Eligibly</strong> est la première plateforme d'intelligence artificielle spécialement conçue 
-                pour analyser les appels d'offres publics et prédire vos chances de succès sur les marchés publics.
+                <strong>Eligibly</strong> révolutionne l'approche des <strong>appels d'offres publics</strong> grâce à l'intelligence artificielle. Notre plateforme analyse automatiquement tous les appels d'offres publics et calcule vos probabilités de succès sur les marchés publics, vous permettant de concentrer vos efforts sur les opportunités les plus prometteuses.
               </p>
 
               <h3>Analyse automatisée en quelques minutes</h3>
@@ -119,28 +127,38 @@ export default function AppelosOffresPublics() {
                 </CardContent>
               </Card>
 
-              <h2>Secteurs et types de marchés publics couverts</h2>
+              <h2>Tous secteurs d'appels d'offres publics couverts</h2>
               <p>
-                Eligibly analyse tous types d'appels d'offres publics dans tous les secteurs :
+                Notre IA analyse tous les types d'<strong>appels d'offres publics</strong> et <strong>marchés publics</strong> dans l'ensemble des secteurs d'activité :
               </p>
               <ul>
-                <li>Travaux publics et BTP</li>
-                <li>Services informatiques et transformation digitale</li>
-                <li>Fournitures et équipements</li>
-                <li>Services aux collectivités</li>
-                <li>Conseil et formation</li>
-                <li>Marchés de services publics</li>
+                <li><strong>Appels d'offres publics BTP</strong> : travaux publics, construction, rénovation</li>
+                <li><strong>Marchés publics informatiques</strong> : services IT, transformation digitale, logiciels</li>
+                <li><strong>Appels d'offres fournitures</strong> : équipements, matériels, fournitures administratives</li>
+                <li><strong>Services aux collectivités</strong> : nettoyage, sécurité, maintenance</li>
+                <li><strong>Marchés publics conseil</strong> : formation, audit, accompagnement</li>
+                <li><strong>Appels d'offres publics santé</strong> : équipements médicaux, services hospitaliers</li>
+                <li><strong>Marchés publics énergie</strong> : efficacité énergétique, énergies renouvelables</li>
+              </ul>
+
+              <h2>Stratégies gagnantes pour vos appels d'offres publics</h2>
+              
+              <h3>Conseils d'experts pour remporter vos marchés publics</h3>
+              <ul>
+                <li><strong>Analyse approfondie</strong> : étudiez chaque appel d'offres public en détail</li>
+                <li><strong>Qualification préalable</strong> : vérifiez votre éligibilité aux marchés publics</li>
+                <li><strong>Offre différenciante</strong> : valorisez vos atouts sur chaque appel d'offres</li>
+                <li><strong>Respect des délais</strong> : anticipez les échéances des appels d'offres publics</li>
+                <li><strong>Partenariats stratégiques</strong> : constituez des groupements pour les gros marchés publics</li>
               </ul>
 
               <h2>L'avenir des appels d'offres publics avec l'IA</h2>
               <p>
-                L'intelligence artificielle révolutionne déjà la façon dont les entreprises abordent les marchés publics. 
-                Avec des outils comme Eligibly, l'analyse des AO devient plus précise, plus rapide et plus stratégique.
+                L'intelligence artificielle transforme radicalement l'approche des <strong>appels d'offres publics</strong>. Les entreprises utilisant l'IA pour analyser les marchés publics augmentent significativement leur taux de succès et optimisent leurs ressources commerciales.
               </p>
 
               <p>
-                Les entreprises qui adoptent dès maintenant ces technologies d'IA pour les appels d'offres publics 
-                prennent une longueur d'avance significative sur leurs concurrents.
+                Avec Eligibly, l'analyse des <strong>appels d'offres publics</strong> devient automatisée, prédictive et stratégique. Les entreprises qui adoptent ces technologies d'IA pour les marchés publics prennent une avance décisive sur leurs concurrents.
               </p>
             </div>
 
