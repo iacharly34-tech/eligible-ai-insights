@@ -5,63 +5,58 @@ export const SitelinksStructuredData = () => {
 
   const siteNavigationData = {
     "@context": "https://schema.org",
-    "@type": "SiteNavigationElement",
-    "name": "Eligibly Navigation",
+    "@type": "ItemList",
+    "name": "Navigation Eligibly",
+    "description": "Navigation principale du site Eligibly pour les appels d'offres publics",
     "url": "https://eligibly.ai",
-    "hasPart": [
+    "itemListElement": [
       {
-        "@type": "WebPage",
-        "name": language === 'en' ? "Public Tender Analysis" : "Appels d'Offres Publics",
-        "description": language === 'en' 
-          ? "AI analysis for public tenders and government contracts"
-          : "Analyse IA des appels d'offres publics et marchés publics",
-        "url": "https://eligibly.ai/appels-d-offres-publics",
-        "about": language === 'en' ? "Public procurement" : "Marchés publics"
+        "@type": "SiteNavigationElement",
+        "position": 1,
+        "name": language === 'en' ? "AI Product" : "Produit IA",
+        "description": language === 'en' ? "AI analysis platform for public tenders and procurement" : "Plateforme d'analyse IA pour appels d'offres et marchés publics",
+        "url": `https://eligibly.ai${language === 'en' ? '/en/product' : '/produit'}`,
+        "about": language === 'en' ? "Artificial intelligence for public procurement optimization" : "Intelligence artificielle pour l'optimisation des marchés publics"
       },
       {
-        "@type": "WebPage", 
-        "name": language === 'en' ? "Product Features" : "Fonctionnalités Produit",
-        "description": language === 'en'
-          ? "Discover Eligibly AI platform features for public tenders"
-          : "Découvrez les fonctionnalités de la plateforme IA Eligibly",
-        "url": "https://eligibly.ai/produit",
-        "about": language === 'en' ? "AI software" : "Logiciel IA"
-      },
-      {
-        "@type": "WebPage",
+        "@type": "SiteNavigationElement",
+        "position": 2, 
         "name": language === 'en' ? "Free Demo" : "Démo Gratuite",
-        "description": language === 'en'
-          ? "Test Eligibly AI analysis on your public tenders"
-          : "Testez l'analyse IA Eligibly sur vos appels d'offres",
-        "url": "https://eligibly.ai/demo",
-        "about": language === 'en' ? "Product demonstration" : "Démonstration produit"
+        "description": language === 'en' ? "Test Eligibly AI on your public tender projects for free" : "Testez gratuitement l'IA Eligibly sur vos projets d'appels d'offres",
+        "url": `https://eligibly.ai${language === 'en' ? '/en/demo' : '/demo'}`,
+        "about": language === 'en' ? "Free testing and demonstration of AI capabilities" : "Test gratuit et démonstration des capacités IA"
       },
       {
-        "@type": "WebPage",
-        "name": language === 'en' ? "AI Solutions" : "Solutions IA",
-        "description": language === 'en'
-          ? "Complete AI solutions for public procurement optimization"
-          : "Solutions IA complètes pour l'optimisation des marchés publics",
-        "url": "https://eligibly.ai/solutions",
-        "about": language === 'en' ? "Business solutions" : "Solutions entreprise"
+        "@type": "SiteNavigationElement",
+        "position": 3,
+        "name": language === 'en' ? "Complete Solutions" : "Solutions Complètes",
+        "description": language === 'en' ? "End-to-end solutions for public procurement success" : "Solutions de bout en bout pour réussir dans la commande publique", 
+        "url": `https://eligibly.ai${language === 'en' ? '/en/solutions' : '/solutions'}`,
+        "about": language === 'en' ? "Comprehensive strategies and tools for public markets" : "Stratégies et outils complets pour les marchés publics"
       },
       {
-        "@type": "WebPage",
-        "name": language === 'en' ? "Pricing Plans" : "Plans Tarifaires", 
-        "description": language === 'en'
-          ? "Affordable pricing for AI public tender analysis"
-          : "Tarifs accessibles pour l'analyse IA des appels d'offres",
-        "url": "https://eligibly.ai/tarifs",
-        "about": language === 'en' ? "Subscription plans" : "Plans d'abonnement"
+        "@type": "SiteNavigationElement",
+        "position": 4,
+        "name": language === 'en' ? "Transparent Pricing" : "Tarifs Transparents", 
+        "description": language === 'en' ? "Clear and transparent pricing for all business sizes" : "Tarification claire et transparente pour toutes les tailles d'entreprise",
+        "url": `https://eligibly.ai${language === 'en' ? '/en/pricing' : '/tarifs'}`,
+        "about": language === 'en' ? "Pricing plans adapted to SMEs and large groups" : "Plans tarifaires adaptés aux PME et grands groupes"
       },
       {
-        "@type": "WebPage",
+        "@type": "SiteNavigationElement",
+        "position": 5,
         "name": language === 'en' ? "Expert Resources" : "Ressources Expert",
-        "description": language === 'en'
-          ? "Guides and articles for public tender success"
-          : "Guides et articles pour réussir vos appels d'offres",
-        "url": "https://eligibly.ai/ressources",
-        "about": language === 'en' ? "Educational content" : "Contenu éducatif"
+        "description": language === 'en' ? "Guides, articles and expertise for public tender success" : "Guides, articles et expertise pour réussir vos appels d'offres publics",
+        "url": `https://eligibly.ai${language === 'en' ? '/en/resources' : '/ressources'}`,
+        "about": language === 'en' ? "Educational content and strategic guides" : "Contenu éducatif et guides stratégiques"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 6,
+        "name": language === 'en' ? "Public Tender Guide" : "Guide Appels d'Offres",
+        "description": language === 'en' ? "Complete guide to analyzing and winning public tenders" : "Guide complet pour analyser et remporter les appels d'offres publics",
+        "url": "https://eligibly.ai/appels-d-offres-publics",
+        "about": language === 'en' ? "Comprehensive methodology for public procurement success" : "Méthodologie complète pour réussir dans les marchés publics"
       }
     ]
   };

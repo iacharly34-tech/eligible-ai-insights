@@ -36,42 +36,72 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Eligibly",
+    "alternateName": "Eligibly.ai",
     "description": language === 'en'
-      ? "AI for public tenders and government contracts"
-      : "IA pour appels d'offres publics (AO) et marchés publics",
+      ? "AI platform for public tenders analysis and optimization"
+      : "Plateforme IA pour l'analyse et l'optimisation des appels d'offres publics",
     "url": "https://eligibly.ai",
+    "sameAs": [
+      "https://www.linkedin.com/company/eligibly",
+      "https://twitter.com/eligibly_ai"
+    ],
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://eligibly.ai/search?q={search_term_string}",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://eligibly.ai/recherche?q={search_term_string}"
+      },
       "query-input": "required name=search_term_string"
     },
-    "mainEntity": [
-      {
-        "@type": "WebPage",
-        "name": language === 'en' ? "Public Tender Analysis" : "Analyse Appels d'Offres Publics",
-        "url": "https://eligibly.ai/appels-d-offres-publics"
-      },
-      {
-        "@type": "WebPage", 
-        "name": language === 'en' ? "Product" : "Produit",
-        "url": "https://eligibly.ai/produit"
-      },
-      {
-        "@type": "WebPage",
-        "name": language === 'en' ? "Demo" : "Démo",
-        "url": "https://eligibly.ai/demo"
-      },
-      {
-        "@type": "WebPage",
-        "name": language === 'en' ? "Solutions" : "Solutions", 
-        "url": "https://eligibly.ai/solutions"
-      },
-      {
-        "@type": "WebPage",
-        "name": language === 'en' ? "Pricing" : "Tarifs",
-        "url": "https://eligibly.ai/tarifs"
-      }
-    ]
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Navigation principale Eligibly",
+      "description": "Sections principales du site Eligibly pour les appels d'offres publics",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": language === 'en' ? "Product" : "Produit",
+          "description": language === 'en' ? "AI analysis platform for public tenders" : "Plateforme d'analyse IA pour appels d'offres publics",
+          "url": `https://eligibly.ai${language === 'en' ? '/en/product' : '/produit'}`
+        },
+        {
+          "@type": "SiteNavigationElement", 
+          "position": 2,
+          "name": language === 'en' ? "Demo" : "Démo",
+          "description": language === 'en' ? "Test our AI on your public tenders" : "Testez notre IA sur vos appels d'offres",
+          "url": `https://eligibly.ai${language === 'en' ? '/en/demo' : '/demo'}`
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": language === 'en' ? "Solutions" : "Solutions", 
+          "description": language === 'en' ? "Complete solutions for public procurement" : "Solutions complètes pour la commande publique",
+          "url": `https://eligibly.ai${language === 'en' ? '/en/solutions' : '/solutions'}`
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": language === 'en' ? "Pricing" : "Tarifs",
+          "description": language === 'en' ? "Transparent pricing for all businesses" : "Tarifs transparents pour toutes les entreprises", 
+          "url": `https://eligibly.ai${language === 'en' ? '/en/pricing' : '/tarifs'}`
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 5,
+          "name": language === 'en' ? "Resources" : "Ressources",
+          "description": language === 'en' ? "Guides and expertise for public tenders" : "Guides et expertise pour les appels d'offres publics",
+          "url": `https://eligibly.ai${language === 'en' ? '/en/resources' : '/ressources'}`
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 6,
+          "name": language === 'en' ? "Public Tender Analysis" : "Appels d'Offres Publics",
+          "description": language === 'en' ? "Complete guide to public tender analysis" : "Guide complet d'analyse des appels d'offres publics",
+          "url": "https://eligibly.ai/appels-d-offres-publics"
+        }
+      ]
+    }
   };
 
   const softwareApplicationData = {
