@@ -204,13 +204,24 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
   };
 
   const seo = getPageSEO();
-  const canonicalUrl = `https://eligibly.ai${location.pathname}`;
+  
+  // Gestion correcte des URLs canoniques pour éviter les doublons
+  let canonicalUrl = `https://eligibly.ai${location.pathname}`;
+  
+  // Pour les pages EN, on garde la version EN comme canonique
+  if (location.pathname.startsWith('/en/')) {
+    canonicalUrl = `https://eligibly.ai${location.pathname}`;
+  } else {
+    // Pour les pages FR, on s'assure qu'il n'y a pas de duplication
+    canonicalUrl = `https://eligibly.ai${location.pathname}`;
+  }
 
   return (
     <>
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="keywords" content={seo.keywords} />
+      <meta name="robots" content="index, follow" />
       {noindex && <meta name="robots" content="noindex, nofollow" />}
       <link rel="canonical" href={canonicalUrl} />
       
@@ -252,9 +263,18 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
       <meta name="twitter:site" content="@eligibly_ai" />
       <meta name="twitter:creator" content="@eligibly_ai" />
       
-      {/* Language alternatives */}
-      <link rel="alternate" hrefLang="fr" href={`https://eligibly.ai${location.pathname.replace('/en', '')}`} />
-      <link rel="alternate" hrefLang="en" href={`https://eligibly.ai/en${location.pathname}`} />
+      {/* Language alternatives - URLs correctes pour éviter les doublons */}
+      {!location.pathname.startsWith('/en/') ? (
+        <>
+          <link rel="alternate" hrefLang="fr" href={`https://eligibly.ai${location.pathname}`} />
+          <link rel="alternate" hrefLang="en" href={`https://eligibly.ai/en${location.pathname === '/' ? '' : location.pathname}`} />
+        </>
+      ) : (
+        <>
+          <link rel="alternate" hrefLang="en" href={`https://eligibly.ai${location.pathname}`} />
+          <link rel="alternate" hrefLang="fr" href={`https://eligibly.ai${location.pathname.replace('/en', '') || '/'}`} />
+        </>
+      )}
       <link rel="alternate" hrefLang="x-default" href="https://eligibly.ai/" />
       
       {/* Preload critical resources */}

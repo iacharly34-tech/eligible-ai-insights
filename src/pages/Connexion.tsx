@@ -42,7 +42,7 @@ const Connexion = () => {
 
   return (
     <>
-      <SEOHead noindex />
+      <SEOHead />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
         <Header />
       
