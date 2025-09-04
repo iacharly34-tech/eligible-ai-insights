@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { CriticalResourcePreloader, PerformanceMonitor } from "./components/PerformanceOptimizer";
 import { WebVitalsMonitor } from "./components/WebVitalsMonitor";
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -130,6 +130,9 @@ const App = () => (
                 <Route path="/en/privacy" element={<Confidentialite />} />
                 <Route path="/en/terms" element={<CGU />} />
 
+                {/* Search redirects (for SEO) - redirect search queries to main page */}
+                <Route path="/search" element={<Navigate to="/" replace />} />
+                
                 {/* CATCH-ALL */}
                 <Route path="*" element={<NotFound />} />
               </Routes>

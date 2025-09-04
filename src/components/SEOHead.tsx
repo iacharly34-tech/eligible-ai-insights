@@ -47,6 +47,11 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
         description: "Guide complet pour réussir sur les marchés publics durables. Nouvelles obligations RSE, stratégies gagnantes et outils d'accompagnement en 2025.",
         keywords: "critères environnementaux, RSE, marchés publics, AO durables"
       },
+      '/connexion': {
+        title: "Connexion eligibly.ai - Accès à votre compte IA pour appels d'offres",
+        description: "Connectez-vous à votre espace eligibly.ai pour analyser et gérer vos appels d'offres publics avec l'intelligence artificielle.",
+        keywords: "connexion eligibly, compte IA, appels d'offres, login plateforme"
+      },
       '/strategie-donnees': {
         title: "Comment bâtir une vraie stratégie AO basée sur les données | Eligibly",
         description: "De l'intuition à la science : comment les données transforment l'approche des marchés publics et maximisent le ROI commercial des PME et grands groupes.",

@@ -32,6 +32,9 @@ Disallow: /api/private/
 Disallow: /_next/
 Disallow: /tmp/
 
+# Block search pages (redirect to main)
+Disallow: /search*
+
 # Pages prioritaires pour ranking "Appels d'offres publics"
 Allow: /appels-d-offres-publics
 Allow: /produit  
