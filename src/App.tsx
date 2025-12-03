@@ -50,6 +50,12 @@ const MarchesInnovation = lazy(() => import("./pages/MarchesInnovation"));
 const PMEvsGrandsGroupes = lazy(() => import("./pages/PMEvsGrandsGroupes"));
 const FuturIA = lazy(() => import("./pages/FuturIA"));
 const AProposEligibly = lazy(() => import("./pages/AProposEligibly"));
+const GoNoGo = lazy(() => import("./pages/GoNoGo"));
+const FormationAO = lazy(() => import("./pages/FormationAO"));
+const PrixQualite = lazy(() => import("./pages/PrixQualite"));
+const DocumentsAO = lazy(() => import("./pages/DocumentsAO"));
+const RetoursAO = lazy(() => import("./pages/RetoursAO"));
+const VeilleStrategique = lazy(() => import("./pages/VeilleStrategique"));
 
 import { LanguageSync } from "@/components/LanguageSync";
 
@@ -115,6 +121,12 @@ const App = () => (
                 <Route path="/marches-innovation" element={<MarchesInnovation />} />
                 <Route path="/pme-vs-grands-groupes" element={<PMEvsGrandsGroupes />} />
                 <Route path="/futur-ia" element={<FuturIA />} />
+                <Route path="/go-no-go" element={<GoNoGo />} />
+                <Route path="/formation-ao" element={<FormationAO />} />
+                <Route path="/prix-qualite" element={<PrixQualite />} />
+                <Route path="/documents-ao" element={<DocumentsAO />} />
+                <Route path="/retours-ao" element={<RetoursAO />} />
+                <Route path="/veille-strategique" element={<VeilleStrategique />} />
 
                 {/* EN routes */}
                 <Route path="/en" element={<Index />} />

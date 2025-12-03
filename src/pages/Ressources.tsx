@@ -53,6 +53,62 @@ const Ressources = () => {
   // Articles ordonnés par date décroissante (plus récent en premier)
   const allArticles = [
     {
+      title: "La veille stratégique : votre première étape vers le succès",
+      description: "Comment structurer une veille efficace sur les marchés publics pour ne plus jamais manquer une opportunité",
+      url: "/veille-strategique",
+      date: "1er octobre 2025",
+      readTime: "9 min",
+      icon: Eye,
+      category: "Répondre efficacement aux AO",
+      isFeatured: true
+    },
+    {
+      title: "Go/No Go : l'art de choisir ses batailles",
+      description: "Méthodologie complète pour analyser un appel d'offres et décider en moins de 30 minutes",
+      url: "/go-no-go",
+      date: "28 septembre 2025",
+      readTime: "10 min",
+      icon: Target,
+      category: "Répondre efficacement aux AO",
+      isFeatured: true
+    },
+    {
+      title: "Se former aux marchés publics : par où commencer ?",
+      description: "Guide complet des formations, certifications et ressources pour maîtriser la commande publique",
+      url: "/formation-ao",
+      date: "25 septembre 2025",
+      readTime: "8 min",
+      icon: BookOpen,
+      category: "Répondre efficacement aux AO"
+    },
+    {
+      title: "Le mémoire technique : rédiger pour convaincre",
+      description: "Construire un dossier de réponse solide qui met en valeur votre expertise et différencie votre offre",
+      url: "/documents-ao",
+      date: "20 septembre 2025",
+      readTime: "11 min",
+      icon: BookOpen,
+      category: "Répondre efficacement aux AO"
+    },
+    {
+      title: "Analyser les retours d'attribution : transformer l'échec en succès",
+      description: "Exploiter les rapports d'analyse des offres pour améliorer vos futures candidatures",
+      url: "/retours-ao",
+      date: "18 septembre 2025",
+      readTime: "9 min",
+      icon: BarChart3,
+      category: "Tendances & data clés"
+    },
+    {
+      title: "Équilibrer prix et qualité : la clé d'une offre gagnante",
+      description: "Maîtriser les critères de notation pour optimiser votre positionnement tarifaire",
+      url: "/prix-qualite",
+      date: "15 septembre 2025",
+      readTime: "10 min",
+      icon: BarChart3,
+      category: "Tendances & data clés"
+    },
+    {
       title: "Le futur de la réponse aux AO : IA, automatisation et stratégie humaine",
       description: "Vision prospective de l'évolution des marchés publics à l'ère de l'intelligence artificielle",
       url: "/futur-ia",
@@ -405,7 +461,7 @@ const Ressources = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div>
-                  <div className="text-4xl font-bold mb-2">10</div>
+                  <div className="text-4xl font-bold mb-2">16</div>
                   <div className="text-blue-100">Articles experts</div>
                 </div>
                 <div>
