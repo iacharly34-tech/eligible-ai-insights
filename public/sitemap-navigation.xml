@@ -64,4 +64,53 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Articles Blog -->
+  <url>
+    <loc>https://eligibly.ai/veille-strategique</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/veille-strategique" />
+  </url>
+
+  <url>
+    <loc>https://eligibly.ai/go-no-go</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/go-no-go" />
+  </url>
+
+  <url>
+    <loc>https://eligibly.ai/formation-ao</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/formation-ao" />
+  </url>
+
+  <url>
+    <loc>https://eligibly.ai/documents-ao</loc>
+    <lastmod>2025-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/documents-ao" />
+  </url>
+
+  <url>
+    <loc>https://eligibly.ai/retours-ao</loc>
+    <lastmod>2025-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/retours-ao" />
+  </url>
+
+  <url>
+    <loc>https://eligibly.ai/prix-qualite</loc>
+    <lastmod>2025-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/prix-qualite" />
+  </url>
+
 </urlset>
