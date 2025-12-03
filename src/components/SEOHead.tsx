@@ -76,6 +76,11 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
         title: "Le futur de la réponse aux AO : IA, automatisation et stratégie humaine | Eligibly",
         description: "Vision prospective de l'évolution des marchés publics à l'ère de l'intelligence artificielle. Comment l'humain et la machine vont transformer ensemble l'approche des appels d'offres.",
         keywords: "IA marchés publics, automatisation AO, futur appels d'offres"
+      },
+      '/numerique-responsable': {
+        title: "Critères environnementaux AO IT, Digital et Marketing | Guide 2025 | Eligibly",
+        description: "Comment répondre aux exigences environnementales des marchés publics numériques. Numérique responsable, éco-conception, bilan carbone digital avec Greenmetrics.",
+        keywords: "numérique responsable, green IT, critères environnementaux, AO numériques, éco-conception, Greenmetrics, marchés publics IT"
       }
     };
 

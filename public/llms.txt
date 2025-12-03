@@ -36,6 +36,7 @@ Eligibly.ai is a French AI platform specialized in public procurement (marchés 
 - Mémoire technique: https://eligibly.ai/documents-ao
 - Retours d'expérience AO: https://eligibly.ai/retours-ao
 - Équilibre prix/qualité: https://eligibly.ai/prix-qualite
+- Numérique responsable (Green IT, Digital, Marketing): https://eligibly.ai/numerique-responsable
 - Détection appels d'offres: https://eligibly.ai/detection-appels-offres
 - Erreurs courantes AO: https://eligibly.ai/erreurs-ao
 - Signaux faibles: https://eligibly.ai/signaux-faibles

@@ -84,6 +84,14 @@
   </url>
 
   <url>
+    <loc>https://eligibly.ai/numerique-responsable</loc>
+    <lastmod>2025-12-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/numerique-responsable" />
+  </url>
+
+  <url>
     <loc>https://eligibly.ai/go-no-go</loc>
     <lastmod>2025-09-28</lastmod>
     <changefreq>monthly</changefreq>
