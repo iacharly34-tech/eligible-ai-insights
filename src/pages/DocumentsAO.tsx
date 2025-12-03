@@ -391,7 +391,7 @@ const DocumentsAO = () => {
             </section>
           </article>
 
-          <ArticleRecommendations currentArticle="/documents-ao" />
+          <ArticleRecommendations currentArticleUrl="/documents-ao" />
         </main>
 
         <Footer />

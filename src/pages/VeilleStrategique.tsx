@@ -121,7 +121,7 @@ const VeilleStrategique = () => {
                           </li>
                           <li className="flex items-start gap-2">
                             <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span><strong>JOUE</strong> - Journal Officiel de l'Union Européenne (marchés > seuils)</span>
+                            <span><strong>JOUE</strong> - Journal Officiel de l'Union Européenne (marchés &gt; seuils)</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
@@ -361,7 +361,7 @@ const VeilleStrategique = () => {
             </section>
           </article>
 
-          <ArticleRecommendations currentArticle="/veille-strategique" />
+          <ArticleRecommendations currentArticleUrl="/veille-strategique" />
         </main>
 
         <Footer />

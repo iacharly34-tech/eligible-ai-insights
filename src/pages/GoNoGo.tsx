@@ -363,7 +363,7 @@ const GoNoGo = () => {
             </section>
           </article>
 
-          <ArticleRecommendations currentArticle="/go-no-go" />
+          <ArticleRecommendations currentArticleUrl="/go-no-go" />
         </main>
 
         <Footer />

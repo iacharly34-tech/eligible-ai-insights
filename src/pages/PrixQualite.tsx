@@ -398,7 +398,7 @@ const PrixQualite = () => {
             </section>
           </article>
 
-          <ArticleRecommendations currentArticle="/prix-qualite" />
+          <ArticleRecommendations currentArticleUrl="/prix-qualite" />
         </main>
 
         <Footer />

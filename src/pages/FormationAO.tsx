@@ -357,7 +357,7 @@ const FormationAO = () => {
             </section>
           </article>
 
-          <ArticleRecommendations currentArticle="/formation-ao" />
+          <ArticleRecommendations currentArticleUrl="/formation-ao" />
         </main>
 
         <Footer />

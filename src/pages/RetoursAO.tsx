@@ -370,7 +370,7 @@ const RetoursAO = () => {
             </section>
           </article>
 
-          <ArticleRecommendations currentArticle="/retours-ao" />
+          <ArticleRecommendations currentArticleUrl="/retours-ao" />
         </main>
 
         <Footer />
