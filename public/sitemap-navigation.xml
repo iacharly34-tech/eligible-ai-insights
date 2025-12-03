@@ -64,13 +64,23 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Articles Blog -->
+  <!-- Articles Blog avec hreflang FR/EN -->
   <url>
     <loc>https://eligibly.ai/veille-strategique</loc>
     <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/veille-strategique" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eligibly.ai/en/strategic-watch" />
+  </url>
+
+  <url>
+    <loc>https://eligibly.ai/en/strategic-watch</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/veille-strategique" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eligibly.ai/en/strategic-watch" />
   </url>
 
   <url>
@@ -79,6 +89,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/go-no-go" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eligibly.ai/en/go-no-go-decision" />
+  </url>
+
+  <url>
+    <loc>https://eligibly.ai/en/go-no-go-decision</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/go-no-go" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eligibly.ai/en/go-no-go-decision" />
   </url>
 
   <url>
@@ -87,6 +107,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/formation-ao" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eligibly.ai/en/public-tender-training" />
+  </url>
+
+  <url>
+    <loc>https://eligibly.ai/en/public-tender-training</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/formation-ao" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eligibly.ai/en/public-tender-training" />
   </url>
 
   <url>
@@ -95,6 +125,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/documents-ao" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eligibly.ai/en/technical-proposal" />
+  </url>
+
+  <url>
+    <loc>https://eligibly.ai/en/technical-proposal</loc>
+    <lastmod>2025-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/documents-ao" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eligibly.ai/en/technical-proposal" />
   </url>
 
   <url>
@@ -103,6 +143,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/retours-ao" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eligibly.ai/en/tender-feedback" />
+  </url>
+
+  <url>
+    <loc>https://eligibly.ai/en/tender-feedback</loc>
+    <lastmod>2025-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/retours-ao" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eligibly.ai/en/tender-feedback" />
   </url>
 
   <url>
@@ -111,6 +161,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/prix-qualite" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eligibly.ai/en/price-quality-balance" />
+  </url>
+
+  <url>
+    <loc>https://eligibly.ai/en/price-quality-balance</loc>
+    <lastmod>2025-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eligibly.ai/prix-qualite" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eligibly.ai/en/price-quality-balance" />
   </url>
 
 </urlset>

@@ -57,6 +57,14 @@ const DocumentsAO = lazy(() => import("./pages/DocumentsAO"));
 const RetoursAO = lazy(() => import("./pages/RetoursAO"));
 const VeilleStrategique = lazy(() => import("./pages/VeilleStrategique"));
 
+// English Blog Articles
+const StrategicWatchEN = lazy(() => import("./pages/en/StrategicWatch"));
+const GoNoGoDecisionEN = lazy(() => import("./pages/en/GoNoGoDecision"));
+const PublicTenderTrainingEN = lazy(() => import("./pages/en/PublicTenderTraining"));
+const TechnicalProposalEN = lazy(() => import("./pages/en/TechnicalProposal"));
+const TenderFeedbackEN = lazy(() => import("./pages/en/TenderFeedback"));
+const PriceQualityBalanceEN = lazy(() => import("./pages/en/PriceQualityBalance"));
+
 import { LanguageSync } from "@/components/LanguageSync";
 
 const queryClient = new QueryClient();
@@ -141,6 +149,14 @@ const App = () => (
                 <Route path="/en/legal" element={<MentionsLegales />} />
                 <Route path="/en/privacy" element={<Confidentialite />} />
                 <Route path="/en/terms" element={<CGU />} />
+
+                {/* English Blog Articles */}
+                <Route path="/en/strategic-watch" element={<StrategicWatchEN />} />
+                <Route path="/en/go-no-go-decision" element={<GoNoGoDecisionEN />} />
+                <Route path="/en/public-tender-training" element={<PublicTenderTrainingEN />} />
+                <Route path="/en/technical-proposal" element={<TechnicalProposalEN />} />
+                <Route path="/en/tender-feedback" element={<TenderFeedbackEN />} />
+                <Route path="/en/price-quality-balance" element={<PriceQualityBalanceEN />} />
 
                 {/* Search redirects (for SEO) - redirect search queries to main page */}
                 <Route path="/search" element={<Navigate to="/" replace />} />
