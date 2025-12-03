@@ -56,6 +56,7 @@ const PrixQualite = lazy(() => import("./pages/PrixQualite"));
 const DocumentsAO = lazy(() => import("./pages/DocumentsAO"));
 const RetoursAO = lazy(() => import("./pages/RetoursAO"));
 const VeilleStrategique = lazy(() => import("./pages/VeilleStrategique"));
+const NumeriqueResponsable = lazy(() => import("./pages/NumeriqueResponsable"));
 
 // English Blog Articles
 const StrategicWatchEN = lazy(() => import("./pages/en/StrategicWatch"));
@@ -135,6 +136,7 @@ const App = () => (
                 <Route path="/documents-ao" element={<DocumentsAO />} />
                 <Route path="/retours-ao" element={<RetoursAO />} />
                 <Route path="/veille-strategique" element={<VeilleStrategique />} />
+                <Route path="/numerique-responsable" element={<NumeriqueResponsable />} />
 
                 {/* EN routes */}
                 <Route path="/en" element={<Index />} />
