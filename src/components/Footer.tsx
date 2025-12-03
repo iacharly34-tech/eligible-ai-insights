@@ -21,9 +21,9 @@ export const Footer = () => {
       links: [
         { name: 'Guide AO publics', href: '/appels-d-offres-publics' },
         { name: 'Détecter les AO', href: '/detection-appels-offres' },
+        { name: 'Numérique responsable', href: '/numerique-responsable' },
         { name: 'Éviter les erreurs', href: '/erreurs-ao' },
         { name: 'Stratégie données', href: '/strategie-donnees' },
-        { name: 'Marchés innovation', href: '/marches-innovation' },
       ],
     },
     {

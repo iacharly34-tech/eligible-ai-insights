@@ -261,7 +261,7 @@ export default function CriteresRSE() {
                   <CardContent className="p-6">
                     <h4 className="font-semibold mb-3">Secteur Services/IT</h4>
                     <ul className="space-y-2 text-sm">
-                      <li>• Numérique responsable</li>
+                      <li>• <a href="/numerique-responsable" className="text-primary hover:underline">Numérique responsable</a></li>
                       <li>• Dématérialisation</li>
                       <li>• Égalité professionnelle</li>
                       <li>• Formation/montée en compétences</li>
