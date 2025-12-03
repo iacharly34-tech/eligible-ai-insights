@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Optimized for AI crawlers
+# Optimized for AI crawlers (LLM optimization)
 User-agent: GPTBot
 Allow: /
 
@@ -26,6 +26,18 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
 # Block private areas
 Disallow: /admin/
 Disallow: /api/private/
@@ -43,9 +55,13 @@ Allow: /demo
 # Important resources for AI understanding
 Allow: /sitemap.xml
 Allow: /manifest.json
+Allow: /llms.txt
 
 # Crawl delay for politeness
 Crawl-delay: 1
 
 # Sitemap location
 Sitemap: https://eligibly.ai/sitemap.xml
+
+# LLMs.txt for AI assistants
+# https://eligibly.ai/llms.txt

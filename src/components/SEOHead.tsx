@@ -134,6 +134,43 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
             description: "Eligibly revolutionizes public tenders with AI. +47% success rate, predictive analysis of government contracts, public procurement optimization. Complete solution for businesses.",
             keywords: "eligibly, public tenders, government contracts, AI, artificial intelligence, predictive analysis, public procurement, tender process, bid opportunities, contract bidding, public sector contracts, tender documentation, procurement strategy, tender success, competitive bidding, procurement opportunities, tender qualification, bid preparation, procurement analysis, tender intelligence"
           };
+        // English Blog Articles
+        case '/en/strategic-watch':
+          return {
+            title: "Strategic Watch for Public Tenders: Complete Guide 2025 | Eligibly",
+            description: "Master strategic watch for public tenders. Learn how to anticipate opportunities and gain competitive advantage with AI-powered monitoring.",
+            keywords: "strategic watch, public tenders, tender monitoring, competitive intelligence, procurement opportunities"
+          };
+        case '/en/go-no-go-decision':
+          return {
+            title: "Go/No-Go Decision: Optimize Your Tender Response Strategy | Eligibly",
+            description: "Master the Go/No-Go decision process. Learn 7 essential criteria to qualify opportunities and improve your tender success rate by 35%.",
+            keywords: "go no go decision, tender qualification, bid decision, public tender strategy, tender success rate"
+          };
+        case '/en/public-tender-training':
+          return {
+            title: "Public Tender Training: Expert Guide for Professionals | Eligibly",
+            description: "Complete training guide for mastering public tenders. From basics to advanced strategies for winning government contracts.",
+            keywords: "public tender training, procurement training, bid writing course, government contracts"
+          };
+        case '/en/technical-proposal':
+          return {
+            title: "Technical Proposal Writing: Win More Public Contracts | Eligibly",
+            description: "Expert guide to writing winning technical proposals. Structure, content, and strategies to maximize your score on public tenders.",
+            keywords: "technical proposal, bid writing, tender response, government contracts, procurement"
+          };
+        case '/en/tender-feedback':
+          return {
+            title: "Tender Feedback Analysis: Learn from Every Bid | Eligibly",
+            description: "How to analyze tender feedback and improve your future responses. Transform rejection into opportunity with data-driven insights.",
+            keywords: "tender feedback, bid analysis, procurement improvement, tender debrief"
+          };
+        case '/en/price-quality-balance':
+          return {
+            title: "Price-Quality Balance in Public Tenders | Eligibly",
+            description: "Master the price-quality balance in public procurement. Optimize your bids with strategic pricing and technical excellence.",
+            keywords: "price quality balance, tender pricing, procurement strategy, best value"
+          };
         default:
           return {
             title: "Eligibly – AI for Public Tenders and Government Contracts",

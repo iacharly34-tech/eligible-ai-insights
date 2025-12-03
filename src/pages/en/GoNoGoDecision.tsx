@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
-import { StructuredData } from "@/components/StructuredData";
+import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 import { ArticleRecommendations } from "@/components/ArticleRecommendations";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -26,7 +26,16 @@ const GoNoGoDecision = () => {
   return (
     <>
       <SEOHead />
-      <StructuredData />
+      <ArticleStructuredData
+        title="Optimising Go/No Go: The Decision That Makes the Difference"
+        description="Master the Go/No-Go decision process to optimize your tender response strategy. Learn the 7 essential criteria to qualify opportunities and improve your success rate by 35%."
+        datePublished="2025-09-28"
+        dateModified="2025-09-28"
+        url="/en/go-no-go-decision"
+        keywords={["go no go decision", "tender qualification", "bid decision", "public tender strategy", "tender success rate", "bid management", "Charly AI"]}
+        readingTime="10 min"
+        alternateLanguage={{ lang: "fr", url: "/go-no-go" }}
+      />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40">
         <Header />
         
