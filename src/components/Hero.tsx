@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Play, CheckCircle, TrendingUp } from "lucide-react";
+import { ArrowRight, Play, CheckCircle, TrendingUp, Shield, Users } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SafeLink } from "@/components/SafeLink";
 import { useOptimizedAnimation } from "@/hooks/useOptimizedAnimation";
@@ -88,26 +88,41 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Social proof stats */}
+        {/* Social proof stats - Enhanced */}
         <div className="mt-12 sm:mt-16 text-center px-4">
           <div className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">
-            Rejoint par plus de 2000+ professionnels des marchés publics
+            🚀 Utilisé par les équipes commerciales les plus performantes
           </div>
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-6 sm:gap-8 text-center">
-            <div className="min-w-0 flex-1 sm:flex-initial">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-card border border-border/50">
               <div className="text-2xl sm:text-3xl font-bold text-primary">+15M€</div>
-              <div className="text-xs sm:text-sm text-muted-foreground">de marchés remportés</div>
+              <div className="text-xs text-muted-foreground">marchés remportés</div>
             </div>
-            <div className="hidden sm:block w-px h-12 bg-border opacity-50"></div>
-            <div className="min-w-0 flex-1 sm:flex-initial">
-              <div className="text-2xl sm:text-3xl font-bold text-primary">47%</div>
-              <div className="text-xs sm:text-sm text-muted-foreground">d'augmentation du taux de succès</div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-card border border-border/50">
+              <div className="text-2xl sm:text-3xl font-bold text-accent">47%</div>
+              <div className="text-xs text-muted-foreground">taux de succès</div>
             </div>
-            <div className="hidden sm:block w-px h-12 bg-border opacity-50"></div>
-            <div className="min-w-0 flex-1 sm:flex-initial">
-              <div className="text-2xl sm:text-3xl font-bold text-primary">6h/semaine</div>
-              <div className="text-xs sm:text-sm text-muted-foreground">économisées en veille</div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-card border border-border/50">
+              <div className="text-2xl sm:text-3xl font-bold text-success">6h/sem</div>
+              <div className="text-xs text-muted-foreground">temps économisé</div>
             </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-card border border-border/50">
+              <div className="text-2xl sm:text-3xl font-bold text-warning">94%</div>
+              <div className="text-xs text-muted-foreground">précision IA</div>
+            </div>
+          </div>
+          
+          {/* Trust badges */}
+          <div className="mt-8 flex flex-wrap justify-center gap-4 text-xs text-muted-foreground">
+            <span className="flex items-center gap-1 bg-white/60 px-3 py-1.5 rounded-full">
+              <Shield className="w-3 h-3 text-success" /> RGPD Compliant
+            </span>
+            <span className="flex items-center gap-1 bg-white/60 px-3 py-1.5 rounded-full">
+              <TrendingUp className="w-3 h-3 text-primary" /> ROI moyen x3
+            </span>
+            <span className="flex items-center gap-1 bg-white/60 px-3 py-1.5 rounded-full">
+              <Users className="w-3 h-3 text-accent" /> Équipes jusqu'à 50 users
+            </span>
           </div>
         </div>
       </div>
