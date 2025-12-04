@@ -35,6 +35,26 @@ const translations = {
     'hero.stats.time': '10x plus rapide pour qualifier un marché',
     'hero.stats.precision': "Aide à la décision: placez l'investissement au bon niveau grâce au pourcentage de succès",
     
+    // Hero Stats Section
+    'hero.stats.markets.value': '+15M€',
+    'hero.stats.markets.label': 'marchés remportés',
+    'hero.stats.success.value': '47%',
+    'hero.stats.success.label': 'taux de succès',
+    'hero.stats.time.value': '6h/sem',
+    'hero.stats.time.label': 'temps économisé',
+    'hero.stats.ai.value': '94%',
+    'hero.stats.ai.label': 'précision IA',
+    'hero.stats.usedBy': 'Utilisé par les équipes commerciales les plus performantes',
+    'hero.trust.rgpd': 'RGPD Compliant',
+    'hero.trust.roi': 'ROI moyen x3',
+    'hero.trust.teams': 'Équipes jusqu\'à 50 users',
+    'hero.noCard': 'Aucune carte bancaire requise • Essai 14 jours • Plus de compétitivité = meilleures affaires publiques',
+    'hero.learnMore': 'En savoir plus :',
+    'hero.learnMore.link': 'Comment l\'IA transforme les appels d\'offres publics',
+    'hero.title.main': 'La seule IA qui prédit vos chances',
+    'hero.title.sub': 'sur les marchés publics avant de candidater',
+    'hero.description': 'Eligibly est la première IA spécialisée dans les appels d\'offres publics (AO) et les marchés publics, qui prédit vos chances de succès avant de candidater.',
+    
     // Charly Section (Meet Charly)
     'charly.meet.title.prefix': 'Rencontrez',
     'charly.meet.title.highlight': 'Charly by Eligibly',
@@ -84,6 +104,23 @@ const translations = {
     // Flow subheading
     'features.flow.title': "Flux d'opportunités",
     'features.flow.subtitle': 'Simplifiez votre veille',
+    
+    // Features Stats Section
+    'features.stats.tenders.value': '+600',
+    'features.stats.tenders.label': 'Appels d\'offres/jour',
+    'features.stats.tenders.sublabel': 'analysés automatiquement',
+    'features.stats.market.value': '80Md€',
+    'features.stats.market.label': 'Marché accessible',
+    'features.stats.market.sublabel': 'en France chaque année',
+    'features.stats.speed.value': '10x',
+    'features.stats.speed.label': 'Plus rapide',
+    'features.stats.speed.sublabel': 'que la veille manuelle',
+    'features.stats.renewals.value': '+50K',
+    'features.stats.renewals.label': 'Renouvellements',
+    'features.stats.renewals.sublabel': 'de marchés détectés',
+    'features.stats.sources': 'Sources surveillées',
+    'features.stats.uptime': 'Disponibilité',
+    'features.stats.alertDelay': 'Délai moyen d\'alerte',
     
     // Market Stats Section
     'market.title': 'Les chiffres clés des',
@@ -538,6 +575,26 @@ const translations = {
     'hero.stats.time': '10x faster to qualify a tender',
     'hero.stats.precision': 'Decision support: invest exactly where it matters with your success percentage',
     
+    // Hero Stats Section
+    'hero.stats.markets.value': '+15M€',
+    'hero.stats.markets.label': 'markets won',
+    'hero.stats.success.value': '47%',
+    'hero.stats.success.label': 'success rate',
+    'hero.stats.time.value': '6h/wk',
+    'hero.stats.time.label': 'time saved',
+    'hero.stats.ai.value': '94%',
+    'hero.stats.ai.label': 'AI precision',
+    'hero.stats.usedBy': 'Used by top-performing sales teams',
+    'hero.trust.rgpd': 'GDPR Compliant',
+    'hero.trust.roi': 'Average ROI x3',
+    'hero.trust.teams': 'Teams up to 50 users',
+    'hero.noCard': 'No credit card required • 14-day trial • More competitiveness = better public deals',
+    'hero.learnMore': 'Learn more:',
+    'hero.learnMore.link': 'How AI transforms public tenders',
+    'hero.title.main': 'The only AI that predicts your chances',
+    'hero.title.sub': 'in public procurement before you apply',
+    'hero.description': 'Eligibly is the first AI specialised in public tenders that predicts your chances of success before you apply.',
+    
     // Charly Section (Meet Charly)
     'charly.meet.title.prefix': 'Meet',
     'charly.meet.title.highlight': 'Charly by Eligibly',
@@ -580,6 +637,24 @@ const translations = {
     // Flow subheading
     'features.flow.title': 'Opportunity flow',
     'features.flow.subtitle': 'Simplify your monitoring',
+    
+    // Features Stats Section
+    'features.stats.tenders.value': '+600',
+    'features.stats.tenders.label': 'Tenders/day',
+    'features.stats.tenders.sublabel': 'analysed automatically',
+    'features.stats.market.value': '€80B',
+    'features.stats.market.label': 'Accessible market',
+    'features.stats.market.sublabel': 'in France each year',
+    'features.stats.speed.value': '10x',
+    'features.stats.speed.label': 'Faster',
+    'features.stats.speed.sublabel': 'than manual monitoring',
+    'features.stats.renewals.value': '+50K',
+    'features.stats.renewals.label': 'Renewals',
+    'features.stats.renewals.sublabel': 'detected tenders',
+    'features.stats.sources': 'Sources monitored',
+    'features.stats.uptime': 'Uptime',
+    'features.stats.alertDelay': 'Average alert delay',
+    
     'coverage.title': 'Comprehensive',
     'coverage.title.highlight': 'coverage',
     'coverage.subtitle': 'National (France) and European coverage today, updated in real time — global expansion plan underway.',
