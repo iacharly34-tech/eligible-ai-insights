@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { X, Settings, Shield, BarChart3, Users } from 'lucide-react';
+import { Settings, Shield, BarChart3, Users } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Switch } from '@/components/ui/switch';
 import { secureStorage } from '@/utils/security';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface CookiePreferences {
   necessary: boolean;
@@ -17,7 +18,8 @@ interface CookiePreferences {
 const COOKIE_CONSENT_KEY = 'cookie-consent-eligibly';
 const COOKIE_PREFERENCES_KEY = 'cookie-preferences-eligibly';
 
-export const CookieConsent = () => {
+export const CookieConsent = memo(() => {
+  const { t } = useLanguage();
   const [showBanner, setShowBanner] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>({
@@ -30,7 +32,6 @@ export const CookieConsent = () => {
   useEffect(() => {
     const consent = secureStorage.getItem(COOKIE_CONSENT_KEY);
     if (!consent) {
-      // Délai pour éviter le flash de contenu
       setTimeout(() => setShowBanner(true), 1000);
     } else {
       const savedPrefs = secureStorage.getItem(COOKIE_PREFERENCES_KEY, preferences);
@@ -72,15 +73,13 @@ export const CookieConsent = () => {
     setPreferences(prefs);
     setShowBanner(false);
     
-    // Déclencher les scripts analytiques si acceptés
     if (prefs.analytics) {
-      // Ici on pourrait initialiser Google Analytics, etc.
       console.log('Analytics cookies accepted');
     }
   };
 
   const updatePreference = (key: keyof CookiePreferences, value: boolean) => {
-    if (key === 'necessary') return; // Les cookies nécessaires ne peuvent pas être désactivés
+    if (key === 'necessary') return;
     setPreferences(prev => ({ ...prev, [key]: value }));
   };
 
@@ -88,22 +87,20 @@ export const CookieConsent = () => {
 
   return (
     <>
-      {/* Bannière de consentement */}
+      {/* Cookie Banner */}
       <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-background/95 backdrop-blur-sm border-t shadow-lg">
         <Card className="max-w-6xl mx-auto p-6">
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4">
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
-                <Shield className="h-5 w-5 text-primary" />
-                <h3 className="font-semibold text-lg">Gestion des cookies</h3>
+                <Shield className="h-5 w-5 text-primary" aria-hidden="true" />
+                <h3 className="font-semibold text-lg">{t('cookies.title')}</h3>
               </div>
               <p className="text-muted-foreground text-sm">
-                Nous utilisons des cookies pour améliorer votre expérience sur notre site. 
-                Certains cookies sont nécessaires au fonctionnement du site, d'autres nous aident 
-                à analyser le trafic et à personnaliser le contenu.
+                {t('cookies.description')}
               </p>
               <p className="text-xs text-muted-foreground mt-2">
-                Conforme au RGPD - Vous pouvez modifier vos préférences à tout moment.
+                {t('cookies.gdpr')}
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-2 min-w-fit">
@@ -113,73 +110,73 @@ export const CookieConsent = () => {
                 onClick={() => setShowSettings(true)}
                 className="flex items-center gap-2"
               >
-                <Settings className="h-4 w-4" />
-                Personnaliser
+                <Settings className="h-4 w-4" aria-hidden="true" />
+                {t('cookies.customize')}
               </Button>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={handleAcceptNecessary}
               >
-                Nécessaires uniquement
+                {t('cookies.necessaryOnly')}
               </Button>
               <Button
                 size="sm"
                 onClick={handleAcceptAll}
                 className="bg-primary hover:bg-primary/90"
               >
-                Accepter tout
+                {t('cookies.acceptAll')}
               </Button>
             </div>
           </div>
         </Card>
       </div>
 
-      {/* Modal de paramètres détaillés */}
+      {/* Settings Modal */}
       <Dialog open={showSettings} onOpenChange={setShowSettings}>
         <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
-              <Shield className="h-5 w-5" />
-              Paramètres de confidentialité
+              <Shield className="h-5 w-5" aria-hidden="true" />
+              {t('cookies.settings')}
             </DialogTitle>
           </DialogHeader>
 
           <Tabs defaultValue="cookies" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="cookies">Cookies</TabsTrigger>
-              <TabsTrigger value="policy">Politique</TabsTrigger>
+              <TabsTrigger value="cookies">{t('cookies.tabCookies')}</TabsTrigger>
+              <TabsTrigger value="policy">{t('cookies.tabPolicy')}</TabsTrigger>
             </TabsList>
 
             <TabsContent value="cookies" className="space-y-6">
-              {/* Cookies nécessaires */}
+              {/* Necessary Cookies */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <Shield className="h-5 w-5 text-green-600" />
+                    <Shield className="h-5 w-5 text-green-600" aria-hidden="true" />
                     <div>
-                      <h4 className="font-medium">Cookies nécessaires</h4>
+                      <h4 className="font-medium">{t('cookies.necessary.title')}</h4>
                       <p className="text-sm text-muted-foreground">
-                        Requis pour le bon fonctionnement du site
+                        {t('cookies.necessary.desc')}
                       </p>
                     </div>
                   </div>
                   <Switch checked={true} disabled />
                 </div>
                 <p className="text-xs text-muted-foreground pl-8">
-                  Cookies de session, sécurité, préférences de langue, panier d'achat
+                  {t('cookies.necessary.details')}
                 </p>
               </div>
 
-              {/* Cookies analytiques */}
+              {/* Analytics Cookies */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <BarChart3 className="h-5 w-5 text-blue-600" />
+                    <BarChart3 className="h-5 w-5 text-blue-600" aria-hidden="true" />
                     <div>
-                      <h4 className="font-medium">Cookies analytiques</h4>
+                      <h4 className="font-medium">{t('cookies.analytics.title')}</h4>
                       <p className="text-sm text-muted-foreground">
-                        Nous aident à comprendre l'usage du site
+                        {t('cookies.analytics.desc')}
                       </p>
                     </div>
                   </div>
@@ -189,19 +186,19 @@ export const CookieConsent = () => {
                   />
                 </div>
                 <p className="text-xs text-muted-foreground pl-8">
-                  Google Analytics (anonymisé), mesures d'audience, pages visitées
+                  {t('cookies.analytics.details')}
                 </p>
               </div>
 
-              {/* Cookies marketing */}
+              {/* Marketing Cookies */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <Users className="h-5 w-5 text-purple-600" />
+                    <Users className="h-5 w-5 text-purple-600" aria-hidden="true" />
                     <div>
-                      <h4 className="font-medium">Cookies marketing</h4>
+                      <h4 className="font-medium">{t('cookies.marketing.title')}</h4>
                       <p className="text-sm text-muted-foreground">
-                        Pour personnaliser les publicités
+                        {t('cookies.marketing.desc')}
                       </p>
                     </div>
                   </div>
@@ -211,19 +208,19 @@ export const CookieConsent = () => {
                   />
                 </div>
                 <p className="text-xs text-muted-foreground pl-8">
-                  Réseaux sociaux, publicités ciblées, remarketing
+                  {t('cookies.marketing.details')}
                 </p>
               </div>
 
-              {/* Cookies de préférences */}
+              {/* Preference Cookies */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <Settings className="h-5 w-5 text-orange-600" />
+                    <Settings className="h-5 w-5 text-orange-600" aria-hidden="true" />
                     <div>
-                      <h4 className="font-medium">Cookies de préférences</h4>
+                      <h4 className="font-medium">{t('cookies.preferences.title')}</h4>
                       <p className="text-sm text-muted-foreground">
-                        Mémorisent vos choix personnels
+                        {t('cookies.preferences.desc')}
                       </p>
                     </div>
                   </div>
@@ -233,52 +230,43 @@ export const CookieConsent = () => {
                   />
                 </div>
                 <p className="text-xs text-muted-foreground pl-8">
-                  Thème sombre/clair, région, préférences d'affichage
+                  {t('cookies.preferences.details')}
                 </p>
               </div>
             </TabsContent>
 
             <TabsContent value="policy" className="space-y-4">
               <div className="prose prose-sm max-w-none">
-                <h4>Notre engagement pour votre vie privée</h4>
-                <p>
-                  Eligibly.ai respecte votre vie privée et s'engage à protéger vos données personnelles
-                  conformément au Règlement Général sur la Protection des Données (RGPD).
-                </p>
+                <h4>{t('cookies.policy.title')}</h4>
+                <p>{t('cookies.policy.intro')}</p>
                 
-                <h5>Finalités du traitement</h5>
+                <h5>{t('cookies.policy.purposes')}</h5>
                 <ul>
-                  <li>Fonctionnement technique du site (cookies nécessaires)</li>
-                  <li>Analyse de l'audience et amélioration du service</li>
-                  <li>Personnalisation de l'expérience utilisateur</li>
-                  <li>Communication marketing (avec votre consentement)</li>
+                  <li>{t('cookies.policy.purpose1')}</li>
+                  <li>{t('cookies.policy.purpose2')}</li>
+                  <li>{t('cookies.policy.purpose3')}</li>
+                  <li>{t('cookies.policy.purpose4')}</li>
                 </ul>
 
-                <h5>Vos droits</h5>
-                <p>
-                  Vous disposez d'un droit d'accès, de rectification, d'effacement, de portabilité 
-                  et d'opposition concernant vos données. Contactez-nous à : contact@eligibly.ai
-                </p>
+                <h5>{t('cookies.policy.rights')}</h5>
+                <p>{t('cookies.policy.rightsText')}</p>
 
-                <h5>Durée de conservation</h5>
-                <p>
-                  Les cookies sont conservés pour une durée maximale de 13 mois. 
-                  Votre consentement est valable 13 mois et peut être retiré à tout moment.
-                </p>
+                <h5>{t('cookies.policy.retention')}</h5>
+                <p>{t('cookies.policy.retentionText')}</p>
               </div>
             </TabsContent>
           </Tabs>
 
           <div className="flex justify-end gap-2 mt-6">
             <Button variant="outline" onClick={() => setShowSettings(false)}>
-              Annuler
+              {t('cookies.cancel')}
             </Button>
             <Button onClick={handleSavePreferences}>
-              Enregistrer les préférences
+              {t('cookies.save')}
             </Button>
           </div>
         </DialogContent>
       </Dialog>
     </>
   );
-};
+});
