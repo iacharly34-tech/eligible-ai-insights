@@ -68,22 +68,27 @@ export const Features = () => {
           </p>
         </div>
 
-        {/* Tengo-style Stats Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
-          <div className="text-center px-4">
+        {/* Enhanced Stats Section */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+          <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-6 text-center border border-primary/20">
             <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-2">+600</div>
-            <div className="text-base sm:text-lg font-medium">Appels d'offres</div>
-            <div className="text-sm sm:text-base text-muted-foreground">remontés chaque jour</div>
+            <div className="text-sm sm:text-base font-medium">Appels d'offres/jour</div>
+            <div className="text-xs text-muted-foreground mt-1">analysés automatiquement</div>
           </div>
-          <div className="text-center px-4">
-            <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-2">10x</div>
-            <div className="text-base sm:text-lg font-medium">Plus rapide</div>
-            <div className="text-sm sm:text-base text-muted-foreground">pour analyser un marché</div>
+          <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl p-6 text-center border border-accent/20">
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-accent mb-2">80Md€</div>
+            <div className="text-sm sm:text-base font-medium">Marché accessible</div>
+            <div className="text-xs text-muted-foreground mt-1">en France chaque année</div>
           </div>
-          <div className="text-center px-4">
-            <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-2">+50000</div>
-            <div className="text-base sm:text-lg font-medium">Renouvellements</div>
-            <div className="text-sm sm:text-base text-muted-foreground">de marchés détectés</div>
+          <div className="bg-gradient-to-br from-success/10 to-success/5 rounded-2xl p-6 text-center border border-success/20">
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-success mb-2">10x</div>
+            <div className="text-sm sm:text-base font-medium">Plus rapide</div>
+            <div className="text-xs text-muted-foreground mt-1">que la veille manuelle</div>
+          </div>
+          <div className="bg-gradient-to-br from-warning/10 to-warning/5 rounded-2xl p-6 text-center border border-warning/20">
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-warning mb-2">+50K</div>
+            <div className="text-sm sm:text-base font-medium">Renouvellements</div>
+            <div className="text-xs text-muted-foreground mt-1">de marchés détectés</div>
           </div>
         </div>
 
