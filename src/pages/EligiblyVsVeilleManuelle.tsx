@@ -114,7 +114,7 @@ const EligiblyVsVeilleManuelle = () => {
               </SafeLink>
             </section>
 
-            <ArticleRecommendations />
+            <ArticleRecommendations currentArticleUrl="/eligibly-vs-veille-manuelle" />
           </article>
         </main>
         <Footer />

@@ -105,7 +105,7 @@ const EligiblyVsDoubletrade = () => {
               </SafeLink>
             </section>
 
-            <ArticleRecommendations />
+            <ArticleRecommendations currentArticleUrl="/eligibly-vs-doubletrade" />
           </article>
         </main>
         <Footer />

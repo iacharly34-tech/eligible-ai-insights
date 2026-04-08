@@ -109,7 +109,7 @@ const EligiblyVsTengo = () => {
               </SafeLink>
             </section>
 
-            <ArticleRecommendations />
+            <ArticleRecommendations currentArticleUrl="/eligibly-vs-tengo" />
           </article>
         </main>
         <Footer />
