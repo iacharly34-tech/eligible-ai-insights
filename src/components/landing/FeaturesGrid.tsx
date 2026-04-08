@@ -25,26 +25,24 @@ export const FeaturesGrid = () => {
   const items = features[language];
 
   return (
-    <section className="py-16 sm:py-24 px-4" id="features" aria-label="Features">
+    <section className="py-24 sm:py-32 px-4" id="features" aria-label="Features">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+        <div className="text-center mb-20">
+          <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">
             {language === "en" ? "Features" : "Fonctionnalités"}
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
+          </span>
+          <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-extrabold font-display leading-[1.1] tracking-tight">
             {language === "en"
               ? "Everything you need to win more tenders"
               : "Tout ce qu'il faut pour remporter plus de marchés"}
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-1">
           {items.map((f) => (
-            <div key={f.title} className="group bg-card border border-border rounded-2xl p-6 hover:shadow-glow hover:border-primary/20 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-gradient-cta group-hover:text-white transition-colors">
-                <f.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
-              </div>
-              <h3 className="text-lg font-bold font-display mb-2">{f.title}</h3>
+            <div key={f.title} className="group p-8 sm:p-10 border border-border/30 hover:bg-card transition-all duration-500">
+              <f.icon className="w-7 h-7 text-primary mb-6 group-hover:text-foreground transition-colors duration-300" />
+              <h3 className="text-lg font-bold font-display mb-3 tracking-tight">{f.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
             </div>
           ))}
