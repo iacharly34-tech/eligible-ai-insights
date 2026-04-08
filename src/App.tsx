@@ -160,6 +160,22 @@ const App = () => (
                 <Route path="/eligibly-vs-doubletrade" element={<EligiblyVsDoubletrade />} />
                 <Route path="/eligibly-vs-tengo" element={<EligiblyVsTengo />} />
                 <Route path="/eligibly-vs-veille-manuelle" element={<EligiblyVsVeilleManuelle />} />
+                
+                {/* Blog - Pilier 1: Comprendre */}
+                <Route path="/seuils-marches-publics" element={<SeuilsMarchesPublics />} />
+                <Route path="/dematerialisation-marches-publics" element={<DematerialisationAO />} />
+                <Route path="/allotissement-marches-publics" element={<AllotissementMarchesPublics />} />
+                <Route path="/criteres-attribution-marches-publics" element={<CriteresAttribution />} />
+                {/* Blog - Pilier 2: Optimiser */}
+                <Route path="/memoire-technique-marches-publics" element={<MemoireTechnique />} />
+                <Route path="/groupement-entreprises-marches-publics" element={<GroupementEntreprises />} />
+                <Route path="/negociation-marches-publics" element={<NegociationMarchesPublics />} />
+                <Route path="/chiffrer-offre-marche-public" element={<ChiffrerOffreMarche />} />
+                {/* Blog - Pilier 3: IA et marchés */}
+                <Route path="/scoring-predictif-ia-marches-publics" element={<IAScoringPredictif />} />
+                <Route path="/ia-analyse-dce" element={<IAAnalyseDCE />} />
+                <Route path="/donnees-attribution-marches-publics" element={<DonneesAttribution />} />
+                <Route path="/automatiser-veille-marches-publics" element={<AutomatiserVeilleMarchesPublics />} />
                 {/* EN routes */}
                 <Route path="/en" element={<Index />} />
                 <Route path="/en/product" element={<Produit />} />
