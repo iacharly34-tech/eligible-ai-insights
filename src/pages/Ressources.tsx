@@ -52,6 +52,147 @@ const Ressources = () => {
 
   // Articles ordonnés par date décroissante (plus récent en premier)
   const allArticles = [
+    // New articles 2026
+    {
+      title: "Seuils des marchés publics 2026 : guide complet",
+      description: "Tous les seuils de procédure à connaître pour répondre aux bons marchés. Mise à jour avec les seuils européens en vigueur.",
+      url: "/seuils-marches-publics",
+      date: "8 avril 2026",
+      readTime: "8 min",
+      icon: BookOpen,
+      category: "Comprendre les marchés publics",
+      isFeatured: true
+    },
+    {
+      title: "Scoring prédictif IA : comment ça marche concrètement ?",
+      description: "Derrière le score de compatibilité d'Eligibly, il y a un modèle IA entraîné sur des milliers de marchés.",
+      url: "/scoring-predictif-ia-marches-publics",
+      date: "15 mars 2026",
+      readTime: "9 min",
+      icon: Brain,
+      category: "IA & automatisation",
+      isFeatured: true
+    },
+    {
+      title: "Comment l'IA analyse un DCE en 5 min au lieu de 3h",
+      description: "L'analyse d'un dossier de consultation peut prendre des heures. L'IA le fait en quelques minutes.",
+      url: "/ia-analyse-dce",
+      date: "12 mars 2026",
+      readTime: "7 min",
+      icon: Brain,
+      category: "IA & automatisation",
+      isFeatured: true
+    },
+    {
+      title: "Rédiger un mémoire technique gagnant : méthode complète",
+      description: "Le mémoire technique est souvent le critère qui fait la différence. Voici la méthode pour convaincre.",
+      url: "/memoire-technique-marches-publics",
+      date: "27 mars 2026",
+      readTime: "10 min",
+      icon: Target,
+      category: "Répondre efficacement aux AO"
+    },
+    {
+      title: "Données d'attribution : l'arme secrète des marchés publics",
+      description: "Les données d'attribution sont publiques. Peu les exploitent. Celles qui le font gagnent plus.",
+      url: "/donnees-attribution-marches-publics",
+      date: "9 mars 2026",
+      readTime: "8 min",
+      icon: BarChart3,
+      category: "IA & automatisation"
+    },
+    {
+      title: "Automatiser sa veille : du BOAMP au scoring IA",
+      description: "De la veille manuelle sur le BOAMP à la détection automatique avec scoring.",
+      url: "/automatiser-veille-marches-publics",
+      date: "6 mars 2026",
+      readTime: "8 min",
+      icon: Zap,
+      category: "IA & automatisation"
+    },
+    {
+      title: "Dématérialisation des marchés publics en 2026",
+      description: "Tout comprendre sur la dématérialisation obligatoire et les plateformes à surveiller.",
+      url: "/dematerialisation-marches-publics",
+      date: "5 avril 2026",
+      readTime: "7 min",
+      icon: BookOpen,
+      category: "Comprendre les marchés publics"
+    },
+    {
+      title: "Allotissement : opportunité pour les PME",
+      description: "L'obligation d'allotir favorise l'accès des PME. Comment en tirer parti ?",
+      url: "/allotissement-marches-publics",
+      date: "2 avril 2026",
+      readTime: "7 min",
+      icon: Users,
+      category: "Comprendre les marchés publics"
+    },
+    {
+      title: "Critères d'attribution : décryptage complet",
+      description: "Comment les acheteurs notent les offres ? Comprendre les critères pour rédiger une réponse gagnante.",
+      url: "/criteres-attribution-marches-publics",
+      date: "30 mars 2026",
+      readTime: "9 min",
+      icon: BarChart3,
+      category: "Comprendre les marchés publics"
+    },
+    {
+      title: "Groupement d'entreprises : guide pratique",
+      description: "Se grouper pour répondre à un marché trop gros seul ? Mode d'emploi.",
+      url: "/groupement-entreprises-marches-publics",
+      date: "24 mars 2026",
+      readTime: "8 min",
+      icon: Users,
+      category: "Répondre efficacement aux AO"
+    },
+    {
+      title: "Négociation en marchés publics : quand et comment ?",
+      description: "La négociation n'est pas interdite en marchés publics. Voici comment en tirer parti.",
+      url: "/negociation-marches-publics",
+      date: "21 mars 2026",
+      readTime: "7 min",
+      icon: Target,
+      category: "Répondre efficacement aux AO"
+    },
+    {
+      title: "Chiffrer son offre : éviter les pièges",
+      description: "Le BPU, le DQE, les prix unitaires et forfaitaires : tout comprendre pour chiffrer juste.",
+      url: "/chiffrer-offre-marche-public",
+      date: "18 mars 2026",
+      readTime: "8 min",
+      icon: BarChart3,
+      category: "Répondre efficacement aux AO"
+    },
+    // Comparison pages
+    {
+      title: "Eligibly vs Doubletrade",
+      description: "Comparaison factuelle entre Eligibly et Doubletrade pour vos appels d'offres.",
+      url: "/eligibly-vs-doubletrade",
+      date: "10 avril 2026",
+      readTime: "6 min",
+      icon: BarChart3,
+      category: "Comparaisons"
+    },
+    {
+      title: "Eligibly vs Tengo",
+      description: "Deux approches IA des marchés publics. Comparaison honnête.",
+      url: "/eligibly-vs-tengo",
+      date: "10 avril 2026",
+      readTime: "6 min",
+      icon: BarChart3,
+      category: "Comparaisons"
+    },
+    {
+      title: "Eligibly vs veille manuelle (BOAMP + Excel)",
+      description: "BOAMP + Excel, est-ce encore viable ? Comparaison avec le scoring IA.",
+      url: "/eligibly-vs-veille-manuelle",
+      date: "10 avril 2026",
+      readTime: "7 min",
+      icon: BarChart3,
+      category: "Comparaisons"
+    },
+    // Existing articles
     {
       title: "La veille stratégique : votre première étape vers le succès",
       description: "Comment structurer une veille efficace sur les marchés publics pour ne plus jamais manquer une opportunité",
@@ -60,7 +201,7 @@ const Ressources = () => {
       readTime: "9 min",
       icon: Eye,
       category: "Répondre efficacement aux AO",
-      isFeatured: true
+      isFeatured: false
     },
     {
       title: "Go/No Go : l'art de choisir ses batailles",
