@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, TrendingUp, Clock, Target, Users } from "lucide-react";
 
 const testimonials = {
   fr: [
@@ -44,9 +44,25 @@ const testimonials = {
   ],
 };
 
+const caseStudyMetrics = {
+  fr: [
+    { icon: TrendingUp, value: "38%", label: "taux de succès moyen", prev: "vs 15% avant Eligibly" },
+    { icon: Clock, value: "-80%", label: "temps de veille", prev: "2h/sem au lieu de 10h" },
+    { icon: Target, value: "x2.5", label: "ROI sur 6 mois", prev: "mesuré sur nos premiers utilisateurs" },
+    { icon: Users, value: "50+", label: "entreprises en bêta", prev: "PME et ETI françaises" },
+  ],
+  en: [
+    { icon: TrendingUp, value: "38%", label: "average win rate", prev: "vs 15% before Eligibly" },
+    { icon: Clock, value: "-80%", label: "monitoring time", prev: "2h/week instead of 10h" },
+    { icon: Target, value: "x2.5", label: "ROI over 6 months", prev: "measured on early users" },
+    { icon: Users, value: "50+", label: "companies in beta", prev: "French SMEs and mid-caps" },
+  ],
+};
+
 export const SocialProof = () => {
   const { language } = useLanguage();
   const items = testimonials[language];
+  const metrics = caseStudyMetrics[language];
 
   return (
     <section className="py-16 sm:py-24 px-4 bg-secondary/30" aria-label="Testimonials">
@@ -62,7 +78,20 @@ export const SocialProof = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        {/* Impact Metrics */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {metrics.map((m) => (
+            <div key={m.label} className="bg-card border border-border rounded-2xl p-5 text-center">
+              <m.icon className="w-6 h-6 text-primary mx-auto mb-2" />
+              <div className="text-2xl sm:text-3xl font-extrabold text-primary font-display">{m.value}</div>
+              <div className="text-sm font-medium mt-1">{m.label}</div>
+              <div className="text-xs text-muted-foreground mt-1">{m.prev}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Testimonials */}
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
           {items.map((t) => (
             <div key={t.name} className="bg-card border border-border rounded-2xl p-6 flex flex-col">
               <Quote className="w-8 h-8 text-primary/20 mb-4" />
@@ -80,10 +109,10 @@ export const SocialProof = () => {
           ))}
         </div>
 
-        <p className="text-center text-xs text-muted-foreground mt-8">
+        <p className="text-center text-xs text-muted-foreground">
           {language === "en"
-            ? "* Testimonials from beta users. Names anonymized."
-            : "* Témoignages d'utilisateurs bêta. Noms anonymisés."}
+            ? "* Testimonials from beta users. Names anonymized for confidentiality."
+            : "* Témoignages d'utilisateurs bêta. Noms anonymisés pour confidentialité."}
         </p>
       </div>
     </section>
