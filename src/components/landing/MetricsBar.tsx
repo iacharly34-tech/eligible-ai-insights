@@ -20,13 +20,13 @@ export const MetricsBar = () => {
   const items = metrics[language];
 
   return (
-    <section className="py-8 border-y border-border bg-secondary/30" aria-label="Key metrics">
+    <section className="py-16 sm:py-20 border-y border-border/30" aria-label="Key metrics">
       <div className="container mx-auto">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-10 text-center">
           {items.map((m) => (
-            <div key={m.label}>
-              <div className="text-2xl sm:text-3xl font-extrabold text-primary font-display">{m.value}</div>
-              <div className="text-sm text-muted-foreground mt-1">{m.label}</div>
+            <div key={m.label} className="space-y-2">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground font-display tracking-tight">{m.value}</div>
+              <div className="text-xs sm:text-sm text-muted-foreground uppercase tracking-[0.2em]">{m.label}</div>
             </div>
           ))}
         </div>

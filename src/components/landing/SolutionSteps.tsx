@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Search, BarChart3, FileText, ArrowRight } from "lucide-react";
+import { Search, BarChart3, FileText } from "lucide-react";
 
 const steps = {
   fr: [
@@ -19,34 +19,31 @@ export const SolutionSteps = () => {
   const items = steps[language];
 
   return (
-    <section className="py-16 sm:py-24 px-4 bg-secondary/30" aria-label="Solution">
+    <section className="py-24 sm:py-32 px-4 bg-[hsl(var(--hero-dark))]" aria-label="Solution">
       <div className="container mx-auto max-w-5xl">
-        <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+        <div className="text-center mb-20">
+          <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">
             {language === "en" ? "How it works" : "Comment ça marche"}
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
+          </span>
+          <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-extrabold font-display leading-[1.1] tracking-tight">
             {language === "en"
               ? "From detection to decision in 3 steps"
               : "De la détection à la décision en 3 étapes"}
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 relative">
+        <div className="grid md:grid-cols-3 gap-12 relative">
           {/* Connector line */}
-          <div className="hidden md:block absolute top-16 left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20" />
+          <div className="hidden md:block absolute top-20 left-[20%] right-[20%] h-px bg-border/40" />
 
-          {items.map((step, i) => (
-            <div key={step.num} className="relative text-center">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-cta flex items-center justify-center mx-auto mb-6 shadow-glow relative z-10">
-                <step.icon className="w-7 h-7 text-white" />
+          {items.map((step) => (
+            <div key={step.num} className="relative text-center group">
+              <div className="w-20 h-20 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-8 group-hover:bg-primary/15 transition-all duration-500 relative z-10">
+                <step.icon className="w-8 h-8 text-primary" />
               </div>
-              <span className="text-xs font-bold text-primary/60 uppercase tracking-widest">{step.num}</span>
-              <h3 className="text-xl font-bold font-display mt-2 mb-3">{step.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-              {i < 2 && (
-                <ArrowRight className="hidden md:block absolute -right-4 top-16 w-5 h-5 text-primary/30 z-20" />
-              )}
+              <span className="text-xs font-bold text-primary/50 uppercase tracking-[0.4em]">{step.num}</span>
+              <h3 className="text-2xl font-bold font-display mt-3 mb-4 tracking-tight">{step.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">{step.desc}</p>
             </div>
           ))}
         </div>

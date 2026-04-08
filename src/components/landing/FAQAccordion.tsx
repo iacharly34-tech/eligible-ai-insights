@@ -31,31 +31,31 @@ export const FAQAccordion = () => {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="py-16 sm:py-24 px-4" id="faq" aria-label="FAQ">
+    <section className="py-24 sm:py-32 px-4" id="faq" aria-label="FAQ">
       <div className="container mx-auto max-w-3xl">
-        <div className="text-center mb-12">
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">FAQ</p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
+        <div className="text-center mb-16">
+          <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">FAQ</span>
+          <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-extrabold font-display leading-[1.1] tracking-tight">
             {language === "en" ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
         </div>
 
-        <div className="space-y-3">
+        <div className="divide-y divide-border/50">
           {items.map((item, i) => (
-            <div key={i} className="border border-border rounded-xl overflow-hidden">
+            <div key={i}>
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary/30 transition-colors"
+                className="w-full flex items-center justify-between py-6 text-left hover:text-primary transition-colors group"
                 aria-expanded={open === i}
               >
-                <span className="font-semibold text-sm pr-4">{item.q}</span>
-                <ChevronDown className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform ${open === i ? "rotate-180" : ""}`} />
+                <span className="font-semibold text-sm pr-8 group-hover:text-primary transition-colors">{item.q}</span>
+                <ChevronDown className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform duration-300 ${open === i ? "rotate-180" : ""}`} />
               </button>
-              {open === i && (
-                <div className="px-5 pb-5 text-sm text-muted-foreground leading-relaxed animate-fade-in">
+              <div className={`overflow-hidden transition-all duration-300 ${open === i ? "max-h-40 pb-6" : "max-h-0"}`}>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {item.a}
-                </div>
-              )}
+                </p>
+              </div>
             </div>
           ))}
         </div>

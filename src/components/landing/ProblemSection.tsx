@@ -19,31 +19,31 @@ export const ProblemSection = () => {
   const items = problems[language];
 
   return (
-    <section className="py-16 sm:py-24 px-4" aria-label="Problem">
+    <section className="py-24 sm:py-32 px-4" aria-label="Problem">
       <div className="container mx-auto max-w-5xl">
-        <div className="text-center mb-12">
-          <p className="text-sm font-semibold text-destructive uppercase tracking-widest mb-3">
+        <div className="text-center mb-16 sm:mb-20">
+          <span className="text-xs font-semibold text-destructive uppercase tracking-[0.3em]">
             {language === "en" ? "The problem" : "Le problème"}
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
+          </span>
+          <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-extrabold font-display leading-[1.1] tracking-tight">
             {language === "en"
               ? "Responding to tenders shouldn't be a lottery"
               : "Répondre aux AO ne devrait pas être une loterie"}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {language === "en"
               ? "Most companies waste 80% of their tender response budget on opportunities they'll never win."
               : "La plupart des entreprises gaspillent 80% de leur budget de réponse sur des marchés qu'elles ne remporteront jamais."}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8">
           {items.map((item) => (
-            <div key={item.title} className="bg-card border border-border rounded-2xl p-6 hover:shadow-card transition-shadow">
-              <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center mb-4">
+            <div key={item.title} className="group p-8 rounded-2xl border border-border/50 bg-card hover:border-destructive/30 transition-all duration-500 hover:shadow-card">
+              <div className="w-14 h-14 rounded-xl bg-destructive/10 flex items-center justify-center mb-6 group-hover:bg-destructive/15 transition-colors">
                 <item.icon className="w-6 h-6 text-destructive" />
               </div>
-              <h3 className="text-lg font-bold font-display mb-2">{item.title}</h3>
+              <h3 className="text-xl font-bold font-display mb-3 tracking-tight">{item.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
             </div>
           ))}

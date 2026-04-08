@@ -2,9 +2,9 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Check, X, Minus } from "lucide-react";
 
 const Icon = ({ v }: { v: "yes" | "no" | "partial" }) => {
-  if (v === "yes") return <Check className="w-5 h-5 text-green-500" />;
-  if (v === "no") return <X className="w-5 h-5 text-red-400" />;
-  return <Minus className="w-5 h-5 text-amber-400" />;
+  if (v === "yes") return <Check className="w-5 h-5 text-success" />;
+  if (v === "no") return <X className="w-5 h-5 text-destructive/60" />;
+  return <Minus className="w-5 h-5 text-warning" />;
 };
 
 type V = "yes" | "no" | "partial";
@@ -44,34 +44,34 @@ export const ComparisonTable = () => {
   const data = rows[language];
 
   const headers = language === "en"
-    ? ["Feature", "Manual (BOAMP + Excel)", "Traditional aggregators", "Eligibly"]
-    : ["Fonctionnalité", "Manuel (BOAMP + Excel)", "Agrégateurs classiques", "Eligibly"];
+    ? ["Feature", "Manual", "Aggregators", "Eligibly"]
+    : ["Fonctionnalité", "Manuel", "Agrégateurs", "Eligibly"];
 
   return (
-    <section className="py-16 sm:py-24 px-4" aria-label="Comparison">
+    <section className="py-24 sm:py-32 px-4" aria-label="Comparison">
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-12">
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+        <div className="text-center mb-16">
+          <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">
             {language === "en" ? "Comparison" : "Comparaison"}
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
+          </span>
+          <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-extrabold font-display leading-[1.1] tracking-tight">
             {language === "en"
               ? "Not another monitoring tool"
               : "Pas un énième outil de veille"}
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
             {language === "en"
               ? "Eligibly is the only platform that tells you WHERE to invest your time — not just what's available."
               : "Eligibly est la seule plateforme qui vous dit OÙ investir votre temps — pas juste ce qui est disponible."}
           </p>
         </div>
 
-        <div className="overflow-x-auto rounded-2xl border border-border">
+        <div className="overflow-x-auto rounded-2xl border border-border/50">
           <table className="w-full text-sm">
             <thead>
-              <tr className="bg-secondary/50">
+              <tr className="border-b border-border/50">
                 {headers.map((h, i) => (
-                  <th key={h} className={`py-4 px-4 text-left font-semibold ${i === 3 ? "bg-primary/5 text-primary" : ""}`}>
+                  <th key={h} className={`py-5 px-5 text-left text-xs uppercase tracking-[0.2em] font-semibold ${i === 3 ? "bg-primary/5 text-primary" : "text-muted-foreground"}`}>
                     {h}
                   </th>
                 ))}
@@ -79,11 +79,11 @@ export const ComparisonTable = () => {
             </thead>
             <tbody>
               {data.map((row, i) => (
-                <tr key={i} className="border-t border-border">
-                  <td className="py-3 px-4 font-medium">{row.feature}</td>
-                  <td className="py-3 px-4"><Icon v={row.traditional} /></td>
-                  <td className="py-3 px-4"><Icon v={row.aggregator} /></td>
-                  <td className="py-3 px-4 bg-primary/5"><Icon v={row.eligibly} /></td>
+                <tr key={i} className="border-t border-border/30 hover:bg-card/50 transition-colors">
+                  <td className="py-4 px-5 font-medium">{row.feature}</td>
+                  <td className="py-4 px-5"><Icon v={row.traditional} /></td>
+                  <td className="py-4 px-5"><Icon v={row.aggregator} /></td>
+                  <td className="py-4 px-5 bg-primary/5"><Icon v={row.eligibly} /></td>
                 </tr>
               ))}
             </tbody>
