@@ -140,6 +140,9 @@ const App = () => (
                 <Route path="/veille-strategique" element={<VeilleStrategique />} />
                 <Route path="/numerique-responsable" element={<NumeriqueResponsable />} />
 
+                <Route path="/eligibly-vs-doubletrade" element={<EligiblyVsDoubletrade />} />
+                <Route path="/eligibly-vs-tengo" element={<EligiblyVsTengo />} />
+                <Route path="/eligibly-vs-veille-manuelle" element={<EligiblyVsVeilleManuelle />} />
                 {/* EN routes */}
                 <Route path="/en" element={<Index />} />
                 <Route path="/en/product" element={<Produit />} />
