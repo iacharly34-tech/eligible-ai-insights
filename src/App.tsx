@@ -60,6 +60,23 @@ const NumeriqueResponsable = lazy(() => import("./pages/NumeriqueResponsable"));
 const EligiblyVsDoubletrade = lazy(() => import("./pages/EligiblyVsDoubletrade"));
 const EligiblyVsTengo = lazy(() => import("./pages/EligiblyVsTengo"));
 const EligiblyVsVeilleManuelle = lazy(() => import("./pages/EligiblyVsVeilleManuelle"));
+
+// Blog articles - Pilier 1: Comprendre
+const SeuilsMarchesPublics = lazy(() => import("./pages/blog/SeuilsMarchesPublics"));
+const DematerialisationAO = lazy(() => import("./pages/blog/DematerialisationAO"));
+const AllotissementMarchesPublics = lazy(() => import("./pages/blog/AllotissementMarchesPublics"));
+const CriteresAttribution = lazy(() => import("./pages/blog/CriteresAttribution"));
+// Blog articles - Pilier 2: Optimiser
+const MemoireTechnique = lazy(() => import("./pages/blog/MemoireTechnique"));
+const GroupementEntreprises = lazy(() => import("./pages/blog/GroupementEntreprises"));
+const NegociationMarchesPublics = lazy(() => import("./pages/blog/NegociationMarchesPublics"));
+const ChiffrerOffreMarche = lazy(() => import("./pages/blog/ChiffrerOffreMarche"));
+// Blog articles - Pilier 3: IA et marchés
+const IAScoringPredictif = lazy(() => import("./pages/blog/IAScoringPredictif"));
+const IAAnalyseDCE = lazy(() => import("./pages/blog/IAAnalyseDCE"));
+const DonneesAttribution = lazy(() => import("./pages/blog/DonneesAttribution"));
+const AutomatiserVeilleMarchesPublics = lazy(() => import("./pages/blog/AutomatiserVeilleMarchesPublics"));
+
 // English Blog Articles
 const StrategicWatchEN = lazy(() => import("./pages/en/StrategicWatch"));
 const GoNoGoDecisionEN = lazy(() => import("./pages/en/GoNoGoDecision"));
