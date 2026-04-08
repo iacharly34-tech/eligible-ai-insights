@@ -133,6 +133,9 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
+    /* Tudor-inspired hero dark surface */
+    --hero-dark: 0 0% 97%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
