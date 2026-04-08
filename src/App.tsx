@@ -57,6 +57,25 @@ const DocumentsAO = lazy(() => import("./pages/DocumentsAO"));
 const RetoursAO = lazy(() => import("./pages/RetoursAO"));
 const VeilleStrategique = lazy(() => import("./pages/VeilleStrategique"));
 const NumeriqueResponsable = lazy(() => import("./pages/NumeriqueResponsable"));
+const EligiblyVsDoubletrade = lazy(() => import("./pages/EligiblyVsDoubletrade"));
+const EligiblyVsTengo = lazy(() => import("./pages/EligiblyVsTengo"));
+const EligiblyVsVeilleManuelle = lazy(() => import("./pages/EligiblyVsVeilleManuelle"));
+
+// Blog articles - Pilier 1: Comprendre
+const SeuilsMarchesPublics = lazy(() => import("./pages/blog/SeuilsMarchesPublics"));
+const DematerialisationAO = lazy(() => import("./pages/blog/DematerialisationAO"));
+const AllotissementMarchesPublics = lazy(() => import("./pages/blog/AllotissementMarchesPublics"));
+const CriteresAttribution = lazy(() => import("./pages/blog/CriteresAttribution"));
+// Blog articles - Pilier 2: Optimiser
+const MemoireTechnique = lazy(() => import("./pages/blog/MemoireTechnique"));
+const GroupementEntreprises = lazy(() => import("./pages/blog/GroupementEntreprises"));
+const NegociationMarchesPublics = lazy(() => import("./pages/blog/NegociationMarchesPublics"));
+const ChiffrerOffreMarche = lazy(() => import("./pages/blog/ChiffrerOffreMarche"));
+// Blog articles - Pilier 3: IA et marchés
+const IAScoringPredictif = lazy(() => import("./pages/blog/IAScoringPredictif"));
+const IAAnalyseDCE = lazy(() => import("./pages/blog/IAAnalyseDCE"));
+const DonneesAttribution = lazy(() => import("./pages/blog/DonneesAttribution"));
+const AutomatiserVeilleMarchesPublics = lazy(() => import("./pages/blog/AutomatiserVeilleMarchesPublics"));
 
 // English Blog Articles
 const StrategicWatchEN = lazy(() => import("./pages/en/StrategicWatch"));
@@ -138,6 +157,25 @@ const App = () => (
                 <Route path="/veille-strategique" element={<VeilleStrategique />} />
                 <Route path="/numerique-responsable" element={<NumeriqueResponsable />} />
 
+                <Route path="/eligibly-vs-doubletrade" element={<EligiblyVsDoubletrade />} />
+                <Route path="/eligibly-vs-tengo" element={<EligiblyVsTengo />} />
+                <Route path="/eligibly-vs-veille-manuelle" element={<EligiblyVsVeilleManuelle />} />
+                
+                {/* Blog - Pilier 1: Comprendre */}
+                <Route path="/seuils-marches-publics" element={<SeuilsMarchesPublics />} />
+                <Route path="/dematerialisation-marches-publics" element={<DematerialisationAO />} />
+                <Route path="/allotissement-marches-publics" element={<AllotissementMarchesPublics />} />
+                <Route path="/criteres-attribution-marches-publics" element={<CriteresAttribution />} />
+                {/* Blog - Pilier 2: Optimiser */}
+                <Route path="/memoire-technique-marches-publics" element={<MemoireTechnique />} />
+                <Route path="/groupement-entreprises-marches-publics" element={<GroupementEntreprises />} />
+                <Route path="/negociation-marches-publics" element={<NegociationMarchesPublics />} />
+                <Route path="/chiffrer-offre-marche-public" element={<ChiffrerOffreMarche />} />
+                {/* Blog - Pilier 3: IA et marchés */}
+                <Route path="/scoring-predictif-ia-marches-publics" element={<IAScoringPredictif />} />
+                <Route path="/ia-analyse-dce" element={<IAAnalyseDCE />} />
+                <Route path="/donnees-attribution-marches-publics" element={<DonneesAttribution />} />
+                <Route path="/automatiser-veille-marches-publics" element={<AutomatiserVeilleMarchesPublics />} />
                 {/* EN routes */}
                 <Route path="/en" element={<Index />} />
                 <Route path="/en/product" element={<Produit />} />
