@@ -57,7 +57,9 @@ const DocumentsAO = lazy(() => import("./pages/DocumentsAO"));
 const RetoursAO = lazy(() => import("./pages/RetoursAO"));
 const VeilleStrategique = lazy(() => import("./pages/VeilleStrategique"));
 const NumeriqueResponsable = lazy(() => import("./pages/NumeriqueResponsable"));
-
+const EligiblyVsDoubletrade = lazy(() => import("./pages/EligiblyVsDoubletrade"));
+const EligiblyVsTengo = lazy(() => import("./pages/EligiblyVsTengo"));
+const EligiblyVsVeilleManuelle = lazy(() => import("./pages/EligiblyVsVeilleManuelle"));
 // English Blog Articles
 const StrategicWatchEN = lazy(() => import("./pages/en/StrategicWatch"));
 const GoNoGoDecisionEN = lazy(() => import("./pages/en/GoNoGoDecision"));
