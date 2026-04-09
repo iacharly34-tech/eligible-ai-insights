@@ -1,4 +1,5 @@
 import { ArticleLayout } from "@/components/ArticleLayout";
+import { BookOpen } from "lucide-react";
 
 const RepondreAppelOffres = () => (
   <ArticleLayout
