@@ -38,7 +38,7 @@ const HomePage = () => {
           <ProblemSection />
 
           {/* 4. Solution en 3 étapes — Détecter → Scorer → Répondre */}
-          <SolutionSteps />
+          <ProductModules />
 
           {/* 4b. Mock dashboard — scored tenders preview */}
           <MockDashboard />
