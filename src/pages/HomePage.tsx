@@ -9,9 +9,11 @@ import { HeroSection } from "@/components/landing/HeroSection";
 import { MetricsBar } from "@/components/landing/MetricsBar";
 import { ProblemSection } from "@/components/landing/ProblemSection";
 import { SolutionSteps } from "@/components/landing/SolutionSteps";
+import { MockDashboard } from "@/components/landing/MockDashboard";
 import { FeaturesGrid } from "@/components/landing/FeaturesGrid";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { ComparisonTable } from "@/components/landing/ComparisonTable";
+import { OnboardingTimeline } from "@/components/landing/OnboardingTimeline";
 import { PricingPlans } from "@/components/landing/PricingPlans";
 import { FAQAccordion } from "@/components/landing/FAQAccordion";
 import { FinalCTA } from "@/components/landing/FinalCTA";
@@ -38,6 +40,9 @@ const HomePage = () => {
           {/* 4. Solution en 3 étapes — Détecter → Scorer → Répondre */}
           <SolutionSteps />
 
+          {/* 4b. Mock dashboard — scored tenders preview */}
+          <MockDashboard />
+
           {/* 5. Fonctionnalités clés */}
           <FeaturesGrid />
 
@@ -47,13 +52,16 @@ const HomePage = () => {
           {/* 7. Comparaison — Eligibly vs alternatives */}
           <ComparisonTable />
 
-          {/* 8. Pricing — transparence tarifaire */}
+          {/* 8. Timeline d'onboarding */}
+          <OnboardingTimeline />
+
+          {/* 9. Pricing — transparence tarifaire */}
           <PricingPlans />
 
-          {/* 9. FAQ — conversion + SEO */}
+          {/* 10. FAQ — conversion + SEO */}
           <FAQAccordion />
 
-          {/* 10. CTA final */}
+          {/* 11. CTA final */}
           <FinalCTA />
         </main>
 
