@@ -98,7 +98,7 @@ const EligiblyVsRemporte = () => {
               </SafeLink>
             </section>
 
-            <ArticleRecommendations currentSlug="eligibly-vs-remporte" />
+            <ArticleRecommendations currentArticleUrl="/eligibly-vs-eligibly-vs-remporte" />
           </article>
         </main>
         <Footer />

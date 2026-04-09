@@ -98,7 +98,7 @@ const EligiblyVsLibel = () => {
               </SafeLink>
             </section>
 
-            <ArticleRecommendations currentSlug="eligibly-vs-libel" />
+            <ArticleRecommendations currentArticleUrl="/eligibly-vs-eligibly-vs-libel" />
           </article>
         </main>
         <Footer />

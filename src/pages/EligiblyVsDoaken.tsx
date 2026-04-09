@@ -98,7 +98,7 @@ const EligiblyVsDoaken = () => {
               </SafeLink>
             </section>
 
-            <ArticleRecommendations currentSlug="eligibly-vs-doaken" />
+            <ArticleRecommendations currentArticleUrl="/eligibly-vs-eligibly-vs-doaken" />
           </article>
         </main>
         <Footer />
