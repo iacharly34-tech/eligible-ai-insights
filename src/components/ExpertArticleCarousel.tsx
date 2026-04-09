@@ -76,7 +76,7 @@ export const ExpertArticleCarousel = ({
             <div className="bg-card backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-border">
               <p className="text-foreground mb-6 text-lg leading-relaxed">
                 Les marchés publics évoluent vite. Les critères changent. La concurrence s'intensifie.<br/>
-                <strong className="text-primary">Charly, votre agent intelligent</strong>, lit pour vous plus de 600 sources et partage ici les meilleures analyses, stratégies et tendances.
+                <strong className="text-primary">Charly IA, votre agent intelligent</strong>, lit pour vous plus de 600 sources et partage ici les meilleures analyses, stratégies et tendances.
               </p>
               <p className="text-xl font-semibold text-foreground">
                 L'objectif : vous aider à consacrer moins de temps à chercher… et plus à gagner.

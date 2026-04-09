@@ -339,7 +339,7 @@ const TenderFeedback = () => {
                   <RefreshCw className="w-6 h-6 text-purple-500 flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Continuous learning</h4>
-                    <p className="text-sm text-muted-foreground">Charly learns from your wins and losses to give better future recommendations.</p>
+                    <p className="text-sm text-muted-foreground">Charly AI learns from your wins and losses to give better future recommendations.</p>
                   </div>
                 </div>
               </div>

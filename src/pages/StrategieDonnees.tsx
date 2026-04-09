@@ -263,7 +263,7 @@ export default function StrategieDonnees() {
                     
                     <div>
                       <h5 className="font-semibold text-sm">Phase 3 : Automatisation et scaling (mois 13-18)</h5>
-                      <p className="text-sm text-muted-foreground">Déploiement de Charly, automatisation de la veille, optimisation continue des modèles</p>
+                      <p className="text-sm text-muted-foreground">Déploiement de Charly IA, automatisation de la veille, optimisation continue des modèles</p>
                     </div>
                   </div>
                   
@@ -290,7 +290,7 @@ export default function StrategieDonnees() {
               <h2>L'intelligence artificielle au service de la stratégie</h2>
               
               <p>
-                L'émergence de l'IA transforme radicalement les possibilités d'analyse. <strong>Charly</strong> d'Eligibly représente cette nouvelle génération d'outils capables de traiter des volumes de données impossibles à gérer manuellement.
+                L'émergence de l'IA transforme radicalement les possibilités d'analyse. <strong>Charly IA</strong> d'Eligibly représente cette nouvelle génération d'outils capables de traiter des volumes de données impossibles à gérer manuellement.
               </p>
 
               <Card className="my-8 bg-primary/5 border-primary/20">

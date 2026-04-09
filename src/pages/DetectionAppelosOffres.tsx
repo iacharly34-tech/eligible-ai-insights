@@ -131,12 +131,12 @@ export default function DetectionAppelosOffres() {
               <h2>L'intelligence artificielle au service de la détection</h2>
 
               <p>
-                Face à ces défis, une nouvelle génération d'outils émerge. <strong>Charly</strong>, l'agent intelligent développé par Eligibly, révolutionne la façon dont les entreprises détectent et évaluent les <strong>appels d'offres</strong> pertinents.
+                Face à ces défis, une nouvelle génération d'outils émerge. <strong>Charly IA</strong>, l'agent intelligent développé par Eligibly, révolutionne la façon dont les entreprises détectent et évaluent les <strong>appels d'offres</strong> pertinents.
               </p>
 
               <h3>Analyse sémantique avancée</h3>
               <p>
-                Plutôt que de se limiter aux mots-clés, <strong>Charly</strong> comprend le sens des cahiers des charges. Il analyse :
+                Plutôt que de se limiter aux mots-clés, <strong>Charly IA</strong> comprend le sens des cahiers des charges. Il analyse :
               </p>
 
               <ul className="list-none space-y-3 my-6">
@@ -160,7 +160,7 @@ export default function DetectionAppelosOffres() {
 
               <h3>Scoring prédictif personnalisé</h3>
               <p>
-                En croisant les exigences de l'<strong>appel d'offres</strong> avec votre profil d'entreprise, <strong>Charly</strong> calcule un score de pertinence. Plus besoin de deviner : vous savez instantanément si un marché mérite votre attention.
+                En croisant les exigences de l'<strong>appel d'offres</strong> avec votre profil d'entreprise, <strong>Charly IA</strong> calcule un score de pertinence. Plus besoin de deviner : vous savez instantanément si un marché mérite votre attention.
               </p>
 
               <Card className="my-8 bg-primary/5 border-primary/20">
@@ -193,7 +193,7 @@ export default function DetectionAppelosOffres() {
 
               <h3>Veille proactive et anticipation</h3>
               <p>
-                <strong>Charly</strong> ne se contente pas de filtrer les <strong>appels d'offres</strong> publiés. Il anticipe les <strong>marchés publics</strong> à venir en analysant :
+                <strong>Charly IA</strong> ne se contente pas de filtrer les <strong>appels d'offres</strong> publiés. Il anticipe les <strong>marchés publics</strong> à venir en analysant :
               </p>
 
               <ul>
@@ -211,7 +211,7 @@ export default function DetectionAppelosOffres() {
 
               <h3>1. Définir son profil de marché idéal</h3>
               <p>
-                Avant de chercher, il faut savoir quoi chercher. Analysez vos succès passés : quel était le montant, le secteur, le type d'acheteur ? <strong>Charly</strong> utilise ces données pour affiner sa détection.
+                Avant de chercher, il faut savoir quoi chercher. Analysez vos succès passés : quel était le montant, le secteur, le type d'acheteur ? <strong>Charly IA</strong> utilise ces données pour affiner sa détection.
               </p>
 
               <h3>2. Accepter de dire non</h3>
@@ -221,7 +221,7 @@ export default function DetectionAppelosOffres() {
 
               <h3>3. Préparer sa différenciation</h3>
               <p>
-                Un <strong>bon appel d'offres</strong> est celui sur lequel vous pouvez vous démarquer. <strong>Charly</strong> identifie les marchés où vos atouts spécifiques (certifications, références, expertise) font la différence.
+                Un <strong>bon appel d'offres</strong> est celui sur lequel vous pouvez vous démarquer. <strong>Charly IA</strong> identifie les marchés où vos atouts spécifiques (certifications, références, expertise) font la différence.
               </p>
 
               <h2>L'impact des critères RSE sur la détection</h2>
@@ -236,7 +236,7 @@ export default function DetectionAppelosOffres() {
               </blockquote>
 
               <p>
-                <strong>Charly</strong> détecte automatiquement ces exigences RSE et évalue votre capacité à y répondre, vous évitant de perdre du temps sur des <strong>marchés publics</strong> inaccessibles.
+                <strong>Charly IA</strong> détecte automatiquement ces exigences RSE et évalue votre capacité à y répondre, vous évitant de perdre du temps sur des <strong>marchés publics</strong> inaccessibles.
               </p>
 
               {/* Conclusion engageante */}

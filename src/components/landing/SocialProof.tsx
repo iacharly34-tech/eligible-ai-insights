@@ -48,13 +48,13 @@ const caseStudyMetrics = {
   fr: [
     { icon: TrendingUp, value: "38%", label: "taux de succès", prev: "vs 15% avant" },
     { icon: Clock, value: "-80%", label: "temps de veille", prev: "2h/sem vs 10h" },
-    { icon: Target, value: "x2.5", label: "ROI sur 6 mois", prev: "premiers utilisateurs" },
+    { icon: Target, value: "x3", label: "ROI moyen constaté", prev: "premiers utilisateurs" },
     { icon: Users, value: "50+", label: "entreprises en bêta", prev: "PME et ETI" },
   ],
   en: [
     { icon: TrendingUp, value: "38%", label: "win rate", prev: "vs 15% before" },
     { icon: Clock, value: "-80%", label: "monitoring time", prev: "2h/week vs 10h" },
-    { icon: Target, value: "x2.5", label: "ROI over 6 months", prev: "early users" },
+    { icon: Target, value: "x3", label: "average ROI", prev: "early users" },
     { icon: Users, value: "50+", label: "companies in beta", prev: "SMEs & mid-caps" },
   ],
 };

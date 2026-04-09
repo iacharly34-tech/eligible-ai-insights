@@ -288,9 +288,9 @@ const GoNoGo = () => {
 
                 <Card className="border-0 shadow-lg text-center">
                   <CardContent className="p-6">
-                    <BarChart3 className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-purple-600 mb-2">x2</div>
-                    <p className="text-sm text-muted-foreground">ROI des équipes commerciales</p>
+                    <BarChart3 className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <div className="text-3xl font-bold text-primary mb-2">x3</div>
+                    <p className="text-sm text-muted-foreground">ROI moyen constaté</p>
                   </CardContent>
                 </Card>
               </div>
