@@ -1,7 +1,17 @@
 import { ArticleLayout } from "@/components/ArticleLayout";
+import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 import { ShieldCheck } from "lucide-react";
 
 const ChecklistConformiteAO = () => (
+  <>
+    <ArticleStructuredData
+      title="Checklist conformité AO : ne plus jamais être éliminé pour un oubli"
+      description="30% des candidatures aux marchés publics sont rejetées pour non-conformité administrative. Voici la checklist définitive pour éliminer ce risque."
+      datePublished="2026-04-09"
+      url="/checklist-conformite-ao"
+      keywords={["checklist conformité", "appels d'offres", "marchés publics", "conformité administrative", "dépôt AO", "vérification candidature"]}
+      readingTime="8 min"
+    />
   <ArticleLayout
     badge="Optimiser sa réponse"
     badgeIcon={<ShieldCheck className="w-4 h-4" />}
@@ -87,6 +97,7 @@ const ChecklistConformiteAO = () => (
     <p>Le module <strong>Eligibly Check</strong> automatise l'intégralité de ce processus. L'IA analyse le DCE, génère automatiquement la matrice de traçabilité, vérifie chaque document de votre dossier et vous alerte sur les manques et incohérences. En 5 minutes, vous avez un <strong>score de conformité de 0 à 100</strong> avec les actions correctives précises à mener.</p>
     <p><a href="/produit/conformite-appel-offres">Découvrir Eligibly Check →</a></p>
   </ArticleLayout>
+  </>
 );
 
 export default ChecklistConformiteAO;
