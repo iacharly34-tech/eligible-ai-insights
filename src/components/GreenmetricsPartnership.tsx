@@ -5,7 +5,7 @@ import { Leaf, Users, Award, ArrowRight, ExternalLink } from "lucide-react";
 
 export const GreenmetricsPartnership = () => {
   return (
-    <section className="py-12 bg-success/5 border-t border-green-100">
+    <section className="py-12 bg-success/5 border-t border-success/20">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-8">
           <Badge className="mb-4 bg-success/10 text-success border-success/20">
@@ -56,7 +56,7 @@ export const GreenmetricsPartnership = () => {
 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button 
-                    className="bg-success hover:bg-green-700 text-white"
+                    className="bg-success hover:bg-success/80 text-white"
                     onClick={() => window.open('https://greenmetrics.fr/contact', '_blank')}
                   >
                     Demander un diagnostic gratuit
@@ -64,7 +64,7 @@ export const GreenmetricsPartnership = () => {
                   </Button>
                   <Button 
                     variant="outline" 
-                    className="border-green-600 text-success hover:bg-success/10"
+                    className="border-success/30 text-success hover:bg-success/10"
                     onClick={() => window.open('https://greenmetrics.fr', '_blank')}
                   >
                     En savoir plus

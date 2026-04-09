@@ -184,7 +184,7 @@ export const AccessibilityReport = () => {
               <div key={index} className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
                 <Volume2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div className="flex-1">
-                  <h4 className="font-medium text-blue-900">{item.criteria}</h4>
+                  <h4 className="font-medium text-foreground">{item.criteria}</h4>
                   <p className="text-sm text-primary mb-1">{item.description}</p>
                   <Badge variant="outline" className="text-xs text-primary border-blue-300">
                     {item.wcag}

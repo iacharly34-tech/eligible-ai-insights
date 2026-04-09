@@ -148,7 +148,7 @@ export const NewsletterConfig = () => {
             </div>
 
             <div className="bg-blue-50 p-4 rounded-lg">
-              <h4 className="font-semibold text-blue-900 mb-2">💡 Comment configurer :</h4>
+              <h4 className="font-semibold text-foreground mb-2">💡 Comment configurer :</h4>
               <ol className="text-sm text-primary space-y-1">
                 <li>1. Créez un nouveau Zap sur Zapier</li>
                 <li>2. Trigger : "Webhook by Zapier" → "Catch Hook"</li>

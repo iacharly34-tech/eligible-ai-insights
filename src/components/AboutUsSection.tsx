@@ -170,7 +170,7 @@ export const AboutUsSection = () => {
                       <h4 className="font-semibold text-lg">{source.source}</h4>
                     </div>
                     {source.verified && (
-                      <Badge variant="outline" className="text-success border-green-600">
+                      <Badge variant="outline" className="text-success border-success/30">
                         <CheckCircle className="w-3 h-3 mr-1" />
                         Officiel
                       </Badge>

@@ -400,7 +400,7 @@ const NumeriqueResponsable = () => {
                   <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
                     <Button 
                       size="lg"
-                      className="bg-success hover:bg-green-700 text-white shadow-lg"
+                      className="bg-success hover:bg-success/80 text-white shadow-lg"
                       onClick={() => window.open('https://greenmetrics.fr/contact', '_blank')}
                     >
                       Demander un diagnostic gratuit
@@ -409,7 +409,7 @@ const NumeriqueResponsable = () => {
                     <Button 
                       size="lg"
                       variant="outline"
-                      className="border-green-600 text-success hover:bg-success/10"
+                      className="border-success/30 text-success hover:bg-success/10"
                       onClick={() => window.open('https://greenmetrics.fr', '_blank')}
                     >
                       Découvrir Greenmetrics
@@ -538,7 +538,7 @@ const NumeriqueResponsable = () => {
                   <h2 className="text-2xl md:text-3xl font-bold mb-4">
                     Prêt à transformer vos critères RSE en avantage compétitif ?
                   </h2>
-                  <p className="text-lg text-green-100 mb-8 max-w-2xl mx-auto">
+                  <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
                     Combinez l'analyse IA de Charly avec l'expertise RSE de Greenmetrics pour maximiser vos chances sur les marchés publics numériques.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
