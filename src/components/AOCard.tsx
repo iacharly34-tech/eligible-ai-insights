@@ -176,8 +176,8 @@ export const AOCard = ({ ao, isDetailed = false, variant = 'default' }: AOCardPr
             {/* Informations sur l'acheteur */}
             <div className="mb-4 p-3 bg-blue-50 rounded-lg">
               <div className="flex items-center gap-2 mb-2">
-                <Building2 className="w-4 h-4 text-blue-600" />
-                <span className="font-medium text-blue-800">Acheteur public</span>
+                <Building2 className="w-4 h-4 text-primary" />
+                <span className="font-medium text-primary">Acheteur public</span>
               </div>
               <div className="text-sm space-y-1">
                 <div><span className="font-medium">Organisme:</span> {ao.acheteur.nom}</div>
@@ -201,7 +201,7 @@ export const AOCard = ({ ao, isDetailed = false, variant = 'default' }: AOCardPr
             {/* Pénalités */}
             <div className="mb-4 text-sm">
               <span className="font-medium">Pénalités:</span> 
-              <span className="text-gray-600 ml-1">{ao.penalites}</span>
+              <span className="text-muted-foreground ml-1">{ao.penalites}</span>
             </div>
           </>
         )}

@@ -33,7 +33,7 @@ export default function PMEvsGrandsGroupes() {
             </header>
 
             <div className="prose prose-lg max-w-none">
-              <blockquote className="border-l-4 border-green-500 pl-6 italic text-lg mb-8 bg-green-50 p-6 rounded-r-lg">
+              <blockquote className="border-l-4 border-success/20 pl-6 italic text-lg mb-8 bg-success/10 p-6 rounded-r-lg">
                 "On pensait que c'était perdu d'avance… on a gagné grâce à un groupement."
                 <cite className="block mt-2 text-sm text-muted-foreground not-italic">— Dirigeant PME bâtiment</cite>
               </blockquote>
@@ -65,8 +65,8 @@ export default function PMEvsGrandsGroupes() {
                 
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="font-semibold mb-3 text-green-800">Atouts PME sous-exploités</h3>
-                    <ul className="space-y-2 text-sm text-green-700">
+                    <h3 className="font-semibold mb-3 text-success">Atouts PME sous-exploités</h3>
+                    <ul className="space-y-2 text-sm text-success">
                       <li>• Agilité et réactivité</li>
                       <li>• Relation client directe</li>
                       <li>• Expertise de niche pointue</li>
@@ -82,9 +82,9 @@ export default function PMEvsGrandsGroupes() {
 
               <h3>1. La stratégie du groupement intelligent</h3>
               
-              <Card className="my-6 border-blue-200">
+              <Card className="my-6 border-primary/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-blue-800">
+                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-primary">
                     <Users className="h-5 w-5" />
                     Types de groupements efficaces
                   </h4>
@@ -93,25 +93,25 @@ export default function PMEvsGrandsGroupes() {
                     <div>
                       <h5 className="font-semibold text-sm">Groupement complémentaire</h5>
                       <p className="text-sm text-muted-foreground">Association de PME aux expertises différentes pour couvrir tout le périmètre</p>
-                      <div className="text-xs text-blue-600 mt-1">Exemple : PME IT + PME formation + PME conseil</div>
+                      <div className="text-xs text-primary mt-1">Exemple : PME IT + PME formation + PME conseil</div>
                     </div>
                     
                     <div>
                       <h5 className="font-semibold text-sm">Groupement territorial</h5>
                       <p className="text-sm text-muted-foreground">Fédération de PME locales pour concurrencer les groupes nationaux</p>
-                      <div className="text-xs text-blue-600 mt-1">Exemple : Réseau d'entreprises BTP régionales</div>
+                      <div className="text-xs text-primary mt-1">Exemple : Réseau d'entreprises BTP régionales</div>
                     </div>
                     
                     <div>
                       <h5 className="font-semibold text-sm">Groupement d'échelle</h5>
                       <p className="text-sm text-muted-foreground">Mutualisation pour atteindre la taille critique requise</p>
-                      <div className="text-xs text-blue-600 mt-1">Exemple : Coopérative de PME de nettoyage</div>
+                      <div className="text-xs text-primary mt-1">Exemple : Coopérative de PME de nettoyage</div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              <blockquote className="border-l-4 border-green-500 pl-6 italic text-lg my-6 bg-green-50 p-4 rounded-r-lg">
+              <blockquote className="border-l-4 border-success/20 pl-6 italic text-lg my-6 bg-success/10 p-4 rounded-r-lg">
                 "Notre groupement de 5 PME locales a battu Bouygues sur un marché de rénovation urbaine. Notre atout : la connaissance fine du territoire et l'engagement personnel des dirigeants."
                 <cite className="block mt-2 text-sm text-muted-foreground not-italic">— Dirigeant PME bâtiment</cite>
               </blockquote>
@@ -171,28 +171,28 @@ export default function PMEvsGrandsGroupes() {
                 Les PME peuvent développer une approche RSE plus authentique et personnalisée que les programmes standardisés des grands groupes. L'ancrage local facilite les actions concrètes et visibles.
               </p>
 
-              <Card className="my-6 border-green-200">
+              <Card className="my-6 border-success/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-green-800">
+                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-success">
                     <Shield className="h-5 w-5" />
                     Avantages RSE des PME
                   </h4>
                   
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <span className="text-sm">Circuits courts et approvisionnement local naturel</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <span className="text-sm">Relations directes avec les partenaires sociaux locaux</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <span className="text-sm">Flexibilité pour adapter les pratiques RSE</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <span className="text-sm">Engagement personnel des dirigeants</span>
                     </div>
                   </div>
@@ -222,7 +222,7 @@ export default function PMEvsGrandsGroupes() {
                   
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Détection des marchés PME-friendly</h5>
                         <p className="text-sm text-muted-foreground">Identification des AO où les PME ont historiquement de bonnes chances</p>
@@ -230,7 +230,7 @@ export default function PMEvsGrandsGroupes() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Analyse concurrentielle asymétrique</h5>
                         <p className="text-sm text-muted-foreground">Identification des faiblesses des grands groupes sur chaque marché</p>
@@ -238,7 +238,7 @@ export default function PMEvsGrandsGroupes() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Recommandations de groupements</h5>
                         <p className="text-sm text-muted-foreground">Suggestions de partenaires complémentaires selon les besoins</p>
@@ -246,7 +246,7 @@ export default function PMEvsGrandsGroupes() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Optimisation positionnement différenciant</h5>
                         <p className="text-sm text-muted-foreground">Mise en avant des atouts PME pertinents par marché</p>
@@ -262,9 +262,9 @@ export default function PMEvsGrandsGroupes() {
                 Un consortium de 4 PME régionales (informatique, formation, conseil, maintenance) a remporté un marché de transformation numérique face à Capgemini et Atos sur une métropole de 400 000 habitants.
               </p>
 
-              <Card className="my-8 bg-green-50 border-green-200">
+              <Card className="my-8 bg-success/10 border-success/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-green-800">
+                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-success">
                     <Lightbulb className="h-5 w-5" />
                     Facteurs clés de succès
                   </h4>
@@ -291,8 +291,8 @@ export default function PMEvsGrandsGroupes() {
                     </div>
                   </div>
                   
-                  <div className="mt-4 p-3 bg-white rounded border text-center">
-                    <div className="text-lg font-bold text-green-600">Résultat : 18 points d'avance sur le 2ème</div>
+                  <div className="mt-4 p-3 bg-card rounded border text-center">
+                    <div className="text-lg font-bold text-success">Résultat : 18 points d'avance sur le 2ème</div>
                   </div>
                 </CardContent>
               </Card>
@@ -319,7 +319,7 @@ export default function PMEvsGrandsGroupes() {
               <div className="grid md:grid-cols-3 gap-6 my-8">
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-green-600 mb-2">+150%</div>
+                    <div className="text-2xl font-bold text-success mb-2">+150%</div>
                     <div className="text-sm text-muted-foreground">
                       Amélioration taux de succès avec stratégie ciblée
                     </div>
@@ -327,7 +327,7 @@ export default function PMEvsGrandsGroupes() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-blue-600 mb-2">25%</div>
+                    <div className="text-2xl font-bold text-primary mb-2">25%</div>
                     <div className="text-sm text-muted-foreground">
                       Marge préservée grâce à la différenciation
                     </div>

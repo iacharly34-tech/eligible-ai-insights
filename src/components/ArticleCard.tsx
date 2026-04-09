@@ -31,7 +31,7 @@ export const ArticleCard = ({
 
   if (variant === "featured") {
     return (
-      <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white shadow-lg h-full hover:-translate-y-2">
+      <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-card shadow-lg h-full hover:-translate-y-2">
         <CardContent className="p-0">
           <div className={`h-48 bg-gradient-to-br ${gradient} relative overflow-hidden rounded-t-lg`}>
             <div className="absolute inset-0 bg-black/20"></div>
@@ -48,7 +48,7 @@ export const ArticleCard = ({
           </div>
           
           <div className="p-6">
-            <div className="flex items-center gap-2 text-xs text-gray-500 mb-3">
+            <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
               <Clock className="w-3 h-3" />
               <span>{readTime}</span>
               <span>•</span>
@@ -56,11 +56,11 @@ export const ArticleCard = ({
               <span>{date}</span>
             </div>
             
-            <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2">
+            <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-primary transition-colors line-clamp-2">
               {title}
             </h3>
             
-            <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">
               {description}
             </p>
             
@@ -89,7 +89,7 @@ export const ArticleCard = ({
   }
 
   return (
-    <Card className="group hover:shadow-xl transition-all duration-300 border border-gray-200 bg-white h-full hover:-translate-y-1">
+    <Card className="group hover:shadow-xl transition-all duration-300 border border-border bg-card h-full hover:-translate-y-1">
       <CardContent className="p-6 flex flex-col h-full">
         <div className="flex items-start justify-between mb-4">
           <CategoryIcon 
@@ -105,7 +105,7 @@ export const ArticleCard = ({
           </Badge>
         </div>
         
-        <div className="flex items-center gap-2 text-xs text-gray-500 mb-3">
+        <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
           <Calendar className="w-3 h-3" />
           <span>{date}</span>
           <span>•</span>
@@ -116,11 +116,11 @@ export const ArticleCard = ({
           <span className="truncate">{author}</span>
         </div>
         
-        <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2">
+        <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-primary transition-colors line-clamp-2">
           {title}
         </h3>
         
-        <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
+        <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
           {description}
         </p>
         

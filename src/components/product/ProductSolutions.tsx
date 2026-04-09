@@ -46,7 +46,7 @@ export const ProductSolutions = () => {
       subtitle: t('solutions.public.subtitle'),
       description: t('solutions.public.description'),
       cta: t('solutions.public.cta'),
-      gradient: "from-green-500 to-emerald-500",
+      gradient: "from-success to-emerald-500",
       benefits: [
         "Benchmarks automatisés",
         "Analyse des fournisseurs",
@@ -59,10 +59,10 @@ export const ProductSolutions = () => {
   const demoHref = language === 'en' ? '/en/demo' : '/demo';
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-gray-100">
+    <section className="py-20 px-4 bg-gradient-to-br from-background to-gray-100">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200">
+          <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-purple-100 text-primary border-blue-200">
             {t('solutions.badge')}
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -101,7 +101,7 @@ export const ProductSolutions = () => {
                       <div className="space-y-3 mb-8">
                         {solution.benefits.map((benefit, i) => (
                           <div key={i} className="flex items-center gap-3">
-                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                            <CheckCircle className="w-5 h-5 text-success flex-shrink-0" />
                             <span className="text-muted-foreground">{benefit}</span>
                           </div>
                         ))}

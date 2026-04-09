@@ -62,7 +62,7 @@ export const CTAButton = (props: Omit<EligiblyButtonProps, 'icon'>) => (
 export const SecondaryButton = (props: EligiblyButtonProps) => (
   <ShadcnButton 
     variant="outline" 
-    className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 font-semibold rounded-lg"
+    className="border-2 border-border text-foreground hover:bg-secondary hover:border-gray-400 transition-all duration-300 font-semibold rounded-lg"
     {...props}
   />
 );

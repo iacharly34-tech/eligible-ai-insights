@@ -65,7 +65,7 @@ export const AOAnalysisBanner = ({
       value: upcomingAOCount,
       label: "AO à venir sous 30 jours",
       description: "Marchés détectés avant publication officielle, pour vous préparer en avance.",
-      color: "text-blue-600",
+      color: "text-primary",
       bgColor: "bg-blue-50"
     },
     {
@@ -73,7 +73,7 @@ export const AOAnalysisBanner = ({
       value: rejectedAOCount,
       label: "AO écartés par Charly",
       description: "Opportunités non pertinentes filtrées pour vous faire gagner du temps.",
-      color: "text-red-600",
+      color: "text-destructive",
       bgColor: "bg-red-50"
     },
     {

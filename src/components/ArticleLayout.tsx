@@ -53,7 +53,7 @@ export const ArticleLayout = ({ badge, badgeIcon, title, subtitle, date, readTim
               <h2 className="text-2xl font-bold font-display mb-4">Passez à l'action avec Eligibly</h2>
               <p className="text-white/80 mb-6">Découvrez votre score de compatibilité sur les marchés qui vous correspondent.</p>
               <SafeLink to="/demo">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-bold">
+                <Button size="lg" className="bg-card text-primary hover:bg-card font-bold">
                   Essai gratuit 14 jours <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </SafeLink>

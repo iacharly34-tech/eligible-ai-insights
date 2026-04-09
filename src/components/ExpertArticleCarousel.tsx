@@ -27,13 +27,13 @@ export const ExpertArticleCarousel = ({
 }: ExpertArticleCarouselProps) => {
 
   return (
-    <section className={`py-20 px-4 ${variant === "featured" ? "bg-white" : "bg-gradient-to-br from-slate-50 to-gray-100"}`}>
+    <section className={`py-20 px-4 ${variant === "featured" ? "bg-card" : "bg-[hsl(var(--hero-dark))]"}`}>
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
             {title}
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             {subtitle}
           </p>
         </div>
@@ -73,12 +73,12 @@ export const ExpertArticleCarousel = ({
         
         {variant === "standard" && (
           <div className="text-center mt-12">
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-200">
-              <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+            <div className="bg-card backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-border">
+              <p className="text-foreground mb-6 text-lg leading-relaxed">
                 Les marchés publics évoluent vite. Les critères changent. La concurrence s'intensifie.<br/>
-                <strong className="text-blue-600">Charly, votre agent intelligent</strong>, lit pour vous plus de 600 sources et partage ici les meilleures analyses, stratégies et tendances.
+                <strong className="text-primary">Charly, votre agent intelligent</strong>, lit pour vous plus de 600 sources et partage ici les meilleures analyses, stratégies et tendances.
               </p>
-              <p className="text-xl font-semibold text-gray-900">
+              <p className="text-xl font-semibold text-foreground">
                 L'objectif : vous aider à consacrer moins de temps à chercher… et plus à gagner.
               </p>
             </div>

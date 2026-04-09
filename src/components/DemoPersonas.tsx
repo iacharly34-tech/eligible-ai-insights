@@ -246,7 +246,7 @@ export const DemoPersonas = () => {
             </p>
             <Button 
               size="lg"
-              className="bg-white text-primary hover:bg-white/90 hover:shadow-glow font-semibold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105 text-lg"
+              className="bg-card text-primary hover:bg-card hover:shadow-glow font-semibold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105 text-lg"
             >
               {t('product.demo.cta.button')}
             </Button>

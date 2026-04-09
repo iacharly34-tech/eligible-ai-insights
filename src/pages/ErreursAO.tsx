@@ -55,15 +55,15 @@ export default function ErreursAO() {
                 </h3>
                 <div className="grid md:grid-cols-3 gap-4 text-center">
                   <div>
-                    <div className="text-2xl font-bold text-red-600">40%</div>
+                    <div className="text-2xl font-bold text-destructive">40%</div>
                     <div className="text-sm text-red-700">Éliminations pour vice de forme</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-red-600">25%</div>
+                    <div className="text-2xl font-bold text-destructive">25%</div>
                     <div className="text-sm text-red-700">Dossiers incomplets</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-red-600">15%</div>
+                    <div className="text-2xl font-bold text-destructive">15%</div>
                     <div className="text-sm text-red-700">Retards de transmission</div>
                   </div>
                 </div>
@@ -76,7 +76,7 @@ export default function ErreursAO() {
               <Card className="my-6 border-red-200">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3 mb-4">
-                    <XCircle className="h-6 w-6 text-red-500 flex-shrink-0 mt-1" />
+                    <XCircle className="h-6 w-6 text-destructive flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-semibold text-red-800 mb-2">L'erreur</h4>
                       <p className="text-sm">Se concentrer uniquement sur le cahier des charges en négligeant le règlement de consultation qui précise les modalités de remise et d'évaluation.</p>
@@ -85,13 +85,13 @@ export default function ErreursAO() {
                   
                   <blockquote className="border-l-2 border-red-300 pl-4 italic text-sm mb-4 bg-red-25">
                     "On s'est focalisés sur la partie technique… et on a loupé l'obligation de remettre 3 exemplaires papier en plus du dossier électronique."
-                    <cite className="block mt-1 text-xs text-red-600 not-italic">— Dirigeant PME informatique</cite>
+                    <cite className="block mt-1 text-xs text-destructive not-italic">— Dirigeant PME informatique</cite>
                   </blockquote>
                   
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-green-800 mb-2">La solution</h4>
+                      <h4 className="font-semibold text-success mb-2">La solution</h4>
                       <p className="text-sm">Établir une checklist des exigences réglementaires avant de commencer la rédaction. Charly analyse automatiquement toutes les exigences formelles et vous alerte sur les spécificités de chaque consultation.</p>
                     </div>
                   </div>
@@ -103,7 +103,7 @@ export default function ErreursAO() {
               <Card className="my-6 border-red-200">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3 mb-4">
-                    <FileText className="h-6 w-6 text-red-500 flex-shrink-0 mt-1" />
+                    <FileText className="h-6 w-6 text-destructive flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-semibold text-red-800 mb-2">L'erreur</h4>
                       <p className="text-sm">Oublier des documents comme la copie du Kbis, les attestations fiscales et sociales, ou les justificatifs d'assurance dans leur version à jour.</p>
@@ -112,13 +112,13 @@ export default function ErreursAO() {
                   
                   <blockquote className="border-l-2 border-red-300 pl-4 italic text-sm mb-4">
                     "Notre attestation d'assurance était expirée depuis 2 jours. Éliminés sur cette seule pièce."
-                    <cite className="block mt-1 text-xs text-red-600 not-italic">— Responsable qualité PME BTP</cite>
+                    <cite className="block mt-1 text-xs text-destructive not-italic">— Responsable qualité PME BTP</cite>
                   </blockquote>
                   
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-green-800 mb-2">La solution</h4>
+                      <h4 className="font-semibold text-success mb-2">La solution</h4>
                       <p className="text-sm">Maintenir un "dossier de candidature" toujours à jour avec toutes les pièces standard. Programmer des rappels 30 jours avant l'expiration de chaque document.</p>
                     </div>
                   </div>
@@ -130,7 +130,7 @@ export default function ErreursAO() {
               <Card className="my-6 border-red-200">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3 mb-4">
-                    <Clock className="h-6 w-6 text-red-500 flex-shrink-0 mt-1" />
+                    <Clock className="h-6 w-6 text-destructive flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-semibold text-red-800 mb-2">L'erreur</h4>
                       <p className="text-sm">Commencer la réponse trop tard, sous-estimant le temps nécessaire pour la rédaction du mémoire technique et l'assemblage du dossier complet.</p>
@@ -139,13 +139,13 @@ export default function ErreursAO() {
                   
                   <blockquote className="border-l-2 border-red-300 pl-4 italic text-sm mb-4">
                     "48h avant la date limite, on s'est aperçus qu'il fallait faire signer le dossier par le président… qui était en déplacement."
-                    <cite className="block mt-1 text-xs text-red-600 not-italic">— Assistante direction PME services</cite>
+                    <cite className="block mt-1 text-xs text-destructive not-italic">— Assistante direction PME services</cite>
                   </blockquote>
                   
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-green-800 mb-2">La solution</h4>
+                      <h4 className="font-semibold text-success mb-2">La solution</h4>
                       <p className="text-sm">Appliquer la règle des "10 jours ouvrés minimum" pour toute réponse sérieuse. Planifier immédiatement les signatures et validations nécessaires dès décision de candidater.</p>
                     </div>
                   </div>
@@ -157,7 +157,7 @@ export default function ErreursAO() {
               <Card className="my-6 border-red-200">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3 mb-4">
-                    <Shield className="h-6 w-6 text-red-500 flex-shrink-0 mt-1" />
+                    <Shield className="h-6 w-6 text-destructive flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-semibold text-red-800 mb-2">L'erreur</h4>
                       <p className="text-sm">Présenter des informations contradictoires entre l'acte d'engagement, le mémoire technique et les annexes (effectifs, chiffre d'affaires, références).</p>
@@ -166,13 +166,13 @@ export default function ErreursAO() {
                   
                   <blockquote className="border-l-2 border-red-300 pl-4 italic text-sm mb-4">
                     "On avait indiqué 25 salariés dans l'acte d'engagement et 30 dans le mémoire technique. L'acheteur a considéré que c'était suspect."
-                    <cite className="block mt-1 text-xs text-red-600 not-italic">— Consultant marchés publics</cite>
+                    <cite className="block mt-1 text-xs text-destructive not-italic">— Consultant marchés publics</cite>
                   </blockquote>
                   
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-green-800 mb-2">La solution</h4>
+                      <h4 className="font-semibold text-success mb-2">La solution</h4>
                       <p className="text-sm">Établir une "fiche entreprise" de référence avec toutes les données clés et la mettre à jour mensuellement. Effectuer une relecture croisée avant envoi.</p>
                     </div>
                   </div>
@@ -184,7 +184,7 @@ export default function ErreursAO() {
               <Card className="my-6 border-red-200">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3 mb-4">
-                    <AlertTriangle className="h-6 w-6 text-red-500 flex-shrink-0 mt-1" />
+                    <AlertTriangle className="h-6 w-6 text-destructive flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-semibold text-red-800 mb-2">L'erreur</h4>
                       <p className="text-sm">Se focaliser uniquement sur le prix quand l'offre économiquement la plus avantageuse inclut des critères techniques, environnementaux ou sociaux importants.</p>
@@ -193,13 +193,13 @@ export default function ErreursAO() {
                   
                   <blockquote className="border-l-2 border-red-300 pl-4 italic text-sm mb-4">
                     "On a proposé le prix le plus bas… mais on a perdu sur les critères RSE qui pesaient 40% de la note finale."
-                    <cite className="block mt-1 text-xs text-red-600 not-italic">— Commercial PME nettoyage</cite>
+                    <cite className="block mt-1 text-xs text-destructive not-italic">— Commercial PME nettoyage</cite>
                   </blockquote>
                   
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-green-800 mb-2">La solution</h4>
+                      <h4 className="font-semibold text-success mb-2">La solution</h4>
                       <p className="text-sm">Analyser précisément la pondération de chaque critère et adapter sa stratégie d'offre en conséquence. Charly évalue automatiquement votre positionnement sur chaque critère.</p>
                     </div>
                   </div>
@@ -211,7 +211,7 @@ export default function ErreursAO() {
               <Card className="my-6 border-red-200">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3 mb-4">
-                    <FileText className="h-6 w-6 text-red-500 flex-shrink-0 mt-1" />
+                    <FileText className="h-6 w-6 text-destructive flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-semibold text-red-800 mb-2">L'erreur</h4>
                       <p className="text-sm">Multiplier les références sans lien direct avec l'objet du marché, ou présenter des projets trop anciens ou de taille inadaptée.</p>
@@ -220,13 +220,13 @@ export default function ErreursAO() {
                   
                   <blockquote className="border-l-2 border-red-300 pl-4 italic text-sm mb-4">
                     "Ils demandaient 3 références similaires des 3 dernières années. On en a mis 8, dont certaines de 2018, pensant bien faire."
-                    <cite className="block mt-1 text-xs text-red-600 not-italic">— Responsable commercial ESN</cite>
+                    <cite className="block mt-1 text-xs text-destructive not-italic">— Responsable commercial ESN</cite>
                   </blockquote>
                   
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-green-800 mb-2">La solution</h4>
+                      <h4 className="font-semibold text-success mb-2">La solution</h4>
                       <p className="text-sm">Sélectionner uniquement les références qui répondent précisément aux critères demandés. Qualité over quantité : 3 références parfaitement adaptées valent mieux que 10 approximatives.</p>
                     </div>
                   </div>
@@ -238,7 +238,7 @@ export default function ErreursAO() {
               <Card className="my-6 border-red-200">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3 mb-4">
-                    <XCircle className="h-6 w-6 text-red-500 flex-shrink-0 mt-1" />
+                    <XCircle className="h-6 w-6 text-destructive flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-semibold text-red-800 mb-2">L'erreur</h4>
                       <p className="text-sm">Envoyer un dossier avec des fautes d'orthographe, une mise en page négligée, ou des incohérences qui nuisent à la crédibilité de l'offre.</p>
@@ -247,13 +247,13 @@ export default function ErreursAO() {
                   
                   <blockquote className="border-l-2 border-red-300 pl-4 italic text-sm mb-4">
                     "Le mémoire était bon techniquement, mais bourré de fautes. L'acheteur nous a dit après : 'Si vous ne relisez pas vos offres, comment peut-on vous faire confiance pour nos projets ?'"
-                    <cite className="block mt-1 text-xs text-red-600 not-italic">— Directeur PME ingénierie</cite>
+                    <cite className="block mt-1 text-xs text-destructive not-italic">— Directeur PME ingénierie</cite>
                   </blockquote>
                   
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-green-800 mb-2">La solution</h4>
+                      <h4 className="font-semibold text-success mb-2">La solution</h4>
                       <p className="text-sm">Prévoir systématiquement 48h entre la finalisation du dossier et l'envoi pour une relecture externe. Un dossier professionnel et soigné valorise votre expertise.</p>
                     </div>
                   </div>
@@ -268,41 +268,41 @@ export default function ErreursAO() {
 
               <ul className="list-none space-y-3 my-6">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                   <span><strong>Checklist automatique</strong> : extraction de toutes les exigences administratives et techniques</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                   <span><strong>Alerte délais</strong> : calcul du temps nécessaire selon la complexité du dossier</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                   <span><strong>Analyse des critères</strong> : décryptage de la pondération réelle des critères d'attribution</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                   <span><strong>Matching références</strong> : identification des références les plus pertinentes dans votre base</span>
                 </li>
               </ul>
 
-              <Card className="my-8 bg-green-50 border-green-200">
+              <Card className="my-8 bg-success/10 border-success/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-green-800">
+                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-success">
                     <CheckCircle className="h-5 w-5" />
                     Résultats avec l'approche Charly
                   </h4>
                   <div className="grid md:grid-cols-3 gap-4 text-center">
                     <div>
-                      <div className="text-2xl font-bold text-green-600">-85%</div>
-                      <div className="text-sm text-green-700">Éliminations administratives</div>
+                      <div className="text-2xl font-bold text-success">-85%</div>
+                      <div className="text-sm text-success">Éliminations administratives</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-green-600">+50%</div>
-                      <div className="text-sm text-green-700">Qualité des dossiers</div>
+                      <div className="text-2xl font-bold text-success">+50%</div>
+                      <div className="text-sm text-success">Qualité des dossiers</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-green-600">-60%</div>
-                      <div className="text-sm text-green-700">Temps de préparation</div>
+                      <div className="text-2xl font-bold text-success">-60%</div>
+                      <div className="text-sm text-success">Temps de préparation</div>
                     </div>
                   </div>
                 </CardContent>

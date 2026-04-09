@@ -64,8 +64,8 @@ export default function StrategieDonnees() {
                 
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="font-semibold mb-3 text-green-800">Stratégie data-driven</h3>
-                    <ul className="space-y-2 text-sm text-green-700">
+                    <h3 className="font-semibold mb-3 text-success">Stratégie data-driven</h3>
+                    <ul className="space-y-2 text-sm text-success">
                       <li>• Sélection ciblée : 20-30% des AO</li>
                       <li>• Décision basée sur l'analyse prédictive</li>
                       <li>• Taux de succès : 40-60%</li>
@@ -84,9 +84,9 @@ export default function StrategieDonnees() {
                 La première étape consiste à capitaliser sur l'expérience passée. Chaque <strong>appel d'offres</strong> génère des données précieuses : critères de sélection, profil des concurrents, pondération réelle des critères, caractéristiques du gagnant...
               </p>
 
-              <Card className="my-6 border-blue-200">
+              <Card className="my-6 border-primary/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-blue-800">
+                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-primary">
                     <Database className="h-5 w-5" />
                     Base de données AO optimale
                   </h4>
@@ -138,12 +138,12 @@ export default function StrategieDonnees() {
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-green-600">85%</div>
-                    <div className="text-sm text-green-700">Précision des prédictions</div>
+                    <div className="text-2xl font-bold text-success">85%</div>
+                    <div className="text-sm text-success">Précision des prédictions</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">150+</div>
-                    <div className="text-sm text-blue-700">Variables analysées</div>
+                    <div className="text-2xl font-bold text-primary">150+</div>
+                    <div className="text-sm text-primary">Variables analysées</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-purple-600">2M+</div>
@@ -158,16 +158,16 @@ export default function StrategieDonnees() {
                 Comme en finance, la <strong>stratégie AO</strong> optimale combine plusieurs opportunités pour maximiser le rendement tout en maîtrisant les risques. L'analyse de données permet de construire un portefeuille équilibré.
               </p>
 
-              <Card className="my-6 border-green-200">
+              <Card className="my-6 border-success/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-green-800">
+                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-success">
                     <Target className="h-5 w-5" />
                     Matrice risque/opportunité
                   </h4>
                   
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <h5 className="font-semibold text-sm mb-2 text-green-700">Opportunités sûres (70%)</h5>
+                      <h5 className="font-semibold text-sm mb-2 text-success">Opportunités sûres (70%)</h5>
                       <p className="text-sm">Marchés à forte probabilité, profil parfaitement adapté, concurrence limitée</p>
                     </div>
                     
@@ -177,7 +177,7 @@ export default function StrategieDonnees() {
                     </div>
                     
                     <div>
-                      <h5 className="font-semibold text-sm mb-2 text-blue-700">Opportunités exploratoires (10%)</h5>
+                      <h5 className="font-semibold text-sm mb-2 text-primary">Opportunités exploratoires (10%)</h5>
                       <p className="text-sm">Nouveaux secteurs ou territoires, faible probabilité mais apprentissage</p>
                     </div>
                   </div>
@@ -212,7 +212,7 @@ export default function StrategieDonnees() {
                 
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <TrendingUp className="h-8 w-8 text-green-600 mx-auto mb-4" />
+                    <TrendingUp className="h-8 w-8 text-success mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">Métriques de rentabilité</h3>
                     <ul className="text-sm text-left space-y-1">
                       <li>• ROI par marché remporté</li>
@@ -225,7 +225,7 @@ export default function StrategieDonnees() {
                 
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <Target className="h-8 w-8 text-blue-600 mx-auto mb-4" />
+                    <Target className="h-8 w-8 text-primary mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">Métriques stratégiques</h3>
                     <ul className="text-sm text-left space-y-1">
                       <li>• Diversification portefeuille</li>
@@ -243,9 +243,9 @@ export default function StrategieDonnees() {
                 Une ESN de 150 salariés spécialisée dans les <strong>marchés publics</strong> illustre parfaitement cette transformation. Avant l'adoption d'une approche data-driven, l'entreprise candidatait sur 200 AO par an avec un taux de succès de 18%.
               </p>
 
-              <Card className="my-8 bg-blue-50 border-blue-200">
+              <Card className="my-8 bg-blue-50 border-primary/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-blue-800">
+                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-primary">
                     <BarChart3 className="h-5 w-5" />
                     Transformation en 18 mois
                   </h4>
@@ -267,15 +267,15 @@ export default function StrategieDonnees() {
                     </div>
                   </div>
                   
-                  <div className="mt-6 p-4 bg-white rounded border">
+                  <div className="mt-6 p-4 bg-card rounded border">
                     <h5 className="font-semibold text-sm mb-2">Résultats obtenus :</h5>
                     <div className="grid md:grid-cols-3 gap-4 text-center">
                       <div>
-                        <div className="text-xl font-bold text-green-600">45%</div>
+                        <div className="text-xl font-bold text-success">45%</div>
                         <div className="text-xs">Taux de succès</div>
                       </div>
                       <div>
-                        <div className="text-xl font-bold text-blue-600">-40%</div>
+                        <div className="text-xl font-bold text-primary">-40%</div>
                         <div className="text-xs">Coûts commerciaux</div>
                       </div>
                       <div>
@@ -302,7 +302,7 @@ export default function StrategieDonnees() {
                   
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Analyse sémantique avancée</h5>
                         <p className="text-sm text-muted-foreground">Compréhension du sens au-delà des mots-clés, détection des critères implicites</p>
@@ -310,7 +310,7 @@ export default function StrategieDonnees() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Benchmarking concurrentiel automatisé</h5>
                         <p className="text-sm text-muted-foreground">Identification des patterns de succès de vos concurrents</p>
@@ -318,7 +318,7 @@ export default function StrategieDonnees() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Prédiction multi-variables</h5>
                         <p className="text-sm text-muted-foreground">Modèles prédictifs intégrant contexte économique, cycles politiques, tendances sectorielles</p>
@@ -326,7 +326,7 @@ export default function StrategieDonnees() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Optimisation continue</h5>
                         <p className="text-sm text-muted-foreground">Apprentissage automatique à partir de vos résultats pour améliorer les recommandations</p>
@@ -359,7 +359,7 @@ export default function StrategieDonnees() {
               <div className="grid md:grid-cols-3 gap-6 my-8">
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-green-600 mb-2">+120%</div>
+                    <div className="text-2xl font-bold text-success mb-2">+120%</div>
                     <div className="text-sm text-muted-foreground">
                       Amélioration du taux de succès moyen
                     </div>
@@ -367,7 +367,7 @@ export default function StrategieDonnees() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-blue-600 mb-2">-50%</div>
+                    <div className="text-2xl font-bold text-primary mb-2">-50%</div>
                     <div className="text-sm text-muted-foreground">
                       Réduction des coûts commerciaux
                     </div>

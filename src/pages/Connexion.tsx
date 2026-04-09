@@ -43,7 +43,7 @@ const Connexion = () => {
   return (
     <>
       <SEOHead />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
+      <div className="min-h-screen bg-background">
         <Header />
       
       <section className="pt-32 pb-20 px-4">
@@ -51,58 +51,58 @@ const Connexion = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Column - Login Form */}
             <div className="max-w-md mx-auto w-full">
-              <Card className="border-0 bg-white/80 backdrop-blur-sm shadow-2xl">
+              <Card className="border-0 bg-card backdrop-blur-sm shadow-2xl">
                 <CardContent className="p-8">
                   <div className="text-center mb-8">
                     <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
                       <Brain className="w-8 h-8 text-white" />
                     </div>
-                    <h1 className="text-2xl font-bold text-gray-900 mb-2">
+                    <h1 className="text-2xl font-bold text-foreground mb-2">
                       Connexion à votre espace
                     </h1>
-                    <p className="text-gray-600">
+                    <p className="text-muted-foreground">
                       Accédez à votre dashboard Eligibly.ai
                     </p>
                   </div>
 
                   <form className="space-y-6">
                     <div className="space-y-2">
-                      <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                      <Label htmlFor="email" className="text-sm font-medium text-foreground">
                         Adresse email
                       </Label>
                       <div className="relative">
-                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
                         <Input
                           id="email"
                           type="email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="votre.email@entreprise.com"
-                          className="pl-10 h-12 bg-white border-gray-200 focus:border-primary"
+                          className="pl-10 h-12 bg-card border-border focus:border-primary"
                           required
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="password" className="text-sm font-medium text-gray-700">
+                      <Label htmlFor="password" className="text-sm font-medium text-foreground">
                         Mot de passe
                       </Label>
                       <div className="relative">
-                        <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
                         <Input
                           id="password"
                           type={showPassword ? "text" : "password"}
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           placeholder="••••••••"
-                          className="pl-10 pr-10 h-12 bg-white border-gray-200 focus:border-primary"
+                          className="pl-10 pr-10 h-12 bg-card border-border focus:border-primary"
                           required
                         />
                         <button
                           type="button"
                           onClick={() => setShowPassword(!showPassword)}
-                          className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                          className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-muted-foreground"
                         >
                           {showPassword ? (
                             <EyeOff className="w-5 h-5" />
@@ -118,7 +118,7 @@ const Connexion = () => {
                         <Checkbox id="remember" />
                         <Label 
                           htmlFor="remember" 
-                          className="text-sm text-gray-600 cursor-pointer"
+                          className="text-sm text-muted-foreground cursor-pointer"
                         >
                           Se souvenir de moi
                         </Label>
@@ -140,8 +140,8 @@ const Connexion = () => {
                     </Button>
                   </form>
 
-                  <div className="mt-8 pt-6 border-t border-gray-200 text-center">
-                    <p className="text-gray-600 text-sm">
+                  <div className="mt-8 pt-6 border-t border-border text-center">
+                    <p className="text-muted-foreground text-sm">
                       Pas encore de compte ?{" "}
                       <button className="text-primary hover:text-primary/80 font-medium transition-colors">
                         Créer un compte
@@ -150,7 +150,7 @@ const Connexion = () => {
                   </div>
 
                   <div className="mt-6 text-center">
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-muted-foreground">
                       En vous connectant, vous acceptez nos{" "}
                       <button className="text-primary hover:underline">
                         conditions d'utilisation
@@ -174,7 +174,7 @@ const Connexion = () => {
                     espace IA
                   </span>
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-muted-foreground leading-relaxed">
                   Accédez à votre tableau de bord personnalisé et découvrez 
                   les opportunités détectées par votre assistant Charly.
                 </p>
@@ -187,10 +187,10 @@ const Connexion = () => {
                       <benefit.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">
+                      <h3 className="text-lg font-bold text-foreground mb-2">
                         {benefit.title}
                       </h3>
-                      <p className="text-gray-600">
+                      <p className="text-muted-foreground">
                         {benefit.description}
                       </p>
                     </div>
@@ -198,14 +198,14 @@ const Connexion = () => {
                 ))}
               </div>
 
-              <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-200">
+              <div className="bg-gradient-to-r from-success/10 to-success/10 rounded-2xl p-6 border border-success/20">
                 <div className="flex items-center gap-3 mb-3">
-                  <Shield className="w-6 h-6 text-green-600" />
-                  <h3 className="text-lg font-bold text-green-800">
+                  <Shield className="w-6 h-6 text-success" />
+                  <h3 className="text-lg font-bold text-success">
                     Sécurité renforcée
                   </h3>
                 </div>
-                <p className="text-green-700 text-sm">
+                <p className="text-success text-sm">
                   Votre compte est protégé par un chiffrement AES-256 et une 
                   authentification multi-facteurs optionnelle pour une sécurité maximale.
                 </p>
@@ -216,13 +216,13 @@ const Connexion = () => {
       </section>
 
       {/* Demo CTA */}
-      <section className="py-20 px-4 bg-white/50">
+      <section className="py-20 px-4 bg-[hsl(var(--hero-dark))]">
         <div className="container mx-auto max-w-4xl text-center">
-          <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-12 border border-blue-200">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          <div className="bg-primary/5 rounded-3xl p-12 border border-primary/20">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Découvrez d'abord notre plateforme
             </h2>
-            <p className="text-gray-600 mb-8">
+            <p className="text-muted-foreground mb-8">
               Testez toutes les fonctionnalités pendant 7 jours, sans engagement
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

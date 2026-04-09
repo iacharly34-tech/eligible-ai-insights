@@ -51,7 +51,7 @@ export default function FuturIA() {
               <div className="grid md:grid-cols-3 gap-6 my-8">
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <Bot className="h-8 w-8 text-blue-600 mx-auto mb-4" />
+                    <Bot className="h-8 w-8 text-primary mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">15%</h3>
                     <p className="text-sm text-muted-foreground">
                       Acheteurs publics utilisant l'IA (France 2025)
@@ -69,7 +69,7 @@ export default function FuturIA() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <TrendingUp className="h-8 w-8 text-green-600 mx-auto mb-4" />
+                    <TrendingUp className="h-8 w-8 text-success mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">+300%</h3>
                     <p className="text-sm text-muted-foreground">
                       Croissance du marché des outils IA-AO (2023-2025)
@@ -86,28 +86,28 @@ export default function FuturIA() {
                 La première révolution concerne la détection des opportunités. Les outils comme <strong>Charly</strong> automatisent la surveillance de milliers de sources pour identifier les <strong>appels d'offres</strong> pertinents en temps réel.
               </p>
 
-              <Card className="my-6 border-blue-200">
+              <Card className="my-6 border-primary/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-blue-800">
+                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-primary">
                     <Brain className="h-5 w-5" />
                     Capacités IA actuelles
                   </h4>
                   
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <span className="text-sm">Analyse sémantique de 50 000+ AO simultanément</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <span className="text-sm">Scoring prédictif avec 85% de précision</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <span className="text-sm">Détection automatique des signaux de verrouillage</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <span className="text-sm">Recommandations de partenariats optimaux</span>
                     </div>
                   </div>
@@ -163,12 +163,12 @@ export default function FuturIA() {
                 L'Estonie combine IA et blockchain pour créer un écosystème d'<strong>appels d'offres</strong> totalement transparent et auditabale.
               </p>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-8">
-                <h3 className="text-blue-800 font-semibold mb-3 flex items-center gap-2">
+              <div className="bg-blue-50 border border-primary/20 rounded-lg p-6 my-8">
+                <h3 className="text-primary font-semibold mb-3 flex items-center gap-2">
                   <Rocket className="h-5 w-5" />
                   Position de la France
                 </h3>
-                <p className="text-blue-700 text-sm">
+                <p className="text-primary text-sm">
                   La France rattrape son retard avec le programme "État plateforme" et les expérimentations menées par des métropoles comme Lyon, Nantes et Toulouse. L'objectif : 50% des procédures assistées par IA d'ici 2027.
                 </p>
               </div>
@@ -273,9 +273,9 @@ export default function FuturIA() {
                 L'adoption de l'IA se fait graduellement, avec des solutions accessibles aux PME. L'humain reste central pour la stratégie et la relation, l'IA optimise l'exécution.
               </p>
 
-              <Card className="my-8 bg-green-50 border-green-200">
+              <Card className="my-8 bg-success/10 border-success/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-green-800">
+                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-success">
                     <TrendingUp className="h-5 w-5" />
                     Métriques de transformation attendues (2025-2030)
                   </h4>

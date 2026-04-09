@@ -139,14 +139,14 @@ export const ArticleRecommendations = ({ currentArticleUrl, currentCategory }: A
     <section className="py-12 bg-slate-50">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-8">
-          <Badge className="mb-4 bg-blue-100 text-blue-700 border-blue-200">
+          <Badge className="mb-4 bg-blue-100 text-primary border-primary/20">
             <BookOpen className="w-4 h-4 mr-2" />
             À lire ensuite
           </Badge>
           <h2 className="text-2xl font-bold mb-4">
             Articles recommandés pour vous
           </h2>
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             Continuez votre exploration des marchés publics avec ces contenus complémentaires
           </p>
         </div>
@@ -155,18 +155,18 @@ export const ArticleRecommendations = ({ currentArticleUrl, currentCategory }: A
           {recommendedArticles.map((article, index) => (
             <Card key={index} className="group hover:shadow-lg transition-all duration-300 h-full">
               <CardContent className="p-6 flex flex-col h-full">
-                <div className="flex items-center gap-2 text-xs text-gray-500 mb-3">
+                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
                   <Clock className="w-3 h-3" />
                   <span>{article.readTime}</span>
                   <span>•</span>
                   <span>{article.date}</span>
                 </div>
                 
-                <h3 className="text-base font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                <h3 className="text-base font-bold mb-3 leading-tight group-hover:text-primary transition-colors">
                   {article.title}
                 </h3>
                 
-                <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-grow">
                   {article.description}
                 </p>
                 

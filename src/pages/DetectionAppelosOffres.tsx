@@ -62,7 +62,7 @@ export default function DetectionAppelosOffres() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <TrendingDown className="h-8 w-8 text-red-500 mx-auto mb-4" />
+                    <TrendingDown className="h-8 w-8 text-destructive mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">80%</h3>
                     <p className="text-sm text-muted-foreground">
                       Proportion d'AO non pertinents pour l'entreprise
@@ -141,19 +141,19 @@ export default function DetectionAppelosOffres() {
 
               <ul className="list-none space-y-3 my-6">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                   <span>Les compétences réellement demandées (au-delà des intitulés officiels)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                   <span>Les contraintes cachées qui éliminent 80% des candidats</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                   <span>Les signaux de favoritisme ou de <strong>marchés publics</strong> "verrouillés"</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                   <span>L'adéquation entre vos références et les attentes implicites</span>
                 </li>
               </ul>

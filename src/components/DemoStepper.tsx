@@ -251,7 +251,7 @@ export const DemoStepper: React.FC<DemoStepperProps> = ({ onComplete }) => {
                 {analysisSteps.map((step, index) => (
                   <div key={index} className="flex items-center justify-center gap-2 text-sm">
                     {progress > (index + 1) * 33 ? (
-                      <CheckCircle className="w-4 h-4 text-green-500" />
+                      <CheckCircle className="w-4 h-4 text-success" />
                     ) : (
                       <div className="w-4 h-4 rounded-full border-2 border-muted" />
                     )}
@@ -267,13 +267,13 @@ export const DemoStepper: React.FC<DemoStepperProps> = ({ onComplete }) => {
           {currentStep === 3 && result && (
             <div className="space-y-4">
               <div className="result-card">
-                <div className="result-metric bg-green-50">
-                  <div className="text-2xl font-bold text-green-600">{result.score}%</div>
-                  <div className="text-xs text-green-700">Score de pertinence</div>
+                <div className="result-metric bg-success/10">
+                  <div className="text-2xl font-bold text-success">{result.score}%</div>
+                  <div className="text-xs text-success">Score de pertinence</div>
                 </div>
                 <div className="result-metric bg-blue-50">
-                  <div className="text-2xl font-bold text-blue-600">{result.opportunities}</div>
-                  <div className="text-xs text-blue-700">Opportunités détectées</div>
+                  <div className="text-2xl font-bold text-primary">{result.opportunities}</div>
+                  <div className="text-xs text-primary">Opportunités détectées</div>
                 </div>
                 <div className="result-metric bg-purple-50">
                   <div className="text-2xl font-bold text-purple-600">{result.value}</div>

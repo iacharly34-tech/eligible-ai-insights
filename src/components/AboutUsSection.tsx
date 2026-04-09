@@ -106,7 +106,7 @@ export const AboutUsSection = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-white">
+    <section className="py-16 sm:py-20 bg-card">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 space-y-4">
@@ -170,7 +170,7 @@ export const AboutUsSection = () => {
                       <h4 className="font-semibold text-lg">{source.source}</h4>
                     </div>
                     {source.verified && (
-                      <Badge variant="outline" className="text-green-600 border-green-600">
+                      <Badge variant="outline" className="text-success border-success/30">
                         <CheckCircle className="w-3 h-3 mr-1" />
                         Officiel
                       </Badge>

@@ -82,19 +82,19 @@ export default function AppelosOffresPublics() {
               </p>
               <ul className="list-none space-y-3">
                 <li className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0" />
                   Critères de sélection et pondération
                 </li>
                 <li className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0" />
                   Exigences techniques et administratives
                 </li>
                 <li className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0" />
                   Budget et contraintes financières
                 </li>
                 <li className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0" />
                   Délais et planning de réalisation
                 </li>
               </ul>

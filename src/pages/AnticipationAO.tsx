@@ -69,7 +69,7 @@ export default function AnticipationAO() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <Target className="h-8 w-8 text-green-500 mx-auto mb-4" />
+                    <Target className="h-8 w-8 text-success mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">+60%</h3>
                     <p className="text-sm text-muted-foreground">
                       Taux de succès des entreprises qui anticipent
@@ -105,16 +105,16 @@ export default function AnticipationAO() {
 
               <h2>Les signaux précurseurs à détecter</h2>
 
-              <Card className="my-8 bg-blue-50 border-blue-200">
+              <Card className="my-8 bg-blue-50 border-primary/20">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold mb-4 flex items-center gap-2 text-blue-800">
+                  <h3 className="font-semibold mb-4 flex items-center gap-2 text-primary">
                     <Zap className="h-5 w-5" />
                     Les 7 signaux d'anticipation
                   </h3>
                   
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-sm">Délibérations budgétaires</h4>
                         <p className="text-sm text-muted-foreground">Inscription de projets dans les budgets prévisionnels des collectivités</p>
@@ -122,7 +122,7 @@ export default function AnticipationAO() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-sm">Études préliminaires</h4>
                         <p className="text-sm text-muted-foreground">Publication d'études de faisabilité ou de diagnostics sectoriels</p>
@@ -130,7 +130,7 @@ export default function AnticipationAO() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-sm">Sourcing informel</h4>
                         <p className="text-sm text-muted-foreground">Demandes de renseignements ou rencontres avec l'acheteur</p>
@@ -138,7 +138,7 @@ export default function AnticipationAO() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-sm">Évolutions réglementaires</h4>
                         <p className="text-sm text-muted-foreground">Nouvelles obligations générant de nouveaux besoins d'achat</p>
@@ -146,7 +146,7 @@ export default function AnticipationAO() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-sm">Fin de contrats existants</h4>
                         <p className="text-sm text-muted-foreground">Échéances des marchés actuels créant des besoins de renouvellement</p>
@@ -154,7 +154,7 @@ export default function AnticipationAO() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-sm">Recrutements spécialisés</h4>
                         <p className="text-sm text-muted-foreground">Embauches d'experts dans des domaines spécifiques</p>
@@ -162,7 +162,7 @@ export default function AnticipationAO() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-sm">Subventions et financements</h4>
                         <p className="text-sm text-muted-foreground">Attribution de fonds européens ou nationaux pour des projets sectoriels</p>
@@ -239,15 +239,15 @@ export default function AnticipationAO() {
                   </p>
                   <div className="grid md:grid-cols-3 gap-4 text-center">
                     <div>
-                      <div className="text-2xl font-bold text-green-600">18M+</div>
-                      <div className="text-sm text-green-700">Signaux très précoces</div>
+                      <div className="text-2xl font-bold text-success">18M+</div>
+                      <div className="text-sm text-success">Signaux très précoces</div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-amber-600">6-18M</div>
                       <div className="text-sm text-amber-700">Fenêtre d'action optimale</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-red-600">0-6M</div>
+                      <div className="text-2xl font-bold text-destructive">0-6M</div>
                       <div className="text-sm text-red-700">Urgence de positionnement</div>
                     </div>
                   </div>
@@ -263,19 +263,19 @@ export default function AnticipationAO() {
               <div className="grid md:grid-cols-2 gap-6 my-8">
                 <Card>
                   <CardContent className="p-6">
-                    <h4 className="font-semibold mb-3 text-green-800">Entreprises anticipatrices</h4>
+                    <h4 className="font-semibold mb-3 text-success">Entreprises anticipatrices</h4>
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span className="text-sm">Taux de succès</span>
-                        <span className="font-semibold text-green-600">60%</span>
+                        <span className="font-semibold text-success">60%</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-sm">Marge moyenne</span>
-                        <span className="font-semibold text-green-600">18%</span>
+                        <span className="font-semibold text-success">18%</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-sm">Durée contrats</span>
-                        <span className="font-semibold text-green-600">4,2 ans</span>
+                        <span className="font-semibold text-success">4,2 ans</span>
                       </div>
                     </div>
                   </CardContent>
@@ -287,15 +287,15 @@ export default function AnticipationAO() {
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span className="text-sm">Taux de succès</span>
-                        <span className="font-semibold text-red-600">20%</span>
+                        <span className="font-semibold text-destructive">20%</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-sm">Marge moyenne</span>
-                        <span className="font-semibold text-red-600">8%</span>
+                        <span className="font-semibold text-destructive">8%</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-sm">Durée contrats</span>
-                        <span className="font-semibold text-red-600">2,1 ans</span>
+                        <span className="font-semibold text-destructive">2,1 ans</span>
                       </div>
                     </div>
                   </CardContent>

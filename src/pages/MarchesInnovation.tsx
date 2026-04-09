@@ -51,7 +51,7 @@ export default function MarchesInnovation() {
               <div className="grid md:grid-cols-3 gap-6 my-8">
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <Euro className="h-8 w-8 text-green-600 mx-auto mb-4" />
+                    <Euro className="h-8 w-8 text-success mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">2,8 Mds€</h3>
                     <p className="text-sm text-muted-foreground">
                       Budget innovation France 2030
@@ -60,7 +60,7 @@ export default function MarchesInnovation() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <TrendingUp className="h-8 w-8 text-blue-600 mx-auto mb-4" />
+                    <TrendingUp className="h-8 w-8 text-primary mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">+35%</h3>
                     <p className="text-sm text-muted-foreground">
                       Croissance des AO tech publics (2023-2024)
@@ -82,9 +82,9 @@ export default function MarchesInnovation() {
 
               <h3>1. Transformation numérique de l'État</h3>
               
-              <Card className="my-6 border-blue-200">
+              <Card className="my-6 border-primary/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-blue-800">
+                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-primary">
                     <Lightbulb className="h-5 w-5" />
                     Secteurs porteurs 2025-2027
                   </h4>
@@ -93,19 +93,19 @@ export default function MarchesInnovation() {
                     <div>
                       <h5 className="font-semibold text-sm">Intelligence artificielle et data</h5>
                       <p className="text-sm text-muted-foreground">Automatisation des processus, aide à la décision, analyse prédictive pour les politiques publiques</p>
-                      <div className="text-xs text-blue-600 mt-1">Budget estimé : 800M€ sur 3 ans</div>
+                      <div className="text-xs text-primary mt-1">Budget estimé : 800M€ sur 3 ans</div>
                     </div>
                     
                     <div>
                       <h5 className="font-semibold text-sm">Cybersécurité et souveraineté numérique</h5>
                       <p className="text-sm text-muted-foreground">Protection des infrastructures critiques, cloud souverain, solutions de chiffrement</p>
-                      <div className="text-xs text-blue-600 mt-1">Budget estimé : 1,2Md€ sur 3 ans</div>
+                      <div className="text-xs text-primary mt-1">Budget estimé : 1,2Md€ sur 3 ans</div>
                     </div>
                     
                     <div>
                       <h5 className="font-semibold text-sm">Plateformes citoyennes et e-administration</h5>
                       <p className="text-sm text-muted-foreground">Dématérialisation, services numériques accessibles, participation citoyenne</p>
-                      <div className="text-xs text-blue-600 mt-1">Budget estimé : 600M€ sur 3 ans</div>
+                      <div className="text-xs text-primary mt-1">Budget estimé : 600M€ sur 3 ans</div>
                     </div>
                   </div>
                 </CardContent>
@@ -117,7 +117,7 @@ export default function MarchesInnovation() {
                 Le Green Deal européen et la loi Climat français créent une demande massive pour les solutions environnementales innovantes. Les collectivités cherchent des technologies pour réduire leur empreinte carbone et améliorer leur résilience.
               </p>
 
-              <blockquote className="border-l-4 border-green-500 pl-6 italic text-lg my-6 bg-green-50 p-4 rounded-r-lg">
+              <blockquote className="border-l-4 border-success/20 pl-6 italic text-lg my-6 bg-success/10 p-4 rounded-r-lg">
                 "On lance de plus en plus d'appels d'offres pour des solutions qu'on ne connaît pas encore. On sait qu'on a un problème environnemental, mais on compte sur l'innovation privée pour nous apporter la solution."
                 <cite className="block mt-2 text-sm text-muted-foreground not-italic">— Directeur innovation, métropole française</cite>
               </blockquote>
@@ -170,19 +170,19 @@ export default function MarchesInnovation() {
 
               <ul className="space-y-3 my-6">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                   <span><strong>Partenariat d'innovation</strong> : co-développement solution + achat des résultats</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                   <span><strong>Procédure négociée avec publicité</strong> : dialogue technique approfondi</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                   <span><strong>Dialogue compétitif</strong> : définition collaborative du besoin</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                  <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                   <span><strong>Consultation préalable</strong> : étude de marché avant lancement</span>
                 </li>
               </ul>
@@ -203,11 +203,11 @@ export default function MarchesInnovation() {
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm">Faisabilité et capacité de réalisation</span>
-                      <span className="font-semibold text-blue-600">25-30%</span>
+                      <span className="font-semibold text-primary">25-30%</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm">Prix et modèle économique</span>
-                      <span className="font-semibold text-green-600">20-25%</span>
+                      <span className="font-semibold text-success">20-25%</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm">Impact social/environnemental</span>
@@ -256,7 +256,7 @@ export default function MarchesInnovation() {
                   
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Veille technologique avancée</h5>
                         <p className="text-sm text-muted-foreground">Identification des besoins innovation dans les documents prospectifs publics</p>
@@ -264,7 +264,7 @@ export default function MarchesInnovation() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Analyse sémantique innovation</h5>
                         <p className="text-sm text-muted-foreground">Détection des AO à caractère innovant au-delà des mots-clés évidents</p>
@@ -272,7 +272,7 @@ export default function MarchesInnovation() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Cartographie des financements</h5>
                         <p className="text-sm text-muted-foreground">Suivi des programmes d'aide et calendriers de financement innovation</p>
@@ -280,7 +280,7 @@ export default function MarchesInnovation() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Matching compétences-besoins</h5>
                         <p className="text-sm text-muted-foreground">Évaluation de l'adéquation entre votre profil innovation et les attentes</p>
@@ -299,7 +299,7 @@ export default function MarchesInnovation() {
               <div className="grid md:grid-cols-3 gap-6 my-8">
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-green-600 mb-2">3-5x</div>
+                    <div className="text-2xl font-bold text-success mb-2">3-5x</div>
                     <div className="text-sm text-muted-foreground">
                       Multiplicateur de marge vs marchés standard
                     </div>
@@ -307,7 +307,7 @@ export default function MarchesInnovation() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-blue-600 mb-2">18 mois</div>
+                    <div className="text-2xl font-bold text-primary mb-2">18 mois</div>
                     <div className="text-sm text-muted-foreground">
                       Durée moyenne cycle développement-déploiement
                     </div>
