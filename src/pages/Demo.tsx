@@ -78,7 +78,7 @@ const Demo = () => {
             </span>
             <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold font-display leading-[1.05] tracking-tight">
               {language === "en" ? (
-                <>Discover your <span className="bg-gradient-highlight bg-clip-text text-transparent">AI potential</span> with Charly</>
+                <>Discover your <span className="bg-gradient-highlight bg-clip-text text-transparent">AI potential</span> with Charly AI</>
               ) : (
                 <>Découvrez votre <span className="bg-gradient-highlight bg-clip-text text-transparent">potentiel IA</span> avec Charly IA IA</>
               )}
