@@ -167,7 +167,7 @@ const translations = {
     'footer.product': 'Produit',
     'footer.support': 'Support',
     'footer.legal': 'Légal',
-    'footer.copyright': '© 2025 Eligibly.ai. Tous droits réservés.',
+    'footer.copyright': '© 2026 Eligibly.ai. Tous droits réservés.',
     'footer.madeIn': 'Fait avec ❤️ en France',
     'footer.poweredByAI': 'Propulsé par l\'IA',
     
@@ -743,7 +743,7 @@ const translations = {
     'footer.product': 'Product',
     'footer.support': 'Support',
     'footer.legal': 'Legal',
-    'footer.copyright': '© 2025 Eligibly.ai. All rights reserved.',
+    'footer.copyright': '© 2026 Eligibly.ai. All rights reserved.',
     'footer.madeIn': 'Made with ❤️ in France',
     'footer.poweredByAI': 'Powered by AI',
     
