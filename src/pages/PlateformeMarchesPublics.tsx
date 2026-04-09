@@ -1,22 +1,15 @@
 import { ArticleLayout } from "@/components/ArticleLayout";
-import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 
 const PlateformeMarchesPublics = () => (
   <ArticleLayout
     title="Plateforme marchés publics : comparez les meilleures solutions IA en 2026"
-    description="Comparatif des plateformes de marchés publics en 2026 : Doubletrade, Tengo, Libel, Eligibly. Fonctionnalités, tarifs et scoring IA pour choisir la bonne solution."
-    category="Solutions"
-    readTime="10 min"
-    publishDate="2026-04-09"
+    subtitle="Comparatif des plateformes de marchés publics en 2026 : Doubletrade, Tengo, Libel, Eligibly. Fonctionnalités, tarifs et scoring IA pour choisir la bonne solution."
+    badge="Solutions"
+    badgeIcon={<BookOpen className="w-4 h-4" />}
+    url="/plateforme-marches-publics"
+    readTime="10 min de lecture"
+    date="9 avril 2026"
   >
-    <ArticleStructuredData
-      title="Plateforme marchés publics : comparez les meilleures solutions IA en 2026"
-      description="Comparatif des meilleures plateformes de marchés publics en 2026."
-      publishDate="2026-04-09"
-      category="Solutions"
-      slug="plateforme-marches-publics"
-    />
-
     <h2>Pourquoi utiliser une plateforme de marchés publics ?</h2>
     <p>
       Les <strong>plateformes de marchés publics</strong> centralisent la veille, la qualification et la réponse

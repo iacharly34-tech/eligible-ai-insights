@@ -1,22 +1,15 @@
 import { ArticleLayout } from "@/components/ArticleLayout";
-import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 
 const ProfilAcheteur = () => (
   <ArticleLayout
     title="Profil acheteur : comment l'utiliser pour détecter les marchés publics"
-    description="Qu'est-ce qu'un profil acheteur ? Liste des principales plateformes et stratégies pour exploiter ces sources d'appels d'offres souvent méconnues."
-    category="Comprendre"
-    readTime="8 min"
-    publishDate="2026-04-09"
+    subtitle="Qu'est-ce qu'un profil acheteur ? Liste des principales plateformes et stratégies pour exploiter ces sources d'appels d'offres souvent méconnues."
+    badge="Comprendre"
+    badgeIcon={<BookOpen className="w-4 h-4" />}
+    url="/profil-acheteur"
+    readTime="8 min de lecture"
+    date="9 avril 2026"
   >
-    <ArticleStructuredData
-      title="Profil acheteur : comment l'utiliser pour détecter les marchés publics"
-      description="Guide des profils acheteurs : principales plateformes et stratégies pour trouver des marchés publics."
-      publishDate="2026-04-09"
-      category="Comprendre"
-      slug="profil-acheteur"
-    />
-
     <h2>Qu'est-ce qu'un profil acheteur ?</h2>
     <p>
       Le <strong>profil acheteur</strong> est la plateforme de dématérialisation sur laquelle un acheteur public

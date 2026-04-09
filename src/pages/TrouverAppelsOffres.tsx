@@ -1,22 +1,15 @@
 import { ArticleLayout } from "@/components/ArticleLayout";
-import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 
 const TrouverAppelsOffres = () => (
   <ArticleLayout
     title="Comment trouver des appels d'offres : les meilleures sources en 2026"
-    description="Guide des sources gratuites et payantes pour trouver des appels d'offres publics et privés en France. BOAMP, JOUE, profils acheteurs et plateformes IA."
-    category="Comprendre"
-    readTime="8 min"
-    publishDate="2026-04-09"
+    subtitle="Guide des sources gratuites et payantes pour trouver des appels d'offres publics et privés en France. BOAMP, JOUE, profils acheteurs et plateformes IA."
+    badge="Comprendre"
+    badgeIcon={<BookOpen className="w-4 h-4" />}
+    url="/trouver-appels-offres"
+    readTime="8 min de lecture"
+    date="9 avril 2026"
   >
-    <ArticleStructuredData
-      title="Comment trouver des appels d'offres : les meilleures sources en 2026"
-      description="Guide des sources gratuites et payantes pour trouver des appels d'offres publics et privés."
-      publishDate="2026-04-09"
-      category="Comprendre"
-      slug="trouver-appels-offres"
-    />
-
     <h2>Où trouver des appels d'offres publics ?</h2>
     <p>
       <strong>Trouver des appels d'offres</strong> pertinents est la première étape pour développer votre activité

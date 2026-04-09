@@ -1,22 +1,15 @@
 import { ArticleLayout } from "@/components/ArticleLayout";
-import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 
 const DceDossierConsultation = () => (
   <ArticleLayout
     title="DCE : comprendre le dossier de consultation des entreprises"
-    description="Qu'est-ce que le DCE ? Composition, analyse et bonnes pratiques pour décrypter un dossier de consultation et maximiser vos chances sur les marchés publics."
-    category="Comprendre"
-    readTime="9 min"
-    publishDate="2026-04-09"
+    subtitle="Qu'est-ce que le DCE ? Composition, analyse et bonnes pratiques pour décrypter un dossier de consultation et maximiser vos chances sur les marchés publics."
+    badge="Comprendre"
+    badgeIcon={<BookOpen className="w-4 h-4" />}
+    url="/dce-dossier-consultation"
+    readTime="9 min de lecture"
+    date="9 avril 2026"
   >
-    <ArticleStructuredData
-      title="DCE : comprendre le dossier de consultation des entreprises"
-      description="Guide complet du DCE : composition, analyse et bonnes pratiques pour les marchés publics."
-      publishDate="2026-04-09"
-      category="Comprendre"
-      slug="dce-dossier-consultation"
-    />
-
     <h2>Qu'est-ce que le DCE ?</h2>
     <p>
       Le <strong>DCE (Dossier de Consultation des Entreprises)</strong> est l'ensemble des documents mis à

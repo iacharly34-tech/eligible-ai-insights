@@ -1,22 +1,15 @@
 import { ArticleLayout } from "@/components/ArticleLayout";
-import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 
 const BoampGuide = () => (
   <ArticleLayout
     title="BOAMP : Guide complet du Bulletin Officiel des Annonces de Marchés Publics"
-    description="Qu'est-ce que le BOAMP ? Comment l'utiliser pour trouver des appels d'offres ? Guide pratique 2026 avec sources alternatives et outils IA pour automatiser votre veille."
-    category="Comprendre"
-    readTime="10 min"
-    publishDate="2026-04-09"
+    subtitle="Qu'est-ce que le BOAMP ? Comment l'utiliser pour trouver des appels d'offres ? Guide pratique 2026 avec sources alternatives et outils IA pour automatiser votre veille."
+    badge="Comprendre"
+    badgeIcon={<BookOpen className="w-4 h-4" />}
+    url="/boamp-guide"
+    readTime="10 min de lecture"
+    date="9 avril 2026"
   >
-    <ArticleStructuredData
-      title="BOAMP : Guide complet du Bulletin Officiel des Annonces de Marchés Publics"
-      description="Qu'est-ce que le BOAMP ? Comment l'utiliser pour trouver des appels d'offres publics ? Guide pratique avec sources alternatives et outils IA."
-      publishDate="2026-04-09"
-      category="Comprendre"
-      slug="boamp-guide"
-    />
-
     <h2>Qu'est-ce que le BOAMP ?</h2>
     <p>
       Le <strong>BOAMP (Bulletin Officiel des Annonces de Marchés Publics)</strong> est la publication officielle

@@ -1,22 +1,15 @@
 import { ArticleLayout } from "@/components/ArticleLayout";
-import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 
 const RepondreAppelOffres = () => (
   <ArticleLayout
     title="Comment répondre à un appel d'offres public : guide étape par étape"
-    description="De la détection à la soumission : toutes les étapes pour répondre efficacement à un appel d'offres public. Conseils pratiques, erreurs à éviter et outils IA."
-    category="Pratique"
-    readTime="15 min"
-    publishDate="2026-04-09"
+    subtitle="De la détection à la soumission : toutes les étapes pour répondre efficacement à un appel d'offres public. Conseils pratiques, erreurs à éviter et outils IA."
+    badge="Pratique"
+    badgeIcon={<BookOpen className="w-4 h-4" />}
+    url="/repondre-appel-offres"
+    readTime="15 min de lecture"
+    date="9 avril 2026"
   >
-    <ArticleStructuredData
-      title="Comment répondre à un appel d'offres public : guide étape par étape"
-      description="Toutes les étapes pour répondre efficacement à un appel d'offres public en 2026."
-      publishDate="2026-04-09"
-      category="Pratique"
-      slug="repondre-appel-offres"
-    />
-
     <h2>Les étapes pour répondre à un appel d'offres</h2>
     <p>
       <strong>Répondre à un appel d'offres public</strong> est un processus structuré qui demande méthode et rigueur.

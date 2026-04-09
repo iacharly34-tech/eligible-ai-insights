@@ -1,22 +1,15 @@
 import { ArticleLayout } from "@/components/ArticleLayout";
-import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 
 const MapaMarchesPublics = () => (
   <ArticleLayout
     title="MAPA : tout savoir sur les marchés à procédure adaptée"
-    description="Qu'est-ce qu'un MAPA ? Seuils, règles, avantages pour les PME. Guide complet des marchés à procédure adaptée et comment les remporter avec l'IA."
-    category="Comprendre"
-    readTime="10 min"
-    publishDate="2026-04-09"
+    subtitle="Qu'est-ce qu'un MAPA ? Seuils, règles, avantages pour les PME. Guide complet des marchés à procédure adaptée et comment les remporter avec l'IA."
+    badge="Comprendre"
+    badgeIcon={<BookOpen className="w-4 h-4" />}
+    url="/mapa-marches-publics"
+    readTime="10 min de lecture"
+    date="9 avril 2026"
   >
-    <ArticleStructuredData
-      title="MAPA : tout savoir sur les marchés à procédure adaptée"
-      description="Guide complet des MAPA : seuils, règles, avantages pour les PME et stratégies pour les remporter."
-      publishDate="2026-04-09"
-      category="Comprendre"
-      slug="mapa-marches-publics"
-    />
-
     <h2>Qu'est-ce qu'un MAPA ?</h2>
     <p>
       Le <strong>MAPA (Marché à Procédure Adaptée)</strong> est une procédure de passation des marchés publics

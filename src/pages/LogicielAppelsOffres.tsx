@@ -1,22 +1,15 @@
 import { ArticleLayout } from "@/components/ArticleLayout";
-import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 
 const LogicielAppelsOffres = () => (
   <ArticleLayout
     title="Logiciel appels d'offres : la plateforme IA pour gagner plus de marchés"
-    description="Comparatif des meilleurs logiciels de gestion des appels d'offres en 2026. Veille, scoring IA, mémoire technique : comment choisir la solution adaptée à votre entreprise."
-    category="Solutions"
-    readTime="12 min"
-    publishDate="2026-04-09"
+    subtitle="Comparatif des meilleurs logiciels de gestion des appels d'offres en 2026. Veille, scoring IA, mémoire technique : comment choisir la solution adaptée à votre entreprise."
+    badge="Solutions"
+    badgeIcon={<BookOpen className="w-4 h-4" />}
+    url="/logiciel-appels-offres"
+    readTime="12 min de lecture"
+    date="9 avril 2026"
   >
-    <ArticleStructuredData
-      title="Logiciel appels d'offres : la plateforme IA pour gagner plus de marchés"
-      description="Comparatif des meilleurs logiciels de gestion des appels d'offres en 2026. Comment choisir la solution adaptée."
-      publishDate="2026-04-09"
-      category="Solutions"
-      slug="logiciel-appels-offres"
-    />
-
     <h2>Pourquoi utiliser un logiciel d'appels d'offres ?</h2>
     <p>
       Répondre aux <strong>appels d'offres publics</strong> sans outil dédié, c'est comme chercher une aiguille
