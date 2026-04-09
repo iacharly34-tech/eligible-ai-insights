@@ -89,6 +89,16 @@ const IAScoringPredictif = lazy(() => import("./pages/blog/IAScoringPredictif"))
 const IAAnalyseDCE = lazy(() => import("./pages/blog/IAAnalyseDCE"));
 const DonneesAttribution = lazy(() => import("./pages/blog/DonneesAttribution"));
 const AutomatiserVeilleMarchesPublics = lazy(() => import("./pages/blog/AutomatiserVeilleMarchesPublics"));
+const ChecklistConformiteAO = lazy(() => import("./pages/blog/ChecklistConformiteAO"));
+const KpiMarchesPublics = lazy(() => import("./pages/blog/KpiMarchesPublics"));
+
+// Product module pages
+const VeilleAppelsOffres = lazy(() => import("./pages/produit/VeilleAppelsOffres"));
+const AnalyseDceIa = lazy(() => import("./pages/produit/AnalyseDceIa"));
+const GoNoGoIa = lazy(() => import("./pages/produit/GoNoGoIa"));
+const MemoireTechniqueIa = lazy(() => import("./pages/produit/MemoireTechniqueIa"));
+const ConformiteAppelOffres = lazy(() => import("./pages/produit/ConformiteAppelOffres"));
+const PilotageMarches = lazy(() => import("./pages/produit/PilotageMarches"));
 
 // English Blog Articles
 const StrategicWatchEN = lazy(() => import("./pages/en/StrategicWatch"));
@@ -202,6 +212,15 @@ const App = () => (
                 <Route path="/ia-analyse-dce" element={<IAAnalyseDCE />} />
                 <Route path="/donnees-attribution-marches-publics" element={<DonneesAttribution />} />
                 <Route path="/automatiser-veille-marches-publics" element={<AutomatiserVeilleMarchesPublics />} />
+                <Route path="/checklist-conformite-ao" element={<ChecklistConformiteAO />} />
+                <Route path="/kpi-marches-publics" element={<KpiMarchesPublics />} />
+                {/* Product module pages */}
+                <Route path="/produit/veille-appels-offres" element={<VeilleAppelsOffres />} />
+                <Route path="/produit/analyse-dce-ia" element={<AnalyseDceIa />} />
+                <Route path="/produit/go-no-go-ia" element={<GoNoGoIa />} />
+                <Route path="/produit/memoire-technique-ia" element={<MemoireTechniqueIa />} />
+                <Route path="/produit/conformite-appel-offres" element={<ConformiteAppelOffres />} />
+                <Route path="/produit/pilotage-marches-publics" element={<PilotageMarches />} />
                 {/* EN routes */}
                 <Route path="/en" element={<Index />} />
                 <Route path="/en/product" element={<Produit />} />
