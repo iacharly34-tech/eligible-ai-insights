@@ -8,7 +8,7 @@ import { InternalLinksManager } from "@/components/InternalLinksManager";
 import { HeroSection } from "@/components/landing/HeroSection";
 import { MetricsBar } from "@/components/landing/MetricsBar";
 import { ProblemSection } from "@/components/landing/ProblemSection";
-import { SolutionSteps } from "@/components/landing/SolutionSteps";
+import { ProductModules } from "@/components/product/ProductModules";
 import { MockDashboard } from "@/components/landing/MockDashboard";
 import { FeaturesGrid } from "@/components/landing/FeaturesGrid";
 import { SocialProof } from "@/components/landing/SocialProof";
@@ -38,7 +38,7 @@ const HomePage = () => {
           <ProblemSection />
 
           {/* 4. Solution en 3 étapes — Détecter → Scorer → Répondre */}
-          <SolutionSteps />
+          <ProductModules />
 
           {/* 4b. Mock dashboard — scored tenders preview */}
           <MockDashboard />
