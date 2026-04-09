@@ -1,7 +1,17 @@
 import { ArticleLayout } from "@/components/ArticleLayout";
+import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 import { BarChart3 } from "lucide-react";
 
 const KpiMarchesPublics = () => (
+  <>
+    <ArticleStructuredData
+      title="KPIs marchés publics : les indicateurs qui comptent vraiment"
+      description="La plupart des entreprises ne mesurent pas leur performance AO. Voici les indicateurs clés pour piloter votre stratégie marchés publics et maximiser votre ROI commercial."
+      datePublished="2026-04-09"
+      url="/kpi-marches-publics"
+      keywords={["KPI marchés publics", "indicateurs performance AO", "taux de succès appels d'offres", "ROI commercial", "pilotage marchés publics"]}
+      readingTime="9 min"
+    />
   <ArticleLayout
     badge="IA & Marchés publics"
     badgeIcon={<BarChart3 className="w-4 h-4" />}

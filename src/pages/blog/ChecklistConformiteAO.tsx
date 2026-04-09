@@ -1,7 +1,17 @@
 import { ArticleLayout } from "@/components/ArticleLayout";
+import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 import { ShieldCheck } from "lucide-react";
 
 const ChecklistConformiteAO = () => (
+  <>
+    <ArticleStructuredData
+      title="Checklist conformité AO : ne plus jamais être éliminé pour un oubli"
+      description="30% des candidatures aux marchés publics sont rejetées pour non-conformité administrative. Voici la checklist définitive pour éliminer ce risque."
+      datePublished="2026-04-09"
+      url="/checklist-conformite-ao"
+      keywords={["checklist conformité", "appels d'offres", "marchés publics", "conformité administrative", "dépôt AO", "vérification candidature"]}
+      readingTime="8 min"
+    />
   <ArticleLayout
     badge="Optimiser sa réponse"
     badgeIcon={<ShieldCheck className="w-4 h-4" />}
