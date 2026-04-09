@@ -809,8 +809,8 @@ const translations = {
     
     // Product Page
     'product.badge': 'Artificial Intelligence • Public Procurement',
-    'product.hero.title': 'The most advanced AI platform for public procurement',
-    'product.hero.subtitle': 'Discover how our artificial intelligence revolutionises the detection and analysis of public tenders to maximise your chances of success.',
+    'product.hero.title': 'From detection to victory: the complete AI platform for public procurement',
+    'product.hero.subtitle': 'Eligibly covers the entire cycle: smart monitoring, predictive scoring, DCE analysis, AI-powered technical proposal writing and compliance checks. One platform to replace all your tools.',
     'product.features.title': 'Key',
     'product.features.title.highlight': 'features',
     'product.features.subtitle': 'A complete suite of AI tools to transform your approach to public procurement',
