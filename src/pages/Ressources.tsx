@@ -54,6 +54,26 @@ const Ressources = () => {
   const allArticles = [
     // New articles 2026
     {
+      title: "Checklist conformité AO : 15 points à vérifier avant de déposer",
+      description: "60% des éliminations sont administratives. Cette checklist couvre les 15 points critiques à vérifier avant chaque dépôt.",
+      url: "/checklist-conformite-ao",
+      date: "9 avril 2026",
+      readTime: "8 min",
+      icon: Shield,
+      category: "Répondre efficacement aux AO",
+      isFeatured: true
+    },
+    {
+      title: "KPIs marchés publics : les indicateurs qui comptent vraiment",
+      description: "La plupart des entreprises ne mesurent pas leur performance AO. Voici les 8 KPIs essentiels pour piloter votre stratégie.",
+      url: "/kpi-marches-publics",
+      date: "9 avril 2026",
+      readTime: "9 min",
+      icon: BarChart3,
+      category: "Tendances & data clés",
+      isFeatured: true
+    },
+    {
       title: "Seuils des marchés publics 2026 : guide complet",
       description: "Tous les seuils de procédure à connaître pour répondre aux bons marchés. Mise à jour avec les seuils européens en vigueur.",
       url: "/seuils-marches-publics",
