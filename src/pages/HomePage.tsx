@@ -14,7 +14,7 @@ import { FeaturesGrid } from "@/components/landing/FeaturesGrid";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { ComparisonTable } from "@/components/landing/ComparisonTable";
 import { OnboardingTimeline } from "@/components/landing/OnboardingTimeline";
-import { PricingPlans } from "@/components/landing/PricingPlans";
+
 import { FAQAccordion } from "@/components/landing/FAQAccordion";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 
@@ -55,8 +55,6 @@ const HomePage = () => {
           {/* 8. Timeline d'onboarding */}
           <OnboardingTimeline />
 
-          {/* 9. Pricing — transparence tarifaire */}
-          <PricingPlans />
 
           {/* 10. FAQ — conversion + SEO */}
           <FAQAccordion />

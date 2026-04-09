@@ -1,12 +1,9 @@
-import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { Badge } from "@/components/ui/badge";
+import { Footer } from "@/components/Footer";
 import { CTAFooter } from "@/components/CTAFooter";
 import { DemoPersonas } from "@/components/DemoPersonas";
 import { ProductHero } from "@/components/product/ProductHero";
-
 import { ProductFeatures } from "@/components/product/ProductFeatures";
-
 import { ProductBenefits } from "@/components/product/ProductBenefits";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SEOHead } from "@/components/SEOHead";
@@ -16,42 +13,36 @@ import { MobileCTABar } from "@/components/MobileCTABar";
 
 const Produit = () => {
   const { t } = useLanguage();
-  
 
   return (
     <>
       <SEOHead />
       <StructuredData page="product" />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
+      <div className="min-h-screen bg-background">
         <Header />
         <MobileCTABar />
-        
-        <main className="page-container">
-          {/* Hero Section */}
+
+        <main>
           <ProductHero />
+          <DemoPersonas />
+          <ProductFeatures />
+          <ProductBenefits />
 
-      {/* Demo Personas Section */}
-      <DemoPersonas />
-      <ProductFeatures />
+          <div className="container mx-auto px-4 py-16">
+            <ContextualLinks currentPage="/produit" context="product" />
+          </div>
 
-
-      {/* Benefits Section */}
-      <ProductBenefits />
-      
-      {/* Liens contextuels pour le maillage interne */}
-      <div className="container mx-auto px-4 py-16">
-        <ContextualLinks currentPage="/produit" context="product" />
-      </div>
-
-          <CTAFooter 
+          <CTAFooter
             title={t('cta.title')}
             subtitle={t('cta.subtitle')}
             primaryButtonText={t('cta.primary')}
             secondaryButtonText={t('cta.secondary')}
           />
         </main>
+
+        <Footer />
       </div>
-  </>
+    </>
   );
 };
 
