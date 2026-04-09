@@ -274,7 +274,7 @@ export const ProcessDemo = () => {
                                   ? 'bg-success/100 text-white' 
                                   : currentStep === step.id - 1 && isRunning
                                   ? 'bg-purple-500 text-white animate-pulse'
-                                  : 'bg-gray-300 text-muted-foreground'
+                                  : 'bg-secondary text-muted-foreground'
                               }`}>
                                 {currentStep > step.id ? <CheckCircle className="w-3 h-3" /> : step.id}
                               </div>
@@ -300,17 +300,17 @@ export const ProcessDemo = () => {
                               <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
                               <div className="w-1.5 h-1.5 bg-success/100 rounded-full"></div>
                             </div>
-                            <span className="text-green-400 text-xs font-mono">charly-analysis.js</span>
+                            <span className="text-success text-xs font-mono">charly-analysis.js</span>
                           </div>
                           <div className="space-y-0.5 text-xs font-mono h-40 overflow-y-auto bg-black/20 rounded p-2">
                             {codeLines.map((line, index) => (
-                              <div key={index} className="text-green-400 break-all">
+                              <div key={index} className="text-success break-all">
                                 <span className="text-muted-foreground mr-1 text-xs">{index + 1}.</span>
                                 <span className="text-xs">{line}</span>
                               </div>
                             ))}
                             {codeLines.length > 0 && isRunning && (
-                              <div className="text-green-400 animate-pulse">
+                              <div className="text-success animate-pulse">
                                 <span className="text-muted-foreground mr-1 text-xs">{codeLines.length + 1}.</span>
                                 <span className="text-xs">█</span>
                               </div>
@@ -397,7 +397,7 @@ export const ProcessDemo = () => {
                             ? 'bg-success/100 text-white' 
                             : currentStep === step.id - 1 && isRunning
                             ? 'bg-purple-500 text-white animate-pulse'
-                            : 'bg-gray-300 text-muted-foreground'
+                            : 'bg-secondary text-muted-foreground'
                         }`}>
                           {currentStep > step.id ? <CheckCircle className="w-3 h-3" /> : step.id}
                         </div>
@@ -428,17 +428,17 @@ export const ProcessDemo = () => {
                         <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
                         <div className="w-1.5 h-1.5 bg-success/100 rounded-full"></div>
                       </div>
-                      <span className="text-green-400 text-xs font-mono">charly-analysis.js</span>
+                      <span className="text-success text-xs font-mono">charly-analysis.js</span>
                     </div>
                     <div className={`space-y-0.5 text-xs font-mono ${showFullConsole ? 'h-48 sm:h-56 md:h-64 lg:h-72' : 'h-24 sm:h-28 md:h-32 lg:h-40'} overflow-y-auto bg-black/20 rounded p-2`}>
                       {codeLines.map((line, index) => (
-                        <div key={index} className="text-green-400 break-all">
+                        <div key={index} className="text-success break-all">
                           <span className="text-muted-foreground mr-1 text-xs">{index + 1}.</span>
                           <span className="text-xs">{line}</span>
                         </div>
                       ))}
                       {codeLines.length > 0 && isRunning && (
-                        <div className="text-green-400 animate-pulse">
+                        <div className="text-success animate-pulse">
                           <span className="text-muted-foreground mr-1 text-xs">{codeLines.length + 1}.</span>
                           <span className="text-xs">█</span>
                         </div>

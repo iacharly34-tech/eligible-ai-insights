@@ -123,7 +123,7 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
             <div className="bg-card rounded-xl shadow-lg p-4 space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-sm font-semibold text-foreground">Quels sont les critères de l'acheteur ?</span>
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-success to-blue-500 flex items-center justify-center">
                   <div className="w-8 h-8 rounded-full bg-card flex items-center justify-center">
                     <div className="w-4 h-4 bg-success/100 rounded-full"></div>
                   </div>
@@ -133,19 +133,19 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
               <div className="space-y-2 text-xs">
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Critère prix : 20%</span>
-                  <div className="w-16 h-2 bg-gray-200 rounded-full">
+                  <div className="w-16 h-2 bg-secondary rounded-full">
                     <div className="w-3 h-2 bg-blue-500 rounded-full"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Critère qualité : 70%</span>
-                  <div className="w-16 h-2 bg-gray-200 rounded-full">
+                  <div className="w-16 h-2 bg-secondary rounded-full">
                     <div className="w-11 h-2 bg-success/100 rounded-full"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Critère performance : 10%</span>
-                  <div className="w-16 h-2 bg-gray-200 rounded-full">
+                  <div className="w-16 h-2 bg-secondary rounded-full">
                     <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
                   </div>
                 </div>
@@ -206,7 +206,7 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
                 <div className="relative w-16 h-16 mx-auto mb-2">
                   <div className="w-16 h-16 rounded-full border-4 border-border"></div>
                   <div 
-                    className="absolute top-0 left-0 w-16 h-16 rounded-full border-4 border-green-500 transition-all duration-1000"
+                    className="absolute top-0 left-0 w-16 h-16 rounded-full border-4 border-success/20 transition-all duration-1000"
                     style={{
                       clipPath: isPlaying ? 'inset(0 0 0 0)' : 'inset(0 100% 0 0)',
                       transform: 'rotate(-90deg)'
@@ -241,7 +241,7 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
                   <div key={index} className="flex items-center justify-between">
                     <span className="text-xs text-muted-foreground">{criteria.label}</span>
                     <div className="flex items-center gap-2">
-                      <div className="w-12 h-1.5 bg-gray-200 rounded-full">
+                      <div className="w-12 h-1.5 bg-secondary rounded-full">
                         <div 
                           className={`h-1.5 bg-${criteria.color}-500 rounded-full transition-all duration-1000`}
                           style={{ width: isPlaying ? `${criteria.value}%` : '0%' }}
@@ -323,7 +323,7 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
           <div
             key={index}
             className={`w-2 h-2 rounded-full transition-all ${
-              index === selectedIndex ? 'bg-blue-600' : 'bg-gray-300'
+              index === selectedIndex ? 'bg-blue-600' : 'bg-secondary'
             }`}
           />
         ))}
@@ -417,7 +417,7 @@ export const MacBookSimulation = () => {
     switch (currentStepData.component) {
       case "browser":
         return (
-          <div className="h-full bg-gradient-to-br from-slate-50 to-blue-50">
+          <div className="h-full bg-gradient-to-br from-background to-blue-50">
             <div className="bg-secondary border-b px-4 py-2 flex items-center gap-3">
               <div className="flex gap-2">
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -466,7 +466,7 @@ export const MacBookSimulation = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="text-xs font-medium text-muted-foreground">{source.name}</div>
-                        <div className="text-lg font-bold text-blue-600">
+                        <div className="text-lg font-bold text-primary">
                           {isPlaying ? Math.floor(source.count * (progress / 100)) : source.count}
                         </div>
                       </div>
@@ -483,8 +483,8 @@ export const MacBookSimulation = () => {
 
       case "terminal":
         return (
-          <div className="h-full bg-black text-green-400 font-mono relative overflow-hidden">
-            <div className="bg-gray-800 px-4 py-2 flex items-center gap-2 text-sm">
+          <div className="h-full bg-black text-success font-mono relative overflow-hidden">
+            <div className="bg-card px-4 py-2 flex items-center gap-2 text-sm">
               <div className="flex gap-2">
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
@@ -495,21 +495,21 @@ export const MacBookSimulation = () => {
             </div>
             
             <div className="p-4 space-y-1 text-xs leading-relaxed">
-              <div className="text-blue-400">$ npm run scrape-sources --parallel</div>
+              <div className="text-primary">$ npm run scrape-sources --parallel</div>
               
               {isPlaying && (
                 <div className="space-y-1">
                   <div className="text-yellow-400">🔍 Initializing Puppeteer cluster (8 workers)...</div>
-                  <div className="text-blue-400">🌐 Connecting to BOAMP API...</div>
+                  <div className="text-primary">🌐 Connecting to BOAMP API...</div>
                   <div className="text-purple-400">📄 Processing PDF documents (47 files)...</div>
                   <div className="text-pink-400">🧠 Starting AI content extraction...</div>
-                  <div className="text-green-400">✅ Processed 547 documents successfully</div>
+                  <div className="text-success">✅ Processed 547 documents successfully</div>
                 </div>
               )}
               
               <div className="flex items-center">
-                <span className="text-blue-400">$ </span>
-                <div className="w-2 h-4 bg-green-400 ml-1 animate-pulse"></div>
+                <span className="text-primary">$ </span>
+                <div className="w-2 h-4 bg-success ml-1 animate-pulse"></div>
               </div>
             </div>
           </div>
@@ -518,13 +518,13 @@ export const MacBookSimulation = () => {
       case "vscode":
         return (
           <div className="h-full bg-card text-white">
-            <div className="bg-gray-800 px-4 py-2 flex items-center gap-2 text-sm border-b border-gray-700">
+            <div className="bg-card px-4 py-2 flex items-center gap-2 text-sm border-b border-gray-700">
               <div className="flex gap-2">
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-success/100 rounded-full"></div>
               </div>
-              <Code className="w-4 h-4 text-blue-400 ml-2" />
+              <Code className="w-4 h-4 text-primary ml-2" />
               <span className="text-muted-foreground">ai-multi-analyzer.ts</span>
             </div>
             
@@ -536,7 +536,7 @@ export const MacBookSimulation = () => {
                 </div>
                 <div className="flex">
                   <div className="w-8 text-muted-foreground text-right pr-2">2</div>
-                  <div className="text-blue-400">const analyses = await Promise.all([</div>
+                  <div className="text-primary">const analyses = await Promise.all([</div>
                 </div>
                 <div className="flex">
                   <div className="w-8 text-muted-foreground text-right pr-2">3</div>
@@ -571,10 +571,10 @@ export const MacBookSimulation = () => {
         <Card className="max-w-4xl mx-auto">
           <CardContent className="p-0">
             {/* MacBook Frame */}
-            <div className="bg-gray-200 rounded-t-xl p-6 pb-2">
-              <div className="bg-gray-800 rounded-lg shadow-2xl transform perspective-1000 rotateX-5">
+            <div className="bg-secondary rounded-t-xl p-6 pb-2">
+              <div className="bg-card rounded-lg shadow-2xl transform perspective-1000 rotateX-5">
                 {/* MacBook Top Bar */}
-                <div className="bg-gray-700 rounded-t-lg px-4 py-2 flex items-center justify-between">
+                <div className="bg-muted rounded-t-lg px-4 py-2 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <div className="flex gap-1.5">
                       <div className="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -583,7 +583,7 @@ export const MacBookSimulation = () => {
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <div className="w-4 h-3 bg-gray-600 rounded-sm"></div>
+                    <div className="w-4 h-3 bg-muted rounded-sm"></div>
                     <span>100%</span>
                     <div className="w-6 h-3 bg-success/100 rounded-sm"></div>
                   </div>
@@ -645,7 +645,7 @@ export const MacBookSimulation = () => {
                           ? 'bg-primary text-primary-foreground'
                           : index === currentStep
                           ? 'bg-primary/20 text-primary border-2 border-primary'
-                          : 'bg-gray-200 text-muted-foreground'
+                          : 'bg-secondary text-muted-foreground'
                       }`}
                     >
                       {index < currentStep ? <CheckCircle className="w-4 h-4" /> : index + 1}

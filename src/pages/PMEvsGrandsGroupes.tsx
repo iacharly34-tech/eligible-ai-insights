@@ -33,7 +33,7 @@ export default function PMEvsGrandsGroupes() {
             </header>
 
             <div className="prose prose-lg max-w-none">
-              <blockquote className="border-l-4 border-green-500 pl-6 italic text-lg mb-8 bg-success/10 p-6 rounded-r-lg">
+              <blockquote className="border-l-4 border-success/20 pl-6 italic text-lg mb-8 bg-success/10 p-6 rounded-r-lg">
                 "On pensait que c'était perdu d'avance… on a gagné grâce à un groupement."
                 <cite className="block mt-2 text-sm text-muted-foreground not-italic">— Dirigeant PME bâtiment</cite>
               </blockquote>
@@ -93,25 +93,25 @@ export default function PMEvsGrandsGroupes() {
                     <div>
                       <h5 className="font-semibold text-sm">Groupement complémentaire</h5>
                       <p className="text-sm text-muted-foreground">Association de PME aux expertises différentes pour couvrir tout le périmètre</p>
-                      <div className="text-xs text-blue-600 mt-1">Exemple : PME IT + PME formation + PME conseil</div>
+                      <div className="text-xs text-primary mt-1">Exemple : PME IT + PME formation + PME conseil</div>
                     </div>
                     
                     <div>
                       <h5 className="font-semibold text-sm">Groupement territorial</h5>
                       <p className="text-sm text-muted-foreground">Fédération de PME locales pour concurrencer les groupes nationaux</p>
-                      <div className="text-xs text-blue-600 mt-1">Exemple : Réseau d'entreprises BTP régionales</div>
+                      <div className="text-xs text-primary mt-1">Exemple : Réseau d'entreprises BTP régionales</div>
                     </div>
                     
                     <div>
                       <h5 className="font-semibold text-sm">Groupement d'échelle</h5>
                       <p className="text-sm text-muted-foreground">Mutualisation pour atteindre la taille critique requise</p>
-                      <div className="text-xs text-blue-600 mt-1">Exemple : Coopérative de PME de nettoyage</div>
+                      <div className="text-xs text-primary mt-1">Exemple : Coopérative de PME de nettoyage</div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              <blockquote className="border-l-4 border-green-500 pl-6 italic text-lg my-6 bg-success/10 p-4 rounded-r-lg">
+              <blockquote className="border-l-4 border-success/20 pl-6 italic text-lg my-6 bg-success/10 p-4 rounded-r-lg">
                 "Notre groupement de 5 PME locales a battu Bouygues sur un marché de rénovation urbaine. Notre atout : la connaissance fine du territoire et l'engagement personnel des dirigeants."
                 <cite className="block mt-2 text-sm text-muted-foreground not-italic">— Dirigeant PME bâtiment</cite>
               </blockquote>
@@ -327,7 +327,7 @@ export default function PMEvsGrandsGroupes() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-blue-600 mb-2">25%</div>
+                    <div className="text-2xl font-bold text-primary mb-2">25%</div>
                     <div className="text-sm text-muted-foreground">
                       Marge préservée grâce à la différenciation
                     </div>

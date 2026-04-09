@@ -480,7 +480,7 @@ const Ressources = () => {
                               <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                                 <article.icon className="w-6 h-6 text-white" />
                               </div>
-                              <Badge variant="outline" className="text-xs text-blue-600 border-blue-300">
+                              <Badge variant="outline" className="text-xs text-primary border-blue-300">
                                 {article.readTime}
                               </Badge>
                             </div>
@@ -490,7 +490,7 @@ const Ressources = () => {
                               <span>{article.date}</span>
                             </div>
                             
-                            <h3 className="text-base font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                            <h3 className="text-base font-bold mb-3 leading-tight group-hover:text-primary transition-colors">
                               {article.title}
                             </h3>
                             
@@ -539,7 +539,7 @@ const Ressources = () => {
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <Card className="border-0 bg-gradient-to-r from-blue-50 to-indigo-50 p-8">
                 <div className="flex items-start gap-4">
-                  <Quote className="w-8 h-8 text-blue-600 flex-shrink-0 mt-1" />
+                  <Quote className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-lg font-bold text-foreground mb-2">
                       "59,9% des marchés sont remportés par des PME, mais seulement 27,2% du montant total leur est attribué."
@@ -568,7 +568,7 @@ const Ressources = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">110 Mds€</div>
+                <div className="text-3xl font-bold text-primary mb-2">110 Mds€</div>
                 <div className="text-sm text-muted-foreground">Budget annuel marchés publics</div>
               </div>
               <div className="text-center">
@@ -617,7 +617,7 @@ const Ressources = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <SafeLink to="/demo">
-                  <EligiblyButton variant="secondary" size="lg" className="bg-card text-blue-600 hover:bg-secondary">
+                  <EligiblyButton variant="secondary" size="lg" className="bg-card text-primary hover:bg-secondary">
                     <Zap className="w-5 h-5 mr-2" />
                     Tester Charly gratuitement
                   </EligiblyButton>
@@ -645,7 +645,7 @@ const Ressources = () => {
               <Card className="border-0 bg-card backdrop-blur-sm hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-6 text-center">
                   <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Mail className="w-6 h-6 text-blue-600" />
+                    <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="font-semibold mb-2">Support expert</h3>
                   <p className="text-sm text-muted-foreground mb-4">Réponse personnalisée sous 24h</p>

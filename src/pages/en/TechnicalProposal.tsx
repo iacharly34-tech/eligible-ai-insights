@@ -252,7 +252,7 @@ const TechnicalProposal = () => {
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <Target className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+                      <Target className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold mb-2">Approach</h3>
                         <p className="text-sm text-muted-foreground">Explain your methodology and what made your approach effective.</p>
@@ -313,7 +313,7 @@ const TechnicalProposal = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <PenTool className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                  <PenTool className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Writing assistance</h4>
                     <p className="text-sm text-muted-foreground">Get suggestions to strengthen your responses and improve clarity.</p>

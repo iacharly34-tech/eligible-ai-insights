@@ -75,33 +75,33 @@ const DocumentsAO = () => {
               <Card className="border-0 shadow-xl bg-gradient-to-r from-blue-50 to-indigo-50 mb-8">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <FolderOpen className="w-8 h-8 text-blue-600" />
+                    <FolderOpen className="w-8 h-8 text-primary" />
                     <h3 className="font-bold text-xl">Composition standard d'un DCE</h3>
                   </div>
                   
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="flex items-center gap-3 p-3 bg-card rounded-lg">
-                      <FileText className="w-5 h-5 text-blue-600" />
+                      <FileText className="w-5 h-5 text-primary" />
                       <span className="font-medium">Règlement de Consultation (RC)</span>
                     </div>
                     <div className="flex items-center gap-3 p-3 bg-card rounded-lg">
-                      <FileText className="w-5 h-5 text-blue-600" />
+                      <FileText className="w-5 h-5 text-primary" />
                       <span className="font-medium">Acte d'Engagement (AE)</span>
                     </div>
                     <div className="flex items-center gap-3 p-3 bg-card rounded-lg">
-                      <FileText className="w-5 h-5 text-blue-600" />
+                      <FileText className="w-5 h-5 text-primary" />
                       <span className="font-medium">Cahier des Clauses Administratives (CCAP)</span>
                     </div>
                     <div className="flex items-center gap-3 p-3 bg-card rounded-lg">
-                      <FileText className="w-5 h-5 text-blue-600" />
+                      <FileText className="w-5 h-5 text-primary" />
                       <span className="font-medium">Cahier des Clauses Techniques (CCTP)</span>
                     </div>
                     <div className="flex items-center gap-3 p-3 bg-card rounded-lg">
-                      <FileText className="w-5 h-5 text-blue-600" />
+                      <FileText className="w-5 h-5 text-primary" />
                       <span className="font-medium">Bordereau des Prix (BPU/DQE)</span>
                     </div>
                     <div className="flex items-center gap-3 p-3 bg-card rounded-lg">
-                      <FileText className="w-5 h-5 text-blue-600" />
+                      <FileText className="w-5 h-5 text-primary" />
                       <span className="font-medium">Annexes techniques</span>
                     </div>
                   </div>
@@ -119,7 +119,7 @@ const DocumentsAO = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <BookOpen className="w-6 h-6 text-blue-600" />
+                        <BookOpen className="w-6 h-6 text-primary" />
                       </div>
                       <div className="flex-1">
                         <h3 className="font-bold text-xl mb-3">Règlement de Consultation (RC)</h3>
@@ -127,7 +127,7 @@ const DocumentsAO = () => {
                           Le document à lire en premier. Il définit les règles du jeu : procédure, critères de sélection, délais et modalités de remise des offres.
                         </p>
                         
-                        <h4 className="font-bold text-sm mb-2 text-blue-600">Informations clés à extraire :</h4>
+                        <h4 className="font-bold text-sm mb-2 text-primary">Informations clés à extraire :</h4>
                         <ul className="space-y-2 text-sm text-muted-foreground mb-4">
                           <li className="flex items-start gap-2">
                             <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
@@ -324,7 +324,7 @@ const DocumentsAO = () => {
                         <span className="font-bold">Règlement de Consultation</span>
                         <p className="text-sm text-muted-foreground">Pour décider Go/No Go rapidement</p>
                       </div>
-                      <Clock className="w-5 h-5 text-blue-600 ml-auto" />
+                      <Clock className="w-5 h-5 text-primary ml-auto" />
                     </div>
                     
                     <div className="flex items-center gap-4 p-4 bg-amber-50 rounded-xl">
@@ -377,7 +377,7 @@ const DocumentsAO = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <SafeLink to="/demo">
-                  <Button size="lg" className="bg-card text-blue-600 hover:bg-blue-50">
+                  <Button size="lg" className="bg-card text-primary hover:bg-blue-50">
                     Essayer gratuitement
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>

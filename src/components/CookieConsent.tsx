@@ -172,7 +172,7 @@ export const CookieConsent = memo(() => {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <BarChart3 className="h-5 w-5 text-blue-600" aria-hidden="true" />
+                    <BarChart3 className="h-5 w-5 text-primary" aria-hidden="true" />
                     <div>
                       <h4 className="font-medium">{t('cookies.analytics.title')}</h4>
                       <p className="text-sm text-muted-foreground">

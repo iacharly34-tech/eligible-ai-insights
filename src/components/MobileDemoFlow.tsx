@@ -242,13 +242,13 @@ export const MobileDemoFlow = () => {
         <div className="px-6 mb-6">
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-400/30 rounded-2xl p-4 text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-1">
+              <div className="text-3xl font-bold text-primary mb-1">
                 {counters.opportunities}
               </div>
-              <div className="text-xs text-blue-600/80">Opportunités</div>
+              <div className="text-xs text-primary/80">Opportunités</div>
             </div>
             
-            <div className="bg-gradient-to-br from-success/100/20 to-green-600/20 border border-green-400/30 rounded-2xl p-4 text-center">
+            <div className="bg-gradient-to-br from-success/100/20 to-success/20 border border-success/20/30 rounded-2xl p-4 text-center">
               <div className="text-3xl font-bold text-success mb-1">
                 {counters.pagesAnalyzed}
               </div>
@@ -280,21 +280,21 @@ export const MobileDemoFlow = () => {
                 <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-success/100 rounded-full"></div>
               </div>
-              <Terminal className="w-4 h-4 text-green-400" />
-              <span className="text-green-400 text-sm font-mono">charly-analysis.js</span>
+              <Terminal className="w-4 h-4 text-success" />
+              <span className="text-success text-sm font-mono">charly-analysis.js</span>
             </div>
             
             <div className="space-y-2 overflow-y-auto h-full">
               {codeLines.map((line, index) => (
-                <div key={index} className="text-green-400 text-sm font-mono flex items-start">
+                <div key={index} className="text-success text-sm font-mono flex items-start">
                   <span className="text-muted-foreground mr-3 select-none">{'>'}</span>
                   <span className="flex-1">{line}</span>
                 </div>
               ))}
               {isAnimating && (
-                <div className="text-green-400 animate-pulse text-sm font-mono flex items-center">
+                <div className="text-success animate-pulse text-sm font-mono flex items-center">
                   <span className="text-muted-foreground mr-3">{'>'}</span>
-                  <span className="w-2 h-4 bg-green-400 animate-pulse"></span>
+                  <span className="w-2 h-4 bg-success animate-pulse"></span>
                 </div>
               )}
             </div>

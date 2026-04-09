@@ -120,7 +120,7 @@ const GoNoGo = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="font-bold text-blue-600">1</span>
+                        <span className="font-bold text-primary">1</span>
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Adéquation technique</h3>
@@ -134,7 +134,7 @@ const GoNoGo = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="font-bold text-blue-600">2</span>
+                        <span className="font-bold text-primary">2</span>
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Références et expérience</h3>
@@ -148,7 +148,7 @@ const GoNoGo = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="font-bold text-blue-600">3</span>
+                        <span className="font-bold text-primary">3</span>
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Connaissance de l'acheteur</h3>
@@ -162,7 +162,7 @@ const GoNoGo = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="font-bold text-blue-600">4</span>
+                        <span className="font-bold text-primary">4</span>
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Analyse concurrentielle</h3>
@@ -176,7 +176,7 @@ const GoNoGo = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="font-bold text-blue-600">5</span>
+                        <span className="font-bold text-primary">5</span>
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Faisabilité économique</h3>
@@ -190,7 +190,7 @@ const GoNoGo = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="font-bold text-blue-600">6</span>
+                        <span className="font-bold text-primary">6</span>
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Délais et disponibilité</h3>
@@ -204,7 +204,7 @@ const GoNoGo = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="font-bold text-blue-600">7</span>
+                        <span className="font-bold text-primary">7</span>
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Valeur stratégique</h3>
@@ -227,38 +227,38 @@ const GoNoGo = () => {
               <Card className="border-0 shadow-xl bg-gradient-to-r from-blue-50 to-indigo-50">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Calculator className="w-8 h-8 text-blue-600" />
+                    <Calculator className="w-8 h-8 text-primary" />
                     <h3 className="font-bold text-xl">Exemple de pondération</h3>
                   </div>
                   
                   <div className="grid md:grid-cols-2 gap-4 text-sm">
                     <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Adéquation technique</span>
-                      <span className="font-bold text-blue-600">25%</span>
+                      <span className="font-bold text-primary">25%</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Références</span>
-                      <span className="font-bold text-blue-600">20%</span>
+                      <span className="font-bold text-primary">20%</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Connaissance acheteur</span>
-                      <span className="font-bold text-blue-600">15%</span>
+                      <span className="font-bold text-primary">15%</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Analyse concurrentielle</span>
-                      <span className="font-bold text-blue-600">15%</span>
+                      <span className="font-bold text-primary">15%</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Faisabilité économique</span>
-                      <span className="font-bold text-blue-600">10%</span>
+                      <span className="font-bold text-primary">10%</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Délais</span>
-                      <span className="font-bold text-blue-600">10%</span>
+                      <span className="font-bold text-primary">10%</span>
                     </div>
                     <div className="flex justify-between items-center py-2">
                       <span>Valeur stratégique</span>
-                      <span className="font-bold text-blue-600">5%</span>
+                      <span className="font-bold text-primary">5%</span>
                     </div>
                   </div>
                 </CardContent>
@@ -280,8 +280,8 @@ const GoNoGo = () => {
 
                 <Card className="border-0 shadow-lg text-center">
                   <CardContent className="p-6">
-                    <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-blue-600 mb-2">-40%</div>
+                    <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <div className="text-3xl font-bold text-primary mb-2">-40%</div>
                     <p className="text-sm text-muted-foreground">Temps économisé sur les réponses</p>
                   </CardContent>
                 </Card>
@@ -314,7 +314,7 @@ const GoNoGo = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <Users className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                  <Users className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Scoring personnalisé</h4>
                     <p className="text-sm text-muted-foreground">Configurez vos critères de qualification et Charly applique votre grille automatiquement.</p>

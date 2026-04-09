@@ -142,7 +142,7 @@ export default function StrategieDonnees() {
                     <div className="text-sm text-success">Précision des prédictions</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">150+</div>
+                    <div className="text-2xl font-bold text-primary">150+</div>
                     <div className="text-sm text-primary">Variables analysées</div>
                   </div>
                   <div className="text-center">
@@ -225,7 +225,7 @@ export default function StrategieDonnees() {
                 
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <Target className="h-8 w-8 text-blue-600 mx-auto mb-4" />
+                    <Target className="h-8 w-8 text-primary mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">Métriques stratégiques</h3>
                     <ul className="text-sm text-left space-y-1">
                       <li>• Diversification portefeuille</li>
@@ -275,7 +275,7 @@ export default function StrategieDonnees() {
                         <div className="text-xs">Taux de succès</div>
                       </div>
                       <div>
-                        <div className="text-xl font-bold text-blue-600">-40%</div>
+                        <div className="text-xl font-bold text-primary">-40%</div>
                         <div className="text-xs">Coûts commerciaux</div>
                       </div>
                       <div>
@@ -367,7 +367,7 @@ export default function StrategieDonnees() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-blue-600 mb-2">-50%</div>
+                    <div className="text-2xl font-bold text-primary mb-2">-50%</div>
                     <div className="text-sm text-muted-foreground">
                       Réduction des coûts commerciaux
                     </div>

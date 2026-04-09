@@ -97,7 +97,7 @@ const FormationAO = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <BookOpen className="w-6 h-6 text-blue-600" />
+                        <BookOpen className="w-6 h-6 text-primary" />
                       </div>
                       <div>
                         <h3 className="font-bold text-lg mb-2">E-learning et MOOC</h3>
@@ -174,8 +174,8 @@ const FormationAO = () => {
 
                 <Card className="border-0 shadow-lg text-center">
                   <CardContent className="p-6">
-                    <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-blue-600 mb-2">-30%</div>
+                    <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <div className="text-3xl font-bold text-primary mb-2">-30%</div>
                     <p className="text-sm text-muted-foreground">Réduction du temps de rédaction</p>
                   </CardContent>
                 </Card>
@@ -251,7 +251,7 @@ const FormationAO = () => {
 
                 <div className="space-y-4">
                   <h3 className="font-bold text-lg flex items-center gap-2">
-                    <BarChart3 className="w-5 h-5 text-blue-600" />
+                    <BarChart3 className="w-5 h-5 text-primary" />
                     Compétences stratégiques
                   </h3>
                   <ul className="space-y-3">

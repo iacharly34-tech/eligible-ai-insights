@@ -51,7 +51,7 @@ export default function FuturIA() {
               <div className="grid md:grid-cols-3 gap-6 my-8">
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <Bot className="h-8 w-8 text-blue-600 mx-auto mb-4" />
+                    <Bot className="h-8 w-8 text-primary mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">15%</h3>
                     <p className="text-sm text-muted-foreground">
                       Acheteurs publics utilisant l'IA (France 2025)

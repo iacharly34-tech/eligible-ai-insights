@@ -176,7 +176,7 @@ export const NewsletterAdmin = () => {
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <Users className="w-5 h-5 text-blue-500" />
+              <Users className="w-5 h-5 text-primary" />
               <div>
                 <p className="text-sm text-muted-foreground">Total abonnés</p>
                 <p className="text-2xl font-bold">{stats.total_subscribers}</p>

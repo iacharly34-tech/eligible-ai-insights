@@ -162,7 +162,7 @@ export const ArticleRecommendations = ({ currentArticleUrl, currentCategory }: A
                   <span>{article.date}</span>
                 </div>
                 
-                <h3 className="text-base font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                <h3 className="text-base font-bold mb-3 leading-tight group-hover:text-primary transition-colors">
                   {article.title}
                 </h3>
                 

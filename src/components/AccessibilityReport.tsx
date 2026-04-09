@@ -107,8 +107,8 @@ export const AccessibilityReport = () => {
               <div className="text-sm text-orange-700">Avertissements</div>
             </div>
             <div className="text-center p-4 bg-blue-50 rounded-lg">
-              <Volume2 className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-              <div className="text-2xl font-bold text-blue-600">{auditResults.improvements.length}</div>
+              <Volume2 className="w-8 h-8 text-primary mx-auto mb-2" />
+              <div className="text-2xl font-bold text-primary">{auditResults.improvements.length}</div>
               <div className="text-sm text-primary">Améliorations</div>
             </div>
           </div>
@@ -182,11 +182,11 @@ export const AccessibilityReport = () => {
           <div className="space-y-3">
             {auditResults.improvements.map((item, index) => (
               <div key={index} className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
-                <Volume2 className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <Volume2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div className="flex-1">
                   <h4 className="font-medium text-blue-900">{item.criteria}</h4>
                   <p className="text-sm text-primary mb-1">{item.description}</p>
-                  <Badge variant="outline" className="text-xs text-blue-600 border-blue-300">
+                  <Badge variant="outline" className="text-xs text-primary border-blue-300">
                     {item.wcag}
                   </Badge>
                 </div>

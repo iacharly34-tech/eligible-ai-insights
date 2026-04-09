@@ -79,9 +79,9 @@ const PrixQualite = () => {
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6 text-center">
-                    <Euro className="w-10 h-10 text-blue-600 mx-auto mb-4" />
+                    <Euro className="w-10 h-10 text-primary mx-auto mb-4" />
                     <h3 className="font-bold mb-2">Prix dominant</h3>
-                    <div className="text-2xl font-bold text-blue-600 mb-2">60-70%</div>
+                    <div className="text-2xl font-bold text-primary mb-2">60-70%</div>
                     <p className="text-sm text-muted-foreground">Stratégie : prix agressif, technique standard</p>
                   </CardContent>
                 </Card>
@@ -240,7 +240,7 @@ const PrixQualite = () => {
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <FileText className="w-8 h-8 text-blue-600" />
+                      <FileText className="w-8 h-8 text-primary" />
                       <h3 className="font-bold">Marchés de fournitures</h3>
                     </div>
                     <ul className="space-y-2 text-sm text-muted-foreground">
@@ -349,7 +349,7 @@ const PrixQualite = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <Target className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                  <Target className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Simulation de scoring</h4>
                     <p className="text-sm text-muted-foreground">Testez différents scénarios prix/technique pour trouver l'optimum.</p>

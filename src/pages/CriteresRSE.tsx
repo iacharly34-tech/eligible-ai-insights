@@ -34,7 +34,7 @@ export default function CriteresRSE() {
             </header>
 
             <div className="prose prose-lg max-w-none">
-              <blockquote className="border-l-4 border-green-500 pl-6 italic text-lg mb-8 bg-success/10 p-6 rounded-r-lg">
+              <blockquote className="border-l-4 border-success/20 pl-6 italic text-lg mb-8 bg-success/10 p-6 rounded-r-lg">
                 "On nous demande un plan RSE, mais on ne sait pas par où commencer."
                 <cite className="block mt-2 text-sm text-muted-foreground not-italic">— Responsable PME logistique</cite>
               </blockquote>
@@ -74,7 +74,7 @@ export default function CriteresRSE() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <Users className="h-8 w-8 text-blue-600 mx-auto mb-4" />
+                    <Users className="h-8 w-8 text-primary mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">22%</h3>
                     <p className="text-sm text-muted-foreground">
                       Marchés avec clause sociale (insertion)
@@ -276,7 +276,7 @@ export default function CriteresRSE() {
                 Les <strong>critères RSE</strong> ne doivent pas être vus comme une contrainte mais comme un levier de différenciation. Les PME agiles peuvent souvent innover plus rapidement que les grands groupes.
               </p>
 
-              <blockquote className="border-l-4 border-green-500 pl-6 italic text-lg my-6 bg-success/10 p-4 rounded-r-lg">
+              <blockquote className="border-l-4 border-success/20 pl-6 italic text-lg my-6 bg-success/10 p-4 rounded-r-lg">
                 "On a fait de notre petite taille un atout : circuits courts, relations directes avec les producteurs locaux, flexibilité pour adapter nos pratiques. Sur les critères environnementaux, on bat les grands groupes."
                 <cite className="block mt-2 text-sm text-muted-foreground not-italic">— Dirigeante PME restauration collective</cite>
               </blockquote>
@@ -371,7 +371,7 @@ export default function CriteresRSE() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-blue-600 mb-2">-15%</div>
+                    <div className="text-2xl font-bold text-primary mb-2">-15%</div>
                     <div className="text-sm text-muted-foreground">
                       Réduction des coûts opérationnels
                     </div>

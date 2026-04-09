@@ -91,7 +91,7 @@ const TenderFeedback = () => {
 
                 <Card className="border-primary/20 bg-blue-50/50">
                   <CardContent className="p-6">
-                    <FileSearch className="w-8 h-8 text-blue-600 mb-4" />
+                    <FileSearch className="w-8 h-8 text-primary mb-4" />
                     <h3 className="font-bold mb-3 text-blue-800">How to request</h3>
                     <ul className="space-y-2 text-sm text-primary">
                       <li>• Request within standstill period</li>
@@ -286,8 +286,8 @@ const TenderFeedback = () => {
 
                 <Card className="border-0 shadow-lg text-center">
                   <CardContent className="p-6">
-                    <Target className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-blue-600 mb-2">+15%</div>
+                    <Target className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <div className="text-3xl font-bold text-primary mb-2">+15%</div>
                     <p className="text-sm text-muted-foreground">Average quality scores</p>
                   </CardContent>
                 </Card>
@@ -320,7 +320,7 @@ const TenderFeedback = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <BarChart3 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                  <BarChart3 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Performance tracking</h4>
                     <p className="text-sm text-muted-foreground">Monitor win rates, scores, and trends over time with visual dashboards.</p>

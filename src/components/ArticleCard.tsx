@@ -56,7 +56,7 @@ export const ArticleCard = ({
               <span>{date}</span>
             </div>
             
-            <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2">
+            <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-primary transition-colors line-clamp-2">
               {title}
             </h3>
             
@@ -116,7 +116,7 @@ export const ArticleCard = ({
           <span className="truncate">{author}</span>
         </div>
         
-        <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2">
+        <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-primary transition-colors line-clamp-2">
           {title}
         </h3>
         

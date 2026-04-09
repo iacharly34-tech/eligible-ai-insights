@@ -129,7 +129,7 @@ const GoNoGoDecision = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="font-bold text-blue-600">1</span>
+                        <span className="font-bold text-primary">1</span>
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Technical fit</h3>
@@ -143,7 +143,7 @@ const GoNoGoDecision = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="font-bold text-blue-600">2</span>
+                        <span className="font-bold text-primary">2</span>
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">References and experience</h3>
@@ -157,7 +157,7 @@ const GoNoGoDecision = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="font-bold text-blue-600">3</span>
+                        <span className="font-bold text-primary">3</span>
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Buyer knowledge</h3>
@@ -171,7 +171,7 @@ const GoNoGoDecision = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="font-bold text-blue-600">4</span>
+                        <span className="font-bold text-primary">4</span>
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Competitive analysis</h3>
@@ -185,7 +185,7 @@ const GoNoGoDecision = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="font-bold text-blue-600">5</span>
+                        <span className="font-bold text-primary">5</span>
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Economic feasibility</h3>
@@ -199,7 +199,7 @@ const GoNoGoDecision = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="font-bold text-blue-600">6</span>
+                        <span className="font-bold text-primary">6</span>
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Deadlines and availability</h3>
@@ -213,7 +213,7 @@ const GoNoGoDecision = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="font-bold text-blue-600">7</span>
+                        <span className="font-bold text-primary">7</span>
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Strategic value</h3>
@@ -236,38 +236,38 @@ const GoNoGoDecision = () => {
               <Card className="border-0 shadow-xl bg-gradient-to-r from-blue-50 to-indigo-50">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Calculator className="w-8 h-8 text-blue-600" />
+                    <Calculator className="w-8 h-8 text-primary" />
                     <h3 className="font-bold text-xl">Example weighting</h3>
                   </div>
                   
                   <div className="grid md:grid-cols-2 gap-4 text-sm">
                     <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Technical fit</span>
-                      <span className="font-bold text-blue-600">25%</span>
+                      <span className="font-bold text-primary">25%</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>References</span>
-                      <span className="font-bold text-blue-600">20%</span>
+                      <span className="font-bold text-primary">20%</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Buyer knowledge</span>
-                      <span className="font-bold text-blue-600">15%</span>
+                      <span className="font-bold text-primary">15%</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Competitive analysis</span>
-                      <span className="font-bold text-blue-600">15%</span>
+                      <span className="font-bold text-primary">15%</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Economic feasibility</span>
-                      <span className="font-bold text-blue-600">10%</span>
+                      <span className="font-bold text-primary">10%</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Deadlines</span>
-                      <span className="font-bold text-blue-600">10%</span>
+                      <span className="font-bold text-primary">10%</span>
                     </div>
                     <div className="flex justify-between items-center py-2">
                       <span>Strategic value</span>
-                      <span className="font-bold text-blue-600">5%</span>
+                      <span className="font-bold text-primary">5%</span>
                     </div>
                   </div>
                 </CardContent>
@@ -289,8 +289,8 @@ const GoNoGoDecision = () => {
 
                 <Card className="border-0 shadow-lg text-center">
                   <CardContent className="p-6">
-                    <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-blue-600 mb-2">-40%</div>
+                    <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <div className="text-3xl font-bold text-primary mb-2">-40%</div>
                     <p className="text-sm text-muted-foreground">Time saved on responses</p>
                   </CardContent>
                 </Card>
@@ -323,7 +323,7 @@ const GoNoGoDecision = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <Users className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                  <Users className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Personalised scoring</h4>
                     <p className="text-sm text-muted-foreground">Configure your qualification criteria and Charly applies your grid automatically.</p>

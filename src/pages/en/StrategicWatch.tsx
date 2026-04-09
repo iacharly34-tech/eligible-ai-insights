@@ -75,7 +75,7 @@ const StrategicWatch = () => {
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6 text-center">
-                    <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                    <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
                     <h3 className="font-bold mb-2">Timing</h3>
                     <p className="text-sm text-muted-foreground">Average response time is 21 days. Without a watch, you discover tenders too late.</p>
                   </CardContent>
@@ -107,7 +107,7 @@ const StrategicWatch = () => {
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <Globe className="w-8 h-8 text-blue-600 flex-shrink-0" />
+                      <Globe className="w-8 h-8 text-primary flex-shrink-0" />
                       <div>
                         <h3 className="font-bold mb-2">Official platforms</h3>
                         <p className="text-muted-foreground text-sm mb-3">Primary sources where tenders are published.</p>
@@ -168,7 +168,7 @@ const StrategicWatch = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="border-primary/20 bg-blue-50/50">
                   <CardContent className="p-6">
-                    <Filter className="w-8 h-8 text-blue-600 mb-4" />
+                    <Filter className="w-8 h-8 text-primary mb-4" />
                     <h3 className="font-bold mb-3 text-blue-800">Geographic filters</h3>
                     <ul className="text-sm text-primary space-y-2">
                       <li>• Regions of activity</li>

@@ -230,7 +230,7 @@ export const ProcessAnimation = () => {
                     isActive 
                       ? `border-primary/40 shadow-2xl ${step.gradient} scale-105 ring-2 ring-primary/20` 
                       : isCompleted 
-                        ? 'border-green-500/30 bg-success/100/5 backdrop-blur-sm' 
+                        ? 'border-success/20/30 bg-success/100/5 backdrop-blur-sm' 
                         : 'border-border/30 opacity-60 bg-card/50 backdrop-blur-sm'
                   }`}
                 >
@@ -278,7 +278,7 @@ export const ProcessAnimation = () => {
                             <div className="w-3 h-3 bg-success/100 rounded-full"></div>
                             <span className="text-muted-foreground text-xs ml-2">eligibly-ai.js</span>
                           </div>
-                          <pre className="text-green-400 leading-relaxed text-xs">
+                          <pre className="text-success leading-relaxed text-xs">
                             {isActive ? (
                               <>{typedText}<span className={`${isTyping ? 'animate-pulse' : ''}`}>|</span></>
                             ) : (
@@ -361,8 +361,8 @@ export const ProcessAnimation = () => {
                   </div>
                   
                   <div className="pt-6 border-t border-border/30">
-                    <div className="bg-gradient-to-r from-success/100/20 to-success/100/20 backdrop-blur-sm border border-green-500/30 rounded-xl p-4 text-center">
-                      <div className="text-2xl font-bold text-green-400 mb-1">{processData.status}</div>
+                    <div className="bg-gradient-to-r from-success/100/20 to-success/100/20 backdrop-blur-sm border border-success/20/30 rounded-xl p-4 text-center">
+                      <div className="text-2xl font-bold text-success mb-1">{processData.status}</div>
                       <div className="text-sm text-success">Candidature fortement recommandée</div>
                     </div>
                   </div>
@@ -383,7 +383,7 @@ export const ProcessAnimation = () => {
                       <div className="w-3 h-3 bg-primary/10 border border-primary/20 rounded-full animate-pulse"></div>
                       <span className="font-medium">Next.js 14 + TypeScript</span>
                     </div>
-                    <div className="flex items-center gap-3 p-2 rounded-lg bg-gradient-to-r from-success/100/10 to-success/100/10 border border-green-500/20">
+                    <div className="flex items-center gap-3 p-2 rounded-lg bg-gradient-to-r from-success/100/10 to-success/100/10 border border-success/20/20">
                       <div className="w-3 h-3 bg-gradient-to-r from-success/100 to-success/100 rounded-full animate-pulse"></div>
                       <span className="font-medium">GPT-4 + Claude 3.5</span>
                     </div>

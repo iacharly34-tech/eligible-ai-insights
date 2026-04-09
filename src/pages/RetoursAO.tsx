@@ -223,10 +223,10 @@ const RetoursAO = () => {
 
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6 text-center">
-                    <BarChart3 className="w-10 h-10 text-blue-600 mx-auto mb-4" />
+                    <BarChart3 className="w-10 h-10 text-primary mx-auto mb-4" />
                     <h3 className="font-bold mb-2">Score technique moyen</h3>
                     <p className="text-sm text-muted-foreground">Moyenne des notes techniques obtenues</p>
-                    <div className="mt-4 text-2xl font-bold text-blue-600">Objectif : 75/100</div>
+                    <div className="mt-4 text-2xl font-bold text-primary">Objectif : 75/100</div>
                   </CardContent>
                 </Card>
 
@@ -276,7 +276,7 @@ const RetoursAO = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <FileText className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                  <FileText className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Documentez tout</h4>
                     <p className="text-sm text-muted-foreground">Créez une fiche acheteur avec ses préférences, ses critères réels, ses attentes non écrites.</p>

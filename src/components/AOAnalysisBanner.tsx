@@ -65,7 +65,7 @@ export const AOAnalysisBanner = ({
       value: upcomingAOCount,
       label: "AO à venir sous 30 jours",
       description: "Marchés détectés avant publication officielle, pour vous préparer en avance.",
-      color: "text-blue-600",
+      color: "text-primary",
       bgColor: "bg-blue-50"
     },
     {

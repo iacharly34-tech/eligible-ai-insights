@@ -109,7 +109,7 @@ const PublicTenderTraining = () => {
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <Users className="w-8 h-8 text-blue-600 flex-shrink-0" />
+                      <Users className="w-8 h-8 text-primary flex-shrink-0" />
                       <div>
                         <h3 className="font-bold mb-2">Personalised coaching</h3>
                         <p className="text-muted-foreground text-sm mb-3">Individual support for rapid progress.</p>
@@ -236,7 +236,7 @@ const PublicTenderTraining = () => {
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <Globe className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+                      <Globe className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold mb-2">Government portals</h3>
                         <p className="text-sm text-muted-foreground">Official guidance and documentation from procurement authorities.</p>

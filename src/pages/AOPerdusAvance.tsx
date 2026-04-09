@@ -65,7 +65,7 @@ export default function AOPerdusAvance() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <Eye className="h-8 w-8 text-blue-600 mx-auto mb-4" />
+                    <Eye className="h-8 w-8 text-primary mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">85%</h3>
                     <p className="text-sm text-muted-foreground">
                       Précision de détection par Charly

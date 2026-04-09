@@ -84,7 +84,7 @@ const VeilleStrategique = () => {
 
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6 text-center">
-                    <Target className="w-10 h-10 text-blue-600 mx-auto mb-4" />
+                    <Target className="w-10 h-10 text-primary mx-auto mb-4" />
                     <h3 className="font-bold mb-2">Ciblage précis</h3>
                     <p className="text-sm text-muted-foreground">3,2 millions d'AO publiés par an. Sans filtre, vous perdez votre temps sur des marchés non pertinents.</p>
                   </CardContent>
@@ -137,7 +137,7 @@ const VeilleStrategique = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <Bell className="w-6 h-6 text-blue-600" />
+                        <Bell className="w-6 h-6 text-primary" />
                       </div>
                       <div className="flex-1">
                         <h3 className="font-bold text-lg mb-2">Sources d'anticipation</h3>
@@ -312,7 +312,7 @@ const VeilleStrategique = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <Eye className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                  <Eye className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Analyse automatique</h4>
                     <p className="text-sm text-muted-foreground">Chaque opportunité est analysée et notée selon sa pertinence pour vous.</p>

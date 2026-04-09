@@ -71,7 +71,7 @@ const NumeriqueResponsable = () => {
                 <strong>Le numérique représente aujourd'hui 4% des émissions mondiales de gaz à effet de serre</strong>, un chiffre en croissance de 6% par an. Face à l'urgence climatique, les acheteurs publics intègrent désormais systématiquement des critères environnementaux dans leurs marchés IT, digital et marketing.
               </p>
               
-              <blockquote className="border-l-4 border-green-500 pl-6 my-8 bg-success/10/50 py-4 rounded-r-lg">
+              <blockquote className="border-l-4 border-success/20 pl-6 my-8 bg-success/10/50 py-4 rounded-r-lg">
                 <p className="text-lg font-medium text-foreground mb-2">
                   "Depuis 2024, 100% de nos marchés numériques supérieurs à 40 000€ intègrent des critères environnementaux représentant au minimum 10% de la notation."
                 </p>
@@ -92,8 +92,8 @@ const NumeriqueResponsable = () => {
 
                 <Card className="border-0 shadow-lg text-center">
                   <CardContent className="p-6">
-                    <TrendingUp className="w-10 h-10 text-blue-600 mx-auto mb-3" />
-                    <div className="text-2xl font-bold text-blue-600 mb-1">+6%</div>
+                    <TrendingUp className="w-10 h-10 text-primary mx-auto mb-3" />
+                    <div className="text-2xl font-bold text-primary mb-1">+6%</div>
                     <p className="text-xs text-muted-foreground">Croissance annuelle de l'impact</p>
                   </CardContent>
                 </Card>
@@ -158,7 +158,7 @@ const NumeriqueResponsable = () => {
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <Monitor className="w-6 h-6 text-blue-600" />
+                      <Monitor className="w-6 h-6 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg">Marchés IT & Infrastructures</h3>
@@ -326,7 +326,7 @@ const NumeriqueResponsable = () => {
 
                   <div className="grid md:grid-cols-3 gap-6 mb-8">
                     <div className="bg-card rounded-xl p-5 border border-success/20">
-                      <Monitor className="w-8 h-8 text-blue-600 mb-3" />
+                      <Monitor className="w-8 h-8 text-primary mb-3" />
                       <h4 className="font-bold text-foreground mb-2">Missions IT</h4>
                       <ul className="text-sm text-muted-foreground space-y-1">
                         <li>• Bilan carbone infrastructures</li>
@@ -533,7 +533,7 @@ const NumeriqueResponsable = () => {
 
             {/* CTA */}
             <section className="mb-12">
-              <Card className="border-0 shadow-2xl bg-gradient-to-r from-green-600 to-emerald-600 text-white">
+              <Card className="border-0 shadow-2xl bg-gradient-to-r from-success to-emerald-600 text-white">
                 <CardContent className="p-8 md:p-12 text-center">
                   <h2 className="text-2xl md:text-3xl font-bold mb-4">
                     Prêt à transformer vos critères RSE en avantage compétitif ?

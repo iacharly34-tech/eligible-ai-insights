@@ -60,7 +60,7 @@ export default function MarchesInnovation() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <TrendingUp className="h-8 w-8 text-blue-600 mx-auto mb-4" />
+                    <TrendingUp className="h-8 w-8 text-primary mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">+35%</h3>
                     <p className="text-sm text-muted-foreground">
                       Croissance des AO tech publics (2023-2024)
@@ -93,19 +93,19 @@ export default function MarchesInnovation() {
                     <div>
                       <h5 className="font-semibold text-sm">Intelligence artificielle et data</h5>
                       <p className="text-sm text-muted-foreground">Automatisation des processus, aide à la décision, analyse prédictive pour les politiques publiques</p>
-                      <div className="text-xs text-blue-600 mt-1">Budget estimé : 800M€ sur 3 ans</div>
+                      <div className="text-xs text-primary mt-1">Budget estimé : 800M€ sur 3 ans</div>
                     </div>
                     
                     <div>
                       <h5 className="font-semibold text-sm">Cybersécurité et souveraineté numérique</h5>
                       <p className="text-sm text-muted-foreground">Protection des infrastructures critiques, cloud souverain, solutions de chiffrement</p>
-                      <div className="text-xs text-blue-600 mt-1">Budget estimé : 1,2Md€ sur 3 ans</div>
+                      <div className="text-xs text-primary mt-1">Budget estimé : 1,2Md€ sur 3 ans</div>
                     </div>
                     
                     <div>
                       <h5 className="font-semibold text-sm">Plateformes citoyennes et e-administration</h5>
                       <p className="text-sm text-muted-foreground">Dématérialisation, services numériques accessibles, participation citoyenne</p>
-                      <div className="text-xs text-blue-600 mt-1">Budget estimé : 600M€ sur 3 ans</div>
+                      <div className="text-xs text-primary mt-1">Budget estimé : 600M€ sur 3 ans</div>
                     </div>
                   </div>
                 </CardContent>
@@ -117,7 +117,7 @@ export default function MarchesInnovation() {
                 Le Green Deal européen et la loi Climat français créent une demande massive pour les solutions environnementales innovantes. Les collectivités cherchent des technologies pour réduire leur empreinte carbone et améliorer leur résilience.
               </p>
 
-              <blockquote className="border-l-4 border-green-500 pl-6 italic text-lg my-6 bg-success/10 p-4 rounded-r-lg">
+              <blockquote className="border-l-4 border-success/20 pl-6 italic text-lg my-6 bg-success/10 p-4 rounded-r-lg">
                 "On lance de plus en plus d'appels d'offres pour des solutions qu'on ne connaît pas encore. On sait qu'on a un problème environnemental, mais on compte sur l'innovation privée pour nous apporter la solution."
                 <cite className="block mt-2 text-sm text-muted-foreground not-italic">— Directeur innovation, métropole française</cite>
               </blockquote>
@@ -203,7 +203,7 @@ export default function MarchesInnovation() {
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm">Faisabilité et capacité de réalisation</span>
-                      <span className="font-semibold text-blue-600">25-30%</span>
+                      <span className="font-semibold text-primary">25-30%</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm">Prix et modèle économique</span>
@@ -307,7 +307,7 @@ export default function MarchesInnovation() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-blue-600 mb-2">18 mois</div>
+                    <div className="text-2xl font-bold text-primary mb-2">18 mois</div>
                     <div className="text-sm text-muted-foreground">
                       Durée moyenne cycle développement-déploiement
                     </div>

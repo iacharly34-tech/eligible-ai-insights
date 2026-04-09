@@ -98,7 +98,7 @@ const PriceQualityBalance = () => {
 
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6">
-                    <Calculator className="w-10 h-10 text-blue-600 mb-4" />
+                    <Calculator className="w-10 h-10 text-primary mb-4" />
                     <h3 className="font-bold mb-3">Common scoring methods</h3>
                     <div className="space-y-2 text-sm text-muted-foreground">
                       <p><strong>Linear scoring:</strong> Lowest price gets maximum points, others proportionally less</p>
@@ -136,7 +136,7 @@ const PriceQualityBalance = () => {
                 <Card className="border-primary/20 bg-blue-50/50">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <Target className="w-8 h-8 text-blue-600 flex-shrink-0" />
+                      <Target className="w-8 h-8 text-primary flex-shrink-0" />
                       <div>
                         <h3 className="font-bold mb-2 text-blue-800">When to compete on price</h3>
                         <p className="text-sm text-primary mb-3">Price-focused strategy works when:</p>
@@ -279,8 +279,8 @@ const PriceQualityBalance = () => {
 
                 <Card className="border-0 shadow-lg text-center">
                   <CardContent className="p-6">
-                    <Scale className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-blue-600 mb-2">+8%</div>
+                    <Scale className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <div className="text-3xl font-bold text-primary mb-2">+8%</div>
                     <p className="text-sm text-muted-foreground">Better margins on wins</p>
                   </CardContent>
                 </Card>
@@ -313,7 +313,7 @@ const PriceQualityBalance = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <BarChart3 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                  <BarChart3 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Market intelligence</h4>
                     <p className="text-sm text-muted-foreground">Access historical pricing data from similar contracts to benchmark your bid.</p>
