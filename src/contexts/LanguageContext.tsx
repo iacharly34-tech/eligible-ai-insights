@@ -863,6 +863,25 @@ const translations = {
     'product.demo.persona.consultant.a2': 'Prepare optimised strategic responses',
     'product.demo.persona.consultant.a3': 'Download and analyse relevant tender documents',
 
+    // Product Response Section (Phase 2 — Response)
+    'product.response.badge': 'From detection to victory',
+    'product.response.title': 'Respond and',
+    'product.response.title.highlight': 'win more',
+    'product.response.subtitle': 'Beyond monitoring, Eligibly supports you in writing, analysing and submitting your tender responses — like VIGIAO, Tenderbolt or IZIAO, but integrated into a single platform.',
+    'product.response.cta': 'Discover how Eligibly covers the entire cycle: detection → analysis → decision → writing → compliance → victory.',
+    'product.response.dce_analysis.title': 'Automatic DCE analysis',
+    'product.response.dce_analysis.desc': 'Our AI breaks down the consultation file in seconds: requirement extraction, scoring criteria identification and strategic summary.',
+    'product.response.go_nogo.title': 'AI-assisted Go/No-Go',
+    'product.response.go_nogo.desc': 'Assess a tender\'s relevance in 2 minutes: fit score, risk analysis, workload estimation and strategic recommendation.',
+    'product.response.memoire_technique.title': 'AI technical proposal writing',
+    'product.response.memoire_technique.desc': 'Smart generation of your technical proposal from your references, CVs and methodologies. The AI builds on your expertise, not generic content.',
+    'product.response.conformite.title': 'Compliance & anti-omission',
+    'product.response.conformite.desc': 'Automatic traceability matrix: every DCE requirement is linked to your response. Submission checklist to eliminate any risk of administrative rejection.',
+    'product.response.knowledge_base.title': 'Knowledge base',
+    'product.response.knowledge_base.desc': 'Capitalise on your past responses. The AI continuously enriches your base of references, methodologies and arguments.',
+    'product.response.analytics_response.title': 'Performance dashboard',
+    'product.response.analytics_response.desc': 'Strategic dashboard with real win rates, buyer feedback analysis and continuous optimisation of your response strategy.',
+
     // Solutions Page  
     'solutions.badge': 'Tailored solutions',
     'solutions.hero.title': 'A solution for every',
