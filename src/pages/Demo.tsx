@@ -80,7 +80,7 @@ const Demo = () => {
               {language === "en" ? (
                 <>Discover your <span className="bg-gradient-highlight bg-clip-text text-transparent">AI potential</span> with Charly AI</>
               ) : (
-                <>Découvrez votre <span className="bg-gradient-highlight bg-clip-text text-transparent">potentiel IA</span> avec Charly IA IA</>
+                <>Découvrez votre <span className="bg-gradient-highlight bg-clip-text text-transparent">potentiel IA</span> avec Charly IA</>
               )}
             </h1>
             <p className="mt-8 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">

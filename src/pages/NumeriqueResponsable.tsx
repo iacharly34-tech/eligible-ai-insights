@@ -544,7 +544,7 @@ const NumeriqueResponsable = () => {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <SafeLink to="/demo">
                       <Button size="lg" className="bg-card text-success hover:bg-success/10">
-                        Analyser mes opportunités avec Charly IA IA
+                        Analyser mes opportunités avec Charly IA
                         <ArrowRight className="ml-2 w-5 h-5" />
                       </Button>
                     </SafeLink>
