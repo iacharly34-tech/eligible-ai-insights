@@ -173,6 +173,19 @@ const App = () => (
                 <Route path="/eligibly-vs-doubletrade" element={<EligiblyVsDoubletrade />} />
                 <Route path="/eligibly-vs-tengo" element={<EligiblyVsTengo />} />
                 <Route path="/eligibly-vs-veille-manuelle" element={<EligiblyVsVeilleManuelle />} />
+                <Route path="/eligibly-vs-libel" element={<EligiblyVsLibel />} />
+                <Route path="/eligibly-vs-remporte" element={<EligiblyVsRemporte />} />
+                <Route path="/eligibly-vs-doaken" element={<EligiblyVsDoaken />} />
+
+                {/* SEO pillar pages */}
+                <Route path="/boamp-guide" element={<BoampGuide />} />
+                <Route path="/logiciel-appels-offres" element={<LogicielAppelsOffres />} />
+                <Route path="/repondre-appel-offres" element={<RepondreAppelOffres />} />
+                <Route path="/trouver-appels-offres" element={<TrouverAppelsOffres />} />
+                <Route path="/mapa-marches-publics" element={<MapaMarchesPublics />} />
+                <Route path="/dce-dossier-consultation" element={<DceDossierConsultation />} />
+                <Route path="/profil-acheteur" element={<ProfilAcheteur />} />
+                <Route path="/plateforme-marches-publics" element={<PlateformeMarchesPublics />} />
                 
                 {/* Blog - Pilier 1: Comprendre */}
                 <Route path="/seuils-marches-publics" element={<SeuilsMarchesPublics />} />
