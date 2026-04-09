@@ -93,7 +93,7 @@ const TenderFeedback = () => {
                   <CardContent className="p-6">
                     <FileSearch className="w-8 h-8 text-blue-600 mb-4" />
                     <h3 className="font-bold mb-3 text-blue-800">How to request</h3>
-                    <ul className="space-y-2 text-sm text-blue-700">
+                    <ul className="space-y-2 text-sm text-primary">
                       <li>• Request within standstill period</li>
                       <li>• Put request in writing</li>
                       <li>• Be specific about what you need</li>

@@ -273,7 +273,7 @@ export const DemoStepper: React.FC<DemoStepperProps> = ({ onComplete }) => {
                 </div>
                 <div className="result-metric bg-blue-50">
                   <div className="text-2xl font-bold text-blue-600">{result.opportunities}</div>
-                  <div className="text-xs text-blue-700">Opportunités détectées</div>
+                  <div className="text-xs text-primary">Opportunités détectées</div>
                 </div>
                 <div className="result-metric bg-purple-50">
                   <div className="text-2xl font-bold text-purple-600">{result.value}</div>

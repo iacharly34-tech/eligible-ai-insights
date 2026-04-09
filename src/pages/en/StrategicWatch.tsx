@@ -170,7 +170,7 @@ const StrategicWatch = () => {
                   <CardContent className="p-6">
                     <Filter className="w-8 h-8 text-blue-600 mb-4" />
                     <h3 className="font-bold mb-3 text-blue-800">Geographic filters</h3>
-                    <ul className="text-sm text-blue-700 space-y-2">
+                    <ul className="text-sm text-primary space-y-2">
                       <li>• Regions of activity</li>
                       <li>• Maximum intervention distance</li>
                       <li>• Remote work capability</li>

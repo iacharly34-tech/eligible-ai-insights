@@ -181,7 +181,7 @@ const PublicTenderTraining = () => {
                 <Card className="border-primary/20 bg-blue-50/50">
                   <CardContent className="p-6">
                     <h3 className="font-bold mb-4 text-blue-800">Pricing strategy</h3>
-                    <ul className="space-y-2 text-sm text-blue-700">
+                    <ul className="space-y-2 text-sm text-primary">
                       <li className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4" />
                         <span>Detailed costing</span>

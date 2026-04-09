@@ -38,7 +38,7 @@ const NumeriqueResponsable = () => {
         readingTime="12 min"
         alternateLanguage={{ lang: "en", url: "/en/sustainable-digital" }}
       />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50/30 to-success/10/40">
+      <div className="min-h-screen bg-background">
         <Header />
         
         <main className="pt-32 pb-20">

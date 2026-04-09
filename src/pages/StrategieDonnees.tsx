@@ -143,7 +143,7 @@ export default function StrategieDonnees() {
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-blue-600">150+</div>
-                    <div className="text-sm text-blue-700">Variables analysées</div>
+                    <div className="text-sm text-primary">Variables analysées</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-purple-600">2M+</div>
@@ -177,7 +177,7 @@ export default function StrategieDonnees() {
                     </div>
                     
                     <div>
-                      <h5 className="font-semibold text-sm mb-2 text-blue-700">Opportunités exploratoires (10%)</h5>
+                      <h5 className="font-semibold text-sm mb-2 text-primary">Opportunités exploratoires (10%)</h5>
                       <p className="text-sm">Nouveaux secteurs ou territoires, faible probabilité mais apprentissage</p>
                     </div>
                   </div>

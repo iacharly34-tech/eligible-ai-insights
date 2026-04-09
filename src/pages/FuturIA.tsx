@@ -168,7 +168,7 @@ export default function FuturIA() {
                   <Rocket className="h-5 w-5" />
                   Position de la France
                 </h3>
-                <p className="text-blue-700 text-sm">
+                <p className="text-primary text-sm">
                   La France rattrape son retard avec le programme "État plateforme" et les expérimentations menées par des métropoles comme Lyon, Nantes et Toulouse. L'objectif : 50% des procédures assistées par IA d'ici 2027.
                 </p>
               </div>
