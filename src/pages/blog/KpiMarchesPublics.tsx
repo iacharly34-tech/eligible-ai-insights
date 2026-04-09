@@ -87,6 +87,7 @@ const KpiMarchesPublics = () => (
     <p>Le module <strong>Eligibly Win</strong> centralise automatiquement toutes ces données et génère un dashboard stratégique en temps réel. L'IA analyse vos retours acheteurs, identifie les axes d'amélioration et produit des recommandations personnalisées chaque mois. Vous passez de l'intuition à la data.</p>
     <p><a href="/produit/pilotage-marches-publics">Découvrir Eligibly Win →</a></p>
   </ArticleLayout>
+  </>
 );
 
 export default KpiMarchesPublics;

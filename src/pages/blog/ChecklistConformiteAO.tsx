@@ -97,6 +97,7 @@ const ChecklistConformiteAO = () => (
     <p>Le module <strong>Eligibly Check</strong> automatise l'intégralité de ce processus. L'IA analyse le DCE, génère automatiquement la matrice de traçabilité, vérifie chaque document de votre dossier et vous alerte sur les manques et incohérences. En 5 minutes, vous avez un <strong>score de conformité de 0 à 100</strong> avec les actions correctives précises à mener.</p>
     <p><a href="/produit/conformite-appel-offres">Découvrir Eligibly Check →</a></p>
   </ArticleLayout>
+  </>
 );
 
 export default ChecklistConformiteAO;
