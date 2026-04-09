@@ -35,7 +35,7 @@ const TrouverAppelsOffres = () => (
     <h3>JOUE / TED (ted.europa.eu)</h3>
     <p>
       Le <strong>Journal Officiel de l'Union Européenne</strong> publie les marchés européens dépassant les seuils
-      communautaires. Indispensable pour les marchés de services (>144 000 €) et de travaux (>5,5 M€).
+      communautaires. Indispensable pour les marchés de services (&gt;144 000 €) et de travaux (&gt;5,5 M€).
     </p>
 
     <h3>Profils acheteurs</h3>
