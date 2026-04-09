@@ -214,8 +214,8 @@ const translations = {
     
     // Product Page
     'product.badge': 'Intelligence Artificielle • Marchés Publics',
-    'product.hero.title': 'La plateforme IA la plus avancée pour les marchés publics',
-    'product.hero.subtitle': 'Découvrez comment notre intelligence artificielle révolutionne la détection et l\'analyse des appels d\'offres pour maximiser vos chances de succès.',
+    'product.hero.title': 'De la détection à la victoire : la plateforme IA complète des marchés publics',
+    'product.hero.subtitle': 'Eligibly couvre l\'intégralité du cycle : veille intelligente, scoring prédictif, analyse DCE, rédaction du mémoire technique par IA et vérification de conformité. Une seule plateforme pour remplacer tous vos outils.',
     'product.features.title': 'Fonctionnalités',
     'product.features.title.highlight': 'clés',
     'product.features.subtitle': 'Une suite complète d\'outils IA pour transformer votre approche des marchés publics',
