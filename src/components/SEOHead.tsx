@@ -81,6 +81,46 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
         title: "Critères environnementaux AO IT, Digital et Marketing | Guide 2025 | Eligibly",
         description: "Comment répondre aux exigences environnementales des marchés publics numériques. Numérique responsable, éco-conception, bilan carbone digital avec Greenmetrics.",
         keywords: "numérique responsable, green IT, critères environnementaux, AO numériques, éco-conception, Greenmetrics, marchés publics IT"
+      },
+      '/produit/veille-appels-offres': {
+        title: "Veille appels d'offres IA automatisée | Eligibly Detect",
+        description: "Automatisez votre veille appels d'offres avec l'IA. Surveillance de 200+ sources officielles, alertes temps réel, filtrage intelligent. Gagnez 15h/semaine.",
+        keywords: "veille appels d'offres, monitoring AO, surveillance marchés publics, alertes AO, veille automatisée IA"
+      },
+      '/produit/analyse-dce-ia': {
+        title: "Analyse DCE par IA | Extraction automatique des exigences | Eligibly Analyze",
+        description: "Analysez vos DCE en quelques minutes avec l'IA. Extraction des exigences, scoring de compatibilité, synthèse stratégique. De 4h à 5 minutes.",
+        keywords: "analyse DCE, dossier consultation entreprises, extraction exigences, IA marchés publics, analyse CCTP"
+      },
+      '/produit/go-no-go-ia': {
+        title: "Go/No-Go prédictif IA appels d'offres | Eligibly Decide",
+        description: "Décidez plus vite avec le scoring Go/No-Go prédictif par IA. Score de réussite, analyse de risques, recommandation stratégique. ×2.5 taux de succès.",
+        keywords: "go no go appel d'offres, qualification AO, scoring prédictif, décision marchés publics, sélection AO"
+      },
+      '/produit/memoire-technique-ia': {
+        title: "Mémoire technique IA | Rédaction assistée par RAG | Eligibly Write",
+        description: "Rédigez vos mémoires techniques 5x plus vite avec l'IA RAG. Structure miroir du DCE, contenu personnalisé à partir de vos références.",
+        keywords: "mémoire technique IA, rédaction mémoire technique, aide rédaction AO, IA rédaction marchés publics, RAG appels d'offres"
+      },
+      '/produit/conformite-appel-offres': {
+        title: "Conformité appel d'offres | Anti-omission IA | Eligibly Check",
+        description: "Vérifiez la conformité de vos réponses AO avec l'IA. Matrice de traçabilité DCE, checklist anti-omission, zéro élimination administrative.",
+        keywords: "conformité appel d'offres, anti-omission AO, vérification dossier AO, checklist marchés publics, matrice traçabilité"
+      },
+      '/produit/pilotage-marches-publics': {
+        title: "Pilotage performance marchés publics | KPIs et analytics | Eligibly Win",
+        description: "Pilotez votre performance marchés publics avec des KPIs actionnables. Taux de succès, analyse retours acheteurs, benchmarks sectoriels.",
+        keywords: "pilotage marchés publics, KPI appels d'offres, performance AO, analytics marchés publics, taux de succès"
+      },
+      '/checklist-conformite-ao': {
+        title: "Checklist conformité AO : ne plus jamais être éliminé | Eligibly",
+        description: "Checklist complète pour garantir la conformité de vos réponses aux appels d'offres. Documents, pièces administratives, matrice de traçabilité.",
+        keywords: "checklist conformité AO, conformité marchés publics, pièces administratives, DC1 DC2 DUME"
+      },
+      '/kpi-marches-publics': {
+        title: "KPIs marchés publics : les indicateurs qui comptent vraiment | Eligibly",
+        description: "Les 8 KPIs essentiels pour piloter votre performance marchés publics. Taux de succès, ROI commercial, coût de réponse, analyse retours acheteurs.",
+        keywords: "KPI marchés publics, indicateurs appels d'offres, performance AO, taux de succès, ROI commercial"
       }
     };
 
