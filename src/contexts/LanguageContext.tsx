@@ -53,7 +53,7 @@ const translations = {
     'hero.learnMore.link': 'Comment l\'IA transforme les appels d\'offres publics',
     'hero.title.main': 'La seule IA qui prédit vos chances',
     'hero.title.sub': 'sur les marchés publics avant de candidater',
-    'hero.description': 'Eligibly est la première IA spécialisée dans les appels d\'offres publics (AO) et les marchés publics, qui prédit vos chances de succès avant de candidater.',
+    'hero.description': 'De la détection à la rédaction du mémoire technique : Eligibly est la seule IA qui couvre tout le cycle des marchés publics. Scoring prédictif, analyse DCE, Go/No-Go et aide à la rédaction — dans une seule plateforme.',
     
     // Charly Section (Meet Charly)
     'charly.meet.title.prefix': 'Rencontrez',
