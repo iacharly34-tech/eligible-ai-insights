@@ -166,7 +166,7 @@ const APropos = () => {
               </p>
             </div>
             <div className="relative">
-              <div className="bg-primary/10 border border-primary/20 rounded-3xl p-12 text-white text-center">
+              <div className="bg-primary/10 border border-primary/20 rounded-3xl p-12 text-center">
                 <Users className="w-20 h-20 mx-auto mb-6" />
                 <h3 className="text-2xl font-bold mb-4">L'assistant IA né de l'expertise Eligibly</h3>
                 <p className="text-muted-foreground text-lg">

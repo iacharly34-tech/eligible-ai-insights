@@ -75,7 +75,7 @@ export const CharlyOriginStory = () => {
           </div>
           
           <div className="relative">
-            <div className="bg-primary/10 border border-primary/20 rounded-3xl p-8 text-white text-center">
+            <div className="bg-primary/10 border border-primary/20 rounded-3xl p-8 text-center">
               <Users className="w-16 h-16 mx-auto mb-4" />
               <h4 className="text-xl font-bold mb-3">L'ADN Eligibly dans Charly</h4>
               <p className="text-muted-foreground">

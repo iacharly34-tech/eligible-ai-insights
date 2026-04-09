@@ -375,7 +375,7 @@ const PrixQualite = () => {
             </section>
 
             {/* CTA */}
-            <section className="bg-success/10 border border-success/20 rounded-3xl p-8 md:p-12 text-white text-center">
+            <section className="bg-success/10 border border-success/20 rounded-3xl p-8 md:p-12 text-center">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">
                 Optimisez le prix de vos offres avec Charly
               </h2>
