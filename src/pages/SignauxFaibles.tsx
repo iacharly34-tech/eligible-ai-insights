@@ -184,7 +184,7 @@ export default function SignauxFaibles() {
                 </h3>
                 <blockquote className="text-red-700 italic">
                   "Parfois, on lance une consultation en sachant très bien qui on veut garder. Le dossier est rédigé pour que le sortant reste le mieux placé, tout en respectant formellement les règles."
-                  <cite className="block mt-2 text-sm text-red-600 not-italic">— Acheteur collectivité (témoignage anonyme)</cite>
+                  <cite className="block mt-2 text-sm text-destructive not-italic">— Acheteur collectivité (témoignage anonyme)</cite>
                 </blockquote>
               </div>
 
@@ -197,7 +197,7 @@ export default function SignauxFaibles() {
               <div className="grid md:grid-cols-3 gap-6 my-8">
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-red-600 mb-2">60%</div>
+                    <div className="text-2xl font-bold text-destructive mb-2">60%</div>
                     <div className="text-sm text-muted-foreground">
                       Estimation des AO à faible concurrence réelle
                     </div>
@@ -205,7 +205,7 @@ export default function SignauxFaibles() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-red-600 mb-2">15k€</div>
+                    <div className="text-2xl font-bold text-destructive mb-2">15k€</div>
                     <div className="text-sm text-muted-foreground">
                       Coût moyen d'une réponse pour une PME
                     </div>
@@ -213,7 +213,7 @@ export default function SignauxFaibles() {
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-red-600 mb-2">200h</div>
+                    <div className="text-2xl font-bold text-destructive mb-2">200h</div>
                     <div className="text-sm text-muted-foreground">
                       Temps perdu annuellement sur des AO biaisés
                     </div>
@@ -262,15 +262,15 @@ export default function SignauxFaibles() {
                   </p>
                   <div className="grid md:grid-cols-3 gap-4 text-center">
                     <div>
-                      <div className="text-2xl font-bold text-green-600">80-100</div>
-                      <div className="text-sm text-green-700">Procédure transparente</div>
+                      <div className="text-2xl font-bold text-success">80-100</div>
+                      <div className="text-sm text-success">Procédure transparente</div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-amber-600">50-79</div>
                       <div className="text-sm text-amber-700">Vigilance recommandée</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-red-600">0-49</div>
+                      <div className="text-2xl font-bold text-destructive">0-49</div>
                       <div className="text-sm text-red-700">Signaux d'alerte</div>
                     </div>
                   </div>

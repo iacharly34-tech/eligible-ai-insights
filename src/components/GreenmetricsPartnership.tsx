@@ -5,22 +5,22 @@ import { Leaf, Users, Award, ArrowRight, ExternalLink } from "lucide-react";
 
 export const GreenmetricsPartnership = () => {
   return (
-    <section className="py-12 bg-gradient-to-br from-green-50 to-emerald-50 border-t border-green-100">
+    <section className="py-12 bg-success/5 border-t border-green-100">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-8">
-          <Badge className="mb-4 bg-green-100 text-green-700 border-green-200">
+          <Badge className="mb-4 bg-success/10 text-success border-success/20">
             <Leaf className="w-4 h-4 mr-2" />
             Partenaire RSE recommandé
           </Badge>
           <h2 className="text-2xl font-bold mb-4 text-green-900">
             Besoin d'aide pour construire votre feuille de route environnementale ?
           </h2>
-          <p className="text-green-800 max-w-3xl mx-auto">
+          <p className="text-success max-w-3xl mx-auto">
             Eligibly recommande <strong>Greenmetrics</strong>, expert en stratégies environnementales pour les entreprises qui visent les marchés publics durables.
           </p>
         </div>
 
-        <Card className="border-green-200 bg-white/80 backdrop-blur-sm">
+        <Card className="border-success/20 bg-card backdrop-blur-sm">
           <CardContent className="p-8">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
@@ -30,27 +30,27 @@ export const GreenmetricsPartnership = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-green-900">Greenmetrics</h3>
-                    <p className="text-sm text-green-700">Votre expert RSE pour les marchés publics</p>
+                    <p className="text-sm text-success">Votre expert RSE pour les marchés publics</p>
                   </div>
                 </div>
 
-                <p className="text-green-800 mb-6">
+                <p className="text-success mb-6">
                   Greenmetrics accompagne les PME dans la construction de feuilles de route environnementales 
                   concrètes et adaptées aux exigences des appels d'offres publics.
                 </p>
 
                 <div className="space-y-3 mb-6">
                   <div className="flex items-start gap-3">
-                    <Award className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
-                    <span className="text-sm text-green-800">Diagnostic environnemental complet de votre entreprise</span>
+                    <Award className="w-5 h-5 text-success flex-shrink-0 mt-1" />
+                    <span className="text-sm text-success">Diagnostic environnemental complet de votre entreprise</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Users className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
-                    <span className="text-sm text-green-800">Plan d'action RSE personnalisé selon vos marchés cibles</span>
+                    <Users className="w-5 h-5 text-success flex-shrink-0 mt-1" />
+                    <span className="text-sm text-success">Plan d'action RSE personnalisé selon vos marchés cibles</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Leaf className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
-                    <span className="text-sm text-green-800">Accompagnement pour obtenir les certifications requises</span>
+                    <Leaf className="w-5 h-5 text-success flex-shrink-0 mt-1" />
+                    <span className="text-sm text-success">Accompagnement pour obtenir les certifications requises</span>
                   </div>
                 </div>
 
@@ -64,7 +64,7 @@ export const GreenmetricsPartnership = () => {
                   </Button>
                   <Button 
                     variant="outline" 
-                    className="border-green-600 text-green-600 hover:bg-green-50"
+                    className="border-green-600 text-success hover:bg-success/10"
                     onClick={() => window.open('https://greenmetrics.fr', '_blank')}
                   >
                     En savoir plus
@@ -74,21 +74,21 @@ export const GreenmetricsPartnership = () => {
               </div>
 
               <div className="space-y-4">
-                <Card className="border-green-200 bg-green-50">
+                <Card className="border-success/20 bg-success/10">
                   <CardContent className="p-4">
                     <h4 className="font-semibold text-green-900 mb-2">Offre spéciale lecteurs Eligibly</h4>
-                    <p className="text-sm text-green-800 mb-3">
+                    <p className="text-sm text-success mb-3">
                       Diagnostic environnemental gratuit + 20% de réduction sur l'accompagnement feuille de route
                     </p>
-                    <div className="text-xs text-green-600 bg-green-100 p-2 rounded">
+                    <div className="text-xs text-success bg-success/10 p-2 rounded">
                       Code : ELIGIBLY2025
                     </div>
                   </CardContent>
                 </Card>
 
-                <div className="text-center p-4 bg-white rounded-lg border border-green-200">
-                  <div className="text-2xl font-bold text-green-600 mb-1">150+</div>
-                  <div className="text-xs text-green-700">PME accompagnées en 2024</div>
+                <div className="text-center p-4 bg-card rounded-lg border border-success/20">
+                  <div className="text-2xl font-bold text-success mb-1">150+</div>
+                  <div className="text-xs text-success">PME accompagnées en 2024</div>
                 </div>
               </div>
             </div>
@@ -96,7 +96,7 @@ export const GreenmetricsPartnership = () => {
         </Card>
 
         <div className="text-center mt-6">
-          <p className="text-xs text-green-600">
+          <p className="text-xs text-success">
             * Greenmetrics est un partenaire indépendant recommandé par Eligibly pour son expertise RSE spécialisée dans les marchés publics.
           </p>
         </div>

@@ -81,8 +81,8 @@ export const AccessibilityReport = () => {
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold mb-4">Audit d'Accessibilité - Eligibly.ai</h1>
         <div className="flex items-center justify-center gap-4">
-          <div className="text-4xl font-bold text-green-600">{score}%</div>
-          <Badge className="bg-green-100 text-green-800">Conforme WCAG 2.1 AA</Badge>
+          <div className="text-4xl font-bold text-success">{score}%</div>
+          <Badge className="bg-success/10 text-success">Conforme WCAG 2.1 AA</Badge>
         </div>
       </div>
 
@@ -96,10 +96,10 @@ export const AccessibilityReport = () => {
         </CardHeader>
         <CardContent>
           <div className="grid md:grid-cols-3 gap-4">
-            <div className="text-center p-4 bg-green-50 rounded-lg">
-              <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
-              <div className="text-2xl font-bold text-green-600">{auditResults.passed.length}</div>
-              <div className="text-sm text-green-700">Critères validés</div>
+            <div className="text-center p-4 bg-success/10 rounded-lg">
+              <CheckCircle className="w-8 h-8 text-success mx-auto mb-2" />
+              <div className="text-2xl font-bold text-success">{auditResults.passed.length}</div>
+              <div className="text-sm text-success">Critères validés</div>
             </div>
             <div className="text-center p-4 bg-orange-50 rounded-lg">
               <AlertTriangle className="w-8 h-8 text-orange-600 mx-auto mb-2" />
@@ -118,7 +118,7 @@ export const AccessibilityReport = () => {
       {/* Critères validés */}
       <Card>
         <CardHeader>
-          <h3 className="text-lg font-semibold flex items-center gap-2 text-green-700">
+          <h3 className="text-lg font-semibold flex items-center gap-2 text-success">
             <CheckCircle className="w-5 h-5" />
             Critères d'accessibilité validés
           </h3>
@@ -126,12 +126,12 @@ export const AccessibilityReport = () => {
         <CardContent>
           <div className="space-y-3">
             {auditResults.passed.map((item, index) => (
-              <div key={index} className="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
-                <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+              <div key={index} className="flex items-start gap-3 p-3 bg-success/10 rounded-lg">
+                <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                 <div className="flex-1">
                   <h4 className="font-medium text-green-900">{item.criteria}</h4>
-                  <p className="text-sm text-green-700 mb-1">{item.description}</p>
-                  <Badge variant="outline" className="text-xs text-green-600 border-green-300">
+                  <p className="text-sm text-success mb-1">{item.description}</p>
+                  <Badge variant="outline" className="text-xs text-success border-success/20">
                     {item.wcag}
                   </Badge>
                 </div>
@@ -211,10 +211,10 @@ export const AccessibilityReport = () => {
                 <Keyboard className="w-4 h-4" />
                 Navigation clavier
               </h4>
-              <p className="text-sm text-gray-600 mb-2">
+              <p className="text-sm text-muted-foreground mb-2">
                 Testez la navigation complète au clavier :
               </p>
-              <ul className="text-sm text-gray-600 space-y-1 ml-4">
+              <ul className="text-sm text-muted-foreground space-y-1 ml-4">
                 <li>• Tab : Navigation vers l'avant</li>
                 <li>• Shift + Tab : Navigation vers l'arrière</li>
                 <li>• Entrée/Espace : Activation des boutons</li>
@@ -227,7 +227,7 @@ export const AccessibilityReport = () => {
                 <Eye className="w-4 h-4" />
                 Lecteurs d'écran
               </h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Testez avec NVDA (Windows), VoiceOver (Mac) ou Orca (Linux)
               </p>
             </div>
@@ -237,7 +237,7 @@ export const AccessibilityReport = () => {
                 <Mouse className="w-4 h-4" />
                 Zoom et responsive
               </h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Testez le zoom jusqu'à 200% et sur différentes tailles d'écran
               </p>
             </div>

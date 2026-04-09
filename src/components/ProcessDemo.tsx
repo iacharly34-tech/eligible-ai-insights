@@ -251,7 +251,7 @@ export const ProcessDemo = () => {
       {/* Démo responsive unifiée */}
       <section 
         id="demo" 
-        className="py-6 px-0 sm:px-4 bg-gradient-to-br from-slate-50 to-gray-100"
+        className="py-6 px-0 sm:px-4 bg-[hsl(var(--hero-dark))]"
       >
         <div className="container mx-auto max-w-[1400px]">
           {/* Contenu principal - différencié mobile / desktop */}
@@ -262,8 +262,8 @@ export const ProcessDemo = () => {
                 <Carousel>
                   <CarouselContent>
                     <CarouselItem className="basis-full">
-                      <div className="bg-white rounded-lg border shadow-sm p-3">
-                        <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-3">
+                      <div className="bg-card rounded-lg border shadow-sm p-3">
+                        <h3 className="font-bold text-foreground text-sm uppercase tracking-wide mb-3">
                           {t('demo.process')}
                         </h3>
                         <div className="space-y-2">
@@ -271,16 +271,16 @@ export const ProcessDemo = () => {
                             <div key={step.id} className="flex items-center gap-2">
                               <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs transition-colors ${
                                 currentStep >= step.id 
-                                  ? 'bg-green-500 text-white' 
+                                  ? 'bg-success/100 text-white' 
                                   : currentStep === step.id - 1 && isRunning
                                   ? 'bg-purple-500 text-white animate-pulse'
-                                  : 'bg-gray-300 text-gray-600'
+                                  : 'bg-gray-300 text-muted-foreground'
                               }`}>
                                 {currentStep > step.id ? <CheckCircle className="w-3 h-3" /> : step.id}
                               </div>
                               <div className="flex-1 min-w-0">
-                                <div className="text-xs font-medium text-gray-800 line-clamp-1">{step.title}</div>
-                                <div className="text-[11px] text-gray-500 line-clamp-1">{step.description}</div>
+                                <div className="text-xs font-medium text-foreground line-clamp-1">{step.title}</div>
+                                <div className="text-[11px] text-muted-foreground line-clamp-1">{step.description}</div>
                               </div>
                             </div>
                           ))}
@@ -289,34 +289,34 @@ export const ProcessDemo = () => {
                     </CarouselItem>
 
                     <CarouselItem className="basis-full">
-                      <div className="bg-white rounded-lg border shadow-sm p-3">
-                        <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-3">
+                      <div className="bg-card rounded-lg border shadow-sm p-3">
+                        <h3 className="font-bold text-foreground text-sm uppercase tracking-wide mb-3">
                           {t('demo.console')}
                         </h3>
-                        <div className="bg-gray-900 rounded-lg p-3">
+                        <div className="bg-card rounded-lg p-3">
                           <div className="flex items-center gap-2 mb-2">
                             <div className="flex gap-1">
                               <div className="w-1.5 h-1.5 bg-red-500 rounded-full"></div>
                               <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
-                              <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                              <div className="w-1.5 h-1.5 bg-success/100 rounded-full"></div>
                             </div>
                             <span className="text-green-400 text-xs font-mono">charly-analysis.js</span>
                           </div>
                           <div className="space-y-0.5 text-xs font-mono h-40 overflow-y-auto bg-black/20 rounded p-2">
                             {codeLines.map((line, index) => (
                               <div key={index} className="text-green-400 break-all">
-                                <span className="text-gray-500 mr-1 text-xs">{index + 1}.</span>
+                                <span className="text-muted-foreground mr-1 text-xs">{index + 1}.</span>
                                 <span className="text-xs">{line}</span>
                               </div>
                             ))}
                             {codeLines.length > 0 && isRunning && (
                               <div className="text-green-400 animate-pulse">
-                                <span className="text-gray-500 mr-1 text-xs">{codeLines.length + 1}.</span>
+                                <span className="text-muted-foreground mr-1 text-xs">{codeLines.length + 1}.</span>
                                 <span className="text-xs">█</span>
                               </div>
                             )}
                             {codeLines.length === 0 && (
-                              <div className="text-gray-500 text-xs italic">
+                              <div className="text-muted-foreground text-xs italic">
                                 {t('demo.console.waiting')}
                               </div>
                             )}
@@ -326,8 +326,8 @@ export const ProcessDemo = () => {
                     </CarouselItem>
 
                     <CarouselItem className="basis-full">
-                      <div className="bg-white rounded-lg border shadow-sm p-3">
-                        <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-3">
+                      <div className="bg-card rounded-lg border shadow-sm p-3">
+                        <h3 className="font-bold text-foreground text-sm uppercase tracking-wide mb-3">
                           {t('demo.controls')}
                         </h3>
                         <div className="space-y-3">
@@ -385,8 +385,8 @@ export const ProcessDemo = () => {
               {/* Top row: Processus IA, Console et Contrôles (desktop) */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                 {/* Processus IA */}
-                <div className="bg-white rounded-lg border shadow-sm p-4 h-fit">
-                  <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide mb-4">
+                <div className="bg-card rounded-lg border shadow-sm p-4 h-fit">
+                  <h3 className="font-bold text-foreground text-sm uppercase tracking-wide mb-4">
                     {t('demo.process')}
                   </h3>
                   <div className="space-y-2">
@@ -394,16 +394,16 @@ export const ProcessDemo = () => {
                       <div key={step.id} className="flex items-center gap-2">
                         <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs transition-colors ${
                           currentStep >= step.id 
-                            ? 'bg-green-500 text-white' 
+                            ? 'bg-success/100 text-white' 
                             : currentStep === step.id - 1 && isRunning
                             ? 'bg-purple-500 text-white animate-pulse'
-                            : 'bg-gray-300 text-gray-600'
+                            : 'bg-gray-300 text-muted-foreground'
                         }`}>
                           {currentStep > step.id ? <CheckCircle className="w-3 h-3" /> : step.id}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="text-xs font-medium text-gray-800 line-clamp-1">{step.title}</div>
-                          <div className="text-xs text-gray-500 hidden md:block line-clamp-1">{step.description}</div>
+                          <div className="text-xs font-medium text-foreground line-clamp-1">{step.title}</div>
+                          <div className="text-xs text-muted-foreground hidden md:block line-clamp-1">{step.description}</div>
                         </div>
                       </div>
                     ))}
@@ -411,9 +411,9 @@ export const ProcessDemo = () => {
                 </div>
 
                 {/* Console Charly IA */}
-                <div className="bg-white rounded-lg border shadow-sm p-4">
+                <div className="bg-card rounded-lg border shadow-sm p-4">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-bold text-gray-700 text-sm uppercase tracking-wide flex items-center gap-2 m-0">
+                    <h3 className="font-bold text-foreground text-sm uppercase tracking-wide flex items-center gap-2 m-0">
                       <Terminal className="w-4 h-4" />
                       {t('demo.console')}
                     </h3>
@@ -421,30 +421,30 @@ export const ProcessDemo = () => {
                       {showFullConsole ? t('demo.seeLess') : t('demo.seeMore')}
                     </Button>
                   </div>
-                  <div className="bg-gray-900 rounded-lg p-3">
+                  <div className="bg-card rounded-lg p-3">
                     <div className="flex items-center gap-2 mb-2">
                       <div className="flex gap-1">
                         <div className="w-1.5 h-1.5 bg-red-500 rounded-full"></div>
                         <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
-                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                        <div className="w-1.5 h-1.5 bg-success/100 rounded-full"></div>
                       </div>
                       <span className="text-green-400 text-xs font-mono">charly-analysis.js</span>
                     </div>
                     <div className={`space-y-0.5 text-xs font-mono ${showFullConsole ? 'h-48 sm:h-56 md:h-64 lg:h-72' : 'h-24 sm:h-28 md:h-32 lg:h-40'} overflow-y-auto bg-black/20 rounded p-2`}>
                       {codeLines.map((line, index) => (
                         <div key={index} className="text-green-400 break-all">
-                          <span className="text-gray-500 mr-1 text-xs">{index + 1}.</span>
+                          <span className="text-muted-foreground mr-1 text-xs">{index + 1}.</span>
                           <span className="text-xs">{line}</span>
                         </div>
                       ))}
                       {codeLines.length > 0 && isRunning && (
                         <div className="text-green-400 animate-pulse">
-                          <span className="text-gray-500 mr-1 text-xs">{codeLines.length + 1}.</span>
+                          <span className="text-muted-foreground mr-1 text-xs">{codeLines.length + 1}.</span>
                           <span className="text-xs">█</span>
                         </div>
                       )}
                       {codeLines.length === 0 && (
-                        <div className="text-gray-500 text-xs italic">
+                        <div className="text-muted-foreground text-xs italic">
                           {t('demo.console.waiting')}
                         </div>
                       )}
@@ -453,8 +453,8 @@ export const ProcessDemo = () => {
                 </div>
 
                 {/* Contrôles */}
-                <div className="bg-white rounded-lg border shadow-sm p-4 h-fit">
-                  <h3 className="font-bold text-gray-800 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
+                <div className="bg-card rounded-lg border shadow-sm p-4 h-fit">
+                  <h3 className="font-bold text-foreground text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
                     <Play className="w-4 h-4" />
                     {t('demo.controls')}
                   </h3>
@@ -476,11 +476,11 @@ export const ProcessDemo = () => {
                     </Button>
                     <div className="space-y-2">
                       <div className="flex justify-between text-xs">
-                        <span className="text-gray-600">{t('demo.progress')}</span>
+                        <span className="text-muted-foreground">{t('demo.progress')}</span>
                         <span className="font-medium">{Math.round(progress)}%</span>
                       </div>
                       <Progress value={progress} className="h-2" />
-                      <div className="text-xs text-gray-500 text-center">
+                      <div className="text-xs text-muted-foreground text-center">
                         {isRunning ? `${t('demo.step')} ${currentStep}/4` : currentStep === 5 ? t('demo.done') : t('demo.ready')}
                       </div>
                     </div>

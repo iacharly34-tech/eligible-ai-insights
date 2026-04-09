@@ -184,10 +184,10 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
       {!hideHeader && (
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <CheckCircle className="w-6 h-6 text-green-600" />
+            <CheckCircle className="w-6 h-6 text-success" />
             <div>
-              <h3 className="font-bold text-gray-800 text-lg">{t('ao.results.title')}</h3>
-              <p className="text-sm text-gray-600">
+              <h3 className="font-bold text-foreground text-lg">{t('ao.results.title')}</h3>
+              <p className="text-sm text-muted-foreground">
                 {mockAOData.length} {t('ao.results.found')} • {t('ao.results.avgScore')}: 88%
               </p>
             </div>
@@ -217,7 +217,7 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
 
       {/* Filtres et options d'affichage */}
       {isExpanded && (
-        <Card className="border border-gray-200">
+        <Card className="border border-border">
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">

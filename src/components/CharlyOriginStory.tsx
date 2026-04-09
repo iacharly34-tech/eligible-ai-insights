@@ -41,7 +41,7 @@ export const CharlyOriginStory = () => {
     <section className="py-20 px-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200">
+          <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
             L'histoire de Charly
           </Badge>
           
@@ -75,10 +75,10 @@ export const CharlyOriginStory = () => {
           </div>
           
           <div className="relative">
-            <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl p-8 text-white text-center">
+            <div className="bg-primary/10 border border-primary/20 rounded-3xl p-8 text-white text-center">
               <Users className="w-16 h-16 mx-auto mb-4" />
               <h4 className="text-xl font-bold mb-3">L'ADN Eligibly dans Charly</h4>
-              <p className="text-blue-100">
+              <p className="text-muted-foreground">
                 Chaque interaction avec Charly reflète notre expertise : 
                 précision technique, compréhension métier et innovation continue.
               </p>
@@ -88,7 +88,7 @@ export const CharlyOriginStory = () => {
 
         <div className="space-y-8">
           {storySteps.map((step, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm">
+            <Card key={index} className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm">
               <CardContent className="p-8">
                 <div className="grid md:grid-cols-12 gap-6 items-center">
                   <div className="md:col-span-1 flex justify-center">
@@ -125,7 +125,7 @@ export const CharlyOriginStory = () => {
             <h4 className="text-2xl font-bold mb-4">
               Charly by Eligibly : Votre avantage concurrentiel
             </h4>
-            <p className="text-lg text-blue-100 leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Derrière chaque recommandation de Charly, il y a l'expertise d'Eligibly : 
               nos algorithmes propriétaires, notre connaissance du marché et notre engagement 
               à transformer votre performance commerciale.

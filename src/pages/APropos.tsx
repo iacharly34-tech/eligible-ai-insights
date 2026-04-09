@@ -115,7 +115,7 @@ const APropos = () => {
     <>
       <SEOHead />
       <StructuredData page="about" />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
+      <div className="min-h-screen bg-background">
         <Header />
         <MobileCTABar />
       
@@ -123,7 +123,7 @@ const APropos = () => {
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-200">
+            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
               {t('about.badge')}
             </Badge>
             
@@ -148,7 +148,7 @@ const APropos = () => {
       </section>
 
       {/* Charly Section */}
-      <section className="py-20 px-4 bg-white/50">
+      <section className="py-20 px-4 bg-[hsl(var(--hero-dark))]">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -166,10 +166,10 @@ const APropos = () => {
               </p>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl p-12 text-white text-center">
+              <div className="bg-primary/10 border border-primary/20 rounded-3xl p-12 text-white text-center">
                 <Users className="w-20 h-20 mx-auto mb-6" />
                 <h3 className="text-2xl font-bold mb-4">L'assistant IA né de l'expertise Eligibly</h3>
-                <p className="text-blue-100 text-lg">
+                <p className="text-muted-foreground text-lg">
                   Créé par notre équipe d'experts, Charly allie l'intelligence artificielle d'Eligibly 
                   à une compréhension profonde des marchés publics pour anticiper vos besoins.
                 </p>
@@ -192,15 +192,15 @@ const APropos = () => {
               </h2>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <Clock className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                  <Clock className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
                   <span className="text-foreground">Les AO publics sont complexes : des dossiers longs à construire</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Target className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                  <Target className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
                   <span className="text-foreground">Temps considérable pour chasser les opportunités</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Shield className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                  <Shield className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
                   <span className="text-foreground">A priori sur "l'honnêteté des démarches d'AO" par les collectivités</span>
                 </div>
               </div>
@@ -241,7 +241,7 @@ const APropos = () => {
           
           <div className="grid md:grid-cols-2 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm">
+              <Card key={index} className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-6">
                     <div className="w-14 h-14 bg-gradient-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
@@ -264,7 +264,7 @@ const APropos = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 px-4 bg-white/50">
+      <section className="py-20 px-4 bg-[hsl(var(--hero-dark))]">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -277,7 +277,7 @@ const APropos = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm text-center">
+            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm text-center">
               <CardContent className="p-8">
                 <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold group-hover:scale-110 transition-transform">
                   <Lightbulb className="w-10 h-10" />
@@ -289,7 +289,7 @@ const APropos = () => {
               </CardContent>
             </Card>
             
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm text-center">
+            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm text-center">
               <CardContent className="p-8">
                 <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold group-hover:scale-110 transition-transform">
                   <FileCheck className="w-10 h-10" />
@@ -301,7 +301,7 @@ const APropos = () => {
               </CardContent>
             </Card>
             
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm text-center">
+            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm text-center">
               <CardContent className="p-8">
                 <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold group-hover:scale-110 transition-transform">
                   <Users className="w-10 h-10" />
@@ -330,9 +330,9 @@ const APropos = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm text-center">
+            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm text-center">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-primary/10 border border-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Lightbulb className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-3">IA Générative</h3>
@@ -340,9 +340,9 @@ const APropos = () => {
               </CardContent>
             </Card>
             
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm text-center">
+            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm text-center">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-gradient-to-r from-success/100 to-success/100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Target className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-3">Machine Learning</h3>
@@ -350,9 +350,9 @@ const APropos = () => {
               </CardContent>
             </Card>
             
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm text-center">
+            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm text-center">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-warning/10 border border-warning/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Globe className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-3">Veille Automatisée</h3>
@@ -360,9 +360,9 @@ const APropos = () => {
               </CardContent>
             </Card>
             
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm text-center">
+            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm text-center">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-primary/10 border border-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Shield className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-3">Sécurité Renforcée</h3>

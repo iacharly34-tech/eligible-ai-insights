@@ -47,7 +47,7 @@ export default function AOPerdusAvance() {
               <div className="grid md:grid-cols-3 gap-6 my-8">
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <XCircle className="h-8 w-8 text-red-600 mx-auto mb-4" />
+                    <XCircle className="h-8 w-8 text-destructive mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">60%</h3>
                     <p className="text-sm text-muted-foreground">
                       AO impossibles à gagner pour la majorité
@@ -111,15 +111,15 @@ export default function AOPerdusAvance() {
                   </h4>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <span className="text-sm">Analyse des critères discriminants cachés</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <span className="text-sm">Détection des patterns de favoritisme</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <span className="text-sm">Évaluation de la faisabilité budgétaire</span>
                     </div>
                   </div>

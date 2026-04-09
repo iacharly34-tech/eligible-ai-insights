@@ -32,14 +32,14 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
     {
       title: "Veille d'appels d'offres",
       content: (
-        <div className="h-full bg-gradient-to-br from-blue-50 to-purple-50 p-4">
+        <div className="h-full bg-primary/5 p-4">
           <div className="grid grid-cols-2 gap-4 h-full">
             {/* Left side - Features */}
             <div className="space-y-4">
               <div className="bg-blue-100 rounded-lg px-3 py-1 text-blue-800 text-xs font-medium w-fit">
                 Flux d'opportunités
               </div>
-              <h3 className="text-lg font-bold text-gray-800">
+              <h3 className="text-lg font-bold text-foreground">
                 Simplifiez votre veille d'appels d'offres
               </h3>
               <div className="space-y-3">
@@ -49,25 +49,25 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
                   "Collaborez avec votre équipe pour fluidifier la détection des AO"
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">{feature}</span>
+                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-foreground">{feature}</span>
                   </div>
                 ))}
               </div>
             </div>
             
             {/* Right side - Dashboard */}
-            <div className="bg-white rounded-xl shadow-lg p-4 relative overflow-hidden">
+            <div className="bg-card rounded-xl shadow-lg p-4 relative overflow-hidden">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <Target className="w-5 h-5 text-purple-600" />
-                  <span className="font-semibold text-gray-800">PLACE</span>
+                  <span className="font-semibold text-foreground">PLACE</span>
                 </div>
                 <Badge className="bg-blue-600 text-white text-lg font-bold px-3 py-1">
                   {isPlaying ? Math.floor(18 * (progress / 100)) : 18}
                 </Badge>
               </div>
-              <div className="text-xs text-gray-600 mb-2">opportunités identifiées</div>
+              <div className="text-xs text-muted-foreground mb-2">opportunités identifiées</div>
               
               <Button className="w-full mb-4">
                 + Créer mon flux
@@ -75,14 +75,14 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
               
               <div className="space-y-2 text-xs">
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Statut</span>
-                  <span className="text-green-600 font-medium">Ouvert</span>
+                  <span className="text-muted-foreground">Statut</span>
+                  <span className="text-success font-medium">Ouvert</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Montant</span>
+                  <span className="text-muted-foreground">Montant</span>
                   <span className="font-medium">&gt;80k</span>
                 </div>
-                <div className="text-gray-600">Critères</div>
+                <div className="text-muted-foreground">Critères</div>
               </div>
               
               {/* Background decoration */}
@@ -95,14 +95,14 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
     {
       title: "Analyse instantanée",
       content: (
-        <div className="h-full bg-gradient-to-br from-green-50 to-blue-50 p-4">
+        <div className="h-full bg-gradient-to-br from-success/10 to-blue-50 p-4">
           <div className="grid grid-cols-2 gap-4 h-full">
             {/* Left side */}
             <div className="space-y-4">
               <div className="bg-purple-100 rounded-lg px-3 py-1 text-purple-800 text-xs font-medium w-fit">
                 Analyse instantanée
               </div>
-              <h3 className="text-lg font-bold text-gray-800">
+              <h3 className="text-lg font-bold text-foreground">
                 Analysez vos appels d'offres en 3 clics
               </h3>
               <div className="space-y-3">
@@ -112,39 +112,39 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
                   "Accédez directement aux passages pertinents du DCE"
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">{feature}</span>
+                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-foreground">{feature}</span>
                   </div>
                 ))}
               </div>
             </div>
             
             {/* Right side - Analysis Dashboard */}
-            <div className="bg-white rounded-xl shadow-lg p-4 space-y-4">
+            <div className="bg-card rounded-xl shadow-lg p-4 space-y-4">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-semibold text-gray-800">Quels sont les critères de l'acheteur ?</span>
+                <span className="text-sm font-semibold text-foreground">Quels sont les critères de l'acheteur ?</span>
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
-                  <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                    <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                  <div className="w-8 h-8 rounded-full bg-card flex items-center justify-center">
+                    <div className="w-4 h-4 bg-success/100 rounded-full"></div>
                   </div>
                 </div>
               </div>
               
               <div className="space-y-2 text-xs">
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Critère prix : 20%</span>
+                  <span className="text-muted-foreground">Critère prix : 20%</span>
                   <div className="w-16 h-2 bg-gray-200 rounded-full">
                     <div className="w-3 h-2 bg-blue-500 rounded-full"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Critère qualité : 70%</span>
+                  <span className="text-muted-foreground">Critère qualité : 70%</span>
                   <div className="w-16 h-2 bg-gray-200 rounded-full">
-                    <div className="w-11 h-2 bg-green-500 rounded-full"></div>
+                    <div className="w-11 h-2 bg-success/100 rounded-full"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Critère performance : 10%</span>
+                  <span className="text-muted-foreground">Critère performance : 10%</span>
                   <div className="w-16 h-2 bg-gray-200 rounded-full">
                     <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
                   </div>
@@ -153,12 +153,12 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
               
               <div className="border-t pt-3 space-y-2">
                 <div className="flex items-center gap-2 text-xs">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-green-700">Y a-t-il des pénalités ?</span>
+                  <div className="w-2 h-2 bg-success/100 rounded-full"></div>
+                  <span className="text-success">Y a-t-il des pénalités ?</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-green-700">Qui est le titulaire du marché ?</span>
+                  <div className="w-2 h-2 bg-success/100 rounded-full"></div>
+                  <span className="text-success">Qui est le titulaire du marché ?</span>
                 </div>
               </div>
               
@@ -182,7 +182,7 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
               <div className="bg-orange-100 rounded-lg px-3 py-1 text-orange-800 text-xs font-medium w-fit">
                 Scoring IA
               </div>
-              <h3 className="text-lg font-bold text-gray-800">
+              <h3 className="text-lg font-bold text-foreground">
                 Évaluations et recommandations
               </h3>
               <div className="space-y-3">
@@ -194,17 +194,17 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start gap-2">
                     <Award className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">{feature}</span>
+                    <span className="text-sm text-foreground">{feature}</span>
                   </div>
                 ))}
               </div>
             </div>
             
             {/* Right side - Scoring Dashboard */}
-            <div className="bg-white rounded-xl shadow-lg p-4 space-y-4">
+            <div className="bg-card rounded-xl shadow-lg p-4 space-y-4">
               <div className="text-center">
                 <div className="relative w-16 h-16 mx-auto mb-2">
-                  <div className="w-16 h-16 rounded-full border-4 border-gray-200"></div>
+                  <div className="w-16 h-16 rounded-full border-4 border-border"></div>
                   <div 
                     className="absolute top-0 left-0 w-16 h-16 rounded-full border-4 border-green-500 transition-all duration-1000"
                     style={{
@@ -213,21 +213,21 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
                     }}
                   ></div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-lg font-bold text-gray-800">
+                    <span className="text-lg font-bold text-foreground">
                       {isPlaying ? Math.floor(92 * (progress / 100)) : 92}
                     </span>
                   </div>
                 </div>
-                <Badge className="bg-green-100 text-green-700 border-green-200">
+                <Badge className="bg-success/10 text-success border-success/20">
                   Score: {isPlaying ? Math.floor(92 * (progress / 100)) : 92}/100
                 </Badge>
               </div>
               
               <div className="space-y-2">
-                <div className="text-sm font-medium text-gray-700">
+                <div className="text-sm font-medium text-foreground">
                   Plateforme E-learning - Ministère
                 </div>
-                <div className="text-xs text-gray-600">
+                <div className="text-xs text-muted-foreground">
                   Budget: 2.4M€ • Échéance: 15 mars 2025
                 </div>
               </div>
@@ -239,7 +239,7 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
                   { label: "Concurrence", value: 85, color: "yellow" }
                 ].map((criteria, index) => (
                   <div key={index} className="flex items-center justify-between">
-                    <span className="text-xs text-gray-600">{criteria.label}</span>
+                    <span className="text-xs text-muted-foreground">{criteria.label}</span>
                     <div className="flex items-center gap-2">
                       <div className="w-12 h-1.5 bg-gray-200 rounded-full">
                         <div 
@@ -247,7 +247,7 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
                           style={{ width: isPlaying ? `${criteria.value}%` : '0%' }}
                         ></div>
                       </div>
-                      <span className="text-xs font-medium text-gray-700 w-8">
+                      <span className="text-xs font-medium text-foreground w-8">
                         {isPlaying ? criteria.value : 0}%
                       </span>
                     </div>
@@ -303,7 +303,7 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
       <Button
         variant="outline"
         size="sm"
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 p-0 bg-white/80 hover:bg-white"
+        className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 p-0 bg-card hover:bg-card"
         onClick={scrollPrev}
       >
         <ChevronLeft className="w-4 h-4" />
@@ -311,7 +311,7 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
       <Button
         variant="outline"
         size="sm"
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 p-0 bg-white/80 hover:bg-white"
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 p-0 bg-card hover:bg-card"
         onClick={scrollNext}
       >
         <ChevronRight className="w-4 h-4" />
@@ -418,16 +418,16 @@ export const MacBookSimulation = () => {
       case "browser":
         return (
           <div className="h-full bg-gradient-to-br from-slate-50 to-blue-50">
-            <div className="bg-gray-100 border-b px-4 py-2 flex items-center gap-3">
+            <div className="bg-secondary border-b px-4 py-2 flex items-center gap-3">
               <div className="flex gap-2">
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-success/100 rounded-full"></div>
               </div>
-              <div className="flex-1 bg-white rounded-md px-3 py-1.5 text-sm text-gray-600 flex items-center gap-2 border">
+              <div className="flex-1 bg-card rounded-md px-3 py-1.5 text-sm text-muted-foreground flex items-center gap-2 border">
                 <Globe className="w-4 h-4" />
                 https://app.eligibly.ai
-                <div className="ml-auto text-green-600">🔒</div>
+                <div className="ml-auto text-success">🔒</div>
               </div>
             </div>
             
@@ -441,14 +441,14 @@ export const MacBookSimulation = () => {
                     )}
                   </div>
                   <div>
-                    <h1 className="text-lg font-bold text-gray-800">BOAMP</h1>
-                    <p className="text-xs text-gray-600">Sources connectées</p>
+                    <h1 className="text-lg font-bold text-foreground">BOAMP</h1>
+                    <p className="text-xs text-muted-foreground">Sources connectées</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-xs text-green-600 font-medium">Live</span>
+                  <div className="w-2 h-2 bg-success/100 rounded-full animate-pulse"></div>
+                  <span className="text-xs text-success font-medium">Live</span>
                 </div>
               </div>
               
@@ -461,11 +461,11 @@ export const MacBookSimulation = () => {
                 ].map((source, index) => (
                   <div 
                     key={index}
-                    className="p-3 bg-white rounded-lg shadow-sm border hover:shadow-md transition-all duration-300"
+                    className="p-3 bg-card rounded-lg shadow-sm border hover:shadow-md transition-all duration-300"
                   >
                     <div className="flex items-center justify-between">
                       <div>
-                        <div className="text-xs font-medium text-gray-600">{source.name}</div>
+                        <div className="text-xs font-medium text-muted-foreground">{source.name}</div>
                         <div className="text-lg font-bold text-blue-600">
                           {isPlaying ? Math.floor(source.count * (progress / 100)) : source.count}
                         </div>
@@ -488,10 +488,10 @@ export const MacBookSimulation = () => {
               <div className="flex gap-2">
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-success/100 rounded-full"></div>
               </div>
-              <Terminal className="w-4 h-4 text-gray-400 ml-2" />
-              <span className="text-gray-300">extraction-pipeline</span>
+              <Terminal className="w-4 h-4 text-muted-foreground ml-2" />
+              <span className="text-muted-foreground">extraction-pipeline</span>
             </div>
             
             <div className="p-4 space-y-1 text-xs leading-relaxed">
@@ -517,30 +517,30 @@ export const MacBookSimulation = () => {
 
       case "vscode":
         return (
-          <div className="h-full bg-gray-900 text-white">
+          <div className="h-full bg-card text-white">
             <div className="bg-gray-800 px-4 py-2 flex items-center gap-2 text-sm border-b border-gray-700">
               <div className="flex gap-2">
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-success/100 rounded-full"></div>
               </div>
               <Code className="w-4 h-4 text-blue-400 ml-2" />
-              <span className="text-gray-300">ai-multi-analyzer.ts</span>
+              <span className="text-muted-foreground">ai-multi-analyzer.ts</span>
             </div>
             
             <div className="p-4">
               <div className="space-y-1 text-sm font-mono">
                 <div className="flex">
-                  <div className="w-8 text-gray-500 text-right pr-2">1</div>
+                  <div className="w-8 text-muted-foreground text-right pr-2">1</div>
                   <div className="text-purple-400">// Analyse avec plusieurs modèles IA</div>
                 </div>
                 <div className="flex">
-                  <div className="w-8 text-gray-500 text-right pr-2">2</div>
+                  <div className="w-8 text-muted-foreground text-right pr-2">2</div>
                   <div className="text-blue-400">const analyses = await Promise.all([</div>
                 </div>
                 <div className="flex">
-                  <div className="w-8 text-gray-500 text-right pr-2">3</div>
-                  <div className="text-gray-300">  // GPT-4 Turbo pour l'extraction</div>
+                  <div className="w-8 text-muted-foreground text-right pr-2">3</div>
+                  <div className="text-muted-foreground">  // GPT-4 Turbo pour l'extraction</div>
                 </div>
               </div>
             </div>
@@ -579,18 +579,18 @@ export const MacBookSimulation = () => {
                     <div className="flex gap-1.5">
                       <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                       <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-success/100 rounded-full"></div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-gray-300">
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <div className="w-4 h-3 bg-gray-600 rounded-sm"></div>
                     <span>100%</span>
-                    <div className="w-6 h-3 bg-green-500 rounded-sm"></div>
+                    <div className="w-6 h-3 bg-success/100 rounded-sm"></div>
                   </div>
                 </div>
 
                 {/* MacBook Screen */}
-                <div className="h-96 bg-white rounded-b-lg overflow-auto relative">
+                <div className="h-96 bg-card rounded-b-lg overflow-auto relative">
                   {renderMacBookContent()}
                 </div>
               </div>
@@ -645,7 +645,7 @@ export const MacBookSimulation = () => {
                           ? 'bg-primary text-primary-foreground'
                           : index === currentStep
                           ? 'bg-primary/20 text-primary border-2 border-primary'
-                          : 'bg-gray-200 text-gray-400'
+                          : 'bg-gray-200 text-muted-foreground'
                       }`}
                     >
                       {index < currentStep ? <CheckCircle className="w-4 h-4" /> : index + 1}

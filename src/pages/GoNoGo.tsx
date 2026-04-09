@@ -27,7 +27,7 @@ const GoNoGo = () => {
     <>
       <SEOHead />
       <StructuredData />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40">
+      <div className="min-h-screen bg-background">
         <Header />
         
         <main className="pt-32 pb-20">
@@ -39,15 +39,15 @@ const GoNoGo = () => {
                 Répondre efficacement aux AO
               </Badge>
               
-              <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-gray-900">
+              <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-foreground">
                 Optimiser le Go/No Go : la décision qui fait la différence
               </h1>
               
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
                 La décision de répondre ou non à un appel d'offres est cruciale. Comment structurer votre processus de qualification pour maximiser votre taux de succès ?
               </p>
               
-              <div className="flex items-center gap-6 text-sm text-gray-500">
+              <div className="flex items-center gap-6 text-sm text-muted-foreground">
                 <span>3 octobre 2025</span>
                 <span>•</span>
                 <span>9 min de lecture</span>
@@ -56,34 +56,34 @@ const GoNoGo = () => {
 
             {/* Introduction */}
             <section className="prose prose-lg max-w-none mb-12">
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-foreground leading-relaxed">
                 <strong>Chaque appel d'offres représente un investissement significatif</strong> : temps de rédaction, mobilisation des équipes, coûts de production. Pourtant, de nombreuses entreprises se lancent dans des réponses sans réelle analyse préalable, gaspillant des ressources précieuses sur des marchés qu'elles n'ont aucune chance de remporter.
               </p>
               
               <blockquote className="border-l-4 border-orange-500 pl-6 my-8 bg-orange-50/50 py-4 rounded-r-lg">
-                <p className="text-lg font-medium text-gray-800 mb-2">
+                <p className="text-lg font-medium text-foreground mb-2">
                   "Une PME qui répond systématiquement à tout ce qu'elle voit passe en moyenne 70% de son temps commercial sur des AO qu'elle ne remportera jamais."
                 </p>
-                <cite className="text-sm text-gray-600">— Étude Eligibly 2025</cite>
+                <cite className="text-sm text-muted-foreground">— Étude Eligibly 2025</cite>
               </blockquote>
             </section>
 
             {/* Qu'est-ce que le Go/No Go */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Qu'est-ce que le Go/No Go ?</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Qu'est-ce que le Go/No Go ?</h2>
               
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-foreground leading-relaxed mb-6">
                 Le Go/No Go est un processus de qualification structuré qui permet de décider, de manière objective et rapide, si une opportunité mérite d'être poursuivie. Cette méthode, empruntée aux grands groupes, est essentielle pour les PME qui disposent de ressources limitées.
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <Card className="border-green-200 bg-green-50/50">
+                <Card className="border-success/20 bg-success/10/50">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <CheckCircle className="w-8 h-8 text-green-600" />
-                      <h3 className="font-bold text-green-800">Quand dire GO</h3>
+                      <CheckCircle className="w-8 h-8 text-success" />
+                      <h3 className="font-bold text-success">Quand dire GO</h3>
                     </div>
-                    <ul className="space-y-2 text-sm text-green-700">
+                    <ul className="space-y-2 text-sm text-success">
                       <li>• Le besoin correspond à votre cœur de métier</li>
                       <li>• Vous avez des références similaires</li>
                       <li>• Le délai est réaliste</li>
@@ -96,7 +96,7 @@ const GoNoGo = () => {
                 <Card className="border-red-200 bg-red-50/50">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <XCircle className="w-8 h-8 text-red-600" />
+                      <XCircle className="w-8 h-8 text-destructive" />
                       <h3 className="font-bold text-red-800">Quand dire NO GO</h3>
                     </div>
                     <ul className="space-y-2 text-sm text-red-700">
@@ -113,7 +113,7 @@ const GoNoGo = () => {
 
             {/* Les 7 critères */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Les 7 critères essentiels d'un Go/No Go efficace</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Les 7 critères essentiels d'un Go/No Go efficace</h2>
 
               <div className="space-y-6">
                 <Card className="border-0 shadow-lg">
@@ -124,7 +124,7 @@ const GoNoGo = () => {
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Adéquation technique</h3>
-                        <p className="text-gray-600 text-sm">Le besoin correspond-il à votre savoir-faire ? Avez-vous les compétences et les ressources pour délivrer ?</p>
+                        <p className="text-muted-foreground text-sm">Le besoin correspond-il à votre savoir-faire ? Avez-vous les compétences et les ressources pour délivrer ?</p>
                       </div>
                     </div>
                   </CardContent>
@@ -138,7 +138,7 @@ const GoNoGo = () => {
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Références et expérience</h3>
-                        <p className="text-gray-600 text-sm">Disposez-vous de références similaires ? L'absence de références sur un marché ciblé est souvent éliminatoire.</p>
+                        <p className="text-muted-foreground text-sm">Disposez-vous de références similaires ? L'absence de références sur un marché ciblé est souvent éliminatoire.</p>
                       </div>
                     </div>
                   </CardContent>
@@ -152,7 +152,7 @@ const GoNoGo = () => {
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Connaissance de l'acheteur</h3>
-                        <p className="text-gray-600 text-sm">Avez-vous déjà travaillé avec cet acheteur ? Connaissez-vous ses attentes et son historique ?</p>
+                        <p className="text-muted-foreground text-sm">Avez-vous déjà travaillé avec cet acheteur ? Connaissez-vous ses attentes et son historique ?</p>
                       </div>
                     </div>
                   </CardContent>
@@ -166,7 +166,7 @@ const GoNoGo = () => {
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Analyse concurrentielle</h3>
-                        <p className="text-gray-600 text-sm">Qui sont vos concurrents probables ? Avez-vous un avantage distinctif sur ce marché ?</p>
+                        <p className="text-muted-foreground text-sm">Qui sont vos concurrents probables ? Avez-vous un avantage distinctif sur ce marché ?</p>
                       </div>
                     </div>
                   </CardContent>
@@ -180,7 +180,7 @@ const GoNoGo = () => {
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Faisabilité économique</h3>
-                        <p className="text-gray-600 text-sm">Le budget estimé est-il cohérent avec vos coûts ? La marge est-elle suffisante ?</p>
+                        <p className="text-muted-foreground text-sm">Le budget estimé est-il cohérent avec vos coûts ? La marge est-elle suffisante ?</p>
                       </div>
                     </div>
                   </CardContent>
@@ -194,7 +194,7 @@ const GoNoGo = () => {
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Délais et disponibilité</h3>
-                        <p className="text-gray-600 text-sm">Avez-vous le temps de préparer une réponse de qualité ? Vos équipes sont-elles disponibles pour l'exécution ?</p>
+                        <p className="text-muted-foreground text-sm">Avez-vous le temps de préparer une réponse de qualité ? Vos équipes sont-elles disponibles pour l'exécution ?</p>
                       </div>
                     </div>
                   </CardContent>
@@ -208,7 +208,7 @@ const GoNoGo = () => {
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Valeur stratégique</h3>
-                        <p className="text-gray-600 text-sm">Ce marché ouvre-t-il de nouvelles portes ? Renforce-t-il votre positionnement sectoriel ?</p>
+                        <p className="text-muted-foreground text-sm">Ce marché ouvre-t-il de nouvelles portes ? Renforce-t-il votre positionnement sectoriel ?</p>
                       </div>
                     </div>
                   </CardContent>
@@ -218,9 +218,9 @@ const GoNoGo = () => {
 
             {/* Grille de scoring */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Mettre en place une grille de scoring</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Mettre en place une grille de scoring</h2>
               
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-foreground leading-relaxed mb-6">
                 Pour objectiver votre décision, attribuez une note de 1 à 5 à chaque critère, puis pondérez selon votre stratégie. Une note globale inférieure à 60% devrait déclencher un No Go automatique.
               </p>
 
@@ -232,27 +232,27 @@ const GoNoGo = () => {
                   </div>
                   
                   <div className="grid md:grid-cols-2 gap-4 text-sm">
-                    <div className="flex justify-between items-center py-2 border-b border-blue-200">
+                    <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Adéquation technique</span>
                       <span className="font-bold text-blue-600">25%</span>
                     </div>
-                    <div className="flex justify-between items-center py-2 border-b border-blue-200">
+                    <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Références</span>
                       <span className="font-bold text-blue-600">20%</span>
                     </div>
-                    <div className="flex justify-between items-center py-2 border-b border-blue-200">
+                    <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Connaissance acheteur</span>
                       <span className="font-bold text-blue-600">15%</span>
                     </div>
-                    <div className="flex justify-between items-center py-2 border-b border-blue-200">
+                    <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Analyse concurrentielle</span>
                       <span className="font-bold text-blue-600">15%</span>
                     </div>
-                    <div className="flex justify-between items-center py-2 border-b border-blue-200">
+                    <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Faisabilité économique</span>
                       <span className="font-bold text-blue-600">10%</span>
                     </div>
-                    <div className="flex justify-between items-center py-2 border-b border-blue-200">
+                    <div className="flex justify-between items-center py-2 border-b border-primary/20">
                       <span>Délais</span>
                       <span className="font-bold text-blue-600">10%</span>
                     </div>
@@ -267,14 +267,14 @@ const GoNoGo = () => {
 
             {/* Impact chiffré */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">L'impact d'un Go/No Go structuré</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">L'impact d'un Go/No Go structuré</h2>
 
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <Card className="border-0 shadow-lg text-center">
                   <CardContent className="p-6">
-                    <TrendingUp className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-green-600 mb-2">+35%</div>
-                    <p className="text-sm text-gray-600">Amélioration du taux de succès</p>
+                    <TrendingUp className="w-12 h-12 text-success mx-auto mb-4" />
+                    <div className="text-3xl font-bold text-success mb-2">+35%</div>
+                    <p className="text-sm text-muted-foreground">Amélioration du taux de succès</p>
                   </CardContent>
                 </Card>
 
@@ -282,7 +282,7 @@ const GoNoGo = () => {
                   <CardContent className="p-6">
                     <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                     <div className="text-3xl font-bold text-blue-600 mb-2">-40%</div>
-                    <p className="text-sm text-gray-600">Temps économisé sur les réponses</p>
+                    <p className="text-sm text-muted-foreground">Temps économisé sur les réponses</p>
                   </CardContent>
                 </Card>
 
@@ -290,7 +290,7 @@ const GoNoGo = () => {
                   <CardContent className="p-6">
                     <BarChart3 className="w-12 h-12 text-purple-600 mx-auto mb-4" />
                     <div className="text-3xl font-bold text-purple-600 mb-2">x2</div>
-                    <p className="text-sm text-gray-600">ROI des équipes commerciales</p>
+                    <p className="text-sm text-muted-foreground">ROI des équipes commerciales</p>
                   </CardContent>
                 </Card>
               </div>
@@ -298,9 +298,9 @@ const GoNoGo = () => {
 
             {/* Comment Charly aide */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Comment Charly automatise votre Go/No Go</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Comment Charly automatise votre Go/No Go</h2>
               
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-foreground leading-relaxed mb-6">
                 L'intelligence artificielle de Charly analyse automatiquement chaque appel d'offres selon vos critères de qualification. En quelques secondes, vous obtenez une recommandation Go/No Go personnalisée.
               </p>
 
@@ -309,7 +309,7 @@ const GoNoGo = () => {
                   <Lightbulb className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Analyse instantanée</h4>
-                    <p className="text-sm text-gray-600">Charly lit et analyse le DCE en quelques secondes pour identifier les critères clés.</p>
+                    <p className="text-sm text-muted-foreground">Charly lit et analyse le DCE en quelques secondes pour identifier les critères clés.</p>
                   </div>
                 </div>
                 
@@ -317,15 +317,15 @@ const GoNoGo = () => {
                   <Users className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Scoring personnalisé</h4>
-                    <p className="text-sm text-gray-600">Configurez vos critères de qualification et Charly applique votre grille automatiquement.</p>
+                    <p className="text-sm text-muted-foreground">Configurez vos critères de qualification et Charly applique votre grille automatiquement.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <FileText className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                  <FileText className="w-6 h-6 text-success flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Recommandation argumentée</h4>
-                    <p className="text-sm text-gray-600">Chaque recommandation Go/No Go est accompagnée d'une analyse détaillée.</p>
+                    <p className="text-sm text-muted-foreground">Chaque recommandation Go/No Go est accompagnée d'une analyse détaillée.</p>
                   </div>
                 </div>
                 
@@ -333,7 +333,7 @@ const GoNoGo = () => {
                   <AlertTriangle className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Alertes intelligentes</h4>
-                    <p className="text-sm text-gray-600">Soyez alerté uniquement sur les opportunités qui correspondent vraiment à votre profil.</p>
+                    <p className="text-sm text-muted-foreground">Soyez alerté uniquement sur les opportunités qui correspondent vraiment à votre profil.</p>
                   </div>
                 </div>
               </div>
@@ -349,7 +349,7 @@ const GoNoGo = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <SafeLink to="/demo">
-                  <Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50">
+                  <Button size="lg" className="bg-card text-orange-600 hover:bg-orange-50">
                     Tester gratuitement
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>

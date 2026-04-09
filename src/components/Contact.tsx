@@ -138,7 +138,7 @@ export const Contact = () => {
             </div>
 
             <div className="space-y-4">
-              <Card className="bg-white border hover:shadow-card transition-all duration-300">
+              <Card className="bg-card border hover:shadow-card transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
@@ -152,7 +152,7 @@ export const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border hover:shadow-card transition-all duration-300">
+              <Card className="bg-card border hover:shadow-card transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
@@ -166,7 +166,7 @@ export const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border hover:shadow-card transition-all duration-300">
+              <Card className="bg-card border hover:shadow-card transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
@@ -196,7 +196,7 @@ export const Contact = () => {
           </div>
 
           {/* Right Column - Contact Form */}
-          <Card className="bg-white shadow-card border">
+          <Card className="bg-card shadow-card border">
             <CardHeader>
               <CardTitle className="text-2xl">
                 Demander une démonstration
@@ -212,7 +212,7 @@ export const Contact = () => {
                   onChange={(e) => setZapierWebhook(e.target.value)}
                   className="text-xs"
                 />
-                <p className="text-xs text-gray-500 mt-1">
+                <p className="text-xs text-muted-foreground mt-1">
                   Configurez un webhook Zapier pour recevoir les formulaires par email (optionnel)
                 </p>
               </div>

@@ -25,7 +25,7 @@ const TenderFeedback = () => {
     <>
       <SEOHead />
       <StructuredData />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40">
+      <div className="min-h-screen bg-background">
         <Header />
         
         <main className="pt-32 pb-20">
@@ -37,15 +37,15 @@ const TenderFeedback = () => {
                 Trends &amp; key data
               </Badge>
               
-              <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-gray-900">
+              <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-foreground">
                 Analysing Award Feedback: Turning Failure into Success
               </h1>
               
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
                 How to use bid evaluation reports to improve your future applications and increase your win rate
               </p>
               
-              <div className="flex items-center gap-6 text-sm text-gray-500">
+              <div className="flex items-center gap-6 text-sm text-muted-foreground">
                 <span>September 18, 2025</span>
                 <span>•</span>
                 <span>9 min read</span>
@@ -54,32 +54,32 @@ const TenderFeedback = () => {
 
             {/* Introduction */}
             <section className="prose prose-lg max-w-none mb-12">
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-foreground leading-relaxed">
                 <strong>Every unsuccessful bid contains valuable lessons.</strong> The feedback provided by buyers after contract award is a goldmine of information that most companies ignore. Those who systematically analyse this feedback dramatically improve their future performance.
               </p>
               
               <blockquote className="border-l-4 border-violet-500 pl-6 my-8 bg-violet-50/50 py-4 rounded-r-lg">
-                <p className="text-lg font-medium text-gray-800 mb-2">
+                <p className="text-lg font-medium text-foreground mb-2">
                   &quot;Companies that systematically debrief after every bid improve their win rate by 25% within 12 months.&quot;
                 </p>
-                <cite className="text-sm text-gray-600">— Shipley Associates Research</cite>
+                <cite className="text-sm text-muted-foreground">— Shipley Associates Research</cite>
               </blockquote>
             </section>
 
             {/* Your Rights */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Your right to feedback</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Your right to feedback</h2>
               
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-foreground leading-relaxed mb-6">
                 In public procurement, you have legal rights to receive feedback after contract award. Understanding these rights is the first step to improving.
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <Card className="border-green-200 bg-green-50/50">
+                <Card className="border-success/20 bg-success/10/50">
                   <CardContent className="p-6">
-                    <CheckCircle className="w-8 h-8 text-green-600 mb-4" />
-                    <h3 className="font-bold mb-3 text-green-800">What you can request</h3>
-                    <ul className="space-y-2 text-sm text-green-700">
+                    <CheckCircle className="w-8 h-8 text-success mb-4" />
+                    <h3 className="font-bold mb-3 text-success">What you can request</h3>
+                    <ul className="space-y-2 text-sm text-success">
                       <li>• Your scores for each criterion</li>
                       <li>• Reasons for rejection</li>
                       <li>• Characteristics of the winning bid</li>
@@ -89,7 +89,7 @@ const TenderFeedback = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-blue-200 bg-blue-50/50">
+                <Card className="border-primary/20 bg-blue-50/50">
                   <CardContent className="p-6">
                     <FileSearch className="w-8 h-8 text-blue-600 mb-4" />
                     <h3 className="font-bold mb-3 text-blue-800">How to request</h3>
@@ -107,7 +107,7 @@ const TenderFeedback = () => {
 
             {/* What to Analyse */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Key areas to analyse</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Key areas to analyse</h2>
 
               <div className="space-y-6">
                 <Card className="border-0 shadow-lg">
@@ -118,7 +118,7 @@ const TenderFeedback = () => {
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Score breakdown</h3>
-                        <p className="text-gray-600 text-sm">Compare your scores across criteria. Identify where you lost the most points and prioritise improvements there.</p>
+                        <p className="text-muted-foreground text-sm">Compare your scores across criteria. Identify where you lost the most points and prioritise improvements there.</p>
                       </div>
                     </div>
                   </CardContent>
@@ -132,7 +132,7 @@ const TenderFeedback = () => {
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Evaluator comments</h3>
-                        <p className="text-gray-600 text-sm">Read between the lines. Comments reveal what evaluators value and what was missing from your response.</p>
+                        <p className="text-muted-foreground text-sm">Read between the lines. Comments reveal what evaluators value and what was missing from your response.</p>
                       </div>
                     </div>
                   </CardContent>
@@ -146,7 +146,7 @@ const TenderFeedback = () => {
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Winner characteristics</h3>
-                        <p className="text-gray-600 text-sm">Understand what made the winning bid stand out. This reveals the buyer&apos;s true priorities.</p>
+                        <p className="text-muted-foreground text-sm">Understand what made the winning bid stand out. This reveals the buyer&apos;s true priorities.</p>
                       </div>
                     </div>
                   </CardContent>
@@ -160,7 +160,7 @@ const TenderFeedback = () => {
                       </div>
                       <div>
                         <h3 className="font-bold mb-2">Price analysis</h3>
-                        <p className="text-gray-600 text-sm">If disclosed, understand how your pricing compared. Were you too high, too low, or was it the quality scores?</p>
+                        <p className="text-muted-foreground text-sm">If disclosed, understand how your pricing compared. Were you too high, too low, or was it the quality scores?</p>
                       </div>
                     </div>
                   </CardContent>
@@ -170,7 +170,7 @@ const TenderFeedback = () => {
 
             {/* Common Patterns */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Common failure patterns</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Common failure patterns</h2>
 
               <div className="space-y-4">
                 <Card className="border-amber-200 bg-amber-50/30">
@@ -225,7 +225,7 @@ const TenderFeedback = () => {
 
             {/* Building a Feedback System */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Building a feedback system</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Building a feedback system</h2>
 
               <Card className="border-0 shadow-xl bg-gradient-to-r from-violet-50 to-purple-50">
                 <CardContent className="p-8">
@@ -239,7 +239,7 @@ const TenderFeedback = () => {
                       <div className="w-8 h-8 bg-violet-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</div>
                       <div>
                         <h4 className="font-bold">Collect</h4>
-                        <p className="text-sm text-gray-600">Request feedback for every bid—wins and losses. Store in a central database.</p>
+                        <p className="text-sm text-muted-foreground">Request feedback for every bid—wins and losses. Store in a central database.</p>
                       </div>
                     </div>
                     
@@ -247,7 +247,7 @@ const TenderFeedback = () => {
                       <div className="w-8 h-8 bg-violet-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">2</div>
                       <div>
                         <h4 className="font-bold">Analyse</h4>
-                        <p className="text-sm text-gray-600">Look for patterns across multiple bids. What issues recur? What strengths are consistently recognised?</p>
+                        <p className="text-sm text-muted-foreground">Look for patterns across multiple bids. What issues recur? What strengths are consistently recognised?</p>
                       </div>
                     </div>
                     
@@ -255,7 +255,7 @@ const TenderFeedback = () => {
                       <div className="w-8 h-8 bg-violet-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">3</div>
                       <div>
                         <h4 className="font-bold">Act</h4>
-                        <p className="text-sm text-gray-600">Create specific action plans. Update templates, processes, and training based on findings.</p>
+                        <p className="text-sm text-muted-foreground">Create specific action plans. Update templates, processes, and training based on findings.</p>
                       </div>
                     </div>
                     
@@ -263,7 +263,7 @@ const TenderFeedback = () => {
                       <div className="w-8 h-8 bg-violet-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">4</div>
                       <div>
                         <h4 className="font-bold">Measure</h4>
-                        <p className="text-sm text-gray-600">Track win rates and scores over time. Verify that changes are having the desired effect.</p>
+                        <p className="text-sm text-muted-foreground">Track win rates and scores over time. Verify that changes are having the desired effect.</p>
                       </div>
                     </div>
                   </div>
@@ -273,14 +273,14 @@ const TenderFeedback = () => {
 
             {/* Impact */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">The impact of systematic feedback analysis</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">The impact of systematic feedback analysis</h2>
 
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <Card className="border-0 shadow-lg text-center">
                   <CardContent className="p-6">
-                    <TrendingUp className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-green-600 mb-2">+25%</div>
-                    <p className="text-sm text-gray-600">Win rate improvement</p>
+                    <TrendingUp className="w-12 h-12 text-success mx-auto mb-4" />
+                    <div className="text-3xl font-bold text-success mb-2">+25%</div>
+                    <p className="text-sm text-muted-foreground">Win rate improvement</p>
                   </CardContent>
                 </Card>
 
@@ -288,7 +288,7 @@ const TenderFeedback = () => {
                   <CardContent className="p-6">
                     <Target className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                     <div className="text-3xl font-bold text-blue-600 mb-2">+15%</div>
-                    <p className="text-sm text-gray-600">Average quality scores</p>
+                    <p className="text-sm text-muted-foreground">Average quality scores</p>
                   </CardContent>
                 </Card>
 
@@ -296,7 +296,7 @@ const TenderFeedback = () => {
                   <CardContent className="p-6">
                     <MessageSquare className="w-12 h-12 text-purple-600 mx-auto mb-4" />
                     <div className="text-3xl font-bold text-purple-600 mb-2">Better</div>
-                    <p className="text-sm text-gray-600">Buyer relationships</p>
+                    <p className="text-sm text-muted-foreground">Buyer relationships</p>
                   </CardContent>
                 </Card>
               </div>
@@ -304,9 +304,9 @@ const TenderFeedback = () => {
 
             {/* How Charly Helps */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">How Charly helps you learn from feedback</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">How Charly helps you learn from feedback</h2>
               
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-foreground leading-relaxed mb-6">
                 Charly AI tracks all your bid outcomes and helps you identify patterns and improvement opportunities across your portfolio.
               </p>
 
@@ -315,7 +315,7 @@ const TenderFeedback = () => {
                   <Lightbulb className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Pattern recognition</h4>
-                    <p className="text-sm text-gray-600">AI identifies recurring issues across your bids that you might miss.</p>
+                    <p className="text-sm text-muted-foreground">AI identifies recurring issues across your bids that you might miss.</p>
                   </div>
                 </div>
                 
@@ -323,15 +323,15 @@ const TenderFeedback = () => {
                   <BarChart3 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Performance tracking</h4>
-                    <p className="text-sm text-gray-600">Monitor win rates, scores, and trends over time with visual dashboards.</p>
+                    <p className="text-sm text-muted-foreground">Monitor win rates, scores, and trends over time with visual dashboards.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <Target className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                  <Target className="w-6 h-6 text-success flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Improvement suggestions</h4>
-                    <p className="text-sm text-gray-600">Get AI-powered recommendations based on your feedback history.</p>
+                    <p className="text-sm text-muted-foreground">Get AI-powered recommendations based on your feedback history.</p>
                   </div>
                 </div>
                 
@@ -339,7 +339,7 @@ const TenderFeedback = () => {
                   <RefreshCw className="w-6 h-6 text-purple-500 flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Continuous learning</h4>
-                    <p className="text-sm text-gray-600">Charly learns from your wins and losses to give better future recommendations.</p>
+                    <p className="text-sm text-muted-foreground">Charly learns from your wins and losses to give better future recommendations.</p>
                   </div>
                 </div>
               </div>
@@ -357,7 +357,7 @@ const TenderFeedback = () => {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <SafeLink to="/en/demo">
-                      <Button size="lg" className="bg-white text-violet-700 hover:bg-violet-50">
+                      <Button size="lg" className="bg-card text-violet-700 hover:bg-violet-50">
                         Book a demo
                         <ArrowRight className="ml-2 w-5 h-5" />
                       </Button>

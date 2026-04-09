@@ -188,7 +188,7 @@ export const NewsletterAdmin = () => {
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <Users className="w-5 h-5 text-green-500" />
+              <Users className="w-5 h-5 text-success" />
               <div>
                 <p className="text-sm text-muted-foreground">Abonnés actifs</p>
                 <p className="text-2xl font-bold">{stats.active_subscribers}</p>

@@ -27,7 +27,7 @@ const StrategicWatch = () => {
     <>
       <SEOHead />
       <StructuredData />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40">
+      <div className="min-h-screen bg-background">
         <Header />
         
         <main className="pt-32 pb-20">
@@ -39,15 +39,15 @@ const StrategicWatch = () => {
                 Respond effectively to tenders
               </Badge>
               
-              <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-gray-900">
+              <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-foreground">
                 Strategic Watch: Your First Step Towards Success
               </h1>
               
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
                 How to structure effective market intelligence on public tenders so you never miss an opportunity again
               </p>
               
-              <div className="flex items-center gap-6 text-sm text-gray-500">
+              <div className="flex items-center gap-6 text-sm text-muted-foreground">
                 <span>October 1, 2025</span>
                 <span>•</span>
                 <span>9 min read</span>
@@ -56,36 +56,36 @@ const StrategicWatch = () => {
 
             {/* Introduction */}
             <section className="prose prose-lg max-w-none mb-12">
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-foreground leading-relaxed">
                 <strong>In the world of public procurement, information is power.</strong> Companies that win the most contracts are not necessarily the largest or cheapest—they are those that detect opportunities first and prepare their responses in advance.
               </p>
               
               <blockquote className="border-l-4 border-cyan-500 pl-6 my-8 bg-cyan-50/50 py-4 rounded-r-lg">
-                <p className="text-lg font-medium text-gray-800 mb-2">
+                <p className="text-lg font-medium text-foreground mb-2">
                   &quot;80% of public contracts are won by companies that identified the opportunity more than 30 days before publication.&quot;
                 </p>
-                <cite className="text-sm text-gray-600">— Eligibly Study 2025</cite>
+                <cite className="text-sm text-muted-foreground">— Eligibly Study 2025</cite>
               </blockquote>
             </section>
 
             {/* Why Strategic Watch */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Why is strategic watch essential?</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Why is strategic watch essential?</h2>
               
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6 text-center">
                     <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                     <h3 className="font-bold mb-2">Timing</h3>
-                    <p className="text-sm text-gray-600">Average response time is 21 days. Without a watch, you discover tenders too late.</p>
+                    <p className="text-sm text-muted-foreground">Average response time is 21 days. Without a watch, you discover tenders too late.</p>
                   </CardContent>
                 </Card>
 
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6 text-center">
-                    <Target className="w-12 h-12 text-green-600 mx-auto mb-4" />
+                    <Target className="w-12 h-12 text-success mx-auto mb-4" />
                     <h3 className="font-bold mb-2">Targeting</h3>
-                    <p className="text-sm text-gray-600">Focus your efforts on opportunities that really match your profile.</p>
+                    <p className="text-sm text-muted-foreground">Focus your efforts on opportunities that really match your profile.</p>
                   </CardContent>
                 </Card>
 
@@ -93,7 +93,7 @@ const StrategicWatch = () => {
                   <CardContent className="p-6 text-center">
                     <Zap className="w-12 h-12 text-purple-600 mx-auto mb-4" />
                     <h3 className="font-bold mb-2">Anticipation</h3>
-                    <p className="text-sm text-gray-600">Detect early signals and prepare your positioning before publication.</p>
+                    <p className="text-sm text-muted-foreground">Detect early signals and prepare your positioning before publication.</p>
                   </CardContent>
                 </Card>
               </div>
@@ -101,7 +101,7 @@ const StrategicWatch = () => {
 
             {/* Essential Sources */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Essential sources to monitor</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Essential sources to monitor</h2>
 
               <div className="space-y-6">
                 <Card className="border-0 shadow-lg">
@@ -110,8 +110,8 @@ const StrategicWatch = () => {
                       <Globe className="w-8 h-8 text-blue-600 flex-shrink-0" />
                       <div>
                         <h3 className="font-bold mb-2">Official platforms</h3>
-                        <p className="text-gray-600 text-sm mb-3">Primary sources where tenders are published.</p>
-                        <ul className="text-sm text-gray-500 space-y-1">
+                        <p className="text-muted-foreground text-sm mb-3">Primary sources where tenders are published.</p>
+                        <ul className="text-sm text-muted-foreground space-y-1">
                           <li>• TED (European Union)</li>
                           <li>• National government portals</li>
                           <li>• Local authority platforms</li>
@@ -127,8 +127,8 @@ const StrategicWatch = () => {
                       <Bell className="w-8 h-8 text-amber-600 flex-shrink-0" />
                       <div>
                         <h3 className="font-bold mb-2">Anticipation sources</h3>
-                        <p className="text-gray-600 text-sm mb-3">Detect opportunities before official publication.</p>
-                        <ul className="text-sm text-gray-500 space-y-1">
+                        <p className="text-muted-foreground text-sm mb-3">Detect opportunities before official publication.</p>
+                        <ul className="text-sm text-muted-foreground space-y-1">
                           <li>• Prior information notices</li>
                           <li>• Investment programmes</li>
                           <li>• Local press and announcements</li>
@@ -141,11 +141,11 @@ const StrategicWatch = () => {
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <Database className="w-8 h-8 text-green-600 flex-shrink-0" />
+                      <Database className="w-8 h-8 text-success flex-shrink-0" />
                       <div>
                         <h3 className="font-bold mb-2">Market data</h3>
-                        <p className="text-gray-600 text-sm mb-3">Enrich your analysis with historical data.</p>
-                        <ul className="text-sm text-gray-500 space-y-1">
+                        <p className="text-muted-foreground text-sm mb-3">Enrich your analysis with historical data.</p>
+                        <ul className="text-sm text-muted-foreground space-y-1">
                           <li>• Contract award notices</li>
                           <li>• Buyer purchasing history</li>
                           <li>• Prices and trends</li>
@@ -159,14 +159,14 @@ const StrategicWatch = () => {
 
             {/* Structuring Watch */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Structuring your strategic watch</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Structuring your strategic watch</h2>
               
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-foreground leading-relaxed mb-6">
                 An effective watch is based on clearly defined criteria. Here are the essential filters to configure:
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <Card className="border-blue-200 bg-blue-50/50">
+                <Card className="border-primary/20 bg-blue-50/50">
                   <CardContent className="p-6">
                     <Filter className="w-8 h-8 text-blue-600 mb-4" />
                     <h3 className="font-bold mb-3 text-blue-800">Geographic filters</h3>
@@ -178,11 +178,11 @@ const StrategicWatch = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-green-200 bg-green-50/50">
+                <Card className="border-success/20 bg-success/10/50">
                   <CardContent className="p-6">
-                    <Target className="w-8 h-8 text-green-600 mb-4" />
-                    <h3 className="font-bold mb-3 text-green-800">Sector filters</h3>
-                    <ul className="text-sm text-green-700 space-y-2">
+                    <Target className="w-8 h-8 text-success mb-4" />
+                    <h3 className="font-bold mb-3 text-success">Sector filters</h3>
+                    <ul className="text-sm text-success space-y-2">
                       <li>• CPV codes</li>
                       <li>• Type of service/supply</li>
                       <li>• Technical specialities</li>
@@ -218,13 +218,13 @@ const StrategicWatch = () => {
 
             {/* Common Errors */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Common watch errors to avoid</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Common watch errors to avoid</h2>
 
               <div className="space-y-4">
                 <Card className="border-red-200 bg-red-50/30">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <AlertTriangle className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                      <AlertTriangle className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold mb-2 text-red-800">Too broad watch</h3>
                         <p className="text-sm text-red-700">Monitoring everything leads to drowning in irrelevant information. Focus on your key segments.</p>
@@ -236,7 +236,7 @@ const StrategicWatch = () => {
                 <Card className="border-red-200 bg-red-50/30">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <AlertTriangle className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                      <AlertTriangle className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold mb-2 text-red-800">Single-source reliance</h3>
                         <p className="text-sm text-red-700">Relying on one source means missing opportunities published elsewhere.</p>
@@ -248,7 +248,7 @@ const StrategicWatch = () => {
                 <Card className="border-red-200 bg-red-50/30">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <AlertTriangle className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                      <AlertTriangle className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold mb-2 text-red-800">Irregular frequency</h3>
                         <p className="text-sm text-red-700">Checking watch once a week is not enough. Some tenders have very short deadlines.</p>
@@ -261,42 +261,42 @@ const StrategicWatch = () => {
 
             {/* How Charly Helps */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">How Charly automates your strategic watch</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">How Charly automates your strategic watch</h2>
               
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-foreground leading-relaxed mb-6">
                 Charly AI monitors thousands of sources 24/7 and instantly alerts you to opportunities matching your criteria. No more lost time on manual monitoring.
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-success flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Instant detection</h4>
-                    <p className="text-sm text-gray-600">Receive alerts within minutes of a relevant tender being published.</p>
+                    <p className="text-sm text-muted-foreground">Receive alerts within minutes of a relevant tender being published.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-success flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Automatic analysis</h4>
-                    <p className="text-sm text-gray-600">Each opportunity is pre-analysed: eligibility, key deadlines, Go/No Go recommendation.</p>
+                    <p className="text-sm text-muted-foreground">Each opportunity is pre-analysed: eligibility, key deadlines, Go/No Go recommendation.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-success flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Customised filters</h4>
-                    <p className="text-sm text-gray-600">Configure your criteria once and Charly applies them to all sources.</p>
+                    <p className="text-sm text-muted-foreground">Configure your criteria once and Charly applies them to all sources.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-success flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Anticipation alerts</h4>
-                    <p className="text-sm text-gray-600">Be notified of early signals before official tender publication.</p>
+                    <p className="text-sm text-muted-foreground">Be notified of early signals before official tender publication.</p>
                   </div>
                 </div>
               </div>
@@ -314,7 +314,7 @@ const StrategicWatch = () => {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <SafeLink to="/en/demo">
-                      <Button size="lg" className="bg-white text-cyan-700 hover:bg-cyan-50">
+                      <Button size="lg" className="bg-card text-cyan-700 hover:bg-cyan-50">
                         Book a demo
                         <ArrowRight className="ml-2 w-5 h-5" />
                       </Button>

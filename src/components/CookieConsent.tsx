@@ -153,7 +153,7 @@ export const CookieConsent = memo(() => {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <Shield className="h-5 w-5 text-green-600" aria-hidden="true" />
+                    <Shield className="h-5 w-5 text-success" aria-hidden="true" />
                     <div>
                       <h4 className="font-medium">{t('cookies.necessary.title')}</h4>
                       <p className="text-sm text-muted-foreground">

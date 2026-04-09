@@ -8,7 +8,7 @@ import { Check, X, Minus, ArrowRight, BarChart3 } from "lucide-react";
 import { ArticleRecommendations } from "@/components/ArticleRecommendations";
 
 const Icon = ({ v }: { v: "y" | "n" | "p" }) => {
-  if (v === "y") return <Check className="w-5 h-5 text-green-500" />;
+  if (v === "y") return <Check className="w-5 h-5 text-success" />;
   if (v === "n") return <X className="w-5 h-5 text-red-400" />;
   return <Minus className="w-5 h-5 text-amber-400" />;
 };
@@ -103,7 +103,7 @@ const EligiblyVsTengo = () => {
               <h2 className="text-2xl font-bold font-display mb-4">Testez le scoring prédictif d'Eligibly</h2>
               <p className="text-white/80 mb-6">Obtenez votre premier score de compatibilité en moins de 5 minutes.</p>
               <SafeLink to="/demo">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-bold">
+                <Button size="lg" className="bg-card text-primary hover:bg-card font-bold">
                   Essai gratuit 14 jours <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </SafeLink>

@@ -23,7 +23,7 @@ export const SectorsSection = () => {
       icon: Users,
       name: "Conseil & Services",
       description: "Audit, formation, accompagnement",
-      color: "bg-green-500"
+      color: "bg-success/100"
     },
     {
       icon: Stethoscope,
@@ -67,7 +67,7 @@ export const SectorsSection = () => {
           {sectors.map((sector, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-elegant transition-all duration-300 border bg-white"
+              className="group hover:shadow-elegant transition-all duration-300 border bg-card"
             >
               <CardContent className="p-4 sm:p-6">
                 <div className="flex items-start gap-3 sm:gap-4">
@@ -89,7 +89,7 @@ export const SectorsSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center bg-white rounded-2xl p-6 sm:p-8 shadow-card max-w-4xl mx-auto">
+        <div className="text-center bg-card rounded-2xl p-6 sm:p-8 shadow-card max-w-4xl mx-auto">
           <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
             Votre secteur n'apparaît pas dans la liste ?
           </h3>

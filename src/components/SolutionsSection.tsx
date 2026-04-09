@@ -19,7 +19,7 @@ export const SolutionsSection = () => {
       description: "Trouvez les appels d'offres formation et développez votre activité avec les collectivités.",
       features: ["Formations professionnelles", "Marchés éducation", "Accompagnement RH"],
       stats: { metric: "2.4M€", label: "de marchés formation détectés" },
-      color: "bg-green-500"
+      color: "bg-success/100"
     },
     {
       icon: Heart,

@@ -114,7 +114,7 @@ export const FAQSection = () => {
                 {openItems.includes(index) && (
                   <div className="px-6 pb-6">
                     <div className="flex items-start gap-3 pt-2">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <p className="text-muted-foreground leading-relaxed">
                         {item.answer}
                       </p>

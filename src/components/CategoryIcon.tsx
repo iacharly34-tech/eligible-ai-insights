@@ -19,7 +19,7 @@ const categoryIconMap: Record<string, LucideIcon> = {
 
 const categoryColorMap: Record<string, string> = {
   "IA & automatisation": "from-purple-500 to-indigo-600",
-  "Critères RSE": "from-green-500 to-emerald-600", 
+  "Critères RSE": "from-success/100 to-emerald-600", 
   "PME & stratégies AO": "from-blue-500 to-cyan-600",
   "Signaux faibles": "from-orange-500 to-red-600",
   "Conformité & sécurité": "from-gray-500 to-slate-600",

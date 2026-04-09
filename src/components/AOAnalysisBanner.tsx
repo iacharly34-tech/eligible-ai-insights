@@ -73,7 +73,7 @@ export const AOAnalysisBanner = ({
       value: rejectedAOCount,
       label: "AO écartés par Charly",
       description: "Opportunités non pertinentes filtrées pour vous faire gagner du temps.",
-      color: "text-red-600",
+      color: "text-destructive",
       bgColor: "bg-red-50"
     },
     {

@@ -58,7 +58,7 @@ export const BackgroundRemover: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {characterImages.map((character, index) => (
             <div key={index} className="space-y-2">
-              <div className="aspect-square border border-border rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 p-4" style={{
+              <div className="aspect-square border border-border rounded-lg overflow-hidden bg-secondary dark:bg-gray-800 p-4" style={{
                 backgroundImage: `
                   linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
                   linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 

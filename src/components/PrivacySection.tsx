@@ -46,7 +46,7 @@ export const PrivacySection = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 bg-white">
+    <section className="py-12 sm:py-16 bg-card">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-8 sm:mb-12 space-y-4">
           <Badge variant="outline" className="text-primary border-primary">
@@ -100,7 +100,7 @@ export const PrivacySection = () => {
           {privacyFeatures.map((feature, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-elegant transition-all duration-300 border bg-white"
+              className="group hover:shadow-elegant transition-all duration-300 border bg-card"
             >
               <CardHeader className="space-y-3 sm:space-y-4">
                 <div className="flex items-center justify-between">

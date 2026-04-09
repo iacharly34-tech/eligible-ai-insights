@@ -34,7 +34,7 @@ export default function CriteresRSE() {
             </header>
 
             <div className="prose prose-lg max-w-none">
-              <blockquote className="border-l-4 border-green-500 pl-6 italic text-lg mb-8 bg-green-50 p-6 rounded-r-lg">
+              <blockquote className="border-l-4 border-green-500 pl-6 italic text-lg mb-8 bg-success/10 p-6 rounded-r-lg">
                 "On nous demande un plan RSE, mais on ne sait pas par où commencer."
                 <cite className="block mt-2 text-sm text-muted-foreground not-italic">— Responsable PME logistique</cite>
               </blockquote>
@@ -49,15 +49,15 @@ export default function CriteresRSE() {
                 L'évolution réglementaire transforme profondément les exigences des <strong>marchés publics</strong>. Le Code de la commande publique impose désormais l'intégration systématique de considérations environnementales, et la loi Climat et Résilience de 2021 accélère cette transition.
               </p>
 
-              <div className="bg-green-50 border border-green-200 rounded-lg p-6 my-8">
-                <h3 className="text-green-800 font-semibold mb-3 flex items-center gap-2">
+              <div className="bg-success/10 border border-success/20 rounded-lg p-6 my-8">
+                <h3 className="text-success font-semibold mb-3 flex items-center gap-2">
                   <Leaf className="h-5 w-5" />
                   Contexte réglementaire 2024-2025
                 </h3>
-                <p className="text-green-700 text-sm mb-3">
+                <p className="text-success text-sm mb-3">
                   Depuis janvier 2024, les acheteurs publics doivent obligatoirement intégrer au moins une clause environnementale dans tous les marchés supérieurs à 100 000€. Cette obligation s'étend progressivement à tous les marchés d'ici 2026.
                 </p>
-                <p className="text-green-700 text-sm">
+                <p className="text-success text-sm">
                   <strong>Source :</strong> Direction des Affaires Juridiques (DAJ) - Ministère de l'Économie
                 </p>
               </div>
@@ -65,7 +65,7 @@ export default function CriteresRSE() {
               <div className="grid md:grid-cols-3 gap-6 my-8">
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <Leaf className="h-8 w-8 text-green-600 mx-auto mb-4" />
+                    <Leaf className="h-8 w-8 text-success mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">29%</h3>
                     <p className="text-sm text-muted-foreground">
                       Marchés avec clause environnementale en 2022
@@ -100,16 +100,16 @@ export default function CriteresRSE() {
                 Les <strong>AO durables</strong> intègrent désormais des critères environnementaux sophistiqués qui vont bien au-delà du simple "respect de l'environnement". Les acheteurs publics demandent des preuves concrètes et mesurables.
               </p>
 
-              <Card className="my-6 border-green-200">
+              <Card className="my-6 border-success/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-4 flex items-center gap-2 text-green-800">
+                  <h4 className="font-semibold mb-4 flex items-center gap-2 text-success">
                     <Leaf className="h-5 w-5" />
                     Top 5 des exigences environnementales
                   </h4>
                   
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Bilan carbone et réduction des émissions</h5>
                         <p className="text-sm text-muted-foreground">Calcul et engagement de réduction des émissions GES liées au projet</p>
@@ -117,7 +117,7 @@ export default function CriteresRSE() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Économie circulaire</h5>
                         <p className="text-sm text-muted-foreground">Valorisation des déchets, réemploi, circuits courts d'approvisionnement</p>
@@ -125,7 +125,7 @@ export default function CriteresRSE() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Certifications environnementales</h5>
                         <p className="text-sm text-muted-foreground">ISO 14001, labels sectoriels, certifications produits</p>
@@ -133,7 +133,7 @@ export default function CriteresRSE() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Biodiversité et ressources naturelles</h5>
                         <p className="text-sm text-muted-foreground">Protection des écosystèmes, gestion durable des ressources</p>
@@ -141,7 +141,7 @@ export default function CriteresRSE() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Innovation environnementale</h5>
                         <p className="text-sm text-muted-foreground">Solutions innovantes pour la transition écologique</p>
@@ -205,7 +205,7 @@ export default function CriteresRSE() {
                 Avant de se lancer dans la course aux labels, il faut faire l'inventaire de ses pratiques existantes. Beaucoup de PME sous-estiment leurs atouts RSE actuels.
               </p>
 
-              <Card className="my-6 border-blue-200">
+              <Card className="my-6 border-primary/20">
                 <CardContent className="p-6">
                   <h4 className="font-semibold mb-3 flex items-center gap-2 text-blue-800">
                     <Award className="h-5 w-5" />
@@ -276,7 +276,7 @@ export default function CriteresRSE() {
                 Les <strong>critères RSE</strong> ne doivent pas être vus comme une contrainte mais comme un levier de différenciation. Les PME agiles peuvent souvent innover plus rapidement que les grands groupes.
               </p>
 
-              <blockquote className="border-l-4 border-green-500 pl-6 italic text-lg my-6 bg-green-50 p-4 rounded-r-lg">
+              <blockquote className="border-l-4 border-green-500 pl-6 italic text-lg my-6 bg-success/10 p-4 rounded-r-lg">
                 "On a fait de notre petite taille un atout : circuits courts, relations directes avec les producteurs locaux, flexibilité pour adapter nos pratiques. Sur les critères environnementaux, on bat les grands groupes."
                 <cite className="block mt-2 text-sm text-muted-foreground not-italic">— Dirigeante PME restauration collective</cite>
               </blockquote>
@@ -296,7 +296,7 @@ export default function CriteresRSE() {
                   
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Détection des critères cachés</h5>
                         <p className="text-sm text-muted-foreground">Identification des exigences RSE implicites dans le cahier des charges</p>
@@ -304,7 +304,7 @@ export default function CriteresRSE() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Pondération réelle</h5>
                         <p className="text-sm text-muted-foreground">Calcul du poids effectif des critères RSE dans la notation finale</p>
@@ -312,7 +312,7 @@ export default function CriteresRSE() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Benchmark concurrentiel</h5>
                         <p className="text-sm text-muted-foreground">Évaluation de votre positionnement RSE face aux attentes du marché</p>
@@ -320,7 +320,7 @@ export default function CriteresRSE() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h5 className="font-semibold text-sm">Plan d'action personnalisé</h5>
                         <p className="text-sm text-muted-foreground">Recommandations prioritaires selon votre profil et vos marchés cibles</p>
@@ -363,7 +363,7 @@ export default function CriteresRSE() {
               <div className="grid md:grid-cols-3 gap-6 my-8">
                 <Card>
                   <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-green-600 mb-2">+25%</div>
+                    <div className="text-2xl font-bold text-success mb-2">+25%</div>
                     <div className="text-sm text-muted-foreground">
                       Augmentation du taux de succès sur AO durables
                     </div>

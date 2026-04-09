@@ -36,7 +36,7 @@ const AProposEligibly = () => {
     <>
       <SEOHead />
       <StructuredData page="about" />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50/30 to-emerald-50/40">
+      <div className="min-h-screen bg-background">
         <Header />
         
         <main className="page-container">
@@ -61,13 +61,13 @@ const AProposEligibly = () => {
           </section>
 
           {/* Expertise Section */}
-          <section className="py-20 px-4 bg-white/40">
+          <section className="py-20 px-4 bg-[hsl(var(--hero-dark))]">
             <div className="container mx-auto max-w-6xl">
               <h2 className="text-3xl font-bold text-center mb-12">
                 {isEnglish ? "Public Tender & Government Contract Expertise" : "Expertise Appels d'Offres Publics & Marchés Publics"}
               </h2>
               <div className="grid md:grid-cols-3 gap-8">
-                <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+                <div className="text-center p-6 bg-card rounded-xl shadow-sm">
                   <Target className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="font-semibold mb-3">
                     {isEnglish ? "Tender Analysis" : "Analyse des AO"}
@@ -79,7 +79,7 @@ const AProposEligibly = () => {
                     }
                   </p>
                 </div>
-                <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+                <div className="text-center p-6 bg-card rounded-xl shadow-sm">
                   <TrendingUp className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="font-semibold mb-3">
                     {isEnglish ? "Success Optimization" : "Optimisation Succès"}
@@ -91,7 +91,7 @@ const AProposEligibly = () => {
                     }
                   </p>
                 </div>
-                <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+                <div className="text-center p-6 bg-card rounded-xl shadow-sm">
                   <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="font-semibold mb-3">
                     {isEnglish ? "Compliance Assurance" : "Conformité Garantie"}
@@ -173,31 +173,31 @@ const AProposEligibly = () => {
           </section>
 
           {/* Statistiques et Résultats */}
-          <section className="py-20 px-4 bg-white/40">
+          <section className="py-20 px-4 bg-[hsl(var(--hero-dark))]">
             <div className="container mx-auto max-w-6xl">
               <h2 className="text-3xl font-bold text-center mb-12">
                 {isEnglish ? "Proven Results on Public Tenders" : "Résultats Prouvés sur les Appels d'Offres Publics"}
               </h2>
               <div className="grid md:grid-cols-4 gap-6">
-                <div className="text-center p-6 bg-white rounded-xl">
+                <div className="text-center p-6 bg-card rounded-xl">
                   <div className="text-3xl font-bold text-primary mb-2">+47%</div>
                   <p className="text-sm text-muted-foreground">
                     {isEnglish ? "Public tender success rate increase" : "Augmentation taux de succès AO"}
                   </p>
                 </div>
-                <div className="text-center p-6 bg-white rounded-xl">
+                <div className="text-center p-6 bg-card rounded-xl">
                   <div className="text-3xl font-bold text-primary mb-2">93%</div>
                   <p className="text-sm text-muted-foreground">
                     {isEnglish ? "AI prediction accuracy" : "Précision prédictions IA"}
                   </p>
                 </div>
-                <div className="text-center p-6 bg-white rounded-xl">
+                <div className="text-center p-6 bg-card rounded-xl">
                   <div className="text-3xl font-bold text-primary mb-2">-75%</div>
                   <p className="text-sm text-muted-foreground">
                     {isEnglish ? "Time saved on tender analysis" : "Temps économisé analyse AO"}
                   </p>
                 </div>
-                <div className="text-center p-6 bg-white rounded-xl">
+                <div className="text-center p-6 bg-card rounded-xl">
                   <div className="text-3xl font-bold text-primary mb-2">€15M+</div>
                   <p className="text-sm text-muted-foreground">
                     {isEnglish ? "Public contracts won by clients" : "Marchés publics gagnés par nos clients"}
@@ -258,7 +258,7 @@ const AProposEligibly = () => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-2xl">
+                <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl">
                   <h3 className="text-xl font-semibold mb-6">
                     {isEnglish ? "Complete Public Tender Ecosystem" : "Écosystème Complet Appels d'Offres Publics"}
                   </h3>
@@ -290,13 +290,13 @@ const AProposEligibly = () => {
           </section>
 
           {/* Notre Expertise Technique */}
-          <section className="py-20 px-4 bg-white/40">
+          <section className="py-20 px-4 bg-[hsl(var(--hero-dark))]">
             <div className="container mx-auto max-w-6xl">
               <h2 className="text-3xl font-bold text-center mb-12">
                 {isEnglish ? "Technical Expertise in Public Procurement" : "Expertise Technique en Marchés Publics"}
               </h2>
               <div className="grid md:grid-cols-3 gap-8">
-                <div className="p-6 bg-white rounded-xl">
+                <div className="p-6 bg-card rounded-xl">
                   <h3 className="font-semibold mb-4">
                     {isEnglish ? "AI-Powered Analysis" : "Analyse IA Avancée"}
                   </h3>
@@ -310,7 +310,7 @@ const AProposEligibly = () => {
                     {isEnglish ? "93% prediction accuracy" : "93% de précision prédictive"}
                   </div>
                 </div>
-                <div className="p-6 bg-white rounded-xl">
+                <div className="p-6 bg-card rounded-xl">
                   <h3 className="font-semibold mb-4">
                     {isEnglish ? "Regulatory Compliance" : "Conformité Réglementaire"}
                   </h3>
@@ -324,7 +324,7 @@ const AProposEligibly = () => {
                     {isEnglish ? "100% regulatory coverage" : "100% couverture réglementaire"}
                   </div>
                 </div>
-                <div className="p-6 bg-white rounded-xl">
+                <div className="p-6 bg-card rounded-xl">
                   <h3 className="font-semibold mb-4">
                     {isEnglish ? "Strategic Intelligence" : "Intelligence Stratégique"}
                   </h3>

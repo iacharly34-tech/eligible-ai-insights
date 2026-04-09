@@ -38,27 +38,27 @@ const NumeriqueResponsable = () => {
         readingTime="12 min"
         alternateLanguage={{ lang: "en", url: "/en/sustainable-digital" }}
       />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50/30 to-emerald-50/40">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50/30 to-success/10/40">
         <Header />
         
         <main className="pt-32 pb-20">
           <article className="container mx-auto max-w-4xl px-4">
             {/* Header */}
             <header className="mb-12">
-              <Badge className="mb-6 bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 border-green-200">
+              <Badge className="mb-6 bg-gradient-to-r from-green-100 to-emerald-100 text-success border-success/20">
                 <Leaf className="w-4 h-4 mr-2" />
                 Numérique responsable
               </Badge>
               
-              <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-gray-900">
+              <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-foreground">
                 Critères environnementaux dans les AO IT, Digital et Marketing
               </h1>
               
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
                 Comment intégrer le numérique responsable dans vos réponses aux appels d'offres publics et transformer les exigences environnementales en avantage compétitif.
               </p>
               
-              <div className="flex items-center gap-6 text-sm text-gray-500">
+              <div className="flex items-center gap-6 text-sm text-muted-foreground">
                 <span>3 décembre 2025</span>
                 <span>•</span>
                 <span>12 min de lecture</span>
@@ -67,15 +67,15 @@ const NumeriqueResponsable = () => {
 
             {/* Introduction */}
             <section className="prose prose-lg max-w-none mb-12">
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-foreground leading-relaxed">
                 <strong>Le numérique représente aujourd'hui 4% des émissions mondiales de gaz à effet de serre</strong>, un chiffre en croissance de 6% par an. Face à l'urgence climatique, les acheteurs publics intègrent désormais systématiquement des critères environnementaux dans leurs marchés IT, digital et marketing.
               </p>
               
-              <blockquote className="border-l-4 border-green-500 pl-6 my-8 bg-green-50/50 py-4 rounded-r-lg">
-                <p className="text-lg font-medium text-gray-800 mb-2">
+              <blockquote className="border-l-4 border-green-500 pl-6 my-8 bg-success/10/50 py-4 rounded-r-lg">
+                <p className="text-lg font-medium text-foreground mb-2">
                   "Depuis 2024, 100% de nos marchés numériques supérieurs à 40 000€ intègrent des critères environnementaux représentant au minimum 10% de la notation."
                 </p>
-                <cite className="text-sm text-gray-600">— Direction des Achats, Ministère de la Transition Écologique</cite>
+                <cite className="text-sm text-muted-foreground">— Direction des Achats, Ministère de la Transition Écologique</cite>
               </blockquote>
             </section>
 
@@ -84,9 +84,9 @@ const NumeriqueResponsable = () => {
               <div className="grid md:grid-cols-4 gap-4">
                 <Card className="border-0 shadow-lg text-center">
                   <CardContent className="p-6">
-                    <Monitor className="w-10 h-10 text-green-600 mx-auto mb-3" />
-                    <div className="text-2xl font-bold text-green-600 mb-1">4%</div>
-                    <p className="text-xs text-gray-600">Émissions GES mondiales du numérique</p>
+                    <Monitor className="w-10 h-10 text-success mx-auto mb-3" />
+                    <div className="text-2xl font-bold text-success mb-1">4%</div>
+                    <p className="text-xs text-muted-foreground">Émissions GES mondiales du numérique</p>
                   </CardContent>
                 </Card>
 
@@ -94,7 +94,7 @@ const NumeriqueResponsable = () => {
                   <CardContent className="p-6">
                     <TrendingUp className="w-10 h-10 text-blue-600 mx-auto mb-3" />
                     <div className="text-2xl font-bold text-blue-600 mb-1">+6%</div>
-                    <p className="text-xs text-gray-600">Croissance annuelle de l'impact</p>
+                    <p className="text-xs text-muted-foreground">Croissance annuelle de l'impact</p>
                   </CardContent>
                 </Card>
 
@@ -102,7 +102,7 @@ const NumeriqueResponsable = () => {
                   <CardContent className="p-6">
                     <Target className="w-10 h-10 text-purple-600 mx-auto mb-3" />
                     <div className="text-2xl font-bold text-purple-600 mb-1">10-25%</div>
-                    <p className="text-xs text-gray-600">Poids critères RSE dans les AO IT</p>
+                    <p className="text-xs text-muted-foreground">Poids critères RSE dans les AO IT</p>
                   </CardContent>
                 </Card>
 
@@ -110,7 +110,7 @@ const NumeriqueResponsable = () => {
                   <CardContent className="p-6">
                     <Award className="w-10 h-10 text-amber-600 mx-auto mb-3" />
                     <div className="text-2xl font-bold text-amber-600 mb-1">2024</div>
-                    <p className="text-xs text-gray-600">Obligation clause environnementale</p>
+                    <p className="text-xs text-muted-foreground">Obligation clause environnementale</p>
                   </CardContent>
                 </Card>
               </div>
@@ -118,28 +118,28 @@ const NumeriqueResponsable = () => {
 
             {/* Réglementation */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Le cadre réglementaire 2024-2025</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Le cadre réglementaire 2024-2025</h2>
               
-              <Card className="border-green-200 bg-green-50/50 mb-6">
+              <Card className="border-success/20 bg-success/10/50 mb-6">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <FileText className="w-8 h-8 text-green-600 flex-shrink-0" />
+                    <FileText className="w-8 h-8 text-success flex-shrink-0" />
                     <div>
-                      <h3 className="font-bold text-green-800 mb-2">Loi REEN et Code de la Commande Publique</h3>
-                      <p className="text-gray-700 text-sm mb-4">
+                      <h3 className="font-bold text-success mb-2">Loi REEN et Code de la Commande Publique</h3>
+                      <p className="text-foreground text-sm mb-4">
                         La loi REEN (Réduction de l'Empreinte Environnementale du Numérique) et les évolutions du Code de la Commande Publique imposent aux acheteurs publics d'intégrer des considérations environnementales dans leurs marchés numériques.
                       </p>
-                      <ul className="space-y-2 text-sm text-gray-700">
+                      <ul className="space-y-2 text-sm text-foreground">
                         <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
                           <span>Obligation d'une clause environnementale pour tout marché &gt; 100 000€</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
                           <span>Critère d'attribution environnemental obligatoire dès 40 000€ pour les services numériques</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
                           <span>Prise en compte du coût du cycle de vie incluant l'impact carbone</span>
                         </li>
                       </ul>
@@ -151,7 +151,7 @@ const NumeriqueResponsable = () => {
 
             {/* Critères par secteur */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Les critères environnementaux par type de marché</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Les critères environnementaux par type de marché</h2>
 
               {/* IT / Infrastructures */}
               <Card className="border-0 shadow-lg mb-6">
@@ -162,35 +162,35 @@ const NumeriqueResponsable = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg">Marchés IT & Infrastructures</h3>
-                      <p className="text-sm text-gray-500">Développement, hébergement, maintenance</p>
+                      <p className="text-sm text-muted-foreground">Développement, hébergement, maintenance</p>
                     </div>
                   </div>
                   
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-3">
-                      <h4 className="font-semibold text-sm text-gray-700">Critères fréquemment demandés</h4>
+                      <h4 className="font-semibold text-sm text-foreground">Critères fréquemment demandés</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
                           <span>Éco-conception logicielle (Green Code)</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
                           <span>PUE datacenter (Power Usage Effectiveness)</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
                           <span>Hébergement green (énergies renouvelables)</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
                           <span>Durée de vie et maintenabilité des solutions</span>
                         </li>
                       </ul>
                     </div>
                     <div className="space-y-3">
-                      <h4 className="font-semibold text-sm text-gray-700">Preuves attendues</h4>
-                      <ul className="space-y-2 text-sm text-gray-600">
+                      <h4 className="font-semibold text-sm text-foreground">Preuves attendues</h4>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
                         <li>• Bilan carbone de la solution proposée</li>
                         <li>• Certification hébergeur (ISO 14001, ISO 50001)</li>
                         <li>• Politique de gestion des équipements</li>
@@ -210,35 +210,35 @@ const NumeriqueResponsable = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg">Marchés Digital & Web</h3>
-                      <p className="text-sm text-gray-500">Sites web, applications, UX/UI</p>
+                      <p className="text-sm text-muted-foreground">Sites web, applications, UX/UI</p>
                     </div>
                   </div>
                   
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-3">
-                      <h4 className="font-semibold text-sm text-gray-700">Critères fréquemment demandés</h4>
+                      <h4 className="font-semibold text-sm text-foreground">Critères fréquemment demandés</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
                           <span>Référentiel RGESN (éco-conception services numériques)</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
                           <span>Performance web (Core Web Vitals)</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
                           <span>Accessibilité numérique (RGAA)</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
                           <span>Optimisation des assets (images, vidéos)</span>
                         </li>
                       </ul>
                     </div>
                     <div className="space-y-3">
-                      <h4 className="font-semibold text-sm text-gray-700">Preuves attendues</h4>
-                      <ul className="space-y-2 text-sm text-gray-600">
+                      <h4 className="font-semibold text-sm text-foreground">Preuves attendues</h4>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
                         <li>• Score éco-index ou EcoGrader</li>
                         <li>• Audit RGESN de sites réalisés</li>
                         <li>• Méthodologie d'éco-conception</li>
@@ -258,35 +258,35 @@ const NumeriqueResponsable = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg">Marchés Marketing & Communication</h3>
-                      <p className="text-sm text-gray-500">Campagnes digitales, contenus, SEA/SEO</p>
+                      <p className="text-sm text-muted-foreground">Campagnes digitales, contenus, SEA/SEO</p>
                     </div>
                   </div>
                   
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-3">
-                      <h4 className="font-semibold text-sm text-gray-700">Critères fréquemment demandés</h4>
+                      <h4 className="font-semibold text-sm text-foreground">Critères fréquemment demandés</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
                           <span>Bilan carbone des campagnes digitales</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
                           <span>Stratégie de communication responsable</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
                           <span>Optimisation SEO vs SEA (impact carbone)</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
                           <span>Formats publicitaires éco-responsables</span>
                         </li>
                       </ul>
                     </div>
                     <div className="space-y-3">
-                      <h4 className="font-semibold text-sm text-gray-700">Preuves attendues</h4>
-                      <ul className="space-y-2 text-sm text-gray-600">
+                      <h4 className="font-semibold text-sm text-foreground">Preuves attendues</h4>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
                         <li>• Mesure impact carbone campagnes</li>
                         <li>• Charte communication responsable</li>
                         <li>• Partenariats médias responsables</li>
@@ -300,15 +300,15 @@ const NumeriqueResponsable = () => {
 
             {/* Greenmetrics Section - Point fort de l'article */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">
+              <h2 className="text-2xl font-bold mb-6 text-foreground">
                 Construire sa feuille de route environnementale avec Greenmetrics
               </h2>
               
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-foreground leading-relaxed mb-6">
                 Répondre aux critères environnementaux des appels d'offres IT, digital et marketing nécessite une <strong>démarche structurée et des preuves tangibles</strong>. C'est là qu'intervient <strong>Greenmetrics</strong>, expert en stratégies environnementales pour le secteur numérique.
               </p>
 
-              <Card className="border-green-300 bg-gradient-to-br from-green-50 to-emerald-50 shadow-xl mb-8">
+              <Card className="border-success/20 bg-success/5 shadow-xl mb-8">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center shadow-lg">
@@ -316,19 +316,19 @@ const NumeriqueResponsable = () => {
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-green-900">Greenmetrics</h3>
-                      <p className="text-green-700">Expert RSE pour les marchés publics numériques</p>
+                      <p className="text-success">Expert RSE pour les marchés publics numériques</p>
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-6">
+                  <p className="text-foreground mb-6">
                     Greenmetrics accompagne les agences digitales, ESN et entreprises IT dans la construction de leurs stratégies environnementales pour remporter les marchés publics. Leur expertise couvre spécifiquement les secteurs IT, Digital et Marketing.
                   </p>
 
                   <div className="grid md:grid-cols-3 gap-6 mb-8">
-                    <div className="bg-white rounded-xl p-5 border border-green-200">
+                    <div className="bg-card rounded-xl p-5 border border-success/20">
                       <Monitor className="w-8 h-8 text-blue-600 mb-3" />
-                      <h4 className="font-bold text-gray-900 mb-2">Missions IT</h4>
-                      <ul className="text-sm text-gray-600 space-y-1">
+                      <h4 className="font-bold text-foreground mb-2">Missions IT</h4>
+                      <ul className="text-sm text-muted-foreground space-y-1">
                         <li>• Bilan carbone infrastructures</li>
                         <li>• Politique Green IT</li>
                         <li>• Éco-conception logicielle</li>
@@ -336,10 +336,10 @@ const NumeriqueResponsable = () => {
                       </ul>
                     </div>
 
-                    <div className="bg-white rounded-xl p-5 border border-green-200">
+                    <div className="bg-card rounded-xl p-5 border border-success/20">
                       <Globe className="w-8 h-8 text-purple-600 mb-3" />
-                      <h4 className="font-bold text-gray-900 mb-2">Missions Digital</h4>
-                      <ul className="text-sm text-gray-600 space-y-1">
+                      <h4 className="font-bold text-foreground mb-2">Missions Digital</h4>
+                      <ul className="text-sm text-muted-foreground space-y-1">
                         <li>• Audit RGESN complet</li>
                         <li>• Formation éco-conception web</li>
                         <li>• Méthodologie sobriété numérique</li>
@@ -347,10 +347,10 @@ const NumeriqueResponsable = () => {
                       </ul>
                     </div>
 
-                    <div className="bg-white rounded-xl p-5 border border-green-200">
+                    <div className="bg-card rounded-xl p-5 border border-success/20">
                       <Zap className="w-8 h-8 text-amber-600 mb-3" />
-                      <h4 className="font-bold text-gray-900 mb-2">Missions Marketing</h4>
-                      <ul className="text-sm text-gray-600 space-y-1">
+                      <h4 className="font-bold text-foreground mb-2">Missions Marketing</h4>
+                      <ul className="text-sm text-muted-foreground space-y-1">
                         <li>• Mesure empreinte campagnes</li>
                         <li>• Stratégie communication responsable</li>
                         <li>• Labels et certifications</li>
@@ -359,38 +359,38 @@ const NumeriqueResponsable = () => {
                     </div>
                   </div>
 
-                  <div className="bg-green-100 rounded-xl p-6 mb-6">
+                  <div className="bg-success/10 rounded-xl p-6 mb-6">
                     <h4 className="font-bold text-green-900 mb-3 flex items-center gap-2">
                       <Lightbulb className="w-5 h-5" />
                       Comment Greenmetrics vous aide à gagner des AO
                     </h4>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
                         <div>
                           <span className="font-semibold text-sm text-green-900">Diagnostic initial</span>
-                          <p className="text-xs text-green-700">Évaluation de votre maturité RSE et identification des quick wins</p>
+                          <p className="text-xs text-success">Évaluation de votre maturité RSE et identification des quick wins</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
                         <div>
                           <span className="font-semibold text-sm text-green-900">Feuille de route personnalisée</span>
-                          <p className="text-xs text-green-700">Plan d'action adapté à vos marchés cibles</p>
+                          <p className="text-xs text-success">Plan d'action adapté à vos marchés cibles</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
                         <div>
                           <span className="font-semibold text-sm text-green-900">Création des preuves</span>
-                          <p className="text-xs text-green-700">Documents et certifications pour vos réponses AO</p>
+                          <p className="text-xs text-success">Documents et certifications pour vos réponses AO</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
                         <div>
                           <span className="font-semibold text-sm text-green-900">Accompagnement réponse</span>
-                          <p className="text-xs text-green-700">Support pour rédiger le volet RSE de vos mémoires techniques</p>
+                          <p className="text-xs text-success">Support pour rédiger le volet RSE de vos mémoires techniques</p>
                         </div>
                       </div>
                     </div>
@@ -409,7 +409,7 @@ const NumeriqueResponsable = () => {
                     <Button 
                       size="lg"
                       variant="outline"
-                      className="border-green-600 text-green-700 hover:bg-green-50"
+                      className="border-green-600 text-success hover:bg-success/10"
                       onClick={() => window.open('https://greenmetrics.fr', '_blank')}
                     >
                       Découvrir Greenmetrics
@@ -418,15 +418,15 @@ const NumeriqueResponsable = () => {
                   </div>
 
                   <div className="mt-6 text-center">
-                    <Card className="inline-block border-green-300 bg-white">
+                    <Card className="inline-block border-success/20 bg-card">
                       <CardContent className="p-4">
-                        <p className="text-sm text-green-800 mb-2">
+                        <p className="text-sm text-success mb-2">
                           <strong>Offre spéciale lecteurs Eligibly</strong>
                         </p>
-                        <p className="text-xs text-green-700 mb-2">
+                        <p className="text-xs text-success mb-2">
                           Diagnostic environnemental gratuit + 20% sur l'accompagnement
                         </p>
-                        <div className="text-sm font-mono bg-green-100 text-green-800 px-3 py-1 rounded inline-block">
+                        <div className="text-sm font-mono bg-success/10 text-success px-3 py-1 rounded inline-block">
                           ELIGIBLY2025
                         </div>
                       </CardContent>
@@ -438,13 +438,13 @@ const NumeriqueResponsable = () => {
 
             {/* Erreurs à éviter */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Les erreurs qui coûtent des points sur les critères RSE</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Les erreurs qui coûtent des points sur les critères RSE</h2>
               
               <div className="space-y-4">
                 <Card className="border-red-200 bg-red-50/50">
                   <CardContent className="p-5">
                     <div className="flex items-start gap-4">
-                      <AlertTriangle className="w-6 h-6 text-red-500 flex-shrink-0" />
+                      <AlertTriangle className="w-6 h-6 text-destructive flex-shrink-0" />
                       <div>
                         <h4 className="font-bold text-red-800 mb-1">Greenwashing détectable</h4>
                         <p className="text-sm text-red-700">
@@ -458,7 +458,7 @@ const NumeriqueResponsable = () => {
                 <Card className="border-red-200 bg-red-50/50">
                   <CardContent className="p-5">
                     <div className="flex items-start gap-4">
-                      <AlertTriangle className="w-6 h-6 text-red-500 flex-shrink-0" />
+                      <AlertTriangle className="w-6 h-6 text-destructive flex-shrink-0" />
                       <div>
                         <h4 className="font-bold text-red-800 mb-1">Absence de métriques</h4>
                         <p className="text-sm text-red-700">
@@ -472,7 +472,7 @@ const NumeriqueResponsable = () => {
                 <Card className="border-red-200 bg-red-50/50">
                   <CardContent className="p-5">
                     <div className="flex items-start gap-4">
-                      <AlertTriangle className="w-6 h-6 text-red-500 flex-shrink-0" />
+                      <AlertTriangle className="w-6 h-6 text-destructive flex-shrink-0" />
                       <div>
                         <h4 className="font-bold text-red-800 mb-1">Réponse copier-coller</h4>
                         <p className="text-sm text-red-700">
@@ -487,11 +487,11 @@ const NumeriqueResponsable = () => {
 
             {/* Comment Charly aide */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">
+              <h2 className="text-2xl font-bold mb-6 text-foreground">
                 Comment Charly identifie les critères RSE de vos AO
               </h2>
               
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-foreground leading-relaxed mb-6">
                 L'IA Charly d'Eligibly analyse automatiquement les cahiers des charges pour identifier et pondérer les critères environnementaux, vous permettant de prioriser vos efforts.
               </p>
 
@@ -502,28 +502,28 @@ const NumeriqueResponsable = () => {
                       <Target className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-bold mb-1">Détection automatique</h4>
-                        <p className="text-sm text-gray-600">Identification des critères RSE explicites et implicites dans le CCTP</p>
+                        <p className="text-sm text-muted-foreground">Identification des critères RSE explicites et implicites dans le CCTP</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
                       <BarChart3 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-bold mb-1">Pondération réelle</h4>
-                        <p className="text-sm text-gray-600">Calcul du poids effectif des critères environnementaux dans la notation</p>
+                        <p className="text-sm text-muted-foreground">Calcul du poids effectif des critères environnementaux dans la notation</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
                       <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-bold mb-1">Recommandations ciblées</h4>
-                        <p className="text-sm text-gray-600">Suggestions d'éléments à intégrer dans votre réponse</p>
+                        <p className="text-sm text-muted-foreground">Suggestions d'éléments à intégrer dans votre réponse</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
                       <Award className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-bold mb-1">Score de compatibilité</h4>
-                        <p className="text-sm text-gray-600">Évaluation de votre positionnement RSE vs exigences du marché</p>
+                        <p className="text-sm text-muted-foreground">Évaluation de votre positionnement RSE vs exigences du marché</p>
                       </div>
                     </div>
                   </div>
@@ -543,7 +543,7 @@ const NumeriqueResponsable = () => {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <SafeLink to="/demo">
-                      <Button size="lg" className="bg-white text-green-600 hover:bg-green-50">
+                      <Button size="lg" className="bg-card text-success hover:bg-success/10">
                         Analyser mes opportunités avec Charly
                         <ArrowRight className="ml-2 w-5 h-5" />
                       </Button>

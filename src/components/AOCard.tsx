@@ -201,7 +201,7 @@ export const AOCard = ({ ao, isDetailed = false, variant = 'default' }: AOCardPr
             {/* Pénalités */}
             <div className="mb-4 text-sm">
               <span className="font-medium">Pénalités:</span> 
-              <span className="text-gray-600 ml-1">{ao.penalites}</span>
+              <span className="text-muted-foreground ml-1">{ao.penalites}</span>
             </div>
           </>
         )}

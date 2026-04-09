@@ -26,7 +26,7 @@ const PublicTenderTraining = () => {
     <>
       <SEOHead />
       <StructuredData />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40">
+      <div className="min-h-screen bg-background">
         <Header />
         
         <main className="pt-32 pb-20">
@@ -38,15 +38,15 @@ const PublicTenderTraining = () => {
                 Respond effectively to tenders
               </Badge>
               
-              <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-gray-900">
+              <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-foreground">
                 Public Procurement Training: Where to Start?
               </h1>
               
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
                 Complete guide to training, certifications, and resources for mastering public procurement
               </p>
               
-              <div className="flex items-center gap-6 text-sm text-gray-500">
+              <div className="flex items-center gap-6 text-sm text-muted-foreground">
                 <span>September 25, 2025</span>
                 <span>•</span>
                 <span>8 min read</span>
@@ -55,21 +55,21 @@ const PublicTenderTraining = () => {
 
             {/* Introduction */}
             <section className="prose prose-lg max-w-none mb-12">
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-foreground leading-relaxed">
                 <strong>Public procurement is a complex field</strong> with its own rules, terminology, and best practices. For companies wanting to enter this market or improve their results, proper training is a decisive competitive advantage.
               </p>
               
               <blockquote className="border-l-4 border-indigo-500 pl-6 my-8 bg-indigo-50/50 py-4 rounded-r-lg">
-                <p className="text-lg font-medium text-gray-800 mb-2">
+                <p className="text-lg font-medium text-foreground mb-2">
                   &quot;Companies with trained teams have a 45% higher success rate in public tenders.&quot;
                 </p>
-                <cite className="text-sm text-gray-600">— UK Government Procurement Study</cite>
+                <cite className="text-sm text-muted-foreground">— UK Government Procurement Study</cite>
               </blockquote>
             </section>
 
             {/* Training Types */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Types of training available</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Types of training available</h2>
 
               <div className="space-y-6">
                 <Card className="border-0 shadow-lg">
@@ -78,7 +78,7 @@ const PublicTenderTraining = () => {
                       <GraduationCap className="w-8 h-8 text-indigo-600 flex-shrink-0" />
                       <div>
                         <h3 className="font-bold mb-2">In-person courses</h3>
-                        <p className="text-gray-600 text-sm mb-3">Immersive training with experts, ideal for teams.</p>
+                        <p className="text-muted-foreground text-sm mb-3">Immersive training with experts, ideal for teams.</p>
                         <div className="flex gap-2 flex-wrap">
                           <Badge variant="outline" className="text-xs">1-3 days</Badge>
                           <Badge variant="outline" className="text-xs">Interactive</Badge>
@@ -95,7 +95,7 @@ const PublicTenderTraining = () => {
                       <Video className="w-8 h-8 text-purple-600 flex-shrink-0" />
                       <div>
                         <h3 className="font-bold mb-2">Online training</h3>
-                        <p className="text-gray-600 text-sm mb-3">Flexible e-learning at your own pace.</p>
+                        <p className="text-muted-foreground text-sm mb-3">Flexible e-learning at your own pace.</p>
                         <div className="flex gap-2 flex-wrap">
                           <Badge variant="outline" className="text-xs">Self-paced</Badge>
                           <Badge variant="outline" className="text-xs">Accessible 24/7</Badge>
@@ -112,7 +112,7 @@ const PublicTenderTraining = () => {
                       <Users className="w-8 h-8 text-blue-600 flex-shrink-0" />
                       <div>
                         <h3 className="font-bold mb-2">Personalised coaching</h3>
-                        <p className="text-gray-600 text-sm mb-3">Individual support for rapid progress.</p>
+                        <p className="text-muted-foreground text-sm mb-3">Individual support for rapid progress.</p>
                         <div className="flex gap-2 flex-wrap">
                           <Badge variant="outline" className="text-xs">Tailored</Badge>
                           <Badge variant="outline" className="text-xs">1-on-1</Badge>
@@ -127,7 +127,7 @@ const PublicTenderTraining = () => {
 
             {/* Essential Skills */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Essential skills to develop</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Essential skills to develop</h2>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <Card className="border-indigo-200 bg-indigo-50/50">
@@ -178,7 +178,7 @@ const PublicTenderTraining = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-blue-200 bg-blue-50/50">
+                <Card className="border-primary/20 bg-blue-50/50">
                   <CardContent className="p-6">
                     <h3 className="font-bold mb-4 text-blue-800">Pricing strategy</h3>
                     <ul className="space-y-2 text-sm text-blue-700">
@@ -202,10 +202,10 @@ const PublicTenderTraining = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-green-200 bg-green-50/50">
+                <Card className="border-success/20 bg-success/10/50">
                   <CardContent className="p-6">
-                    <h3 className="font-bold mb-4 text-green-800">Market intelligence</h3>
-                    <ul className="space-y-2 text-sm text-green-700">
+                    <h3 className="font-bold mb-4 text-success">Market intelligence</h3>
+                    <ul className="space-y-2 text-sm text-success">
                       <li className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4" />
                         <span>Monitoring tools</span>
@@ -230,7 +230,7 @@ const PublicTenderTraining = () => {
 
             {/* Resources */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Free resources to get started</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Free resources to get started</h2>
 
               <div className="space-y-4">
                 <Card className="border-0 shadow-lg">
@@ -239,7 +239,7 @@ const PublicTenderTraining = () => {
                       <Globe className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold mb-2">Government portals</h3>
-                        <p className="text-sm text-gray-600">Official guidance and documentation from procurement authorities.</p>
+                        <p className="text-sm text-muted-foreground">Official guidance and documentation from procurement authorities.</p>
                       </div>
                     </div>
                   </CardContent>
@@ -248,10 +248,10 @@ const PublicTenderTraining = () => {
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <FileText className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                      <FileText className="w-6 h-6 text-success flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold mb-2">Practical guides</h3>
-                        <p className="text-sm text-gray-600">Free downloadable guides on key topics: proposal writing, pricing, regulations.</p>
+                        <p className="text-sm text-muted-foreground">Free downloadable guides on key topics: proposal writing, pricing, regulations.</p>
                       </div>
                     </div>
                   </CardContent>
@@ -263,7 +263,7 @@ const PublicTenderTraining = () => {
                       <Video className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold mb-2">Webinars</h3>
-                        <p className="text-sm text-gray-600">Regular free sessions on tender best practices and updates.</p>
+                        <p className="text-sm text-muted-foreground">Regular free sessions on tender best practices and updates.</p>
                       </div>
                     </div>
                   </CardContent>
@@ -273,7 +273,7 @@ const PublicTenderTraining = () => {
 
             {/* Creating a Training Plan */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Building your training plan</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Building your training plan</h2>
               
               <div className="space-y-6">
                 <Card className="border-0 shadow-xl bg-gradient-to-r from-indigo-50 to-purple-50">
@@ -288,7 +288,7 @@ const PublicTenderTraining = () => {
                         <div className="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</div>
                         <div>
                           <h4 className="font-bold">Month 1-2: Fundamentals</h4>
-                          <p className="text-sm text-gray-600">Understand regulations, procedure types, key terminology.</p>
+                          <p className="text-sm text-muted-foreground">Understand regulations, procedure types, key terminology.</p>
                         </div>
                       </div>
                       
@@ -296,7 +296,7 @@ const PublicTenderTraining = () => {
                         <div className="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">2</div>
                         <div>
                           <h4 className="font-bold">Month 3-4: Response writing</h4>
-                          <p className="text-sm text-gray-600">Master technical proposal structure and commercial writing.</p>
+                          <p className="text-sm text-muted-foreground">Master technical proposal structure and commercial writing.</p>
                         </div>
                       </div>
                       
@@ -304,7 +304,7 @@ const PublicTenderTraining = () => {
                         <div className="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">3</div>
                         <div>
                           <h4 className="font-bold">Month 5-6: Advanced strategy</h4>
-                          <p className="text-sm text-gray-600">Pricing optimisation, competitive analysis, market intelligence.</p>
+                          <p className="text-sm text-muted-foreground">Pricing optimisation, competitive analysis, market intelligence.</p>
                         </div>
                       </div>
                     </div>
@@ -315,42 +315,42 @@ const PublicTenderTraining = () => {
 
             {/* How Charly Helps */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Learning by doing with Charly</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Learning by doing with Charly</h2>
               
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-foreground leading-relaxed mb-6">
                 The best way to learn public procurement is through practice. Charly AI guides you through each step, explaining concepts as you encounter them in real opportunities.
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-success flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Guided analysis</h4>
-                    <p className="text-sm text-gray-600">Charly explains each section of tender documents and what to focus on.</p>
+                    <p className="text-sm text-muted-foreground">Charly explains each section of tender documents and what to focus on.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-success flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Contextual tips</h4>
-                    <p className="text-sm text-gray-600">Receive relevant advice at each stage of your response preparation.</p>
+                    <p className="text-sm text-muted-foreground">Receive relevant advice at each stage of your response preparation.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-success flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Best practice templates</h4>
-                    <p className="text-sm text-gray-600">Learn from optimised response structures and proven approaches.</p>
+                    <p className="text-sm text-muted-foreground">Learn from optimised response structures and proven approaches.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-success flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold mb-2">Performance feedback</h4>
-                    <p className="text-sm text-gray-600">Understand why you win or lose and how to improve.</p>
+                    <p className="text-sm text-muted-foreground">Understand why you win or lose and how to improve.</p>
                   </div>
                 </div>
               </div>
@@ -368,7 +368,7 @@ const PublicTenderTraining = () => {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <SafeLink to="/en/demo">
-                      <Button size="lg" className="bg-white text-indigo-700 hover:bg-indigo-50">
+                      <Button size="lg" className="bg-card text-indigo-700 hover:bg-indigo-50">
                         Book a demo
                         <ArrowRight className="ml-2 w-5 h-5" />
                       </Button>

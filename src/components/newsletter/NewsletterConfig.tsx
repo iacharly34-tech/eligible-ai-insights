@@ -176,9 +176,9 @@ export const NewsletterConfig = () => {
           <CardTitle>Données reçues par Zapier</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="bg-gray-50 p-4 rounded-lg">
+          <div className="bg-secondary p-4 rounded-lg">
             <h4 className="font-semibold mb-2">Format des données envoyées :</h4>
-            <pre className="text-sm text-gray-700 overflow-auto">
+            <pre className="text-sm text-foreground overflow-auto">
 {`{
   "type": "newsletter_subscription" | "contact_form",
   "timestamp": "2024-01-01T12:00:00Z",

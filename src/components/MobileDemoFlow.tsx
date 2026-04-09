@@ -191,7 +191,7 @@ export const MobileDemoFlow = () => {
         <div className="space-y-4">
           <Button 
             onClick={startDemo}
-            className="w-full h-16 text-xl font-semibold bg-white text-primary hover:bg-white/90 rounded-2xl"
+            className="w-full h-16 text-xl font-semibold bg-card text-primary hover:bg-card rounded-2xl"
             size="lg"
           >
             <Play className="w-6 h-6 mr-3" />
@@ -248,11 +248,11 @@ export const MobileDemoFlow = () => {
               <div className="text-xs text-blue-600/80">Opportunités</div>
             </div>
             
-            <div className="bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-400/30 rounded-2xl p-4 text-center">
-              <div className="text-3xl font-bold text-green-600 mb-1">
+            <div className="bg-gradient-to-br from-success/100/20 to-green-600/20 border border-green-400/30 rounded-2xl p-4 text-center">
+              <div className="text-3xl font-bold text-success mb-1">
                 {counters.pagesAnalyzed}
               </div>
-              <div className="text-xs text-green-600/80">Pages analysées</div>
+              <div className="text-xs text-success/80">Pages analysées</div>
             </div>
             
             <div className="bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-400/30 rounded-2xl p-4 text-center">
@@ -278,7 +278,7 @@ export const MobileDemoFlow = () => {
               <div className="flex gap-1">
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-success/100 rounded-full"></div>
               </div>
               <Terminal className="w-4 h-4 text-green-400" />
               <span className="text-green-400 text-sm font-mono">charly-analysis.js</span>
@@ -287,13 +287,13 @@ export const MobileDemoFlow = () => {
             <div className="space-y-2 overflow-y-auto h-full">
               {codeLines.map((line, index) => (
                 <div key={index} className="text-green-400 text-sm font-mono flex items-start">
-                  <span className="text-gray-500 mr-3 select-none">{'>'}</span>
+                  <span className="text-muted-foreground mr-3 select-none">{'>'}</span>
                   <span className="flex-1">{line}</span>
                 </div>
               ))}
               {isAnimating && (
                 <div className="text-green-400 animate-pulse text-sm font-mono flex items-center">
-                  <span className="text-gray-500 mr-3">{'>'}</span>
+                  <span className="text-muted-foreground mr-3">{'>'}</span>
                   <span className="w-2 h-4 bg-green-400 animate-pulse"></span>
                 </div>
               )}
