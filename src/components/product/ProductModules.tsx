@@ -4,6 +4,15 @@ import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
 import { ArrowRight, Radar, FileSearch, Lightbulb, PenTool, ShieldCheck, BarChart3 } from "lucide-react";
 
+const MODULE_URLS: Record<string, string> = {
+  detect: "/produit/veille-appels-offres",
+  analyze: "/produit/analyse-dce-ia",
+  decide: "/produit/go-no-go-ia",
+  write: "/produit/memoire-technique-ia",
+  check: "/produit/conformite-appel-offres",
+  win: "/produit/pilotage-marches-publics",
+};
+
 const PRODUCT_MODULES = [
   {
     key: "detect",
@@ -77,9 +86,10 @@ export const ProductModules = () => {
         {/* Product modules grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PRODUCT_MODULES.map((mod) => (
-            <div
+            <SafeLink
               key={mod.key}
-              className={`group relative p-8 sm:p-10 rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-500 ${mod.borderAccent}`}
+              to={MODULE_URLS[mod.key]}
+              className={`group relative p-8 sm:p-10 rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-500 ${mod.borderAccent} block`}
             >
               {/* Number */}
               <div className="absolute top-6 right-6 text-4xl font-black text-muted-foreground/10 font-display select-none">
@@ -107,7 +117,7 @@ export const ProductModules = () => {
               </p>
 
               {/* Key capabilities */}
-              <ul className="space-y-2">
+              <ul className="space-y-2 mb-4">
                 {[1, 2, 3].map((i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
@@ -115,7 +125,11 @@ export const ProductModules = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+
+              <span className="text-sm font-semibold text-primary group-hover:underline">
+                {language === "en" ? "Learn more →" : "En savoir plus →"}
+              </span>
+            </SafeLink>
           ))}
         </div>
 
