@@ -648,7 +648,7 @@ const translations = {
     'hero.learnMore.link': 'How AI transforms public tenders',
     'hero.title.main': 'The only AI that predicts your chances',
     'hero.title.sub': 'in public procurement before you apply',
-    'hero.description': 'Eligibly is the first AI specialised in public tenders that predicts your chances of success before you apply.',
+    'hero.description': 'From detection to technical proposal writing: Eligibly is the only AI covering the entire public procurement cycle. Predictive scoring, DCE analysis, Go/No-Go and writing assistance — in a single platform.',
     
     // Charly Section (Meet Charly)
     'charly.meet.title.prefix': 'Meet',
