@@ -58,7 +58,7 @@ export const ProductModuleLayout = ({
 
   return (
     <>
-      <SEOHead title={seoTitle} description={seoDescription} />
+      <SEOHead />
       <StructuredData page="product" />
       <div className="min-h-screen bg-background">
         <Header />
