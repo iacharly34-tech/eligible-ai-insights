@@ -53,7 +53,7 @@ const translations = {
     'hero.learnMore.link': 'Comment l\'IA transforme les appels d\'offres publics',
     'hero.title.main': 'La seule IA qui prédit vos chances',
     'hero.title.sub': 'sur les marchés publics avant de candidater',
-    'hero.description': 'Eligibly est la première IA spécialisée dans les appels d\'offres publics (AO) et les marchés publics, qui prédit vos chances de succès avant de candidater.',
+    'hero.description': 'De la détection à la rédaction du mémoire technique : Eligibly est la seule IA qui couvre tout le cycle des marchés publics. Scoring prédictif, analyse DCE, Go/No-Go et aide à la rédaction — dans une seule plateforme.',
     
     // Charly Section (Meet Charly)
     'charly.meet.title.prefix': 'Rencontrez',
@@ -214,8 +214,8 @@ const translations = {
     
     // Product Page
     'product.badge': 'Intelligence Artificielle • Marchés Publics',
-    'product.hero.title': 'La plateforme IA la plus avancée pour les marchés publics',
-    'product.hero.subtitle': 'Découvrez comment notre intelligence artificielle révolutionne la détection et l\'analyse des appels d\'offres pour maximiser vos chances de succès.',
+    'product.hero.title': 'De la détection à la victoire : la plateforme IA complète des marchés publics',
+    'product.hero.subtitle': 'Eligibly couvre l\'intégralité du cycle : veille intelligente, scoring prédictif, analyse DCE, rédaction du mémoire technique par IA et vérification de conformité. Une seule plateforme pour remplacer tous vos outils.',
     'product.features.title': 'Fonctionnalités',
     'product.features.title.highlight': 'clés',
     'product.features.subtitle': 'Une suite complète d\'outils IA pour transformer votre approche des marchés publics',
@@ -267,6 +267,25 @@ const translations = {
     'product.demo.persona.consultant.a1': 'Effectue une veille marché complète et ciblée',
     'product.demo.persona.consultant.a2': 'Prépare les réponses stratégiques optimisées',
     'product.demo.persona.consultant.a3': 'Télécharge et analyse les DCE pertinents',
+
+    // Product Response Section (Phase 2 — Réponse)
+    'product.response.badge': 'De la détection à la victoire',
+    'product.response.title': 'Répondez et',
+    'product.response.title.highlight': 'gagnez plus',
+    'product.response.subtitle': 'Au-delà de la veille, Eligibly vous accompagne dans la rédaction, l\'analyse et le dépôt de vos réponses aux marchés publics — comme VIGIAO, Tenderbolt ou IZIAO, mais intégré dans une seule plateforme.',
+    'product.response.cta': 'Découvrez comment Eligibly couvre l\'intégralité du cycle : détection → analyse → décision → rédaction → conformité → victoire.',
+    'product.response.dce_analysis.title': 'Analyse DCE automatique',
+    'product.response.dce_analysis.desc': 'Notre IA décompose le dossier de consultation en quelques secondes : extraction des exigences, identification des critères de notation et synthèse stratégique.',
+    'product.response.go_nogo.title': 'Go/No-Go assisté par IA',
+    'product.response.go_nogo.desc': 'Évaluez en 2 minutes la pertinence d\'un marché : score d\'adéquation, analyse des risques, estimation de la charge et recommandation stratégique.',
+    'product.response.memoire_technique.title': 'Rédaction mémoire technique IA',
+    'product.response.memoire_technique.desc': 'Génération intelligente de votre mémoire technique à partir de vos références, CV et méthodologies. L\'IA s\'appuie sur votre savoir-faire, pas sur du contenu générique.',
+    'product.response.conformite.title': 'Conformité & anti-omission',
+    'product.response.conformite.desc': 'Matrice de traçabilité automatique : chaque exigence du DCE est reliée à votre réponse. Checklist de dépôt pour éliminer tout risque de rejet administratif.',
+    'product.response.knowledge_base.title': 'Base de connaissances',
+    'product.response.knowledge_base.desc': 'Capitalisez sur vos réponses passées. L\'IA enrichit continuellement votre base de références, méthodologies et argumentaires.',
+    'product.response.analytics_response.title': 'Pilotage & performance',
+    'product.response.analytics_response.desc': 'Dashboard stratégique avec taux de succès réels, analyse des retours acheteurs et optimisation continue de votre stratégie.',
 
     // Solutions Page  
     'solutions.badge': 'Solutions sur mesure',
@@ -629,7 +648,7 @@ const translations = {
     'hero.learnMore.link': 'How AI transforms public tenders',
     'hero.title.main': 'The only AI that predicts your chances',
     'hero.title.sub': 'in public procurement before you apply',
-    'hero.description': 'Eligibly is the first AI specialised in public tenders that predicts your chances of success before you apply.',
+    'hero.description': 'From detection to technical proposal writing: Eligibly is the only AI covering the entire public procurement cycle. Predictive scoring, DCE analysis, Go/No-Go and writing assistance — in a single platform.',
     
     // Charly Section (Meet Charly)
     'charly.meet.title.prefix': 'Meet',
@@ -790,8 +809,8 @@ const translations = {
     
     // Product Page
     'product.badge': 'Artificial Intelligence • Public Procurement',
-    'product.hero.title': 'The most advanced AI platform for public procurement',
-    'product.hero.subtitle': 'Discover how our artificial intelligence revolutionises the detection and analysis of public tenders to maximise your chances of success.',
+    'product.hero.title': 'From detection to victory: the complete AI platform for public procurement',
+    'product.hero.subtitle': 'Eligibly covers the entire cycle: smart monitoring, predictive scoring, DCE analysis, AI-powered technical proposal writing and compliance checks. One platform to replace all your tools.',
     'product.features.title': 'Key',
     'product.features.title.highlight': 'features',
     'product.features.subtitle': 'A complete suite of AI tools to transform your approach to public procurement',
@@ -843,6 +862,25 @@ const translations = {
     'product.demo.persona.consultant.a1': 'Carry out complete, targeted market monitoring',
     'product.demo.persona.consultant.a2': 'Prepare optimised strategic responses',
     'product.demo.persona.consultant.a3': 'Download and analyse relevant tender documents',
+
+    // Product Response Section (Phase 2 — Response)
+    'product.response.badge': 'From detection to victory',
+    'product.response.title': 'Respond and',
+    'product.response.title.highlight': 'win more',
+    'product.response.subtitle': 'Beyond monitoring, Eligibly supports you in writing, analysing and submitting your tender responses — like VIGIAO, Tenderbolt or IZIAO, but integrated into a single platform.',
+    'product.response.cta': 'Discover how Eligibly covers the entire cycle: detection → analysis → decision → writing → compliance → victory.',
+    'product.response.dce_analysis.title': 'Automatic DCE analysis',
+    'product.response.dce_analysis.desc': 'Our AI breaks down the consultation file in seconds: requirement extraction, scoring criteria identification and strategic summary.',
+    'product.response.go_nogo.title': 'AI-assisted Go/No-Go',
+    'product.response.go_nogo.desc': 'Assess a tender\'s relevance in 2 minutes: fit score, risk analysis, workload estimation and strategic recommendation.',
+    'product.response.memoire_technique.title': 'AI technical proposal writing',
+    'product.response.memoire_technique.desc': 'Smart generation of your technical proposal from your references, CVs and methodologies. The AI builds on your expertise, not generic content.',
+    'product.response.conformite.title': 'Compliance & anti-omission',
+    'product.response.conformite.desc': 'Automatic traceability matrix: every DCE requirement is linked to your response. Submission checklist to eliminate any risk of administrative rejection.',
+    'product.response.knowledge_base.title': 'Knowledge base',
+    'product.response.knowledge_base.desc': 'Capitalise on your past responses. The AI continuously enriches your base of references, methodologies and arguments.',
+    'product.response.analytics_response.title': 'Performance dashboard',
+    'product.response.analytics_response.desc': 'Strategic dashboard with real win rates, buyer feedback analysis and continuous optimisation of your response strategy.',
 
     // Solutions Page  
     'solutions.badge': 'Tailored solutions',

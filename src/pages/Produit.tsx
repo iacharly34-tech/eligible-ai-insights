@@ -5,6 +5,7 @@ import { DemoPersonas } from "@/components/DemoPersonas";
 import { ProductHero } from "@/components/product/ProductHero";
 import { ProductFeatures } from "@/components/product/ProductFeatures";
 import { ProductBenefits } from "@/components/product/ProductBenefits";
+import { ProductResponseSection } from "@/components/product/ProductResponseSection";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
@@ -26,6 +27,7 @@ const Produit = () => {
           <ProductHero />
           <DemoPersonas />
           <ProductFeatures />
+          <ProductResponseSection />
           <ProductBenefits />
 
           <div className="container mx-auto px-4 py-16">

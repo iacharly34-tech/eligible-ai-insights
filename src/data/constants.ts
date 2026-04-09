@@ -8,7 +8,13 @@ import {
   Award, 
   Star,
   Shield,
-  TrendingUp
+  TrendingUp,
+  FileSearch,
+  FileText,
+  CheckSquare,
+  BarChart3,
+  Lightbulb,
+  BookOpen
 } from "lucide-react";
 
 // ============= STATISTIQUES AVEC SOURCES =============
@@ -104,6 +110,64 @@ export const CORE_FEATURES = [
     color: "primary",
     stat: "Instantané",
     benefit: "Réactivité maximale sans bruit inutile"
+  }
+] as const;
+
+// ============= FONCTIONNALITÉS RÉPONSE (Phase 2) =============
+export const RESPONSE_FEATURES = [
+  {
+    key: "dce_analysis",
+    icon: FileSearch,
+    title: "Analyse DCE automatique",
+    description: "Notre IA décompose le dossier de consultation en quelques secondes : extraction des exigences, identification des critères de notation et synthèse stratégique.",
+    details: ["Extraction exigences", "Critères de notation", "Synthèse stratégique", "Points de vigilance"],
+    stat: "100%",
+    statLabel: "conformité DCE"
+  },
+  {
+    key: "go_nogo",
+    icon: Lightbulb,
+    title: "Go/No-Go assisté par IA",
+    description: "Évaluez en 2 minutes la pertinence d'un marché : score d'adéquation, analyse des risques, estimation de la charge et recommandation stratégique.",
+    details: ["Score d'adéquation", "Analyse des risques", "Estimation charge", "Recommandation IA"],
+    stat: "2 min",
+    statLabel: "par décision"
+  },
+  {
+    key: "memoire_technique",
+    icon: FileText,
+    title: "Rédaction mémoire technique IA",
+    description: "Génération intelligente de votre mémoire technique à partir de vos références, CV et méthodologies. L'IA s'appuie sur votre savoir-faire, pas sur du contenu générique.",
+    details: ["RAG personnalisé", "Plan structuré", "Références intégrées", "Export Word"],
+    stat: "-80%",
+    statLabel: "temps de rédaction"
+  },
+  {
+    key: "conformite",
+    icon: CheckSquare,
+    title: "Conformité & anti-omission",
+    description: "Matrice de traçabilité automatique : chaque exigence du DCE est reliée à votre réponse. Checklist de dépôt pour éliminer tout risque de rejet administratif.",
+    details: ["Matrice traçabilité", "Checklist dépôt", "Détection oublis", "Validation croisée"],
+    stat: "0",
+    statLabel: "rejet administratif"
+  },
+  {
+    key: "knowledge_base",
+    icon: BookOpen,
+    title: "Base de connaissances",
+    description: "Capitalisez sur vos réponses passées. L'IA enrichit continuellement votre base de références, méthodologies et argumentaires pour des réponses toujours plus pertinentes.",
+    details: ["Capitalisation", "Apprentissage continu", "Réutilisation", "Amélioration itérative"],
+    stat: "10x",
+    statLabel: "plus productif"
+  },
+  {
+    key: "analytics_response",
+    icon: BarChart3,
+    title: "Pilotage & performance",
+    description: "Dashboard stratégique avec taux de succès réels, analyse des retours acheteurs et optimisation continue de votre stratégie de réponse.",
+    details: ["Taux de succès", "Retours acheteurs", "Benchmark", "Optimisation continue"],
+    stat: "+38%",
+    statLabel: "taux de succès"
   }
 ] as const;
 

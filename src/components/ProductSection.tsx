@@ -85,25 +85,27 @@ export const ProductSection = () => {
         {/* Process Flow */}
         <div className="bg-gradient-hero rounded-3xl p-12 border border-border/50">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-4">Comment ça marche ?</h3>
-            <p className="text-lg text-muted-foreground">Un processus simple en 4 étapes</p>
+            <h3 className="text-3xl font-bold mb-4">Le cycle complet des marchés publics</h3>
+            <p className="text-lg text-muted-foreground">De la détection à la victoire en 6 étapes</p>
           </div>
           
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
             {[
-              { step: "01", title: "Configuration", desc: "Définissez vos critères et préférences en quelques clics" },
-              { step: "02", title: "Surveillance", desc: "Notre IA scanne automatiquement +600 sources d'appels d'offres" },
-              { step: "03", title: "Analyse", desc: "Scoring intelligent de chaque opportunité selon vos critères" },
-              { step: "04", title: "Alerte", desc: "Notification immédiate des meilleures opportunités détectées" }
+              { step: "01", title: "Détecter", desc: "Veille automatique sur 200+ sources" },
+              { step: "02", title: "Analyser", desc: "Analyse DCE et extraction des exigences" },
+              { step: "03", title: "Décider", desc: "Go/No-Go assisté avec scoring prédictif" },
+              { step: "04", title: "Rédiger", desc: "Mémoire technique généré par IA (RAG)" },
+              { step: "05", title: "Vérifier", desc: "Conformité et matrice de traçabilité" },
+              { step: "06", title: "Gagner", desc: "Suivi performance et optimisation" }
             ].map((item, index) => (
               <div key={index} className="text-center relative">
-                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto shadow-lg">
+                <div className="w-14 h-14 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-sm mb-3 mx-auto shadow-lg">
                   {item.step}
                 </div>
-                <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
-                {index < 3 && (
-                  <ArrowRight className="hidden md:block absolute top-8 -right-4 w-6 h-6 text-primary/50" />
+                <h4 className="font-semibold text-foreground mb-1 text-sm">{item.title}</h4>
+                <p className="text-xs text-muted-foreground">{item.desc}</p>
+                {index < 5 && (
+                  <ArrowRight className="hidden lg:block absolute top-5 -right-3 w-5 h-5 text-primary/50" />
                 )}
               </div>
             ))}
