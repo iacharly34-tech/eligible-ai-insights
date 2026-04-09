@@ -268,6 +268,25 @@ const translations = {
     'product.demo.persona.consultant.a2': 'Prépare les réponses stratégiques optimisées',
     'product.demo.persona.consultant.a3': 'Télécharge et analyse les DCE pertinents',
 
+    // Product Response Section (Phase 2 — Réponse)
+    'product.response.badge': 'De la détection à la victoire',
+    'product.response.title': 'Répondez et',
+    'product.response.title.highlight': 'gagnez plus',
+    'product.response.subtitle': 'Au-delà de la veille, Eligibly vous accompagne dans la rédaction, l\'analyse et le dépôt de vos réponses aux marchés publics — comme VIGIAO, Tenderbolt ou IZIAO, mais intégré dans une seule plateforme.',
+    'product.response.cta': 'Découvrez comment Eligibly couvre l\'intégralité du cycle : détection → analyse → décision → rédaction → conformité → victoire.',
+    'product.response.dce_analysis.title': 'Analyse DCE automatique',
+    'product.response.dce_analysis.desc': 'Notre IA décompose le dossier de consultation en quelques secondes : extraction des exigences, identification des critères de notation et synthèse stratégique.',
+    'product.response.go_nogo.title': 'Go/No-Go assisté par IA',
+    'product.response.go_nogo.desc': 'Évaluez en 2 minutes la pertinence d\'un marché : score d\'adéquation, analyse des risques, estimation de la charge et recommandation stratégique.',
+    'product.response.memoire_technique.title': 'Rédaction mémoire technique IA',
+    'product.response.memoire_technique.desc': 'Génération intelligente de votre mémoire technique à partir de vos références, CV et méthodologies. L\'IA s\'appuie sur votre savoir-faire, pas sur du contenu générique.',
+    'product.response.conformite.title': 'Conformité & anti-omission',
+    'product.response.conformite.desc': 'Matrice de traçabilité automatique : chaque exigence du DCE est reliée à votre réponse. Checklist de dépôt pour éliminer tout risque de rejet administratif.',
+    'product.response.knowledge_base.title': 'Base de connaissances',
+    'product.response.knowledge_base.desc': 'Capitalisez sur vos réponses passées. L\'IA enrichit continuellement votre base de références, méthodologies et argumentaires.',
+    'product.response.analytics_response.title': 'Pilotage & performance',
+    'product.response.analytics_response.desc': 'Dashboard stratégique avec taux de succès réels, analyse des retours acheteurs et optimisation continue de votre stratégie.',
+
     // Solutions Page  
     'solutions.badge': 'Solutions sur mesure',
     'solutions.hero.title': 'Une solution pour chaque',
