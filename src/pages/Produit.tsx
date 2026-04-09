@@ -27,8 +27,10 @@ const Produit = () => {
         <main>
           <ProductHero />
           <DemoPersonas />
+          <ProductModules />
           <ProductFeatures />
           <ProductResponseSection />
+          <ProductBenefits />
           <ProductBenefits />
 
           <div className="container mx-auto px-4 py-16">
