@@ -31,7 +31,6 @@ const Produit = () => {
           <ProductFeatures />
           <ProductResponseSection />
           <ProductBenefits />
-          <ProductBenefits />
 
           <div className="container mx-auto px-4 py-16">
             <ContextualLinks currentPage="/produit" context="product" />
