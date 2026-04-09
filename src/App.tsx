@@ -60,6 +60,19 @@ const NumeriqueResponsable = lazy(() => import("./pages/NumeriqueResponsable"));
 const EligiblyVsDoubletrade = lazy(() => import("./pages/EligiblyVsDoubletrade"));
 const EligiblyVsTengo = lazy(() => import("./pages/EligiblyVsTengo"));
 const EligiblyVsVeilleManuelle = lazy(() => import("./pages/EligiblyVsVeilleManuelle"));
+const EligiblyVsLibel = lazy(() => import("./pages/EligiblyVsLibel"));
+const EligiblyVsRemporte = lazy(() => import("./pages/EligiblyVsRemporte"));
+const EligiblyVsDoaken = lazy(() => import("./pages/EligiblyVsDoaken"));
+
+// SEO pillar pages
+const BoampGuide = lazy(() => import("./pages/BoampGuide"));
+const LogicielAppelsOffres = lazy(() => import("./pages/LogicielAppelsOffres"));
+const RepondreAppelOffres = lazy(() => import("./pages/RepondreAppelOffres"));
+const TrouverAppelsOffres = lazy(() => import("./pages/TrouverAppelsOffres"));
+const MapaMarchesPublics = lazy(() => import("./pages/MapaMarchesPublics"));
+const DceDossierConsultation = lazy(() => import("./pages/DceDossierConsultation"));
+const ProfilAcheteur = lazy(() => import("./pages/ProfilAcheteur"));
+const PlateformeMarchesPublics = lazy(() => import("./pages/PlateformeMarchesPublics"));
 
 // Blog articles - Pilier 1: Comprendre
 const SeuilsMarchesPublics = lazy(() => import("./pages/blog/SeuilsMarchesPublics"));
