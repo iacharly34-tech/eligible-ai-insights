@@ -129,7 +129,7 @@ export const AccessibilityReport = () => {
               <div key={index} className="flex items-start gap-3 p-3 bg-success/10 rounded-lg">
                 <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                 <div className="flex-1">
-                  <h4 className="font-medium text-green-900">{item.criteria}</h4>
+                  <h4 className="font-medium text-foreground">{item.criteria}</h4>
                   <p className="text-sm text-success mb-1">{item.description}</p>
                   <Badge variant="outline" className="text-xs text-success border-success/20">
                     {item.wcag}

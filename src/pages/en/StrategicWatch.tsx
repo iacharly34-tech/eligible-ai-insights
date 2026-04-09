@@ -34,7 +34,7 @@ const StrategicWatch = () => {
           <article className="container mx-auto max-w-4xl px-4">
             {/* Header */}
             <header className="mb-12">
-              <Badge className="mb-6 bg-gradient-to-r from-cyan-100 to-blue-100 text-cyan-700 border-cyan-200">
+              <Badge className="mb-6 bg-gradient-to-r from-cyan-100 to-primary/10 text-cyan-700 border-cyan-200">
                 <Eye className="w-4 h-4 mr-2" />
                 Respond effectively to tenders
               </Badge>
@@ -169,7 +169,7 @@ const StrategicWatch = () => {
                 <Card className="border-primary/20 bg-blue-50/50">
                   <CardContent className="p-6">
                     <Filter className="w-8 h-8 text-primary mb-4" />
-                    <h3 className="font-bold mb-3 text-blue-800">Geographic filters</h3>
+                    <h3 className="font-bold mb-3 text-primary">Geographic filters</h3>
                     <ul className="text-sm text-primary space-y-2">
                       <li>• Regions of activity</li>
                       <li>• Maximum intervention distance</li>

@@ -34,7 +34,7 @@ const RetoursAO = () => {
           <article className="container mx-auto max-w-4xl px-4">
             {/* Header */}
             <header className="mb-12">
-              <Badge className="mb-6 bg-gradient-to-r from-cyan-100 to-blue-100 text-cyan-700 border-cyan-200">
+              <Badge className="mb-6 bg-gradient-to-r from-cyan-100 to-primary/10 text-cyan-700 border-cyan-200">
                 <RotateCcw className="w-4 h-4 mr-2" />
                 Amélioration continue
               </Badge>

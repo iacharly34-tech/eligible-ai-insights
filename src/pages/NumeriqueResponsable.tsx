@@ -45,7 +45,7 @@ const NumeriqueResponsable = () => {
           <article className="container mx-auto max-w-4xl px-4">
             {/* Header */}
             <header className="mb-12">
-              <Badge className="mb-6 bg-gradient-to-r from-green-100 to-emerald-100 text-success border-success/20">
+              <Badge className="mb-6 bg-gradient-to-r from-success/10 to-success/10 text-success border-success/20">
                 <Leaf className="w-4 h-4 mr-2" />
                 Numérique responsable
               </Badge>
@@ -311,11 +311,11 @@ const NumeriqueResponsable = () => {
               <Card className="border-success/20 bg-success/5 shadow-xl mb-8">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center shadow-lg">
+                    <div className="w-16 h-16 bg-success rounded-2xl flex items-center justify-center shadow-lg">
                       <Leaf className="w-8 h-8 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-green-900">Greenmetrics</h3>
+                      <h3 className="text-2xl font-bold text-foreground">Greenmetrics</h3>
                       <p className="text-success">Expert RSE pour les marchés publics numériques</p>
                     </div>
                   </div>
@@ -360,7 +360,7 @@ const NumeriqueResponsable = () => {
                   </div>
 
                   <div className="bg-success/10 rounded-xl p-6 mb-6">
-                    <h4 className="font-bold text-green-900 mb-3 flex items-center gap-2">
+                    <h4 className="font-bold text-foreground mb-3 flex items-center gap-2">
                       <Lightbulb className="w-5 h-5" />
                       Comment Greenmetrics vous aide à gagner des AO
                     </h4>
@@ -368,28 +368,28 @@ const NumeriqueResponsable = () => {
                       <div className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
                         <div>
-                          <span className="font-semibold text-sm text-green-900">Diagnostic initial</span>
+                          <span className="font-semibold text-sm text-foreground">Diagnostic initial</span>
                           <p className="text-xs text-success">Évaluation de votre maturité RSE et identification des quick wins</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
                         <div>
-                          <span className="font-semibold text-sm text-green-900">Feuille de route personnalisée</span>
+                          <span className="font-semibold text-sm text-foreground">Feuille de route personnalisée</span>
                           <p className="text-xs text-success">Plan d'action adapté à vos marchés cibles</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
                         <div>
-                          <span className="font-semibold text-sm text-green-900">Création des preuves</span>
+                          <span className="font-semibold text-sm text-foreground">Création des preuves</span>
                           <p className="text-xs text-success">Documents et certifications pour vos réponses AO</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
                         <div>
-                          <span className="font-semibold text-sm text-green-900">Accompagnement réponse</span>
+                          <span className="font-semibold text-sm text-foreground">Accompagnement réponse</span>
                           <p className="text-xs text-success">Support pour rédiger le volet RSE de vos mémoires techniques</p>
                         </div>
                       </div>
@@ -400,7 +400,7 @@ const NumeriqueResponsable = () => {
                   <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
                     <Button 
                       size="lg"
-                      className="bg-green-600 hover:bg-green-700 text-white shadow-lg"
+                      className="bg-success hover:bg-green-700 text-white shadow-lg"
                       onClick={() => window.open('https://greenmetrics.fr/contact', '_blank')}
                     >
                       Demander un diagnostic gratuit

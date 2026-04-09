@@ -337,7 +337,7 @@ const DocumentsAO = () => {
                     </div>
                     
                     <div className="flex items-center gap-4 p-4 bg-success/10 rounded-xl">
-                      <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">3</div>
+                      <div className="w-8 h-8 bg-success rounded-full flex items-center justify-center text-white font-bold">3</div>
                       <div>
                         <span className="font-bold">BPU/DQE</span>
                         <p className="text-sm text-muted-foreground">Pour estimer le prix et la rentabilité</p>

@@ -443,7 +443,7 @@ const Ressources = () => {
         <section className="py-20 px-4 bg-[hsl(var(--hero-dark))]">
           <div className="container mx-auto max-w-7xl">
             <div className="text-center mb-16">
-              <Badge className="mb-6 bg-gradient-to-r from-green-100 to-blue-100 text-success border-success/20 text-sm px-4 py-2">
+              <Badge className="mb-6 bg-gradient-to-r from-success/10 to-primary/10 text-success border-success/20 text-sm px-4 py-2">
                 <Filter className="w-4 h-4 mr-2" />
                 Explorer par thématiques
               </Badge>

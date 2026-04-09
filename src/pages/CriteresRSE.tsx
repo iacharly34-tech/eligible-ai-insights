@@ -207,7 +207,7 @@ export default function CriteresRSE() {
 
               <Card className="my-6 border-primary/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-blue-800">
+                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-primary">
                     <Award className="h-5 w-5" />
                     Checklist RSE pour PME
                   </h4>

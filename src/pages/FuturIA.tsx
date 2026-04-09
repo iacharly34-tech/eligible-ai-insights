@@ -88,7 +88,7 @@ export default function FuturIA() {
 
               <Card className="my-6 border-primary/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-blue-800">
+                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-primary">
                     <Brain className="h-5 w-5" />
                     Capacités IA actuelles
                   </h4>
@@ -164,7 +164,7 @@ export default function FuturIA() {
               </p>
 
               <div className="bg-blue-50 border border-primary/20 rounded-lg p-6 my-8">
-                <h3 className="text-blue-800 font-semibold mb-3 flex items-center gap-2">
+                <h3 className="text-primary font-semibold mb-3 flex items-center gap-2">
                   <Rocket className="h-5 w-5" />
                   Position de la France
                 </h3>

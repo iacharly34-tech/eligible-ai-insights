@@ -107,7 +107,7 @@ export default function AnticipationAO() {
 
               <Card className="my-8 bg-blue-50 border-primary/20">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold mb-4 flex items-center gap-2 text-blue-800">
+                  <h3 className="font-semibold mb-4 flex items-center gap-2 text-primary">
                     <Zap className="h-5 w-5" />
                     Les 7 signaux d'anticipation
                   </h3>

@@ -36,7 +36,7 @@ const DashboardCarousel = ({ isPlaying, progress }: { isPlaying: boolean; progre
           <div className="grid grid-cols-2 gap-4 h-full">
             {/* Left side - Features */}
             <div className="space-y-4">
-              <div className="bg-blue-100 rounded-lg px-3 py-1 text-blue-800 text-xs font-medium w-fit">
+              <div className="bg-blue-100 rounded-lg px-3 py-1 text-primary text-xs font-medium w-fit">
                 Flux d'opportunités
               </div>
               <h3 className="text-lg font-bold text-foreground">

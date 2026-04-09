@@ -86,7 +86,7 @@ export default function StrategieDonnees() {
 
               <Card className="my-6 border-primary/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-blue-800">
+                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-primary">
                     <Database className="h-5 w-5" />
                     Base de données AO optimale
                   </h4>
@@ -245,7 +245,7 @@ export default function StrategieDonnees() {
 
               <Card className="my-8 bg-blue-50 border-primary/20">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-blue-800">
+                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-primary">
                     <BarChart3 className="h-5 w-5" />
                     Transformation en 18 mois
                   </h4>

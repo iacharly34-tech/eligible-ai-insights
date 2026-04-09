@@ -194,7 +194,7 @@ export const AOResults = ({ isExpanded = false, onToggleExpand, startIndex = 0, 
           </div>
           
           <div className="flex items-center gap-2">
-            <Badge className="bg-green-600 text-white">
+            <Badge className="bg-success text-white">
               {mockAOData.filter(ao => ao.score >= 90).length} {t('ao.results.excellent')}
             </Badge>
             <Badge variant="outline">

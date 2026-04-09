@@ -12,7 +12,7 @@ export const GreenmetricsPartnership = () => {
             <Leaf className="w-4 h-4 mr-2" />
             Partenaire RSE recommandé
           </Badge>
-          <h2 className="text-2xl font-bold mb-4 text-green-900">
+          <h2 className="text-2xl font-bold mb-4 text-foreground">
             Besoin d'aide pour construire votre feuille de route environnementale ?
           </h2>
           <p className="text-success max-w-3xl mx-auto">
@@ -25,11 +25,11 @@ export const GreenmetricsPartnership = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-success rounded-xl flex items-center justify-center">
                     <Leaf className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-green-900">Greenmetrics</h3>
+                    <h3 className="text-xl font-bold text-foreground">Greenmetrics</h3>
                     <p className="text-sm text-success">Votre expert RSE pour les marchés publics</p>
                   </div>
                 </div>
@@ -56,7 +56,7 @@ export const GreenmetricsPartnership = () => {
 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button 
-                    className="bg-green-600 hover:bg-green-700 text-white"
+                    className="bg-success hover:bg-green-700 text-white"
                     onClick={() => window.open('https://greenmetrics.fr/contact', '_blank')}
                   >
                     Demander un diagnostic gratuit
@@ -76,7 +76,7 @@ export const GreenmetricsPartnership = () => {
               <div className="space-y-4">
                 <Card className="border-success/20 bg-success/10">
                   <CardContent className="p-4">
-                    <h4 className="font-semibold text-green-900 mb-2">Offre spéciale lecteurs Eligibly</h4>
+                    <h4 className="font-semibold text-foreground mb-2">Offre spéciale lecteurs Eligibly</h4>
                     <p className="text-sm text-success mb-3">
                       Diagnostic environnemental gratuit + 20% de réduction sur l'accompagnement feuille de route
                     </p>

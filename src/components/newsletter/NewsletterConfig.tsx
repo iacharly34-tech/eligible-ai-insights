@@ -149,7 +149,7 @@ export const NewsletterConfig = () => {
 
             <div className="bg-blue-50 p-4 rounded-lg">
               <h4 className="font-semibold text-blue-900 mb-2">💡 Comment configurer :</h4>
-              <ol className="text-sm text-blue-800 space-y-1">
+              <ol className="text-sm text-primary space-y-1">
                 <li>1. Créez un nouveau Zap sur Zapier</li>
                 <li>2. Trigger : "Webhook by Zapier" → "Catch Hook"</li>
                 <li>3. Action : "Gmail" ou "Outlook" → "Send Email"</li>

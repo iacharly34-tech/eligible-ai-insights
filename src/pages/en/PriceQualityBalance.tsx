@@ -138,7 +138,7 @@ const PriceQualityBalance = () => {
                     <div className="flex items-start gap-4">
                       <Target className="w-8 h-8 text-primary flex-shrink-0" />
                       <div>
-                        <h3 className="font-bold mb-2 text-blue-800">When to compete on price</h3>
+                        <h3 className="font-bold mb-2 text-primary">When to compete on price</h3>
                         <p className="text-sm text-primary mb-3">Price-focused strategy works when:</p>
                         <ul className="space-y-1 text-sm text-primary">
                           <li>• Price weighting exceeds 60%</li>
