@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { SafeLink } from "@/components/SafeLink";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { TrustBadges } from "./TrustBadges";
 
 const AnimatedScore = () => {
   const [score, setScore] = useState(0);
@@ -142,11 +143,14 @@ export const HeroSection = () => {
             </SafeLink>
           </div>
 
-          <p className={`mt-6 text-xs text-muted-foreground tracking-wide transition-all duration-1000 delay-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}>
-            {language === "en"
-              ? "No credit card required · 14-day free trial · Cancel anytime"
-              : "Sans carte bancaire · Essai 14 jours · Annulation libre"}
-          </p>
+          <div className={`mt-8 transition-all duration-1000 delay-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+            <TrustBadges />
+            <p className="mt-4 text-xs text-muted-foreground tracking-wide">
+              {language === "en"
+                ? "No credit card required · 14-day free trial · Cancel anytime"
+                : "Sans carte bancaire · Essai 14 jours · Annulation libre"}
+            </p>
+          </div>
         </div>
       </div>
 
