@@ -488,11 +488,11 @@ const NumeriqueResponsable = () => {
             {/* Comment Charly aide */}
             <section className="mb-12">
               <h2 className="text-2xl font-bold mb-6 text-foreground">
-                Comment Charly identifie les critères RSE de vos AO
+                Comment Charly IA identifie les critères RSE de vos AO
               </h2>
               
               <p className="text-foreground leading-relaxed mb-6">
-                L'IA Charly d'Eligibly analyse automatiquement les cahiers des charges pour identifier et pondérer les critères environnementaux, vous permettant de prioriser vos efforts.
+                Charly IA d'Eligibly analyse automatiquement les cahiers des charges pour identifier et pondérer les critères environnementaux, vous permettant de prioriser vos efforts.
               </p>
 
               <Card className="border-primary/30 bg-primary/5">
@@ -539,12 +539,12 @@ const NumeriqueResponsable = () => {
                     Prêt à transformer vos critères RSE en avantage compétitif ?
                   </h2>
                   <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                    Combinez l'analyse IA de Charly avec l'expertise RSE de Greenmetrics pour maximiser vos chances sur les marchés publics numériques.
+                    Combinez l'analyse de Charly IA avec l'expertise RSE de Greenmetrics pour maximiser vos chances sur les marchés publics numériques.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <SafeLink to="/demo">
                       <Button size="lg" className="bg-card text-success hover:bg-success/10">
-                        Analyser mes opportunités avec Charly
+                        Analyser mes opportunités avec Charly IA IA
                         <ArrowRight className="ml-2 w-5 h-5" />
                       </Button>
                     </SafeLink>

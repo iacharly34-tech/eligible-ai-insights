@@ -153,7 +153,7 @@ const APropos = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Charly, l'assistant IA{" "}
+                Charly IA, l'agent intelligent{" "}
                 <span className="bg-gradient-highlight bg-clip-text text-transparent">d'Eligibly</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
