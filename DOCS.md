@@ -26,4 +26,8 @@
 - Local runtime validation after the fix uses the provided env vars and starts the HTTP server successfully.
 - Local `GET /health` returned `200` with `{"status":"ok"}` while the app was bound to `PORT=8123`, confirming dynamic port binding works.
 - Local `POST /run?mode=invite` with `Authorization: Bearer eligibly-railway-2025` returned `200` with `{"processed":0,"sent_today":0,"remaining_today":15,"results":[],"mode":"invite"}` after the DB schema was applied.
+- Changes were committed and pushed to `main` as commit `1fc922e` (`Fix Railway LinkedIn bot startup`).
+- One public verification attempt was made after the push:
+  - `GET https://eligible-ai-insights-production.up.railway.app/health` still returned Railway edge fallback `HTTP/2 502`
+  - `POST https://eligible-ai-insights-production.up.railway.app/run?mode=invite` with `Authorization: Bearer eligibly-railway-2025` also still returned `HTTP/2 502`
 - Railway CLI was installable, but the worker environment is not authenticated to Railway (`Unauthorized. Please login with railway login`), so logs/variables/redeploy could not be executed directly from this sandbox.
