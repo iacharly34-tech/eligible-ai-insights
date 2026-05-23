@@ -10,8 +10,8 @@ Faire une seule fois le branchement entre Railway, le bot LinkedIn Playwright et
 2. Creer un compte puis choisir `New Project`.
 3. Choisir `Deploy from GitHub`.
 4. Connecter le repository contenant le dossier `linkedin-bot/`.
-5. Dans la configuration Railway, pointer le build sur `linkedin-bot/Dockerfile`.
-6. Verifier que `linkedin-bot/railway.toml` est bien pris en compte.
+5. Laisser Railway deployer depuis la racine du repository: le fichier `railway.toml` en racine force l'usage de `linkedin-bot/Dockerfile`.
+6. Ne pas renseigner de config-as-code custom vers un sous-dossier, sinon Railway peut ignorer la config racine et repartir sur un build non desire.
 
 ## 2. Ajouter les variables d'environnement Railway
 
@@ -25,6 +25,7 @@ Ajouter exactement ces variables dans Railway:
 - `MAX_DAILY_MESSAGES=15`
 - `MAX_CHECKS_PER_RUN=25`
 - `HEADLESS=true`
+- `PORT=8000` (optionnel si l'application ecoute deja `process.env.PORT`; utile seulement pour forcer Railway a verifier ce port)
 
 Pour `WEBHOOK_SECRET`, generer une chaine aleatoire longue et privee. Exemple de commande locale:
 
@@ -82,7 +83,7 @@ X-Webhook-Secret: {WEBHOOK_SECRET}
 
 ## Ce que Daniel fait une seule fois
 
-1. Creer Railway et deployer le dossier `linkedin-bot/`.
+1. Creer Railway et deployer le repository; la config racine enverra automatiquement Railway vers `linkedin-bot/Dockerfile`.
 2. Ajouter `LINKEDIN_EMAIL`, `LINKEDIN_PASSWORD`, `DATABASE_URL`, `WEBHOOK_SECRET`.
 3. Copier l'URL Railway dans `RAILWAY_BOT_URL` cote Vercel.
 4. Ajouter aussi `WEBHOOK_SECRET` cote Vercel.

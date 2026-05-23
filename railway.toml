@@ -1,8 +1,11 @@
 [build]
 builder = "DOCKERFILE"
 dockerfilePath = "linkedin-bot/Dockerfile"
+watchPatterns = ["linkedin-bot/**", "railway.toml"]
 
 [deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 300
 restartPolicyType = "ALWAYS"
 restartPolicyMaxRetries = 10
 numReplicas = 1
