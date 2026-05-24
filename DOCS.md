@@ -31,3 +31,25 @@
   - `GET https://eligible-ai-insights-production.up.railway.app/health` still returned Railway edge fallback `HTTP/2 502`
   - `POST https://eligible-ai-insights-production.up.railway.app/run?mode=invite` with `Authorization: Bearer eligibly-railway-2025` also still returned `HTTP/2 502`
 - Railway CLI was installable, but the worker environment is not authenticated to Railway (`Unauthorized. Please login with railway login`), so logs/variables/redeploy could not be executed directly from this sandbox.
+
+## 2026-05-24 Railway redeploy follow-up
+
+### Findings
+
+- Public Railway GraphQL access confirms:
+  - project `b9383c95-575b-43ba-a305-4fd733661e98` (`beneficial-mindfulness`)
+  - service `aea69d9e-9f29-4f87-8e0c-a942e1e814a1` (`eligible-ai-insights`)
+  - environment `a47f8a55-6ea0-4fe2-9834-e67862faf742` (`production`)
+  - latest deployment `95e5c907-c725-4871-89b2-077c3908e58b`
+- The latest Railway deployment remained `FAILED` on commit `1fc922efaa3f1088302eca8773b71fdcc09404ed` (`Fix Railway LinkedIn bot startup`).
+- Railway public GraphQL allows metadata reads but rejects privileged actions without auth:
+  - `serviceInstanceRedeploy(...)` => `Not Authorized`
+  - `variables(...)` => `Not Authorized`
+  - `buildLogs(...)` / `deploymentLogs(...)` => `Not Authorized`
+- Railway browser access reached the login page successfully, but no active session was present and no reusable Railway token was available in the repo.
+- Auto-deploy is enabled for the service, and the linked trigger watches only `linkedin-bot/**` and `railway.toml`.
+- Repo head `e909758` was docs-only, so it would not have matched Railway's watch patterns and would not have triggered a new deployment.
+
+### Changes applied
+
+- Added a comment to root `railway.toml` to create a minimal watched-file change and force a new Railway auto-deploy via GitHub push.

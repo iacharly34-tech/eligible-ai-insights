@@ -1,3 +1,4 @@
+# Touched on 2026-05-24 to force Railway auto-deploy after a docs-only commit was ignored.
 [build]
 builder = "DOCKERFILE"
 dockerfilePath = "linkedin-bot/Dockerfile"
