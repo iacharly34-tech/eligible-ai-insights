@@ -53,3 +53,16 @@
 ### Changes applied
 
 - Added a comment to root `railway.toml` to create a minimal watched-file change and force a new Railway auto-deploy via GitHub push.
+
+### Validation notes
+
+- Pushed commit `167f350` (`Force Railway redeploy via watched config touch`) to `main`.
+- Railway created a fresh deployment `31d0cce6-fcf1-4aca-9a7b-6b697be5bff7` from commit `167f3509716b5be2e0a2f158a067e5d7d5df9c46`, proving the GitHub-triggered redeploy path works.
+- That deployment still ended in `FAILED` within about 29 seconds (`createdAt=2026-05-24T17:26:28.380Z`, `updatedAt=2026-05-24T17:26:57.167Z`).
+- Post-deploy verification still returned Railway edge fallback errors:
+  - `GET /health` => `HTTP/2 502` with `{"status":"error","code":502,"message":"Application failed to respond",...}`
+  - `POST /run?mode=invite` with `Authorization: Bearer eligibly-railway-2025` => `HTTP/2 502`
+- Public Railway GraphQL confirms the redeploy happened, but privileged diagnostics remain blocked without a Railway account token:
+  - `buildLogs(...)` => `Not Authorized`
+  - `deploymentLogs(...)` => `Not Authorized`
+  - `variables(...)` => `Not Authorized`
