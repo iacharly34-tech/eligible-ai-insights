@@ -23,11 +23,16 @@
 
 - `npm install` completed successfully in the target repo.
 - `npm run build` passed successfully after the changes.
+- Changes were committed and pushed to `main` as commit `bd5c7f6` (`Add SEO metadata and waitlist success page`).
 - Local browser QA against `vite preview` confirmed:
   - homepage title is `Eligibly — Copilote IA des marchés publics`
   - `/waitlist/success` renders the new confirmation page with the expected message and return-home CTA
   - form submission on `/demo` redirects to `/waitlist/success` when the form is submitted programmatically via `requestSubmit()`, and the success toast remains visible after navigation
 - Local HTTP verification confirmed `http://127.0.0.1:4173/og-image.png` is served correctly.
+- One public post-push verification pass was made after a 90-second wait:
+  - `https://eligibly.ai` was still serving the previous homepage metadata
+  - `https://eligibly.ai/waitlist/success` still returned the existing 404 page
+- Public deployment propagation or Vercel project linkage is therefore still pending from the public domain at the time of verification; no retry was performed.
 
 ## 2026-05-23 Railway 502 diagnostics
 
