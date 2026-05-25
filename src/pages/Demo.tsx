@@ -10,7 +10,6 @@ import { Textarea } from "@/components/ui/textarea";
 import {
   Clock,
   ArrowRight,
-  CheckCircle,
   Target,
   TrendingUp,
   Rocket,
@@ -21,6 +20,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { ContextualLinks } from "@/components/ContextualLinks";
 import { SecureFormWrapper } from "@/components/SecureFormWrapper";
 import { useToast } from "@/hooks/use-toast";
+import { useNavigate } from "react-router-dom";
 
 const Demo = () => {
   const [formData, setFormData] = useState({
@@ -29,9 +29,9 @@ const Demo = () => {
     company: "",
     message: "",
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const { language } = useLanguage();
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -39,12 +39,14 @@ const Demo = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
+
     toast({
       title: "✅ Demande envoyée !",
       description: "Notre équipe revient vers vous sous 24h avec votre démo personnalisée.",
       duration: 5000,
     });
+
+    navigate(language === "en" ? "/en/waitlist/success" : "/waitlist/success", { replace: true });
   };
 
   const testimonials = [
@@ -102,54 +104,42 @@ const Demo = () => {
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Form */}
               <div className="rounded-2xl border border-border/50 bg-card p-8 sm:p-10" id="demo-form">
-                {!isSubmitted ? (
-                  <>
-                    <div className="mb-8">
-                      <h2 className="text-2xl font-bold font-display tracking-tight mb-2">
-                        Réservez votre démonstration
-                      </h2>
-                      <p className="text-sm text-muted-foreground">
-                        Découvrez comment Charly IA peut transformer votre prospection commerciale.
-                      </p>
-                    </div>
-
-                    <SecureFormWrapper onSubmit={handleSubmit} className="space-y-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="fullName" className="text-sm font-medium">Nom complet *</Label>
-                        <Input id="fullName" value={formData.fullName} onChange={(e) => handleInputChange("fullName", e.target.value)} placeholder="Jean Dupont" className="h-12" required />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email" className="text-sm font-medium">Email professionnel *</Label>
-                        <Input id="email" type="email" value={formData.email} onChange={(e) => handleInputChange("email", e.target.value)} placeholder="julie@startup.com" className="h-12" required />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="company" className="text-sm font-medium">Entreprise *</Label>
-                        <Input id="company" value={formData.company} onChange={(e) => handleInputChange("company", e.target.value)} placeholder="Ma Société SARL" className="h-12" required />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="message" className="text-sm font-medium">Message / besoin spécifique</Label>
-                        <Textarea id="message" value={formData.message} onChange={(e) => handleInputChange("message", e.target.value)} placeholder="Décrivez brièvement vos besoins..." className="resize-none" rows={3} />
-                      </div>
-                      <Button type="submit" className="w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-[0.15em] text-xs font-semibold group">
-                        Réserver ma démonstration
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                      <p className="text-center text-xs text-muted-foreground">
-                        Démonstration personnalisée, sans engagement. Réponse sous 24h.
-                      </p>
-                    </SecureFormWrapper>
-                  </>
-                ) : (
-                  <div className="text-center py-12">
-                    <div className="w-16 h-16 rounded-2xl bg-success/10 border border-success/20 flex items-center justify-center mx-auto mb-6">
-                      <CheckCircle className="w-7 h-7 text-success" />
-                    </div>
-                    <h3 className="text-xl font-bold font-display tracking-tight mb-2">C'est noté !</h3>
+                <>
+                  <div className="mb-8">
+                    <h2 className="text-2xl font-bold font-display tracking-tight mb-2">
+                      Réservez votre démonstration
+                    </h2>
                     <p className="text-sm text-muted-foreground">
-                      Notre équipe revient vers vous sous 24h pour organiser votre démonstration personnalisée.
+                      Découvrez comment Charly IA peut transformer votre prospection commerciale.
                     </p>
                   </div>
-                )}
+
+                  <SecureFormWrapper onSubmit={handleSubmit} className="space-y-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="fullName" className="text-sm font-medium">Nom complet *</Label>
+                      <Input id="fullName" value={formData.fullName} onChange={(e) => handleInputChange("fullName", e.target.value)} placeholder="Jean Dupont" className="h-12" required />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="text-sm font-medium">Email professionnel *</Label>
+                      <Input id="email" type="email" value={formData.email} onChange={(e) => handleInputChange("email", e.target.value)} placeholder="julie@startup.com" className="h-12" required />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="company" className="text-sm font-medium">Entreprise *</Label>
+                      <Input id="company" value={formData.company} onChange={(e) => handleInputChange("company", e.target.value)} placeholder="Ma Société SARL" className="h-12" required />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="message" className="text-sm font-medium">Message / besoin spécifique</Label>
+                      <Textarea id="message" value={formData.message} onChange={(e) => handleInputChange("message", e.target.value)} placeholder="Décrivez brièvement vos besoins..." className="resize-none" rows={3} />
+                    </div>
+                    <Button type="submit" className="w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-[0.15em] text-xs font-semibold group">
+                      Réserver ma démonstration
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                    <p className="text-center text-xs text-muted-foreground">
+                      Démonstration personnalisée, sans engagement. Réponse sous 24h.
+                    </p>
+                  </SecureFormWrapper>
+                </>
               </div>
 
               {/* Right column */}

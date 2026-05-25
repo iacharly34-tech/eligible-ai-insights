@@ -22,9 +22,9 @@ export const updateCanonicalUrl = (url: string) => {
 
 export const SEO_CONTENT = {
   home: {
-    title: "eligibly.ai - IA pour appels d'offres publics | Veille automatisée",
-    description: "Plateforme IA qui identifie automatiquement les meilleures opportunités d'appels d'offres publics. 600+ sources surveillées, alertes personnalisées, 94% de précision.",
-    url: "https://eligibly.ai/"
+    title: "Eligibly — Copilote IA des marchés publics",
+    description: "Détectez, analysez et remportez plus d'appels d'offres publics. La suite d'agents IA pour les PME françaises.",
+    url: "https://eligibly.ai"
   },
   produit: {
     title: "Produit eligibly.ai - Plateforme IA pour marchés publics",

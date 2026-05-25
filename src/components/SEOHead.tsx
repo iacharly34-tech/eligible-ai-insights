@@ -1,11 +1,65 @@
+import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useLocation } from "react-router-dom";
 
 interface SEOHeadProps {
   noindex?: boolean;
+  titleOverride?: string;
+  descriptionOverride?: string;
+  canonicalOverride?: string;
 }
 
-export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
+const upsertMetaTag = (attribute: "name" | "property", value: string, content: string) => {
+  let meta = document.head.querySelector(`meta[${attribute}="${value}"]`) as HTMLMetaElement | null;
+
+  if (!meta) {
+    meta = document.createElement("meta");
+    meta.setAttribute(attribute, value);
+    document.head.appendChild(meta);
+  }
+
+  meta.setAttribute("content", content);
+};
+
+const removeMetaTag = (attribute: "name" | "property", value: string) => {
+  document.head.querySelector(`meta[${attribute}="${value}"]`)?.remove();
+};
+
+const upsertLinkTag = (rel: string, href: string, extraAttributes: Record<string, string> = {}) => {
+  const selector = `link[rel="${rel}"]${Object.entries(extraAttributes)
+    .map(([key, value]) => `[${key}="${value}"]`)
+    .join("")}`;
+
+  let link = document.head.querySelector(selector) as HTMLLinkElement | null;
+
+  if (!link) {
+    link = document.createElement("link");
+    link.setAttribute("rel", rel);
+    document.head.appendChild(link);
+  }
+
+  link.setAttribute("href", href);
+
+  Object.entries(extraAttributes).forEach(([key, value]) => {
+    link?.setAttribute(key, value);
+  });
+};
+
+const removeLinkTag = (rel: string, extraAttributes: Record<string, string> = {}) => {
+  const selector = [
+    `link[rel="${rel}"]`,
+    ...Object.entries(extraAttributes).map(([key, value]) => `[${key}="${value}"]`),
+  ].join("");
+
+  document.head.querySelector(selector)?.remove();
+};
+
+export const SEOHead = ({
+  noindex = false,
+  titleOverride,
+  descriptionOverride,
+  canonicalOverride,
+}: SEOHeadProps) => {
   const { language } = useLanguage();
   const location = useLocation();
   
@@ -229,8 +283,8 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
         case '/':
         case '/accueil':
           return {
-            title: "Eligibly - Plateforme IA pour optimiser vos appels d'offres publics",
-            description: "Eligibly est la solution IA leader pour analyser et gagner plus d'appels d'offres publics. Augmentez votre taux de succès de +47% avec notre technologie prédictive.",
+            title: "Eligibly — Copilote IA des marchés publics",
+            description: "Détectez, analysez et remportez plus d'appels d'offres publics. La suite d'agents IA pour les PME françaises.",
             keywords: "eligibly, plateforme eligibly, appels d'offres publics, IA marchés publics, solution eligibly"
           };
         case '/produit':
@@ -286,87 +340,88 @@ export const SEOHead = ({ noindex = false }: SEOHeadProps) => {
   };
 
   const seo = getPageSEO();
-  
-  // Gestion correcte des URLs canoniques pour éviter les doublons
-  let canonicalUrl = `https://eligibly.ai${location.pathname}`;
-  
-  // Pour les pages EN, on garde la version EN comme canonique
-  if (location.pathname.startsWith('/en/')) {
-    canonicalUrl = `https://eligibly.ai${location.pathname}`;
-  } else {
-    // Pour les pages FR, on s'assure qu'il n'y a pas de duplication
-    canonicalUrl = `https://eligibly.ai${location.pathname}`;
-  }
+  const resolvedTitle = titleOverride ?? seo.title;
+  const resolvedDescription = descriptionOverride ?? seo.description;
+  const isEnglishPath = location.pathname === "/en" || location.pathname.startsWith("/en/");
+  const frenchPath = isEnglishPath
+    ? location.pathname.replace(/^\/en(?=\/|$)/, "") || "/"
+    : location.pathname;
+  const englishPath = isEnglishPath
+    ? location.pathname
+    : (location.pathname === "/" ? "/en" : `/en${location.pathname}`);
+  const canonicalUrl = canonicalOverride
+    ?? (location.pathname === "/" ? "https://eligibly.ai" : `https://eligibly.ai${location.pathname}`);
+  const alternateFrHref = frenchPath === "/" ? "https://eligibly.ai" : `https://eligibly.ai${frenchPath}`;
+  const alternateEnHref = `https://eligibly.ai${englishPath}`;
+  const ogImageUrl = "https://eligibly.ai/og-image.png";
+  const isArticlePage = !noindex && location.pathname !== "/" && !location.pathname.startsWith("/en");
 
-  return (
-    <>
-      <title>{seo.title}</title>
-      <meta name="description" content={seo.description} />
-      <meta name="keywords" content={seo.keywords} />
-      <meta name="robots" content="index, follow" />
-      {noindex && <meta name="robots" content="noindex, nofollow" />}
-      <link rel="canonical" href={canonicalUrl} />
-      
-      {/* Géolocalisation pour SEO local */}
-      <meta name="geo.region" content="FR-IDF" />
-      <meta name="geo.placename" content="Paris, France" />
-      <meta name="geo.position" content="48.8566;2.3522" />
-      <meta name="ICBM" content="48.8566, 2.3522" />
-      
-      {/* Open Graph */}
-      <meta property="og:title" content={seo.title} />
-      <meta property="og:description" content={seo.description} />
-      <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:type" content="website" />
-      <meta property="og:image" content="https://eligibly.ai/assets/eligible-ai-opengraph.png" />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:locale" content={language === 'en' ? 'en_US' : 'fr_FR'} />
-      <meta property="og:site_name" content="Eligibly.ai" />
-      
-      {/* Article spécifique */}
-      {location.pathname.includes('/') && !location.pathname.includes('/en') && location.pathname !== '/' && (
-        <>
-          <meta property="article:published_time" content="2025-08-20T10:00:00Z" />
-          <meta property="article:modified_time" content="2025-08-24T15:30:00Z" />
-          <meta property="article:author" content="Équipe Eligibly" />
-          <meta property="article:section" content="Marchés Publics" />
-          <meta property="article:tag" content="appels d'offres publics" />
-          <meta property="article:tag" content="IA" />
-          <meta property="article:tag" content="marchés publics" />
-        </>
-      )}
-      
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={seo.title} />
-      <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content="https://eligibly.ai/assets/eligible-ai-opengraph.png" />
-      <meta name="twitter:site" content="@eligibly_ai" />
-      <meta name="twitter:creator" content="@eligibly_ai" />
-      
-      {/* Language alternatives - URLs correctes pour éviter les doublons */}
-      {!location.pathname.startsWith('/en/') ? (
-        <>
-          <link rel="alternate" hrefLang="fr" href={`https://eligibly.ai${location.pathname}`} />
-          <link rel="alternate" hrefLang="en" href={`https://eligibly.ai/en${location.pathname === '/' ? '' : location.pathname}`} />
-        </>
-      ) : (
-        <>
-          <link rel="alternate" hrefLang="en" href={`https://eligibly.ai${location.pathname}`} />
-          <link rel="alternate" hrefLang="fr" href={`https://eligibly.ai${location.pathname.replace('/en', '') || '/'}`} />
-        </>
-      )}
-      <link rel="alternate" hrefLang="x-default" href="https://eligibly.ai/" />
-      
-      {/* Preload critical resources */}
-      <link rel="preload" as="image" href="/assets/eligible-ai-hero-optimized.webp" />
-      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-      
-      {/* Enhanced meta pour Google Discover */}
-      <meta name="news_keywords" content="appels d'offres publics, IA, marchés publics, intelligence artificielle" />
-      <meta name="author" content="Eligibly Team" />
-      <meta name="publisher" content="Eligibly.ai" />
-    </>
-  );
+  useEffect(() => {
+    document.title = resolvedTitle;
+    document.documentElement.lang = language === "en" ? "en" : "fr";
+
+    upsertMetaTag("name", "description", resolvedDescription);
+    upsertMetaTag("name", "keywords", seo.keywords);
+    upsertMetaTag("name", "robots", noindex ? "noindex, nofollow" : "index, follow");
+    upsertMetaTag("name", "geo.region", "FR-IDF");
+    upsertMetaTag("name", "geo.placename", "Paris, France");
+    upsertMetaTag("name", "geo.position", "48.8566;2.3522");
+    upsertMetaTag("name", "ICBM", "48.8566, 2.3522");
+    upsertMetaTag("name", "twitter:card", "summary_large_image");
+    upsertMetaTag("name", "twitter:title", resolvedTitle);
+    upsertMetaTag("name", "twitter:description", resolvedDescription);
+    upsertMetaTag("name", "twitter:image", ogImageUrl);
+    upsertMetaTag("name", "twitter:site", "@eligible_ai");
+    upsertMetaTag("name", "twitter:creator", "@eligible_ai");
+    upsertMetaTag("name", "news_keywords", "appels d'offres publics, IA, marchés publics, intelligence artificielle");
+    upsertMetaTag("name", "author", "Eligibly Team");
+    upsertMetaTag("name", "publisher", "Eligibly.ai");
+
+    upsertMetaTag("property", "og:title", resolvedTitle);
+    upsertMetaTag("property", "og:description", resolvedDescription);
+    upsertMetaTag("property", "og:url", canonicalUrl);
+    upsertMetaTag("property", "og:type", "website");
+    upsertMetaTag("property", "og:image", ogImageUrl);
+    upsertMetaTag("property", "og:image:width", "1200");
+    upsertMetaTag("property", "og:image:height", "630");
+    upsertMetaTag("property", "og:locale", language === "en" ? "en_US" : "fr_FR");
+    upsertMetaTag("property", "og:site_name", "Eligibly");
+
+    upsertLinkTag("canonical", canonicalUrl);
+    upsertLinkTag("alternate", alternateFrHref, { hreflang: "fr" });
+    upsertLinkTag("alternate", alternateEnHref, { hreflang: "en" });
+    upsertLinkTag("alternate", "https://eligibly.ai", { hreflang: "x-default" });
+
+    if (isArticlePage) {
+      upsertMetaTag("property", "article:published_time", "2025-08-20T10:00:00Z");
+      upsertMetaTag("property", "article:modified_time", "2025-08-24T15:30:00Z");
+      upsertMetaTag("property", "article:author", "Équipe Eligibly");
+      upsertMetaTag("property", "article:section", "Marchés Publics");
+      upsertMetaTag("property", "article:tag", "marchés publics");
+    } else {
+      removeMetaTag("property", "article:published_time");
+      removeMetaTag("property", "article:modified_time");
+      removeMetaTag("property", "article:author");
+      removeMetaTag("property", "article:section");
+      removeMetaTag("property", "article:tag");
+    }
+
+    return () => {
+      removeLinkTag("alternate", { hreflang: "fr" });
+      removeLinkTag("alternate", { hreflang: "en" });
+      removeLinkTag("alternate", { hreflang: "x-default" });
+    };
+  }, [
+    alternateEnHref,
+    alternateFrHref,
+    canonicalUrl,
+    isArticlePage,
+    language,
+    noindex,
+    resolvedDescription,
+    resolvedTitle,
+    seo.keywords,
+  ]);
+
+  return null;
 };

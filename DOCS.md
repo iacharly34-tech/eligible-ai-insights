@@ -1,5 +1,34 @@
 # DOCS
 
+## 2026-05-25 SEO + waitlist success
+
+### Findings
+
+- Target repository for this task: `iacharly34-tech/eligible-ai-insights`.
+- The marketing site is a Vite + React Router SPA at the repo root, not a Next.js app.
+- The requested Vercel preview URL redirects to a protected Vercel login page, so it could not be used as a public inspection surface from this worker sandbox.
+- Public domain `https://eligibly.ai` is reachable and currently serves static homepage metadata from `index.html`; route-level metadata is applied client-side by `src/components/SEOHead.tsx`.
+- The visible acquisition flow on the homepage routes users to `/demo`, and the demo form is the practical waitlist/early-access capture flow in the current codebase.
+
+### Changes applied
+
+- Updated homepage static metadata in `index.html` to the requested title, description, Open Graph values, Twitter card values, and canonical URL for `https://eligibly.ai`.
+- Added a new OG image source at `public/og-image.svg` and generated `public/og-image.png` (1200x630) using the project’s existing purple/blue visual language.
+- Updated `src/components/SEOHead.tsx` so SPA route changes now imperatively sync `document.title`, canonical, Open Graph, Twitter tags, and hreflang links in the real `<head>`.
+- Updated homepage fallback SEO constants in `src/utils/seo.ts` to match the new requested copy.
+- Added `src/pages/WaitlistSuccess.tsx` and wired routes for `/waitlist/success` and `/en/waitlist/success`.
+- Updated `src/pages/Demo.tsx` so successful form submission now shows the existing toast and redirects to the new waitlist success page instead of keeping users on an inline success state.
+
+### Validation notes
+
+- `npm install` completed successfully in the target repo.
+- `npm run build` passed successfully after the changes.
+- Local browser QA against `vite preview` confirmed:
+  - homepage title is `Eligibly — Copilote IA des marchés publics`
+  - `/waitlist/success` renders the new confirmation page with the expected message and return-home CTA
+  - form submission on `/demo` redirects to `/waitlist/success` when the form is submitted programmatically via `requestSubmit()`, and the success toast remains visible after navigation
+- Local HTTP verification confirmed `http://127.0.0.1:4173/og-image.png` is served correctly.
+
 ## 2026-05-23 Railway 502 diagnostics
 
 ### Findings

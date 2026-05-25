@@ -1,0 +1,60 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="160" y1="40" x2="1040" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F8FF"/>
+      <stop offset="1" stop-color="#EEF2FF"/>
+    </linearGradient>
+    <linearGradient id="stroke" x1="120" y1="120" x2="1080" y2="510" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A855F7"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <filter id="blurPurple" x="630" y="-120" width="620" height="520" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="65"/>
+    </filter>
+    <filter id="blurBlue" x="-140" y="260" width="500" height="420" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="55"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="940" cy="120" r="150" fill="#A855F7" fill-opacity="0.18" filter="url(#blurPurple)"/>
+  <circle cx="120" cy="540" r="115" fill="#3B82F6" fill-opacity="0.18" filter="url(#blurBlue)"/>
+
+  <g opacity="0.18" stroke="#8B96FF">
+    <path d="M120 110H1080"/>
+    <path d="M120 230H1080"/>
+    <path d="M120 350H1080"/>
+    <path d="M120 470H1080"/>
+    <path d="M120 110V520"/>
+    <path d="M280 110V520"/>
+    <path d="M440 110V520"/>
+    <path d="M600 110V520"/>
+    <path d="M760 110V520"/>
+    <path d="M920 110V520"/>
+  </g>
+
+  <rect x="88" y="88" width="1024" height="454" rx="40" fill="white"/>
+  <rect x="88.75" y="88.75" width="1022.5" height="452.5" rx="39.25" stroke="#E2E8FF" stroke-width="1.5"/>
+
+  <rect x="122" y="122" width="226" height="58" rx="29" fill="#5B36F5"/>
+  <text x="151" y="159" fill="white" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="0.24em">COPILOTE IA</text>
+
+  <text x="120" y="292" fill="#5B36F5" font-family="DejaVu Sans, Arial, sans-serif" font-size="104" font-weight="700">Eligibly</text>
+  <text x="122" y="382" fill="#141826" font-family="DejaVu Sans, Arial, sans-serif" font-size="45" font-weight="600">
+    Détectez, analysez et remportez plus
+  </text>
+  <text x="122" y="438" fill="#141826" font-family="DejaVu Sans, Arial, sans-serif" font-size="45" font-weight="600">
+    d'appels d'offres publics.
+  </text>
+  <text x="124" y="504" fill="#55607E" font-family="DejaVu Sans, Arial, sans-serif" font-size="25" font-weight="500">
+    La suite d'agents IA pour les PME françaises.
+  </text>
+
+  <g>
+    <rect x="920" y="448" width="18" height="88" rx="9" fill="#5B36F5"/>
+    <rect x="956" y="424" width="18" height="112" rx="9" fill="#7877FF"/>
+    <rect x="992" y="392" width="18" height="144" rx="9" fill="#3B82F6"/>
+  </g>
+
+  <rect x="88" y="88" width="1024" height="454" rx="40" stroke="url(#stroke)" stroke-opacity="0.22" stroke-width="2"/>
+</svg>

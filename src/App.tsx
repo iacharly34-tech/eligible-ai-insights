@@ -31,6 +31,7 @@ const Ressources = lazy(() => import("./pages/Ressources"));
 const APropos = lazy(() => import("./pages/APropos"));
 const Connexion = lazy(() => import("./pages/Connexion"));
 const Demo = lazy(() => import("./pages/Demo"));
+const WaitlistSuccess = lazy(() => import("./pages/WaitlistSuccess"));
 const MentionsLegales = lazy(() => import("./pages/MentionsLegales"));
 const Confidentialite = lazy(() => import("./pages/Confidentialite"));
 const CGU = lazy(() => import("./pages/CGU"));
@@ -153,6 +154,7 @@ const App = () => (
                 <Route path="/connexion" element={<Connexion />} />
                 <Route path="/demo" element={<Demo />} />
                 <Route path="/inscription" element={<Demo />} />
+                <Route path="/waitlist/success" element={<WaitlistSuccess />} />
                 <Route path="/mentions-legales" element={<MentionsLegales />} />
                 <Route path="/confidentialite" element={<Confidentialite />} />
                 <Route path="/cgu" element={<CGU />} />
@@ -231,6 +233,7 @@ const App = () => (
                 <Route path="/en/about-eligibly" element={<AProposEligibly />} />
                 <Route path="/en/login" element={<Connexion />} />
                 <Route path="/en/demo" element={<Demo />} />
+                <Route path="/en/waitlist/success" element={<WaitlistSuccess />} />
                 <Route path="/en/legal" element={<MentionsLegales />} />
                 <Route path="/en/privacy" element={<Confidentialite />} />
                 <Route path="/en/terms" element={<CGU />} />
