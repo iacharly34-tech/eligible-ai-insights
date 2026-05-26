@@ -100,3 +100,38 @@
   - `buildLogs(...)` => `Not Authorized`
   - `deploymentLogs(...)` => `Not Authorized`
   - `variables(...)` => `Not Authorized`
+
+## 2026-05-26 Railway FAILED follow-up
+
+### Findings
+
+- The target repo remains `iacharly34-tech/eligible-ai-insights`; the working clone is `/home/worker/workspace/eligible-ai-insights`.
+- Browser access to `railway.com` works after `agent-browser install`, but Railway still requires an interactive GitHub web login.
+- Following `Continue with GitHub` lands on the GitHub login form, and no reusable authenticated GitHub browser session was present in the worker sandbox.
+- The provided GitHub PAT is usable for git operations, but it is not a reliable substitute for GitHub web-login/OAuth in the browser flow.
+- Public Railway GraphQL metadata gives one key missing clue without auth:
+  - deployment `31d0cce6-fcf1-4aca-9a7b-6b697be5bff7` is `FAILED`
+  - `configFile` is `/railway.toml`
+  - `rootDirectory` is `null`
+  - `builder` is `DOCKERFILE`
+  - `dockerfilePath` is `linkedin-bot/Dockerfile`
+  - `instances` is `[]`
+- Railway had one earlier successful deployment on commit `76fee33`, but it used `RAILPACK` with detected provider `node`, meaning Railway previously deployed the Vite site at repo root rather than the LinkedIn bot.
+- The failed bot deployments started only after switching the service to Dockerfile mode, which strongly suggests the failure happens during image build or before any runtime instance becomes healthy.
+- Public health endpoint is still failing:
+  - `GET https://eligible-ai-insights-production.up.railway.app/health` => `HTTP/2 502`
+  - body: `{\"status\":\"error\",\"code\":502,\"message\":\"Application failed to respond\",...}`
+
+### Changes applied
+
+- Replaced `linkedin-bot/Dockerfile` base image from `python:3.11-slim` to `mcr.microsoft.com/playwright/python:v1.53.0-noble`.
+- Removed the manual `playwright install --with-deps chromium` step from the Dockerfile because the official Playwright image already ships the browser stack.
+- Added a root `.dockerignore` so the Railway Docker build context only includes `linkedin-bot/**` plus `railway.toml`.
+- Updated `docs/railway-deploy-guide.md` to document the official Playwright base image and root-level `.dockerignore` expectation for this service.
+
+### Validation notes
+
+- `python3 -m py_compile linkedin-bot/main.py linkedin-bot/linkedin_bot.py` passed.
+- Local dependency installation in this worker sandbox was blocked by a host-level Python packaging issue:
+  - `PermissionError: [Errno 13] Permission denied: '/root'`
+- That pip failure happened before touching project code or requirements resolution and appears specific to the sandbox environment, not the repository changes.

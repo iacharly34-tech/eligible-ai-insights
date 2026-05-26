@@ -11,7 +11,15 @@ Faire une seule fois le branchement entre Railway, le bot LinkedIn Playwright et
 3. Choisir `Deploy from GitHub`.
 4. Connecter le repository contenant le dossier `linkedin-bot/`.
 5. Laisser Railway deployer depuis la racine du repository: le fichier `railway.toml` en racine force l'usage de `linkedin-bot/Dockerfile`.
-6. Ne pas renseigner de config-as-code custom vers un sous-dossier, sinon Railway peut ignorer la config racine et repartir sur un build non desire.
+6. Le Dockerfile doit partir d'une image Playwright officielle (`mcr.microsoft.com/playwright/python:...`) pour eviter les echecs d'installation Chromium/system deps pendant le build Railway.
+7. Ne pas renseigner de config-as-code custom vers un sous-dossier, sinon Railway peut ignorer la config racine et repartir sur un build non desire.
+
+## 1.b Pourquoi ce Dockerfile
+
+- Railway lit bien `configFile=/railway.toml` a la racine pour ce service.
+- Le build Docker doit donc rester compatible avec un contexte de build repo-root.
+- Une image de base Playwright officielle embarque deja Chromium et ses dependances Linux, ce qui supprime la partie la plus fragile du build.
+- Un `.dockerignore` racine doit limiter le contexte au seul dossier `linkedin-bot/` pour ne pas envoyer tout le site marketing dans l'image du bot.
 
 ## 2. Ajouter les variables d'environnement Railway
 
