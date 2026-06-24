@@ -10,6 +10,7 @@ import { PricingEC } from "@/components/eligibly/PricingEC";
 import { FAQEC } from "@/components/eligibly/FAQEC";
 import { FinalCTA } from "@/components/eligibly/FinalCTA";
 import { FooterEC } from "@/components/eligibly/FooterEC";
+import { FadeIn } from "@/components/eligibly/FadeIn";
 
 const HomePage = () => {
   return (
@@ -17,15 +18,15 @@ const HomePage = () => {
       <HeaderEC />
       <main id="main-content" role="main">
         <HeroEC />
-        <SourcesBar />
-        <ProblemSection />
-        <LeadPreview />
-        <HowItWorks />
-        <CompareTable />
-        <Personas />
-        <PricingEC />
-        <FAQEC />
-        <FinalCTA />
+        <FadeIn><SourcesBar /></FadeIn>
+        <FadeIn><ProblemSection /></FadeIn>
+        <FadeIn><LeadPreview /></FadeIn>
+        <FadeIn><HowItWorks /></FadeIn>
+        <FadeIn><CompareTable /></FadeIn>
+        <FadeIn><Personas /></FadeIn>
+        <FadeIn><PricingEC /></FadeIn>
+        <FadeIn><FAQEC /></FadeIn>
+        <FadeIn><FinalCTA /></FadeIn>
       </main>
       <FooterEC />
 
