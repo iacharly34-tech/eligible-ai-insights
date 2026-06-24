@@ -14,9 +14,9 @@ export const FinalCTA = () => (
       </p>
       <a
         href="mailto:contact@eligibly.ai?subject=Démo%20Eligibly%20-%20Demande%20de%20RDV"
-        className="inline-flex items-center justify-center px-7 py-4 rounded-lg bg-terracotta text-cream font-medium hover:bg-terracotta-deep transition-colors shadow-luxury"
+        className="inline-flex items-center justify-center px-7 py-4 rounded-lg bg-cream text-sapin font-medium hover:bg-cream-deep transition-colors shadow-luxury"
       >
-        Réserver ma démo de 30 minutes
+        Programmer ma démo
       </a>
       <p className="mt-6 text-sm text-cream/60">
         Ou écrivez-nous à <a href="mailto:contact@eligibly.ai" className="underline underline-offset-4 hover:text-moutarde transition-colors">contact@eligibly.ai</a>
