@@ -28,7 +28,8 @@ export default {
 		extend: {
 			fontFamily: {
 				'sans': ['Inter', 'system-ui', 'sans-serif'],
-				'display': ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+				'display': ['Fraunces', 'Times New Roman', 'serif'],
+				'serif': ['Fraunces', 'Times New Roman', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -76,6 +77,31 @@ export default {
 					DEFAULT: 'hsl(var(--cyan-soft))',
 					foreground: 'hsl(var(--cyan-foreground))'
 				},
+				terracotta: {
+					DEFAULT: 'hsl(var(--terracotta))',
+					deep: 'hsl(var(--terracotta-deep))',
+					soft: 'hsl(var(--terracotta-soft))',
+				},
+				sapin: {
+					DEFAULT: 'hsl(var(--sapin))',
+					soft: 'hsl(var(--sapin-soft))',
+				},
+				moutarde: {
+					DEFAULT: 'hsl(var(--moutarde))',
+					soft: 'hsl(var(--moutarde-soft))',
+				},
+				cream: {
+					DEFAULT: 'hsl(var(--bg-cream))',
+					deep: 'hsl(var(--bg-cream-deep))',
+				},
+				beige: 'hsl(var(--bg-beige))',
+				page: 'hsl(var(--bg-page))',
+				ink: {
+					DEFAULT: 'hsl(var(--text))',
+					secondary: 'hsl(var(--text-secondary))',
+					muted: 'hsl(var(--text-muted))',
+				},
+				'border-warm': 'hsl(var(--border-warm))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
