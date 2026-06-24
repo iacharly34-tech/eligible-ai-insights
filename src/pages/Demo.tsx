@@ -1,229 +1,269 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { SEOHead } from "@/components/SEOHead";
-import { StructuredData } from "@/components/StructuredData";
-import { SafeLink } from "@/components/SafeLink";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Clock,
-  ArrowRight,
-  Target,
-  TrendingUp,
-  Rocket,
-  MessageSquare,
-} from "lucide-react";
 import { useState } from "react";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { ContextualLinks } from "@/components/ContextualLinks";
-import { SecureFormWrapper } from "@/components/SecureFormWrapper";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { HeaderEC } from "@/components/eligibly/HeaderEC";
+import { FooterEC } from "@/components/eligibly/FooterEC";
+import { FadeIn } from "@/components/eligibly/FadeIn";
 import { useToast } from "@/hooks/use-toast";
-import { useNavigate } from "react-router-dom";
+
+const demoSchema = z.object({
+  firstName: z.string().trim().min(2, "Prénom trop court").max(60),
+  lastName: z.string().trim().min(2, "Nom trop court").max(60),
+  email: z.string().trim().email("Email invalide").max(255),
+  phone: z
+    .string()
+    .trim()
+    .max(20)
+    .regex(/^[0-9+\s().-]{6,20}$/, "Téléphone invalide")
+    .optional()
+    .or(z.literal("")),
+  firmName: z.string().trim().min(2, "Nom du cabinet requis").max(120),
+  role: z.enum(["associe", "manager", "developpement", "collaborateur", "autre"], {
+    errorMap: () => ({ message: "Sélectionnez un rôle" }),
+  }),
+  headcount: z.enum(["1-4", "5-10", "11-30", "31-100", "100+"], {
+    errorMap: () => ({ message: "Sélectionnez une taille" }),
+  }),
+  region: z.string().trim().min(2, "Région requise").max(80),
+  icp: z.string().trim().max(600).optional().or(z.literal("")),
+  consent: z.literal(true, {
+    errorMap: () => ({ message: "Vous devez accepter la politique de confidentialité" }),
+  }),
+});
+
+type DemoFormValues = z.infer<typeof demoSchema>;
+
+const fieldBase =
+  "w-full rounded-lg bg-bg-card border border-border-warm/70 px-4 py-3 text-ink text-[0.95rem] " +
+  "placeholder:text-ink-muted/70 focus:outline-none focus:ring-2 focus:ring-terracotta/30 focus:border-terracotta transition";
+
+const labelBase = "block text-sm font-medium text-ink mb-2";
+const errorBase = "mt-1.5 text-xs text-terracotta-deep";
 
 const Demo = () => {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    company: "",
-    message: "",
-  });
-  const { language } = useLanguage();
   const { toast } = useToast();
-  const navigate = useNavigate();
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleInputChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    toast({
-      title: "✅ Demande envoyée !",
-      description: "Notre équipe revient vers vous sous 24h avec votre démo personnalisée.",
-      duration: 5000,
-    });
-
-    navigate(language === "en" ? "/en/waitlist/success" : "/waitlist/success", { replace: true });
-  };
-
-  const testimonials = [
-    {
-      quote: "Grâce à Charly IA, nous avons réduit de 70% le temps de veille sur les AO.",
-      author: "Responsable achats PME IT",
-      company: "TechStart Solutions",
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<DemoFormValues>({
+    resolver: zodResolver(demoSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      firmName: "",
+      region: "",
+      icp: "",
     },
-  ];
+  });
 
-  const productBenefits = [
-    { icon: Clock, title: "Gagnez du temps", description: "Ne perdez plus des heures à trier les AO." },
-    { icon: Target, title: "Augmentez vos chances", description: "Charly IA filtre les faux espoirs et repère les vraies opportunités." },
-    { icon: TrendingUp, title: "Anticipez", description: "Accédez aux signaux faibles avant vos concurrents." },
-  ];
+  const onSubmit = async (values: DemoFormValues) => {
+    // Simulate async submission. Replace with Cloud insert later.
+    await new Promise((r) => setTimeout(r, 700));
+    // eslint-disable-next-line no-console
+    console.log("[demo] submission", values);
+    toast({
+      title: "Demande envoyée",
+      description: "Nous revenons vers vous sous 24h ouvrées pour caler la session.",
+    });
+    setSubmitted(true);
+    reset();
+  };
 
   return (
-    <>
-      <SEOHead />
-      <StructuredData page="demo" />
-      <div className="min-h-screen bg-background">
-        <Header />
+    <div className="min-h-screen bg-page text-ink antialiased">
+      <HeaderEC />
 
-        {/* Hero */}
-        <section className="relative overflow-hidden pt-32 pb-16 px-4 bg-[hsl(var(--hero-dark))]" aria-label="Demo hero">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
-          <div className="container mx-auto max-w-4xl text-center relative z-10">
-            <span className="inline-flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-[0.3em]">
-              <Rocket className="w-4 h-4" />
-              {language === "en" ? "Personalized demo" : "Démonstration personnalisée"}
-            </span>
-            <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold font-display leading-[1.05] tracking-tight">
-              {language === "en" ? (
-                <>Discover your <span className="bg-gradient-highlight bg-clip-text text-transparent">AI potential</span> with Charly AI</>
-              ) : (
-                <>Découvrez votre <span className="bg-gradient-highlight bg-clip-text text-transparent">potentiel IA</span> avec Charly IA</>
-              )}
-            </h1>
-            <p className="mt-8 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              {language === "en"
-                ? "Book a personalized 30-minute demo and see how Charly AI can transform your public tender approach."
-                : "Réservez une démonstration personnalisée de 30 minutes et voyez comment Charly IA peut transformer votre approche des marchés publics."}
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-6 text-xs text-muted-foreground">
-              <span>⏱️ 30 minutes personnalisées</span>
-              <span>📅 Créneaux disponibles</span>
-              <span>🔒 Sans engagement</span>
-            </div>
-          </div>
-        </section>
+      <main id="main-content" role="main" className="pt-28 md:pt-36 pb-20">
+        <div className="container max-w-6xl">
+          <div className="grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-16 items-start">
+            {/* Left — pitch */}
+            <FadeIn>
+              <span className="inline-block text-xs uppercase tracking-[0.2em] text-terracotta font-medium mb-4">
+                Pilote 14 jours
+              </span>
+              <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-ink mb-5">
+                Voyez Eligibly à <em className="text-terracotta">l'œuvre sur votre ICP.</em>
+              </h1>
+              <p className="text-lg text-ink-secondary leading-relaxed mb-8">
+                30 minutes en visio pour cadrer votre ICP, puis vos premiers leads scorés
+                sous 48h. Pas de CB demandée, pas d'engagement.
+              </p>
 
-        {/* Main content */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-5xl">
-            <div className="grid lg:grid-cols-2 gap-12">
-              {/* Form */}
-              <div className="rounded-2xl border border-border/50 bg-card p-8 sm:p-10" id="demo-form">
-                <>
-                  <div className="mb-8">
-                    <h2 className="text-2xl font-bold font-display tracking-tight mb-2">
-                      Réservez votre démonstration
-                    </h2>
-                    <p className="text-sm text-muted-foreground">
-                      Découvrez comment Charly IA peut transformer votre prospection commerciale.
-                    </p>
-                  </div>
+              <ul className="space-y-3.5 mb-8">
+                {[
+                  "Session de cadrage ICP (secteurs, zones, taille, profil dirigeant)",
+                  "Workspace dédié créé sous 24h",
+                  "Premiers leads scorés et expliqués sous 48h",
+                  "Bilan de pilote à J+14, sans engagement",
+                ].map((p) => (
+                  <li key={p} className="flex gap-3 text-[0.95rem] text-ink-secondary">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-terracotta flex-shrink-0" />
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
 
-                  <SecureFormWrapper onSubmit={handleSubmit} className="space-y-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="fullName" className="text-sm font-medium">Nom complet *</Label>
-                      <Input id="fullName" value={formData.fullName} onChange={(e) => handleInputChange("fullName", e.target.value)} placeholder="Jean Dupont" className="h-12" required />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email" className="text-sm font-medium">Email professionnel *</Label>
-                      <Input id="email" type="email" value={formData.email} onChange={(e) => handleInputChange("email", e.target.value)} placeholder="julie@startup.com" className="h-12" required />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="company" className="text-sm font-medium">Entreprise *</Label>
-                      <Input id="company" value={formData.company} onChange={(e) => handleInputChange("company", e.target.value)} placeholder="Ma Société SARL" className="h-12" required />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="message" className="text-sm font-medium">Message / besoin spécifique</Label>
-                      <Textarea id="message" value={formData.message} onChange={(e) => handleInputChange("message", e.target.value)} placeholder="Décrivez brièvement vos besoins..." className="resize-none" rows={3} />
-                    </div>
-                    <Button type="submit" className="w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-[0.15em] text-xs font-semibold group">
-                      Réserver ma démonstration
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                    <p className="text-center text-xs text-muted-foreground">
-                      Démonstration personnalisée, sans engagement. Réponse sous 24h.
-                    </p>
-                  </SecureFormWrapper>
-                </>
+              <div className="bg-sapin-soft border border-sapin/20 rounded-xl p-5 text-sm text-ink-secondary leading-relaxed">
+                <strong className="text-sapin block mb-1.5">Vos données restent les vôtres.</strong>
+                Données issues de sources publiques (INPI, Sirene, BODACC) et partenaires
+                contractuels. RGPD article 6.1.f. Désabonnement à tout moment.
               </div>
+            </FadeIn>
 
-              {/* Right column */}
-              <div className="space-y-8">
-                {/* Testimonial */}
-                <div className="p-6 rounded-2xl border border-border/50 bg-card">
-                  <MessageSquare className="w-5 h-5 text-primary mb-4" />
-                  <blockquote className="text-sm italic text-foreground leading-relaxed mb-4">
-                    "{testimonials[0].quote}"
-                  </blockquote>
-                  <cite className="text-xs text-muted-foreground not-italic">
-                    — {testimonials[0].author}, {testimonials[0].company}
-                  </cite>
-                </div>
+            {/* Right — form */}
+            <FadeIn delay={0.1}>
+              <div className="bg-bg-card border border-border-warm rounded-2xl p-7 md:p-9 shadow-luxury">
+                {submitted ? (
+                  <div className="text-center py-8">
+                    <div className="w-14 h-14 rounded-full bg-sapin-soft text-sapin flex items-center justify-center mx-auto mb-5 text-2xl">
+                      ✓
+                    </div>
+                    <h2 className="font-display text-2xl text-ink mb-3">Merci, c'est noté.</h2>
+                    <p className="text-ink-secondary mb-6">
+                      Un email de confirmation vient de partir. Nous revenons vers vous
+                      sous 24h ouvrées pour caler la session de cadrage.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setSubmitted(false)}
+                      className="text-sm font-medium text-terracotta hover:text-terracotta-deep transition-colors"
+                    >
+                      Envoyer une autre demande
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit(onSubmit)} noValidate>
+                    <h2 className="font-display text-2xl text-ink mb-1">Demander une démo</h2>
+                    <p className="text-sm text-ink-muted mb-6">Tous les champs marqués * sont requis.</p>
 
-                {/* Benefits */}
-                <div>
-                  <h3 className="text-lg font-bold font-display mb-6 tracking-tight">Pourquoi choisir Charly IA ?</h3>
-                  <div className="space-y-4">
-                    {productBenefits.map((benefit, index) => (
-                      <div key={index} className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-                          <benefit.icon className="w-5 h-5 text-primary" />
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-sm mb-1">{benefit.title}</h4>
-                          <p className="text-xs text-muted-foreground">{benefit.description}</p>
-                        </div>
+                    <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                      <div>
+                        <label htmlFor="firstName" className={labelBase}>Prénom *</label>
+                        <input id="firstName" autoComplete="given-name" className={fieldBase} {...register("firstName")} />
+                        {errors.firstName && <p className={errorBase}>{errors.firstName.message}</p>}
                       </div>
-                    ))}
-                  </div>
-                </div>
+                      <div>
+                        <label htmlFor="lastName" className={labelBase}>Nom *</label>
+                        <input id="lastName" autoComplete="family-name" className={fieldBase} {...register("lastName")} />
+                        {errors.lastName && <p className={errorBase}>{errors.lastName.message}</p>}
+                      </div>
+                    </div>
 
-                {/* Repeated CTA */}
-                <div className="p-6 rounded-2xl border border-primary/20 bg-primary/5 text-center">
-                  <h4 className="font-bold text-sm mb-2">Prêt à découvrir Charly IA ?</h4>
-                  <p className="text-xs text-muted-foreground mb-4">
-                    Rejoignez les entreprises qui optimisent leur prospection avec l'IA.
-                  </p>
-                  <Button
-                    onClick={() => document.getElementById("demo-form")?.scrollIntoView({ behavior: "smooth" })}
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-[0.15em] text-xs font-semibold"
-                  >
-                    Réserver ma démonstration
-                  </Button>
-                </div>
+                    <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                      <div>
+                        <label htmlFor="email" className={labelBase}>Email professionnel *</label>
+                        <input id="email" type="email" autoComplete="email" className={fieldBase} {...register("email")} />
+                        {errors.email && <p className={errorBase}>{errors.email.message}</p>}
+                      </div>
+                      <div>
+                        <label htmlFor="phone" className={labelBase}>Téléphone</label>
+                        <input id="phone" type="tel" autoComplete="tel" className={fieldBase} {...register("phone")} />
+                        {errors.phone && <p className={errorBase}>{errors.phone.message}</p>}
+                      </div>
+                    </div>
+
+                    <div className="mb-4">
+                      <label htmlFor="firmName" className={labelBase}>Nom du cabinet *</label>
+                      <input id="firmName" autoComplete="organization" className={fieldBase} {...register("firmName")} />
+                      {errors.firmName && <p className={errorBase}>{errors.firmName.message}</p>}
+                    </div>
+
+                    <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                      <div>
+                        <label htmlFor="role" className={labelBase}>Votre rôle *</label>
+                        <select id="role" className={fieldBase} {...register("role")} defaultValue="">
+                          <option value="" disabled>Choisir…</option>
+                          <option value="associe">Associé / Dirigeant</option>
+                          <option value="manager">Manager / Chef de mission</option>
+                          <option value="developpement">Responsable développement</option>
+                          <option value="collaborateur">Collaborateur</option>
+                          <option value="autre">Autre</option>
+                        </select>
+                        {errors.role && <p className={errorBase}>{errors.role.message}</p>}
+                      </div>
+                      <div>
+                        <label htmlFor="headcount" className={labelBase}>Taille du cabinet *</label>
+                        <select id="headcount" className={fieldBase} {...register("headcount")} defaultValue="">
+                          <option value="" disabled>Choisir…</option>
+                          <option value="1-4">1 à 4 collaborateurs</option>
+                          <option value="5-10">5 à 10</option>
+                          <option value="11-30">11 à 30</option>
+                          <option value="31-100">31 à 100</option>
+                          <option value="100+">100+</option>
+                        </select>
+                        {errors.headcount && <p className={errorBase}>{errors.headcount.message}</p>}
+                      </div>
+                    </div>
+
+                    <div className="mb-4">
+                      <label htmlFor="region" className={labelBase}>Zone géographique cible *</label>
+                      <input
+                        id="region"
+                        placeholder="Ex. Île-de-France, Auvergne-Rhône-Alpes…"
+                        className={fieldBase}
+                        {...register("region")}
+                      />
+                      {errors.region && <p className={errorBase}>{errors.region.message}</p>}
+                    </div>
+
+                    <div className="mb-5">
+                      <label htmlFor="icp" className={labelBase}>
+                        Votre ICP en quelques mots <span className="text-ink-muted font-normal">(facultatif)</span>
+                      </label>
+                      <textarea
+                        id="icp"
+                        rows={3}
+                        placeholder="Secteurs ciblés, typologies de dirigeants, signaux à privilégier…"
+                        className={fieldBase}
+                        {...register("icp")}
+                      />
+                      {errors.icp && <p className={errorBase}>{errors.icp.message}</p>}
+                    </div>
+
+                    <label className="flex gap-3 items-start text-sm text-ink-secondary mb-6 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        className="mt-1 w-4 h-4 rounded border-border-warm text-terracotta focus:ring-terracotta/30"
+                        {...register("consent")}
+                      />
+                      <span>
+                        J'accepte que mes informations soient utilisées pour me recontacter
+                        dans le cadre de cette demande de démo, conformément à la{" "}
+                        <a href="/confidentialite" className="text-terracotta hover:underline">
+                          politique de confidentialité
+                        </a>.
+                      </span>
+                    </label>
+                    {errors.consent && <p className={errorBase + " -mt-4 mb-4"}>{errors.consent.message}</p>}
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full px-6 py-3.5 rounded-lg bg-terracotta text-cream font-medium hover:bg-terracotta-deep transition-colors shadow-card disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? "Envoi…" : "Programmer ma démo"}
+                    </button>
+
+                    <p className="text-xs text-ink-muted text-center mt-4">
+                      Réponse sous 24h ouvrées · Pas de CB demandée · Aucune obligation
+                    </p>
+                  </form>
+                )}
               </div>
-            </div>
-
-            <div className="mt-16">
-              <ContextualLinks currentPage="/demo" context="demo" />
-            </div>
+            </FadeIn>
           </div>
-        </section>
+        </div>
+      </main>
 
-        {/* Footer CTA */}
-        <section className="py-32 sm:py-40 px-4 relative overflow-hidden bg-[hsl(var(--hero-dark))]" aria-label="CTA">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[150px]" />
-          <div className="container mx-auto max-w-3xl text-center relative z-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display leading-[1.05] tracking-tight">
-              Transformez votre prospection dès aujourd'hui
-            </h2>
-            <p className="mt-8 text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Découvrez comment Charly IA peut vous faire gagner du temps et augmenter vos chances de succès.
-            </p>
-            <div className="mt-12">
-              <Button
-                size="lg"
-                onClick={() => document.getElementById("demo-form")?.scrollIntoView({ behavior: "smooth" })}
-                className="h-14 px-12 text-sm font-semibold uppercase tracking-[0.2em] bg-primary text-primary-foreground hover:bg-primary/90 group"
-              >
-                Réserver ma démonstration
-                <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
-            <p className="mt-8 text-xs text-muted-foreground tracking-wide">
-              ✓ Sans engagement · ✓ Setup en 5 min · ✓ Support dédié
-            </p>
-          </div>
-        </section>
-
-        <Footer />
-      </div>
-    </>
+      <FooterEC />
+    </div>
   );
 };
 
