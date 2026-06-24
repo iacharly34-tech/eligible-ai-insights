@@ -283,9 +283,9 @@ export const SEOHead = ({
         case '/':
         case '/accueil':
           return {
-            title: "Eligibly — Copilote IA des marchés publics",
-            description: "Détectez, analysez et remportez plus d'appels d'offres publics. La suite d'agents IA pour les PME françaises.",
-            keywords: "eligibly, plateforme eligibly, appels d'offres publics, IA marchés publics, solution eligibly"
+            title: "Eligibly — CRM de prospection pour cabinets d'expertise comptable",
+            description: "Vos prochains clients sont fraîchement immatriculés. Eligibly consolide chaque jour les SASU/SAS créées en France, filtres amont (CAC, procédure, holding, serial), score expliqué, plan d'action par lead. 14 jours d'essai gratuits.",
+            keywords: "prospection cabinet expertise comptable, leads experts comptables, SASU SAS immatriculation, CRM expertise comptable, primo entrepreneur, eligibly"
           };
         case '/produit':
           return {
