@@ -1,0 +1,69 @@
+import { Button } from "@/components/ui/button";
+import { Check } from "lucide-react";
+import { SafeLink } from "@/components/SafeLink";
+
+const features = [
+  "Leads quotidiens potentiellement adressables, priorisés et scorés",
+  "Pour chaque lead : pourquoi, score expliqué, signaux positifs, points à vérifier",
+  "Plan d'action concret : préparer l'appel, générer une relance, marquer non pertinent",
+  "Copilote IA conversationnel intégré",
+  "Filtres amont systématiques (CAC, procédure, cessation, holding, serial)",
+  "Amélioration progressive de la priorisation sur votre feedback",
+  "Module suivi de conversion + workspace multi-utilisateur",
+  "Support email + visio mensuelle de bilan",
+];
+
+export const CabinetPricing = () => {
+  return (
+    <section id="pricing" className="py-20 md:py-28 bg-muted/30 border-y border-border">
+      <div className="container mx-auto px-4">
+        <div className="max-w-2xl mx-auto text-center mb-12">
+          <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">Tarification</p>
+          <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
+            Un seul forfait, <em className="italic text-primary font-medium">sans engagement</em>.
+          </h2>
+        </div>
+
+        <div className="max-w-2xl mx-auto rounded-2xl border-2 border-primary bg-card shadow-xl shadow-primary/10 overflow-hidden relative">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[0.65rem] uppercase tracking-[0.16em] font-bold px-4 py-1 rounded-b-md">
+            Forfait Pro
+          </div>
+          <div className="p-8 md:p-10 pt-12">
+            <div className="text-center mb-2">
+              <span className="font-display text-5xl md:text-6xl font-semibold text-foreground">290 €</span>
+              <span className="text-muted-foreground ml-1">HT / mois</span>
+            </div>
+            <p className="text-center text-sm text-muted-foreground mb-8">
+              14 premiers jours gratuits, sans CB · résiliable à tout moment avec préavis 30 jours
+            </p>
+
+            <div className="rounded-lg bg-primary/5 border border-primary/15 p-4 mb-8">
+              <p className="text-[0.7rem] uppercase tracking-[0.14em] text-primary font-semibold mb-2">
+                Engagement de qualité par filtres amont
+              </p>
+              <p className="text-sm text-foreground/85 leading-relaxed">
+                Aucun lead avec CAC mandaté, procédure collective, cessation, holding pure (10+ sociétés) ou serial entrepreneur (5+ sociétés). Lead non conforme détecté → remplacement gratuit.{" "}
+                <em className="italic text-muted-foreground">Pas de garantie de résultats sur le nombre de RDV : votre conversion dépend de votre exécution commerciale.</em>
+              </p>
+            </div>
+
+            <ul className="space-y-3 mb-8">
+              {features.map((f) => (
+                <li key={f} className="flex gap-3 text-[0.95rem]">
+                  <Check className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <span className="text-foreground/85">{f}</span>
+                </li>
+              ))}
+            </ul>
+
+            <SafeLink to="/demo" className="block">
+              <Button size="lg" className="w-full h-12 text-sm font-semibold uppercase tracking-[0.1em]">
+                Démarrer mon pilote 14 jours
+              </Button>
+            </SafeLink>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
