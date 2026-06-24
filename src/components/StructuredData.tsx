@@ -12,8 +12,8 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "@type": "Organization",
     "name": "Eligibly",
     "description": language === 'en' 
-      ? "AI platform for public tender analysis and government contract optimization"
-      : "Plateforme IA pour l'analyse des appels d'offres publics (AO) et l'optimisation des marchés publics",
+      ? "Vertical prospection CRM for French accounting firms. Daily qualified leads of newly registered SASU and SAS."
+      : "CRM de prospection vertical pour cabinets d'expertise comptable français. Leads quotidiens de SASU et SAS fraîchement immatriculées.",
     "url": "https://eligibly.ai",
     "logo": "https://eligibly.ai/assets/eligibly-logo-main.png",
     "image": "https://eligibly.ai/assets/eligible-ai-opengraph.png",
@@ -38,8 +38,8 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "name": "Eligibly",
     "alternateName": "Eligibly.ai",
     "description": language === 'en'
-      ? "AI platform for public tenders analysis and optimization"
-      : "Plateforme IA pour l'analyse et l'optimisation des appels d'offres publics",
+      ? "Vertical prospection CRM for accounting firms — qualified leads of newly registered French companies."
+      : "CRM de prospection vertical pour cabinets d'expertise comptable — leads qualifiés de sociétés fraîchement immatriculées en France.",
     "url": "https://eligibly.ai",
     "sameAs": [
       "https://www.linkedin.com/company/eligibly",
@@ -56,49 +56,42 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "mainEntity": {
       "@type": "ItemList",
       "name": "Navigation principale Eligibly",
-      "description": "Sections principales du site Eligibly pour les appels d'offres publics",
+      "description": "Sections principales du site Eligibly — CRM de prospection pour cabinets d'expertise comptable",
       "itemListElement": [
         {
           "@type": "SiteNavigationElement",
           "position": 1,
           "name": language === 'en' ? "Product" : "Produit",
-          "description": language === 'en' ? "AI analysis platform for public tenders" : "Plateforme d'analyse IA pour appels d'offres publics",
+          "description": language === 'en' ? "Prospection CRM for accounting firms" : "CRM de prospection pour cabinets d'expertise comptable",
           "url": `https://eligibly.ai${language === 'en' ? '/en/product' : '/produit'}`
         },
         {
           "@type": "SiteNavigationElement", 
           "position": 2,
           "name": language === 'en' ? "Demo" : "Démo",
-          "description": language === 'en' ? "Test our AI on your public tenders" : "Testez notre IA sur vos appels d'offres",
+          "description": language === 'en' ? "Try Eligibly on real leads" : "Testez Eligibly sur de vrais leads",
           "url": `https://eligibly.ai${language === 'en' ? '/en/demo' : '/demo'}`
         },
         {
           "@type": "SiteNavigationElement",
           "position": 3,
           "name": language === 'en' ? "Solutions" : "Solutions", 
-          "description": language === 'en' ? "Complete solutions for public procurement" : "Solutions complètes pour la commande publique",
+          "description": language === 'en' ? "Solutions for accounting firms" : "Solutions pour cabinets d'expertise comptable",
           "url": `https://eligibly.ai${language === 'en' ? '/en/solutions' : '/solutions'}`
         },
         {
           "@type": "SiteNavigationElement",
           "position": 4,
           "name": language === 'en' ? "Pricing" : "Tarifs",
-          "description": language === 'en' ? "Transparent pricing for all businesses" : "Tarifs transparents pour toutes les entreprises", 
+          "description": language === 'en' ? "Single Pro plan, 14-day free trial" : "Forfait Pro unique, 14 jours d'essai gratuits", 
           "url": `https://eligibly.ai${language === 'en' ? '/en/pricing' : '/tarifs'}`
         },
         {
           "@type": "SiteNavigationElement",
           "position": 5,
           "name": language === 'en' ? "Resources" : "Ressources",
-          "description": language === 'en' ? "Guides and expertise for public tenders" : "Guides et expertise pour les appels d'offres publics",
+          "description": language === 'en' ? "Guides and resources for accounting firms" : "Guides et ressources pour cabinets d'expertise comptable",
           "url": `https://eligibly.ai${language === 'en' ? '/en/resources' : '/ressources'}`
-        },
-        {
-          "@type": "SiteNavigationElement",
-          "position": 6,
-          "name": language === 'en' ? "Public Tender Analysis" : "Appels d'Offres Publics",
-          "description": language === 'en' ? "Complete guide to public tender analysis" : "Guide complet d'analyse des appels d'offres publics",
-          "url": "https://eligibly.ai/appels-d-offres-publics"
         }
       ]
     }
@@ -109,8 +102,8 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "@type": "SoftwareApplication",
     "name": "Eligibly",
     "description": language === 'en'
-      ? "AI platform that analyzes public tenders and predicts success probability for government contracts"
-      : "Plateforme IA qui analyse les appels d'offres publics (AO) et prédit les chances de succès sur les marchés publics",
+      ? "Vertical prospection CRM that delivers daily qualified leads of newly registered French companies to accounting firms, with explained scoring and action plans."
+      : "CRM de prospection vertical qui livre chaque jour aux cabinets d'expertise comptable des leads qualifiés de sociétés fraîchement immatriculées, avec score expliqué et plan d'action.",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "url": "https://eligibly.ai",
@@ -139,8 +132,8 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "@type": "Product",
     "name": "Eligibly AI",
     "description": language === 'en'
-      ? "AI solution for public tender analysis and government contract optimization"
-      : "Solution IA pour l'analyse des appels d'offres publics et l'optimisation des marchés publics",
+      ? "Prospection CRM for accounting firms — qualified leads, explained scoring, action plans."
+      : "CRM de prospection pour cabinets d'expertise comptable — leads qualifiés, score expliqué, plan d'action.",
     "image": "https://eligibly.ai/assets/eligible-ai-hero-optimized.webp",
     "brand": {
       "@type": "Brand",
@@ -262,26 +255,26 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Qu'est-ce qu'Eligibly.ai ?",
+        "name": "Qu'est-ce qu'Eligibly ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Eligibly.ai est une plateforme d'intelligence artificielle spécialisée dans l'analyse des appels d'offres publics. Elle aide les entreprises à identifier les meilleures opportunités et à optimiser leurs chances de succès."
+          "text": "Eligibly est un CRM de prospection vertical pour cabinets d'expertise comptable français. Chaque jour, il consolide les SASU et SAS fraîchement immatriculées, applique des filtres amont qualité (CAC mandaté, procédure collective, holding, serial entrepreneur) et présente au cabinet les leads potentiellement adressables, avec un score expliqué et un plan d'action."
         }
       },
       {
         "@type": "Question", 
-        "name": "Comment l'IA d'Eligibly analyse-t-elle les appels d'offres ?",
+        "name": "En quoi Eligibly est différent de Pappers ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Notre IA analyse plus de 600 sources d'appels d'offres publics, évalue la compatibilité avec votre profil d'entreprise et calcule un score de probabilité de succès pour chaque opportunité."
+          "text": "Pappers est un annuaire généraliste qui donne la donnée brute. Eligibly est verticalisé cabinet EC : filtres amont automatiques, score expliqué par lead, plan d'action concret, et apprentissage progressif sur le feedback du cabinet."
         }
       },
       {
         "@type": "Question",
-        "name": "Eligibly est-il gratuit ?",
+        "name": "Combien coûte Eligibly ?",
         "acceptedAnswer": {
           "@type": "Answer", 
-          "text": "Eligibly propose un essai gratuit de 14 jours. Ensuite, plusieurs plans sont disponibles selon vos besoins d'analyse d'appels d'offres."
+          "text": "Un seul forfait Pro à 290 € HT par mois, avec 14 jours d'essai gratuits sans carte bancaire et résiliation à tout moment avec préavis de 30 jours."
         }
       }
     ]
