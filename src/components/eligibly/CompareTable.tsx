@@ -6,8 +6,9 @@ const rows = [
   { f: "Score expliqué par lead", e: ["yes", "Score + rationale"], p: ["no", "Pas de scoring"], a: ["partial", "Score boîte noire"], d: ["partial", "À modéliser"] },
   { f: "Plan d'action concret par lead", e: ["yes", "Préparer appel + relance"], p: ["no", "Donnée brute"], a: ["partial", "Séquences génériques"], d: ["no", "À développer"] },
   { f: "Sources françaises (INPI/Sirene/BODACC)", e: ["yes", "Quotidien"], p: ["yes", "Oui"], a: ["partial", "Partiel"], d: ["partial", "À intégrer"] },
+  { f: "Multi-tenant cabinet (workspace isolé)", e: ["yes", "Natif"], p: ["no", "Compte unique"], a: ["yes", "Oui"], d: ["partial", "À développer"] },
   { f: "Apprentissage sur votre feedback", e: ["yes", "Continu"], p: ["no", "Non"], a: ["partial", "Limité"], d: ["partial", "À développer"] },
-  { f: "Tarif transparent", e: ["yes", "290€ HT / mois"], p: ["partial", "Variable"], a: ["no", "Sur devis"], d: ["no", "Coût élevé"] },
+  { f: "Coût mensuel typique", e: ["yes", "290 € HT"], p: ["partial", "~100 € HT"], a: ["no", "~500-1500 € HT"], d: ["no", "Dev + maintenance"] },
 ] as const;
 
 const cell = (state: string, label: string, highlight = false) => {

@@ -26,9 +26,9 @@ export const HeaderEC = () => {
         </a>
 
         <nav className="hidden md:flex items-center gap-7 text-sm text-ink-secondary">
-          <a href="#preview" className="hover:text-terracotta transition-colors">Produit</a>
-          <a href="#how" className="hover:text-terracotta transition-colors">Méthode</a>
-          <a href="#pricing" className="hover:text-terracotta transition-colors">Tarif</a>
+          <a href="#how" className="hover:text-terracotta transition-colors">Comment ça marche</a>
+          <a href="#preview" className="hover:text-terracotta transition-colors">Le produit</a>
+          <a href="#pricing" className="hover:text-terracotta transition-colors">Pricing</a>
           <a href="#faq" className="hover:text-terracotta transition-colors">FAQ</a>
         </nav>
 

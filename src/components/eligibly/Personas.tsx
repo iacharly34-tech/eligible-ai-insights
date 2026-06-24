@@ -3,8 +3,8 @@ import { SectionHeader } from "./SectionHeader";
 const personas = [
   {
     letter: "A",
-    title: "Cabinets en croissance organique",
-    body: <>Vous tournez à <strong>10–40 collaborateurs</strong>. Le bouche-à-oreille ne suffit plus pour soutenir la croissance. Vous voulez un canal d'acquisition régulier sur des entrepreneurs à fort potentiel, sans recruter un commercial à temps plein.</>,
+    title: "Cabinets indépendants 5 à 30 collaborateurs",
+    body: <>Vous êtes déjà <strong>bien installés</strong>, mais le bouche-à-oreille ne suffit plus pour soutenir la croissance. Vous voulez un canal d'acquisition régulier sur des entrepreneurs à fort potentiel, sans recruter un commercial à temps plein.</>,
   },
   {
     letter: "B",

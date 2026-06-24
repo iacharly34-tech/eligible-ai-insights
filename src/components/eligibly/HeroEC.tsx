@@ -47,7 +47,7 @@ export const HeroEC = () => {
           <div>
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bg-card border border-border-warm/60 text-xs font-medium text-ink-secondary mb-7">
               <span className="w-1.5 h-1.5 rounded-full bg-terracotta animate-pulse" />
-              CRM vertical · Cabinets d'expertise comptable
+              CRM de prospection vertical pour cabinets d'expertise comptable
             </span>
 
             <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-[3.75rem] leading-[1.05] text-ink mb-6">
@@ -56,9 +56,10 @@ export const HeroEC = () => {
             </h1>
 
             <p className="text-lg text-ink-secondary leading-relaxed max-w-xl mb-8">
-              Chaque matin, Eligibly livre à votre cabinet les SASU/SAS de France
-              les plus prometteuses, déjà filtrées et priorisées. Avec, pour chacune,
-              un plan d'action concret.
+              Eligibly consolide chaque jour les SASU et SAS créées en France,
+              applique des filtres amont (CAC mandaté, procédure collective, holding,
+              serial entrepreneur) et vous présente les leads potentiellement
+              adressables avec un score expliqué et un plan d'action.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-7">
