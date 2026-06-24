@@ -5,18 +5,16 @@ import { Footer } from "@/components/Footer";
 import { MobileCTABar } from "@/components/MobileCTABar";
 import { InternalLinksManager } from "@/components/InternalLinksManager";
 
-import { HeroSection } from "@/components/landing/HeroSection";
-import { MetricsBar } from "@/components/landing/MetricsBar";
-import { ProblemSection } from "@/components/landing/ProblemSection";
-import { ProductModules } from "@/components/product/ProductModules";
-import { MockDashboard } from "@/components/landing/MockDashboard";
-import { FeaturesGrid } from "@/components/landing/FeaturesGrid";
-import { SocialProof } from "@/components/landing/SocialProof";
-import { ComparisonTable } from "@/components/landing/ComparisonTable";
-import { OnboardingTimeline } from "@/components/landing/OnboardingTimeline";
-
-import { FAQAccordion } from "@/components/landing/FAQAccordion";
-import { FinalCTA } from "@/components/landing/FinalCTA";
+import { CabinetHero } from "@/components/cabinet/CabinetHero";
+import { CabinetSources } from "@/components/cabinet/CabinetSources";
+import { CabinetProblems } from "@/components/cabinet/CabinetProblems";
+import { CabinetPreview } from "@/components/cabinet/CabinetPreview";
+import { CabinetHowItWorks } from "@/components/cabinet/CabinetHowItWorks";
+import { CabinetCompare } from "@/components/cabinet/CabinetCompare";
+import { CabinetPersonas } from "@/components/cabinet/CabinetPersonas";
+import { CabinetPricing } from "@/components/cabinet/CabinetPricing";
+import { CabinetFAQ } from "@/components/cabinet/CabinetFAQ";
+import { CabinetFinalCTA } from "@/components/cabinet/CabinetFinalCTA";
 
 const HomePage = () => {
   return (
@@ -28,47 +26,24 @@ const HomePage = () => {
         <MobileCTABar />
 
         <main id="main-content" tabIndex={-1} className="focus:outline-none" role="main">
-          {/* 1. Hero — Scoring prédictif comme promesse */}
-          <HeroSection />
-
-          {/* 2. Barre de métriques clés */}
-          <MetricsBar />
-
-          {/* 3. Le problème — douleur client */}
-          <ProblemSection />
-
-          {/* 4. Solution en 3 étapes — Détecter → Scorer → Répondre */}
-          <ProductModules />
-
-          {/* 4b. Mock dashboard — scored tenders preview */}
-          <MockDashboard />
-
-          {/* 5. Fonctionnalités clés */}
-          <FeaturesGrid />
-
-          {/* 6. Preuve sociale — témoignages */}
-          <SocialProof />
-
-          {/* 7. Comparaison — Eligibly vs alternatives */}
-          <ComparisonTable />
-
-          {/* 8. Timeline d'onboarding */}
-          <OnboardingTimeline />
-
-
-          {/* 10. FAQ — conversion + SEO */}
-          <FAQAccordion />
-
-          {/* 11. CTA final */}
-          <FinalCTA />
+          {/* Pivot juin 2026 — CRM prospection cabinets d'expertise comptable */}
+          <CabinetHero />
+          <CabinetSources />
+          <CabinetProblems />
+          <CabinetPreview />
+          <CabinetHowItWorks />
+          <CabinetCompare />
+          <CabinetPersonas />
+          <CabinetPricing />
+          <CabinetFAQ />
+          <CabinetFinalCTA />
         </main>
 
         <Footer />
 
-        {/* Hidden content for SEO */}
         <div className="sr-only">
-          <h2>À propos d'Eligibly.ai</h2>
-          <p>Eligibly.ai est la seule plateforme IA qui prédit vos chances de succès sur les appels d'offres publics grâce au scoring prédictif.</p>
+          <h2>À propos d'Eligibly</h2>
+          <p>Eligibly est le CRM de prospection vertical pour cabinets d'expertise comptable français : leads quotidiens SASU/SAS fraîchement immatriculées, filtres amont (CAC, procédure, holding, serial), score expliqué et plan d'action par lead.</p>
           <InternalLinksManager currentPage="homepage" maxLinks={4} variant="inline" />
         </div>
       </div>
