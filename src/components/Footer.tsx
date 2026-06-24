@@ -11,28 +11,28 @@ export const Footer = () => {
       title: t('footer.product'),
       links: [
         { name: t('nav.product'), href: language === 'en' ? '/en/product' : '/produit' },
-        { name: 'Appels d\'offres publics', href: '/appels-d-offres-publics' },
+        { name: 'Comment ça marche', href: '/#how' },
+        { name: 'Aperçu produit', href: '/#preview' },
         { name: t('nav.demo'), href: language === 'en' ? '/en/demo' : '/demo' },
         { name: t('nav.pricing'), href: language === 'en' ? '/en/pricing' : '/tarifs' },
       ],
     },
     {
-      title: 'Guides & Ressources',
+      title: 'Sources & données',
       links: [
-        { name: 'Guide AO publics', href: '/appels-d-offres-publics' },
-        { name: 'Détecter les AO', href: '/detection-appels-offres' },
-        { name: 'Numérique responsable', href: '/numerique-responsable' },
-        { name: 'Éviter les erreurs', href: '/erreurs-ao' },
-        { name: 'Stratégie données', href: '/strategie-donnees' },
+        { name: 'INPI / RNE', href: 'https://data.inpi.fr/' },
+        { name: 'Sirene · INSEE', href: 'https://www.sirene.fr/' },
+        { name: 'BODACC', href: 'https://www.bodacc.fr/' },
+        { name: 'Pappers', href: 'https://www.pappers.fr/' },
       ],
     },
     {
-      title: 'Secteurs',
+      title: 'Pour qui',
       links: [
-        { name: 'Marchés BTP', href: '/appels-d-offres-publics#btp' },
-        { name: 'Services IT', href: '/appels-d-offres-publics#informatique' },
-        { name: 'Fournitures', href: '/appels-d-offres-publics#fournitures' },
-        { name: 'Conseil & Formation', href: '/appels-d-offres-publics#conseil' },
+        { name: 'Cabinets 5-30 collaborateurs', href: '/#personas' },
+        { name: 'Structuration commerciale', href: '/#personas' },
+        { name: 'Cabinets verticalisés', href: '/#personas' },
+        { name: 'Post-cession', href: '/#personas' },
       ],
     },
     {
@@ -62,7 +62,9 @@ export const Footer = () => {
             </div>
             
             <p className="text-sm text-muted-foreground max-w-sm">
-              {language === 'en' ? 'AI platform to identify the best public tender opportunities.' : "Plateforme IA pour identifier les meilleures opportunités d'appels d'offres publics."}
+              {language === 'en'
+                ? 'The vertical prospection CRM for French accounting firms. Newly registered SASU and SAS, qualified daily.'
+                : "Le CRM de prospection vertical pour cabinets d'expertise comptable français. SASU et SAS fraîchement immatriculées, qualifiées chaque jour."}
             </p>
 
             <div className="flex items-center space-x-6 text-xs text-foreground/70">
