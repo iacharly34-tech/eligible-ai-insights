@@ -1,46 +1,78 @@
-import { HeaderEC } from "@/components/eligibly/HeaderEC";
-import { HeroEC } from "@/components/eligibly/HeroEC";
-import { SourcesBar } from "@/components/eligibly/SourcesBar";
-import { ProblemSection } from "@/components/eligibly/ProblemSection";
-import { LeadPreview } from "@/components/eligibly/LeadPreview";
-import { HowItWorks } from "@/components/eligibly/HowItWorks";
-import { CompareTable } from "@/components/eligibly/CompareTable";
-import { Personas } from "@/components/eligibly/Personas";
-import { PricingEC } from "@/components/eligibly/PricingEC";
-import { FAQEC } from "@/components/eligibly/FAQEC";
-import { FinalCTA } from "@/components/eligibly/FinalCTA";
-import { FooterEC } from "@/components/eligibly/FooterEC";
-import { FadeIn } from "@/components/eligibly/FadeIn";
+import { SEOHead } from "@/components/SEOHead";
+import { StructuredData } from "@/components/StructuredData";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { MobileCTABar } from "@/components/MobileCTABar";
+import { InternalLinksManager } from "@/components/InternalLinksManager";
+
+import { HeroSection } from "@/components/landing/HeroSection";
+import { MetricsBar } from "@/components/landing/MetricsBar";
+import { ProblemSection } from "@/components/landing/ProblemSection";
+import { ProductModules } from "@/components/product/ProductModules";
+import { MockDashboard } from "@/components/landing/MockDashboard";
+import { FeaturesGrid } from "@/components/landing/FeaturesGrid";
+import { SocialProof } from "@/components/landing/SocialProof";
+import { ComparisonTable } from "@/components/landing/ComparisonTable";
+import { OnboardingTimeline } from "@/components/landing/OnboardingTimeline";
+
+import { FAQAccordion } from "@/components/landing/FAQAccordion";
+import { FinalCTA } from "@/components/landing/FinalCTA";
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen bg-page text-ink antialiased">
-      <HeaderEC />
-      <main id="main-content" role="main">
-        <HeroEC />
-        <FadeIn><SourcesBar /></FadeIn>
-        <FadeIn><ProblemSection /></FadeIn>
-        <FadeIn><LeadPreview /></FadeIn>
-        <FadeIn><HowItWorks /></FadeIn>
-        <FadeIn><CompareTable /></FadeIn>
-        <FadeIn><Personas /></FadeIn>
-        <FadeIn><PricingEC /></FadeIn>
-        <FadeIn><FAQEC /></FadeIn>
-        <FadeIn><FinalCTA /></FadeIn>
-      </main>
-      <FooterEC />
+    <>
+      <SEOHead />
+      <StructuredData page="home" />
+      <div className="min-h-screen bg-background">
+        <Header />
+        <MobileCTABar />
 
-      {/* SEO sr-only */}
-      <div className="sr-only">
-        <h2>Eligibly — CRM de prospection vertical pour cabinets d'expertise comptable</h2>
-        <p>
-          Eligibly consolide chaque jour les SASU et SAS nouvellement immatriculées en France
-          via les sources publiques officielles (INPI, Sirene, BODACC) et applique des filtres
-          amont systématiques pour livrer aux cabinets d'expertise comptable une liste priorisée
-          de leads adressables, avec score expliqué et plan d'action concret.
-        </p>
+        <main id="main-content" tabIndex={-1} className="focus:outline-none" role="main">
+          {/* 1. Hero — Scoring prédictif comme promesse */}
+          <HeroSection />
+
+          {/* 2. Barre de métriques clés */}
+          <MetricsBar />
+
+          {/* 3. Le problème — douleur client */}
+          <ProblemSection />
+
+          {/* 4. Solution en 3 étapes — Détecter → Scorer → Répondre */}
+          <ProductModules />
+
+          {/* 4b. Mock dashboard — scored tenders preview */}
+          <MockDashboard />
+
+          {/* 5. Fonctionnalités clés */}
+          <FeaturesGrid />
+
+          {/* 6. Preuve sociale — témoignages */}
+          <SocialProof />
+
+          {/* 7. Comparaison — Eligibly vs alternatives */}
+          <ComparisonTable />
+
+          {/* 8. Timeline d'onboarding */}
+          <OnboardingTimeline />
+
+
+          {/* 10. FAQ — conversion + SEO */}
+          <FAQAccordion />
+
+          {/* 11. CTA final */}
+          <FinalCTA />
+        </main>
+
+        <Footer />
+
+        {/* Hidden content for SEO */}
+        <div className="sr-only">
+          <h2>À propos d'Eligibly.ai</h2>
+          <p>Eligibly.ai est la seule plateforme IA qui prédit vos chances de succès sur les appels d'offres publics grâce au scoring prédictif.</p>
+          <InternalLinksManager currentPage="homepage" maxLinks={4} variant="inline" />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
