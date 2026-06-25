@@ -1,112 +1,194 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, CheckCircle, Shield, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, Phone, CheckCircle, Shield, TrendingUp, Users, Building2, Mail, Sparkles, Clock, Star } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { SafeLink } from "@/components/SafeLink";
 
-const stats = [
-  { value: "3 000+", label: "SASU / SAS créées chaque semaine", colorClass: "text-primary" },
-  { value: "92 %", label: "précision du scoring lead", colorClass: "text-accent" },
-  { value: "-80 %", label: "temps de prospection", colorClass: "text-success" },
-  { value: "14 j", label: "pilote gratuit sans CB", colorClass: "text-warning" },
+const bullets = [
+  "Détection quotidienne, 100% digitalisée",
+  "Cabinet aligné avec l'Ordre & le RGPD",
 ];
 
-const trustBadges = [
-  { icon: Shield, text: "Données officielles INPI / Sirene", iconClass: "text-success" },
-  { icon: TrendingUp, text: "Rentable dès le 1er dossier signé", iconClass: "text-primary" },
-  { icon: Users, text: "Conçu avec 4 cabinets EC", iconClass: "text-accent" },
+// Mock leads displayed in the dashboard preview
+const mockLeads = [
+  { name: "Sophie Martin", company: "Nova SaaS SASU", city: "Paris 11e", score: 94, tag: "Hot", tagClass: "bg-primary/10 text-primary" },
+  { name: "Karim Bensalah", company: "Atelier K. SAS", city: "Lyon 3e", score: 87, tag: "Tiède", tagClass: "bg-warning/10 text-warning" },
+  { name: "Léa Dubois", company: "Studio Léa SASU", city: "Bordeaux", score: 81, tag: "À qualifier", tagClass: "bg-muted text-muted-foreground" },
 ];
 
 export const CabinetHero = () => {
   return (
     <section
       id="hero"
-      className="section-spacing bg-gradient-hero relative overflow-hidden min-h-[70vh] sm:min-h-[85vh] flex items-center"
+      className="relative overflow-hidden bg-gradient-hero pt-16 pb-20 sm:pt-20 sm:pb-28"
     >
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" aria-hidden="true" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.04]" aria-hidden="true" />
+      <div className="absolute top-20 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl" aria-hidden="true" />
+      <div className="absolute bottom-0 -right-32 w-[28rem] h-[28rem] bg-accent/10 rounded-full blur-3xl" aria-hidden="true" />
 
-      <div className="container mx-auto relative">
-        {/* Social Proof Banner */}
-        <div className="text-center mb-6 sm:mb-8">
-          <Badge variant="outline" className="text-primary border-primary/20 bg-primary/5 px-3 sm:px-4 py-2 text-xs sm:text-sm">
-            <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 mr-2" aria-hidden="true" />
-            3 000 SASU/SAS créées chaque semaine en France
-          </Badge>
-        </div>
+      <div className="container mx-auto relative px-4">
+        <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-center">
+          {/* LEFT — copy column */}
+          <div className="animate-fade-in">
+            <Badge variant="outline" className="text-primary border-primary/30 bg-primary/5 px-3 py-1.5 text-xs sm:text-sm mb-6 inline-flex">
+              <Sparkles className="w-3.5 h-3.5 mr-1.5" aria-hidden="true" />
+              Nouveau · 14 jours pilote offerts · Sans CB
+            </Badge>
 
-        {/* Main Content - Centered Layout */}
-        <div className="max-w-4xl mx-auto text-center animate-fade-in">
-          <div className="space-y-6 sm:space-y-8">
-            <div className="text-xs sm:text-sm font-medium text-muted-foreground tracking-widest uppercase">
-              CRM de prospection · Cabinets d'expertise comptable
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight tracking-tight px-2">
-              <span className="text-primary font-medium bg-gradient-primary bg-clip-text text-transparent">
-                Vos prochains clients
-              </span>{" "}
-              viennent de signer leur Kbis.
+            <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-foreground font-semibold">
+              Eligibly,{" "}
+              <span className="block sm:inline">le CRM de prospection des </span>
+              <span className="bg-gradient-primary bg-clip-text text-transparent italic font-display">
+                cabinets d'expertise comptable
+              </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-light max-w-2xl mx-auto px-4">
-              Eligibly détecte chaque matin les SASU et SAS de votre zone géographique les plus susceptibles de chercher un expert-comptable. Filtres amont, score expliqué, plan d'action par lead.
+            <p className="mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl">
+              Chaque matin, recevez les <strong className="text-foreground font-semibold">SASU & SAS fraîchement immatriculées</strong> de votre zone, déjà filtrées et scorées. Adieu Pappers, Excel et la prospection à l'aveugle.
             </p>
 
-            <div className="space-y-3 text-sm text-muted-foreground max-w-md mx-auto px-4">
-              <div className="flex items-center gap-3">
-                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true" />
-                <span>Leads filtrés : pas de CAC, pas de holding, pas de serial</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true" />
-                <span>Score expliqué + email pro et téléphone direct</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true" />
-                <span>Plan d'action prêt à dérouler par votre équipe</span>
-              </div>
-            </div>
+            <ul className="mt-6 space-y-3">
+              {bullets.map((b, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm sm:text-base">
+                  <span className="mt-0.5 inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/10">
+                    <CheckCircle className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
+                  </span>
+                  <span className="text-foreground/90">{b}</span>
+                </li>
+              ))}
+              <li className="flex items-start gap-3 text-sm sm:text-base">
+                <span className="mt-0.5 inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/10">
+                  <CheckCircle className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
+                </span>
+                <span className="text-foreground/90">
+                  Conçu <strong className="font-semibold">avec 4 cabinets EC</strong>, pas par des growth hackers
+                </span>
+              </li>
+            </ul>
 
-            <div className="flex flex-col gap-3 w-full max-w-sm mx-auto sm:max-w-none sm:mx-0 sm:flex-row sm:gap-4 sm:justify-center">
+            {/* CTAs */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <SafeLink to="/demo">
-                <Button variant="tengo" className="w-full h-12 text-sm font-semibold px-6 group min-h-[44px] whitespace-nowrap overflow-hidden">
+                <Button variant="tengo" className="w-full sm:w-auto h-12 px-6 text-sm font-semibold group">
                   Réserver une démo
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform flex-shrink-0" aria-hidden="true" />
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Button>
               </SafeLink>
               <SafeLink to="/demo">
-                <Button variant="outline" className="w-full h-12 text-sm font-semibold px-6 group min-h-[44px] whitespace-nowrap overflow-hidden">
-                  <Play className="w-4 h-4 mr-2 flex-shrink-0" aria-hidden="true" />
-                  <span className="truncate">Voir un lead en direct</span>
+                <Button variant="outline" className="w-full sm:w-auto h-12 px-6 text-sm font-semibold">
+                  <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
+                  Voir un lead en direct
                 </Button>
               </SafeLink>
             </div>
 
-            <div className="text-xs text-muted-foreground">
-              ✨ 14 jours pilote gratuit · Sans CB · Annulation en 1 clic
+            {/* Trust strip */}
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+              <div className="flex items-center gap-2">
+                <Shield className="w-4 h-4 text-success" aria-hidden="true" />
+                <span className="text-muted-foreground">Sources <strong className="text-foreground">INPI · Sirene · BODACC</strong></span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="flex">
+                  {[0,1,2,3,4].map(i => <Star key={i} className="w-4 h-4 fill-warning text-warning" aria-hidden="true" />)}
+                </div>
+                <span className="text-muted-foreground"><strong className="text-foreground">4 cabinets pilotes</strong> en France</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Social proof stats */}
-        <div className="mt-12 sm:mt-16 text-center px-4">
-          <div className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">
-            🚀 Conçu avec 4 cabinets d'expertise comptable français
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
-            {stats.map((stat, index) => (
-              <div key={index} className="bg-card/80 backdrop-blur-sm rounded-xl p-4 shadow-card border border-border/50">
-                <div className={`text-2xl sm:text-3xl font-bold ${stat.colorClass}`}>{stat.value}</div>
-                <div className="text-xs text-muted-foreground">{stat.label}</div>
+          {/* RIGHT — dashboard mockup */}
+          <div className="relative animate-fade-in lg:pl-4">
+            <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 via-accent/10 to-transparent rounded-3xl blur-2xl" aria-hidden="true" />
+
+            {/* Main card */}
+            <div className="relative bg-card rounded-2xl shadow-elegant border border-border/60 overflow-hidden">
+              {/* Window chrome */}
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-border/60 bg-muted/30">
+                <div className="flex gap-1.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-destructive/50" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-warning/60" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-success/60" />
+                </div>
+                <div className="ml-3 text-xs text-muted-foreground font-mono">eligibly.ai/leads · ce matin</div>
               </div>
-            ))}
-          </div>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-4 text-xs text-muted-foreground">
-            {trustBadges.map((badge, index) => (
-              <span key={index} className="flex items-center gap-1 bg-card/60 px-3 py-1.5 rounded-full">
-                <badge.icon className={`w-3 h-3 ${badge.iconClass}`} aria-hidden="true" /> {badge.text}
-              </span>
-            ))}
+              {/* Header row */}
+              <div className="p-5 sm:p-6">
+                <div className="flex items-center justify-between mb-5">
+                  <div>
+                    <div className="text-xs text-muted-foreground uppercase tracking-wider">Leads détectés</div>
+                    <div className="font-display text-2xl font-semibold text-foreground">14 prospects qualifiés</div>
+                  </div>
+                  <Badge className="bg-success/10 text-success border-success/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-success mr-1.5 animate-pulse" />
+                    En direct
+                  </Badge>
+                </div>
+
+                {/* Lead list */}
+                <div className="space-y-2.5">
+                  {mockLeads.map((lead, i) => (
+                    <div key={i} className="flex items-center gap-3 p-3 rounded-xl border border-border/50 hover:border-primary/30 hover:bg-primary/5 transition-colors">
+                      <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground text-sm font-semibold flex-shrink-0">
+                        {lead.name.split(" ").map(n => n[0]).join("")}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2">
+                          <div className="font-medium text-sm text-foreground truncate">{lead.name}</div>
+                          <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${lead.tagClass}`}>{lead.tag}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <Building2 className="w-3 h-3" aria-hidden="true" />
+                          <span className="truncate">{lead.company} · {lead.city}</span>
+                        </div>
+                      </div>
+                      <div className="text-right flex-shrink-0">
+                        <div className="text-lg font-display font-semibold text-primary leading-none">{lead.score}</div>
+                        <div className="text-[10px] text-muted-foreground">score</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Mini stats */}
+                <div className="mt-5 grid grid-cols-3 gap-2 pt-4 border-t border-border/40">
+                  <div>
+                    <div className="text-xs text-muted-foreground">Email vérifié</div>
+                    <div className="text-sm font-semibold text-foreground">12/14</div>
+                  </div>
+                  <div>
+                    <div className="text-xs text-muted-foreground">Sans CAC</div>
+                    <div className="text-sm font-semibold text-foreground">14/14</div>
+                  </div>
+                  <div>
+                    <div className="text-xs text-muted-foreground">Tél. direct</div>
+                    <div className="text-sm font-semibold text-foreground">9/14</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating card 1 — Réponse rapide */}
+            <div className="hidden sm:flex absolute -bottom-6 -left-6 items-center gap-3 bg-card rounded-xl shadow-elegant border border-border/60 p-3 pr-5">
+              <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center">
+                <Clock className="w-4 h-4 text-primary" aria-hidden="true" />
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-foreground">Livré à 7h00</div>
+                <div className="text-xs text-muted-foreground">Chaque matin, 6j/7</div>
+              </div>
+            </div>
+
+            {/* Floating card 2 — Email */}
+            <div className="hidden sm:flex absolute -top-4 -right-4 items-center gap-3 bg-card rounded-xl shadow-elegant border border-border/60 p-3 pr-5">
+              <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center">
+                <Mail className="w-4 h-4 text-accent" aria-hidden="true" />
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-foreground">+38% de RDV</div>
+                <div className="text-xs text-muted-foreground">vs prospection Pappers</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
