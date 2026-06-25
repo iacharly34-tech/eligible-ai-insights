@@ -43,7 +43,7 @@ export const CabinetHero = () => {
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl">
-              Chaque matin, recevez les <strong className="text-foreground font-semibold">SASU & SAS fraîchement immatriculées</strong> de votre zone, déjà filtrées et scorées. Adieu Pappers, Excel et la prospection à l'aveugle.
+              Chaque matin, recevez les <strong className="text-foreground font-semibold">SASU & SAS fraîchement immatriculées</strong>, filtrées et scorées selon votre profil idéal. Adieu Pappers, Excel et la prospection à l'aveugle.
             </p>
 
             <ul className="mt-6 space-y-3">
