@@ -12,8 +12,8 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "@type": "Organization",
     "name": "Eligibly",
     "description": language === 'en' 
-      ? "Vertical prospection CRM for French accounting firms. Daily qualified leads of newly registered SASU and SAS."
-      : "CRM de prospection vertical pour cabinets d'expertise comptable français. Leads quotidiens de SASU et SAS fraîchement immatriculées.",
+      ? "Lead detection engine for French accounting firms. Daily qualified leads of newly registered SASU and SAS."
+      : "moteur de détection de leads pour cabinets d'expertise comptable français. Leads quotidiens de SASU et SAS fraîchement immatriculées.",
     "url": "https://eligibly.ai",
     "logo": "https://eligibly.ai/assets/eligibly-logo-main.png",
     "image": "https://eligibly.ai/assets/eligible-ai-opengraph.png",
@@ -38,8 +38,8 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "name": "Eligibly",
     "alternateName": "Eligibly.ai",
     "description": language === 'en'
-      ? "Vertical prospection CRM for accounting firms — qualified leads of newly registered French companies."
-      : "CRM de prospection vertical pour cabinets d'expertise comptable — leads qualifiés de sociétés fraîchement immatriculées en France.",
+      ? "Lead detection engine for accounting firms — qualified leads of newly registered French companies."
+      : "moteur de détection de leads pour cabinets d'expertise comptable — leads qualifiés de sociétés fraîchement immatriculées en France.",
     "url": "https://eligibly.ai",
     "sameAs": [
       "https://www.linkedin.com/company/eligibly",
@@ -56,13 +56,13 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "mainEntity": {
       "@type": "ItemList",
       "name": "Navigation principale Eligibly",
-      "description": "Sections principales du site Eligibly — CRM de prospection pour cabinets d'expertise comptable",
+      "description": "Sections principales du site Eligibly — moteur d'alertes nouveaux clients pour cabinets d'expertise comptable",
       "itemListElement": [
         {
           "@type": "SiteNavigationElement",
           "position": 1,
           "name": language === 'en' ? "Product" : "Produit",
-          "description": language === 'en' ? "Prospection CRM for accounting firms" : "CRM de prospection pour cabinets d'expertise comptable",
+          "description": language === 'en' ? "Lead detection engine for accounting firms" : "moteur d'alertes nouveaux clients pour cabinets d'expertise comptable",
           "url": `https://eligibly.ai${language === 'en' ? '/en/product' : '/produit'}`
         },
         {
@@ -132,8 +132,8 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "@type": "Product",
     "name": "Eligibly AI",
     "description": language === 'en'
-      ? "Prospection CRM for accounting firms — qualified leads, explained scoring, action plans."
-      : "CRM de prospection pour cabinets d'expertise comptable — leads qualifiés, score expliqué, plan d'action.",
+      ? "Lead detection engine for accounting firms — qualified leads, explained scoring, action plans."
+      : "moteur d'alertes nouveaux clients pour cabinets d'expertise comptable — leads qualifiés, score expliqué, plan d'action.",
     "image": "https://eligibly.ai/assets/eligible-ai-hero-optimized.webp",
     "brand": {
       "@type": "Brand",
@@ -258,7 +258,7 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
         "name": "Qu'est-ce qu'Eligibly ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Eligibly est un CRM de prospection vertical pour cabinets d'expertise comptable français. Chaque jour, il consolide les SASU et SAS fraîchement immatriculées, applique des filtres amont qualité (CAC mandaté, procédure collective, holding, serial entrepreneur) et présente au cabinet les leads potentiellement adressables, avec un score expliqué et un plan d'action."
+          "text": "Eligibly est un moteur de détection de leads pour cabinets d'expertise comptable français. Chaque jour, il consolide les SASU et SAS fraîchement immatriculées, applique des filtres amont qualité (CAC mandaté, procédure collective, holding, serial entrepreneur) et présente au cabinet les leads potentiellement adressables, avec un score expliqué et un plan d'action."
         }
       },
       {
