@@ -7,12 +7,12 @@ const problems = [
   {
     n: "02",
     title: "Pas de priorisation explicable",
-    body: "Une liste à plat ne dit pas qui contacter en premier, ni pourquoi. Sans score expliqué ni signaux qualifiés, chaque collaborateur improvise son propre tri. Le portefeuille du cabinet n'apprend rien.",
+    body: "Une liste à plat ne dit pas qui contacter en premier, ni pourquoi. Sans scoring IA expliqué ni signaux qualifiés, chaque collaborateur improvise son propre tri. Le portefeuille du cabinet n'apprend rien.",
   },
   {
     n: "03",
-    title: "Pas de plan d'action",
-    body: "Aucun angle préparé, aucune relance proposée, aucune trace de ce qui marche pour votre cabinet. Le travail commercial est à refaire à chaque nouveau lead.",
+    title: "Aucune alerte là où vous travaillez",
+    body: "Pas de notification dans Slack, Teams ou votre boîte mail. Aucun lead poussé automatiquement dans HubSpot ou Pipedrive. Il faut se connecter à un énième outil et tout copier-coller à la main.",
   },
 ];
 
@@ -25,7 +25,7 @@ export const CabinetProblems = () => {
             Le problème
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
-            Prospecter des cabinets EC, c'est <em className="italic text-primary font-medium">surtout du filtrage manuel</em>.
+            Trouver de nouveaux clients, c'est <em className="italic text-primary font-medium">surtout du filtrage manuel</em>.
           </h2>
         </div>
 
