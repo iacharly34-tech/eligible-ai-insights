@@ -63,8 +63,8 @@ export const Footer = () => {
             
             <p className="text-sm text-muted-foreground max-w-sm">
               {language === 'en'
-                ? 'The vertical prospection CRM for French accounting firms. Newly registered SASU and SAS, qualified daily.'
-                : "Le CRM de prospection vertical pour cabinets d'expertise comptable français. SASU et SAS fraîchement immatriculées, qualifiées chaque jour."}
+                ? 'The lead detection engine for French accounting firms. Newly registered SASU and SAS pushed every morning to Slack, Teams, your CRM or your inbox.'
+                : "Le moteur de détection de leads pour cabinets d'expertise comptable. SASU et SAS fraîchement immatriculées, livrées chaque matin dans Slack, Teams, votre CRM ou votre boîte mail."}
             </p>
 
             <div className="flex items-center space-x-6 text-xs text-foreground/70">

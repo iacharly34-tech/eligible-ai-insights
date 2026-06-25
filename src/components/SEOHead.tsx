@@ -283,7 +283,7 @@ export const SEOHead = ({
         case '/':
         case '/accueil':
           return {
-            title: "Eligibly — CRM de prospection pour cabinets d'expertise comptable",
+            title: "Eligibly — moteur d'alertes nouveaux clients pour cabinets d'expertise comptable",
             description: "Vos prochains clients sont fraîchement immatriculés. Eligibly consolide chaque jour les SASU/SAS créées en France, filtres amont (CAC, procédure, holding, serial), score expliqué, plan d'action par lead. 14 jours d'essai gratuits.",
             keywords: "prospection cabinet expertise comptable, leads experts comptables, SASU SAS immatriculation, CRM expertise comptable, primo entrepreneur, eligibly"
           };
