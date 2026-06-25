@@ -2,7 +2,7 @@ const problems = [
   {
     n: "01",
     title: "Le bruit noie le signal",
-    body: "Les annuaires généralistes ne distinguent pas les leads potentiellement adressables des autres : commissaire aux comptes déjà mandaté, procédures collectives, holdings pures, serial entrepreneurs. Vos collaborateurs filtrent à la main, lead par lead.",
+    body: "Les annuaires comme Pappers ne distinguent pas les leads adressables des autres : commissaire aux comptes déjà mandaté, procédures collectives, holdings pures, serial entrepreneurs. Vos collaborateurs filtrent à la main, lead par lead, sans IA pour les aider.",
   },
   {
     n: "02",
