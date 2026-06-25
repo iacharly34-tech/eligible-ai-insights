@@ -102,8 +102,8 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "@type": "SoftwareApplication",
     "name": "Eligibly",
     "description": language === 'en'
-      ? "Vertical prospection CRM that delivers daily qualified leads of newly registered French companies to accounting firms, with explained scoring and action plans."
-      : "CRM de prospection vertical qui livre chaque jour aux cabinets d'expertise comptable des leads qualifiés de sociétés fraîchement immatriculées, avec score expliqué et plan d'action.",
+      ? "Lead detection engine that delivers daily qualified leads of newly registered French companies to accounting firms, with explained scoring and action plans."
+      : "Moteur de détection de leads qui livre chaque jour aux cabinets d'expertise comptable des leads qualifiés de sociétés fraîchement immatriculées, avec score expliqué et plan d'action.",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "url": "https://eligibly.ai",
