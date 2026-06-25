@@ -1,11 +1,11 @@
 const rows: Array<{ cap: string; eligibly: string; pappers: string; apollo: string; diy: string }> = [
   { cap: "Spécialisé cabinet EC français", eligibly: "ok", pappers: "no", apollo: "no", diy: "partial" },
-  { cap: "Filtres amont qualité (CAC, procédure, holding, serial)", eligibly: "ok", pappers: "no", apollo: "no", diy: "partial" },
-  { cap: "Score expliqué par lead", eligibly: "ok", pappers: "no", apollo: "partial", diy: "partial" },
-  { cap: "Plan d'action concret par lead", eligibly: "ok", pappers: "no", apollo: "partial", diy: "no" },
+  { cap: "Filtres IA amont (CAC, procédure, holding, serial)", eligibly: "ok", pappers: "no", apollo: "no", diy: "partial" },
+  { cap: "Scoring IA expliqué par lead", eligibly: "ok", pappers: "no", apollo: "partial", diy: "partial" },
+  { cap: "Alertes Slack / Teams / Email natives", eligibly: "ok", pappers: "no", apollo: "partial", diy: "no" },
+  { cap: "Push automatique vers HubSpot / Pipedrive", eligibly: "ok", pappers: "no", apollo: "ok", diy: "partial" },
   { cap: "Sources françaises consolidées (INPI/Sirene/BODACC)", eligibly: "ok", pappers: "ok", apollo: "partial", diy: "partial" },
-  { cap: "Multi-tenant cabinet (workspace isolé)", eligibly: "ok", pappers: "no", apollo: "ok", diy: "partial" },
-  { cap: "Apprentissage progressif sur feedback cabinet", eligibly: "ok", pappers: "no", apollo: "no", diy: "partial" },
+  { cap: "Apprentissage IA sur feedback cabinet", eligibly: "ok", pappers: "no", apollo: "no", diy: "partial" },
   { cap: "Coût mensuel typique", eligibly: "290 € HT", pappers: "~100 € HT", apollo: "500–1500 € HT", diy: "Dev + maintenance" },
 ];
 
