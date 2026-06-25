@@ -26,7 +26,7 @@ const HomePage = () => {
         <MobileCTABar />
 
         <main id="main-content" tabIndex={-1} className="focus:outline-none" role="main">
-          {/* Pivot juin 2026 — CRM prospection cabinets d'expertise comptable */}
+          {/* Pivot juin 2026 — Moteur d'alertes nouveaux clients pour cabinets EC */}
           <CabinetHero />
           <CabinetSources />
           <CabinetProblems />

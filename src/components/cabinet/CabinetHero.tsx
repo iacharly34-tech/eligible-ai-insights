@@ -4,8 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { SafeLink } from "@/components/SafeLink";
 
 const bullets = [
-  "Détection quotidienne, 100% digitalisée",
-  "Cabinet aligné avec l'Ordre & le RGPD",
+  "Scoring IA expliqué, livré chaque matin à 7h00",
+  "Push natif Slack · Teams · HubSpot · Pipedrive · Email",
+  "Aligné avec l'Ordre des EC & le RGPD",
 ];
 
 // Destinations where qualified leads are pushed
@@ -44,7 +45,7 @@ export const CabinetHero = () => {
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl">
-              Chaque matin, les <strong className="text-foreground font-semibold">SASU & SAS fraîchement immatriculées</strong> qui matchent votre profil idéal sont poussées directement dans <strong className="text-foreground font-semibold">Slack, Teams, votre CRM ou votre boîte mail</strong>. Pas un outil de plus à ouvrir.
+              Notre <strong className="text-foreground font-semibold">IA filtre et score</strong> les <strong className="text-foreground font-semibold">SASU & SAS fraîchement immatriculées</strong> qui matchent votre profil idéal, puis pousse les alertes dans <strong className="text-foreground font-semibold">Slack, Teams, HubSpot ou votre boîte mail</strong>. Pas un outil de plus à ouvrir.
             </p>
 
             <ul className="mt-6 space-y-3">

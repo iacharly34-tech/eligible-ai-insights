@@ -3,13 +3,13 @@ import { Check } from "lucide-react";
 import { SafeLink } from "@/components/SafeLink";
 
 const features = [
-  "Leads quotidiens potentiellement adressables, priorisés et scorés",
-  "Pour chaque lead : pourquoi, score expliqué, signaux positifs, points à vérifier",
-  "Plan d'action concret : préparer l'appel, générer une relance, marquer non pertinent",
-  "Copilote IA conversationnel intégré",
-  "Filtres amont systématiques (CAC, procédure, cessation, holding, serial)",
-  "Amélioration progressive de la priorisation sur votre feedback",
-  "Module suivi de conversion + workspace multi-utilisateur",
+  "Leads quotidiens scorés par l'IA, priorisés selon votre ICP",
+  "Alertes natives dans Slack, Teams ou votre boîte mail",
+  "Push automatique vers HubSpot, Pipedrive, Salesforce, Sellsy",
+  "Pour chaque lead : scoring IA expliqué, signaux positifs, points à vérifier",
+  "Filtres IA amont systématiques (CAC, procédure, cessation, holding, serial)",
+  "Copilote IA conversationnel pour préparer chaque appel",
+  "Apprentissage continu de l'IA sur le feedback de votre cabinet",
   "Support email + visio mensuelle de bilan",
 ];
 

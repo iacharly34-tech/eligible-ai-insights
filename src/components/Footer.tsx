@@ -63,8 +63,8 @@ export const Footer = () => {
             
             <p className="text-sm text-muted-foreground max-w-sm">
               {language === 'en'
-                ? 'The lead detection engine for French accounting firms. Newly registered SASU and SAS pushed every morning to Slack, Teams, your CRM or your inbox.'
-                : "Le moteur de détection de leads pour cabinets d'expertise comptable. SASU et SAS fraîchement immatriculées, livrées chaque matin dans Slack, Teams, votre CRM ou votre boîte mail."}
+                ? 'The lead alerting engine for French accounting firms. Newly registered SASU and SAS scored by AI and pushed every morning to Slack, Teams, HubSpot or your inbox.'
+                : "Le moteur d'alertes nouveaux clients pour cabinets d'expertise comptable. SASU et SAS fraîchement immatriculées, scorées par notre IA et livrées chaque matin dans Slack, Teams, HubSpot ou votre boîte mail."}
             </p>
 
             <div className="flex items-center space-x-6 text-xs text-foreground/70">
