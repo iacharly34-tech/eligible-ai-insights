@@ -2,9 +2,9 @@ import { ArrowRight } from "lucide-react";
 
 const steps = [
   { n: "01", title: "Consolidation", body: "Agrégation quotidienne des sources publiques (INPI, Sirene, BODACC) et enrichissement contacts via partenaires (Pappers, Kaspr, Hunter)." },
-  { n: "02", title: "Filtres amont", body: "Exclusion systématique : CAC mandaté, procédures collectives, cessation, holdings pures (10+ sociétés), serial entrepreneurs (5+ sociétés)." },
-  { n: "03", title: "Priorisation expliquée", body: "Score commenté par lead : pourquoi ce lead, signaux positifs, points à vérifier. Plan d'action : préparer l'appel, générer une relance." },
-  { n: "04", title: "Apprentissage", body: "Votre feedback (RDV pris, signatures, refus, non pertinents) ajuste la priorisation à ce qui signe réellement chez vous, au fil des mois." },
+  { n: "02", title: "Filtres IA amont", body: "Exclusion automatique par nos modèles : CAC mandaté, procédures collectives, cessation, holdings pures (10+ sociétés), serial entrepreneurs (5+ sociétés)." },
+  { n: "03", title: "Scoring IA expliqué", body: "Pour chaque lead : pourquoi il est prioritaire, signaux positifs, points à vérifier. Pas de boîte noire — chaque score est commenté." },
+  { n: "04", title: "Alertes livrées", body: "Push automatique chaque matin dans Slack, Teams, HubSpot, Pipedrive ou votre boîte mail. Vos retours réentraînent le scoring sur ce qui signe chez vous." },
 ];
 
 export const CabinetHowItWorks = () => {
@@ -14,7 +14,7 @@ export const CabinetHowItWorks = () => {
         <div className="max-w-2xl mb-14">
           <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">Comment ça marche</p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
-            De la donnée brute à <em className="italic text-primary font-medium">un appel préparé</em>, en 4 étapes.
+            De la donnée brute à <em className="italic text-primary font-medium">une alerte dans Slack</em>, en 4 étapes.
           </h2>
         </div>
 
