@@ -2,11 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Check, Phone } from "lucide-react";
 
 const bullets = [
-  { t: "Identité dirigeant", d: "nom, fonction, LinkedIn matchés." },
+  { t: "Identité dirigeant", d: "nom, fonction, LinkedIn matchés par notre IA." },
   { t: "Contactabilité", d: "email pro vérifié, téléphone direct quand disponible." },
   { t: "Signaux primo", d: "entrepreneur indépendant vs multi-sociétés." },
-  { t: "Filtres amont", d: "CAC, procédure, cessation, holding, serial systématiquement écartés." },
-  { t: "Plan d'action", d: "préparer mon appel, générer une relance, marquer non pertinent." },
+  { t: "Filtres IA amont", d: "CAC, procédure, cessation, holding, serial systématiquement écartés." },
+  { t: "Alerte livrée", d: "directement dans Slack, Teams, HubSpot ou votre boîte mail." },
 ];
 
 export const CabinetPreview = () => {
@@ -19,13 +19,13 @@ export const CabinetPreview = () => {
               Aperçu produit
             </p>
             <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight mb-5">
-              À quoi ressemble <em className="italic text-primary font-medium">une fiche lead</em> dans Eligibly.
+              À quoi ressemble <em className="italic text-primary font-medium">une alerte Eligibly</em>.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-2">
-              Chaque matin, vous ouvrez Eligibly et vous voyez vos leads PREMIUM triés. Pour chacun : score expliqué, signaux positifs, points à vérifier, plan d'action.
+              Chaque matin à 7h00, vos leads PREMIUM scorés par l'IA arrivent dans Slack, Teams ou votre boîte mail. Pour chacun : score expliqué, signaux positifs, points à vérifier.
             </p>
             <p className="text-sm font-medium text-foreground mb-6">
-              Score expliqué, pas score boîte noire.
+              Scoring IA expliqué, pas boîte noire.
             </p>
             <ul className="space-y-3">
               {bullets.map((b) => (
