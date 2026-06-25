@@ -1,7 +1,18 @@
+// Pivot juin 2026 — kill switch: unregister and clear all caches.
+self.addEventListener('install', function(){ self.skipWaiting(); });
+self.addEventListener('activate', function(event){
+  event.waitUntil((async function(){
+    const keys = await caches.keys();
+    await Promise.all(keys.map(function(k){ return caches.delete(k); }));
+    await self.registration.unregister();
+    const clients = await self.clients.matchAll();
+    clients.forEach(function(c){ c.navigate(c.url); });
+  })());
+});
+// Bypass fetch handling entirely so the network always wins.
+self.addEventListener('fetch', function(){});
+/* legacy code removed
 const CACHE_NAME = 'eligible-ai-v2';
-const STATIC_CACHE = 'static-v2';
-const DYNAMIC_CACHE = 'dynamic-v2';
-const IMAGE_CACHE = 'images-v1';
 
 // Cache stratégique pour l'écoconception
 const STATIC_ASSETS = [
