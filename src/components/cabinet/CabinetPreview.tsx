@@ -85,7 +85,7 @@ export const CabinetPreview = () => {
 
                 <div className="flex gap-2">
                   <Button className="flex-1 gap-2"><Phone className="w-4 h-4" />Préparer mon appel</Button>
-                  <Button variant="outline" className="flex-1">Voir la fiche complète</Button>
+                  <Button variant="outline" className="flex-1">Pousser dans HubSpot</Button>
                 </div>
               </div>
             </div>
