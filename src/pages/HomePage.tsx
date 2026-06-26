@@ -8,6 +8,7 @@ import { InternalLinksManager } from "@/components/InternalLinksManager";
 import { CabinetHero } from "@/components/cabinet/CabinetHero";
 import { CabinetSources } from "@/components/cabinet/CabinetSources";
 import { CabinetProblems } from "@/components/cabinet/CabinetProblems";
+import { CabinetROICalculator } from "@/components/cabinet/CabinetROICalculator";
 import { CabinetPreview } from "@/components/cabinet/CabinetPreview";
 import { CabinetHowItWorks } from "@/components/cabinet/CabinetHowItWorks";
 import { CabinetCompare } from "@/components/cabinet/CabinetCompare";
@@ -30,6 +31,7 @@ const HomePage = () => {
           <CabinetHero />
           <CabinetSources />
           <CabinetProblems />
+          <CabinetROICalculator />
           <CabinetPreview />
           <CabinetHowItWorks />
           <CabinetCompare />
