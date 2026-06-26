@@ -2,73 +2,21 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
-import { CTAFooter } from "@/components/CTAFooter";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
 import { MobileCTABar } from "@/components/MobileCTABar";
-import { useLanguage } from "@/contexts/LanguageContext";
-import {
-  Users,
-  Building2,
-  Briefcase,
-  TrendingUp,
-  ArrowRight,
-  CheckCircle,
-  Target,
-  Clock,
-  Award,
-} from "lucide-react";
+import { ArrowRight, CheckCircle, Building2, Stethoscope, Cpu, Hammer, Scale, Sparkles } from "lucide-react";
 
 const Solutions = () => {
-  const { t, language } = useLanguage();
-  const demoHref = language === "en" ? "/en/demo" : "/demo";
+  const demoHref = "/demo";
 
-  const solutions = [
-    {
-      icon: Users,
-      title: "Équipes Commerciales",
-      subtitle: "Vendeurs & Business Developers",
-      description: "Détectez automatiquement les opportunités qui correspondent parfaitement à votre offre et maximisez votre taux de conversion.",
-      benefits: [
-        "Détection automatique d'opportunités qualifiées",
-        "Scoring IA pour prioriser vos actions",
-        "Alertes personnalisées selon vos critères",
-        "Veille concurrentielle intégrée",
-      ],
-      cta: "Booster mes ventes",
-    },
-    {
-      icon: Briefcase,
-      title: "Consultants & AMO",
-      subtitle: "Assistance à Maîtrise d'Ouvrage",
-      description: "Accompagnez vos clients avec une expertise data-driven et une veille exhaustive des marchés publics de votre secteur.",
-      benefits: [
-        "Benchmark automatique des marchés",
-        "Analyse des tendances sectorielles",
-        "Rapports d'expertise personnalisés",
-        "Veille réglementaire intégrée",
-      ],
-      cta: "Enrichir mon expertise",
-    },
-    {
-      icon: Building2,
-      title: "Acheteurs Publics",
-      subtitle: "Collectivités & Administrations",
-      description: "Optimisez vos achats publics grâce à l'intelligence de marché et aux benchmarks automatisés de notre IA.",
-      benefits: [
-        "Benchmarking automatique des prix",
-        "Analyse des fournisseurs qualifiés",
-        "Optimisation des procédures d'achat",
-        "Conformité réglementaire assurée",
-      ],
-      cta: "Optimiser mes achats",
-    },
-  ];
-
-  const useCases = [
-    { icon: Target, title: "Startups Tech", description: "Identifier les marchés d'innovation publique", stat: "200% d'augmentation des opportunités détectées" },
-    { icon: Clock, title: "PME BTP", description: "Automatiser la veille des marchés de travaux", stat: "15h/semaine économisées en veille manuelle" },
-    { icon: Award, title: "Grandes Entreprises", description: "Structurer la veille commerciale multi-filiales", stat: "47% d'amélioration du taux de succès" },
+  const verticales = [
+    { icon: Cpu, title: "Cabinets spécialisés Tech & SaaS", subtitle: "Startups, éditeurs, freelances tech", description: "Captez les SASU créées par des CTO, freelances dev et fondateurs SaaS dès l'immatriculation — avant qu'un cabinet généraliste ne les contacte.", benefits: ["Filtre code NAF tech (62.01Z, 62.02A, etc.)", "Détection primo-entrepreneur ex-salarié tech", "Signaux levée de fonds amorçage", "Alerte si capital social > 5 k€"] },
+    { icon: Scale, title: "Cabinets conseil & professions libérales", subtitle: "Avocats, consultants, coachs", description: "Adressez les nouvelles structures de consulting et professions libérales qui cherchent un cabinet rompu à la BNC, BIC et l'IS.", benefits: ["Filtre par profession réglementée", "SAS de consulting > 10 k€ capital", "Détection holding personnelle", "Zone géographique fine (IRIS / EPCI)"] },
+    { icon: Stethoscope, title: "Cabinets verticale santé & libérales médicales", subtitle: "Médecins, kinés, infirmiers, vétos", description: "Ciblez les nouvelles installations en libéral et les SEL/SPFPL au moment où elles cherchent un cabinet qui maîtrise leur convention.", benefits: ["Filtres SEL, SELARL, SELAS, SPFPL", "Conventions ordinales", "Zonage ARS", "Détection cession-installation"] },
+    { icon: Hammer, title: "Cabinets artisans, BTP & commerce", subtitle: "TPE locales, micro-entrepreneurs en croissance", description: "Récupérez chaque semaine les nouveaux artisans et commerçants de votre zone qui basculent en société et ont besoin d'un EC de proximité.", benefits: ["Filtre micro vers société", "Zone < 30 km", "Activités CMA / CCI", "Détection franchise / réseau"] },
+    { icon: Building2, title: "Cabinets multi-bureaux & réseaux", subtitle: "Cabinets > 30 collaborateurs, réseaux", description: "Distribuez automatiquement les leads par bureau, associé ou pôle métier. Pilotez la performance de prospection à l'échelle du groupe.", benefits: ["Routing par bureau / associé", "Tableaux de bord consolidés", "SSO entreprise", "Account manager dédié"] },
+    { icon: Sparkles, title: "Cabinets en structuration commerciale", subtitle: "Responsable développement, associé en charge", description: "Outillez votre démarche de prospection sortante avec un flux structuré, scoré et historisé — sans recruter une équipe SDR.", benefits: ["Flux quotidien clé en main", "Reporting hebdo prêt à présenter", "Onboarding en 30 min", "Engagement mensuel sans abonnement long"] },
   ];
 
   return (
@@ -81,48 +29,42 @@ const Solutions = () => {
 
         <main>
           {/* Hero */}
-          <section className="relative overflow-hidden pt-32 pb-20 px-4 bg-[hsl(var(--hero-dark))]" aria-label="Solutions hero">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
-            <div className="container mx-auto max-w-4xl text-center relative z-10">
-              <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">
-                {t('solutions.badge')}
-              </span>
-              <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold font-display leading-[1.05] tracking-tight">
-                {t('solutions.hero.title')}{" "}
-                <span className="bg-gradient-highlight bg-clip-text text-transparent">
-                  {t('solutions.hero.title.highlight')}
-                </span>
+          <section className="pt-32 pb-20 px-4">
+            <div className="container mx-auto max-w-4xl text-center">
+              <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-6">Solutions</p>
+              <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-8">
+                Une solution par <em className="italic text-primary font-medium">type de cabinet</em>, pas un outil générique.
               </h1>
-              <p className="mt-8 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                {t('solutions.hero.subtitle')}
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                Eligibly se paramètre selon votre verticale, votre zone et votre taille de cabinet. Vous recevez uniquement les nouvelles SASU & SAS qui correspondent réellement à votre ICP.
               </p>
             </div>
           </section>
 
-          {/* Solutions */}
-          <section className="py-24 sm:py-32 px-4" aria-label="Solutions">
-            <div className="container mx-auto max-w-5xl space-y-12">
-              {solutions.map((solution, index) => (
-                <div key={index} className="group p-8 sm:p-10 rounded-2xl border border-border/50 bg-card hover:border-primary/30 transition-all duration-500 hover:shadow-card">
+          {/* Verticales */}
+          <section className="pb-24 px-4" aria-label="Verticales">
+            <div className="container mx-auto max-w-5xl space-y-8">
+              {verticales.map((solution, index) => (
+                <div key={index} className="group p-8 sm:p-10 rounded-2xl border border-border bg-card hover:border-primary/30 transition-all duration-500">
                   <div className="flex flex-col md:flex-row gap-8">
-                    <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
-                      <solution.icon className="w-7 h-7 text-primary" />
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                      <solution.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold font-display mb-1 tracking-tight">{solution.title}</h3>
-                      <p className="text-sm text-primary/60 uppercase tracking-[0.2em] mb-4">{solution.subtitle}</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-6">{solution.description}</p>
+                      <h3 className="font-display text-2xl font-semibold tracking-tight mb-1">{solution.title}</h3>
+                      <p className="text-xs text-primary uppercase tracking-[0.14em] font-semibold mb-4">{solution.subtitle}</p>
+                      <p className="text-[0.95rem] text-muted-foreground leading-relaxed mb-6">{solution.description}</p>
                       <div className="grid sm:grid-cols-2 gap-3 mb-8">
                         {solution.benefits.map((b, i) => (
-                          <div key={i} className="flex items-center gap-3 text-sm">
+                          <div key={i} className="flex items-start gap-3 text-sm">
                             <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                             <span>{b}</span>
                           </div>
                         ))}
                       </div>
                       <SafeLink to={demoHref}>
-                        <Button variant="outline" className="uppercase tracking-[0.15em] text-xs font-semibold border-border/50 hover:bg-card/50 group/btn">
-                          {solution.cta}
+                        <Button variant="tengo" className="group/btn h-11">
+                          Voir une démo sur ma verticale
                           <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                         </Button>
                       </SafeLink>
@@ -133,44 +75,21 @@ const Solutions = () => {
             </div>
           </section>
 
-          {/* Use Cases */}
-          <section className="py-24 sm:py-32 px-4 bg-[hsl(var(--hero-dark))]" aria-label="Use cases">
-            <div className="container mx-auto max-w-5xl">
-              <div className="text-center mb-20">
-                <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">
-                  {t('solutions.usecases.title')}
-                </span>
-                <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-extrabold font-display leading-[1.1] tracking-tight">
-                  {t('solutions.usecases.title.highlight')}
-                </h2>
-                <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
-                  {t('solutions.usecases.subtitle')}
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-1">
-                {useCases.map((uc, index) => (
-                  <div key={index} className="group p-8 sm:p-10 border border-border/30 bg-card hover:bg-card/80 transition-all duration-500 text-center">
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/15 transition-colors">
-                      <uc.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="text-lg font-bold font-display mb-3 tracking-tight">{uc.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">{uc.description}</p>
-                    <div className="p-3 rounded-xl bg-success/10 border border-success/20">
-                      <p className="text-sm font-semibold text-success">{uc.stat}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          {/* CTA */}
+          <section className="py-20 md:py-28 px-4 bg-card/30">
+            <div className="container mx-auto max-w-3xl text-center">
+              <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-tight mb-6">
+                Votre verticale n'est pas listée ? <em className="italic text-primary font-medium">Parlons-en</em>.
+              </h2>
+              <p className="text-muted-foreground mb-10">Si votre cabinet a un ICP très spécifique (SCI, SCP, holding, transmission, expat…), on regarde ensemble si le moteur peut le couvrir.</p>
+              <SafeLink to="/demo">
+                <Button size="lg" variant="tengo" className="group h-12 px-8">
+                  Réserver 30 min
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </SafeLink>
             </div>
           </section>
-
-          <CTAFooter
-            title="Quelle que soit votre activité, nous avons la solution"
-            subtitle="Planifiez une démonstration personnalisée selon votre secteur"
-            primaryButtonText="Découvrir ma solution"
-            secondaryButtonText="Démonstration personnalisée"
-          />
         </main>
 
         <Footer />
