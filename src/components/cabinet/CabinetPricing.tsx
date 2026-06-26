@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { SafeLink } from "@/components/SafeLink";
 
 const features = [
@@ -57,8 +57,9 @@ export const CabinetPricing = () => {
             </ul>
 
             <SafeLink to="/demo" className="block">
-              <Button size="lg" className="w-full h-12 text-sm font-semibold uppercase tracking-[0.1em]">
+              <Button variant="tengo" className="w-full h-12 px-6 text-sm font-semibold group">
                 Démarrer mon pilote 14 jours
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Button>
             </SafeLink>
           </div>

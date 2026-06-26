@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Check, Phone } from "lucide-react";
+import { Check, Phone, ArrowRight } from "lucide-react";
+import { SafeLink } from "@/components/SafeLink";
 
 const bullets = [
   { t: "Identité dirigeant", d: "nom, fonction, LinkedIn matchés par notre IA." },
@@ -83,9 +84,17 @@ export const CabinetPreview = () => {
                   ))}
                 </div>
 
-                <div className="flex gap-2">
-                  <Button className="flex-1 gap-2"><Phone className="w-4 h-4" />Préparer mon appel</Button>
-                  <Button variant="outline" className="flex-1">Pousser dans HubSpot</Button>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <SafeLink to="/demo" className="flex-1">
+                    <Button variant="tengo" className="w-full h-12 px-6 text-sm font-semibold group">
+                      <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
+                      Préparer mon appel
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                    </Button>
+                  </SafeLink>
+                  <Button variant="outline" className="flex-1 h-12 px-6 text-sm font-semibold">
+                    Pousser dans HubSpot
+                  </Button>
                 </div>
               </div>
             </div>

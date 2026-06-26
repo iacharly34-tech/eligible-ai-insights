@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
+import { ArrowRight } from "lucide-react";
 
 export const CabinetFinalCTA = () => {
   return (
@@ -22,8 +23,9 @@ export const CabinetFinalCTA = () => {
               30 minutes de démo avec un de nos experts. Pas de slides : on regarde l'outil en direct sur vos vrais leads et votre ICP.
             </p>
             <SafeLink to="/demo">
-              <Button size="lg" className="h-12 px-8 bg-background text-foreground hover:bg-background/90 text-sm font-semibold uppercase tracking-[0.1em]">
+              <Button className="h-12 px-8 bg-background text-foreground hover:bg-background/90 hover:shadow-glow text-sm font-semibold group">
                 Programmer ma démo
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Button>
             </SafeLink>
           </div>
