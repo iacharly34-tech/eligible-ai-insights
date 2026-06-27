@@ -4,9 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { SafeLink } from "@/components/SafeLink";
 
 const bullets = [
-  "Vos leads à vous, pas mutualisés avec 3-5 autres cabinets",
-  "290 € HT/mois flat — vs 500-1 500 € chez un fournisseur classique",
-  "La priorisation apprend de votre feedback, semaine après semaine",
+  "Vos leads à vous, jamais mutualisés avec 3-5 autres cabinets",
+  "Filtres IA amont : CAC, procédure, holding, serial écartés",
+  "Le scoring apprend de votre feedback, semaine après semaine",
 ];
 
 const morningLeads = [
@@ -55,14 +55,6 @@ export const CabinetHero = () => {
                   <span className="text-foreground/90">{b}</span>
                 </li>
               ))}
-              <li className="flex items-start gap-3 text-sm sm:text-base">
-                <span className="mt-0.5 inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/10">
-                  <CheckCircle className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
-                </span>
-                <span className="text-foreground/90">
-                  Conçu <strong className="font-semibold">avec 4 cabinets EC</strong>, pas par des growth hackers
-                </span>
-              </li>
             </ul>
 
             {/* CTAs */}
