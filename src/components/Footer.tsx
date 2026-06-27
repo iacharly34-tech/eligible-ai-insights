@@ -1,24 +1,23 @@
-import { Brain, Mail, MapPin, Linkedin } from "lucide-react";
+import { Mail, MapPin, Linkedin, Sparkles } from "lucide-react";
 import { SafeLink } from "./SafeLink";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Footer = () => {
   const { t, language } = useLanguage();
-  const base = language === 'en' ? '/en' : '';
 
   const footerSections = [
     {
-      title: t('footer.product'),
+      title: language === 'en' ? 'Product' : 'Produit',
       links: [
-        { name: t('nav.product'), href: language === 'en' ? '/en/product' : '/produit' },
-        { name: 'Comment ça marche', href: '/#how' },
-        { name: 'Aperçu produit', href: '/#preview' },
-        { name: t('nav.demo'), href: language === 'en' ? '/en/demo' : '/demo' },
-        { name: t('nav.pricing'), href: language === 'en' ? '/en/pricing' : '/tarifs' },
+        { name: language === 'en' ? 'Overview' : 'Vue d’ensemble', href: language === 'en' ? '/en/product' : '/produit' },
+        { name: language === 'en' ? 'How it works' : 'Comment ça marche', href: '/#how' },
+        { name: language === 'en' ? 'ROI calculator' : 'Calculateur ROI', href: '/#roi' },
+        { name: language === 'en' ? 'Pricing' : 'Tarifs', href: language === 'en' ? '/en/pricing' : '/tarifs' },
+        { name: language === 'en' ? 'Book a demo' : 'Réserver une démo', href: language === 'en' ? '/en/demo' : '/demo' },
       ],
     },
     {
-      title: 'Sources & données',
+      title: language === 'en' ? 'Data sources' : 'Sources de données',
       links: [
         { name: 'INPI / RNE', href: 'https://data.inpi.fr/' },
         { name: 'Sirene · INSEE', href: 'https://www.sirene.fr/' },
@@ -27,21 +26,23 @@ export const Footer = () => {
       ],
     },
     {
-      title: 'Pour qui',
+      title: language === 'en' ? 'Who it’s for' : 'Pour qui',
       links: [
-        { name: 'Cabinets 5-30 collaborateurs', href: '/#personas' },
-        { name: 'Structuration commerciale', href: '/#personas' },
-        { name: 'Cabinets verticalisés', href: '/#personas' },
-        { name: 'Post-cession', href: '/#personas' },
+        { name: language === 'en' ? 'Solo & micro firms' : 'Cabinets solo & micro (1-4)', href: '/#personas' },
+        { name: language === 'en' ? 'Growing firms (5-30)' : 'Cabinets en croissance (5-30)', href: '/#personas' },
+        { name: language === 'en' ? 'Verticalized firms' : 'Cabinets verticalisés', href: '/solutions' },
+        { name: language === 'en' ? 'Multi-office networks' : 'Réseaux multi-bureaux', href: '/solutions' },
       ],
     },
     {
-      title: t('footer.company'),
+      title: language === 'en' ? 'Company' : 'Société',
       links: [
-        { name: t('nav.about'), href: language === 'en' ? '/en/about' : '/a-propos' },
-        { name: t('nav.login'), href: language === 'en' ? '/en/login' : '/connexion' },
+        { name: language === 'en' ? 'About' : 'À propos', href: language === 'en' ? '/en/about' : '/a-propos' },
+        { name: language === 'en' ? 'Resources' : 'Ressources', href: language === 'en' ? '/en/resources' : '/ressources' },
+        { name: language === 'en' ? 'Sign in' : 'Connexion', href: language === 'en' ? '/en/login' : '/connexion' },
         { name: 'Contact', href: 'mailto:contact@eligibly.ai' },
-        { name: language === 'en' ? 'Legal notice' : 'Mentions légales', href: language === 'en' ? '/en/legal' : '/mentions-legales' },
+        { name: language === 'en' ? 'Legal' : 'Mentions légales', href: language === 'en' ? '/en/legal' : '/mentions-legales' },
+        { name: language === 'en' ? 'Privacy' : 'Confidentialité', href: language === 'en' ? '/en/privacy' : '/confidentialite' },
       ],
     },
   ];
@@ -53,18 +54,18 @@ export const Footer = () => {
           {/* Logo & Description */}
           <div className="lg:col-span-2 space-y-3">
             <div className="flex items-center space-x-2">
-              <div className="w-6 h-6 bg-gradient-primary rounded flex items-center justify-center">
-                <Brain className="w-4 h-4 text-white" />
+              <div className="w-6 h-6 bg-primary rounded flex items-center justify-center">
+                <Sparkles className="w-3.5 h-3.5 text-primary-foreground" />
               </div>
-              <span className="text-lg font-bold bg-gradient-primary bg-clip-text text-transparent">
+              <span className="font-display text-lg font-semibold tracking-tight text-foreground">
                eligibly.ai
               </span>
             </div>
             
             <p className="text-sm text-muted-foreground max-w-sm">
               {language === 'en'
-                ? 'The lead alerting engine for French accounting firms. Newly registered SASU and SAS scored by AI and pushed every morning to Slack, Teams, HubSpot or your inbox.'
-                : "Le moteur d'alertes nouveaux clients pour cabinets d'expertise comptable. SASU et SAS fraîchement immatriculées, scorées par notre IA et livrées chaque matin dans Slack, Teams, HubSpot ou votre boîte mail."}
+                ? 'The lead detection engine for French accounting firms. Newly registered SASU and SAS, AI-filtered and scored, delivered every morning to Slack, Teams, HubSpot or your inbox. €290/month flat.'
+                : "Le moteur de détection de nouveaux clients pour cabinets d’expertise comptable. SASU et SAS fraîchement immatriculées, filtrées et scorées par notre IA, livrées chaque matin dans Slack, Teams, HubSpot ou votre boîte mail. 290 € HT / mois flat."}
             </p>
 
             <div className="flex items-center space-x-6 text-xs text-foreground/70">
@@ -124,12 +125,12 @@ export const Footer = () => {
         <div className="mt-8 pt-4 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             <div className="text-xs text-foreground/70">
-              {t('footer.copyright')}
+              © 2026 Eligibly — {language === 'en' ? 'All rights reserved.' : 'Tous droits réservés.'}
             </div>
             <div className="flex items-center space-x-4 text-xs text-foreground/70">
-              <span>{t('footer.madeIn')}</span>
+              <span>{language === 'en' ? 'Made in Paris' : 'Fait à Paris'}</span>
               <span>•</span>
-              <span>{t('footer.poweredByAI')}</span>
+              <span>{language === 'en' ? 'Built with accounting firms' : 'Conçu avec des cabinets EC'}</span>
             </div>
           </div>
         </div>

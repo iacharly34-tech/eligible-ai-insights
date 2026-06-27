@@ -1,114 +1,45 @@
 import { Header } from "@/components/Header";
-import { Button } from "@/components/ui/button";
-import { EligiblyButton, CTAButton } from "@/components/EligiblyButton";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { CTAFooter } from "@/components/CTAFooter";
-import { SafeLink } from "@/components/SafeLink";
+import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
-import { MobileCTABar } from "@/components/MobileCTABar";
+import { Button } from "@/components/ui/button";
+import { SafeLink } from "@/components/SafeLink";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { CharlyOriginStory } from "@/components/CharlyOriginStory";
-import { 
-  Heart,
-  Shield,
-  Award,
-  Users,
-  MapPin,
-  Mail,
-  Phone,
-  ArrowRight,
-  CheckCircle,
-  Target,
-  Lightbulb,
-  Globe,
-  Lock,
-  FileCheck,
-  Clock
-} from "lucide-react";
+import { ArrowRight, Sparkles, Database, ShieldCheck, Building2, Users, Target } from "lucide-react";
 
 const APropos = () => {
-  const { t } = useLanguage();
-  
-  const values = [
-    {
-      icon: Lightbulb,
-      title: "Innovation constante",
-      description: "Nous développons des solutions IA de pointe pour simplifier l'accès aux marchés publics avec les dernières technologies."
-    },
-    {
-      icon: Shield,
-      title: "Transparence totale",
-      description: "Nos algorithmes et processus sont clairs et explicables. Vous comprenez toujours comment Charly prend ses décisions."
-    },
-    {
-      icon: Heart,
-      title: "Partenariat authentique",
-      description: "Charly devient votre binôme de confiance. Nous facilitons votre quotidien, vous vous concentrez sur votre expertise."
-    },
+  const { language } = useLanguage();
+  const en = language === "en";
+
+  const principles = [
     {
       icon: Target,
-      title: "Résultats concrets",
-      description: "Notre objectif : transformer les entreprises qualifiées en gagnants sur les marchés français, européens et internationaux."
-    }
-  ];
-
-  const team = [
-    {
-      name: "Marie Dubois",
-      role: "CEO & Co-fondatrice",
-      description: "15 ans d'expérience dans les marchés publics et l'IA. Ex-directrice commerciale chez TechCorp.",
-      avatar: "MD"
+      title: en ? "One vertical, one job" : "Une verticale, un job",
+      desc: en
+        ? "We only serve French accounting firms. No generic CRM, no horizontal SaaS. Every filter, every score, every integration is built around the cabinet workflow."
+        : "On ne s'adresse qu'aux cabinets d'expertise comptable français. Aucun CRM générique, aucun SaaS horizontal. Chaque filtre, chaque score, chaque intégration est pensé pour le workflow cabinet.",
     },
     {
-      name: "Thomas Martin",
-      role: "CTO & Co-fondateur", 
-      description: "Expert en machine learning et data science. Ancien lead engineer chez Google AI.",
-      avatar: "TM"
+      icon: Database,
+      title: en ? "Official sources only" : "Sources officielles uniquement",
+      desc: en
+        ? "INPI, Sirene, BODACC, Pappers. No scraping, no shady third-party lists. The leads you receive belong to you — not to 4 competing firms."
+        : "INPI, Sirene, BODACC, Pappers. Aucun scraping, aucune liste douteuse. Les leads que vous recevez vous appartiennent — pas à 4 cabinets concurrents.",
     },
     {
-      name: "Sarah Chen",
-      role: "Head of Product",
-      description: "Spécialiste UX/UI avec 10 ans d'expérience dans la conception de produits SaaS B2B.",
-      avatar: "SC"
+      icon: Sparkles,
+      title: en ? "Explainable AI" : "IA explicable",
+      desc: en
+        ? "Every score comes with its reasons: sector, location, capital, founder profile. No black box. You decide whether to call or pass."
+        : "Chaque score arrive avec ses raisons : secteur, zone, capital, profil du dirigeant. Aucune boîte noire. Vous décidez d'appeler ou de passer.",
     },
     {
-      name: "Paul Rodriguez",
-      role: "Head of Sales",
-      description: "Expert en développement commercial dans le secteur public. 12 ans chez Oracle.",
-      avatar: "PR"
-    }
-  ];
-
-  const stats = [
-    { number: "2025", label: "Année de création" },
-    { number: "Bientôt", label: "Premiers clients" },
-    { number: "En cours", label: "Évaluation des marchés" },
-    { number: "Notre objectif", label: "Votre satisfaction" }
-  ];
-
-  const certifications = [
-    {
-      icon: Shield,
-      title: "RGPD Conforme",
-      description: "Respect strict de la réglementation européenne sur la protection des données"
+      icon: ShieldCheck,
+      title: en ? "Data hosted in France" : "Données hébergées en France",
+      desc: en
+        ? "GDPR-compliant, French hosting, zero data resale. Your ICP and feedback stay yours and train your own scoring model."
+        : "RGPD, hébergement France, zéro revente de données. Votre ICP et vos retours restent à vous et entraînent votre propre modèle de scoring.",
     },
-    {
-      icon: Lock,
-      title: "ISO 27001",
-      description: "Certification sécurité informatique pour la protection de vos données"
-    },
-    {
-      icon: FileCheck,
-      title: "Hébergement France",
-      description: "Données stockées exclusivement en France, chez des hébergeurs certifiés"
-    },
-    {
-      icon: Award,
-      title: "SOC 2 Type II",
-      description: "Audit indépendant de nos contrôles de sécurité et disponibilité"
-    }
   ];
 
   return (
@@ -117,269 +48,162 @@ const APropos = () => {
       <StructuredData page="about" />
       <div className="min-h-screen bg-background">
         <Header />
-        <MobileCTABar />
-      
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
-              {t('about.badge')}
-            </Badge>
-            
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              {t('about.hero.why')}
+
+        {/* Hero */}
+        <section className="pt-36 pb-20 px-4">
+          <div className="container mx-auto max-w-4xl">
+            <p className="text-[0.74rem] uppercase tracking-[0.16em] text-primary font-semibold mb-5">
+              {en ? "About Eligibly" : "À propos d'Eligibly"}
+            </p>
+            <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] text-foreground">
+              {en ? (
+                <>The lead engine accounting firms <em className="italic text-primary font-medium">actually own</em>.</>
+              ) : (
+                <>Le moteur de leads que les cabinets EC <em className="italic text-primary font-medium">possèdent vraiment</em>.</>
+              )}
             </h1>
-            
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              {t('about.hero.desc')}
+            <p className="mt-7 text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              {en
+                ? "Eligibly was built with a handful of French accounting firms tired of buying the same mutualized leads from third-party vendors. We turn official immatriculation data into a daily flow of qualified prospects — yours, scored by AI, delivered into Slack, Teams, HubSpot or your inbox."
+                : "Eligibly est né avec quelques cabinets d'expertise comptable français lassés d'acheter les mêmes leads mutualisés à des fournisseurs tiers. Nous transformons la donnée officielle d'immatriculation en un flux quotidien de prospects qualifiés — les vôtres, scorés par l'IA, livrés dans Slack, Teams, HubSpot ou votre boîte mail."}
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-4 gap-8 mb-16">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.number}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Charly Section */}
-      <section className="py-20 px-4 bg-[hsl(var(--hero-dark))]">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        {/* Mission */}
+        <section className="py-20 px-4 bg-muted/30 border-y border-border">
+          <div className="container mx-auto max-w-5xl grid lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Charly IA, l'agent intelligent{" "}
-                <span className="bg-gradient-highlight bg-clip-text text-transparent">d'Eligibly</span>
+              <p className="text-[0.74rem] uppercase tracking-[0.16em] text-primary font-semibold mb-4">
+                {en ? "Our mission" : "Notre mission"}
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-foreground">
+                {en ? (
+                  <>Stop buying leads. <em className="italic text-primary font-medium">Produce</em> them.</>
+                ) : (
+                  <>Arrêtez d'acheter des leads. <em className="italic text-primary font-medium">Produisez-les.</em></>
+                )}
               </h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Chez Eligibly, nous avons créé Charly comme ce personnage d'une importance rare dans votre quotidien professionnel : 
-                votre bras droit essentiel qui a toujours une réponse et facilite chaque étape.
-              </p>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                L'équipe Eligibly a voulu faire de Charly le partenaire rêvé des commerciaux et chasseurs d'opportunités, 
-                celui qui transforme la complexité des marchés publics en simplicité grâce à notre expertise technologique.
-              </p>
             </div>
-            <div className="relative">
-              <div className="bg-primary/10 border border-primary/20 rounded-3xl p-12 text-center">
-                <Users className="w-20 h-20 mx-auto mb-6" />
-                <h3 className="text-2xl font-bold mb-4">L'assistant IA né de l'expertise Eligibly</h3>
-                <p className="text-muted-foreground text-lg">
-                  Créé par notre équipe d'experts, Charly allie l'intelligence artificielle d'Eligibly 
-                  à une compréhension profonde des marchés publics pour anticiper vos besoins.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Histoire de Charly */}
-      <CharlyOriginStory />
-
-      {/* Problem & Solution Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                {t('about.problem.title')}
-              </h2>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <Clock className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
-                  <span className="text-foreground">Les AO publics sont complexes : des dossiers longs à construire</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Target className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
-                  <span className="text-foreground">Temps considérable pour chasser les opportunités</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Shield className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
-                  <span className="text-foreground">A priori sur "l'honnêteté des démarches d'AO" par les collectivités</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                {t('about.vision.title')} 
-                <span className="bg-gradient-highlight bg-clip-text text-transparent">{t('about.vision.title.highlight')}</span>
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Cela ne doit plus être un effort d'entrer sur les marchés français, européens et internationaux 
-                quand des entreprises sont ultra qualifiées.
+            <div className="space-y-5 text-muted-foreground leading-relaxed">
+              <p>
+                {en
+                  ? "France has 3,000+ new SASU and SAS registered every week. Compta-Online, Companeo and the like resell the same lead to 3 to 5 firms — for 50 to 150 € a piece. Cabinets pay more and more for less and less attention."
+                  : "La France enregistre plus de 3 000 SASU et SAS chaque semaine. Compta-Online, Companeo et consorts revendent le même lead à 3 à 5 cabinets — pour 50 à 150 € pièce. Les cabinets paient de plus en plus pour de moins en moins d'attention."}
               </p>
-              <p className="text-lg font-semibold text-primary mb-8">
-                Vous bossez, nous on postule.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Nous utilisons nos qualités en engineering pour vulgariser ces sujets complexes, 
-                en exploitant les dernières technologies pour faciliter l'entrée et les gains sur les marchés publics.
+              <p>
+                {en
+                  ? "Eligibly turns the model upside down: a flat 290 € HT/month, your ICP, your filters, your scoring model — leads no one else receives, refreshed every morning."
+                  : "Eligibly retourne le modèle : 290 € HT/mois flat, votre ICP, vos filtres, votre modèle de scoring — des leads que personne d'autre ne reçoit, rafraîchis chaque matin."}
               </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Values Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Nos{" "}
-              <span className="bg-gradient-highlight bg-clip-text text-transparent">valeurs</span>
-            </h2>
-             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Les principes qui guident chacune de nos décisions et innovations
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {values.map((value, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="w-14 h-14 bg-gradient-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
-                      <value.icon className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                        {value.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {value.description}
-                      </p>
-                    </div>
+        {/* Principles */}
+        <section className="py-24 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <div className="max-w-2xl mb-14">
+              <p className="text-[0.74rem] uppercase tracking-[0.16em] text-primary font-semibold mb-4">
+                {en ? "Principles" : "Principes"}
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-foreground">
+                {en ? "Four non-negotiables." : "Quatre non-négociables."}
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {principles.map((p) => (
+                <div key={p.title} className="rounded-2xl border border-border bg-card p-7 hover:border-primary/40 transition-colors">
+                  <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                    <p.icon className="w-5 h-5 text-primary" />
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                  <h3 className="font-display text-xl font-semibold tracking-tight text-foreground mb-3">{p.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{p.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Team Section */}
-      <section className="py-20 px-4 bg-[hsl(var(--hero-dark))]">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Notre{" "}
-              <span className="bg-gradient-highlight bg-clip-text text-transparent">équipe</span>
+        {/* Team */}
+        <section className="py-24 px-4 bg-muted/30 border-y border-border">
+          <div className="container mx-auto max-w-5xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <div>
+                <p className="text-[0.74rem] uppercase tracking-[0.16em] text-primary font-semibold mb-4">
+                  {en ? "Team" : "Équipe"}
+                </p>
+                <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-foreground">
+                  {en ? (
+                    <>Built with cabinets, not for them.</>
+                  ) : (
+                    <>Conçu <em className="italic text-primary font-medium">avec</em> des cabinets, pas pour eux.</>
+                  )}
+                </h2>
+              </div>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p>
+                  {en
+                    ? "Eligibly is built by a small team of product engineers and data specialists working hand-in-hand with 4 pilot accounting firms (5 to 30 collaborators) across Paris, Lyon and Bordeaux."
+                    : "Eligibly est construit par une petite équipe d'ingénieurs produit et de spécialistes data en binôme avec 4 cabinets d'expertise comptable pilotes (5 à 30 collaborateurs) à Paris, Lyon et Bordeaux."}
+                </p>
+                <p>
+                  {en
+                    ? "Every feature is reviewed by an associé EC before shipping. No growth hacker copy, no fake testimonials, no inflated metrics."
+                    : "Chaque fonctionnalité est validée par un associé EC avant d'être livrée. Pas de copy growth hacker, pas de faux témoignages, pas de chiffres gonflés."}
+                </p>
+                <div className="flex items-center gap-3 pt-4">
+                  <Users className="w-5 h-5 text-primary" />
+                  <span className="text-sm text-foreground font-medium">
+                    {en ? "4 pilot firms · Paris · Lyon · Bordeaux" : "4 cabinets pilotes · Paris · Lyon · Bordeaux"}
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Building2 className="w-5 h-5 text-primary" />
+                  <span className="text-sm text-foreground font-medium">
+                    {en ? "Headquartered in Paris · 100% French team" : "Siège à Paris · équipe 100% française"}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-24 px-4">
+          <div className="container mx-auto max-w-3xl text-center">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-foreground">
+              {en ? (
+                <>Talk to the team behind Eligibly.</>
+              ) : (
+                <>Échangez avec l'équipe derrière Eligibly.</>
+              )}
             </h2>
-             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Conçue par des experts des marchés publics, data scientists et ingénieurs IA, l’intelligence de Charly maîtrise toute la chaîne des appels d’offres et démocratise un univers trop souvent réservé aux mêmes, pour ouvrir l’accès aux acteurs légitimes, accroître la compétitivité et soutenir la croissance.
+            <p className="mt-5 text-muted-foreground leading-relaxed">
+              {en
+                ? "30 minutes with a founder. No SDR, no script. We show the engine, you show your ICP, we tell you if there's a fit."
+                : "30 minutes avec un fondateur. Aucun SDR, aucun script. On vous montre le moteur, vous nous montrez votre ICP, on vous dit s'il y a un fit."}
             </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <SafeLink to={en ? "/en/demo" : "/demo"}>
+                <Button variant="tengo" className="h-12 px-6 text-sm font-semibold group">
+                  {en ? "Book a demo" : "Réserver une démo"}
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </SafeLink>
+              <a href="mailto:contact@eligibly.ai">
+                <Button variant="outline" className="h-12 px-6 text-sm font-semibold">
+                  contact@eligibly.ai
+                </Button>
+              </a>
+            </div>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm text-center">
-              <CardContent className="p-8">
-                <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold group-hover:scale-110 transition-transform">
-                  <Lightbulb className="w-10 h-10" />
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">Expert Product Data Science</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Spécialiste des algorithmes et de l'analyse prédictive pour optimiser les réponses aux AO
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm text-center">
-              <CardContent className="p-8">
-                <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold group-hover:scale-110 transition-transform">
-                  <FileCheck className="w-10 h-10" />
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">Expert Réponse AO</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Maître dans l'art de répondre aux appels d'offres avec des années d'expérience terrain
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm text-center">
-              <CardContent className="p-8">
-                <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold group-hover:scale-110 transition-transform">
-                  <Users className="w-10 h-10" />
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">Comité Collectivités</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Responsables d'AO côté collectivités qui nous aident à comprendre les attentes réelles
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Technology Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Notre{" "}
-              <span className="bg-gradient-highlight bg-clip-text text-transparent">technologie</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Des technologies de pointe au service de votre performance sur les marchés publics
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm text-center">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-primary/10 border border-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Lightbulb className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-3">IA Générative</h3>
-                <p className="text-foreground text-sm leading-relaxed">GPT-4 et modèles spécialisés pour générer des réponses optimales aux AO</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm text-center">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-success/100 to-success/100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Target className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-3">Machine Learning</h3>
-                <p className="text-foreground text-sm leading-relaxed">Analyse prédictive pour identifier les opportunités les plus prometteuses</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm text-center">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-warning/10 border border-warning/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Globe className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-3">Veille Automatisée</h3>
-                <p className="text-foreground text-sm leading-relaxed">Surveillance 24/7 des plateformes d'AO françaises et européennes</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm text-center">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-primary/10 border border-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Shield className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-3">Sécurité Renforcée</h3>
-                <p className="text-foreground text-sm leading-relaxed">Chiffrement end-to-end et conformité RGPD pour protéger vos données</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <CTAFooter 
-        title="Discutons ensemble"
-        subtitle="Une question ? Un projet ? Notre équipe est là pour vous accompagner."
-        primaryButtonText="Contactez-nous"
-      />
-    </div>
-  </>
+        <Footer />
+      </div>
+    </>
   );
 };
 

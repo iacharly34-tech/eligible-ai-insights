@@ -51,16 +51,16 @@ const Demo = () => {
 
   const testimonials = [
     {
-      quote: "Grâce à Charly IA, nous avons réduit de 70% le temps de veille sur les AO.",
-      author: "Responsable achats PME IT",
-      company: "TechStart Solutions",
+      quote: "Avec Eligibly, on capte chaque matin les SASU créées dans notre zone. Notre pipeline a doublé en 3 mois.",
+      author: "Associé · cabinet 12 collaborateurs",
+      company: "Cabinet d'expertise comptable",
     },
   ];
 
   const productBenefits = [
-    { icon: Clock, title: "Gagnez du temps", description: "Ne perdez plus des heures à trier les AO." },
-    { icon: Target, title: "Augmentez vos chances", description: "Charly IA filtre les faux espoirs et repère les vraies opportunités." },
-    { icon: TrendingUp, title: "Anticipez", description: "Accédez aux signaux faibles avant vos concurrents." },
+    { icon: Clock, title: "Gagnez 25 h/semaine", description: "Fini Pappers, Excel et la prospection à l'aveugle." },
+    { icon: Target, title: "Leads pré-qualifiés", description: "Filtres et scoring IA sur votre profil idéal de client." },
+    { icon: TrendingUp, title: "Pipeline récurrent", description: "Chaque matin, 3 à 10 nouveaux leads dans Slack, Teams ou HubSpot." },
   ];
 
   return (
@@ -80,15 +80,15 @@ const Demo = () => {
             </span>
             <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold font-display leading-[1.05] tracking-tight">
               {language === "en" ? (
-                <>Discover your <span className="bg-gradient-highlight bg-clip-text text-transparent">AI potential</span> with Charly AI</>
+                <>Book your <span className="bg-gradient-highlight bg-clip-text text-transparent">personalized demo</span></>
               ) : (
-                <>Découvrez votre <span className="bg-gradient-highlight bg-clip-text text-transparent">potentiel IA</span> avec Charly IA</>
+                <>Réservez votre <span className="bg-gradient-highlight bg-clip-text text-transparent">démo personnalisée</span></>
               )}
             </h1>
             <p className="mt-8 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {language === "en"
-                ? "Book a personalized 30-minute demo and see how Charly AI can transform your public tender approach."
-                : "Réservez une démonstration personnalisée de 30 minutes et voyez comment Charly IA peut transformer votre approche des marchés publics."}
+                ? "30 minutes to see how Eligibly detects, filters and scores newly registered SASU & SAS in your zone — and pushes them every morning to your stack."
+                : "30 minutes pour voir comment Eligibly détecte, filtre et score les SASU & SAS fraîchement immatriculées de votre zone — et les pousse chaque matin dans votre stack."}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-6 text-xs text-muted-foreground">
               <span>⏱️ 30 minutes personnalisées</span>
