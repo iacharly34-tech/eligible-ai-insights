@@ -79,7 +79,6 @@ const App = () => (
                 <Route path="/tarifs" element={<Tarifs />} />
                 <Route path="/ressources" element={<Ressources />} />
                 <Route path="/a-propos" element={<APropos />} />
-                <Route path="/a-propos-eligibly" element={<AProposEligibly />} />
                 <Route path="/connexion" element={<Connexion />} />
                 <Route path="/demo" element={<Demo />} />
                 <Route path="/inscription" element={<Demo />} />
