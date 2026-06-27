@@ -31,19 +31,19 @@ export const CabinetHero = () => {
           <div className="animate-fade-in">
             <Badge variant="outline" className="text-primary border-primary/30 bg-primary/5 px-3 py-1.5 text-xs sm:text-sm mb-6 inline-flex">
               <Sparkles className="w-3.5 h-3.5 mr-1.5" aria-hidden="true" />
-              14 jours pilote offerts · Sans CB · 290 € HT/mois flat
+              Agents IA pour cabinets d'expertise comptable
             </Badge>
 
             <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-foreground font-semibold">
-              Vos futurs clients sont fraîchement immatriculés.{" "}
+              Des agents IA{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent italic font-display">
-                L'IA les détecte et les qualifie
-              </span>{" "}
-              pour vous, chaque matin.
+                à vos côtés
+              </span>
+              , chaque matin.
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl">
-              Eligibly consolide chaque jour les <strong className="text-foreground font-semibold">SASU & SAS fraîchement immatriculées</strong>, applique vos filtres ICP (CAC, procédure, holding, serial), score les leads avec une explication, et vous livre les <strong className="text-foreground font-semibold">5-15 PREMIUM du jour</strong> dans Slack, Teams ou votre boîte mail. Vous gardez le contrôle de votre source.
+              Détectez et contactez les bons leads. <strong className="text-foreground font-semibold">Toute votre prospection, simplifiée.</strong> Les SASU & SAS fraîchement immatriculées, filtrées, scorées et livrées dans Slack, Teams ou votre boîte mail.
             </p>
 
             <ul className="mt-6 space-y-3">
