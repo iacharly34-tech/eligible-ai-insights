@@ -65,7 +65,7 @@ const APropos = () => {
             <p className="mt-7 text-lg text-muted-foreground leading-relaxed max-w-2xl">
               {en
                 ? "Eligibly was built with a handful of French accounting firms tired of buying the same mutualized leads from third-party vendors. We turn official immatriculation data into a daily flow of qualified prospects — yours, scored by AI, delivered into Slack, Teams, HubSpot or your inbox."
-                : "Eligibly est né avec quelques cabinets d'expertise comptable français lassés d'acheter les mêmes leads mutualisés à des fournisseurs tiers. Nous transformons la donnée officielle d'immatriculation en un flux quotidien de prospects qualifiés — les vôtres, scorés par l'IA, livrés dans Slack, Teams, HubSpot ou votre boîte mail."}
+                : "Eligibly est né avec quelques cabinets d'expertise comptable français lassés d'acheter les mêmes leads mutualisés à des fournisseurs tiers. Nous transformons la donnée officielle d'immatriculation en un flux quotidien de prospects qualifiés — les vôtres, scorés par l'IA, livrés dans votre canal préféré."}
             </p>
           </div>
         </section>

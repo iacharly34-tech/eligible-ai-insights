@@ -25,7 +25,7 @@ const Produit = () => {
                 Un moteur de détection qui livre <em className="italic text-primary font-medium">les bons leads</em>, là où votre cabinet travaille.
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10">
-                Eligibly consolide les sources officielles, filtre selon votre ICP, score chaque société fraîchement immatriculée, et pousse les meilleures alertes dans Slack, Teams, votre boîte mail ou votre outil de prospection.
+              Eligibly consolide les sources officielles, filtre selon votre ICP, score chaque société fraîchement immatriculée, et pousse les meilleures alertes dans votre canal de prédilection.
               </p>
               <SafeLink to="/demo">
                 <Button size="lg" variant="tengo" className="group h-12 px-8">
@@ -50,7 +50,7 @@ const Produit = () => {
                   { icon: Database, t: "Consolidation des sources", d: "INPI, Sirene, BODACC, Pappers, RNCS, RNE. Toutes les SASU et SAS françaises fraîchement immatriculées, rafraîchies chaque nuit." },
                   { icon: Filter, t: "Filtres IA amont", d: "Verticale, capital, forme juridique, zone, dirigeant primo-entrepreneur, présence d'un CAC. Vous décrivez votre cabinet idéal, l'IA fait le reste." },
                   { icon: Sparkles, t: "Scoring expliqué", d: "Chaque société reçoit un score 0-100 avec les 3 raisons clés. Pas de boîte noire — votre équipe sait pourquoi un lead est prioritaire." },
-                  { icon: Bell, t: "Alertes là où vous travaillez", d: "Slack, Teams, email, HubSpot, Pipedrive, webhook. Vous décidez du canal et du rythme. Pas un dashboard de plus." },
+                  { icon: Bell, t: "Alertes là où vous travaillez", d: "Vos canaux et outils de prédilection. Vous décidez du canal et du rythme. Pas un dashboard de plus." },
                 ].map((p) => (
                   <div key={p.t} className="rounded-2xl border border-border bg-background p-7">
                     <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">

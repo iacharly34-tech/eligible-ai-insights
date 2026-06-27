@@ -42,7 +42,7 @@ export const CabinetHero = () => {
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl">
-              Eligibly identifie chaque jour les sociétés nouvellement immatriculées correspondant à votre clientèle cible, les qualifie selon vos critères, et livre à vos associés une sélection priorisée — dans Slack, Teams ou par email. <strong className="text-foreground font-semibold">Une source de développement structurée, prévisible, et conforme.</strong>
+              Eligibly identifie chaque jour les sociétés nouvellement immatriculées correspondant à votre clientèle cible, les qualifie selon vos critères, et livre à vos associés une sélection priorisée — dans vos canaux préférés. <strong className="text-foreground font-semibold">Une source de développement structurée, prévisible, et conforme.</strong>
             </p>
 
             <ul className="mt-6 space-y-3">

@@ -7,7 +7,7 @@ const bullets = [
   { t: "Contactabilité", d: "email pro vérifié, téléphone direct quand disponible." },
   { t: "Signaux primo", d: "entrepreneur indépendant vs multi-sociétés." },
   { t: "Filtres IA amont", d: "CAC, procédure, cessation, holding, serial systématiquement écartés." },
-  { t: "Alerte livrée", d: "directement dans Slack, Teams, HubSpot ou votre boîte mail." },
+  { t: "Alerte livrée", d: "directement dans vos canaux et outils de prospection." },
 ];
 
 export const CabinetPreview = () => {
@@ -23,7 +23,7 @@ export const CabinetPreview = () => {
               À quoi ressemble <em className="italic text-primary font-medium">une alerte Eligibly</em>.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-2">
-              Chaque matin à 7h00, vos leads PREMIUM scorés par l'IA arrivent dans Slack, Teams ou votre boîte mail. Pour chacun : score expliqué, signaux positifs, points à vérifier.
+              Chaque matin à 7h00, vos leads PREMIUM scorés par l'IA arrivent où vous travaillez déjà. Pour chacun : score expliqué, signaux positifs, points à vérifier.
             </p>
             <p className="text-sm font-medium text-foreground mb-6">
               Scoring IA expliqué, pas boîte noire.
