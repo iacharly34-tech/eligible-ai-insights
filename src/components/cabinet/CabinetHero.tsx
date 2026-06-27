@@ -35,11 +35,11 @@ export const CabinetHero = () => {
             </Badge>
 
             <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-foreground font-semibold">
-              Arrêtez d'acheter des leads.{" "}
+              Vos futurs clients sont fraîchement immatriculés.{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent italic font-display">
-                Produisez-les vous-mêmes,
+                L'IA les détecte et les qualifie
               </span>{" "}
-              chaque matin.
+              pour vous, chaque matin.
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl">
