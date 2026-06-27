@@ -283,9 +283,9 @@ export const SEOHead = ({
         case '/':
         case '/accueil':
           return {
-            title: "Eligibly — moteur d'alertes nouveaux clients pour cabinets d'expertise comptable",
-            description: "Vos prochains clients sont fraîchement immatriculés. Eligibly consolide chaque jour les SASU/SAS créées en France, filtres amont (CAC, procédure, holding, serial), score expliqué, plan d'action par lead. 14 jours d'essai gratuits.",
-            keywords: "prospection cabinet expertise comptable, leads experts comptables, SASU SAS immatriculation, CRM expertise comptable, primo entrepreneur, eligibly"
+            title: "Eligibly — Détection IA de leads pour cabinets d'expertise comptable",
+            description: "Vos futurs clients sont fraîchement immatriculés. L'IA Eligibly détecte chaque jour les SASU/SAS créées en France, applique vos filtres ICP, score et explique chaque lead. Alertes matinales dans Slack, Teams ou email. 14 jours d'essai gratuits.",
+            keywords: "prospection cabinet expertise comptable, leads experts comptables, SASU SAS immatriculation, IA expertise comptable, primo entrepreneur, eligibly"
           };
         case '/produit':
           return {
