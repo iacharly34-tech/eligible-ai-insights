@@ -6,10 +6,8 @@ import { MobileCTABar } from "@/components/MobileCTABar";
 import { InternalLinksManager } from "@/components/InternalLinksManager";
 
 import { CabinetHero } from "@/components/cabinet/CabinetHero";
-import { CabinetSources } from "@/components/cabinet/CabinetSources";
 import { CabinetProblems } from "@/components/cabinet/CabinetProblems";
 import { CabinetROICalculator } from "@/components/cabinet/CabinetROICalculator";
-import { CabinetPreview } from "@/components/cabinet/CabinetPreview";
 import { CabinetHowItWorks } from "@/components/cabinet/CabinetHowItWorks";
 import { CabinetCompare } from "@/components/cabinet/CabinetCompare";
 import { CabinetPersonas } from "@/components/cabinet/CabinetPersonas";
@@ -29,10 +27,8 @@ const HomePage = () => {
         <main id="main-content" tabIndex={-1} className="focus:outline-none" role="main">
           {/* Pivot juin 2026 — Moteur d'alertes nouveaux clients pour cabinets EC */}
           <CabinetHero />
-          <CabinetSources />
           <CabinetProblems />
           <CabinetROICalculator />
-          <CabinetPreview />
           <CabinetHowItWorks />
           <CabinetCompare />
           <CabinetPersonas />

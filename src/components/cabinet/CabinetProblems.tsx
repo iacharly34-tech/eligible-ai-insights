@@ -1,28 +1,18 @@
 const problems = [
   {
     n: "01",
-    title: "Le ROI flou",
-    body: "« Je paye 500 à 1 500 €/mois en leads achetés, mais je ne sais pas combien de RDV ni de signatures réelles ça me génère. » Vous suivez un coût mensuel, pas un coût par client signé.",
-  },
-  {
-    n: "02",
-    title: "La dépendance fournisseur",
-    body: "Votre plateforme d'achat peut augmenter ses prix, couper vos leads, livrer moins de volume. Vous êtes pieds et poings liés à un canal que vous ne maîtrisez pas.",
-  },
-  {
-    n: "03",
     title: "Les leads mutualisés",
     body: "Le même lead est vendu à 3-5 cabinets en parallèle. Vous arrivez en 4e, le primo-entrepreneur a déjà signé ailleurs ou ne répond plus. La moitié sont déjà accompagnés.",
   },
   {
-    n: "04",
+    n: "02",
     title: "Aucun apprentissage",
-    body: "On vous envoie le même type de lead toute l'année. La plateforme ne s'adapte ni à votre ICP, ni à vos retours, ni aux secteurs où vous convertissez le mieux.",
+    body: "Votre fournisseur vous envoie le même type de lead toute l'année. Aucune adaptation à votre ICP, vos retours, ni aux secteurs où vous convertissez réellement.",
   },
   {
-    n: "05",
+    n: "03",
     title: "25 h/semaine perdues à filtrer",
-    body: "Vos collaborateurs passent 1 h/jour sur Pappers à qualifier des leads. Pour un cabinet de 5 personnes, ça représente 25 h/semaine qui ne facturent pas.",
+    body: "Vos collaborateurs passent 1 h/jour sur Pappers à qualifier. Pour un cabinet de 5 personnes : 25 h/semaine qui ne facturent pas.",
   },
 ];
 
@@ -42,7 +32,7 @@ export const CabinetProblems = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {problems.map((p) => (
             <article
               key={p.n}
