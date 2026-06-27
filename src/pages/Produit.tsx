@@ -5,7 +5,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { MobileCTABar } from "@/components/MobileCTABar";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
-import { ArrowRight, Database, Filter, Sparkles, Bell, RefreshCw, CheckCircle2, Slack, Mail } from "lucide-react";
+import { ArrowRight, Database, Filter, Sparkles, Bell, RefreshCw, CheckCircle2, Slack, Mail, Shield, Lock, FileText, Server } from "lucide-react";
 
 const Produit = () => {
   return (
