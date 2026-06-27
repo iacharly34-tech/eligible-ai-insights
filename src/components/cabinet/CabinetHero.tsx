@@ -4,9 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { SafeLink } from "@/components/SafeLink";
 
 const bullets = [
-  "Vos leads à vous, jamais mutualisés avec 3-5 autres cabinets",
-  "Filtres IA amont : CAC, procédure, holding, serial écartés",
-  "Le scoring apprend de votre feedback, semaine après semaine",
+  "Données souveraines issues de l'INPI, du Sirene et du BODACC — jamais mutualisées",
+  "Qualification automatisée selon vos critères ICP (secteur, capital, zone, forme juridique)",
+  "Scoring explicable, auditable, et affiné par les retours de vos associés",
 ];
 
 const morningLeads = [
@@ -31,19 +31,18 @@ export const CabinetHero = () => {
           <div className="animate-fade-in">
             <Badge variant="outline" className="text-primary border-primary/30 bg-primary/5 px-3 py-1.5 text-xs sm:text-sm mb-6 inline-flex">
               <Sparkles className="w-3.5 h-3.5 mr-1.5" aria-hidden="true" />
-              Agents IA pour cabinets d'expertise comptable
+              Plateforme de détection de prospects pour cabinets d'expertise comptable
             </Badge>
 
             <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-foreground font-semibold">
-              Des agents IA{" "}
+              La prospection des cabinets d'expertise comptable,{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent italic font-display">
-                à vos côtés
+                enfin maîtrisée.
               </span>
-              , chaque matin.
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl">
-              Détectez et contactez les bons leads. <strong className="text-foreground font-semibold">Toute votre prospection, simplifiée.</strong> Les SASU & SAS fraîchement immatriculées, filtrées, scorées et livrées dans Slack, Teams ou votre boîte mail.
+              Eligibly identifie chaque jour les sociétés nouvellement immatriculées correspondant à votre clientèle cible, les qualifie selon vos critères, et livre à vos associés une sélection priorisée — dans Slack, Teams ou par email. <strong className="text-foreground font-semibold">Une source de développement structurée, prévisible, et conforme.</strong>
             </p>
 
             <ul className="mt-6 space-y-3">
@@ -61,14 +60,14 @@ export const CabinetHero = () => {
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <SafeLink to="/demo">
                 <Button variant="tengo" className="w-full sm:w-auto h-12 px-6 text-sm font-semibold group">
-                  Réserver une démo
+                  Demander une démonstration
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Button>
               </SafeLink>
               <SafeLink to="/demo">
                 <Button variant="outline" className="w-full sm:w-auto h-12 px-6 text-sm font-semibold">
                   <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
-                  Voir un lead en direct
+                  Échanger avec un conseiller
                 </Button>
               </SafeLink>
             </div>
@@ -77,13 +76,13 @@ export const CabinetHero = () => {
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <Shield className="w-4 h-4 text-success" aria-hidden="true" />
-                <span className="text-muted-foreground">Sources <strong className="text-foreground">INPI · Sirene · BODACC</strong></span>
+                <span className="text-muted-foreground">Sources officielles <strong className="text-foreground">INPI · Sirene · BODACC</strong></span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="flex">
                   {[0,1,2,3,4].map(i => <Star key={i} className="w-4 h-4 fill-warning text-warning" aria-hidden="true" />)}
                 </div>
-                <span className="text-muted-foreground"><strong className="text-foreground">4 cabinets pilotes</strong> en France</span>
+                <span className="text-muted-foreground">Conçu avec <strong className="text-foreground">4 cabinets pilotes</strong> en France</span>
               </div>
             </div>
           </div>
@@ -104,7 +103,7 @@ export const CabinetHero = () => {
                   <span className="font-medium text-foreground">eligibly@</span> à associés@cabinet.fr
                 </div>
                 <div className="mt-1 font-display text-base sm:text-lg font-semibold text-foreground leading-snug">
-                  Vos 3 nouveaux leads <em className="italic text-primary">PREMIUM</em> du jour
+                  Sélection du jour — <em className="italic text-primary">3 prospects prioritaires</em>
                 </div>
               </div>
 
@@ -125,8 +124,8 @@ export const CabinetHero = () => {
                 ))}
 
                 <div className="pt-3 mt-2 border-t border-border/40 flex items-center justify-between text-xs">
-                  <span className="text-muted-foreground">+ 11 autres alertes dans votre workspace</span>
-                  <span className="text-primary font-semibold">Ouvrir →</span>
+                  <span className="text-muted-foreground">+ 11 prospects qualifiés disponibles dans votre espace</span>
+                  <span className="text-primary font-semibold">Consulter →</span>
                 </div>
               </div>
             </div>
@@ -137,16 +136,16 @@ export const CabinetHero = () => {
                 <Shield className="w-4 h-4 text-primary" aria-hidden="true" />
               </div>
               <div>
-                <div className="text-sm font-semibold text-foreground">Vos leads, vos critères</div>
-                <div className="text-xs text-muted-foreground">Zéro fournisseur entre vous et la donnée</div>
+                <div className="text-sm font-semibold text-foreground">Données exclusives à votre cabinet</div>
+                <div className="text-xs text-muted-foreground">Aucune revente, aucune mutualisation</div>
               </div>
             </div>
 
             {/* Floating: pricing badge */}
             <div className="hidden sm:flex absolute -top-4 -right-4 items-center gap-3 bg-card rounded-xl shadow-elegant border border-border/60 p-3 pr-5">
               <div>
-                <div className="text-xs text-muted-foreground">vs 500-1 500 €/mois</div>
-                <div className="font-display text-lg font-semibold text-foreground">290 € HT flat</div>
+                <div className="text-xs text-muted-foreground">Tarif unique, sans engagement</div>
+                <div className="font-display text-lg font-semibold text-foreground">290 € HT / mois</div>
               </div>
             </div>
           </div>
