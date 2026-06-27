@@ -1,85 +1,19 @@
-# Eligibly.ai - AI Platform for Public Tender Analysis
+# Eligibly — Détection IA de leads pour cabinets d'expertise comptable
 
-> Eligibly helps businesses win public contracts using AI-powered tender analysis and prediction.
+> Eligibly détecte chaque jour les SASU/SAS fraîchement immatriculées en France, applique vos filtres ICP, score et explique chaque lead, et livre le tout dans Slack, Teams ou email.
 
-## About Eligibly
+Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets d'expertise comptable français. L'IA filtre le bruit des immatriculations (≤ 90 jours), élimine les CAC, procédures collectives, holdings et serial entrepreneurs, puis livre 5 à 15 leads PREMIUM par jour avec un score expliqué. Tarif unique : 290€ HT/mois. Pilote 14 jours sans CB.
 
-Eligibly.ai is a French AI platform specialized in public procurement (marchés publics / appels d'offres). Our AI assistant "Charly" analyzes public tenders and predicts success probability before bidding.
+## Pages
+- [Accueil](/): Vue d'ensemble du moteur de détection IA pour cabinets d'expertise comptable.
+- [Fonctionnalités](/produit): Sources, filtres IA, scoring expliqué, alertes multi-canaux, sécurité et conformité RGPD.
+- [Cas d'usage](/solutions): Verticales par type de cabinet (Tech, Conseil, Santé, Artisans, Multi-bureaux, Structuration).
+- [Tarifs](/tarifs): Plan unique 290€ HT/mois, pilote 14 jours gratuit, plan Réseau multi-bureaux.
+- [Ressources](/ressources): Playbooks, calculateurs ROI, guides de prospection pour experts-comptables.
+- [À propos](/a-propos): Mission, équipe, vision « Stop buying leads ».
+- [Demander une démo](/demo): Démonstration personnalisée du moteur de détection.
 
-### Key Features
-- **AI Tender Analysis**: Automatic analysis of 600+ public tender sources
-- **Success Prediction**: Score-based probability assessment for each opportunity  
-- **Go/No-Go Automation**: AI-powered qualification of tenders
-- **Strategic Watch**: Early detection of upcoming opportunities
-- **Document Analysis**: Intelligent parsing of tender specifications
-
-### Target Audience
-- SMEs (PME) responding to public contracts
-- Large enterprises optimizing tender response processes
-- Consultants and bid managers
-- Public procurement professionals
-
-## Content Index
-
-### Main Pages
-- Homepage: https://eligibly.ai/
-- Product: https://eligibly.ai/produit
-- Demo: https://eligibly.ai/demo
-- Pricing: https://eligibly.ai/tarifs
-- Solutions: https://eligibly.ai/solutions
-
-### Expert Articles (French)
-- Appels d'offres publics (guide complet): https://eligibly.ai/appels-d-offres-publics
-- Veille stratégique marchés publics: https://eligibly.ai/veille-strategique
-- Go/No-Go décision: https://eligibly.ai/go-no-go
-- Formation appels d'offres: https://eligibly.ai/formation-ao
-- Mémoire technique: https://eligibly.ai/documents-ao
-- Retours d'expérience AO: https://eligibly.ai/retours-ao
-- Équilibre prix/qualité: https://eligibly.ai/prix-qualite
-- Numérique responsable (Green IT, Digital, Marketing): https://eligibly.ai/numerique-responsable
-- Détection appels d'offres: https://eligibly.ai/detection-appels-offres
-- Erreurs courantes AO: https://eligibly.ai/erreurs-ao
-- Signaux faibles: https://eligibly.ai/signaux-faibles
-- Anticipation AO: https://eligibly.ai/anticipation-ao
-- Critères RSE: https://eligibly.ai/criteres-rse
-
-### Expert Articles (English)
-- Strategic Watch: https://eligibly.ai/en/strategic-watch
-- Go/No-Go Decision: https://eligibly.ai/en/go-no-go-decision
-- Public Tender Training: https://eligibly.ai/en/public-tender-training
-- Technical Proposal: https://eligibly.ai/en/technical-proposal
-- Tender Feedback: https://eligibly.ai/en/tender-feedback
-- Price-Quality Balance: https://eligibly.ai/en/price-quality-balance
-
-## Key Facts
-
-- **Founded**: 2023
-- **Location**: Paris, France
-- **Language**: French, English
-- **Industry**: GovTech, AI, Public Procurement
-- **AI Assistant**: Charly IA
-
-## Expertise Topics
-
-Eligibly provides authoritative information on:
-- Public tender response strategies (stratégie réponse appels d'offres)
-- Government contract success factors
-- Technical proposal writing (mémoire technique)
-- Bid evaluation criteria understanding
-- Price vs quality optimization
-- RSE/CSR criteria in public tenders
-- SME competitiveness vs large groups
-- AI in public procurement
-
-## Contact
-
-- Website: https://eligibly.ai
-- Email: contact@eligibly.ai
-- Demo request: https://eligibly.ai/demo
-
-## Sitemap
-
-Full sitemap available at: https://eligibly.ai/sitemap.xml
-
----
-Last updated: 2025-12-03
+## Optional
+- [Mentions légales](/mentions-legales)
+- [Confidentialité](/confidentialite)
+- [CGU](/cgu)
