@@ -5,7 +5,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { MobileCTABar } from "@/components/MobileCTABar";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
-import { ArrowRight, Database, Filter, Sparkles, Bell, RefreshCw, CheckCircle2, Slack, Mail } from "lucide-react";
+import { ArrowRight, Database, Filter, Sparkles, Bell, RefreshCw, CheckCircle2, Slack, Mail, Shield, Lock, FileText, Server } from "lucide-react";
 
 const Produit = () => {
   return (
@@ -143,6 +143,34 @@ const Produit = () => {
                     ))}
                   </div>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Sécurité & Conformité */}
+          <section className="py-20 md:py-28 px-4">
+            <div className="container mx-auto max-w-6xl">
+              <div className="max-w-2xl mb-14">
+                <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">Sécurité & Conformité</p>
+                <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
+                  Une infrastructure pensée pour la <em className="italic text-primary font-medium">confidentialité</em> et l'auditabilité.
+                </h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-5">
+                {[
+                  { icon: Shield, t: "RGPD natif", d: "Base légale 6.1.f (intérêt légitime B2B). Droit d'opposition opérationnel sous 48 h. Données de contacts professionnels uniquement — jamais de données personnelles sensibles. Politique de confidentialité externe validée par nos conseillers juridiques." },
+                  { icon: Server, t: "Hébergement 100 % Union européenne", d: "Toutes les données de prospection et les modèles IA sont hébergés sur des serveurs situés en France et en Europe. Aucun transfert de données en dehors de l'UE. Chiffrement au repos (AES-256) et en transit (TLS 1.3)." },
+                  { icon: Lock, t: "Isolation et traçabilité", d: "Chaque cabinet dispose d'un workspace logiquement isolé. Vos critères ICP, vos feedbacks et votre historique de scoring ne sont jamais partagés avec d'autres clients. Traçabilité complète : chaque alerte est datée, sourcée et auditable." },
+                  { icon: FileText, t: "Process documenté et contrôlé", d: "Procédure d'ingestion qualifiée (sources officielles uniquement : INPI, INSEE, BODACC). Vérification automatique de la fraîcheur des immatriculations (≤ 90 jours). Pas de scraping sauvage : uniquement des données publiées légalement et des partenaires contractuels (Pappers, Kaspr, Hunter)." },
+                ].map((p) => (
+                  <div key={p.t} className="rounded-2xl border border-border bg-background p-7">
+                    <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
+                      <p.icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-display text-xl font-semibold text-foreground mb-2">{p.t}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{p.d}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
