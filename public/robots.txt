@@ -47,9 +47,10 @@ Disallow: /tmp/
 # Block search pages (redirect to main)
 Disallow: /search*
 
-# Pages prioritaires pour ranking "Appels d'offres publics"
-Allow: /appels-d-offres-publics
-Allow: /produit  
+# Pages prioritaires — détection IA de leads pour cabinets d'expertise comptable
+Allow: /produit
+Allow: /solutions
+Allow: /tarifs
 Allow: /demo
 
 # Important resources for AI understanding
