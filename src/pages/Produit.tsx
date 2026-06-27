@@ -120,7 +120,7 @@ const Produit = () => {
                     À chaque alerte qualifiée ou écartée par votre équipe, l'IA ajuste ses filtres et son scoring sur votre profil de cabinet. Au bout de 4 semaines, 80 % des alertes correspondent réellement à votre ICP.
                   </p>
                   <ul className="space-y-3">
-                    {["Feedback en un clic dans Slack / Teams", "Modèle propre à votre cabinet, pas mutualisé", "Vos données restent vos données (RGPD, hébergement UE)"].map((b) => (
+                    {["Feedback en un clic dans vos canaux", "Modèle propre à votre cabinet, pas mutualisé", "Vos données restent vos données (RGPD, hébergement UE)"].map((b) => (
                       <li key={b} className="flex items-start gap-3 text-[0.95rem]">
                         <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                         <span>{b}</span>

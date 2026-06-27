@@ -93,7 +93,7 @@ export const CabinetPreview = () => {
                     </Button>
                   </SafeLink>
                   <Button variant="outline" className="flex-1 h-12 px-6 text-sm font-semibold">
-                    Pousser dans HubSpot
+                    Envoyer vers mon outil
                   </Button>
                 </div>
               </div>
