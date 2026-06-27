@@ -4,8 +4,8 @@ import { SafeLink } from "@/components/SafeLink";
 
 const features = [
   "Leads quotidiens scorés par l'IA, priorisés selon votre ICP",
-  "Alertes natives dans Slack, Teams ou votre boîte mail",
-  "Push automatique vers HubSpot, Pipedrive, Salesforce, Sellsy",
+  "Alertes livrées où vous le souhaitez",
+  "Push automatique vers vos outils de prospection",
   "Pour chaque lead : scoring IA expliqué, signaux positifs, points à vérifier",
   "Filtres IA amont systématiques (CAC, procédure, cessation, holding, serial)",
   "Copilote IA conversationnel pour préparer chaque appel",
