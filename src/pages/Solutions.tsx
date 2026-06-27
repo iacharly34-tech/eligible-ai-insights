@@ -31,7 +31,7 @@ const Solutions = () => {
           {/* Hero */}
           <section className="pt-32 pb-20 px-4">
             <div className="container mx-auto max-w-4xl text-center">
-              <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-6">Solutions</p>
+              <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-6">Cas d'usage</p>
               <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-8">
                 Une solution par <em className="italic text-primary font-medium">type de cabinet</em>, pas un outil générique.
               </h1>
