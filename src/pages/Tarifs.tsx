@@ -96,7 +96,7 @@ const Tarifs = () => {
               {/* Plan Réseau */}
               <div className="mt-6 rounded-2xl border border-border bg-card/50 p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                  <h3 className="font-display text-xl font-semibold mb-1">Plan Réseau — multi-bureaux</h3>
+                  <h2 className="font-display text-xl font-semibold mb-1">Plan Réseau — multi-bureaux</h2>
                   <p className="text-sm text-muted-foreground">+ de 5 utilisateurs, routing par bureau / associé / pôle métier, SSO, account manager dédié.</p>
                 </div>
                 <SafeLink to={demoHref}>
