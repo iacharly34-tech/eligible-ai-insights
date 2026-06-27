@@ -51,7 +51,7 @@ const Solutions = () => {
                       <solution.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-display text-2xl font-semibold tracking-tight mb-1">{solution.title}</h3>
+                      <h2 className="font-display text-2xl font-semibold tracking-tight mb-1">{solution.title}</h2>
                       <p className="text-xs text-primary uppercase tracking-[0.14em] font-semibold mb-4">{solution.subtitle}</p>
                       <p className="text-[0.95rem] text-muted-foreground leading-relaxed mb-6">{solution.description}</p>
                       <div className="grid sm:grid-cols-2 gap-3 mb-8">

@@ -289,51 +289,45 @@ export const SEOHead = ({
           };
         case '/produit':
           return {
-            title: "Produit Eligibly – Gagnez du temps sur vos appels d'offres publics (AO)",
-            description: "Découvrez comment Eligibly qualifie les marchés publics et maximise vos chances sur chaque AO.",
-            keywords: "produit eligibly, analyse AO, appels d'offres publics, marchés publics"
+            title: "Fonctionnalités Eligibly — Moteur de détection IA",
+            description: "Sources d'immatriculations, filtres IA, scoring expliqué, alertes multi-canaux (Slack, Teams, email) et conformité RGPD pour cabinets d'expertise comptable.",
+            keywords: "fonctionnalités eligibly, moteur détection leads, IA SASU SAS, scoring lead, alertes Slack Teams"
           };
         case '/demo':
           return {
-            title: "Démo Eligibly – Analyse IA de vos appels d'offres publics",
-            description: "Lancez une démo Eligibly et testez notre IA pour évaluer vos opportunités sur les marchés publics.",
-            keywords: "démo eligibly, test AO, appels d'offres publics, analyse IA"
+            title: "Démo Eligibly — Détection IA de leads experts-comptables",
+            description: "Réservez une démonstration personnalisée d'Eligibly et voyez comment l'IA détecte chaque matin vos futurs clients SASU/SAS sur votre zone.",
+            keywords: "démo eligibly, détection leads comptables, prospection cabinet EC"
           };
         case '/tarifs':
           return {
-            title: "Tarifs Eligibly – IA pour appels d'offres publics et marchés",
-            description: "Découvrez les tarifs Eligibly pour l'analyse d'appels d'offres publics et l'optimisation des marchés publics.",
-            keywords: "tarifs eligibly, prix AO, appels d'offres publics, marchés publics"
+            title: "Tarifs Eligibly — 290€/mois, pilote 14 jours gratuit",
+            description: "Plan unique 290€ HT/mois pour cabinets d'expertise comptable. Pilote 14 jours sans CB. Plan Réseau pour structures multi-bureaux.",
+            keywords: "tarifs eligibly, prix prospection cabinet, abonnement expert comptable"
           };
         case '/solutions':
           return {
-            title: "Solutions Eligibly – Plateforme IA pour appels d'offres publics",
-            description: "Solutions Eligibly pour l'analyse d'appels d'offres publics et l'optimisation des marchés publics.",
-            keywords: "solutions eligibly, plateforme AO, appels d'offres publics, marchés publics"
+            title: "Cas d'usage Eligibly — Par type de cabinet EC",
+            description: "6 verticales pour cabinets d'expertise comptable : Tech, Conseil, Santé, Artisans, Multi-bureaux, Structuration commerciale. Filtres et bénéfices par profil.",
+            keywords: "cas d'usage cabinet expertise comptable, verticales prospection EC, eligibly"
           };
         case '/ressources':
           return {
-            title: "Ressources Eligibly – Guides appels d'offres publics",
-            description: "Ressources et guides pour gagner vos appels d'offres publics et marchés publics avec Eligibly.",
-            keywords: "ressources eligibly, guides AO, appels d'offres publics, conseils marchés"
+            title: "Ressources Eligibly — Playbooks prospection EC",
+            description: "Playbooks, calculateurs ROI et guides pour développer le portefeuille de votre cabinet d'expertise comptable grâce à la détection IA de leads.",
+            keywords: "ressources cabinet expertise comptable, playbook prospection, ROI cabinet EC"
           };
         case '/a-propos':
           return {
-            title: "À propos Eligibly – Experts IA appels d'offres publics",
-            description: "Découvrez Eligibly, la plateforme IA qui transforme l'analyse des appels d'offres publics et marchés publics.",
-            keywords: "à propos eligibly, experts AO, appels d'offres publics, IA marchés"
-          };
-        case '/a-propos-eligibly':
-          return {
-            title: "Eligibly - Leader IA pour Appels d'Offres Publics et Marchés Publics",
-            description: "Eligibly révolutionne les appels d'offres publics avec l'IA. +47% de succès, analyse prédictive des AO, optimisation marchés publics. Solution complète pour PME et grands groupes.",
-            keywords: "eligibly, appels d'offres publics, AO, marchés publics, IA, intelligence artificielle, analyse prédictive, consultation publique, procédure appel d'offres, mémoire technique, code marchés publics, achat public, commande publique, veille marchés publics, stratégie AO, AAPC, dossier candidature, critères attribution, secteurs prioritaires, opportunités commerciales"
+            title: "À propos d'Eligibly — Stop buying leads",
+            description: "Eligibly aide les cabinets d'expertise comptable à produire leurs propres leads, jamais mutualisés. Notre mission, notre équipe, notre vision.",
+            keywords: "à propos eligibly, mission, équipe cabinet expertise comptable"
           };
         default:
           return {
-            title: "Eligibly – IA pour appels d'offres publics (AO) et marchés publics",
-            description: "Eligibly analyse vos chances de succès sur les appels d'offres publics et marchés publics. Testez notre IA prédictive spécialisée dans les AO.",
-            keywords: "eligibly, appels d'offres publics, AO, marchés publics, IA"
+            title: "Eligibly — Détection IA leads experts-comptables",
+            description: "L'IA Eligibly détecte chaque jour les SASU/SAS fraîchement immatriculées et livre les leads qualifiés à votre cabinet dans Slack, Teams ou email.",
+            keywords: "eligibly, leads experts comptables, prospection cabinet EC, IA SASU SAS"
           };
       }
     }
@@ -373,7 +367,7 @@ export const SEOHead = ({
     upsertMetaTag("name", "twitter:image", ogImageUrl);
     upsertMetaTag("name", "twitter:site", "@eligible_ai");
     upsertMetaTag("name", "twitter:creator", "@eligible_ai");
-    upsertMetaTag("name", "news_keywords", "appels d'offres publics, IA, marchés publics, intelligence artificielle");
+    upsertMetaTag("name", "news_keywords", "experts-comptables, leads, prospection, SASU, SAS, IA");
     upsertMetaTag("name", "author", "Eligibly Team");
     upsertMetaTag("name", "publisher", "Eligibly.ai");
 
@@ -396,8 +390,8 @@ export const SEOHead = ({
       upsertMetaTag("property", "article:published_time", "2025-08-20T10:00:00Z");
       upsertMetaTag("property", "article:modified_time", "2025-08-24T15:30:00Z");
       upsertMetaTag("property", "article:author", "Équipe Eligibly");
-      upsertMetaTag("property", "article:section", "Marchés Publics");
-      upsertMetaTag("property", "article:tag", "marchés publics");
+      upsertMetaTag("property", "article:section", "Expertise comptable");
+      upsertMetaTag("property", "article:tag", "prospection cabinet");
     } else {
       removeMetaTag("property", "article:published_time");
       removeMetaTag("property", "article:modified_time");

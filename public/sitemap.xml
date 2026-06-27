@@ -7,6 +7,8 @@
   <url><loc>https://eligibly.ai/ressources</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://eligibly.ai/a-propos</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://eligibly.ai/demo</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://eligibly.ai/inscription</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://eligibly.ai/newsletter</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://eligibly.ai/connexion</loc><lastmod>2026-06-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://eligibly.ai/mentions-legales</loc><lastmod>2026-06-27</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://eligibly.ai/confidentialite</loc><lastmod>2026-06-27</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
@@ -18,4 +20,5 @@
   <url><loc>https://eligibly.ai/en/resources</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://eligibly.ai/en/about</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://eligibly.ai/en/demo</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://eligibly.ai/en/login</loc><lastmod>2026-06-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
