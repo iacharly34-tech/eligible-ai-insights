@@ -1,4 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Shield, Lock, FileText } from "lucide-react";
 
 const faqs = [
   { q: "On achète déjà des leads chez un fournisseur, c'est pas la même chose ?", a: "Non. Les fournisseurs de leads vous vendent un lead à l'unité, souvent mutualisé entre 3-5 cabinets, sans contexte sur pourquoi ce lead est prioritaire pour vous. Eligibly est un outil de production de leads : votre cabinet possède la source, vous choisissez vos critères ICP, vous recevez 30-50 leads PREMIUM par mois (vs 5-20 chez les fournisseurs classiques) pour 290 € HT/mois flat (vs 500-1500 € en achat). Vous gagnez en autonomie, en volume et en qualité." },
