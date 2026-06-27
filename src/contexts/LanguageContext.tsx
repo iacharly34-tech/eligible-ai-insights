@@ -15,8 +15,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations = {
   fr: {
     // Navigation
-    'nav.product': 'Produit',
-    'nav.solutions': 'Solutions',
+    'nav.product': 'Fonctionnalités',
+    'nav.solutions': 'Cas d\'usage',
     'nav.pricing': 'Tarifs',
     'nav.resources': 'Ressources',
     'nav.about': 'À propos',
@@ -652,8 +652,8 @@ const translations = {
   },
   en: {
     // Navigation
-    'nav.product': 'Product',
-    'nav.solutions': 'Solutions',
+    'nav.product': 'Features',
+    'nav.solutions': 'Use cases',
     'nav.pricing': 'Pricing',
     'nav.resources': 'Resources',
     'nav.about': 'About',

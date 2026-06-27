@@ -20,7 +20,7 @@ const Produit = () => {
           {/* Hero */}
           <section className="pt-32 pb-20 px-4">
             <div className="container mx-auto max-w-4xl text-center">
-              <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-6">Le produit</p>
+              <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-6">Fonctionnalités</p>
               <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-8">
                 Un moteur de détection qui livre <em className="italic text-primary font-medium">les bons leads</em>, là où votre cabinet travaille.
               </h1>
