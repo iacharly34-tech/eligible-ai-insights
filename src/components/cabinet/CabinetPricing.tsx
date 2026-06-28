@@ -20,7 +20,7 @@ export const CabinetPricing = () => {
         <div className="max-w-2xl mx-auto text-center mb-12">
           <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">Tarification</p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
-            Un seul forfait, <em className="italic text-primary font-medium">sur devis personnalisé</em>.
+            Un tarif calibré sur votre cabinet, <em className="italic text-primary font-medium">sur devis personnalisé</em>.
           </h2>
           <p className="mt-4 text-muted-foreground">
             Notre tarif est unique pour tous les cabinets. Nous le communiquons après un premier échange de cadrage de 20 minutes — pour vérifier ensemble que votre verticale, votre zone et votre volume cible sont éligibles.
@@ -29,14 +29,14 @@ export const CabinetPricing = () => {
 
         <div className="max-w-2xl mx-auto rounded-2xl border-2 border-primary bg-card shadow-xl shadow-primary/10 overflow-hidden relative">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[0.65rem] uppercase tracking-[0.16em] font-bold px-4 py-1 rounded-b-md">
-            Forfait Pro
+            Plan Pro
           </div>
           <div className="p-8 md:p-10 pt-12">
             <div className="text-center mb-2">
               <span className="font-display text-4xl md:text-5xl font-semibold text-foreground italic">Tarif sur devis</span>
             </div>
             <p className="text-center text-sm text-muted-foreground mb-8">
-              Forfait flat unique · 14 premiers jours gratuits, sans CB · résiliable avec préavis 30 jours
+              Abonnement adapté à votre volume et à la taille de votre cabinet · 14 premiers jours gratuits, sans CB · résiliable avec préavis 30 jours
             </p>
 
             <div className="rounded-lg bg-primary/5 border border-primary/15 p-4 mb-8">
