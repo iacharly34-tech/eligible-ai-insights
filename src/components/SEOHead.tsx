@@ -301,8 +301,8 @@ export const SEOHead = ({
           };
         case '/tarifs':
           return {
-            title: "Tarifs Eligibly — 290€/mois, pilote 14 jours gratuit",
-            description: "Plan unique 290€ HT/mois pour cabinets d'expertise comptable. Pilote 14 jours sans CB. Plan Réseau pour structures multi-bureaux.",
+            title: "Tarifs Eligibly — forfait flat sur devis · pilote 14 jours",
+            description: "Forfait mensuel flat unique pour cabinets d'expertise comptable, communiqué après un échange de cadrage. Pilote 14 jours sans CB. Plan Réseau multi-bureaux.",
             keywords: "tarifs eligibly, prix prospection cabinet, abonnement expert comptable"
           };
         case '/solutions':

@@ -37,6 +37,9 @@ const Confidentialite = lazy(() => import("./pages/Confidentialite"));
 const CGU = lazy(() => import("./pages/CGU"));
 const Newsletter = lazy(() => import("./pages/Newsletter"));
 const NewsletterConfig = lazy(() => import("./pages/NewsletterConfig"));
+const BlogCreations2025 = lazy(() => import("./pages/blog/CreationsEntreprises2025"));
+const BlogCAC = lazy(() => import("./pages/blog/CoutAcquisitionClientCabinet"));
+const BlogICP = lazy(() => import("./pages/blog/IcpCabinetExpertiseComptable"));
 
 import { LanguageSync } from "@/components/LanguageSync";
 
@@ -88,6 +91,11 @@ const App = () => (
                 <Route path="/cgu" element={<CGU />} />
                 <Route path="/newsletter" element={<Newsletter />} />
                 <Route path="/newsletter-config" element={<NewsletterConfig />} />
+
+                {/* Blog */}
+                <Route path="/blog/creations-entreprises-france-2025" element={<BlogCreations2025 />} />
+                <Route path="/blog/cout-acquisition-client-cabinet-comptable" element={<BlogCAC />} />
+                <Route path="/blog/icp-cabinet-expertise-comptable" element={<BlogICP />} />
 
                 {/* EN routes */}
                 <Route path="/en" element={<Index />} />

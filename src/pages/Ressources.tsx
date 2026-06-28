@@ -186,6 +186,27 @@ const Ressources = () => {
 
   const filtered = activeCat === "all" ? resources : resources.filter((r) => r.cat === activeCat);
 
+  const liveArticles = [
+    {
+      href: "/blog/creations-entreprises-france-2025",
+      title: "Créations d'entreprises en France : 2025, l'année record",
+      desc: "Décryptage des données INSEE sur les nouvelles immatriculations 2024-2025 et lecture pour les cabinets EC.",
+      meta: "7 min · Marché EC · sources INSEE",
+    },
+    {
+      href: "/blog/cout-acquisition-client-cabinet-comptable",
+      title: "Combien coûte un nouveau client en cabinet EC ? Benchmark 2026",
+      desc: "Ordres de grandeur du CPL, CPRdv et CAC en cabinet d'expertise comptable, et leviers pour les faire baisser.",
+      meta: "9 min · Acquisition · sources Booster Digital, Oltega, 425PPM, Lead-Gene",
+    },
+    {
+      href: "/blog/icp-cabinet-expertise-comptable",
+      title: "Construire l'ICP d'un cabinet d'expertise comptable : la méthode en 5 étapes",
+      desc: "De l'audit du portefeuille existant à la conversion en filtres opérationnels, la méthode appliquée par nos cabinets pilotes.",
+      meta: "8 min · Méthodologie · sources OEC, Atlas, Option Finance",
+    },
+  ];
+
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
@@ -242,8 +263,38 @@ const Ressources = () => {
             </div>
           </section>
 
-          {/* Ressources phares */}
-          <section className="py-16 px-4 bg-card/30">
+          {/* Articles publiés (réels, sourcés) */}
+          <section className="py-16 px-4 bg-card/30 border-y border-border">
+            <div className="container mx-auto max-w-6xl">
+              <div className="mb-10">
+                <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-3">Articles publiés</p>
+                <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
+                  Nos analyses, <em className="italic text-primary font-medium">sourcées et vérifiables</em>.
+                </h2>
+                <p className="mt-3 text-muted-foreground max-w-2xl">
+                  Articles écrits par notre équipe à partir de données publiques (INSEE, OEC, Observatoire de la profession comptable) et de retours terrain de cabinets pilotes. Chaque chiffre est sourcé en bas d'article.
+                </p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-5">
+                {liveArticles.map((a) => (
+                  <SafeLink key={a.href} to={a.href} className="group block rounded-2xl border border-border bg-background p-7 hover:border-primary/40 transition-colors">
+                    <div className="inline-flex items-center gap-1.5 px-2 py-1 rounded text-[0.65rem] uppercase tracking-[0.12em] bg-success/10 text-success font-semibold mb-5">
+                      <CheckCircle className="w-3 h-3" /> En ligne
+                    </div>
+                    <h3 className="font-display text-lg font-semibold mb-3 leading-snug group-hover:text-primary transition-colors">{a.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-5">{a.desc}</p>
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-muted-foreground">{a.meta}</span>
+                      <span className="text-primary font-semibold inline-flex items-center">Lire <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" /></span>
+                    </div>
+                  </SafeLink>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Ressources phares (à venir) */}
+          <section className="py-16 px-4">
             <div className="container mx-auto max-w-6xl">
               <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
                 <div>

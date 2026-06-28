@@ -2,13 +2,13 @@
 
 > Eligibly détecte chaque jour les SASU/SAS fraîchement immatriculées en France, applique vos filtres ICP, score et explique chaque lead, et livre le tout dans Slack, Teams ou email.
 
-Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets d'expertise comptable français. L'IA filtre le bruit des immatriculations (≤ 90 jours), élimine les CAC, procédures collectives, holdings et serial entrepreneurs, puis livre 5 à 15 leads PREMIUM par jour avec un score expliqué. Tarif unique : 290€ HT/mois. Pilote 14 jours sans CB.
+Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets d'expertise comptable français. L'IA filtre le bruit des immatriculations (≤ 90 jours), élimine les CAC, procédures collectives, holdings et serial entrepreneurs, puis livre 5 à 15 leads PREMIUM par jour avec un score expliqué. Forfait flat unique, communiqué sur demande. Pilote 14 jours sans CB.
 
 ## Pages
 - [Accueil](/): Vue d'ensemble du moteur de détection IA pour cabinets d'expertise comptable.
 - [Fonctionnalités](/produit): Sources, filtres IA, scoring expliqué, alertes multi-canaux, sécurité et conformité RGPD.
 - [Cas d'usage](/solutions): Verticales par type de cabinet (Tech, Conseil, Santé, Artisans, Multi-bureaux, Structuration).
-- [Tarifs](/tarifs): Plan unique 290€ HT/mois, pilote 14 jours gratuit, plan Réseau multi-bureaux.
+- [Tarifs](/tarifs): Plan unique à forfait flat (tarif sur demande), pilote 14 jours gratuit, plan Réseau multi-bureaux.
 - [Ressources](/ressources): Playbooks, calculateurs ROI, guides de prospection pour experts-comptables.
 - [À propos](/a-propos): Mission, équipe, vision « Stop buying leads ».
 - [Demander une démo](/demo): Démonstration personnalisée du moteur de détection.

@@ -93,8 +93,8 @@ const APropos = () => {
               </p>
               <p>
                 {en
-                  ? "Eligibly turns the model upside down: a flat 290 € HT/month, your ICP, your filters, your scoring model — leads no one else receives, refreshed every morning."
-                  : "Eligibly retourne le modèle : 290 € HT/mois flat, votre ICP, vos filtres, votre modèle de scoring — des leads que personne d'autre ne reçoit, rafraîchis chaque matin."}
+                  ? "Eligibly turns the model upside down: one flat monthly subscription (pricing on request), your ICP, your filters, your scoring model — leads no one else receives, refreshed every morning."
+                  : "Eligibly retourne le modèle : un forfait mensuel flat unique (tarif sur demande), votre ICP, vos filtres, votre modèle de scoring — des leads que personne d'autre ne reçoit, rafraîchis chaque matin."}
               </p>
             </div>
           </div>
