@@ -1,15 +1,16 @@
 # Eligibly — Détection IA de leads pour cabinets d'expertise comptable
 
-> Eligibly détecte chaque jour les SASU/SAS fraîchement immatriculées en France, applique vos filtres ICP, score et explique chaque lead, et vous envoie chaque matin un digest des leads PREMIUM directement dans votre boîte email. Intégrations Slack et Microsoft Teams disponibles sur demande.
+> Eligibly détecte chaque jour les SASU/SAS fraîchement immatriculées en France, applique vos filtres ICP, score et explique chaque lead, génère une recommandation IA d'accroche personnalisée, et vous envoie chaque matin un digest des leads PREMIUM dans le canal de votre choix (email, Slack, Microsoft Teams, WhatsApp).
 
-Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets d'expertise comptable français. L'IA filtre le bruit des immatriculations (≤ 90 jours), élimine les CAC, procédures collectives, holdings et serial entrepreneurs, puis vous livre chaque jour les leads PREMIUM correspondant à votre ICP, avec un score expliqué. Le volume quotidien dépend de votre zone géographique, de vos critères ICP et du flux d'immatriculations réel. Tarif sur devis, calibré sur la taille et le volume du cabinet. Pilote 14 jours sans CB, résiliable mensuellement.
+Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets d'expertise comptable français. L'IA filtre le bruit des immatriculations (≤ 90 jours), élimine les CAC, procédures collectives, holdings et serial entrepreneurs, puis vous livre chaque jour les leads PREMIUM correspondant à votre ICP, avec un score expliqué et une recommandation d'approche prête à envoyer. Le volume quotidien dépend de votre zone géographique, de vos critères ICP et du flux d'immatriculations réel. Tarification à partir de 10 € par lead qualifié, devis personnalisé selon le volume et la taille du cabinet. Démarrage sans CB, résiliable mensuellement. Modèles IA documentés et auditables (open-weights et propriétaires), aucun usage en boîte noire.
 
 ## Pages
 - [Accueil](/): Vue d'ensemble du moteur de détection IA pour cabinets d'expertise comptable.
 - [Fonctionnalités](/produit): Sources, filtres IA, scoring expliqué, alertes multi-canaux, sécurité et conformité RGPD.
 - [Cas d'usage](/solutions): Verticales par type de cabinet (Tech, Conseil, Santé, Artisans, Multi-bureaux, Structuration).
-- [Tarifs](/tarifs): Tarif sur devis adapté au volume et à la taille du cabinet, pilote 14 jours gratuit sans CB.
+- [Tarifs](/tarifs): À partir de 10 € par lead qualifié, devis personnalisé. Démarrage sans CB, résiliable mensuellement.
 - [Ressources](/ressources): Playbooks, calculateurs ROI, guides de prospection pour experts-comptables.
+- [Lexique marketing pour experts-comptables](/blog/lexique-marketing-expert-comptable): Glossaire des termes marketing (ICP, scoring, pipeline, touchpoints, CAC) traduits pour le métier EC.
 - [À propos](/a-propos): Mission, équipe, vision « Stop buying leads ».
 - [Demander une démo](/demo): Démonstration personnalisée du moteur de détection.
 
