@@ -212,7 +212,7 @@ export const SEOHead = ({
         case '/en/solutions':
           return {
             title: "Eligibly Use Cases — by accounting firm profile",
-            description: "Six verticals for accounting firms: Tech, Consulting, Healthcare, Craftsmen, Multi-office, Commercial scale-up. Filters and benefits per profile.",
+            description: "Six verticals for accounting firms: Tech, Consulting, Healthcare, Craftsmen, Large firms & networks, Commercial scale-up. Filters and benefits per profile.",
             keywords: "accounting firm use cases, accountant verticals, eligibly"
           };
         case '/en/resources':
@@ -308,7 +308,7 @@ export const SEOHead = ({
         case '/solutions':
           return {
             title: "Cas d'usage Eligibly — Par type de cabinet EC",
-            description: "6 verticales pour cabinets d'expertise comptable : Tech, Conseil, Santé, Artisans, Multi-bureaux, Structuration commerciale. Filtres et bénéfices par profil.",
+            description: "6 verticales pour cabinets d'expertise comptable : Tech, Conseil, Santé, Artisans, Grands cabinets & réseaux, Structuration commerciale. Filtres et bénéfices par profil.",
             keywords: "cas d'usage cabinet expertise comptable, verticales prospection EC, eligibly"
           };
         case '/ressources':
