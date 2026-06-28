@@ -14,6 +14,24 @@ const Ressources = () => {
 
   const liveArticles = [
     {
+      href: "/blog/barometre-acquisition-cabinet-ec-2026",
+      title: "Baromètre 2026 — Acquisition client en cabinet d'expertise comptable",
+      desc: "Synthèse de l'état du marché : CAC par canal, cycle de vente, mix gagnant, conversion. Lecture stratégique pour passer du producteur au conseiller.",
+      meta: "14 min · Étude · sources INSEE, OEC, Atlas",
+    },
+    {
+      href: "/blog/observatoire-sasu-sas-juin-2026",
+      title: "Observatoire des SASU & SAS créées en France — Juin 2026",
+      desc: "25 000 immatriculations / mois : volumes, verticales, capital moyen, géographie, profils. Comment lire ces données pour orienter la prospection.",
+      meta: "11 min · Données · sources INSEE, INPI, BODACC",
+    },
+    {
+      href: "/blog/playbook-prospection-cabinet-ec-2026",
+      title: "Playbook 2026 — La prospection en cabinet d'expertise comptable",
+      desc: "Méthodologie opérationnelle complète : ICP, organisation, séquences, posture conseil, IA, gouvernance, KPIs. De la détection à la signature.",
+      meta: "18 min · Playbook · sources OEC, Atlas, CNIL",
+    },
+    {
       href: "/blog/creations-entreprises-france-2025",
       title: "Créations d'entreprises en France : 2025, l'année record",
       desc: "Décryptage des données INSEE sur les nouvelles immatriculations 2024-2025 et lecture pour les cabinets EC.",
@@ -34,9 +52,9 @@ const Ressources = () => {
   ];
 
   const upcoming = [
-    { title: "Baromètre acquisition client en cabinet EC", desc: "Étude terrain en cours auprès de cabinets pilotes." },
-    { title: "Observatoire mensuel des SASU & SAS créées en France", desc: "Newsletter mensuelle sur les volumes et verticales." },
-    { title: "Playbook prospection cabinet EC", desc: "Méthodologie, scripts, séquences. En écriture avec deux associés." },
+    { title: "Baromètre — Édition T4 2026", desc: "Prochaine vague terrain avec une cohorte élargie de cabinets pilotes." },
+    { title: "Observatoire — Édition juillet 2026", desc: "Nouvelle édition mensuelle avec focus verticale tech & e-commerce." },
+    { title: "Guide du dirigeant SASU", desc: "Le contenu que vos prospects lisent. Comprendre leurs critères de choix." },
   ];
 
   const handleSubscribe = (e: React.FormEvent) => {
