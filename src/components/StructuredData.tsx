@@ -69,7 +69,7 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
           "@type": "SiteNavigationElement", 
           "position": 2,
           "name": language === 'en' ? "Demo" : "Démo",
-          "description": language === 'en' ? "Try Eligibly on real leads" : "Testez Eligibly sur de vrais leads",
+          "description": language === 'en' ? "Try Eligibly on premium leads" : "Testez Eligibly sur des leads premium",
           "url": `https://eligibly.ai${language === 'en' ? '/en/demo' : '/demo'}`
         },
         {
