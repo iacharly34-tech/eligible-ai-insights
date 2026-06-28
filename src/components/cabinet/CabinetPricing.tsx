@@ -60,12 +60,12 @@ export const CabinetPricing = () => {
 
             <SafeLink to="/demo" className="block">
               <Button variant="tengo" className="w-full h-12 px-6 text-sm font-semibold group">
-                Recevoir notre proposition
+                Recevoir mon premier lead gratuit
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Button>
             </SafeLink>
             <p className="text-center text-xs text-muted-foreground mt-3">
-              Réponse sous 24 h ouvrées · aucune relance commerciale agressive
+              1 lead réel livré sous 48 h, sans CB · proposition tarifaire envoyée sous 24 h ouvrées
             </p>
           </div>
         </div>
