@@ -175,7 +175,7 @@ const Tarifs = () => {
           <section className="py-24 px-4">
             <div className="container mx-auto max-w-3xl text-center">
               <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-tight mb-6">
-                Prêt à tester sur <em className="italic text-primary font-medium">vos leads premium</em> ?
+                Pas convaincu ? Recevez un lead.
               </h2>
               <SafeLink to={demoHref}>
                 <Button size="lg" variant="tengo" className="h-12 px-8 group">
