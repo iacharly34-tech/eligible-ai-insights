@@ -63,8 +63,8 @@ export const Footer = () => {
             
             <p className="text-sm text-muted-foreground max-w-sm">
               {language === 'en'
-                ? 'The lead detection engine for French accounting firms. Newly registered SASU and SAS, AI-filtered and scored, delivered every morning to your preferred channel. Flat monthly pricing — on request.'
-                : "Le moteur de détection de nouveaux clients pour cabinets d’expertise comptable. SASU et SAS fraîchement immatriculées, filtrées et scorées par notre IA, livrées chaque matin dans votre canal de travail. Forfait flat — tarif sur demande."}
+                ? 'The lead detection engine for French accounting firms. Newly registered SASU and SAS, AI-filtered and scored, delivered every morning to your preferred channel. Pricing calibrated to your firm — on request.'
+                : "Le moteur de détection de nouveaux clients pour cabinets d’expertise comptable. SASU et SAS fraîchement immatriculées, filtrées et scorées par notre IA, livrées chaque matin dans votre canal de travail. Tarif calibré sur votre cabinet — sur demande."}
             </p>
 
             <div className="flex items-center space-x-6 text-xs text-foreground/70">
