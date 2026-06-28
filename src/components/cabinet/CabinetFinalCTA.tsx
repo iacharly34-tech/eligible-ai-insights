@@ -17,17 +17,20 @@ export const CabinetFinalCTA = () => {
           />
           <div className="relative max-w-2xl mx-auto">
             <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-tight mb-5">
-              Prêt à voir Eligibly <em className="italic text-primary">à l'œuvre</em> ?
+              Recevez votre <em className="italic text-primary">premier lead</em> — gratuitement.
             </h2>
             <p className="text-background/75 text-lg leading-relaxed mb-8">
-              30 minutes de démo avec un de nos experts. Pas de slides : on regarde l'outil en direct sur vos vrais leads et votre ICP.
+              Communiquez-nous votre ICP et vos coordonnées professionnelles. Sous 48 h, nous vous livrons gratuitement une société fraîchement immatriculée, qualifiée selon vos critères — pour juger sur pièces, sans engagement.
             </p>
             <SafeLink to="/demo">
               <Button className="h-12 px-8 bg-background text-foreground hover:bg-background/90 hover:shadow-glow text-sm font-semibold group">
-                Programmer ma démo
+                Recevoir mon premier lead gratuit
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Button>
             </SafeLink>
+            <p className="mt-4 text-xs text-background/60">
+              Sans CB · sans engagement · vos coordonnées ne sont jamais revendues
+            </p>
           </div>
         </div>
       </div>

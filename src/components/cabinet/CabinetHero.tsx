@@ -60,7 +60,7 @@ export const CabinetHero = () => {
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <SafeLink to="/demo">
                 <Button variant="tengo" className="w-full sm:w-auto h-12 px-6 text-sm font-semibold group">
-                  Demander une démonstration
+                  Recevoir mon premier lead gratuit
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Button>
               </SafeLink>
@@ -71,6 +71,9 @@ export const CabinetHero = () => {
                 </Button>
               </SafeLink>
             </div>
+            <p className="mt-3 text-xs text-muted-foreground">
+              Sans CB · 1 lead réel de votre zone livré sous 48 h · communiquez-nous simplement vos coordonnées professionnelles
+            </p>
 
             {/* Trust strip */}
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">

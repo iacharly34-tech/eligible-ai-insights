@@ -179,7 +179,7 @@ export const CabinetROICalculator = () => {
             <div className="mt-auto pt-4">
               <SafeLink to={`/demo?roi=1`}>
                 <Button variant="tengo" className="w-full h-12 text-sm font-semibold group">
-                  Réserver ma démo personnalisée
+                  Recevoir mon premier lead gratuit
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </SafeLink>
