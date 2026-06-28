@@ -144,7 +144,7 @@ export const CabinetHero = () => {
             {/* Floating: pricing badge */}
             <div className="hidden sm:flex absolute -top-4 -right-4 items-center gap-3 bg-card rounded-xl shadow-elegant border border-border/60 p-3 pr-5">
               <div>
-                <div className="text-xs text-muted-foreground">Forfait unique, sans engagement</div>
+                <div className="text-xs text-muted-foreground">Tarif sur devis, sans engagement</div>
                 <div className="font-display text-base font-semibold text-foreground">Tarification sur demande</div>
               </div>
             </div>
