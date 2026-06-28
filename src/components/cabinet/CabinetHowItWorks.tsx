@@ -173,7 +173,7 @@ const labels = {
     delivBtnA: "Contact",
     delivBtnB: "Discard",
   },
-} as const;
+};
 
 /* ─── Visual previews for each step ─── */
 
