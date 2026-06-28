@@ -48,14 +48,12 @@ export const CabinetROICalculator = () => {
     const rdvCount = leads * (rdvRate / 100);
     const costPerRdv = rdvCount > 0 ? spend / rdvCount : 0;
     const hoursLost = sizeHours[size];
-    const eligiblyYear = 290 * 12;
-    const saving = yearlyCurrent - eligiblyYear;
     const daysSaved = (hoursLost * 12) / 7;
-    return { yearlyCurrent, costPerLead, costPerRdv, hoursLost, eligiblyYear, saving, daysSaved };
+    return { yearlyCurrent, costPerLead, costPerRdv, hoursLost, daysSaved };
   }, [spend, leads, rdvRate, size]);
 
   const mailtoBody = encodeURIComponent(
-    `Bonjour,\n\nJe souhaite réserver une démo Eligibly. Voici mon contexte actuel :\n\n• Dépense mensuelle leads : ${fmt(spend)} €\n• Volume leads / mois : ${fmt(leads)}\n• Taux RDV : ${rdvRate} %\n• Taille cabinet : ${size} collaborateurs\n\nEstimation Eligibly :\n• Économie annuelle nette : ${fmt(results.saving)} €\n• Temps collab économisé : ${fmt(results.hoursLost)} h/mois\n\nMerci,`
+    `Bonjour,\n\nJe souhaite recevoir une proposition Eligibly. Voici mon contexte actuel :\n\n• Dépense mensuelle leads : ${fmt(spend)} €\n• Volume leads / mois : ${fmt(leads)}\n• Taux RDV : ${rdvRate} %\n• Taille cabinet : ${size} collaborateurs\n\nMerci de me communiquer votre tarif et un créneau de démo.\n`
   );
 
   return (
@@ -69,7 +67,7 @@ export const CabinetROICalculator = () => {
             Combien vous coûte <em className="italic text-primary font-medium">vraiment</em> votre stack lead actuelle ?
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            En 30 secondes, mesurez l'écart entre votre dépense actuelle en leads achetés et le coût d'Eligibly (290 € HT flat).
+            En 30 secondes, mesurez le coût réel de votre acquisition actuelle. Nous vous remettons ensuite une proposition chiffrée, alignée sur votre cabinet.
           </p>
         </div>
 
@@ -160,19 +158,19 @@ export const CabinetROICalculator = () => {
 
             <div className="border-t border-background/20 pt-6 mb-6">
               <div className="text-[0.74rem] uppercase tracking-[0.14em] text-primary/90 font-semibold mb-4 flex items-center gap-2">
-                <TrendingDown className="w-3.5 h-3.5" /> Avec Eligibly · 290 € HT flat
+                <TrendingDown className="w-3.5 h-3.5" /> Avec Eligibly · forfait flat
               </div>
               <div className="space-y-4">
                 <div className="flex items-baseline justify-between">
-                  <span className="text-background/70 text-sm flex items-center gap-2"><Wallet className="w-4 h-4" /> Économie annuelle nette</span>
-                  <span className="font-display italic text-3xl sm:text-4xl text-primary font-semibold">
-                    {fmt(results.saving)} €
+                  <span className="text-background/70 text-sm flex items-center gap-2"><Wallet className="w-4 h-4" /> Économie potentielle</span>
+                  <span className="font-display italic text-2xl sm:text-3xl text-primary font-semibold">
+                    À chiffrer ensemble
                   </span>
                 </div>
                 <div className="flex items-baseline justify-between">
-                  <span className="text-background/70 text-sm flex items-center gap-2"><Clock className="w-4 h-4" /> Équivalent en jours collab</span>
+                  <span className="text-background/70 text-sm flex items-center gap-2"><Clock className="w-4 h-4" /> Temps collab économisé</span>
                   <span className="font-display italic text-xl text-background font-semibold">
-                    {fmt(results.daysSaved)} j/an
+                    ~{fmt(results.hoursLost)} h/mois
                   </span>
                 </div>
               </div>
