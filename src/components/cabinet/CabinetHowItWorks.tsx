@@ -672,6 +672,7 @@ export const CabinetHowItWorks = () => {
               <button
                 onClick={() => { setActive(0); setDirection(1); }}
                 className="text-xs font-medium border border-border bg-background px-3 py-2 rounded-lg hover:bg-muted transition-colors"
+                aria-label="Reset"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
               </button>
