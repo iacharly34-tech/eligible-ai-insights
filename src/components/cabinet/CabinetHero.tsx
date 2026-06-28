@@ -34,9 +34,9 @@ export const CabinetHero = () => {
               Plateforme de détection de prospects pour cabinets d'expertise comptable
             </Badge>
 
-            <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-foreground font-semibold">
+            <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-6xl leading-[1.12] tracking-tight text-foreground font-semibold">
               La prospection des cabinets d'expertise comptable,{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent italic font-display">
+              <span className="bg-gradient-primary bg-clip-text text-transparent italic font-display inline-block">
                 enfin maîtrisée.
               </span>
             </h1>
