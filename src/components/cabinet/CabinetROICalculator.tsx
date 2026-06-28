@@ -178,6 +178,10 @@ export const CabinetROICalculator = () => {
                   value={rdvRate}
                   onChange={(e) => setRdvRate(Number(e.target.value))}
                   className="w-full accent-primary"
+                  aria-label={t.qRdv}
+                  aria-valuemin={0}
+                  aria-valuemax={30}
+                  aria-valuenow={rdvRate}
                 />
               </div>
 
