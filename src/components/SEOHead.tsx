@@ -302,7 +302,7 @@ export const SEOHead = ({
         case '/tarifs':
           return {
             title: "Tarifs Eligibly — tarif adapté sur devis · pilote 14 jours",
-            description: "Abonnement mensuel adapté à votre cabinet, communiqué après un échange de cadrage. Pilote 14 jours sans CB. Plan Réseau multi-bureaux.",
+            description: "Abonnement mensuel adapté à votre cabinet, communiqué après un échange de cadrage. Pilote 14 jours sans CB.",
             keywords: "tarifs eligibly, prix prospection cabinet, abonnement expert comptable"
           };
         case '/solutions':
@@ -365,8 +365,8 @@ export const SEOHead = ({
     upsertMetaTag("name", "twitter:title", resolvedTitle);
     upsertMetaTag("name", "twitter:description", resolvedDescription);
     upsertMetaTag("name", "twitter:image", ogImageUrl);
-    upsertMetaTag("name", "twitter:site", "@eligible_ai");
-    upsertMetaTag("name", "twitter:creator", "@eligible_ai");
+    upsertMetaTag("name", "twitter:site", "@eligibly_ai");
+    upsertMetaTag("name", "twitter:creator", "@eligibly_ai");
     upsertMetaTag("name", "news_keywords", "experts-comptables, leads, prospection, SASU, SAS, IA");
     upsertMetaTag("name", "author", "Eligibly Team");
     upsertMetaTag("name", "publisher", "Eligibly.ai");

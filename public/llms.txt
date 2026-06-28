@@ -8,7 +8,7 @@ Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets
 - [Accueil](/): Vue d'ensemble du moteur de détection IA pour cabinets d'expertise comptable.
 - [Fonctionnalités](/produit): Sources, filtres IA, scoring expliqué, alertes multi-canaux, sécurité et conformité RGPD.
 - [Cas d'usage](/solutions): Verticales par type de cabinet (Tech, Conseil, Santé, Artisans, Multi-bureaux, Structuration).
-- [Tarifs](/tarifs): Tarif sur devis adapté au volume et à la taille du cabinet, pilote 14 jours gratuit, plan Réseau multi-bureaux.
+- [Tarifs](/tarifs): Tarif sur devis adapté au volume et à la taille du cabinet, pilote 14 jours gratuit sans CB.
 - [Ressources](/ressources): Playbooks, calculateurs ROI, guides de prospection pour experts-comptables.
 - [À propos](/a-propos): Mission, équipe, vision « Stop buying leads ».
 - [Demander une démo](/demo): Démonstration personnalisée du moteur de détection.
