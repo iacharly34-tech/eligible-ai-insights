@@ -20,9 +20,6 @@ const FAQS_FR = [
   { q: "Quels touchpoints recevez-vous pour chaque lead ?", a: "Pour chaque lead PREMIUM : email professionnel vérifié, téléphone professionnel quand disponible, profil LinkedIn du dirigeant, adresse postale du siège, et une recommandation d'accroche IA personnalisée (email + LinkedIn) prête à envoyer. Vous choisissez le canal d'attaque le plus pertinent pour votre cabinet." },
 ];
 
-const FAQS_EN_EXTRA_REMOVED = [
-];
-
 const FAQS_EN = [
   { q: "We already buy leads from a provider — isn't that the same?", a: "No. Lead providers sell you a contact at a unit price, often shared across 3 to 5 firms, with no explanation of why the lead is a priority for you. Eligibly is a lead production tool: your firm owns the source, you configure your ICP, and you receive every day the PREMIUM leads matching your ideal profile, with an explained score, for a subscription tailored to your volume and firm size." },
   { q: "If I subscribe to Eligibly, can I drop my other lead providers?", a: "Most of our pilot firms do, after 2–3 months. Eligibly produces your daily PREMIUM leads autonomously — enough for a firm of 5–30 staff. Our recommendation: keep your other channels in parallel for the first two months, compare quality and cost per meeting, then drop those that don't hold up." },

@@ -43,6 +43,7 @@ const BlogICP = lazy(() => import("./pages/blog/IcpCabinetExpertiseComptable"));
 const BlogBarometre = lazy(() => import("./pages/blog/BarometreAcquisitionCabinet"));
 const BlogObservatoire = lazy(() => import("./pages/blog/ObservatoireSasuSas"));
 const BlogPlaybook = lazy(() => import("./pages/blog/PlaybookProspectionCabinet"));
+const BlogLexique = lazy(() => import("./pages/blog/LexiqueMarketingExpertComptable"));
 
 import { LanguageSync } from "@/components/LanguageSync";
 
@@ -102,6 +103,7 @@ const App = () => (
                 <Route path="/blog/barometre-acquisition-cabinet-ec-2026" element={<BlogBarometre />} />
                 <Route path="/blog/observatoire-sasu-sas-juin-2026" element={<BlogObservatoire />} />
                 <Route path="/blog/playbook-prospection-cabinet-ec-2026" element={<BlogPlaybook />} />
+                <Route path="/blog/lexique-marketing-expert-comptable" element={<BlogLexique />} />
 
                 {/* EN routes */}
                 <Route path="/en" element={<Index />} />
