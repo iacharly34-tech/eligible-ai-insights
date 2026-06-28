@@ -18,7 +18,7 @@ const copy = {
     ],
     ctaPrimary: "Recevoir mon premier lead gratuit",
     ctaSecondary: "Discuter sur WhatsApp",
-    ctaNote: "Sans CB · 1 lead réel de votre zone livré sous 48 h · WhatsApp pour échanger en direct avec un fondateur",
+    ctaNote: "Sans CB · 1 lead premium de votre zone livré sous 48 h · WhatsApp pour échanger en direct avec un fondateur",
     trustSources: "Sources officielles",
     trustBuiltWith: "Conçu avec",
     trustPilots: "4 cabinets partenaires",
