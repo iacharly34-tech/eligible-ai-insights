@@ -131,7 +131,7 @@ const Tarifs = () => {
               </div>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">Démarrage sans friction</h2>
               <p className="mt-6 text-muted-foreground max-w-xl mx-auto leading-relaxed">
-                Pas de carte bancaire pour démarrer. Premier lead réel livré sous 48 h pour valider la qualité avant signature. Engagement mensuel, résiliable avec préavis 30 jours.
+                Pas de carte bancaire pour démarrer. Premier lead premium livré sous 48 h pour valider la qualité avant signature. Engagement mensuel, résiliable avec préavis 30 jours.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-6 text-xs text-muted-foreground">
                 <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-success" />Sans carte bancaire</span>

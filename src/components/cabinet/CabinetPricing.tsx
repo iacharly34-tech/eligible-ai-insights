@@ -27,7 +27,7 @@ const copy = {
       "Support email + visio mensuelle de bilan",
     ],
     cta: "Recevoir mon premier lead gratuit",
-    ctaNote: "1 lead réel livré sous 48 h, sans CB · devis envoyé sous 24 h ouvrées",
+    ctaNote: "1 lead premium livré sous 48 h, sans CB · devis envoyé sous 24 h ouvrées",
   },
   en: {
     eyebrow: "Pricing",

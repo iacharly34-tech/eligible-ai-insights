@@ -183,7 +183,7 @@ const Ressources = () => {
                 Et si vous passiez <em className="italic text-primary font-medium">de la lecture à l'action</em> ?
               </h2>
               <p className="text-muted-foreground mb-10 max-w-xl mx-auto">
-                Le meilleur moyen de mettre nos analyses en pratique : recevez un premier lead réel sur votre vraie zone et votre vraie verticale, gratuitement.
+                Le meilleur moyen de mettre nos analyses en pratique : recevez un premier lead premium sur votre vraie zone et votre vraie verticale, gratuitement.
               </p>
               <SafeLink to="/demo">
                 <Button size="lg" variant="tengo" className="h-12 px-8 group">

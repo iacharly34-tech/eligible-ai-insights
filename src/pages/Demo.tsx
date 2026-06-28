@@ -87,11 +87,11 @@ const Demo = () => {
             </h1>
             <p className="mt-8 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {language === "en"
-                ? "Share your ICP and professional contact details. Within 48 hours, we deliver one real newly registered company in your zone, qualified by Eligibly — no credit card, no commitment."
-                : "Partagez votre ICP et vos coordonnées professionnelles. Sous 48 h, nous vous livrons un lead réel fraîchement immatriculé de votre zone, qualifié par Eligibly — sans CB, sans engagement."}
+                ? "Share your ICP and professional contact details. Within 48 hours, we deliver one premium lead newly registered in your zone, qualified by Eligibly — no credit card, no commitment."
+                : "Partagez votre ICP et vos coordonnées professionnelles. Sous 48 h, nous vous livrons un lead premium fraîchement immatriculé de votre zone, qualifié par Eligibly — sans CB, sans engagement."}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-6 text-xs text-muted-foreground">
-              <span>🎁 1 lead réel offert</span>
+              <span>🎁 1 lead premium offert</span>
               <span>⏱️ Livraison sous 48 h</span>
               <span>🔒 Sans CB · sans engagement</span>
             </div>
@@ -110,7 +110,7 @@ const Demo = () => {
                       Réclamez votre premier lead gratuit
                     </h2>
                     <p className="text-sm text-muted-foreground">
-                      Donnez-nous vos coordonnées professionnelles et votre profil cible. Sous 48 h, nous vous envoyons un lead réel, qualifié selon vos critères.
+                      Donnez-nous vos coordonnées professionnelles et votre profil cible. Sous 48 h, nous vous envoyons un lead premium, qualifié selon vos critères.
                     </p>
                   </div>
 
@@ -136,7 +136,7 @@ const Demo = () => {
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
                     <p className="text-center text-xs text-muted-foreground">
-                      1 lead réel livré sous 48 h. Sans CB, sans engagement. Vos coordonnées ne sont jamais revendues.
+                      1 lead premium livré sous 48 h. Sans CB, sans engagement. Vos coordonnées ne sont jamais revendues.
                     </p>
                   </SecureFormWrapper>
                 </>
@@ -177,7 +177,7 @@ const Demo = () => {
                 <div className="p-6 rounded-2xl border border-primary/20 bg-primary/5 text-center">
                   <h4 className="font-bold text-sm mb-2">Encore un doute ?</h4>
                   <p className="text-xs text-muted-foreground mb-4">
-                    Jugez sur pièces : recevez d'abord un lead réel, gratuitement, avant toute décision.
+                    Jugez sur pièces : recevez d'abord un lead premium, gratuitement, avant toute décision.
                   </p>
                   <Button
                     onClick={() => document.getElementById("demo-form")?.scrollIntoView({ behavior: "smooth" })}
@@ -200,7 +200,7 @@ const Demo = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[150px]" />
           <div className="container mx-auto max-w-3xl text-center relative z-10">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display leading-[1.05] tracking-tight">
-              Un lead réel vaut mille slides.
+              Un lead premium vaut mille slides.
             </h2>
             <p className="mt-8 text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
               Recevez gratuitement une société fraîchement immatriculée qualifiée selon votre ICP. Sans CB, sans engagement.
