@@ -30,7 +30,7 @@ export const Footer = () => {
         { name: language === 'en' ? 'Solo & micro firms' : 'Cabinets solo & micro (1-4)', href: '/#personas' },
         { name: language === 'en' ? 'Growing firms (5-30)' : 'Cabinets en croissance (5-30)', href: '/#personas' },
         { name: language === 'en' ? 'Verticalized firms' : 'Cabinets verticalisés', href: '/solutions' },
-        { name: language === 'en' ? 'Multi-office networks' : 'Réseaux multi-bureaux', href: '/solutions' },
+        { name: language === 'en' ? 'Large firms & networks' : 'Grands cabinets & réseaux', href: '/solutions' },
       ],
     },
     {
