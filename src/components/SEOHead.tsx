@@ -301,8 +301,8 @@ export const SEOHead = ({
           };
         case '/tarifs':
           return {
-            title: "Tarifs Eligibly — forfait flat sur devis · pilote 14 jours",
-            description: "Forfait mensuel flat unique pour cabinets d'expertise comptable, communiqué après un échange de cadrage. Pilote 14 jours sans CB. Plan Réseau multi-bureaux.",
+            title: "Tarifs Eligibly — tarif adapté sur devis · pilote 14 jours",
+            description: "Abonnement mensuel adapté à votre cabinet, communiqué après un échange de cadrage. Pilote 14 jours sans CB. Plan Réseau multi-bureaux.",
             keywords: "tarifs eligibly, prix prospection cabinet, abonnement expert comptable"
           };
         case '/solutions':

@@ -158,7 +158,7 @@ export const CabinetROICalculator = () => {
 
             <div className="border-t border-background/20 pt-6 mb-6">
               <div className="text-[0.74rem] uppercase tracking-[0.14em] text-primary/90 font-semibold mb-4 flex items-center gap-2">
-                <TrendingDown className="w-3.5 h-3.5" /> Avec Eligibly · forfait flat
+                <TrendingDown className="w-3.5 h-3.5" /> Avec Eligibly · abonnement adapté
               </div>
               <div className="space-y-4">
                 <div className="flex items-baseline justify-between">

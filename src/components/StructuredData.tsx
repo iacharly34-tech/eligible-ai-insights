@@ -83,7 +83,7 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
           "@type": "SiteNavigationElement",
           "position": 4,
           "name": language === 'en' ? "Pricing" : "Tarifs",
-          "description": language === 'en' ? "Single Pro plan, 14-day free trial" : "Forfait Pro unique, 14 jours d'essai gratuits", 
+          "description": language === 'en' ? "Single Pro plan, 14-day free trial" : "Plan Pro adapté, 14 jours d'essai gratuits", 
           "url": `https://eligibly.ai${language === 'en' ? '/en/pricing' : '/tarifs'}`
         },
         {
@@ -274,7 +274,7 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
         "name": "Combien coûte Eligibly ?",
         "acceptedAnswer": {
           "@type": "Answer", 
-          "text": "Un seul forfait Pro mensuel flat, communiqué sur demande après un échange de cadrage de 20 minutes, avec 14 jours d'essai gratuits sans carte bancaire et résiliation à tout moment avec préavis de 30 jours."
+          "text": "Un abonnement mensuel adapté à votre cabinet, communiqué sur demande après un échange de cadrage de 20 minutes, avec 14 jours d'essai gratuits sans carte bancaire et résiliation à tout moment avec préavis de 30 jours."
         }
       }
     ]

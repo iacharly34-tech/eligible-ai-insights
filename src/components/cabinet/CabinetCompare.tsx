@@ -3,7 +3,7 @@ import React from "react";
 type Row = { cap: string; sub?: string; eligibly: string; supplier: string; group: string };
 
 const rows: Row[] = [
-  { group: "Modèle économique", cap: "Structure tarifaire", sub: "Comment vous payez la donnée", eligibly: "Abonnement forfaitaire", supplier: "Facturation à l'unité, variable" },
+  { group: "Modèle économique", cap: "Structure tarifaire", sub: "Comment vous payez la donnée", eligibly: "Abonnement adapté au volume", supplier: "Facturation à l'unité, variable" },
   { group: "Modèle économique", cap: "Prévisibilité budgétaire", sub: "Capacité à piloter votre CAC", eligibly: "Stable, indépendante du volume", supplier: "Dépendante du marché et des enchères" },
   { group: "Modèle économique", cap: "Engagement contractuel", eligibly: "Mensuel, préavis 30 jours", supplier: "Engagement annuel fréquent" },
   { group: "Qualité de la donnée", cap: "Exclusivité du contact", sub: "Combien de cabinets reçoivent le même lead", eligibly: "Lead exclusif à votre cabinet", supplier: "Lead mutualisé entre plusieurs cabinets" },

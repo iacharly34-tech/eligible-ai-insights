@@ -44,8 +44,8 @@ export const QuickLinksSection = () => {
         },
         {
           href: "/tarifs",
-          title: "Nos forfaits",
-          description: "Prix transparents",
+          title: "Nos tarifs",
+          description: "Tarif sur devis",
           priority: "medium"
         }
       ]

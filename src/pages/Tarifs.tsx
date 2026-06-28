@@ -23,8 +23,8 @@ const features = [
 
 const faqItems = [
   { q: "En quoi Eligibly diffère d'un annuaire d'entreprises ?", a: "Un annuaire vous donne accès à la base. Nous, on filtre, on score et on pousse uniquement les leads pertinents pour votre cabinet, directement dans votre canal de travail. C'est un moteur d'alertes, pas un annuaire." },
-  { q: "Pourquoi ne pas afficher le tarif sur le site ?", a: "Notre forfait est unique, mais nous préférons le communiquer après un échange de cadrage de 20 minutes : vérifier ensemble que votre verticale, votre zone et votre volume cible correspondent à notre périmètre, et que la valeur attendue est claire des deux côtés. Vous recevez notre proposition écrite sous 24 h ouvrées, sans engagement." },
-  { q: "Y a-t-il des paliers de prix ou un coût par lead ?", a: "Non. Le forfait est flat : un seul prix mensuel, pas de surcoût par lead, pas de palier de volume, pas de quota qui saute. Vous payez l'accès au moteur, pas la quantité." },
+  { q: "Pourquoi ne pas afficher le tarif sur le site ?", a: "Notre tarif est calibré sur votre cabinet, mais nous préférons le communiquer après un échange de cadrage de 20 minutes : vérifier ensemble que votre verticale, votre zone et votre volume cible correspondent à notre périmètre, et que la valeur attendue est claire des deux côtés. Vous recevez notre proposition écrite sous 24 h ouvrées, sans engagement." },
+  { q: "Y a-t-il des paliers de prix ou un coût par lead ?", a: "Non. Le tarif s'ajuste à votre volume et à la taille de votre cabinet : un seul prix mensuel, pas de surcoût par lead, pas de quota qui saute. Vous payez l'accès au moteur, pas la quantité." },
   { q: "Comment fonctionne le pilote 14 jours ?", a: "On paramètre votre verticale et votre zone, on active le flux pendant 14 jours, sans carte bancaire. Vous gardez tous les leads reçus pendant le pilote, que vous souscriviez ou non." },
   { q: "Vous garantissez un nombre de rendez-vous ?", a: "Non. C'est un engagement de moyens, pas de résultat. Décrocher des RDV reste votre métier — nous, on garantit la qualité et la fraîcheur des leads livrés." },
   { q: "Combien de leads je reçois par semaine ?", a: "Selon votre zone et votre verticale, entre 20 et 200 leads scorés par semaine. Sur Paris IDF + verticale tech, comptez ~80/semaine. Sur une ville moyenne + artisans, ~25/semaine." },
@@ -52,7 +52,7 @@ const Tarifs = () => {
             <div className="container mx-auto max-w-4xl text-center">
               <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-6">Tarifs</p>
               <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-8">
-                Un tarif, <em className="italic text-primary font-medium">tout inclus</em>. Pas de surprise.
+                Un tarif adapté à votre cabinet, <em className="italic text-primary font-medium">tout inclus</em>. Pas de surprise.
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 Construit avec et pour les cabinets d'expertise comptable français. Engagement mensuel, résiliable, pilote 14 jours sans carte bancaire.
@@ -73,7 +73,7 @@ const Tarifs = () => {
                     <div className="mb-2">
                       <span className="font-display text-4xl md:text-5xl font-semibold tracking-tight italic">Tarif sur devis</span>
                     </div>
-                    <p className="text-sm text-muted-foreground mb-3">Forfait mensuel <strong>flat unique</strong> — communiqué après un échange de cadrage de 20 minutes. Un seul client signé rembourse l'année.</p>
+                    <p className="text-sm text-muted-foreground mb-3">Abonnement mensuel <strong>adapté à votre volume</strong> — communiqué après un échange de cadrage de 20 minutes. Un seul client signé rembourse l'année.</p>
                     <p className="text-xs text-muted-foreground mb-8">Pas de palier de volume, pas de coût par lead, pas de surprise.</p>
                     <SafeLink to={demoHref}>
                       <Button variant="tengo" className="w-full h-12 group">
@@ -113,7 +113,7 @@ const Tarifs = () => {
               <div className="text-center mb-10">
                 <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">Le calcul est vite fait</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
-                  Notre forfait <em className="italic text-primary font-medium">vs un seul client signé</em>.
+                  Notre tarif <em className="italic text-primary font-medium">vs un seul client signé</em>.
                 </h2>
               </div>
               <div className="grid md:grid-cols-3 gap-5">
