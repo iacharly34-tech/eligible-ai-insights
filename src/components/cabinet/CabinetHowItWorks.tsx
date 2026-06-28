@@ -493,10 +493,10 @@ function LivraisonView({ t }: { t: typeof labels.fr; lang?: "fr" | "en" }) {
               transition={{ delay: 1 }}
               className="flex gap-2 pt-1"
             >
-              <button className="flex-1 text-xs font-semibold bg-primary text-primary-foreground px-3 py-2 rounded-lg hover:opacity-90 transition-opacity">
+              <button type="button" aria-label={t.delivBtnA} className="flex-1 text-xs font-semibold bg-primary text-primary-foreground px-3 py-2 rounded-lg hover:opacity-90 transition-opacity">
                 {t.delivBtnA}
               </button>
-              <button className="text-xs font-medium border border-border bg-background px-3 py-2 rounded-lg hover:bg-muted transition-colors">
+              <button type="button" aria-label={t.delivBtnB} className="text-xs font-medium border border-border bg-background px-3 py-2 rounded-lg hover:bg-muted transition-colors">
                 {t.delivBtnB}
               </button>
             </motion.div>
