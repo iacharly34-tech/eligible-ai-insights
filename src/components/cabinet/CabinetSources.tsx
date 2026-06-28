@@ -32,7 +32,7 @@ export const CabinetSources = () => {
           ))}
         </div>
         <p className="text-center text-xs text-muted-foreground mt-10 max-w-xl mx-auto">
-          Données issues de sources publiques officielles : INPI · Sirene INSEE · BODACC · Pappers — enrichies par Kaspr et Hunter.io.
+          Données issues de sources publiques officielles : INPI · Sirene INSEE · BODACC — enrichies par des partenaires contractuels conformes RGPD.
         </p>
       </div>
     </section>

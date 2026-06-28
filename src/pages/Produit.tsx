@@ -47,7 +47,7 @@ const Produit = () => {
               </div>
               <div className="grid md:grid-cols-2 gap-5">
                 {[
-                  { icon: Database, t: "Consolidation des sources", d: "INPI, Sirene, BODACC, Pappers, RNCS, RNE. Toutes les SASU et SAS françaises fraîchement immatriculées, rafraîchies chaque nuit." },
+                  { icon: Database, t: "Consolidation des sources", d: "INPI, Sirene, BODACC, RNCS, RNE. Toutes les SASU et SAS françaises fraîchement immatriculées, rafraîchies chaque nuit." },
                   { icon: Filter, t: "Filtres IA amont", d: "Verticale, capital, forme juridique, zone, dirigeant primo-entrepreneur, présence d'un CAC. Vous décrivez votre cabinet idéal, l'IA fait le reste." },
                   { icon: Sparkles, t: "Scoring expliqué", d: "Chaque société reçoit un score 0-100 avec les 3 raisons clés. Pas de boîte noire — votre équipe sait pourquoi un lead est prioritaire." },
                   { icon: Bell, t: "Alertes là où vous travaillez", d: "Vos canaux et outils de prédilection. Vous décidez du canal et du rythme. Pas un dashboard de plus." },
@@ -161,7 +161,7 @@ const Produit = () => {
                   { icon: Shield, t: "RGPD natif", d: "Base légale 6.1.f (intérêt légitime B2B). Droit d'opposition opérationnel sous 48 h. Données de contacts professionnels uniquement — jamais de données personnelles sensibles. Politique de confidentialité externe validée par nos conseillers juridiques." },
                   { icon: Server, t: "Hébergement 100 % Union européenne", d: "Toutes les données de prospection et les modèles IA sont hébergés sur des serveurs situés en France et en Europe. Aucun transfert de données en dehors de l'UE. Chiffrement au repos (AES-256) et en transit (TLS 1.3)." },
                   { icon: Lock, t: "Isolation et traçabilité", d: "Chaque cabinet dispose d'un workspace logiquement isolé. Vos critères ICP, vos feedbacks et votre historique de scoring ne sont jamais partagés avec d'autres clients. Traçabilité complète : chaque alerte est datée, sourcée et auditable." },
-                  { icon: FileText, t: "Process documenté et contrôlé", d: "Procédure d'ingestion qualifiée (sources officielles uniquement : INPI, INSEE, BODACC). Vérification automatique de la fraîcheur des immatriculations (≤ 90 jours). Pas de scraping sauvage : uniquement des données publiées légalement et des partenaires contractuels (Pappers, Kaspr, Hunter)." },
+                  { icon: FileText, t: "Process documenté et contrôlé", d: "Procédure d'ingestion qualifiée (sources officielles uniquement : INPI, INSEE, BODACC). Vérification automatique de la fraîcheur des immatriculations (≤ 90 jours). Pas de scraping sauvage : uniquement des données publiées légalement et des partenaires d'enrichissement contractuels conformes RGPD." },
                 ].map((p) => (
                   <div key={p.t} className="rounded-2xl border border-border bg-background p-7">
                     <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">

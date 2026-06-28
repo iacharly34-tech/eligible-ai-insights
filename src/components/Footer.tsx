@@ -22,7 +22,6 @@ export const Footer = () => {
         { name: 'INPI / RNE', href: 'https://data.inpi.fr/' },
         { name: 'Sirene · INSEE', href: 'https://www.sirene.fr/' },
         { name: 'BODACC', href: 'https://www.bodacc.fr/' },
-        { name: 'Pappers', href: 'https://www.pappers.fr/' },
       ],
     },
     {

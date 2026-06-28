@@ -262,11 +262,11 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
         }
       },
       {
-        "@type": "Question", 
-        "name": "En quoi Eligibly est différent de Pappers ?",
+        "@type": "Question",
+        "name": "En quoi Eligibly diffère d'un annuaire d'entreprises ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pappers est un annuaire généraliste qui donne la donnée brute. Eligibly est verticalisé cabinet EC : filtres amont automatiques, score expliqué par lead, plan d'action concret, et apprentissage progressif sur le feedback du cabinet."
+          "text": "Un annuaire généraliste donne la donnée brute. Eligibly est verticalisé cabinet d'expertise comptable : filtres amont automatiques, score expliqué par lead, plan d'action concret, et apprentissage progressif sur le feedback du cabinet."
         }
       },
       {
