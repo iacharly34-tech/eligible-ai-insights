@@ -193,8 +193,8 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
   const articleData = page === "article" ? {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Comment l'IA transforme les appels d'offres publics (AO) en 2025",
-    "description": "Découvrez comment Eligibly révolutionne l'analyse des appels d'offres publics et marchés publics grâce à l'IA",
+    "headline": "Comment l'IA transforme la prospection des cabinets d'expertise comptable en 2026",
+    "description": "Détection IA des SASU & SAS fraîchement immatriculées, scoring expliqué et plan d'action : la nouvelle prospection des cabinets d'expertise comptable.",
     "image": "https://eligibly.ai/assets/eligible-ai-hero-optimized.webp",
     "author": {
       "@type": "Organization",
@@ -208,13 +208,13 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
         "url": "https://eligibly.ai/assets/eligibly-logo-main.png"
       }
     },
-    "datePublished": "2025-08-20",
-    "dateModified": "2025-08-20",
+    "datePublished": "2026-01-15",
+    "dateModified": "2026-06-28",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://eligibly.ai/appels-d-offres-publics"
+      "@id": "https://eligibly.ai/ressources"
     },
-    "keywords": "eligibly, appels d'offres publics, AO, marchés publics, IA"
+    "keywords": "eligibly, expert-comptable, prospection, SASU, SAS, détection de leads, IA"
   } : null;
 
   // LocalBusiness pour SEO local
@@ -223,25 +223,14 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "@type": "LocalBusiness",
     "name": "Eligibly",
     "image": "https://eligibly.ai/assets/eligible-ai-opengraph.png",
-    "telephone": "+33-1-XX-XX-XX-XX",
     "email": "contact@eligibly.ai",
     "url": "https://eligibly.ai",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Tour Eiffel",
-      "addressLocality": "Paris", 
-      "addressRegion": "Île-de-France",
-      "postalCode": "75007",
       "addressCountry": "FR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "48.8566",
-      "longitude": "2.3522"
     },
     "openingHours": "Mo-Fr 09:00-18:00",
     "priceRange": "€€",
-    "servesCuisine": "Technology",
     "serviceArea": {
       "@type": "Place",
       "name": "France"
