@@ -272,9 +272,9 @@ export const SEOHead = ({
           };
         default:
           return {
-            title: "Eligibly – AI for Public Tenders and Government Contracts",
-            description: "Eligibly analyzes your success chances on public tenders and government contracts. Test our predictive AI specialized in public procurement.",
-            keywords: "eligibly, public tenders, government contracts, AI, procurement"
+            title: "Eligibly — AI lead detection for accounting firms",
+            description: "Eligibly detects newly registered SASU/SAS every day and delivers qualified leads to your accounting firm's preferred channels.",
+            keywords: "eligibly, accountant lead detection, AI for accounting firms, SASU SAS"
           };
       }
     } else {
