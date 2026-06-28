@@ -40,6 +40,9 @@ const NewsletterConfig = lazy(() => import("./pages/NewsletterConfig"));
 const BlogCreations2025 = lazy(() => import("./pages/blog/CreationsEntreprises2025"));
 const BlogCAC = lazy(() => import("./pages/blog/CoutAcquisitionClientCabinet"));
 const BlogICP = lazy(() => import("./pages/blog/IcpCabinetExpertiseComptable"));
+const BlogBarometre = lazy(() => import("./pages/blog/BarometreAcquisitionCabinet"));
+const BlogObservatoire = lazy(() => import("./pages/blog/ObservatoireSasuSas"));
+const BlogPlaybook = lazy(() => import("./pages/blog/PlaybookProspectionCabinet"));
 
 import { LanguageSync } from "@/components/LanguageSync";
 
@@ -96,6 +99,9 @@ const App = () => (
                 <Route path="/blog/creations-entreprises-france-2025" element={<BlogCreations2025 />} />
                 <Route path="/blog/cout-acquisition-client-cabinet-comptable" element={<BlogCAC />} />
                 <Route path="/blog/icp-cabinet-expertise-comptable" element={<BlogICP />} />
+                <Route path="/blog/barometre-acquisition-cabinet-ec-2026" element={<BlogBarometre />} />
+                <Route path="/blog/observatoire-sasu-sas-juin-2026" element={<BlogObservatoire />} />
+                <Route path="/blog/playbook-prospection-cabinet-ec-2026" element={<BlogPlaybook />} />
 
                 {/* EN routes */}
                 <Route path="/en" element={<Index />} />
