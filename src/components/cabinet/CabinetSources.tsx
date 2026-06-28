@@ -1,18 +1,36 @@
-const cabinets = [
-  { name: "Cabinet Dubois & Associés", chip: "Pilote", city: "Lyon" },
-  { name: "Mazars EC Sud-Ouest", chip: "Pilote", city: "Bordeaux" },
-  { name: "Fiducia Conseil", chip: "Étude", city: "Paris" },
-  { name: "Pluriel Expertise", chip: null, city: "Nantes" },
-  { name: "Atrium Comptable", chip: "Pilote", city: "Lille" },
-  { name: "Numéris Audit", chip: null, city: "Toulouse" },
-];
+import { useLang } from "@/hooks/useLang";
+
+const copy = {
+  fr: {
+    eyebrow: "Des cabinets d'expertise comptable nous font déjà confiance",
+    pilot: "Pilote",
+    study: "Étude",
+    footnote: "Données issues de sources publiques officielles : INPI · Sirene INSEE · BODACC — enrichies par des partenaires contractuels conformes RGPD.",
+  },
+  en: {
+    eyebrow: "Accounting firms already trust us",
+    pilot: "Pilot",
+    study: "Study",
+    footnote: "Data from official public sources: INPI · Sirene INSEE · BODACC — enriched via GDPR-compliant contractual partners.",
+  },
+} as const;
 
 export const CabinetSources = () => {
+  const lang = useLang();
+  const t = copy[lang];
+  const cabinets = [
+    { name: "Cabinet Dubois & Associés", chip: t.pilot, city: "Lyon" },
+    { name: "Mazars EC Sud-Ouest", chip: t.pilot, city: "Bordeaux" },
+    { name: "Fiducia Conseil", chip: t.study, city: "Paris" },
+    { name: "Pluriel Expertise", chip: null as string | null, city: "Nantes" },
+    { name: "Atrium Comptable", chip: t.pilot, city: "Lille" },
+    { name: "Numéris Audit", chip: null as string | null, city: "Toulouse" },
+  ];
   return (
     <section className="py-14 md:py-20 border-y border-border bg-muted/30">
       <div className="container mx-auto px-4">
         <p className="text-center text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground font-semibold mb-10">
-          Des cabinets d'expertise comptable nous font déjà confiance
+          {t.eyebrow}
         </p>
         <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 md:gap-x-14">
           {cabinets.map((c) => (
@@ -32,7 +50,7 @@ export const CabinetSources = () => {
           ))}
         </div>
         <p className="text-center text-xs text-muted-foreground mt-10 max-w-xl mx-auto">
-          Données issues de sources publiques officielles : INPI · Sirene INSEE · BODACC — enrichies par des partenaires contractuels conformes RGPD.
+          {t.footnote}
         </p>
       </div>
     </section>
