@@ -1,3 +1,5 @@
+import React from "react";
+
 type Row = { cap: string; sub?: string; eligibly: string; supplier: string; group: string };
 
 const rows: Row[] = [
