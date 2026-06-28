@@ -1255,6 +1255,11 @@ const translations = {
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>(() => {
+    // 1. URL prefix wins (deep-link / external share)
+    if (typeof window !== 'undefined') {
+      const p = window.location.pathname;
+      if (p === '/en' || p.startsWith('/en/')) return 'en';
+    }
     // Check localStorage first, then browser language, default to French
     const saved = secureStorage.getItem('eligibly-language') as Language;
     if (saved && (saved === 'fr' || saved === 'en')) {
@@ -1274,6 +1279,28 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     secureStorage.setItem('eligibly-language', language);
     document.documentElement.lang = language;
   }, [language]);
+
+  // Keep language in sync with URL prefix on navigation
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const sync = () => {
+      const p = window.location.pathname;
+      const urlLang: Language = p === '/en' || p.startsWith('/en/') ? 'en' : 'fr';
+      setLanguage((curr) => (curr === urlLang ? curr : urlLang));
+    };
+    sync();
+    window.addEventListener('popstate', sync);
+    // Patch pushState/replaceState to catch SPA navigations
+    const origPush = history.pushState;
+    const origReplace = history.replaceState;
+    history.pushState = function (...args) { const r = origPush.apply(this, args as any); sync(); return r; } as typeof history.pushState;
+    history.replaceState = function (...args) { const r = origReplace.apply(this, args as any); sync(); return r; } as typeof history.replaceState;
+    return () => {
+      window.removeEventListener('popstate', sync);
+      history.pushState = origPush;
+      history.replaceState = origReplace;
+    };
+  }, []);
 
   const t = (key: string): string => {
     const dict = translations[language] as Record<string, string>;
