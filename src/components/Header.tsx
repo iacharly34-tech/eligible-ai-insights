@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -12,6 +12,8 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { t, language } = useLanguage();
   const location = useLocation();
+  const toggleRef = useRef<HTMLButtonElement | null>(null);
+  const firstLinkRef = useRef<HTMLAnchorElement | null>(null);
 
   const base = language === 'en' ? '/en' : '';
   const homePath = base || '/';
@@ -37,11 +39,21 @@ export const Header = () => {
       if (e.key === 'Escape') setIsMenuOpen(false);
     };
     window.addEventListener('keydown', onKeyDown);
+    // Move focus into the panel for accessibility
+    const t = window.setTimeout(() => firstLinkRef.current?.focus(), 30);
     return () => {
       document.body.style.overflow = prevOverflow;
       window.removeEventListener('keydown', onKeyDown);
+      window.clearTimeout(t);
+      // Return focus to the trigger when closing
+      toggleRef.current?.focus();
     };
   }, [isMenuOpen]);
+
+  // Close on route change
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <header 
@@ -109,14 +121,17 @@ export const Header = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden fixed top-2 right-4 z-[1100] w-11 h-11 hover:bg-muted rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center bg-background/80 backdrop-blur-sm border border-border/50 shadow-lg"
+            ref={toggleRef}
+            data-testid="mobile-menu-toggle"
+            type="button"
+            className="md:hidden relative z-[1100] mr-4 w-11 h-11 hover:bg-muted rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 flex items-center justify-center bg-background/80 backdrop-blur-sm border border-border/50 shadow-sm"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? t('accessibility.menu.close') : t('accessibility.menu.open')}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
             style={{ minWidth: '44px', minHeight: '44px' }}
           >
-            {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {isMenuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
           </button>
         </div>
 
@@ -129,8 +144,10 @@ export const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             />
             <div
-              className="fixed inset-0 z-[1060] bg-background md:hidden"
+              className="fixed inset-0 z-[1060] bg-background md:hidden overflow-y-auto"
+              style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}
               id="mobile-navigation"
+              data-testid="mobile-navigation"
               role="dialog"
               aria-modal="true"
               aria-labelledby="mobile-navigation-label"
@@ -138,11 +155,12 @@ export const Header = () => {
               <h2 id="mobile-navigation-label" className="sr-only">{t('accessibility.navigation.mobile')}</h2>
               <nav className="h-full flex flex-col justify-center p-6" role="navigation" aria-label={t('accessibility.navigation.mobile')}>
                 <ul className="space-y-2 mb-8">
-                  {navigation.map((item) => {
+                  {navigation.map((item, idx) => {
                     const isActive = location.pathname === item.href;
                     return (
                       <li key={item.name}>
                         <SafeLink
+                          ref={idx === 0 ? firstLinkRef : undefined}
                           to={item.href}
                           className={cn(
                             "block text-lg font-medium uppercase tracking-[0.1em] transition-colors duration-200 px-6 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[44px] text-center",
