@@ -148,6 +148,7 @@ export const CabinetROICalculator = () => {
                     value={spend}
                     onChange={(e) => setSpend(Math.max(0, Number(e.target.value) || 0))}
                     className="w-full h-12 px-4 pr-10 rounded-xl border border-border bg-background text-foreground font-medium focus:outline-none focus:ring-2 focus:ring-primary/40"
+                    aria-label={t.qSpend}
                   />
                   <span className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground">{t.currency}</span>
                 </div>
@@ -163,6 +164,7 @@ export const CabinetROICalculator = () => {
                   value={leads}
                   onChange={(e) => setLeads(Math.max(0, Number(e.target.value) || 0))}
                   className="w-full h-12 px-4 rounded-xl border border-border bg-background text-foreground font-medium focus:outline-none focus:ring-2 focus:ring-primary/40"
+                  aria-label={t.qLeads}
                 />
               </div>
 
@@ -178,6 +180,10 @@ export const CabinetROICalculator = () => {
                   value={rdvRate}
                   onChange={(e) => setRdvRate(Number(e.target.value))}
                   className="w-full accent-primary"
+                  aria-label={t.qRdv}
+                  aria-valuemin={0}
+                  aria-valuemax={30}
+                  aria-valuenow={rdvRate}
                 />
               </div>
 
