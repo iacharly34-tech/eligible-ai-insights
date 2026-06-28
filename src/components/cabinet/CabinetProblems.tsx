@@ -12,7 +12,7 @@ const problems = [
   {
     n: "03",
     title: "25 h/semaine perdues à filtrer",
-    body: "Vos collaborateurs passent 1 h/jour sur Pappers à qualifier. Pour un cabinet de 5 personnes : 25 h/semaine qui ne facturent pas.",
+    body: "Vos collaborateurs passent 1 h/jour à scroller les annuaires d'immatriculations pour qualifier. Pour un cabinet de 5 personnes : 25 h/semaine qui ne facturent pas.",
   },
 ];
 
@@ -22,13 +22,13 @@ export const CabinetProblems = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mb-14">
           <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">
-            Les douleurs
+            Les frictions opérationnelles
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
             Acheter ses leads, c'est <em className="italic text-primary font-medium">perdre le contrôle</em> de sa prospection.
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            5 douleurs reviennent chez les cabinets 5-30 collaborateurs qui dépensent 500-1500 €/mois en leads achetés.
+            Trois frictions reviennent systématiquement chez les cabinets 5-30 collaborateurs qui dépensent 500 à 1 500 €/mois en leads achetés.
           </p>
         </div>
 
