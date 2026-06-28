@@ -23,8 +23,8 @@ const APropos = () => {
       icon: Database,
       title: en ? "Official sources only" : "Sources officielles uniquement",
       desc: en
-        ? "INPI, Sirene, BODACC, Pappers. No scraping, no shady third-party lists. The leads you receive belong to you — not to 4 competing firms."
-        : "INPI, Sirene, BODACC, Pappers. Aucun scraping, aucune liste douteuse. Les leads que vous recevez vous appartiennent — pas à 4 cabinets concurrents.",
+        ? "INPI, Sirene, BODACC and contracted GDPR-compliant enrichment partners. No scraping, no shady third-party lists. The leads you receive belong to you — not to 4 competing firms."
+        : "INPI, Sirene, BODACC et partenaires d'enrichissement contractuels conformes RGPD. Aucun scraping, aucune liste douteuse. Les leads que vous recevez vous appartiennent — pas à 4 cabinets concurrents.",
     },
     {
       icon: Sparkles,

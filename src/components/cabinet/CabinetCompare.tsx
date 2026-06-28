@@ -29,7 +29,7 @@ export const CabinetCompare = () => {
             Produire ses leads vs <em className="italic text-primary font-medium">les acheter à la pièce</em>.
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Le vrai concurrent business n'est ni Pappers ni Apollo. C'est votre dépense actuelle chez un fournisseur tiers d'achat de leads.
+            Le vrai concurrent business n'est ni un annuaire d'entreprises ni un outil de prospection horizontal. C'est votre dépense actuelle chez un fournisseur tiers d'achat de leads.
           </p>
         </div>
 

@@ -9,7 +9,7 @@ import { useState } from "react";
 import { CheckCircle, ArrowRight, Shield, ChevronDown } from "lucide-react";
 
 const features = [
-  "Toutes les SASU & SAS fraîchement immatriculées (INPI, Sirene, BODACC, Pappers)",
+  "Toutes les SASU & SAS fraîchement immatriculées (INPI, Sirene, BODACC)",
   "Filtres IA amont selon votre ICP (verticale, capital, zone, dirigeant, CAC)",
   "Scoring 0-100 expliqué (3 raisons par lead)",
   "Alertes livrées dans vos outils et canaux",
@@ -22,7 +22,7 @@ const features = [
 ];
 
 const faqItems = [
-  { q: "Comment ça se compare à Pappers ou Societe.com ?", a: "Pappers vous donne accès à la base. Nous, on filtre, on score et on pousse uniquement les leads pertinents pour votre cabinet, directement dans votre canal de travail. C'est un moteur d'alertes, pas un annuaire." },
+  { q: "En quoi Eligibly diffère d'un annuaire d'entreprises ?", a: "Un annuaire vous donne accès à la base. Nous, on filtre, on score et on pousse uniquement les leads pertinents pour votre cabinet, directement dans votre canal de travail. C'est un moteur d'alertes, pas un annuaire." },
   { q: "Pourquoi ne pas afficher le tarif sur le site ?", a: "Notre forfait est unique, mais nous préférons le communiquer après un échange de cadrage de 20 minutes : vérifier ensemble que votre verticale, votre zone et votre volume cible correspondent à notre périmètre, et que la valeur attendue est claire des deux côtés. Vous recevez notre proposition écrite sous 24 h ouvrées, sans engagement." },
   { q: "Y a-t-il des paliers de prix ou un coût par lead ?", a: "Non. Le forfait est flat : un seul prix mensuel, pas de surcoût par lead, pas de palier de volume, pas de quota qui saute. Vous payez l'accès au moteur, pas la quantité." },
   { q: "Comment fonctionne le pilote 14 jours ?", a: "On paramètre votre verticale et votre zone, on active le flux pendant 14 jours, sans carte bancaire. Vous gardez tous les leads reçus pendant le pilote, que vous souscriviez ou non." },
