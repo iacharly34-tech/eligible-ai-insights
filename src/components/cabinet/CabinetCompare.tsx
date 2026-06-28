@@ -62,8 +62,8 @@ export const CabinetCompare = () => {
             </thead>
             <tbody>
               {groups.map((group) => (
-                <>
-                  <tr key={`g-${group}`} className="bg-background">
+                <React.Fragment key={group}>
+                  <tr className="bg-background">
                     <td colSpan={3} className="px-6 pt-6 pb-2 text-[0.7rem] uppercase tracking-[0.16em] text-primary/80 font-semibold">
                       {group}
                     </td>
@@ -82,7 +82,7 @@ export const CabinetCompare = () => {
                       </td>
                     </tr>
                   ))}
-                </>
+                </React.Fragment>
               ))}
             </tbody>
           </table>
