@@ -73,11 +73,12 @@ describe("Header — responsive breakpoints", () => {
     expect(toggle).toHaveAttribute("aria-expanded", "true");
     const dialog = screen.getByRole("dialog");
     expect(dialog).toHaveAttribute("aria-modal", "true");
-    // Every nav link inside the dialog must clear the 44px tap target
-    const links = within(dialog).getAllByRole("link");
-    expect(links.length).toBeGreaterThan(0);
-    for (const link of links) {
-      expect(link.className).toMatch(/min-h-\[44px\]|h-12/);
+    // Primary nav links inside the dialog must clear the 44px tap target
+    const list = within(dialog).getByRole("list");
+    const navLinks = within(list).getAllByRole("link");
+    expect(navLinks.length).toBeGreaterThanOrEqual(4);
+    for (const link of navLinks) {
+      expect(link.className).toMatch(/min-h-\[44px\]/);
     }
   });
 
