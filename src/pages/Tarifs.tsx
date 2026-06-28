@@ -128,7 +128,7 @@ const copy = {
       { q: "What AI models does Eligibly rely on?", a: "Documented and auditable stack: open-weights models (Mistral, Llama, Qwen) hosted in the EU for scoring and outreach generation, proprietary models for ICP matching. No calls to a non-EU API with your data. Every scoring decision is explainable: 3 positive reasons, 1-2 points to check, and the weighting is visible on the lead file." },
     ],
   },
-} as const;
+};
 
 const featuresDeprecated = [
   "Toutes les SASU & SAS fraîchement immatriculées (INPI, Sirene, BODACC)",

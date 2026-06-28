@@ -35,7 +35,7 @@ const copy = {
     finalSub: "If your firm has a very specific ICP (real-estate holdings, SELs, transmission, expats…), we'll review together whether the engine can cover it.",
     finalCta: "Book 30 min",
   },
-} as const;
+};
 
 const Solutions = () => {
   const lang = useLang();

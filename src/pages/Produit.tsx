@@ -117,7 +117,7 @@ const copy = {
     finalSub: "30 minutes. We set up your area and your vertical, and we review the morning's SASU & SAS together.",
     finalCta: "Book my demo",
   },
-} as const;
+};
 
 const Produit = () => {
   const lang = useLang();
