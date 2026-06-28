@@ -274,7 +274,7 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
         "name": "Combien coûte Eligibly ?",
         "acceptedAnswer": {
           "@type": "Answer", 
-          "text": "Un seul forfait Pro à 290 € HT par mois, avec 14 jours d'essai gratuits sans carte bancaire et résiliation à tout moment avec préavis de 30 jours."
+          "text": "Un seul forfait Pro mensuel flat, communiqué sur demande après un échange de cadrage de 20 minutes, avec 14 jours d'essai gratuits sans carte bancaire et résiliation à tout moment avec préavis de 30 jours."
         }
       }
     ]

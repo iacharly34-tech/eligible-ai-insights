@@ -1,6 +1,6 @@
 const rows: Array<{ cap: string; eligibly: string; supplier: string }> = [
-  { cap: "Coût mensuel typique", eligibly: "290 € flat", supplier: "500–1 500 € selon volume" },
-  { cap: "Coût par lead", eligibly: "~10–20 € (production en autonomie)", supplier: "50–200 € selon qualité" },
+  { cap: "Coût mensuel", eligibly: "Forfait flat (sur devis)", supplier: "500–1 500 € selon volume" },
+  { cap: "Coût par lead", eligibly: "Très bas (production en autonomie)", supplier: "50–200 € selon qualité" },
   { cap: "Volume de leads PREMIUM /mois", eligibly: "30–50 (paramétrable ICP)", supplier: "5–20 (selon budget)" },
   { cap: "Exclusivité du lead", eligibly: "Vos leads à vous", supplier: "Souvent mutualisés (3–5 cabinets)" },
   { cap: "Filtres qualité amont (CAC, procédure, holding, serial)", eligibly: "ok", supplier: "partial" },
@@ -39,7 +39,7 @@ export const CabinetCompare = () => {
               <tr className="border-b border-border">
                 <th className="text-left font-semibold text-foreground px-5 py-4 min-w-[260px]">Capacité</th>
                 <th className="text-center font-semibold px-5 py-4 bg-primary text-primary-foreground min-w-[200px]">
-                  Eligibly<br /><span className="text-[11px] font-normal opacity-90">290 € HT/mois flat</span>
+                  Eligibly<br /><span className="text-[11px] font-normal opacity-90">Forfait flat · tarif sur demande</span>
                 </th>
                 <th className="text-center font-medium text-muted-foreground px-5 py-4 min-w-[220px]">
                   Achat de leads<br /><span className="text-[11px] font-normal">chez un fournisseur tiers</span>

@@ -20,8 +20,11 @@ export const CabinetPricing = () => {
         <div className="max-w-2xl mx-auto text-center mb-12">
           <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">Tarification</p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
-            Un seul forfait, <em className="italic text-primary font-medium">sans engagement</em>.
+            Un seul forfait, <em className="italic text-primary font-medium">sur devis personnalisé</em>.
           </h2>
+          <p className="mt-4 text-muted-foreground">
+            Notre tarif est unique pour tous les cabinets. Nous le communiquons après un premier échange de cadrage de 20 minutes — pour vérifier ensemble que votre verticale, votre zone et votre volume cible sont éligibles.
+          </p>
         </div>
 
         <div className="max-w-2xl mx-auto rounded-2xl border-2 border-primary bg-card shadow-xl shadow-primary/10 overflow-hidden relative">
@@ -30,11 +33,10 @@ export const CabinetPricing = () => {
           </div>
           <div className="p-8 md:p-10 pt-12">
             <div className="text-center mb-2">
-              <span className="font-display text-5xl md:text-6xl font-semibold text-foreground">290 €</span>
-              <span className="text-muted-foreground ml-1">HT / mois</span>
+              <span className="font-display text-4xl md:text-5xl font-semibold text-foreground italic">Tarif sur devis</span>
             </div>
             <p className="text-center text-sm text-muted-foreground mb-8">
-              14 premiers jours gratuits, sans CB · résiliable à tout moment avec préavis 30 jours
+              Forfait flat unique · 14 premiers jours gratuits, sans CB · résiliable avec préavis 30 jours
             </p>
 
             <div className="rounded-lg bg-primary/5 border border-primary/15 p-4 mb-8">
@@ -58,10 +60,13 @@ export const CabinetPricing = () => {
 
             <SafeLink to="/demo" className="block">
               <Button variant="tengo" className="w-full h-12 px-6 text-sm font-semibold group">
-                Démarrer mon pilote 14 jours
+                Recevoir notre proposition
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Button>
             </SafeLink>
+            <p className="text-center text-xs text-muted-foreground mt-3">
+              Réponse sous 24 h ouvrées · aucune relance commerciale agressive
+            </p>
           </div>
         </div>
       </div>
