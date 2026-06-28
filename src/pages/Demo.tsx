@@ -58,7 +58,7 @@ const Demo = () => {
   ];
 
   const productBenefits = [
-    { icon: Clock, title: "Gagnez 25 h/semaine", description: "Fini Pappers, Excel et la prospection à l'aveugle." },
+    { icon: Clock, title: "Gagnez 25 h/semaine", description: "Fini les annuaires, Excel et la prospection à l'aveugle." },
     { icon: Target, title: "Leads pré-qualifiés", description: "Filtres et scoring IA sur votre profil idéal de client." },
     { icon: TrendingUp, title: "Pipeline récurrent", description: "Chaque matin, 3 à 10 nouveaux leads dans Slack, Teams ou HubSpot." },
   ];
@@ -110,7 +110,7 @@ const Demo = () => {
                       Réservez votre démonstration
                     </h2>
                     <p className="text-sm text-muted-foreground">
-                      Découvrez comment Charly IA peut transformer votre prospection commerciale.
+                      Découvrez comment Eligibly peut transformer la prospection de votre cabinet.
                     </p>
                   </div>
 
@@ -157,7 +157,7 @@ const Demo = () => {
 
                 {/* Benefits */}
                 <div>
-                  <h3 className="text-lg font-bold font-display mb-6 tracking-tight">Pourquoi choisir Charly IA ?</h3>
+                  <h3 className="text-lg font-bold font-display mb-6 tracking-tight">Pourquoi choisir Eligibly ?</h3>
                   <div className="space-y-4">
                     {productBenefits.map((benefit, index) => (
                       <div key={index} className="flex items-start gap-4">
@@ -175,9 +175,9 @@ const Demo = () => {
 
                 {/* Repeated CTA */}
                 <div className="p-6 rounded-2xl border border-primary/20 bg-primary/5 text-center">
-                  <h4 className="font-bold text-sm mb-2">Prêt à découvrir Charly IA ?</h4>
+                  <h4 className="font-bold text-sm mb-2">Prêt à découvrir Eligibly ?</h4>
                   <p className="text-xs text-muted-foreground mb-4">
-                    Rejoignez les entreprises qui optimisent leur prospection avec l'IA.
+                    Rejoignez les cabinets qui industrialisent leur prospection avec l'IA.
                   </p>
                   <Button
                     onClick={() => document.getElementById("demo-form")?.scrollIntoView({ behavior: "smooth" })}
@@ -203,7 +203,7 @@ const Demo = () => {
               Transformez votre prospection dès aujourd'hui
             </h2>
             <p className="mt-8 text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Découvrez comment Charly IA peut vous faire gagner du temps et augmenter vos chances de succès.
+              Découvrez comment Eligibly peut vous faire gagner du temps et augmenter vos chances de succès.
             </p>
             <div className="mt-12">
               <Button

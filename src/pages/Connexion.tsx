@@ -36,7 +36,7 @@ const Connexion = () => {
     {
       icon: Brain,
       title: "IA personnalisée",
-      description: "Votre assistant Charly vous attend avec vos préférences sauvegardées"
+      description: "Votre moteur Eligibly vous attend avec vos préférences sauvegardées"
     }
   ];
 
@@ -176,7 +176,7 @@ const Connexion = () => {
                 </h2>
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   Accédez à votre tableau de bord personnalisé et découvrez 
-                  les opportunités détectées par votre assistant Charly.
+                  les leads détectés par votre moteur Eligibly.
                 </p>
               </div>
 
