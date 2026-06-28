@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
 import { ArrowRight, Calculator, TrendingDown, Clock, Wallet } from "lucide-react";
+import { useLang, localizedHref } from "@/hooks/useLang";
 
 const STORAGE_KEY = "eligibly_roi_v1";
 
@@ -14,10 +15,72 @@ const sizeHours: Record<Size, number> = {
   "30+": 180,
 };
 
-const fmt = (n: number) =>
-  new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(Math.max(0, Math.round(n)));
+const copy = {
+  fr: {
+    eyebrow: "Calculateur ROI",
+    h2a: "Combien vous coûte",
+    h2b: "vraiment",
+    h2c: "votre stack lead actuelle ?",
+    sub: "En 30 secondes, mesurez le coût réel de votre acquisition actuelle. Nous vous remettons ensuite une proposition chiffrée, alignée sur votre cabinet.",
+    qSpend: "Combien dépensez-vous par mois en leads achetés ?",
+    qSpendHint: "Annuaires, plateformes d'apporteurs, places de marché et publicité cumulés.",
+    qLeads: "Combien de leads recevez-vous par mois ?",
+    qRdv: "Taux de RDV obtenu sur ces leads",
+    qSize: "Taille de votre cabinet",
+    current: "Votre stack actuelle",
+    stat1: "Coût annuel leads",
+    stat2: "Coût par lead",
+    stat3: "Coût par RDV",
+    stat4: "Temps collab perdu",
+    withEligibly: "Avec Eligibly · abonnement adapté",
+    saving: "Économie potentielle",
+    savingValue: "À chiffrer ensemble",
+    timeSaved: "Temps collab économisé",
+    cta: "Recevoir mon premier lead gratuit",
+    mailLink: "ou envoyer ces résultats par email",
+    foot: "Estimation indicative basée sur les ratios moyens observés. Le ROI réel dépend de votre exécution commerciale et de votre ICP précis. À valider lors de la démo personnalisée.",
+    locale: "fr-FR",
+    currency: "€",
+    perMonth: "h/mois",
+    mailSubject: "Démo Eligibly — résultats calculateur",
+    mailBody: (spend: string, leads: string, rdvRate: number, size: string) => `Bonjour,\n\nJe souhaite recevoir une proposition Eligibly. Voici mon contexte actuel :\n\n• Dépense mensuelle leads : ${spend} €\n• Volume leads / mois : ${leads}\n• Taux RDV : ${rdvRate} %\n• Taille cabinet : ${size} collaborateurs\n\nMerci de me communiquer votre tarif et un créneau de démo.\n`,
+  },
+  en: {
+    eyebrow: "ROI calculator",
+    h2a: "How much does your current lead stack",
+    h2b: "really",
+    h2c: "cost you?",
+    sub: "In 30 seconds, measure the real cost of your current acquisition. We then hand you a quote aligned with your firm.",
+    qSpend: "How much do you spend each month on bought leads?",
+    qSpendHint: "Directories, lead platforms, marketplaces and ads combined.",
+    qLeads: "How many leads do you receive per month?",
+    qRdv: "Meeting-booking rate on these leads",
+    qSize: "Your firm size",
+    current: "Your current stack",
+    stat1: "Annual lead spend",
+    stat2: "Cost per lead",
+    stat3: "Cost per meeting",
+    stat4: "Staff time lost",
+    withEligibly: "With Eligibly · tailored subscription",
+    saving: "Potential savings",
+    savingValue: "To be sized together",
+    timeSaved: "Staff time saved",
+    cta: "Get my first lead — free",
+    mailLink: "or email these results",
+    foot: "Indicative estimate based on average observed ratios. Actual ROI depends on your sales execution and your precise ICP. To be validated during a personalized demo.",
+    locale: "en-US",
+    currency: "€",
+    perMonth: "h/month",
+    mailSubject: "Eligibly demo — calculator results",
+    mailBody: (spend: string, leads: string, rdvRate: number, size: string) => `Hello,\n\nI'd like to receive an Eligibly proposal. Here is my current context:\n\n• Monthly lead spend: €${spend}\n• Leads per month: ${leads}\n• Meeting rate: ${rdvRate}%\n• Firm size: ${size} staff\n\nPlease share your pricing and a demo slot.\n`,
+  },
+} as const;
 
 export const CabinetROICalculator = () => {
+  const lang = useLang();
+  const t = copy[lang];
+  const fmt = (n: number) =>
+    new Intl.NumberFormat(t.locale, { maximumFractionDigits: 0 }).format(Math.max(0, Math.round(n)));
   const [spend, setSpend] = useState<number>(800);
   const [leads, setLeads] = useState<number>(15);
   const [rdvRate, setRdvRate] = useState<number>(8);
@@ -52,22 +115,20 @@ export const CabinetROICalculator = () => {
     return { yearlyCurrent, costPerLead, costPerRdv, hoursLost, daysSaved };
   }, [spend, leads, rdvRate, size]);
 
-  const mailtoBody = encodeURIComponent(
-    `Bonjour,\n\nJe souhaite recevoir une proposition Eligibly. Voici mon contexte actuel :\n\n• Dépense mensuelle leads : ${fmt(spend)} €\n• Volume leads / mois : ${fmt(leads)}\n• Taux RDV : ${rdvRate} %\n• Taille cabinet : ${size} collaborateurs\n\nMerci de me communiquer votre tarif et un créneau de démo.\n`
-  );
+  const mailtoBody = encodeURIComponent(t.mailBody(fmt(spend), fmt(leads), rdvRate, size));
 
   return (
     <section id="roi" className="py-20 md:py-28 bg-muted/30 border-y border-border">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mb-12">
           <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4 flex items-center gap-2">
-            <Calculator className="w-3.5 h-3.5" /> Calculateur ROI
+            <Calculator className="w-3.5 h-3.5" /> {t.eyebrow}
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
-            Combien vous coûte <em className="italic text-primary font-medium">vraiment</em> votre stack lead actuelle ?
+            {t.h2a} <em className="italic text-primary font-medium">{t.h2b}</em> {t.h2c}
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            En 30 secondes, mesurez le coût réel de votre acquisition actuelle. Nous vous remettons ensuite une proposition chiffrée, alignée sur votre cabinet.
+            {t.sub}
           </p>
         </div>
 
@@ -77,9 +138,9 @@ export const CabinetROICalculator = () => {
             <div className="space-y-7">
               <div>
                 <label className="block font-display italic text-base text-foreground mb-2">
-                  Combien dépensez-vous par mois en leads achetés ?
+                  {t.qSpend}
                 </label>
-                <p className="text-xs text-muted-foreground mb-3">Compta-Online, Companeo, Pages Jaunes, Google Ads cumulés.</p>
+                <p className="text-xs text-muted-foreground mb-3">{t.qSpendHint}</p>
                 <div className="relative">
                   <input
                     type="number"
@@ -88,13 +149,13 @@ export const CabinetROICalculator = () => {
                     onChange={(e) => setSpend(Math.max(0, Number(e.target.value) || 0))}
                     className="w-full h-12 px-4 pr-10 rounded-xl border border-border bg-background text-foreground font-medium focus:outline-none focus:ring-2 focus:ring-primary/40"
                   />
-                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground">€</span>
+                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground">{t.currency}</span>
                 </div>
               </div>
 
               <div>
                 <label className="block font-display italic text-base text-foreground mb-2">
-                  Combien de leads recevez-vous par mois ?
+                  {t.qLeads}
                 </label>
                 <input
                   type="number"
@@ -107,7 +168,7 @@ export const CabinetROICalculator = () => {
 
               <div>
                 <label className="flex items-baseline justify-between font-display italic text-base text-foreground mb-2">
-                  <span>Taux de RDV obtenu sur ces leads</span>
+                  <span>{t.qRdv}</span>
                   <span className="text-primary font-semibold not-italic font-sans">{rdvRate} %</span>
                 </label>
                 <input
@@ -122,7 +183,7 @@ export const CabinetROICalculator = () => {
 
               <div>
                 <label className="block font-display italic text-base text-foreground mb-2">
-                  Taille de votre cabinet
+                  {t.qSize}
                 </label>
                 <div className="grid grid-cols-5 gap-2">
                   {(Object.keys(sizeHours) as Size[]).map((s) => (
@@ -147,54 +208,54 @@ export const CabinetROICalculator = () => {
           {/* Output */}
           <div className="rounded-2xl bg-foreground text-background p-7 sm:p-8 flex flex-col">
             <div className="text-[0.74rem] uppercase tracking-[0.14em] text-background/60 font-semibold mb-5">
-              Votre stack actuelle
+              {t.current}
             </div>
             <div className="grid grid-cols-2 gap-4 mb-7">
-              <Stat label="Coût annuel leads" value={`${fmt(results.yearlyCurrent)} €`} />
-              <Stat label="Coût par lead" value={`${fmt(results.costPerLead)} €`} />
-              <Stat label="Coût par RDV" value={`${fmt(results.costPerRdv)} €`} />
-              <Stat label="Temps collab perdu" value={`${fmt(results.hoursLost)} h/mois`} />
+              <Stat label={t.stat1} value={`${fmt(results.yearlyCurrent)} ${t.currency}`} />
+              <Stat label={t.stat2} value={`${fmt(results.costPerLead)} ${t.currency}`} />
+              <Stat label={t.stat3} value={`${fmt(results.costPerRdv)} ${t.currency}`} />
+              <Stat label={t.stat4} value={`${fmt(results.hoursLost)} ${t.perMonth}`} />
             </div>
 
             <div className="border-t border-background/20 pt-6 mb-6">
               <div className="text-[0.74rem] uppercase tracking-[0.14em] text-primary/90 font-semibold mb-4 flex items-center gap-2">
-                <TrendingDown className="w-3.5 h-3.5" /> Avec Eligibly · abonnement adapté
+                <TrendingDown className="w-3.5 h-3.5" /> {t.withEligibly}
               </div>
               <div className="space-y-4">
                 <div className="flex items-baseline justify-between">
-                  <span className="text-background/70 text-sm flex items-center gap-2"><Wallet className="w-4 h-4" /> Économie potentielle</span>
+                  <span className="text-background/70 text-sm flex items-center gap-2"><Wallet className="w-4 h-4" /> {t.saving}</span>
                   <span className="font-display italic text-2xl sm:text-3xl text-primary font-semibold">
-                    À chiffrer ensemble
+                    {t.savingValue}
                   </span>
                 </div>
                 <div className="flex items-baseline justify-between">
-                  <span className="text-background/70 text-sm flex items-center gap-2"><Clock className="w-4 h-4" /> Temps collab économisé</span>
+                  <span className="text-background/70 text-sm flex items-center gap-2"><Clock className="w-4 h-4" /> {t.timeSaved}</span>
                   <span className="font-display italic text-xl text-background font-semibold">
-                    ~{fmt(results.hoursLost)} h/mois
+                    ~{fmt(results.hoursLost)} {t.perMonth}
                   </span>
                 </div>
               </div>
             </div>
 
             <div className="mt-auto pt-4">
-              <SafeLink to={`/demo?roi=1`}>
+              <SafeLink to={`${localizedHref("/demo", lang)}?roi=1`}>
                 <Button variant="tengo" className="w-full h-12 text-sm font-semibold group">
-                  Recevoir mon premier lead gratuit
+                  {t.cta}
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </SafeLink>
               <a
-                href={`mailto:contact@eligibly.ai?subject=${encodeURIComponent("Démo Eligibly — résultats calculateur")}&body=${mailtoBody}`}
+                href={`mailto:contact@eligibly.ai?subject=${encodeURIComponent(t.mailSubject)}&body=${mailtoBody}`}
                 className="block mt-2 text-center text-xs text-background/60 hover:text-background/90 underline underline-offset-2"
               >
-                ou envoyer ces résultats par email
+                {t.mailLink}
               </a>
             </div>
           </div>
         </div>
 
         <p className="mt-6 text-xs text-muted-foreground max-w-3xl">
-          Estimation indicative basée sur les ratios moyens observés. Le ROI réel dépend de votre exécution commerciale et de votre ICP précis. À valider lors de la démo personnalisée.
+          {t.foot}
         </p>
       </div>
     </section>
