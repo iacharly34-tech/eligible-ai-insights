@@ -187,51 +187,51 @@ export const SEOHead = ({
         case '/en':
         case '/en/':
           return {
-            title: "Eligibly - AI Platform for Public Tender Success",
-            description: "Eligibly is the leading AI solution to analyze and win more public tenders. Increase your success rate by +47% with our predictive technology.",
-            keywords: "eligibly, eligibly platform, public tenders, AI procurement, eligibly solution"
+            title: "Eligibly — AI lead detection for French accounting firms",
+            description: "Your future clients are freshly registered. Eligibly detects new SASU/SAS in France every day, applies your ICP filters, scores every lead and delivers them to your preferred channel. 14-day pilot, no credit card.",
+            keywords: "accounting firm prospecting, SASU SAS leads, AI for accountants, lead detection, eligibly"
           };
         case '/en/product':
           return {
-            title: "Eligibly Product – Save Time on Public Tenders",
-            description: "Discover how Eligibly qualifies government contracts and maximizes your chances on each public tender.",
-            keywords: "eligibly product, public tender analysis, government contracts, AI qualification"
+            title: "Eligibly Features — AI lead detection engine",
+            description: "Official immatriculation sources, AI filters, explained scoring, multi-channel alerts and GDPR compliance for accounting firms.",
+            keywords: "eligibly features, lead detection engine, AI SASU SAS, lead scoring, multi-channel alerts"
           };
         case '/en/demo':
           return {
-            title: "Eligibly Demo – AI Analysis of Your Public Tenders",
-            description: "Launch an Eligibly demo and test our AI to evaluate your opportunities on government contracts.",
-            keywords: "eligibly demo, public tender demo, AI analysis, government contracts"
+            title: "Eligibly Demo — AI lead detection for accounting firms",
+            description: "Book a personalised Eligibly demo and see how the AI surfaces fresh SASU/SAS prospects in your area every morning.",
+            keywords: "eligibly demo, accountant lead detection, accounting firm prospecting"
           };
         case '/en/pricing':
           return {
-            title: "Eligibly Pricing – AI for Public Tenders",
-            description: "Discover Eligibly pricing plans for public tender analysis and government contract optimization.",
-            keywords: "eligibly pricing, public tender pricing, government contracts AI"
+            title: "Eligibly Pricing — tailored quote · 14-day pilot",
+            description: "Monthly subscription calibrated to your firm, shared after a scoping call. 14-day pilot, no credit card.",
+            keywords: "eligibly pricing, accounting firm prospecting price, accountant subscription"
           };
         case '/en/solutions':
           return {
-            title: "Eligibly Solutions – Public Tender AI Platform",
-            description: "Eligibly solutions for public tender analysis and government contract optimization.",
-            keywords: "eligibly solutions, public tender platform, government contracts AI"
+            title: "Eligibly Use Cases — by accounting firm profile",
+            description: "Six verticals for accounting firms: Tech, Consulting, Healthcare, Craftsmen, Multi-office, Commercial scale-up. Filters and benefits per profile.",
+            keywords: "accounting firm use cases, accountant verticals, eligibly"
           };
         case '/en/resources':
           return {
-            title: "Eligibly Resources – Public Tender Guides",
-            description: "Resources and guides for winning public tenders and government contracts with Eligibly.",
-            keywords: "eligibly resources, public tender guides, government contracts tips"
+            title: "Eligibly Resources — Accounting firm prospecting playbooks",
+            description: "Playbooks, ROI calculators and prospecting guides to grow your accounting firm's portfolio through AI lead detection.",
+            keywords: "accounting firm resources, prospecting playbook, accountant ROI"
           };
         case '/en/about':
           return {
-            title: "About Eligibly – Public Tender AI Experts",
-            description: "Learn about Eligibly, the AI platform transforming public tender analysis and government contracts.",
-            keywords: "about eligibly, public tender experts, government contracts AI"
+            title: "About Eligibly — Stop buying leads",
+            description: "Eligibly helps accounting firms produce their own leads, never mutualised. Our mission, team and vision.",
+            keywords: "about eligibly, mission, accounting firm team"
           };
         case '/en/about-eligibly':
           return {
-            title: "Eligibly - Leading AI for Public Tenders and Government Contracts",
-            description: "Eligibly revolutionizes public tenders with AI. +47% success rate, predictive analysis of government contracts, public procurement optimization. Complete solution for businesses.",
-            keywords: "eligibly, public tenders, government contracts, AI, artificial intelligence, predictive analysis, public procurement, tender process, bid opportunities, contract bidding, public sector contracts, tender documentation, procurement strategy, tender success, competitive bidding, procurement opportunities, tender qualification, bid preparation, procurement analysis, tender intelligence"
+            title: "Eligibly — AI lead detection for accounting firms",
+            description: "Eligibly turns official immatriculation data into a daily flow of qualified leads delivered to your accounting firm's preferred channels.",
+            keywords: "eligibly, accounting firm AI, lead detection, SASU SAS, accountant prospecting"
           };
         // English Blog Articles
         case '/en/strategic-watch':
@@ -272,9 +272,9 @@ export const SEOHead = ({
           };
         default:
           return {
-            title: "Eligibly – AI for Public Tenders and Government Contracts",
-            description: "Eligibly analyzes your success chances on public tenders and government contracts. Test our predictive AI specialized in public procurement.",
-            keywords: "eligibly, public tenders, government contracts, AI, procurement"
+            title: "Eligibly — AI lead detection for accounting firms",
+            description: "Eligibly detects newly registered SASU/SAS every day and delivers qualified leads to your accounting firm's preferred channels.",
+            keywords: "eligibly, accountant lead detection, AI for accounting firms, SASU SAS"
           };
       }
     } else {
@@ -302,7 +302,7 @@ export const SEOHead = ({
         case '/tarifs':
           return {
             title: "Tarifs Eligibly — tarif adapté sur devis · pilote 14 jours",
-            description: "Abonnement mensuel adapté à votre cabinet, communiqué après un échange de cadrage. Pilote 14 jours sans CB. Plan Réseau multi-bureaux.",
+            description: "Abonnement mensuel adapté à votre cabinet, communiqué après un échange de cadrage. Pilote 14 jours sans CB.",
             keywords: "tarifs eligibly, prix prospection cabinet, abonnement expert comptable"
           };
         case '/solutions':
@@ -365,8 +365,8 @@ export const SEOHead = ({
     upsertMetaTag("name", "twitter:title", resolvedTitle);
     upsertMetaTag("name", "twitter:description", resolvedDescription);
     upsertMetaTag("name", "twitter:image", ogImageUrl);
-    upsertMetaTag("name", "twitter:site", "@eligible_ai");
-    upsertMetaTag("name", "twitter:creator", "@eligible_ai");
+    upsertMetaTag("name", "twitter:site", "@eligibly_ai");
+    upsertMetaTag("name", "twitter:creator", "@eligibly_ai");
     upsertMetaTag("name", "news_keywords", "experts-comptables, leads, prospection, SASU, SAS, IA");
     upsertMetaTag("name", "author", "Eligibly Team");
     upsertMetaTag("name", "publisher", "Eligibly.ai");
