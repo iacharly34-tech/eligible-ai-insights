@@ -188,14 +188,14 @@ export const SEOHead = ({
         case '/en/':
           return {
             title: "Eligibly — AI lead detection for French accounting firms",
-            description: "Your future clients are freshly registered. Eligibly detects new SASU/SAS in France every day, applies your ICP filters, scores every lead and delivers them to your preferred channel. 14-day pilot, no credit card.",
+            description: "Eligibly's AI detects newly registered French SASU/SAS each day, applies your ICP filters, and delivers your morning digest of PREMIUM leads directly to your inbox.",
             keywords: "accounting firm prospecting, SASU SAS leads, AI for accountants, lead detection, eligibly"
           };
         case '/en/product':
           return {
             title: "Eligibly Features — AI lead detection engine",
-            description: "Official immatriculation sources, AI filters, explained scoring, multi-channel alerts and GDPR compliance for accounting firms.",
-            keywords: "eligibly features, lead detection engine, AI SASU SAS, lead scoring, multi-channel alerts"
+            description: "Official immatriculation sources, AI filters, explained scoring and a morning PREMIUM-leads digest delivered to your inbox. Slack and Microsoft Teams integrations available on request.",
+            keywords: "eligibly features, lead detection engine, AI SASU SAS, lead scoring, morning digest"
           };
         case '/en/demo':
           return {
@@ -273,7 +273,7 @@ export const SEOHead = ({
         default:
           return {
             title: "Eligibly — AI lead detection for accounting firms",
-            description: "Eligibly detects newly registered SASU/SAS every day and delivers qualified leads to your accounting firm's preferred channels.",
+            description: "Eligibly's AI detects newly registered French SASU/SAS each day, applies your ICP filters, and delivers your morning digest of PREMIUM leads directly to your inbox.",
             keywords: "eligibly, accountant lead detection, AI for accounting firms, SASU SAS"
           };
       }
@@ -284,14 +284,14 @@ export const SEOHead = ({
         case '/accueil':
           return {
             title: "Eligibly — Détection IA de leads pour cabinets d'expertise comptable",
-            description: "Vos futurs clients sont fraîchement immatriculés. L'IA Eligibly détecte chaque jour les SASU/SAS créées en France, applique vos filtres ICP, score et explique chaque lead. Alertes matinales dans Slack, Teams ou email. 14 jours d'essai gratuits.",
+            description: "L'IA Eligibly détecte chaque jour les SASU/SAS fraîchement immatriculées, applique vos filtres ICP et vous envoie chaque matin un digest des leads PREMIUM directement dans votre boîte email.",
             keywords: "prospection cabinet expertise comptable, leads experts comptables, SASU SAS immatriculation, IA expertise comptable, primo entrepreneur, eligibly"
           };
         case '/produit':
           return {
             title: "Fonctionnalités Eligibly — Moteur de détection IA",
-            description: "Sources d'immatriculations, filtres IA, scoring expliqué, alertes multi-canaux (Slack, Teams, email) et conformité RGPD pour cabinets d'expertise comptable.",
-            keywords: "fonctionnalités eligibly, moteur détection leads, IA SASU SAS, scoring lead, alertes Slack Teams"
+            description: "Sources d'immatriculations, filtres IA, scoring expliqué et digest matinal des leads PREMIUM dans votre boîte email. Intégrations Slack et Microsoft Teams sur demande. Conformité RGPD.",
+            keywords: "fonctionnalités eligibly, moteur détection leads, IA SASU SAS, scoring lead, digest matinal"
           };
         case '/demo':
           return {
@@ -326,7 +326,7 @@ export const SEOHead = ({
         default:
           return {
             title: "Eligibly — Détection IA leads experts-comptables",
-            description: "L'IA Eligibly détecte chaque jour les SASU/SAS fraîchement immatriculées et livre les leads qualifiés à votre cabinet dans Slack, Teams ou email.",
+            description: "L'IA Eligibly détecte chaque jour les SASU/SAS fraîchement immatriculées, applique vos filtres ICP et vous envoie chaque matin un digest des leads PREMIUM directement dans votre boîte email.",
             keywords: "eligibly, leads experts comptables, prospection cabinet EC, IA SASU SAS"
           };
       }
