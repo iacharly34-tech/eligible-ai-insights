@@ -1,4 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useLocation } from "react-router-dom";
 
 interface StructuredDataProps {
   page?: string;
@@ -6,6 +7,9 @@ interface StructuredDataProps {
 
 export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
   const { language } = useLanguage();
+  const { pathname } = useLocation();
+  const isEn = pathname.startsWith("/en");
+  const basePath = isEn ? "/en" : "";
 
   const organizationData = {
     "@context": "https://schema.org",
@@ -159,25 +163,28 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
         "@type": "ListItem",
         "position": 1,
         "name": language === 'en' ? "Home" : "Accueil",
-        "item": "https://eligibly.ai/"
+        "item": `https://eligibly.ai${basePath || "/"}`
       }
     ]
   };
 
-  // Add page-specific breadcrumbs
-  if (page === "product") {
+  // Add page-specific breadcrumb (sitelinks signal for Google)
+  const breadcrumbMap: Record<string, { fr: { name: string; path: string }; en: { name: string; path: string } }> = {
+    product:   { fr: { name: "Fonctionnalités", path: "/produit" },     en: { name: "Product",     path: "/en/product" } },
+    solutions: { fr: { name: "Cas d'usage",     path: "/solutions" },   en: { name: "Solutions",   path: "/en/solutions" } },
+    pricing:   { fr: { name: "Tarifs",          path: "/tarifs" },      en: { name: "Pricing",     path: "/en/pricing" } },
+    resources: { fr: { name: "Ressources",      path: "/ressources" },  en: { name: "Resources",   path: "/en/resources" } },
+    about:     { fr: { name: "À propos",        path: "/a-propos" },    en: { name: "About",       path: "/en/about" } },
+    demo:      { fr: { name: "Démo",            path: "/demo" },        en: { name: "Demo",        path: "/en/demo" } },
+  };
+  const crumb = breadcrumbMap[page];
+  if (crumb) {
+    const node = language === 'en' ? crumb.en : crumb.fr;
     breadcrumbData.itemListElement.push({
       "@type": "ListItem",
       "position": 2,
-      "name": language === 'en' ? "Product" : "Produit",
-      "item": `https://eligibly.ai/${language === 'en' ? 'en/product' : 'produit'}`
-    });
-  } else if (page === "demo") {
-    breadcrumbData.itemListElement.push({
-      "@type": "ListItem",
-      "position": 2,
-      "name": language === 'en' ? "Demo" : "Démo",
-      "item": `https://eligibly.ai/${language === 'en' ? 'en/demo' : 'demo'}`
+      "name": node.name,
+      "item": `https://eligibly.ai${node.path}`,
     });
   }
 
