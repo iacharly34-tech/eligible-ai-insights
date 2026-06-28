@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https: https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https: https://www.google-analytics.com https://analytics.google.com; worker-src 'self'; frame-src https://www.googletagmanager.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https: https://plausible.io; worker-src 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -38,7 +38,7 @@
       .nav-header { position: fixed; top: 0; width: 100%; z-index: 50; }
     </style>
     <title>Eligibly — Détection IA leads experts-comptables</title>
-    <meta name="description" content="L'IA Eligibly détecte chaque jour les SASU/SAS fraîchement immatriculées, applique vos filtres ICP et livre les leads qualifiés dans Slack, Teams ou email." />
+    <meta name="description" content="L'IA Eligibly détecte chaque jour les SASU/SAS fraîchement immatriculées, applique vos filtres ICP et vous envoie chaque matin un digest des leads PREMIUM directement dans votre boîte email." />
     <meta name="author" content="eligibly.ai" />
     <meta name="keywords" content="prospection cabinet expertise comptable, leads experts comptables, SASU SAS immatriculation, IA expertise comptable, primo entrepreneur, eligibly" />
     <meta name="geo.region" content="FR" />
@@ -57,7 +57,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
     <meta property="og:title" content="Eligibly — Détection IA leads experts-comptables" />
-    <meta property="og:description" content="L'IA Eligibly détecte chaque jour les SASU/SAS fraîchement immatriculées, applique vos filtres ICP et livre les leads qualifiés dans Slack, Teams ou email." />
+    <meta property="og:description" content="L'IA Eligibly détecte chaque jour les SASU/SAS fraîchement immatriculées, applique vos filtres ICP et vous envoie chaque matin un digest des leads PREMIUM directement dans votre boîte email." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://eligibly.ai/og-image.png" />
     <meta property="og:url" content="https://eligibly.ai" />
@@ -65,7 +65,7 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Eligibly — Détection IA leads experts-comptables" />
-    <meta name="twitter:description" content="L'IA Eligibly détecte chaque jour les SASU/SAS fraîchement immatriculées, applique vos filtres ICP et livre les leads qualifiés dans Slack, Teams ou email." />
+    <meta name="twitter:description" content="L'IA Eligibly détecte chaque jour les SASU/SAS fraîchement immatriculées, applique vos filtres ICP et vous envoie chaque matin un digest des leads PREMIUM directement dans votre boîte email." />
     <meta name="twitter:site" content="@eligibly_ai" />
     <meta name="twitter:creator" content="@eligibly_ai" />
     <meta name="twitter:image" content="https://eligibly.ai/og-image.png" />
@@ -73,7 +73,8 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://eligibly.ai" />
     
-    <!-- Analytics: GTM removed (placeholder ID) — wire a real container or Plausible before re-enabling. -->
+    <!-- Analytics: Plausible (RGPD-friendly, cookieless) -->
+    <script defer data-domain="eligibly.ai" src="https://plausible.io/js/script.js"></script>
   
   <!-- Enhanced structured data will be managed by React components -->
   

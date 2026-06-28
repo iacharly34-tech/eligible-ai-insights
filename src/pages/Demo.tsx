@@ -60,7 +60,7 @@ const Demo = () => {
   const productBenefits = [
     { icon: Clock, title: "Gagnez 25 h/semaine", description: "Fini les annuaires, Excel et la prospection à l'aveugle." },
     { icon: Target, title: "Leads pré-qualifiés", description: "Filtres et scoring IA sur votre profil idéal de client." },
-    { icon: TrendingUp, title: "Pipeline récurrent", description: "Chaque matin, 3 à 10 nouveaux leads dans Slack, Teams ou HubSpot." },
+    { icon: TrendingUp, title: "Pipeline récurrent", description: "Chaque matin, votre digest leads PREMIUM directement dans votre boîte email." },
   ];
 
   return (

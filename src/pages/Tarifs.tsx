@@ -27,11 +27,11 @@ const faqItems = [
   { q: "Y a-t-il des paliers de prix ou un coût par lead ?", a: "Non. Le tarif s'ajuste à votre volume et à la taille de votre cabinet : un seul prix mensuel, pas de surcoût par lead, pas de quota qui saute. Vous payez l'accès au moteur, pas la quantité." },
   { q: "Comment fonctionne le pilote 14 jours ?", a: "On paramètre votre verticale et votre zone, on active le flux pendant 14 jours, sans carte bancaire. Vous gardez tous les leads reçus pendant le pilote, que vous souscriviez ou non." },
   { q: "Vous garantissez un nombre de rendez-vous ?", a: "Non. C'est un engagement de moyens, pas de résultat. Décrocher des RDV reste votre métier — nous, on garantit la qualité et la fraîcheur des leads livrés." },
-  { q: "Combien de leads je reçois par semaine ?", a: "Selon votre zone et votre verticale, entre 20 et 200 leads scorés par semaine. Sur Paris IDF + verticale tech, comptez ~80/semaine. Sur une ville moyenne + artisans, ~25/semaine." },
+  { q: "Combien de leads je reçois par jour ?", a: "Le volume dépend de votre ICP (secteurs ciblés, zone géographique, forme juridique cible) et du flux d'immatriculations réel. À titre indicatif, les cabinets pilotes reçoivent entre quelques leads et une quinzaine par jour selon leur paramétrage. Engagement de moyens par filtres amont — pas de garantie chiffrée sur le volume, qui dépend du marché réel et de la fraîcheur des immatriculations." },
   { q: "Vous traitez aussi les SCI, SELARL, micro vers société ?", a: "Le périmètre standard couvre SASU, SAS, SARL, EURL. SCI, SCP, SELARL, SEL, micro vers société sont en option sans surcoût, sur demande à l'onboarding." },
   { q: "Quel niveau d'engagement ?", a: "Mensuel. Vous résiliez quand vous voulez, sans pénalité, sans préavis long. On préfère vous garder par la qualité du flux, pas par contrat." },
   { q: "Mes données et celles de mes clients restent-elles confidentielles ?", a: "Oui. Nous n'ingérons que des données publiques (INPI, BODACC, Sirene). Vos retours d'équipe servent uniquement à affiner votre modèle, pas un modèle mutualisé. Hébergement UE, RGPD." },
-  { q: "Vous proposez du multi-bureaux ou du multi-associés ?", a: "Oui. Jusqu'à 5 utilisateurs inclus. Au-delà, ou pour un routing par bureau / associé / pôle métier, on bascule sur un plan Réseau, sur devis." },
+  { q: "Comment je reçois mes leads ?", a: "Chaque matin (jours ouvrés), vous recevez par email un digest avec les top 3 à 5 leads PREMIUM du jour, score expliqué et plan d'action inclus. Un clic sur la fiche du lead vous ouvre la plateforme Eligibly pour qualifier et démarrer la prospection. Pour les cabinets qui préfèrent recevoir le digest dans Slack ou Microsoft Teams, l'intégration est disponible sur demande." },
 ];
 
 const Tarifs = () => {
@@ -94,16 +94,6 @@ const Tarifs = () => {
                 </div>
               </div>
 
-              {/* Plan Réseau */}
-              <div className="mt-6 rounded-2xl border border-border bg-card/50 p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                  <h2 className="font-display text-xl font-semibold mb-1">Plan Réseau — multi-bureaux</h2>
-                  <p className="text-sm text-muted-foreground">+ de 5 utilisateurs, routing par bureau / associé / pôle métier, SSO, account manager dédié.</p>
-                </div>
-                <SafeLink to={demoHref}>
-                  <Button variant="outline" className="h-11 whitespace-nowrap">Demander un devis</Button>
-                </SafeLink>
-              </div>
             </div>
           </section>
 
