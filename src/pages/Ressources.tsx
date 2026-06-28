@@ -14,6 +14,12 @@ const Ressources = () => {
 
   const liveArticles = [
     {
+      href: "/blog/lexique-marketing-expert-comptable",
+      title: "Lexique marketing pour experts-comptables — 30 mots à connaître",
+      desc: "ICP, scoring, pipeline, touchpoints, CAC, MQL, séquence outbound… Le glossaire du marketing B2B traduit pour le quotidien d'un cabinet d'expertise comptable.",
+      meta: "8 min · Lexique · pour associés et collaborateurs",
+    },
+    {
       href: "/blog/barometre-acquisition-cabinet-ec-2026",
       title: "Baromètre 2026 — Acquisition client en cabinet d'expertise comptable",
       desc: "Synthèse de l'état du marché : CAC par canal, cycle de vente, mix gagnant, conversion. Lecture stratégique pour passer du producteur au conseiller.",
@@ -177,15 +183,15 @@ const Ressources = () => {
                 Et si vous passiez <em className="italic text-primary font-medium">de la lecture à l'action</em> ?
               </h2>
               <p className="text-muted-foreground mb-10 max-w-xl mx-auto">
-                Le meilleur moyen de mettre nos analyses en pratique : tester le moteur Eligibly sur 14 jours, sur votre vraie zone et votre vraie verticale.
+                Le meilleur moyen de mettre nos analyses en pratique : recevez un premier lead réel sur votre vraie zone et votre vraie verticale, gratuitement.
               </p>
               <SafeLink to="/demo">
                 <Button size="lg" variant="tengo" className="h-12 px-8 group">
-                  Démarrer le pilote gratuit
+                  Recevoir mon premier lead gratuit
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </SafeLink>
-              <p className="mt-6 text-xs text-muted-foreground">✓ Sans CB · ✓ Onboarding 30 min · ✓ Vous gardez les leads du pilote</p>
+              <p className="mt-6 text-xs text-muted-foreground">✓ Sans CB · ✓ Livré sous 48 h · ✓ Sur votre zone et votre ICP</p>
             </div>
           </section>
         </main>

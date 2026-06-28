@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, CheckCircle, Shield, Sparkles, Star, Mail } from "lucide-react";
+import { ArrowRight, MessageCircle, CheckCircle, Shield, Sparkles, Star, Mail } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { SafeLink } from "@/components/SafeLink";
 import { useLang, localizedHref } from "@/hooks/useLang";
@@ -17,11 +17,11 @@ const copy = {
       "Scoring explicable, auditable, et affiné par les retours de vos associés",
     ],
     ctaPrimary: "Recevoir mon premier lead gratuit",
-    ctaSecondary: "Échanger avec un conseiller",
-    ctaNote: "Sans CB · 1 lead réel de votre zone livré sous 48 h · communiquez-nous simplement vos coordonnées professionnelles",
+    ctaSecondary: "Discuter sur WhatsApp",
+    ctaNote: "Sans CB · 1 lead réel de votre zone livré sous 48 h · WhatsApp pour échanger en direct avec un fondateur",
     trustSources: "Sources officielles",
     trustBuiltWith: "Conçu avec",
-    trustPilots: "4 cabinets pilotes",
+    trustPilots: "4 cabinets partenaires",
     trustIn: "en France",
     mailInbox: "Boîte de réception · 07h02",
     mailNew: "Nouveau",
@@ -32,8 +32,8 @@ const copy = {
     mailCta: "Consulter →",
     floatA: "Données exclusives à votre cabinet",
     floatB: "Aucune revente, aucune mutualisation",
-    floatC: "Tarif sur devis, sans engagement",
-    floatD: "Tarification sur demande",
+    floatC: "À partir de",
+    floatD: "10 € / lead qualifié",
     leads: [
       { ini: "SM", name: "Sophie Martin", co: "Nova SaaS SASU", meta: "Paris 11e · capital 5 k€ · NAF 62.01Z", score: 94 },
       { ini: "LR", name: "Léo Rouvière",  co: "Atelier Bois SAS", meta: "Lyon 7e · capital 10 k€ · NAF 16.29Z", score: 88 },
@@ -52,11 +52,11 @@ const copy = {
       "Explainable, auditable scoring, refined by your partners' feedback",
     ],
     ctaPrimary: "Get my first lead — free",
-    ctaSecondary: "Talk to an advisor",
-    ctaNote: "No credit card · 1 real lead from your area delivered within 48 h · simply share your professional contact details",
+    ctaSecondary: "Chat on WhatsApp",
+    ctaNote: "No credit card · 1 real lead from your area delivered within 48 h · WhatsApp for a direct chat with a founder",
     trustSources: "Official sources",
     trustBuiltWith: "Built with",
-    trustPilots: "4 pilot firms",
+    trustPilots: "4 partner firms",
     trustIn: "in France",
     mailInbox: "Inbox · 7:02 AM",
     mailNew: "New",
@@ -67,8 +67,8 @@ const copy = {
     mailCta: "Open →",
     floatA: "Data exclusive to your firm",
     floatB: "Never resold, never shared",
-    floatC: "Pricing on request, no commitment",
-    floatD: "Pricing on request",
+    floatC: "Starting at",
+    floatD: "€10 / qualified lead",
     leads: [
       { ini: "SM", name: "Sophie Martin", co: "Nova SaaS Inc.", meta: "Paris 11e · €5k capital · NAICS 5112", score: 94 },
       { ini: "LR", name: "Léo Rouvière",  co: "Atelier Bois Ltd.", meta: "Lyon 7e · €10k capital · NAICS 3219", score: 88 },
@@ -128,12 +128,12 @@ export const CabinetHero = () => {
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Button>
               </SafeLink>
-              <SafeLink to={localizedHref("/demo", lang)}>
+              <a href="https://wa.me/33651234567?text=Bonjour%20Eligibly%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20la%20d%C3%A9tection%20de%20leads" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" className="w-full sm:w-auto h-12 px-6 text-sm font-semibold">
-                  <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
+                  <MessageCircle className="w-4 h-4 mr-2" aria-hidden="true" />
                   {t.ctaSecondary}
                 </Button>
-              </SafeLink>
+              </a>
             </div>
             <p className="mt-3 text-xs text-muted-foreground">
               {t.ctaNote}

@@ -23,15 +23,16 @@ const features = [
 
 const faqItems = [
   { q: "En quoi Eligibly diffère d'un annuaire d'entreprises ?", a: "Un annuaire vous donne accès à la base. Nous, on filtre, on score et on pousse uniquement les leads pertinents pour votre cabinet, directement dans votre canal de travail. C'est un moteur d'alertes, pas un annuaire." },
-  { q: "Pourquoi ne pas afficher le tarif sur le site ?", a: "Notre tarif est calibré sur votre cabinet, mais nous préférons le communiquer après un échange de cadrage de 20 minutes : vérifier ensemble que votre verticale, votre zone et votre volume cible correspondent à notre périmètre, et que la valeur attendue est claire des deux côtés. Vous recevez notre proposition écrite sous 24 h ouvrées, sans engagement." },
-  { q: "Y a-t-il des paliers de prix ou un coût par lead ?", a: "Non. Le tarif s'ajuste à votre volume et à la taille de votre cabinet : un seul prix mensuel, pas de surcoût par lead, pas de quota qui saute. Vous payez l'accès au moteur, pas la quantité." },
-  { q: "Comment fonctionne le pilote 14 jours ?", a: "On paramètre votre verticale et votre zone, on active le flux pendant 14 jours, sans carte bancaire. Vous gardez tous les leads reçus pendant le pilote, que vous souscriviez ou non." },
+  { q: "Combien coûte un lead Eligibly ?", a: "À partir de 10 € par lead qualifié. Le tarif final dépend de votre volume mensuel cible et de la taille de votre cabinet : plus le volume est élevé, plus le coût unitaire baisse. Vous recevez le devis personnalisé sous 24 h ouvrées après un échange de cadrage de 20 minutes." },
+  { q: "Pourquoi un devis et pas une grille publique ?", a: "Pour deux raisons. D'abord parce que le coût marginal d'un lead dépend de votre verticale et de la rareté du signal dans votre zone — un cabinet conseil sur Paris et un cabinet artisan en région n'ont pas la même équation. Ensuite parce que nous voulons valider, en 20 minutes, que le volume cible est réaliste pour vous. Ancrage public : 10 € le lead pour démarrer." },
+  { q: "Comment démarre-t-on ?", a: "Échange de cadrage 20 min, paramétrage ICP, et premier lead livré sous 48 h sans carte bancaire. Vous validez la qualité avant de signer. Engagement mensuel, résiliable avec préavis 30 jours." },
   { q: "Vous garantissez un nombre de rendez-vous ?", a: "Non. C'est un engagement de moyens, pas de résultat. Décrocher des RDV reste votre métier — nous, on garantit la qualité et la fraîcheur des leads livrés." },
-  { q: "Combien de leads je reçois par jour ?", a: "Le volume dépend de votre ICP (secteurs ciblés, zone géographique, forme juridique cible) et du flux d'immatriculations réel. À titre indicatif, les cabinets pilotes reçoivent entre quelques leads et une quinzaine par jour selon leur paramétrage. Engagement de moyens par filtres amont — pas de garantie chiffrée sur le volume, qui dépend du marché réel et de la fraîcheur des immatriculations." },
+  { q: "Combien de leads je reçois par jour ?", a: "Le volume dépend de votre ICP (secteurs ciblés, zone géographique, forme juridique cible) et du flux d'immatriculations réel. À titre indicatif, les cabinets partenaires reçoivent entre quelques leads et une quinzaine par jour selon leur paramétrage. Engagement de moyens par filtres amont — pas de garantie chiffrée sur le volume." },
   { q: "Vous traitez aussi les SCI, SELARL, micro vers société ?", a: "Le périmètre standard couvre SASU, SAS, SARL, EURL. SCI, SCP, SELARL, SEL, micro vers société sont en option sans surcoût, sur demande à l'onboarding." },
   { q: "Quel niveau d'engagement ?", a: "Mensuel. Vous résiliez quand vous voulez, sans pénalité, sans préavis long. On préfère vous garder par la qualité du flux, pas par contrat." },
   { q: "Mes données et celles de mes clients restent-elles confidentielles ?", a: "Oui. Nous n'ingérons que des données publiques (INPI, BODACC, Sirene). Vos retours d'équipe servent uniquement à affiner votre modèle, pas un modèle mutualisé. Hébergement UE, RGPD." },
-  { q: "Comment je reçois mes leads ?", a: "Chaque matin (jours ouvrés), vous recevez par email un digest avec les top 3 à 5 leads PREMIUM du jour, score expliqué et plan d'action inclus. Un clic sur la fiche du lead vous ouvre la plateforme Eligibly pour qualifier et démarrer la prospection. Pour les cabinets qui préfèrent recevoir le digest dans Slack ou Microsoft Teams, l'intégration est disponible sur demande." },
+  { q: "Comment je reçois mes leads ?", a: "Chaque matin (jours ouvrés), un digest avec les leads PREMIUM du jour, score expliqué, plan d'action et recommandation d'accroche prête à envoyer (email + LinkedIn). Livraison email par défaut, Slack/Teams/WhatsApp sur demande. Chaque lead inclut plusieurs touchpoints : email pro vérifié, téléphone si disponible, LinkedIn dirigeant, adresse postale du siège." },
+  { q: "Sur quels modèles d'IA s'appuie Eligibly ?", a: "Stack documentée et auditable : modèles open-weights (Mistral, Llama, Qwen) hébergés en UE pour le scoring et la génération d'accroches, modèles propriétaires pour le matching ICP. Aucun appel vers une API hors UE pour vos données. Chaque décision de scoring est explicable : 3 raisons positives, 1-2 points à vérifier, et la pondération est visible dans la fiche." },
 ];
 
 const Tarifs = () => {
@@ -52,10 +53,10 @@ const Tarifs = () => {
             <div className="container mx-auto max-w-4xl text-center">
               <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-6">Tarifs</p>
               <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-8">
-                Un tarif adapté à votre cabinet, <em className="italic text-primary font-medium">tout inclus</em>. Pas de surprise.
+                À partir de <em className="italic text-primary font-medium">10 € le lead qualifié</em>. Devis adapté à votre cabinet.
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Construit avec et pour les cabinets d'expertise comptable français. Engagement mensuel, résiliable, pilote 14 jours sans carte bancaire.
+                Construit avec et pour les cabinets d'expertise comptable français. Tarif final calibré sur votre volume mensuel et la taille de votre cabinet. Engagement mensuel, résiliable, démarrage sans CB.
               </p>
             </div>
           </section>
@@ -71,10 +72,11 @@ const Tarifs = () => {
                   <div>
                     <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-3">Le moteur complet</p>
                     <div className="mb-2">
-                      <span className="font-display text-4xl md:text-5xl font-semibold tracking-tight italic">Tarif sur devis</span>
+                      <span className="font-display text-4xl md:text-5xl font-semibold tracking-tight italic">À partir de 10 €</span>
+                      <span className="ml-2 text-lg text-muted-foreground">/ lead qualifié</span>
                     </div>
-                    <p className="text-sm text-muted-foreground mb-3">Abonnement mensuel <strong>adapté à votre volume</strong> — communiqué après un échange de cadrage de 20 minutes. Un seul client signé rembourse l'année.</p>
-                    <p className="text-xs text-muted-foreground mb-8">Pas de palier de volume, pas de coût par lead, pas de surprise.</p>
+                    <p className="text-sm text-muted-foreground mb-3">Tarif <strong>final sur devis</strong>, ajusté à votre volume cible et à la taille de votre cabinet — finalisé après un échange de cadrage de 20 minutes. Un seul client signé rembourse l'année.</p>
+                    <p className="text-xs text-muted-foreground mb-8">Plus votre volume mensuel est élevé, plus le coût unitaire baisse.</p>
                     <SafeLink to={demoHref}>
                       <Button variant="tengo" className="w-full h-12 group">
                         Recevoir notre proposition
@@ -127,9 +129,9 @@ const Tarifs = () => {
               <div className="w-16 h-16 rounded-2xl bg-success/10 border border-success/20 flex items-center justify-center mx-auto mb-8">
                 <Shield className="w-7 h-7 text-success" />
               </div>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">Pilote 14 jours, zéro friction</h2>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">Démarrage sans friction</h2>
               <p className="mt-6 text-muted-foreground max-w-xl mx-auto leading-relaxed">
-                Pas de carte bancaire pour démarrer. Vous gardez tous les leads reçus pendant le pilote. Si à J+14 le flux ne vous convient pas, on arrête, sans question.
+                Pas de carte bancaire pour démarrer. Premier lead réel livré sous 48 h pour valider la qualité avant signature. Engagement mensuel, résiliable avec préavis 30 jours.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-6 text-xs text-muted-foreground">
                 <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-success" />Sans carte bancaire</span>
@@ -177,7 +179,7 @@ const Tarifs = () => {
               </h2>
               <SafeLink to={demoHref}>
                 <Button size="lg" variant="tengo" className="h-12 px-8 group">
-                  Démarrer le pilote 14 jours
+                  Recevoir mon premier lead gratuit
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </SafeLink>

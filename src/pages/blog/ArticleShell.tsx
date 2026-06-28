@@ -121,11 +121,11 @@ export const ArticleShell = ({
                 Passez de la lecture à <em className="italic text-primary">l'action</em>.
               </h2>
               <p className="text-muted-foreground max-w-lg mx-auto mb-6">
-                Recevez chaque matin les SASU &amp; SAS fraîchement immatriculées correspondant à votre ICP, filtrées et scorées. Pilote 14 jours, sans CB.
+                Recevez chaque matin les SASU &amp; SAS fraîchement immatriculées correspondant à votre ICP, filtrées, scorées et avec une recommandation d'accroche prête à envoyer. À partir de 10 € le lead qualifié, sans CB.
               </p>
               <SafeLink to="/demo">
                 <Button variant="tengo" size="lg" className="h-12 px-7 group">
-                  Démarrer le pilote
+                  Recevoir mon premier lead gratuit
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </SafeLink>

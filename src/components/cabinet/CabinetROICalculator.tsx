@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
-import { ArrowRight, Calculator, TrendingDown, Clock, Wallet } from "lucide-react";
+import { ArrowRight, Calculator, TrendingDown, Clock, Wallet, Mail, Phone, Linkedin, MapPin, Sparkles } from "lucide-react";
 import { useLang, localizedHref } from "@/hooks/useLang";
 
 const STORAGE_KEY = "eligibly_roi_v1";
@@ -238,6 +238,21 @@ export const CabinetROICalculator = () => {
             </div>
 
             <div className="mt-auto pt-4">
+              <div className="mb-5 rounded-xl border border-primary/20 bg-primary/5 p-4">
+                <div className="text-[0.7rem] uppercase tracking-[0.14em] text-primary font-semibold mb-2 flex items-center gap-2">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  {lang === "fr" ? "Inclus : 4 touchpoints par lead" : "Included: 4 touchpoints per lead"}
+                </div>
+                <div className="grid grid-cols-2 gap-2 text-[0.78rem]">
+                  <div className="flex items-center gap-2 text-background/85"><Mail className="w-3.5 h-3.5 text-primary" /> {lang === "fr" ? "Email pro vérifié" : "Verified work email"}</div>
+                  <div className="flex items-center gap-2 text-background/85"><Phone className="w-3.5 h-3.5 text-primary" /> {lang === "fr" ? "Téléphone pro" : "Work phone"}</div>
+                  <div className="flex items-center gap-2 text-background/85"><Linkedin className="w-3.5 h-3.5 text-primary" /> {lang === "fr" ? "LinkedIn dirigeant" : "Founder LinkedIn"}</div>
+                  <div className="flex items-center gap-2 text-background/85"><MapPin className="w-3.5 h-3.5 text-primary" /> {lang === "fr" ? "Adresse postale siège" : "Registered address"}</div>
+                </div>
+                <p className="mt-2 text-[0.7rem] text-background/70 italic">
+                  {lang === "fr" ? "+ recommandation IA d'accroche (email + LinkedIn) prête à envoyer." : "+ AI outreach recommendation (email + LinkedIn) ready to send."}
+                </p>
+              </div>
               <SafeLink to={`${localizedHref("/demo", lang)}?roi=1`}>
                 <Button variant="tengo" className="w-full h-12 text-sm font-semibold group">
                   {t.cta}

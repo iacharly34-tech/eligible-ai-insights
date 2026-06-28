@@ -301,8 +301,8 @@ export const SEOHead = ({
           };
         case '/tarifs':
           return {
-            title: "Tarifs Eligibly — tarif adapté sur devis · pilote 14 jours",
-            description: "Abonnement mensuel adapté à votre cabinet, communiqué après un échange de cadrage. Pilote 14 jours sans CB.",
+            title: "Tarifs Eligibly — à partir de 10 € le lead qualifié, devis personnalisé",
+            description: "À partir de 10 € le lead qualifié, devis personnalisé selon le volume et la taille du cabinet. Démarrage sans CB, résiliable mensuellement.",
             keywords: "tarifs eligibly, prix prospection cabinet, abonnement expert comptable"
           };
         case '/solutions':
