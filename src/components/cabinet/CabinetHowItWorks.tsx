@@ -263,7 +263,7 @@ function DedoublonnageView({ t }: { t: typeof labels.fr; lang?: "fr" | "en" }) {
   );
 }
 
-function ExclusionsView({ t, lang }: { t: typeof labels.fr; lang: "fr" | "en" }) {
+function ExclusionsView({ t, lang = "fr" }: { t: typeof labels.fr; lang?: "fr" | "en" }) {
   const items = lang === "en"
     ? [
         { name: "INNOV TECH SASU", siren: "123 456 789", reason: null, kept: true },
