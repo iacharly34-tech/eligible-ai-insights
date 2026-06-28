@@ -117,7 +117,7 @@ const Produit = () => {
                 <div>
                   <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">Apprentissage continu</p>
                   <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-6">
-                    Le moteur s'affine <em className="italic text-primary font-medium">à chaque retour</em> de vos associés.
+                    Le moteur s'affine <em className="italic text-primary font-medium">à chaque action</em> de vos collaborateurs.
                   </h2>
                   <p className="text-muted-foreground leading-relaxed mb-6">
                     À chaque alerte qualifiée ou écartée par votre équipe, l'IA ajuste ses filtres et son scoring sur votre profil de cabinet. Au bout de 4 semaines, 80 % des alertes correspondent réellement à votre ICP.
