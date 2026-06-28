@@ -38,7 +38,7 @@ export const CabinetSources = () => {
               <span className="font-display italic text-lg md:text-xl text-foreground/60 group-hover:text-foreground transition-colors">
                 {c.name}
               </span>
-              <span className="text-[0.65rem] uppercase tracking-[0.16em] text-muted-foreground/70 mt-1">
+              <span className="text-[0.65rem] uppercase tracking-[0.16em] text-muted-foreground mt-1">
                 {c.city}
               </span>
               {c.chip && (

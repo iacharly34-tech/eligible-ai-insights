@@ -207,7 +207,7 @@ export const CabinetROICalculator = () => {
 
           {/* Output */}
           <div className="rounded-2xl bg-foreground text-background p-7 sm:p-8 flex flex-col">
-            <div className="text-[0.74rem] uppercase tracking-[0.14em] text-background/60 font-semibold mb-5">
+            <div className="text-[0.74rem] uppercase tracking-[0.14em] text-background/80 font-semibold mb-5">
               {t.current}
             </div>
             <div className="grid grid-cols-2 gap-4 mb-7">
@@ -223,13 +223,13 @@ export const CabinetROICalculator = () => {
               </div>
               <div className="space-y-4">
                 <div className="flex items-baseline justify-between">
-                  <span className="text-background/70 text-sm flex items-center gap-2"><Wallet className="w-4 h-4" /> {t.saving}</span>
+                  <span className="text-background/85 text-sm flex items-center gap-2"><Wallet className="w-4 h-4" /> {t.saving}</span>
                   <span className="font-display italic text-2xl sm:text-3xl text-primary font-semibold">
                     {t.savingValue}
                   </span>
                 </div>
                 <div className="flex items-baseline justify-between">
-                  <span className="text-background/70 text-sm flex items-center gap-2"><Clock className="w-4 h-4" /> {t.timeSaved}</span>
+                  <span className="text-background/85 text-sm flex items-center gap-2"><Clock className="w-4 h-4" /> {t.timeSaved}</span>
                   <span className="font-display italic text-xl text-background font-semibold">
                     ~{fmt(results.hoursLost)} {t.perMonth}
                   </span>
@@ -246,7 +246,7 @@ export const CabinetROICalculator = () => {
               </SafeLink>
               <a
                 href={`mailto:contact@eligibly.ai?subject=${encodeURIComponent(t.mailSubject)}&body=${mailtoBody}`}
-                className="block mt-2 text-center text-xs text-background/60 hover:text-background/90 underline underline-offset-2"
+                className="block mt-2 text-center text-xs text-background/80 hover:text-background underline underline-offset-2"
               >
                 {t.mailLink}
               </a>
@@ -264,7 +264,7 @@ export const CabinetROICalculator = () => {
 
 const Stat = ({ label, value }: { label: string; value: string }) => (
   <div>
-    <div className="text-xs text-background/60 mb-1">{label}</div>
+    <div className="text-xs text-background/80 mb-1">{label}</div>
     <div className="font-display text-xl text-background font-semibold tabular-nums">{value}</div>
   </div>
 );
