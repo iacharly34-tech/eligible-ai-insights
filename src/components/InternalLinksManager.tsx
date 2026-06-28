@@ -104,7 +104,7 @@ export const InternalLinksManager = ({
       {
         href: '/tarifs',
         text: t('nav.pricing'),
-        description: 'Découvrez nos forfaits',
+        description: 'Découvrez nos tarifs',
         priority: 'medium'
       },
       {
