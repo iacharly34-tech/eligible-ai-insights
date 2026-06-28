@@ -41,7 +41,7 @@ export const CabinetFinalCTA = () => {
             <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-tight mb-5">
               {t.h2a} <em className="italic text-primary">{t.h2b}</em> {t.h2c}
             </h2>
-            <p className="text-background/75 text-lg leading-relaxed mb-8">
+            <p className="text-background/90 text-lg leading-relaxed mb-8">
               {t.sub}
             </p>
             <SafeLink to={localizedHref("/demo", lang)}>
@@ -50,7 +50,7 @@ export const CabinetFinalCTA = () => {
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Button>
             </SafeLink>
-            <p className="mt-4 text-xs text-background/60">
+            <p className="mt-4 text-xs text-background/80">
               {t.note}
             </p>
           </div>
