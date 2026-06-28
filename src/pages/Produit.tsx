@@ -96,7 +96,7 @@ const Produit = () => {
                 Digest matinal email — <em className="italic text-primary font-medium">chaque matin à 7 h</em>.
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Chaque matin à 7 h, vos leads PREMIUM du jour avec score expliqué et plan d'action, directement dans votre boîte. Un clic ouvre la fiche dans Eligibly pour qualifier et démarrer la prospection.
+                Vos leads PREMIUM du jour, avec score expliqué et plan d'action, directement dans votre boîte. Un clic ouvre la fiche dans Eligibly pour qualifier et démarrer la prospection.
               </p>
               <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground mb-8">
                 <Mail className="w-5 h-5 text-primary" />
