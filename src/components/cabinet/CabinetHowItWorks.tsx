@@ -177,7 +177,7 @@ const labels = {
 
 /* ─── Visual previews for each step ─── */
 
-function CollecteView({ t }: { t: typeof labels.fr }) {
+function CollecteView({ t }: { t: typeof labels.fr; lang?: "fr" | "en" }) {
   const rows = [
     { siren: "123 456 789", name: "INNOV TECH SASU", date: "27/06/2026", forme: "SASU" },
     { siren: "987 654 321", name: "INNOV TECH SASU", date: "27/06/2026", forme: "SASU", dup: true },
@@ -221,7 +221,7 @@ function CollecteView({ t }: { t: typeof labels.fr }) {
   );
 }
 
-function DedoublonnageView({ t }: { t: typeof labels.fr }) {
+function DedoublonnageView({ t }: { t: typeof labels.fr; lang?: "fr" | "en" }) {
   return (
     <div className="w-full max-w-md">
       <div className="rounded-xl border border-border bg-card shadow-card overflow-hidden">
@@ -325,7 +325,7 @@ function ExclusionsView({ t, lang }: { t: typeof labels.fr; lang: "fr" | "en" })
   );
 }
 
-function EnrichissementView({ t }: { t: typeof labels.fr }) {
+function EnrichissementView({ t }: { t: typeof labels.fr; lang?: "fr" | "en" }) {
   const icons = [Mail, Linkedin, Building2, TrendingUp, Check];
   const fields = t.enrichFields.map((f, i) => ({ ...f, icon: icons[i], delay: i * 0.15 }));
   return (
@@ -359,7 +359,7 @@ function EnrichissementView({ t }: { t: typeof labels.fr }) {
   );
 }
 
-function ScoringView({ t }: { t: typeof labels.fr }) {
+function ScoringView({ t }: { t: typeof labels.fr; lang?: "fr" | "en" }) {
   const score = 87;
   const reasons = t.scoreReasons;
   return (
@@ -433,7 +433,7 @@ function ScoringView({ t }: { t: typeof labels.fr }) {
   );
 }
 
-function LivraisonView({ t }: { t: typeof labels.fr }) {
+function LivraisonView({ t }: { t: typeof labels.fr; lang?: "fr" | "en" }) {
   return (
     <div className="w-full max-w-sm">
       <div className="rounded-xl border border-border bg-card shadow-card overflow-hidden">
