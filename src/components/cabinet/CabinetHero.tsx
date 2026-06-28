@@ -128,7 +128,7 @@ export const CabinetHero = () => {
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Button>
               </SafeLink>
-              <a href="https://wa.me/33651234567?text=Bonjour%20Eligibly%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20la%20d%C3%A9tection%20de%20leads" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/33603263100?text=Bonjour%20Eligibly%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20la%20d%C3%A9tection%20de%20leads" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" className="w-full sm:w-auto h-12 px-6 text-sm font-semibold">
                   <MessageCircle className="w-4 h-4 mr-2" aria-hidden="true" />
                   {t.ctaSecondary}
