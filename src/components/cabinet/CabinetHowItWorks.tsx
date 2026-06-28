@@ -1,55 +1,449 @@
-import { Database, Layers, Filter, Sparkles, Brain, Send } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Database,
+  Layers,
+  Filter,
+  Sparkles,
+  Brain,
+  Send,
+  Check,
+  X,
+  Mail,
+  Linkedin,
+  Building2,
+  TrendingUp,
+  AlertCircle,
+  ChevronRight,
+  Play,
+  Pause,
+  RotateCcw,
+} from "lucide-react";
 
-const stations = [
+const steps = [
   {
     n: "01",
     icon: Database,
     title: "Collecte",
-    body: "Ingestion quotidienne des registres publics officiels : immatriculations, modifications statutaires, publications légales. Aucune source privée, aucun scraping.",
+    short: "Registres publics",
     output: "Flux brut",
+    desc: "Ingestion quotidienne des immatriculations, modifications statutaires et publications légales. Sources officielles uniquement.",
   },
   {
     n: "02",
     icon: Layers,
     title: "Dédoublonnage",
-    body: "Normalisation des entités (SIREN, dénomination, dirigeant) et réconciliation entre sources pour éliminer les doublons et conserver une seule fiche de référence.",
+    short: "Base unifiée",
     output: "Base unifiée",
+    desc: "Normalisation SIREN, dénomination et dirigeant. Fusion des doublons entre sources pour une seule fiche de référence.",
   },
   {
     n: "03",
     icon: Filter,
     title: "Exclusions amont",
-    body: "Filtres IA : sociétés avec CAC mandaté, procédures collectives, cessations, holdings pures (10+ sociétés), serial entrepreneurs (5+ sociétés), sociétés > 90 jours.",
+    short: "Vivier adressable",
     output: "Vivier adressable",
+    desc: "Filtres IA : CAC mandaté, procédures collectives, cessations, holdings pures, serial entrepreneurs, sociétés > 90 jours.",
   },
   {
     n: "04",
     icon: Sparkles,
     title: "Enrichissement",
-    body: "Ajout des signaux contact professionnel (email pro vérifié, profil dirigeant), de la verticale, du capital et des indicateurs de maturité du projet.",
+    short: "Fiche complète",
     output: "Fiche complète",
+    desc: "Ajout des signaux contact professionnel, profil dirigeant, verticale, capital et indicateurs de maturité du projet.",
   },
   {
     n: "05",
     icon: Brain,
     title: "Scoring IA explicable",
-    body: "Score 0-100 calculé sur votre ICP cabinet, avec les 3 raisons clés affichées : signaux positifs, points à vérifier, niveau de priorité. Pas de boîte noire.",
+    short: "Lead priorisé",
     output: "Lead priorisé",
+    desc: "Score 0-100 sur votre ICP cabinet. 3 raisons clés affichées : signaux positifs, points à vérifier, priorité.",
   },
   {
     n: "06",
     icon: Send,
     title: "Livraison ciblée",
-    body: "Push automatique chaque matin dans le canal de prédilection de chaque associé. Vos feedbacks (qualifié / écarté) réentraînent en continu votre modèle propre.",
+    short: "Action commerciale",
     output: "Action commerciale",
+    desc: "Push automatique dans vos canaux. Vos feedbacks qualifié/écarté réentraînent en continu votre modèle propre.",
   },
 ];
 
+/* ─── Visual previews for each step ─── */
+
+function CollecteView() {
+  const rows = [
+    { siren: "123 456 789", name: "INNOV TECH SASU", date: "27/06/2026", forme: "SASU" },
+    { siren: "987 654 321", name: "INNOV TECH SASU", date: "27/06/2026", forme: "SASU", dup: true },
+    { siren: "456 789 123", name: "CONSULTING PRO SAS", date: "27/06/2026", forme: "SAS" },
+    { siren: "789 123 456", name: "DIGITAL SERVICES SASU", date: "26/06/2026", forme: "SASU" },
+  ];
+  return (
+    <div className="w-full max-w-md">
+      <div className="rounded-xl border border-border bg-card shadow-card overflow-hidden">
+        <div className="px-4 py-3 border-b border-border flex items-center gap-2">
+          <Database className="w-4 h-4 text-primary" />
+          <span className="text-sm font-semibold text-foreground">Flux brut — 4 entrées</span>
+        </div>
+        <div className="divide-y divide-border">
+          {rows.map((r, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.12 }}
+              className={`px-4 py-2.5 flex items-center justify-between text-sm ${r.dup ? "bg-warning/5" : ""}`}
+            >
+              <div className="flex items-center gap-3">
+                <span className="font-mono text-xs text-muted-foreground w-24">{r.siren}</span>
+                <span className="font-medium text-foreground">{r.name}</span>
+                {r.dup && (
+                  <span className="text-[0.65rem] px-1.5 py-0.5 rounded-full bg-warning/15 text-warning font-semibold">
+                    Doublon
+                  </span>
+                )}
+              </div>
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <span>{r.forme}</span>
+                <span>{r.date}</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function DedoublonnageView() {
+  return (
+    <div className="w-full max-w-md">
+      <div className="rounded-xl border border-border bg-card shadow-card overflow-hidden">
+        <div className="px-4 py-3 border-b border-border flex items-center gap-2">
+          <Layers className="w-4 h-4 text-primary" />
+          <span className="text-sm font-semibold text-foreground">Base unifiée — 3 fiches</span>
+          <span className="ml-auto text-[0.65rem] px-2 py-0.5 rounded-full bg-success/15 text-success font-semibold">
+            1 doublon supprimé
+          </span>
+        </div>
+        <div className="divide-y divide-border">
+          {[
+            { siren: "123 456 789", name: "INNOV TECH SASU", date: "27/06/2026", forme: "SASU", status: "ok" },
+            { siren: "456 789 123", name: "CONSULTING PRO SAS", date: "27/06/2026", forme: "SAS", status: "ok" },
+            { siren: "789 123 456", name: "DIGITAL SERVICES SASU", date: "26/06/2026", forme: "SASU", status: "ok" },
+          ].map((r, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.15 }}
+              className="px-4 py-3 flex items-center justify-between"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-6 rounded-full bg-success/10 flex items-center justify-center">
+                  <Check className="w-3.5 h-3.5 text-success" />
+                </div>
+                <div>
+                  <div className="text-sm font-medium text-foreground">{r.name}</div>
+                  <div className="text-xs text-muted-foreground font-mono">{r.siren} · {r.forme}</div>
+                </div>
+              </div>
+              <span className="text-xs text-muted-foreground">{r.date}</span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ExclusionsView() {
+  const items = [
+    { name: "INNOV TECH SASU", siren: "123 456 789", reason: null, kept: true },
+    { name: "CONSULTING PRO SAS", siren: "456 789 123", reason: "CAC mandaté", kept: false },
+    { name: "DIGITAL SERVICES SASU", siren: "789 123 456", reason: null, kept: true },
+    { name: "HOLDING FAMILY SAS", siren: "111 222 333", reason: "Holding pure (12 sociétés)", kept: false },
+    { name: "STARTUP STUDIO SAS", siren: "444 555 666", reason: "Serial entrepreneur (8 sociétés)", kept: false },
+  ];
+  const keptCount = items.filter((i) => i.kept).length;
+  return (
+    <div className="w-full max-w-md">
+      <div className="rounded-xl border border-border bg-card shadow-card overflow-hidden">
+        <div className="px-4 py-3 border-b border-border flex items-center gap-2">
+          <Filter className="w-4 h-4 text-primary" />
+          <span className="text-sm font-semibold text-foreground">Vivier adressable</span>
+          <span className="ml-auto text-[0.65rem] px-2 py-0.5 rounded-full bg-primary/10 text-primary font-semibold">
+            {keptCount} / {items.length} conservés
+          </span>
+        </div>
+        <div className="divide-y divide-border">
+          {items.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: i * 0.1 }}
+              className={`px-4 py-2.5 flex items-center justify-between ${!item.kept ? "bg-muted/30" : ""}`}
+            >
+              <div className="flex items-center gap-3">
+                {item.kept ? (
+                  <Check className="w-4 h-4 text-success" />
+                ) : (
+                  <X className="w-4 h-4 text-destructive/60" />
+                )}
+                <div>
+                  <div className={`text-sm font-medium ${item.kept ? "text-foreground" : "text-muted-foreground line-through"}`}>
+                    {item.name}
+                  </div>
+                  {!item.kept && item.reason && (
+                    <div className="text-[0.65rem] text-destructive/70">{item.reason}</div>
+                  )}
+                </div>
+              </div>
+              <span className={`text-xs font-mono ${item.kept ? "text-muted-foreground" : "text-muted-foreground/50"}`}>
+                {item.siren}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function EnrichissementView() {
+  const fields = [
+    { label: "Email pro vérifié", value: "contact@innovtech.fr", icon: Mail, delay: 0 },
+    { label: "LinkedIn dirigeant", value: "Jean Dupont — CEO", icon: Linkedin, delay: 0.15 },
+    { label: "Capital social", value: "10 000 €", icon: Building2, delay: 0.3 },
+    { label: "Verticale", value: "Conseil en stratégie digitale", icon: TrendingUp, delay: 0.45 },
+    { label: "Maturité projet", value: "Immatriculation < 7 jours · Actif", icon: Check, delay: 0.6 },
+  ];
+  return (
+    <div className="w-full max-w-sm">
+      <div className="rounded-xl border border-border bg-card shadow-card overflow-hidden">
+        <div className="px-4 py-3 border-b border-border flex items-center gap-2">
+          <Sparkles className="w-4 h-4 text-primary" />
+          <span className="text-sm font-semibold text-foreground">Fiche complète — INNOV TECH SASU</span>
+        </div>
+        <div className="p-4 space-y-3">
+          {fields.map((f, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: f.delay, type: "spring", stiffness: 200 }}
+              className="flex items-center gap-3 p-2.5 rounded-lg bg-background border border-border/60"
+            >
+              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                <f.icon className="w-4 h-4 text-primary" />
+              </div>
+              <div>
+                <div className="text-[0.65rem] uppercase tracking-wider text-muted-foreground font-semibold">{f.label}</div>
+                <div className="text-sm font-medium text-foreground">{f.value}</div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ScoringView() {
+  const score = 87;
+  const reasons = [
+    { type: "positif", text: "SASU < 7 jours · Capital 10K+ · Dirigeant seul" },
+    { type: "verif", text: "Vérifier le besoin comptable (holding familiale ?)" },
+    { type: "prio", text: "Priorité haute — 3 concurrents déjà en lice" },
+  ];
+  return (
+    <div className="w-full max-w-sm">
+      <div className="rounded-xl border border-border bg-card shadow-card overflow-hidden">
+        <div className="px-4 py-3 border-b border-border flex items-center gap-2">
+          <Brain className="w-4 h-4 text-primary" />
+          <span className="text-sm font-semibold text-foreground">Lead priorisé — Score {score}/100</span>
+        </div>
+        <div className="p-5 flex flex-col items-center gap-4">
+          {/* Circular score */}
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            className="relative w-28 h-28 rounded-full border-4 border-primary/20 flex items-center justify-center"
+          >
+            <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" strokeWidth="6" className="text-primary/10" />
+              <motion.circle
+                cx="50" cy="50" r="42" fill="none" stroke="currentColor" strokeWidth="6"
+                className="text-primary"
+                strokeLinecap="round"
+                strokeDasharray={264}
+                initial={{ strokeDashoffset: 264 }}
+                animate={{ strokeDashoffset: 264 - (264 * score) / 100 }}
+                transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
+              />
+            </svg>
+            <div className="text-center">
+              <motion.span
+                className="text-3xl font-display font-bold text-foreground"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+              >
+                {score}
+              </motion.span>
+              <span className="text-xs text-muted-foreground block">/ 100</span>
+            </div>
+          </motion.div>
+
+          {/* Reasons */}
+          <div className="w-full space-y-2">
+            {reasons.map((r, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 + i * 0.2 }}
+                className={`flex items-start gap-2 p-2.5 rounded-lg text-sm ${
+                  r.type === "positif" ? "bg-success/10 text-success-foreground" :
+                  r.type === "verif" ? "bg-warning/10 text-warning-foreground" :
+                  "bg-primary/10 text-primary-foreground"
+                }`}
+              >
+                {r.type === "positif" ? <Check className="w-4 h-4 shrink-0 mt-0.5 text-success" /> :
+                 r.type === "verif" ? <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-warning" /> :
+                 <TrendingUp className="w-4 h-4 shrink-0 mt-0.5 text-primary" />}
+                <span className={`text-xs font-medium ${
+                  r.type === "positif" ? "text-success" :
+                  r.type === "verif" ? "text-warning" :
+                  "text-primary"
+                }`}>{r.text}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function LivraisonView() {
+  return (
+    <div className="w-full max-w-sm">
+      <div className="rounded-xl border border-border bg-card shadow-card overflow-hidden">
+        <div className="px-4 py-3 border-b border-border flex items-center gap-2">
+          <Send className="w-4 h-4 text-primary" />
+          <span className="text-sm font-semibold text-foreground">Alerte livrée — Canal de prédilection</span>
+          <motion.span
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.8, type: "spring" }}
+            className="ml-auto text-[0.65rem] px-2 py-0.5 rounded-full bg-success/15 text-success font-semibold flex items-center gap-1"
+          >
+            <Check className="w-3 h-3" /> Délivrée
+          </motion.span>
+        </div>
+        <div className="p-4">
+          <div className="rounded-lg bg-background border border-border/60 p-4 space-y-3">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="text-sm font-semibold text-foreground">Nouveau lead qualifié — INNOV TECH SASU</div>
+                <div className="text-xs text-muted-foreground">Score 87/100 · Priorité haute</div>
+              </div>
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <span className="text-sm font-bold text-primary">IT</span>
+              </div>
+            </div>
+            <div className="space-y-1.5 text-xs text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <Building2 className="w-3.5 h-3.5" />
+                <span>SASU · 10 000 € · Conseil stratégie digitale</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5" />
+                <span>contact@innovtech.fr</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Linkedin className="w-3.5 h-3.5" />
+                <span>Jean Dupont — CEO</span>
+              </div>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="pt-2 border-t border-border/60"
+            >
+              <div className="text-[0.65rem] uppercase tracking-wider text-muted-foreground font-semibold mb-1.5">3 raisons clés</div>
+              <div className="flex flex-wrap gap-1.5">
+                <span className="text-[0.65rem] px-2 py-1 rounded-full bg-success/15 text-success font-medium">SASU &lt; 7 jours</span>
+                <span className="text-[0.65rem] px-2 py-1 rounded-full bg-primary/10 text-primary font-medium">Capital 10K+</span>
+                <span className="text-[0.65rem] px-2 py-1 rounded-full bg-warning/10 text-warning font-medium">3 concurrents en lice</span>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+              className="flex gap-2 pt-1"
+            >
+              <button className="flex-1 text-xs font-semibold bg-primary text-primary-foreground px-3 py-2 rounded-lg hover:opacity-90 transition-opacity">
+                Contacter
+              </button>
+              <button className="text-xs font-medium border border-border bg-background px-3 py-2 rounded-lg hover:bg-muted transition-colors">
+                Écarter
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const stepViews = [CollecteView, DedoublonnageView, ExclusionsView, EnrichissementView, ScoringView, LivraisonView];
+
+/* ─── Main component ─── */
+
 export const CabinetHowItWorks = () => {
+  const [active, setActive] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(false);
+  const [direction, setDirection] = useState(1);
+
+  const goNext = useCallback(() => {
+    setDirection(1);
+    setActive((prev) => (prev + 1) % steps.length);
+  }, []);
+
+  const goPrev = useCallback(() => {
+    setDirection(-1);
+    setActive((prev) => (prev - 1 + steps.length) % steps.length);
+  }, []);
+
+  useEffect(() => {
+    if (!autoPlay) return;
+    const id = setInterval(goNext, 3500);
+    return () => clearInterval(id);
+  }, [autoPlay, goNext]);
+
+  const CurrentView = stepViews[active];
+  const step = steps[active];
+  const progress = ((active + 1) / steps.length) * 100;
+
+  const variants = {
+    enter: (dir: number) => ({ opacity: 0, x: dir > 0 ? 60 : -60, scale: 0.96 }),
+    center: { opacity: 1, x: 0, scale: 1 },
+    exit: (dir: number) => ({ opacity: 0, x: dir > 0 ? -60 : 60, scale: 0.96 }),
+  };
+
   return (
     <section id="how" className="py-20 md:py-28">
       <div className="container mx-auto px-4">
-        <div className="max-w-2xl mb-14">
+        {/* Header */}
+        <div className="max-w-2xl mb-12">
           <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">
             La chaîne de production d'un lead
           </p>
@@ -57,39 +451,185 @@ export const CabinetHowItWorks = () => {
             De la donnée publique brute à une <em className="italic text-primary font-medium">alerte qualifiée</em>, six étapes contrôlées.
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Chaque lead reçu par votre cabinet passe par la même chaîne, documentée et auditable. À chaque étape, une transformation, une responsabilité, un livrable intermédiaire.
+            Chaque lead reçu par votre cabinet passe par la même chaîne, documentée et auditable. À chaque étape, une transformation, un livrable concret.
           </p>
         </div>
 
-        {/* Pipeline rail (desktop) */}
-        <div className="hidden lg:block relative mb-8">
-          <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" aria-hidden="true" />
-          <div className="relative grid grid-cols-6 gap-4">
-            {stations.map((s) => (
-              <div key={s.n} className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-background border-2 border-primary/40 text-primary flex items-center justify-center shadow-sm">
-                  <s.icon className="w-5 h-5" />
-                </div>
-                <span className="mt-3 text-[0.65rem] uppercase tracking-[0.16em] text-muted-foreground font-semibold">{s.output}</span>
-              </div>
-            ))}
+        {/* Progress bar */}
+        <div className="mb-8">
+          <div className="h-1 w-full bg-border rounded-full overflow-hidden">
+            <motion.div
+              className="h-full bg-primary rounded-full"
+              initial={false}
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            />
+          </div>
+          <div className="flex justify-between mt-2 text-[0.65rem] text-muted-foreground uppercase tracking-wider">
+            <span>Flux brut</span>
+            <span>Action commerciale</span>
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-4">
-          {stations.map((s) => (
-            <article key={s.n} className="rounded-2xl border border-border bg-card p-5 h-full flex flex-col">
-              <div className="flex items-center justify-between mb-4">
-                <p className="font-display italic text-2xl font-semibold text-primary/70">{s.n}</p>
-                <s.icon className="w-4 h-4 text-primary/60 lg:hidden" aria-hidden="true" />
+        {/* Split layout */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          {/* Left: Steps */}
+          <div className="space-y-2">
+            {steps.map((s, i) => {
+              const isActive = i === active;
+              const isPast = i < active;
+              return (
+                <motion.button
+                  key={i}
+                  onClick={() => {
+                    setDirection(i > active ? 1 : -1);
+                    setActive(i);
+                  }}
+                  className={`w-full text-left rounded-xl border transition-all duration-300 p-4 flex items-start gap-4 ${
+                    isActive
+                      ? "border-primary/40 bg-primary/5 shadow-elegant"
+                      : "border-border bg-card hover:border-primary/20 hover:bg-muted/30"
+                  }`}
+                  whileHover={{ scale: isActive ? 1 : 1.01 }}
+                  whileTap={{ scale: 0.99 }}
+                >
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                    isActive
+                      ? "bg-primary text-primary-foreground"
+                      : isPast
+                      ? "bg-success/10 text-success"
+                      : "bg-muted text-muted-foreground"
+                  }`}>
+                    {isPast && !isActive ? (
+                      <Check className="w-4 h-4" />
+                    ) : (
+                      <s.icon className="w-4 h-4" />
+                    )}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-0.5">
+                      <span className={`font-display text-sm font-semibold ${isActive ? "text-foreground" : "text-muted-foreground"}`}>
+                        {s.n}. {s.title}
+                      </span>
+                      {isActive && (
+                        <motion.span
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          className="text-[0.6rem] px-1.5 py-0.5 rounded-full bg-primary/10 text-primary font-semibold uppercase tracking-wider"
+                        >
+                          {s.output}
+                        </motion.span>
+                      )}
+                    </div>
+                    <p className={`text-sm leading-relaxed ${isActive ? "text-foreground" : "text-muted-foreground"}`}>
+                      {s.desc}
+                    </p>
+                    {isActive && (
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                        className="mt-3 flex items-center gap-2 text-xs text-primary font-medium"
+                      >
+                        <span>Voir le livrable</span>
+                        <ChevronRight className="w-3.5 h-3.5" />
+                      </motion.div>
+                    )}
+                  </div>
+                </motion.button>
+              );
+            })}
+
+            {/* Controls */}
+            <div className="flex items-center gap-3 pt-4">
+              <button
+                onClick={goPrev}
+                className="text-xs font-medium border border-border bg-background px-3 py-2 rounded-lg hover:bg-muted transition-colors"
+              >
+                Étape précédente
+              </button>
+              <button
+                onClick={goNext}
+                className="text-xs font-medium bg-primary text-primary-foreground px-3 py-2 rounded-lg hover:opacity-90 transition-opacity"
+              >
+                Étape suivante
+              </button>
+              <button
+                onClick={() => setAutoPlay((p) => !p)}
+                className={`ml-auto text-xs font-medium px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors ${
+                  autoPlay ? "bg-success/10 text-success" : "border border-border bg-background hover:bg-muted"
+                }`}
+              >
+                {autoPlay ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+                {autoPlay ? "Pause" : "Lecture auto"}
+              </button>
+              <button
+                onClick={() => { setActive(0); setDirection(1); }}
+                className="text-xs font-medium border border-border bg-background px-3 py-2 rounded-lg hover:bg-muted transition-colors"
+              >
+                <RotateCcw className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
+
+          {/* Right: Live preview */}
+          <div className="lg:sticky lg:top-24">
+            <div className="rounded-2xl border border-border bg-background/50 backdrop-blur-sm p-6 md:p-8 min-h-[420px] flex flex-col items-center justify-center relative overflow-hidden">
+              {/* Background decoration */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/3 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/3 rounded-full blur-3xl" />
               </div>
-              <h3 className="font-display text-base font-semibold text-foreground mb-2 leading-snug">{s.title}</h3>
-              <p className="text-[0.85rem] text-muted-foreground leading-relaxed">{s.body}</p>
-            </article>
-          ))}
+
+              {/* Step badge */}
+              <div className="absolute top-4 left-4">
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-center gap-2"
+                >
+                  <span className="text-[0.65rem] px-2 py-1 rounded-full bg-primary/10 text-primary font-semibold uppercase tracking-wider">
+                    Étape {step.n} — {step.output}
+                  </span>
+                </motion.div>
+              </div>
+
+              {/* Animated preview */}
+              <div className="relative z-10 w-full flex items-center justify-center py-8">
+                <AnimatePresence mode="wait" custom={direction}>
+                  <motion.div
+                    key={active}
+                    custom={direction}
+                    variants={variants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                  >
+                    <CurrentView />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Caption under preview */}
+              <motion.div
+                key={active}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="relative z-10 text-center mt-4"
+              >
+                <p className="text-xs text-muted-foreground max-w-xs">
+                  {step.desc}
+                </p>
+              </motion.div>
+            </div>
+          </div>
         </div>
 
-        <p className="mt-10 text-xs text-muted-foreground max-w-3xl">
+        {/* Footer note */}
+        <p className="mt-12 text-xs text-muted-foreground max-w-3xl">
           Sources de référence : registres publics officiels (registre national des entreprises, base Sirene, bulletin officiel des annonces civiles et commerciales). Enrichissements opérés via partenaires contractuels conformes RGPD, sans transfert hors UE.
         </p>
       </div>
