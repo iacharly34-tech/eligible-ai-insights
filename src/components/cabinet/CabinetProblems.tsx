@@ -1,18 +1,18 @@
 const problems = [
   {
     n: "01",
-    title: "Les leads mutualisés",
-    body: "Le même lead est vendu à 3-5 cabinets en parallèle. Vous arrivez en 4e, le primo-entrepreneur a déjà signé ailleurs ou ne répond plus. La moitié sont déjà accompagnés.",
+    title: "Des contacts déjà sollicités",
+    body: "Les annuaires et places de marché distribuent largement les mêmes informations. Résultat : le dirigeant est contacté par plusieurs cabinets en quelques jours, et votre message passe inaperçu.",
   },
   {
     n: "02",
-    title: "Aucun apprentissage",
-    body: "Votre fournisseur vous envoie le même type de lead toute l'année. Aucune adaptation à votre ICP, vos retours, ni aux secteurs où vous convertissez réellement.",
+    title: "Un ciblage qui n'évolue pas",
+    body: "Sans boucle de retour, votre sourcing reste figé. Les secteurs porteurs, les profils de dirigeants qui convertissent le mieux, les signaux récents : rien ne remonte pour affiner votre cible.",
   },
   {
     n: "03",
-    title: "25 h/semaine perdues à filtrer",
-    body: "Vos collaborateurs passent 1 h/jour à scroller les annuaires d'immatriculations pour qualifier. Pour un cabinet de 5 personnes : 25 h/semaine qui ne facturent pas.",
+    title: "Un temps de qualification mal investi",
+    body: "Vos équipes consacrent une part significative de leur semaine à croiser des listes, vérifier les sirets et éliminer les doublons. Du temps de haute valeur perdu en tâches mécaniques.",
   },
 ];
 
@@ -25,10 +25,10 @@ export const CabinetProblems = () => {
             Les frictions opérationnelles
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
-            Acheter ses leads, c'est <em className="italic text-primary font-medium">perdre le contrôle</em> de sa prospection.
+            La prospection cabinet, encore trop <em className="italic text-primary font-medium">manuelle</em> et peu maîtrisée.
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Trois frictions reviennent systématiquement chez les cabinets 5-30 collaborateurs qui dépensent 500 à 1 500 €/mois en leads achetés.
+            Trois freins reviennent chez les cabinets qui dépendent de flux externes ou de recherches manuelles pour alimenter leur pipeline.
           </p>
         </div>
 
