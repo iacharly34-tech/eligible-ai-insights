@@ -1,37 +1,55 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Shield, Lock, FileText } from "lucide-react";
+import { useLang } from "@/hooks/useLang";
 
-const faqs = [
+const FAQS_FR = [
   { q: "On achète déjà des leads chez un fournisseur, c'est pas la même chose ?", a: "Non. Les fournisseurs de leads vous vendent un contact à l'unité, souvent mutualisé entre 3 à 5 cabinets, sans expliciter pourquoi ce lead est prioritaire pour vous. Eligibly est un outil de production de leads : votre cabinet possède la source, vous paramétrez vos critères ICP, vous recevez 30 à 50 leads PREMIUM par mois (contre 5 à 20 chez les fournisseurs classiques) pour un abonnement adapté à votre volume et à la taille de votre cabinet (généralement 60 à 80 % moins cher que l'achat unitaire). Vous gagnez en autonomie, en volume et en qualité." },
   { q: "Si je m'abonne à Eligibly, je peux arrêter mes autres fournisseurs de leads ?", a: "La majorité de nos cabinets pilotes le font après 2 à 3 mois. Eligibly produit en autonomie 30 à 50 leads qualifiés par mois, ce qui couvre largement le besoin d'un cabinet de 5 à 30 collaborateurs. Vous économisez 500 à 1 200 €/mois sur votre stack lead. Notre recommandation : conservez vos autres canaux les 2 premiers mois en parallèle, comparez la qualité et le coût par rendez-vous, puis arrêtez ceux qui ne tiennent pas la comparaison." },
-  { q: "Mes leads sont-ils exclusifs ou mutualisés avec d'autres cabinets ?", a: "Exclusivement à vous. Chaque cabinet dispose d'un workspace logiquement isolé. Vos critères ICP vous sont propres, vos leads aussi. Aucun lead n'est partagé entre cabinets. Si deux cabinets ont des ICP très proches dans la même zone, ils peuvent théoriquement recevoir certains leads en commun (les SASU et SAS étant publiques), mais sans jamais savoir qu'un autre cabinet les contacte — vous restez en compétition sur l'exécution, comme dans toute prospection commerciale." },
-  { q: "En quoi Eligibly diffère d'un annuaire d'entreprises classique ?", a: "Un annuaire généraliste vous fournit la donnée brute, à charge pour vous de la filtrer, la scorer et la qualifier manuellement. Eligibly est un moteur d'alertes verticalisé pour les cabinets d'expertise comptable : filtres IA amont automatiques (CAC, procédure, holding, serial), scoring IA expliqué par lead, et livraison directe dans votre canal de prédilection. Vous cessez de filtrer manuellement." },
+  { q: "Mes leads sont-ils exclusifs ou mutualisés avec d'autres cabinets ?", a: "Exclusivement à vous. Chaque cabinet dispose d'un workspace logiquement isolé. Vos critères ICP vous sont propres, vos leads aussi. Aucun lead n'est partagé entre cabinets." },
+  { q: "En quoi Eligibly diffère d'un annuaire d'entreprises classique ?", a: "Un annuaire généraliste vous fournit la donnée brute, à charge pour vous de la filtrer, la scorer et la qualifier manuellement. Eligibly est un moteur d'alertes verticalisé pour les cabinets d'expertise comptable : filtres IA amont automatiques, scoring IA expliqué par lead, et livraison directe dans votre canal de prédilection." },
   { q: "Quelle est la garantie associée à l'abonnement ?", a: "Engagement de qualité par filtres amont : tout lead non conforme à nos critères de filtrage est remplacé gratuitement. En revanche, aucune garantie chiffrée sur le nombre de rendez-vous : votre conversion dépend de votre exécution commerciale." },
-  { q: "Pouvez-vous garantir que le prospect n'a pas déjà un expert-comptable ?", a: "Non, cette garantie est impossible à donner : il n'existe pas de base publique exhaustive des mandats d'expertise comptable. Nous ciblons les sociétés fraîchement immatriculées (≤ 90 jours) pour maximiser la fenêtre où le primo-entrepreneur n'a pas encore tranché." },
-  { q: "Vos données sont-elles conformes au RGPD ?", a: "Oui, de manière native. Nous utilisons exclusivement des sources publiques officielles (INPI, Sirene, BODACC) et des partenaires d'enrichissement contractuels conformes RGPD. Notre base légale est l'article 6.1.f du RGPD (intérêt légitime B2B). Les données sont hébergées en Union européenne et chiffrées en transit et au repos. Le droit d'opposition est opérationnel sous 48 heures. Notre politique de confidentialité est validée par nos conseillers juridiques." },
-  { q: "Où et comment sont hébergées mes données ?", a: "Toutes les données de prospection, les critères ICP et les modèles de scoring sont hébergés sur des serveurs situés en France et en Europe. Aucun transfert de données en dehors de l'UE. Chaque cabinet dispose d'un workspace isolé : vos feedbacks et votre historique de scoring ne sont jamais partagés avec d'autres clients. Traçabilité complète de chaque alerte : source, date de collecte, critères appliqués." },
-  { q: "Quel est votre processus de collecte et de traitement des données ?", a: "Nous suivons une procédure documentée et contrôlée en six étapes : collecte sur sources officielles (INPI, INSEE, BODACC), dédoublonnage, exclusions amont, enrichissement via partenaires contractuels, scoring IA explicable, livraison. Nous vérifions automatiquement la fraîcheur des immatriculations (≤ 90 jours). Aucun scraping sauvage : uniquement des données publiées légalement. Chaque traitement est tracé et auditable." },
-  { q: "Comment se passe l'onboarding ?", a: "Un rendez-vous visio de 45 minutes pour cadrer votre ICP (zones géographiques, secteurs d'activité, exclusions). Votre workspace est livré sous 48 heures avec votre premier lot de leads. Un bilan est réalisé à J+14 pour ajuster le filtrage et le scoring selon vos retours." },
-  { q: "Pourquoi ne pas développer cela en interne ?", a: "Vous pouvez le faire, mais il faut compter 3 à 6 mois de développement : intégrations aux registres publics, entraînement des modèles IA de filtrage et de scoring, connecteurs vers vos outils, maintenance continue. Eligibly est livré clé en main, mis à jour quotidiennement, pour un abonnement mensuel adapté à votre cabinet — généralement amorti dès le premier client signé." },
-  { q: "Quels secteurs et zones géographiques couvrez-vous ?", a: "Toute la France métropolitaine ainsi que les DROM. Tous secteurs sont couverts, avec possibilité de restriction à vos verticales (technologie, conseil, santé, artisanat, immobilier, etc.) et à votre zone géographique (région, département, métropole)." },
-  { q: "Que se passe-t-il après les 14 jours de pilote gratuit ?", a: "Vous décidez : continuer sur notre abonnement mensuel (par carte bancaire ou virement), ou arrêter sans aucune obligation. Le tarif vous est communiqué dès le premier échange. Aucune relance commerciale agressive, aucune carte bancaire demandée à l'inscription." },
-  { q: "Pourquoi ne pas afficher le tarif sur le site ?", a: "Notre tarif est calibré sur votre cabinet, mais nous préférons le communiquer après un échange de cadrage de 20 minutes : c'est l'occasion de vérifier que votre verticale, votre zone et votre volume cible correspondent à notre périmètre, et que la valeur attendue est claire des deux côtés. C'est aussi une marque de respect pour nos clients déjà actifs — nous évitons toute communication tarifaire publique qui pourrait être instrumentalisée. Vous recevez notre proposition écrite sous 24 h ouvrées, sans engagement." },
-  { q: "Pouvez-vous fournir des références de cabinets clients ?", a: "Eligibly est en phase pilote. Nous ne publions pas les noms de nos clients par respect du secret professionnel. Sur demande, nous pouvons organiser un échange avec un client pilote qui a accepté de témoigner." },
+  { q: "Pouvez-vous garantir que le prospect n'a pas déjà un expert-comptable ?", a: "Non. Il n'existe pas de base publique exhaustive des mandats d'expertise comptable. Nous ciblons les sociétés fraîchement immatriculées (≤ 90 jours) pour maximiser la fenêtre où le primo-entrepreneur n'a pas encore tranché." },
+  { q: "Vos données sont-elles conformes au RGPD ?", a: "Oui, de manière native. Sources publiques officielles (INPI, Sirene, BODACC) et partenaires d'enrichissement contractuels conformes RGPD. Base légale : article 6.1.f (intérêt légitime B2B). Hébergement UE, chiffrement en transit et au repos. Droit d'opposition opérationnel sous 48 heures." },
+  { q: "Où et comment sont hébergées mes données ?", a: "Toutes les données sont hébergées sur des serveurs en France et en Europe. Aucun transfert hors UE. Chaque cabinet dispose d'un workspace isolé : vos feedbacks et votre historique de scoring ne sont jamais partagés." },
+  { q: "Quel est votre processus de collecte et de traitement des données ?", a: "Six étapes documentées et contrôlées : collecte sur sources officielles, dédoublonnage, exclusions amont, enrichissement, scoring IA explicable, livraison. Aucun scraping sauvage. Chaque traitement est tracé et auditable." },
+  { q: "Comment se passe l'onboarding ?", a: "Un rendez-vous visio de 45 minutes pour cadrer votre ICP. Votre workspace est livré sous 48 heures avec votre premier lot de leads. Bilan à J+14 pour ajuster le filtrage et le scoring." },
+  { q: "Pourquoi ne pas afficher le tarif sur le site ?", a: "Notre tarif est calibré sur votre cabinet : volume cible, zone, verticale. Nous le communiquons après un échange de cadrage de 20 minutes, par respect de nos clients actifs et pour vérifier que la valeur attendue est claire des deux côtés. Proposition écrite sous 24 h ouvrées." },
 ];
 
+const FAQS_EN = [
+  { q: "We already buy leads from a provider — isn't that the same?", a: "No. Lead providers sell you a contact at a unit price, often shared across 3 to 5 firms, with no explanation of why the lead is a priority for you. Eligibly is a lead production tool: your firm owns the source, you configure your ICP, you receive 30 to 50 PREMIUM leads per month (vs. 5–20 with classic providers) for a subscription tailored to your volume and firm size — typically 60–80% cheaper than per-lead purchases." },
+  { q: "If I subscribe to Eligibly, can I drop my other lead providers?", a: "Most of our pilot firms do, after 2–3 months. Eligibly produces 30 to 50 qualified leads autonomously every month — enough for a firm of 5–30 staff. You typically save €500 to €1,200 per month on your lead stack. Our recommendation: keep your other channels in parallel for the first two months, compare quality and cost per meeting, then drop those that don't hold up." },
+  { q: "Are my leads exclusive, or shared with other firms?", a: "Exclusively yours. Each firm has a logically isolated workspace. Your ICP is yours, your leads are yours. No lead is shared between firms." },
+  { q: "How is Eligibly different from a regular business directory?", a: "A general directory gives you raw data — you filter, score and qualify manually. Eligibly is a vertical alert engine for accounting firms: automatic upstream AI filters, explained AI scoring per lead, and direct delivery in your preferred channel." },
+  { q: "What guarantee comes with the subscription?", a: "Quality commitment via upstream filters: any lead not matching our filtering criteria is replaced free of charge. No quantitative guarantee on the number of meetings: conversion depends on your sales execution." },
+  { q: "Can you guarantee the prospect doesn't already have an accountant?", a: "No. There is no exhaustive public registry of accountant mandates. We target newly registered companies (≤ 90 days) to maximize the window in which the first-time founder hasn't decided yet." },
+  { q: "Is your data GDPR-compliant?", a: "Yes, by design. Official public sources (INPI, Sirene, BODACC) and contractual GDPR-compliant enrichment partners. Legal basis: GDPR Art. 6.1.f (legitimate B2B interest). EU hosting, encryption in transit and at rest. Right to object handled within 48 hours." },
+  { q: "Where and how is my data hosted?", a: "All data is hosted on servers located in France and the EU. No transfer outside the EU. Each firm has an isolated workspace: your feedback and scoring history are never shared." },
+  { q: "What is your data collection and processing process?", a: "Six documented and controlled steps: collection from official sources, deduplication, upstream exclusions, enrichment, explainable AI scoring, delivery. No rogue scraping. Every operation is logged and auditable." },
+  { q: "How does onboarding work?", a: "A 45-minute video call to scope your ICP. Your workspace ships within 48 hours with your first batch of leads. Review at D+14 to fine-tune filtering and scoring." },
+  { q: "Why isn't your price shown on the site?", a: "Our pricing is tailored to your firm — target volume, area, vertical. We share it after a 20-minute scoping call, out of respect for our active clients and to confirm that expected value is clear on both sides. Written proposal within 24 business hours." },
+];
+
+const copy = {
+  fr: { eyebrow: "FAQ", h2a: "Les questions", h2b: "qu'on nous pose", faqs: FAQS_FR },
+  en: { eyebrow: "FAQ", h2a: "The questions", h2b: "we get asked", faqs: FAQS_EN },
+} as const;
+
 export const CabinetFAQ = () => {
+  const lang = useLang();
+  const t = copy[lang];
   return (
     <section id="faq" className="py-20 md:py-28">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center mb-12">
-          <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">FAQ</p>
+          <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.eyebrow}</p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
-            Les questions <em className="italic text-primary font-medium">qu'on nous pose</em>.
+            {t.h2a} <em className="italic text-primary font-medium">{t.h2b}</em>.
           </h2>
         </div>
         <div className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="w-full">
-            {faqs.map((f, i) => (
+            {t.faqs.map((f, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="border-border">
                 <AccordionTrigger className="text-left font-display italic text-lg font-medium text-foreground hover:text-primary">
                   {f.q}
