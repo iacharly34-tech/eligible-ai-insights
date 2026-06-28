@@ -76,24 +76,24 @@ const Demo = () => {
           <div className="container mx-auto max-w-4xl text-center relative z-10">
             <span className="inline-flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-[0.3em]">
               <Rocket className="w-4 h-4" />
-              {language === "en" ? "Personalized demo" : "Démonstration personnalisée"}
+              {language === "en" ? "Your first lead — free" : "Votre premier lead — offert"}
             </span>
             <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold font-display leading-[1.05] tracking-tight">
               {language === "en" ? (
-                <>Book your <span className="bg-gradient-highlight bg-clip-text text-transparent">personalized demo</span></>
+                <>Receive your <span className="bg-gradient-highlight bg-clip-text text-transparent">first lead for free</span></>
               ) : (
-                <>Réservez votre <span className="bg-gradient-highlight bg-clip-text text-transparent">démo personnalisée</span></>
+                <>Recevez votre <span className="bg-gradient-highlight bg-clip-text text-transparent">premier lead gratuit</span></>
               )}
             </h1>
             <p className="mt-8 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {language === "en"
-                ? "30 minutes to see how Eligibly detects, filters and scores newly registered SASU & SAS in your zone — and pushes them every morning to your stack."
-                : "30 minutes pour voir comment Eligibly détecte, filtre et score les SASU & SAS fraîchement immatriculées de votre zone — et les pousse chaque matin dans votre stack."}
+                ? "Share your ICP and professional contact details. Within 48 hours, we deliver one real newly registered company in your zone, qualified by Eligibly — no credit card, no commitment."
+                : "Partagez votre ICP et vos coordonnées professionnelles. Sous 48 h, nous vous livrons un lead réel fraîchement immatriculé de votre zone, qualifié par Eligibly — sans CB, sans engagement."}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-6 text-xs text-muted-foreground">
-              <span>⏱️ 30 minutes personnalisées</span>
-              <span>📅 Créneaux disponibles</span>
-              <span>🔒 Sans engagement</span>
+              <span>🎁 1 lead réel offert</span>
+              <span>⏱️ Livraison sous 48 h</span>
+              <span>🔒 Sans CB · sans engagement</span>
             </div>
           </div>
         </section>
@@ -107,10 +107,10 @@ const Demo = () => {
                 <>
                   <div className="mb-8">
                     <h2 className="text-2xl font-bold font-display tracking-tight mb-2">
-                      Réservez votre démonstration
+                      Réclamez votre premier lead gratuit
                     </h2>
                     <p className="text-sm text-muted-foreground">
-                      Découvrez comment Eligibly peut transformer la prospection de votre cabinet.
+                      Donnez-nous vos coordonnées professionnelles et votre profil cible. Sous 48 h, nous vous envoyons un lead réel, qualifié selon vos critères.
                     </p>
                   </div>
 
@@ -129,14 +129,14 @@ const Demo = () => {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="message" className="text-sm font-medium">Message / besoin spécifique</Label>
-                      <Textarea id="message" value={formData.message} onChange={(e) => handleInputChange("message", e.target.value)} placeholder="Décrivez brièvement vos besoins..." className="resize-none" rows={3} />
+                      <Textarea id="message" value={formData.message} onChange={(e) => handleInputChange("message", e.target.value)} placeholder="Votre ICP : zone géographique, formes juridiques, secteurs ciblés, capital min/max, exclusions…" className="resize-none" rows={3} />
                     </div>
                     <Button type="submit" className="w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-[0.15em] text-xs font-semibold group">
-                      Réserver ma démonstration
+                      Recevoir mon premier lead gratuit
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
                     <p className="text-center text-xs text-muted-foreground">
-                      Démonstration personnalisée, sans engagement. Réponse sous 24h.
+                      1 lead réel livré sous 48 h. Sans CB, sans engagement. Vos coordonnées ne sont jamais revendues.
                     </p>
                   </SecureFormWrapper>
                 </>
@@ -175,15 +175,15 @@ const Demo = () => {
 
                 {/* Repeated CTA */}
                 <div className="p-6 rounded-2xl border border-primary/20 bg-primary/5 text-center">
-                  <h4 className="font-bold text-sm mb-2">Prêt à découvrir Eligibly ?</h4>
+                  <h4 className="font-bold text-sm mb-2">Encore un doute ?</h4>
                   <p className="text-xs text-muted-foreground mb-4">
-                    Rejoignez les cabinets qui industrialisent leur prospection avec l'IA.
+                    Jugez sur pièces : recevez d'abord un lead réel, gratuitement, avant toute décision.
                   </p>
                   <Button
                     onClick={() => document.getElementById("demo-form")?.scrollIntoView({ behavior: "smooth" })}
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-[0.15em] text-xs font-semibold"
                   >
-                    Réserver ma démonstration
+                    Recevoir mon premier lead gratuit
                   </Button>
                 </div>
               </div>
@@ -200,10 +200,10 @@ const Demo = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[150px]" />
           <div className="container mx-auto max-w-3xl text-center relative z-10">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display leading-[1.05] tracking-tight">
-              Transformez votre prospection dès aujourd'hui
+              Un lead réel vaut mille slides.
             </h2>
             <p className="mt-8 text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Découvrez comment Eligibly peut vous faire gagner du temps et augmenter vos chances de succès.
+              Recevez gratuitement une société fraîchement immatriculée qualifiée selon votre ICP. Sans CB, sans engagement.
             </p>
             <div className="mt-12">
               <Button
@@ -211,12 +211,12 @@ const Demo = () => {
                 onClick={() => document.getElementById("demo-form")?.scrollIntoView({ behavior: "smooth" })}
                 className="h-14 px-12 text-sm font-semibold uppercase tracking-[0.2em] bg-primary text-primary-foreground hover:bg-primary/90 group"
               >
-                Réserver ma démonstration
+                Recevoir mon premier lead gratuit
                 <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
             <p className="mt-8 text-xs text-muted-foreground tracking-wide">
-              ✓ Sans engagement · ✓ Setup en 5 min · ✓ Support dédié
+              ✓ Sans CB · ✓ Livraison sous 48 h · ✓ Coordonnées jamais revendues
             </p>
           </div>
         </section>
