@@ -5,10 +5,10 @@ import { useLang, localizedHref } from "@/hooks/useLang";
 
 const copy = {
   fr: {
-    h2a: "Recevez votre",
-    h2b: "premier lead",
-    h2c: "— gratuitement.",
-    sub: "Communiquez-nous votre ICP et vos coordonnées professionnelles. Sous 48 h, nous vous livrons gratuitement une société fraîchement immatriculée, qualifiée selon vos critères — pour juger sur pièces, sans engagement.",
+    h2a: "Pas convaincu ?",
+    h2b: "Testez un lead",
+    h2c: "gratuitement.",
+    sub: "Donnez-nous votre zone et votre verticale. Sous 48 h, vous recevez un lead premium qualifié. Sans engagement.",
     cta: "Recevoir mon premier lead gratuit",
     note: "Sans CB · sans engagement · vos coordonnées ne sont jamais revendues",
   },

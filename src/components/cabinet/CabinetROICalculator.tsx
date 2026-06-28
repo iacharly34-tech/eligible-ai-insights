@@ -18,10 +18,10 @@ const sizeHours: Record<Size, number> = {
 const copy = {
   fr: {
     eyebrow: "Calculateur ROI",
-    h2a: "Combien vous coûte",
-    h2b: "vraiment",
-    h2c: "votre stack lead actuelle ?",
-    sub: "En 30 secondes, mesurez le coût réel de votre acquisition actuelle. Nous vous remettons ensuite une proposition chiffrée, alignée sur votre cabinet.",
+    h2a: "Vos leads",
+    h2b: "coûtent cher",
+    h2c: "? Vérifiez.",
+    sub: "Comparez votre stack actuelle avec Eligibly en 30 secondes.",
     qSpend: "Combien dépensez-vous par mois en leads achetés ?",
     qSpendHint: "Annuaires, plateformes d'apporteurs, places de marché et publicité cumulés.",
     qLeads: "Combien de leads recevez-vous par mois ?",
