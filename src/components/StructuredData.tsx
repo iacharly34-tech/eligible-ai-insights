@@ -45,14 +45,6 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
       "https://www.linkedin.com/company/eligibly",
       "https://twitter.com/eligibly_ai"
     ],
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://eligibly.ai/recherche?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    },
     "mainEntity": {
       "@type": "ItemList",
       "name": "Navigation principale Eligibly",

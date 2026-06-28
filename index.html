@@ -77,6 +77,55 @@
     <script defer data-domain="eligibly.ai" src="https://plausible.io/js/script.js"></script>
   
   <!-- Enhanced structured data will be managed by React components -->
+
+  <!-- Critical structured data inlined for crawlers that do not execute JS (sitelinks eligibility) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Eligibly",
+    "alternateName": "Eligibly.ai",
+    "url": "https://eligibly.ai",
+    "logo": "https://eligibly.ai/assets/eligibly-logo-main.png",
+    "description": "Moteur de détection IA de leads pour cabinets d'expertise comptable — SASU et SAS fraîchement immatriculées, scorées et qualifiées chaque matin.",
+    "sameAs": [
+      "https://www.linkedin.com/company/eligibly",
+      "https://twitter.com/eligibly_ai"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "contact@eligibly.ai",
+      "areaServed": "FR",
+      "availableLanguage": ["French", "English"]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Eligibly",
+    "url": "https://eligibly.ai",
+    "inLanguage": ["fr-FR", "en"],
+    "publisher": { "@type": "Organization", "name": "Eligibly" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Navigation principale Eligibly",
+    "itemListElement": [
+      { "@type": "SiteNavigationElement", "position": 1, "name": "Fonctionnalités", "url": "https://eligibly.ai/produit" },
+      { "@type": "SiteNavigationElement", "position": 2, "name": "Cas d'usage",     "url": "https://eligibly.ai/solutions" },
+      { "@type": "SiteNavigationElement", "position": 3, "name": "Tarifs",          "url": "https://eligibly.ai/tarifs" },
+      { "@type": "SiteNavigationElement", "position": 4, "name": "Ressources",      "url": "https://eligibly.ai/ressources" },
+      { "@type": "SiteNavigationElement", "position": 5, "name": "À propos",        "url": "https://eligibly.ai/a-propos" },
+      { "@type": "SiteNavigationElement", "position": 6, "name": "Démo",            "url": "https://eligibly.ai/demo" }
+    ]
+  }
+  </script>
   
   <!-- Preload critical resources -->
   <link rel="modulepreload" href="/src/main.tsx">
@@ -91,6 +140,21 @@
     <!-- Analytics noscript fallback removed with GTM placeholder. -->
     
     <div id="root"></div>
+
+    <!-- Static nav surfaced to no-JS crawlers to reinforce sitelinks signals -->
+    <noscript>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="https://eligibly.ai/produit">Fonctionnalités</a></li>
+          <li><a href="https://eligibly.ai/solutions">Cas d'usage</a></li>
+          <li><a href="https://eligibly.ai/tarifs">Tarifs</a></li>
+          <li><a href="https://eligibly.ai/ressources">Ressources</a></li>
+          <li><a href="https://eligibly.ai/a-propos">À propos</a></li>
+          <li><a href="https://eligibly.ai/demo">Démo</a></li>
+        </ul>
+      </nav>
+    </noscript>
+
     <script type="module" src="/src/main.tsx"></script>
     
     <!-- Performance optimizations -->
