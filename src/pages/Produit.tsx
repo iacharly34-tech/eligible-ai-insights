@@ -182,7 +182,7 @@ const Produit = () => {
           <section className="py-20 md:py-28 px-4 bg-card/30">
             <div className="container mx-auto max-w-3xl text-center">
               <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-tight mb-6">
-                Voir le produit <em className="italic text-primary font-medium">sur vos vrais leads</em>.
+                Voir le produit <em className="italic text-primary font-medium">sur vos leads premium</em>.
               </h2>
               <p className="text-muted-foreground mb-10">30 minutes. On paramètre votre zone et votre verticale, et on regarde ensemble les SASU & SAS du matin.</p>
               <SafeLink to="/demo">
