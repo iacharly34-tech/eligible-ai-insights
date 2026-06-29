@@ -55,6 +55,7 @@ const Demo = () => {
 
     if (error) {
       setSubmitting(false);
+      console.error("demo_requests insert failed", error);
       toast({
         title: language === "en" ? "Submission failed" : "Envoi impossible",
         description:
@@ -66,6 +67,22 @@ const Demo = () => {
       });
       return;
     }
+
+    // Fire-and-forget confirmation email (don't block UX if email infra still verifying DNS)
+    supabase.functions
+      .invoke("send-transactional-email", {
+        body: {
+          templateName: "demo-confirmation",
+          recipientEmail: formData.email.trim(),
+          idempotencyKey: `demo-confirm-${formData.email.trim().toLowerCase()}-${Date.now()}`,
+          templateData: {
+            fullName: formData.fullName.trim(),
+            company: formData.company.trim(),
+            message: formData.message.trim() || undefined,
+          },
+        },
+      })
+      .catch((err) => console.warn("demo confirmation email enqueue failed", err));
 
     toast({
       title: language === "en" ? "✅ Request received!" : "✅ Demande reçue !",
