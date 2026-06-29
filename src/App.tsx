@@ -96,6 +96,7 @@ const App = () => (
                 <Route path="/cgu" element={<CGU />} />
                 <Route path="/newsletter" element={<Newsletter />} />
                 <Route path="/newsletter-config" element={<NewsletterConfig />} />
+                <Route path="/unsubscribe" element={<Unsubscribe />} />
 
                 {/* Blog */}
                 <Route path="/blog/creations-entreprises-france-2025" element={<BlogCreations2025 />} />
