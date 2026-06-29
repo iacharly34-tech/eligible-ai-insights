@@ -84,6 +84,25 @@ const Demo = () => {
       })
       .catch((err) => console.warn("demo confirmation email enqueue failed", err));
 
+    // Internal notification to founder for every new lead
+    supabase.functions
+      .invoke("send-transactional-email", {
+        body: {
+          templateName: "lead-notification",
+          recipientEmail: "lahyani.daniel@gmail.com",
+          idempotencyKey: `lead-notif-${formData.email.trim().toLowerCase()}-${Date.now()}`,
+          templateData: {
+            fullName: formData.fullName.trim(),
+            email: formData.email.trim(),
+            company: formData.company.trim(),
+            message: formData.message.trim() || undefined,
+            source: "/demo",
+            submittedAt: new Date().toLocaleString("fr-FR", { timeZone: "Europe/Paris" }),
+          },
+        },
+      })
+      .catch((err) => console.warn("lead notification email enqueue failed", err));
+
     toast({
       title: language === "en" ? "✅ Request received!" : "✅ Demande reçue !",
       description:
