@@ -161,8 +161,8 @@ const Demo = () => {
                       <Label htmlFor="message" className="text-sm font-medium">Message / besoin spécifique</Label>
                       <Textarea id="message" value={formData.message} onChange={(e) => handleInputChange("message", e.target.value)} placeholder="Votre ICP : zone géographique, formes juridiques, secteurs ciblés, capital min/max, exclusions…" className="resize-none" rows={3} />
                     </div>
-                    <Button type="submit" className="w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-[0.15em] text-xs font-semibold group">
-                      Recevoir mon premier lead gratuit
+                    <Button type="submit" disabled={submitting} className="w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-[0.15em] text-xs font-semibold group disabled:opacity-60">
+                      {submitting ? (language === "en" ? "Sending…" : "Envoi…") : "Recevoir mon premier lead gratuit"}
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
                     <p className="text-center text-xs text-muted-foreground">
