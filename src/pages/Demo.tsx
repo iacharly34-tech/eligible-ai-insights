@@ -21,6 +21,7 @@ import { ContextualLinks } from "@/components/ContextualLinks";
 import { SecureFormWrapper } from "@/components/SecureFormWrapper";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
 const Demo = () => {
   const [formData, setFormData] = useState({
@@ -29,6 +30,7 @@ const Demo = () => {
     company: "",
     message: "",
   });
+  const [submitting, setSubmitting] = useState(false);
   const { language } = useLanguage();
   const { toast } = useToast();
   const navigate = useNavigate();
@@ -37,12 +39,40 @@ const Demo = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (submitting) return;
+    setSubmitting(true);
+
+    const { error } = await supabase.from("demo_requests").insert({
+      full_name: formData.fullName.trim(),
+      email: formData.email.trim(),
+      company: formData.company.trim(),
+      message: formData.message.trim() || null,
+      source: "/demo",
+      user_agent: typeof navigator !== "undefined" ? navigator.userAgent.slice(0, 500) : null,
+    });
+
+    if (error) {
+      setSubmitting(false);
+      toast({
+        title: language === "en" ? "Submission failed" : "Envoi impossible",
+        description:
+          language === "en"
+            ? "Please try again, or contact us on WhatsApp at +33 6 03 26 31 00."
+            : "Réessayez, ou écrivez-nous sur WhatsApp au +33 6 03 26 31 00.",
+        variant: "destructive",
+        duration: 6000,
+      });
+      return;
+    }
 
     toast({
-      title: "✅ Demande envoyée !",
-      description: "Notre équipe revient vers vous sous 24h avec votre démo personnalisée.",
+      title: language === "en" ? "✅ Request received!" : "✅ Demande reçue !",
+      description:
+        language === "en"
+          ? "We will deliver your first lead within 48 hours."
+          : "Nous vous livrons votre premier lead sous 48 h.",
       duration: 5000,
     });
 
