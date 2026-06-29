@@ -32,6 +32,7 @@ const APropos = lazy(() => import("./pages/APropos"));
 const Connexion = lazy(() => import("./pages/Connexion"));
 const Demo = lazy(() => import("./pages/Demo"));
 const WaitlistSuccess = lazy(() => import("./pages/WaitlistSuccess"));
+const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 const MentionsLegales = lazy(() => import("./pages/MentionsLegales"));
 const Confidentialite = lazy(() => import("./pages/Confidentialite"));
 const CGU = lazy(() => import("./pages/CGU"));
