@@ -5,20 +5,20 @@ import { useLang, localizedHref } from "@/hooks/useLang";
 
 const copy = {
   fr: {
-    h2a: "Pas convaincu ?",
-    h2b: "Testez un lead",
-    h2c: "gratuitement.",
-    sub: "Donnez-nous votre zone et votre verticale. Sous 48 h, vous recevez un lead premium qualifié. Sans engagement.",
-    cta: "Recevoir mon premier lead gratuit",
-    note: "Sans CB · sans engagement · vos coordonnées ne sont jamais revendues",
+    h2a: "Jugez sur pièces.",
+    h2b: "Recevez un échantillon",
+    h2c: "de 3 leads qualifiés.",
+    sub: "Donnez-nous votre zone et votre verticale. Sous 48 h, nous vous livrons trois sociétés fraîchement immatriculées, qualifiées selon vos critères, sans engagement.",
+    cta: "Demander un échantillon de 3 leads",
+    note: "Sans engagement · Données INSEE officielles · Vos coordonnées ne sont jamais revendues",
   },
   en: {
-    h2a: "Get your",
-    h2b: "first lead",
-    h2c: "— on us.",
-    sub: "Share your ICP and professional contact details. Within 48 hours we deliver, free of charge, one newly registered company qualified against your criteria — so you can judge for yourself, with no commitment.",
-    cta: "Get my first lead — free",
-    note: "No credit card · no commitment · your details are never resold",
+    h2a: "Judge for yourself.",
+    h2b: "Get a sample",
+    h2c: "of 3 qualified leads.",
+    sub: "Share your area and vertical. Within 48 hours, we deliver three newly registered companies qualified against your criteria — no commitment.",
+    cta: "Request a 3-lead sample",
+    note: "No commitment · Official INSEE data · Your details are never resold",
   },
 } as const;
 
