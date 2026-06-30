@@ -28,25 +28,31 @@ const Email = ({ fullName, email, company, message, source, submittedAt }: Props
     <Preview>Nouveau lead Eligibly{company ? ` — ${company}` : ''}</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Heading style={h1}>🎯 Nouveau lead entrant</Heading>
-        <Section style={card}>
-          <Text style={row}><strong>Nom :</strong> {fullName || '—'}</Text>
-          <Text style={row}><strong>Email :</strong> {email || '—'}</Text>
-          <Text style={row}><strong>Cabinet :</strong> {company || '—'}</Text>
-          {source ? <Text style={row}><strong>Source :</strong> {source}</Text> : null}
-          {submittedAt ? <Text style={row}><strong>Reçu le :</strong> {submittedAt}</Text> : null}
+        <Section style={brandBar}>
+          <Text style={brand}>ELIGIBLY</Text>
         </Section>
-        {message ? (
-          <>
-            <Hr style={hr} />
-            <Text style={label}>Message</Text>
-            <Section style={quote}>
-              <Text style={quoteText}>« {message} »</Text>
-            </Section>
-          </>
-        ) : null}
-        <Hr style={hr} />
-        <Text style={footer}>Notification automatique — Eligibly</Text>
+        <Section style={card}>
+          <Text style={eyebrow}>Nouveau lead entrant</Text>
+          <Heading style={h1}>
+            {company || fullName || 'Nouvelle demande'}
+          </Heading>
+          <Section style={infoBlock}>
+            <Text style={row}><span style={label}>Nom</span>{fullName || '—'}</Text>
+            <Text style={row}><span style={label}>Email</span>{email || '—'}</Text>
+            <Text style={row}><span style={label}>Cabinet</span>{company || '—'}</Text>
+            {source ? <Text style={row}><span style={label}>Source</span>{source}</Text> : null}
+            {submittedAt ? <Text style={row}><span style={label}>Reçu le</span>{submittedAt}</Text> : null}
+          </Section>
+          {message ? (
+            <>
+              <Text style={msgLabel}>Message du prospect</Text>
+              <Section style={quote}>
+                <Text style={quoteText}>« {message} »</Text>
+              </Section>
+            </>
+          ) : null}
+        </Section>
+        <Text style={footer}>Notification automatique · Eligibly</Text>
       </Container>
     </Body>
   </Html>
@@ -55,7 +61,7 @@ const Email = ({ fullName, email, company, message, source, submittedAt }: Props
 export const template = {
   component: Email,
   subject: (data: Props) =>
-    `🎯 Nouveau lead Eligibly${data?.company ? ` — ${data.company}` : ''}`,
+    `Eligibly · Nouveau lead${data?.company ? ` — ${data.company}` : ''}`,
   displayName: 'Lead — notification interne',
   previewData: {
     fullName: 'Jean Dupont',
@@ -69,20 +75,91 @@ export const template = {
 
 const main = {
   backgroundColor: '#ffffff',
-  fontFamily: '"Inter", Arial, sans-serif',
+  fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
   color: '#2D4A3E',
+  padding: '24px 0',
 }
-const container = { padding: '32px 28px', maxWidth: '560px' }
-const h1 = { color: '#2D4A3E', fontSize: '22px', fontWeight: '700', margin: '0 0 18px' }
+const container = { padding: '0 20px', maxWidth: '580px', margin: '0 auto' }
+const brandBar = {
+  background: '#2D4A3E',
+  padding: '18px 24px',
+  borderRadius: '6px 6px 0 0',
+}
+const brand = {
+  color: '#FAF7F2',
+  fontFamily: 'Georgia, "Times New Roman", serif',
+  fontSize: '18px',
+  letterSpacing: '4px',
+  fontWeight: 700 as const,
+  margin: 0,
+}
 const card = {
   background: '#FAF7F2',
-  borderLeft: '3px solid #D85A30',
-  padding: '16px 18px',
-  borderRadius: '4px',
+  padding: '32px 32px 28px',
+  borderRadius: '0 0 6px 6px',
+  borderLeft: '4px solid #D85A30',
 }
-const row = { color: '#2D4A3E', fontSize: '14px', lineHeight: '1.6', margin: '0 0 6px' }
-const label = { color: '#55575d', fontSize: '12px', textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }
-const quote = { borderLeft: '3px solid #D4A93B', padding: '4px 14px', margin: '6px 0' }
-const quoteText = { color: '#55575d', fontStyle: 'italic', fontSize: '14px', lineHeight: '1.6', margin: 0 }
-const hr = { border: 'none', borderTop: '1px solid #ececec', margin: '20px 0' }
-const footer = { color: '#55575d', fontSize: '12px', margin: '8px 0 0' }
+const eyebrow = {
+  color: '#D85A30',
+  fontSize: '11px',
+  fontWeight: 600 as const,
+  letterSpacing: '2px',
+  textTransform: 'uppercase' as const,
+  margin: '0 0 10px',
+}
+const h1 = {
+  color: '#2D4A3E',
+  fontFamily: 'Georgia, "Times New Roman", serif',
+  fontSize: '24px',
+  fontWeight: 700 as const,
+  lineHeight: '1.25',
+  margin: '0 0 20px',
+}
+const infoBlock = {
+  background: '#ffffff',
+  borderRadius: '4px',
+  padding: '14px 16px',
+  marginBottom: '16px',
+}
+const row = {
+  color: '#2D4A3E',
+  fontSize: '14px',
+  lineHeight: '1.6',
+  margin: '0 0 4px',
+}
+const label = {
+  display: 'inline-block',
+  width: '90px',
+  color: '#8a8a8a',
+  fontSize: '11px',
+  fontWeight: 600 as const,
+  textTransform: 'uppercase' as const,
+  letterSpacing: '0.8px',
+}
+const msgLabel = {
+  color: '#8a8a8a',
+  fontSize: '11px',
+  fontWeight: 600 as const,
+  textTransform: 'uppercase' as const,
+  letterSpacing: '0.8px',
+  margin: '0 0 6px',
+}
+const quote = {
+  background: '#ffffff',
+  borderLeft: '3px solid #D4A93B',
+  padding: '10px 16px',
+  borderRadius: '3px',
+  margin: 0,
+}
+const quoteText = {
+  color: '#55575d',
+  fontStyle: 'italic' as const,
+  fontSize: '14px',
+  lineHeight: '1.6',
+  margin: 0,
+}
+const footer = {
+  color: '#8a8a8a',
+  fontSize: '12px',
+  margin: '14px 4px 0',
+}
