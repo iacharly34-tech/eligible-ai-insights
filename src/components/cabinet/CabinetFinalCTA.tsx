@@ -8,17 +8,17 @@ const copy = {
     h2a: "Jugez sur pièces.",
     h2b: "Recevez un échantillon",
     h2c: "de 3 leads qualifiés.",
-    sub: "Donnez-nous votre zone et votre verticale. Sous 48 h, nous vous livrons trois sociétés fraîchement immatriculées, qualifiées selon vos critères, sans engagement.",
+    sub: "Donnez-nous votre zone et votre verticale. Sous 48 h, nous vous livrons trois sociétés fraîchement immatriculées, scorées selon vos critères. Vous décidez ensuite si vous continuez.",
     cta: "Demander un échantillon de 3 leads",
-    note: "Sans engagement · Données INSEE officielles · Vos coordonnées ne sont jamais revendues",
+    note: "Données INPI · Sirene · BODACC, hébergées en France. Vos coordonnées servent uniquement à vous livrer l'échantillon.",
   },
   en: {
     h2a: "Judge for yourself.",
     h2b: "Get a sample",
     h2c: "of 3 qualified leads.",
-    sub: "Share your area and vertical. Within 48 hours, we deliver three newly registered companies qualified against your criteria — no commitment.",
+    sub: "Share your area and vertical. Within 48 hours, we deliver three newly registered companies scored against your criteria. You decide if you continue.",
     cta: "Request a 3-lead sample",
-    note: "No commitment · Official INSEE data · Your details are never resold",
+    note: "INPI · Sirene · BODACC data, hosted in France. Your details are only used to deliver the sample.",
   },
 } as const;
 
