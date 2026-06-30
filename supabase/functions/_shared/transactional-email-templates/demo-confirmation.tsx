@@ -48,9 +48,11 @@ const Email = ({ fullName, company, message }: Props) => (
           ) : null}
           <Hr style={hr} />
           <Text style={text}>
-            Une question d'ici-là&nbsp;? Répondez simplement à cet email, ou écrivez-nous
-            sur WhatsApp au <strong>+33 6 03 26 31 00</strong>.
+            Une question d'ici-là&nbsp;? Répondez simplement à cet email, ou écrivez-nous sur WhatsApp.
           </Text>
+          <Section style={{ textAlign: 'center' as const, margin: '16px 0 24px' }}>
+            <Link href="https://wa.me/33603263100" style={whatsappButton}>💬 WhatsApp</Link>
+          </Section>
         </Section>
         <Text style={signature}>— L'équipe Eligibly</Text>
         <Text style={footer}>
