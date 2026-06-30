@@ -36,8 +36,8 @@ const copy = {
     finalH2a: "Et si vous passiez ",
     finalH2em: "de la lecture à l'action",
     finalH2b: " ?",
-    finalSub: "Le meilleur moyen de mettre nos analyses en pratique : recevez un premier lead premium sur votre vraie zone et votre vraie verticale, gratuitement.",
-    finalCta: "Recevoir mon premier lead gratuit",
+    finalSub: "Le meilleur moyen de mettre nos analyses en pratique : recevez un échantillon de 3 leads qualifiés sur votre vraie zone et votre vraie verticale.",
+    finalCta: "Demander un échantillon de 3 leads",
     finalChips: "✓ Sans CB · ✓ Livré sous 48 h · ✓ Sur votre zone et votre ICP",
     upcoming: [
       { title: "Baromètre — Édition T4 2026", desc: "Prochaine vague terrain avec une cohorte élargie de cabinets pilotes." },

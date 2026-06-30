@@ -59,8 +59,8 @@ const copy = {
       { t: "Isolation et traçabilité", d: "Chaque cabinet dispose d'un workspace logiquement isolé. Vos critères ICP, vos feedbacks et votre historique de scoring ne sont jamais partagés avec d'autres clients. Traçabilité complète : chaque alerte est datée, sourcée et auditable." },
       { t: "Process documenté et contrôlé", d: "Procédure d'ingestion qualifiée (sources officielles uniquement : INPI, INSEE, BODACC). Vérification automatique de la fraîcheur des immatriculations (≤ 90 jours). Pas de scraping sauvage : uniquement des données publiées légalement et des partenaires d'enrichissement contractuels conformes RGPD." },
     ],
-    finalH2: "Pas convaincu ? Testez un lead.",
-    finalSub: "30 minutes. On paramètre votre zone et votre verticale, et on regarde ensemble les SASU & SAS du matin.",
+    finalH2: "Jugez sur pièces : recevez 3 leads qualifiés.",
+    finalSub: "30 minutes pour cadrer votre ICP. Sous 48 h, nous livrons un échantillon de trois sociétés fraîchement immatriculées, qualifiées sur vos critères.",
     finalCta: "Réserver ma démo",
   },
   en: {
