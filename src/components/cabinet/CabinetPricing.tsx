@@ -26,8 +26,8 @@ const copy = {
       "Apprentissage continu de l'IA sur le feedback de votre cabinet",
       "Support email + visio mensuelle de bilan",
     ],
-    cta: "Recevoir mon premier lead gratuit",
-    ctaNote: "1 lead premium livré sous 48 h, sans CB · devis envoyé sous 24 h ouvrées",
+    cta: "Demander un échantillon de 3 leads",
+    ctaNote: "Échantillon livré sous 48 h, sans engagement · devis envoyé sous 24 h ouvrées",
   },
   en: {
     eyebrow: "Pricing",
@@ -51,8 +51,8 @@ const copy = {
       "Continuous AI learning from your firm's feedback",
       "Email support + monthly review call",
     ],
-    cta: "Get my first lead — free",
-    ctaNote: "1 real lead delivered within 48 h, no card · quote sent within 24 business hours",
+    cta: "Request a 3-lead sample",
+    ctaNote: "Sample delivered within 48 h, no commitment · quote sent within 24 business hours",
   },
 } as const;
 
