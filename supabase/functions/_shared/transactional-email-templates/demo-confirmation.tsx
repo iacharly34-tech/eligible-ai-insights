@@ -160,3 +160,14 @@ const footer = {
   padding: '0 4px',
 }
 const footerLink = { color: '#D85A30', textDecoration: 'none' }
+const whatsappButton = {
+  display: 'inline-block' as const,
+  backgroundColor: '#25D366',
+  color: '#ffffff',
+  fontSize: '14px',
+  fontWeight: 600 as const,
+  textDecoration: 'none',
+  padding: '12px 24px',
+  borderRadius: '6px',
+  fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+}
