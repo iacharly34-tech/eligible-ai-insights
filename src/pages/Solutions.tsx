@@ -7,8 +7,8 @@ import { StructuredData } from "@/components/StructuredData";
 import { MobileCTABar } from "@/components/MobileCTABar";
 import { ArrowRight, Rocket, Users, MapPin, TrendingUp, UserMinus, Briefcase } from "lucide-react";
 import { useLang, localizedHref } from "@/hooks/useLang";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const copy = {
   fr: {
@@ -153,9 +153,7 @@ const Solutions = () => {
   const demoHref = localizedHref("/demo", lang);
   const cases = lang === "en" ? casesEN : casesFR;
   const [active, setActive] = useState(0);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: trackRef, offset: ["start 30%", "end 70%"] });
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const activeCase = cases[active];
 
   return (
     <>
@@ -180,137 +178,120 @@ const Solutions = () => {
           </section>
 
           {/* Cases */}
-          {/* Sticky tabs picker (desktop) */}
-          <section className="hidden lg:block px-4 mb-16" aria-label="Sélecteur de cas">
+          {/* Cases — interactive tab explorer */}
+          <section className="pb-24 px-4" aria-label="Cas d'usage">
             <div className="container mx-auto max-w-6xl">
-              <div className="flex flex-wrap gap-2 justify-center">
-                {cases.map((c, i) => (
-                  <button
-                    key={i}
-                    onClick={() => {
-                      setActive(i);
-                      document.getElementById(`case-${i}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
-                    }}
-                    className={`group inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm transition-all ${
-                      active === i
-                        ? "bg-primary text-primary-foreground border-primary shadow-sm"
-                        : "bg-card border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
-                    }`}
-                  >
-                    <c.icon className="w-3.5 h-3.5" />
-                    <span className="font-medium">{c.tag}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Cases — zigzag scroll narrative */}
-          <section className="pb-24 px-4 relative" aria-label="Cas d'usage">
-            <div ref={trackRef} className="container mx-auto max-w-6xl relative">
-              {/* Vertical progress line (desktop) */}
-              <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px bg-border/60 pointer-events-none">
-                <motion.div
-                  style={{ height: lineHeight }}
-                  className="w-px bg-gradient-to-b from-primary via-primary to-primary/30 origin-top"
-                />
-              </div>
-
-              <div className="space-y-24 md:space-y-32">
-                {cases.map((c, index) => {
-                  const reverse = index % 2 === 1;
-                  return (
-                    <motion.article
-                      key={index}
-                      id={`case-${index}`}
-                      initial={{ opacity: 0, y: 60 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-15%", amount: 0.3 }}
-                      onViewportEnter={() => setActive(index)}
-                      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                      className="relative grid lg:grid-cols-2 gap-10 lg:gap-20 items-center"
-                    >
-                      {/* Node on the line */}
-                      <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-background border-2 border-primary items-center justify-center z-10">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                      </div>
-
-                      {/* Left: number + visual */}
-                      <div className={`${reverse ? "lg:order-2" : ""}`}>
-                        <motion.div
-                          initial={{ opacity: 0, scale: 0.9 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.8, delay: 0.1 }}
-                          className="relative aspect-[5/4] rounded-3xl bg-gradient-to-br from-card via-card to-muted/40 border border-border overflow-hidden p-8 flex flex-col justify-between"
+              <div className="grid lg:grid-cols-[280px,1fr] gap-8 lg:gap-12">
+                {/* Left rail: sticky list */}
+                <aside className="lg:sticky lg:top-28 lg:self-start">
+                  <p className="text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground font-semibold mb-4 hidden lg:block">
+                    {lang === "en" ? "Explore" : "Explorer"}
+                  </p>
+                  <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible -mx-4 px-4 lg:mx-0 lg:px-0 pb-2 lg:pb-0">
+                    {cases.map((c, i) => {
+                      const isActive = active === i;
+                      return (
+                        <button
+                          key={i}
+                          onClick={() => setActive(i)}
+                          className={`group relative shrink-0 lg:w-full text-left rounded-xl border transition-all duration-300 px-4 py-3 flex items-center gap-3 ${
+                            isActive
+                              ? "bg-card border-primary/50 shadow-sm"
+                              : "bg-transparent border-border hover:border-primary/30 hover:bg-card/50"
+                          }`}
                         >
-                          {/* huge number */}
-                          <div className="font-display text-[10rem] leading-none font-semibold text-primary/10 select-none -mt-4 -ml-2">
-                            {String(index + 1).padStart(2, "0")}
-                          </div>
+                          <span className={`font-display text-lg font-semibold tabular-nums transition-colors ${isActive ? "text-primary" : "text-muted-foreground/60"}`}>
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <span className={`text-sm font-medium transition-colors ${isActive ? "text-foreground" : "text-muted-foreground"}`}>
+                            {c.tag}
+                          </span>
+                          {isActive && (
+                            <motion.span
+                              layoutId="case-indicator"
+                              className="hidden lg:block absolute right-3 w-1.5 h-1.5 rounded-full bg-primary"
+                              transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                            />
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </aside>
 
-                          {/* floating icon badge */}
-                          <motion.div
-                            initial={{ y: 10, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.25 }}
-                            className="absolute top-8 right-8 w-16 h-16 rounded-2xl bg-primary/10 backdrop-blur-sm border border-primary/20 flex items-center justify-center"
-                          >
-                            <c.icon className="w-7 h-7 text-primary" />
-                          </motion.div>
-
-                          {/* tag + outcome pill */}
-                          <div className="relative z-10 space-y-3">
-                            <p className="text-[0.7rem] uppercase tracking-[0.18em] text-primary font-semibold">
-                              {c.tag}
-                            </p>
-                            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-sm border border-border text-xs">
-                              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                              <span className="text-muted-foreground">{t.result}</span>
-                            </div>
-                            <p className="text-sm leading-relaxed text-foreground/90 pr-4">
-                              {c.result}
-                            </p>
-                          </div>
-
-                          {/* subtle grain */}
-                          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(var(--primary)/0.08),transparent_60%)] pointer-events-none" />
-                        </motion.div>
-                      </div>
-
-                      {/* Right: narrative */}
-                      <div className={`${reverse ? "lg:order-1 lg:text-right" : ""}`}>
-                        <p className="text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground font-semibold mb-4">
-                          {`Cas ${String(index + 1).padStart(2, "0")} · ${c.tag}`}
-                        </p>
-                        <h2 className="font-display text-2xl md:text-3xl lg:text-[2rem] font-semibold tracking-tight leading-[1.15] mb-6">
-                          {c.title}
-                        </h2>
-
-                        <div className="space-y-5 mb-8">
-                          <div className={`relative pl-5 ${reverse ? "lg:pl-0 lg:pr-5" : ""}`}>
-                            <span className={`absolute top-2 w-2 h-2 rounded-full bg-muted-foreground/40 ${reverse ? "lg:right-0 left-0 lg:left-auto" : "left-0"}`} />
-                            <p className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-1">{t.quote}</p>
-                            <p className="text-sm leading-relaxed text-foreground/80">{c.context}</p>
-                          </div>
-                          <div className={`relative pl-5 ${reverse ? "lg:pl-0 lg:pr-5" : ""}`}>
-                            <span className={`absolute top-2 w-2 h-2 rounded-full bg-primary ${reverse ? "lg:right-0 left-0 lg:left-auto" : "left-0"}`} />
-                            <p className="text-[0.7rem] uppercase tracking-[0.14em] text-primary font-semibold mb-1">{t.answer}</p>
-                            <p className="text-sm leading-relaxed text-foreground/90">{c.answer}</p>
-                          </div>
+                {/* Right: active case panel */}
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                  className="relative rounded-3xl border border-border bg-card overflow-hidden"
+                >
+                  {/* Header band */}
+                  <div className="relative px-8 sm:px-10 pt-8 pb-6 border-b border-border bg-gradient-to-br from-primary/[0.04] via-transparent to-transparent">
+                    <div className="flex items-start justify-between gap-6 mb-5">
+                      <div className="flex items-center gap-3">
+                        <span className="font-display text-5xl font-semibold text-primary/30 leading-none tabular-nums">
+                          {String(active + 1).padStart(2, "0")}
+                        </span>
+                        <div>
+                          <p className="text-[0.7rem] uppercase tracking-[0.18em] text-primary font-semibold">
+                            {activeCase.tag}
+                          </p>
+                          <p className="text-xs text-muted-foreground mt-0.5">
+                            {lang === "en" ? `${active + 1} of ${cases.length}` : `${active + 1} sur ${cases.length}`}
+                          </p>
                         </div>
-
-                        <SafeLink to={demoHref}>
-                          <Button variant="tengo" className="group/btn h-11">
-                            {t.cta}
-                            <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                          </Button>
-                        </SafeLink>
                       </div>
-                    </motion.article>
-                  );
-                })}
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+                        <activeCase.icon className="w-5 h-5 text-primary" />
+                      </div>
+                    </div>
+                    <h2 className="font-display text-2xl md:text-3xl lg:text-[1.85rem] font-semibold tracking-tight leading-[1.2] max-w-2xl">
+                      {activeCase.title}
+                    </h2>
+                  </div>
+
+                  {/* Triptyque */}
+                  <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
+                    {[
+                      { label: t.quote, body: activeCase.context, accent: "bg-muted-foreground/40", num: "1" },
+                      { label: t.answer, body: activeCase.answer, accent: "bg-primary", num: "2" },
+                      { label: t.result, body: activeCase.result, accent: "bg-[hsl(var(--secondary))]", num: "3" },
+                    ].map((b, i) => (
+                      <motion.div
+                        key={b.label}
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
+                        className="p-7 sm:p-8"
+                      >
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className={`w-1.5 h-1.5 rounded-full ${b.accent}`} />
+                          <p className="text-[0.7rem] uppercase tracking-[0.14em] font-semibold text-muted-foreground">
+                            {`${b.num}. ${b.label}`}
+                          </p>
+                        </div>
+                        <p className="text-sm leading-relaxed text-foreground/85">{b.body}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Footer CTA */}
+                  <div className="px-8 sm:px-10 py-6 border-t border-border bg-muted/20 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
+                    <p className="text-sm text-muted-foreground">
+                      {lang === "en"
+                        ? "Want to see this case on real data from your area?"
+                        : "Vous voulez voir ce cas sur de vraies données de votre zone ?"}
+                    </p>
+                    <SafeLink to={demoHref}>
+                      <Button variant="tengo" className="group/btn h-11">
+                        {t.cta}
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                      </Button>
+                    </SafeLink>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </section>
