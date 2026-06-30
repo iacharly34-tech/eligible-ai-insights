@@ -11,6 +11,7 @@ import { CabinetROICalculator } from "@/components/cabinet/CabinetROICalculator"
 import { CabinetHowItWorks } from "@/components/cabinet/CabinetHowItWorks";
 import { CabinetCompare } from "@/components/cabinet/CabinetCompare";
 import { CabinetPersonas } from "@/components/cabinet/CabinetPersonas";
+import { CabinetTestimonial } from "@/components/cabinet/CabinetTestimonial";
 import { CabinetPricing } from "@/components/cabinet/CabinetPricing";
 import { CabinetFAQ } from "@/components/cabinet/CabinetFAQ";
 import { CabinetFinalCTA } from "@/components/cabinet/CabinetFinalCTA";
@@ -31,6 +32,7 @@ const HomePage = () => {
           <CabinetROICalculator />
           <CabinetHowItWorks />
           <CabinetCompare />
+          <CabinetTestimonial />
           <CabinetPersonas />
           <CabinetPricing />
           <CabinetFAQ />
