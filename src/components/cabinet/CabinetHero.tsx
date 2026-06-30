@@ -104,7 +104,7 @@ export const CabinetHero = () => {
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl">
-              {t.sub} <strong className="text-foreground font-semibold">{t.subStrong}</strong>
+              {t.sub}
             </p>
 
             <ul className="mt-6 space-y-3">
