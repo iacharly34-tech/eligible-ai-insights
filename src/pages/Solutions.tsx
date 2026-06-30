@@ -7,6 +7,8 @@ import { StructuredData } from "@/components/StructuredData";
 import { MobileCTABar } from "@/components/MobileCTABar";
 import { ArrowRight, Rocket, Users, MapPin, TrendingUp, UserMinus, Briefcase } from "lucide-react";
 import { useLang, localizedHref } from "@/hooks/useLang";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
 
 const copy = {
   fr: {
@@ -150,6 +152,10 @@ const Solutions = () => {
   const t = copy[lang];
   const demoHref = localizedHref("/demo", lang);
   const cases = lang === "en" ? casesEN : casesFR;
+  const [active, setActive] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: trackRef, offset: ["start 30%", "end 70%"] });
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
     <>
@@ -174,53 +180,138 @@ const Solutions = () => {
           </section>
 
           {/* Cases */}
-          <section className="pb-24 px-4" aria-label="Cas d'usage">
-            <div className="container mx-auto max-w-5xl space-y-6">
-              {cases.map((c, index) => (
-                <article
-                  key={index}
-                  className="group p-8 sm:p-10 rounded-2xl border border-border bg-card hover:border-primary/30 transition-all duration-500"
-                >
-                  <div className="flex flex-col md:flex-row gap-8">
-                    <div className="md:w-48 shrink-0">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                        <c.icon className="w-5 h-5 text-primary" />
+          {/* Sticky tabs picker (desktop) */}
+          <section className="hidden lg:block px-4 mb-16" aria-label="Sélecteur de cas">
+            <div className="container mx-auto max-w-6xl">
+              <div className="flex flex-wrap gap-2 justify-center">
+                {cases.map((c, i) => (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      setActive(i);
+                      document.getElementById(`case-${i}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
+                    }}
+                    className={`group inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm transition-all ${
+                      active === i
+                        ? "bg-primary text-primary-foreground border-primary shadow-sm"
+                        : "bg-card border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                    }`}
+                  >
+                    <c.icon className="w-3.5 h-3.5" />
+                    <span className="font-medium">{c.tag}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Cases — zigzag scroll narrative */}
+          <section className="pb-24 px-4 relative" aria-label="Cas d'usage">
+            <div ref={trackRef} className="container mx-auto max-w-6xl relative">
+              {/* Vertical progress line (desktop) */}
+              <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px bg-border/60 pointer-events-none">
+                <motion.div
+                  style={{ height: lineHeight }}
+                  className="w-px bg-gradient-to-b from-primary via-primary to-primary/30 origin-top"
+                />
+              </div>
+
+              <div className="space-y-24 md:space-y-32">
+                {cases.map((c, index) => {
+                  const reverse = index % 2 === 1;
+                  return (
+                    <motion.article
+                      key={index}
+                      id={`case-${index}`}
+                      initial={{ opacity: 0, y: 60 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-15%", amount: 0.3 }}
+                      onViewportEnter={() => setActive(index)}
+                      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                      className="relative grid lg:grid-cols-2 gap-10 lg:gap-20 items-center"
+                    >
+                      {/* Node on the line */}
+                      <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-background border-2 border-primary items-center justify-center z-10">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                       </div>
-                      <p className="text-[0.7rem] uppercase tracking-[0.14em] text-primary font-semibold mb-2">
-                        {`0${index + 1} — ${c.tag}`}
-                      </p>
-                    </div>
 
-                    <div className="flex-1">
-                      <h2 className="font-display text-xl md:text-2xl font-semibold tracking-tight leading-snug mb-6">
-                        {c.title}
-                      </h2>
+                      {/* Left: number + visual */}
+                      <div className={`${reverse ? "lg:order-2" : ""}`}>
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.8, delay: 0.1 }}
+                          className="relative aspect-[5/4] rounded-3xl bg-gradient-to-br from-card via-card to-muted/40 border border-border overflow-hidden p-8 flex flex-col justify-between"
+                        >
+                          {/* huge number */}
+                          <div className="font-display text-[10rem] leading-none font-semibold text-primary/10 select-none -mt-4 -ml-2">
+                            {String(index + 1).padStart(2, "0")}
+                          </div>
 
-                      <div className="grid md:grid-cols-3 gap-6 mb-8">
-                        <div>
-                          <p className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-2">{t.quote}</p>
-                          <p className="text-sm leading-relaxed text-foreground/85">{c.context}</p>
-                        </div>
-                        <div>
-                          <p className="text-[0.7rem] uppercase tracking-[0.14em] text-primary font-semibold mb-2">{t.answer}</p>
-                          <p className="text-sm leading-relaxed text-foreground/85">{c.answer}</p>
-                        </div>
-                        <div>
-                          <p className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-2">{t.result}</p>
-                          <p className="text-sm leading-relaxed text-foreground/85">{c.result}</p>
-                        </div>
+                          {/* floating icon badge */}
+                          <motion.div
+                            initial={{ y: 10, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.25 }}
+                            className="absolute top-8 right-8 w-16 h-16 rounded-2xl bg-primary/10 backdrop-blur-sm border border-primary/20 flex items-center justify-center"
+                          >
+                            <c.icon className="w-7 h-7 text-primary" />
+                          </motion.div>
+
+                          {/* tag + outcome pill */}
+                          <div className="relative z-10 space-y-3">
+                            <p className="text-[0.7rem] uppercase tracking-[0.18em] text-primary font-semibold">
+                              {c.tag}
+                            </p>
+                            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-sm border border-border text-xs">
+                              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                              <span className="text-muted-foreground">{t.result}</span>
+                            </div>
+                            <p className="text-sm leading-relaxed text-foreground/90 pr-4">
+                              {c.result}
+                            </p>
+                          </div>
+
+                          {/* subtle grain */}
+                          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,hsl(var(--primary)/0.08),transparent_60%)] pointer-events-none" />
+                        </motion.div>
                       </div>
 
-                      <SafeLink to={demoHref}>
-                        <Button variant="tengo" className="group/btn h-11">
-                          {t.cta}
-                          <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                        </Button>
-                      </SafeLink>
-                    </div>
-                  </div>
-                </article>
-              ))}
+                      {/* Right: narrative */}
+                      <div className={`${reverse ? "lg:order-1 lg:text-right" : ""}`}>
+                        <p className="text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground font-semibold mb-4">
+                          {`Cas ${String(index + 1).padStart(2, "0")} · ${c.tag}`}
+                        </p>
+                        <h2 className="font-display text-2xl md:text-3xl lg:text-[2rem] font-semibold tracking-tight leading-[1.15] mb-6">
+                          {c.title}
+                        </h2>
+
+                        <div className="space-y-5 mb-8">
+                          <div className={`relative pl-5 ${reverse ? "lg:pl-0 lg:pr-5" : ""}`}>
+                            <span className={`absolute top-2 w-2 h-2 rounded-full bg-muted-foreground/40 ${reverse ? "lg:right-0 left-0 lg:left-auto" : "left-0"}`} />
+                            <p className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-1">{t.quote}</p>
+                            <p className="text-sm leading-relaxed text-foreground/80">{c.context}</p>
+                          </div>
+                          <div className={`relative pl-5 ${reverse ? "lg:pl-0 lg:pr-5" : ""}`}>
+                            <span className={`absolute top-2 w-2 h-2 rounded-full bg-primary ${reverse ? "lg:right-0 left-0 lg:left-auto" : "left-0"}`} />
+                            <p className="text-[0.7rem] uppercase tracking-[0.14em] text-primary font-semibold mb-1">{t.answer}</p>
+                            <p className="text-sm leading-relaxed text-foreground/90">{c.answer}</p>
+                          </div>
+                        </div>
+
+                        <SafeLink to={demoHref}>
+                          <Button variant="tengo" className="group/btn h-11">
+                            {t.cta}
+                            <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                          </Button>
+                        </SafeLink>
+                      </div>
+                    </motion.article>
+                  );
+                })}
+              </div>
             </div>
           </section>
 
