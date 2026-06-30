@@ -6,19 +6,18 @@ import { useLang, localizedHref } from "@/hooks/useLang";
 
 const copy = {
   fr: {
-    badge: "Plateforme de détection de prospects pour cabinets d'expertise comptable",
-    h1a: "La prospection des cabinets d'expertise comptable,",
-    h1b: "structurée et conforme.",
-    sub: 'Eligibly identifie chaque jour les sociétés nouvellement immatriculées correspondant à votre clientèle cible, les qualifie selon vos critères, et livre à vos associés une sélection priorisée — dans vos canaux préférés.',
-    subStrong: "Une source de développement structurée, prévisible et conforme.",
+    badge: "Détection de prospects pour cabinets d'expertise comptable",
+    h1a: "L'IA transforme aussi",
+    h1b: "votre prospection.",
+    sub: "Chaque matin, Eligibly identifie les sociétés fraîchement immatriculées qui ressemblent à vos meilleurs clients, les qualifie, et livre la sélection à vos associés — là où ils travaillent déjà.",
     bullets: [
-      "Données souveraines issues de l'INPI, du Sirene et du BODACC — jamais mutualisées",
-      "Qualification automatisée selon vos critères ICP (secteur, capital, zone, forme juridique)",
-      "Scoring explicable, auditable, et affiné par les retours de vos associés",
+      "Sources officielles INPI · Sirene · BODACC, hébergées en France",
+      "Critères ICP : secteur, capital, zone, forme juridique",
+      "Score expliqué, affiné par les retours de vos associés",
     ],
     ctaPrimary: "Demander un échantillon de 3 leads",
     ctaSecondary: "Discuter sur WhatsApp",
-    ctaNote: "Données INSEE officielles · Hébergement France · DPA fourni · Livraison sous 48 h, sans engagement",
+    ctaNote: "Livraison sous 48 h · Sans engagement",
     trustSources: "Sources officielles",
     trustBuiltWith: "Conçu avec",
     trustPilots: "4 cabinets partenaires",
@@ -41,19 +40,18 @@ const copy = {
     ],
   },
   en: {
-    badge: "Lead detection platform for accounting firms",
-    h1a: "Business development for accounting firms,",
-    h1b: "structured and compliant.",
-    sub: "Eligibly identifies — every morning — the newly registered companies that match your target client base, qualifies them against your criteria, and delivers a prioritized shortlist to your partners — in the channels you already use.",
-    subStrong: "A structured, predictable and compliant growth channel.",
+    badge: "Lead detection for accounting firms",
+    h1a: "AI is rewriting",
+    h1b: "your prospecting too.",
+    sub: "Every morning, Eligibly spots the newly registered companies that look like your best clients, qualifies them, and drops the shortlist where your partners already work.",
     bullets: [
-      "Sovereign data from INPI, Sirene and BODACC — never pooled across firms",
-      "Automated qualification on your ICP (industry, capital, area, legal form)",
-      "Explainable, auditable scoring, refined by your partners' feedback",
+      "Official sources — INPI · Sirene · BODACC, hosted in France",
+      "ICP filters: industry, capital, area, legal form",
+      "Explainable score, sharpened by your partners' feedback",
     ],
     ctaPrimary: "Request a 3-lead sample",
     ctaSecondary: "Chat on WhatsApp",
-    ctaNote: "Official INSEE data · French hosting · DPA provided · Delivered within 48 h, no commitment",
+    ctaNote: "Delivered within 48 h · No commitment",
     trustSources: "Official sources",
     trustBuiltWith: "Built with",
     trustPilots: "4 partner firms",
@@ -106,7 +104,7 @@ export const CabinetHero = () => {
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl">
-              {t.sub} <strong className="text-foreground font-semibold">{t.subStrong}</strong>
+              {t.sub}
             </p>
 
             <ul className="mt-6 space-y-3">
