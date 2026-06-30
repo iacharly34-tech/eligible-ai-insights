@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
 import { ArrowRight, Database, Filter, Sparkles, Bell, RefreshCw, CheckCircle2, Slack, Mail, Shield, Lock, FileText, Server } from "lucide-react";
 import { useLang, localizedHref } from "@/hooks/useLang";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const copy = {
   fr: {
@@ -21,10 +23,10 @@ const copy = {
     howH2em: "rendez-vous qualifiés",
     howH2b: ".",
     pillars: [
-      { t: "Consolidation des sources", d: "INPI, Sirene, BODACC, RNCS, RNE. Toutes les SASU et SAS françaises fraîchement immatriculées, rafraîchies chaque nuit." },
-      { t: "Filtres IA amont", d: "Verticale, capital, forme juridique, zone, dirigeant primo-entrepreneur, présence d'un CAC. Vous décrivez votre cabinet idéal, l'IA fait le reste." },
-      { t: "Scoring expliqué", d: "Chaque société reçoit un score 0-100 avec les 3 raisons clés. Pas de boîte noire — votre équipe sait pourquoi un lead est prioritaire." },
-      { t: "Alertes là où vous travaillez", d: "Vos canaux et outils de prédilection. Vous décidez du canal et du rythme. Pas un dashboard de plus." },
+      { t: "Consolidation des sources", d: "INPI, Sirene, BODACC, RNCS, RNE. Toutes les SASU et SAS françaises fraîchement immatriculées, rafraîchies chaque nuit.", bullets: ["INPI · Sirene · BODACC · RNE", "Rafraîchissement quotidien à minuit", "Dédoublonnage SIREN automatique"] },
+      { t: "Filtres IA amont", d: "Verticale, capital, forme juridique, zone, dirigeant primo-entrepreneur, présence d'un CAC. Vous décrivez votre cabinet idéal, l'IA fait le reste.", bullets: ["+30 critères paramétrables", "Géo fine : EPCI, IRIS, code postal", "Exclusions sectorielles natives"] },
+      { t: "Scoring expliqué", d: "Chaque société reçoit un score 0-100 avec les 3 raisons clés. Pas de boîte noire — votre équipe sait pourquoi un lead est prioritaire.", bullets: ["Score 0-100 par lead", "3 raisons clés affichées", "Modèle propre à votre cabinet"] },
+      { t: "Alertes là où vous travaillez", d: "Vos canaux et outils de prédilection. Vous décidez du canal et du rythme. Pas un dashboard de plus.", bullets: ["Email, Slack, Teams, WhatsApp", "Cadence quotidienne ou hebdo", "Webhook vers vos outils internes"] },
     ],
     anatEyebrow: "Anatomie d'une alerte",
     anatH2a: "Tout ce qu'il faut pour décrocher le téléphone, ",
@@ -75,10 +77,10 @@ const copy = {
     howH2em: "qualified meetings",
     howH2b: ".",
     pillars: [
-      { t: "Source consolidation", d: "INPI, Sirene, BODACC, RNCS, RNE. Every freshly registered French SASU and SAS, refreshed every night." },
-      { t: "Upstream AI filters", d: "Vertical, capital, legal form, area, first-time founder, presence of an auditor. You describe your ideal firm, the AI handles the rest." },
-      { t: "Explainable scoring", d: "Every company gets a 0-100 score with the 3 key reasons. No black box — your team knows why a lead is a priority." },
-      { t: "Alerts where you work", d: "Your preferred channels and tools. You choose the channel and the cadence. Not yet another dashboard." },
+      { t: "Source consolidation", d: "INPI, Sirene, BODACC, RNCS, RNE. Every freshly registered French SASU and SAS, refreshed every night.", bullets: ["INPI · Sirene · BODACC · RNE", "Daily refresh at midnight", "Automatic SIREN deduplication"] },
+      { t: "Upstream AI filters", d: "Vertical, capital, legal form, area, first-time founder, presence of an auditor. You describe your ideal firm, the AI handles the rest.", bullets: ["30+ configurable criteria", "Fine geo: EPCI, IRIS, postcode", "Native sector exclusions"] },
+      { t: "Explainable scoring", d: "Every company gets a 0-100 score with the 3 key reasons. No black box — your team knows why a lead is a priority.", bullets: ["0-100 score per lead", "Top 3 reasons shown", "Model specific to your firm"] },
+      { t: "Alerts where you work", d: "Your preferred channels and tools. You choose the channel and the cadence. Not yet another dashboard.", bullets: ["Email, Slack, Teams, WhatsApp", "Daily or weekly cadence", "Webhook to your internal tools"] },
     ],
     anatEyebrow: "Anatomy of an alert",
     anatH2a: "Everything you need to pick up the phone, ",
@@ -125,6 +127,9 @@ const Produit = () => {
   const demoHref = localizedHref("/demo", lang);
   const pillarIcons = [Database, Filter, Sparkles, Bell];
   const secIcons = [Shield, Server, Lock, FileText];
+  const [activePillar, setActivePillar] = useState(0);
+  const ActivePillarIcon = pillarIcons[activePillar];
+  const activePillarData = t.pillars[activePillar];
   return (
     <>
       <SEOHead />
@@ -153,7 +158,7 @@ const Produit = () => {
             </div>
           </section>
 
-          {/* 4 piliers */}
+          {/* 4 piliers — interactive explorer */}
           <section className="py-20 md:py-28 px-4 bg-card/30">
             <div className="container mx-auto max-w-6xl">
               <div className="max-w-2xl mb-14">
@@ -162,19 +167,93 @@ const Produit = () => {
                   {t.howH2a}<em className="italic text-primary font-medium">{t.howH2em}</em>{t.howH2b}
                 </h2>
               </div>
-              <div className="grid md:grid-cols-2 gap-5">
-                {t.pillars.map((p, i) => {
-                  const Icon = pillarIcons[i];
-                  return (
-                    <div key={p.t} className="rounded-2xl border border-border bg-background p-7">
-                      <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
-                        <Icon className="w-5 h-5" />
+
+              <div className="grid lg:grid-cols-[280px,1fr] gap-8 lg:gap-12">
+                {/* Rail */}
+                <aside className="lg:sticky lg:top-28 lg:self-start">
+                  <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible -mx-4 px-4 lg:mx-0 lg:px-0 pb-2 lg:pb-0">
+                    {t.pillars.map((p, i) => {
+                      const Icon = pillarIcons[i];
+                      const isActive = activePillar === i;
+                      return (
+                        <button
+                          key={p.t}
+                          onClick={() => setActivePillar(i)}
+                          className={`group relative shrink-0 lg:w-full text-left rounded-xl border transition-all duration-300 px-4 py-3 flex items-center gap-3 ${
+                            isActive
+                              ? "bg-background border-primary/50 shadow-sm"
+                              : "bg-transparent border-border hover:border-primary/30 hover:bg-background/50"
+                          }`}
+                        >
+                          <span className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${isActive ? "bg-primary/10 text-primary" : "bg-muted text-muted-foreground"}`}>
+                            <Icon className="w-4 h-4" />
+                          </span>
+                          <span className={`text-sm font-medium transition-colors ${isActive ? "text-foreground" : "text-muted-foreground"}`}>
+                            {p.t}
+                          </span>
+                          {isActive && (
+                            <motion.span
+                              layoutId="pillar-indicator"
+                              className="hidden lg:block absolute right-3 w-1.5 h-1.5 rounded-full bg-primary"
+                              transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                            />
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </aside>
+
+                {/* Active pillar panel */}
+                <motion.div
+                  key={activePillar}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                  className="relative rounded-3xl border border-border bg-background overflow-hidden"
+                >
+                  <div className="relative px-8 sm:px-10 pt-8 pb-6 border-b border-border bg-gradient-to-br from-primary/[0.04] via-transparent to-transparent">
+                    <div className="flex items-start justify-between gap-6 mb-5">
+                      <div className="flex items-center gap-3">
+                        <span className="font-display text-5xl font-semibold text-primary/30 leading-none tabular-nums">
+                          {String(activePillar + 1).padStart(2, "0")}
+                        </span>
+                        <p className="text-[0.7rem] uppercase tracking-[0.18em] text-primary font-semibold">
+                          {lang === "en" ? `Pillar ${activePillar + 1} of ${t.pillars.length}` : `Brique ${activePillar + 1} sur ${t.pillars.length}`}
+                        </p>
                       </div>
-                      <h3 className="font-display text-xl font-semibold text-foreground mb-2">{p.t}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{p.d}</p>
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+                        <ActivePillarIcon className="w-5 h-5 text-primary" />
+                      </div>
                     </div>
-                  );
-                })}
+                    <h3 className="font-display text-2xl md:text-3xl font-semibold tracking-tight leading-[1.2] mb-3">
+                      {activePillarData.t}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed max-w-2xl">
+                      {activePillarData.d}
+                    </p>
+                  </div>
+
+                  <div className="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border">
+                    {activePillarData.bullets.map((b, i) => (
+                      <motion.div
+                        key={b}
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
+                        className="p-6"
+                      >
+                        <div className="flex items-center gap-2 mb-2">
+                          <CheckCircle2 className="w-4 h-4 text-primary" />
+                          <span className="text-[0.7rem] uppercase tracking-[0.14em] font-semibold text-muted-foreground">
+                            {`0${i + 1}`}
+                          </span>
+                        </div>
+                        <p className="text-sm leading-relaxed text-foreground/85">{b}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
               </div>
             </div>
           </section>
@@ -256,7 +335,7 @@ const Produit = () => {
             </div>
           </section>
 
-          {/* Sécurité & Conformité */}
+          {/* Sécurité & Conformité — bento */}
           <section className="py-20 md:py-28 px-4">
             <div className="container mx-auto max-w-6xl">
               <div className="max-w-2xl mb-14">
@@ -265,17 +344,34 @@ const Produit = () => {
                   {t.secH2a}<em className="italic text-primary font-medium">{t.secH2em}</em>{t.secH2b}
                 </h2>
               </div>
-              <div className="grid md:grid-cols-2 gap-5">
+              <div className="grid md:grid-cols-6 gap-5">
                 {t.secCards.map((p, i) => {
                   const Icon = secIcons[i];
+                  // Bento layout: 0=wide, 1=narrow, 2=narrow, 3=wide
+                  const span = i === 0 || i === 3 ? "md:col-span-4" : "md:col-span-2";
                   return (
-                    <div key={p.t} className="rounded-2xl border border-border bg-background p-7">
-                      <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
-                        <Icon className="w-5 h-5" />
+                    <motion.div
+                      key={p.t}
+                      initial={{ opacity: 0, y: 24 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-10%" }}
+                      transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                      className={`group relative rounded-2xl border border-border bg-background p-7 overflow-hidden hover:border-primary/30 transition-colors ${span}`}
+                    >
+                      <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-primary/[0.04] group-hover:bg-primary/[0.07] transition-colors pointer-events-none" />
+                      <div className="relative">
+                        <div className="flex items-center gap-3 mb-5">
+                          <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                            <Icon className="w-5 h-5" />
+                          </div>
+                          <span className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold">
+                            {`0${i + 1}`}
+                          </span>
+                        </div>
+                        <h3 className="font-display text-xl font-semibold text-foreground mb-2">{p.t}</h3>
+                        <p className="text-muted-foreground leading-relaxed">{p.d}</p>
                       </div>
-                      <h3 className="font-display text-xl font-semibold text-foreground mb-2">{p.t}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{p.d}</p>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
