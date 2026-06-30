@@ -48,9 +48,11 @@ const Email = ({ fullName, company, message }: Props) => (
           ) : null}
           <Hr style={hr} />
           <Text style={text}>
-            Une question d'ici-là&nbsp;? Répondez simplement à cet email, ou écrivez-nous
-            sur WhatsApp au <strong>+33 6 03 26 31 00</strong>.
+            Une question d'ici-là&nbsp;? Répondez simplement à cet email, ou écrivez-nous sur WhatsApp.
           </Text>
+          <Section style={{ textAlign: 'center' as const, margin: '16px 0 24px' }}>
+            <Link href="https://wa.me/33603263100" style={whatsappButton}>💬 WhatsApp</Link>
+          </Section>
         </Section>
         <Text style={signature}>— L'équipe Eligibly</Text>
         <Text style={footer}>
@@ -158,3 +160,14 @@ const footer = {
   padding: '0 4px',
 }
 const footerLink = { color: '#D85A30', textDecoration: 'none' }
+const whatsappButton = {
+  display: 'inline-block' as const,
+  backgroundColor: '#25D366',
+  color: '#ffffff',
+  fontSize: '14px',
+  fontWeight: 600 as const,
+  textDecoration: 'none',
+  padding: '12px 24px',
+  borderRadius: '6px',
+  fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+}
