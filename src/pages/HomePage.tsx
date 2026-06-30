@@ -7,10 +7,8 @@ import { InternalLinksManager } from "@/components/InternalLinksManager";
 
 import { CabinetHero } from "@/components/cabinet/CabinetHero";
 import { CabinetProblems } from "@/components/cabinet/CabinetProblems";
-import { CabinetROICalculator } from "@/components/cabinet/CabinetROICalculator";
 import { CabinetHowItWorks } from "@/components/cabinet/CabinetHowItWorks";
 import { CabinetCompare } from "@/components/cabinet/CabinetCompare";
-import { CabinetPersonas } from "@/components/cabinet/CabinetPersonas";
 import { CabinetTestimonial } from "@/components/cabinet/CabinetTestimonial";
 import { CabinetPricing } from "@/components/cabinet/CabinetPricing";
 import { CabinetFAQ } from "@/components/cabinet/CabinetFAQ";
@@ -26,14 +24,14 @@ const HomePage = () => {
         <MobileCTABar />
 
         <main id="main-content" tabIndex={-1} className="focus:outline-none" role="main">
-          {/* Pivot juin 2026 — Moteur d'alertes nouveaux clients pour cabinets EC */}
+          {/* Pivot juin 2026 — Moteur de détection de leads pour cabinets EC.
+              Home resserrée à 7 sections : promesse → friction → mécanique → preuve → comparatif → tarif → FAQ → CTA.
+              ROI calculator et Personas déplacés sur /tarifs et /solutions pour resserrer le scroll. */}
           <CabinetHero />
           <CabinetProblems />
-          <CabinetROICalculator />
           <CabinetHowItWorks />
-          <CabinetCompare />
           <CabinetTestimonial />
-          <CabinetPersonas />
+          <CabinetCompare />
           <CabinetPricing />
           <CabinetFAQ />
           <CabinetFinalCTA />

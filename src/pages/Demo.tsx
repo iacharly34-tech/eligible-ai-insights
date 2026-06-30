@@ -126,7 +126,7 @@ const Demo = () => {
   const productBenefits = [
     { icon: Clock, title: "Gagnez 25 h/semaine", description: "Fini les annuaires, Excel et la prospection à l'aveugle." },
     { icon: Target, title: "Leads pré-qualifiés", description: "Filtres et scoring IA sur votre profil idéal de client." },
-    { icon: TrendingUp, title: "Pipeline récurrent", description: "Chaque matin, votre digest leads PREMIUM directement dans votre boîte email." },
+    { icon: TrendingUp, title: "Pipeline récurrent", description: "Chaque matin, votre digest de leads qualifiés directement dans votre boîte email." },
   ];
 
   return (
@@ -142,24 +142,28 @@ const Demo = () => {
           <div className="container mx-auto max-w-4xl text-center relative z-10">
             <span className="inline-flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-[0.3em]">
               <Rocket className="w-4 h-4" />
-              {language === "en" ? "Your first lead — free" : "Votre premier lead — offert"}
+              {language === "en" ? "Sample of 3 qualified leads" : "Échantillon de 3 leads qualifiés"}
             </span>
             <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold font-display leading-[1.05] tracking-tight">
               {language === "en" ? (
-                <>Receive your <span className="bg-gradient-highlight bg-clip-text text-transparent">first lead for free</span></>
+                <>Get a sample of <span className="bg-gradient-highlight bg-clip-text text-transparent">3 qualified leads</span></>
               ) : (
-                <>Recevez votre <span className="bg-gradient-highlight bg-clip-text text-transparent">premier lead gratuit</span></>
+                <>Recevez un échantillon de <span className="bg-gradient-highlight bg-clip-text text-transparent">3 leads qualifiés</span></>
               )}
             </h1>
             <p className="mt-8 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {language === "en"
-                ? "Share your ICP and professional contact details. Within 48 hours, we deliver one premium lead newly registered in your zone, qualified by Eligibly — no credit card, no commitment."
-                : "Partagez votre ICP et vos coordonnées professionnelles. Sous 48 h, nous vous livrons un lead premium fraîchement immatriculé de votre zone, qualifié par Eligibly — sans CB, sans engagement."}
+                ? "Share your ICP and professional contact details. Within 48 hours we deliver three newly registered companies from your area, qualified against your criteria — no commitment."
+                : "Partagez votre ICP et vos coordonnées professionnelles. Sous 48 h, nous vous livrons trois sociétés fraîchement immatriculées de votre zone, qualifiées sur vos critères — sans engagement."}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-6 text-xs text-muted-foreground">
-              <span>🎁 1 lead premium offert</span>
-              <span>⏱️ Livraison sous 48 h</span>
-              <span>🔒 Sans CB · sans engagement</span>
+              <span>Données INSEE officielles</span>
+              <span>·</span>
+              <span>Hébergement France</span>
+              <span>·</span>
+              <span>Livraison sous 48 h</span>
+              <span>·</span>
+              <span>Sans engagement</span>
             </div>
           </div>
         </section>
@@ -173,10 +177,10 @@ const Demo = () => {
                 <>
                   <div className="mb-8">
                     <h2 className="text-2xl font-bold font-display tracking-tight mb-2">
-                      Réclamez votre premier lead gratuit
+                      Demander votre échantillon de 3 leads
                     </h2>
                     <p className="text-sm text-muted-foreground">
-                      Donnez-nous vos coordonnées professionnelles et votre profil cible. Sous 48 h, nous vous envoyons un lead premium, qualifié selon vos critères.
+                      Donnez-nous vos coordonnées professionnelles et votre profil cible. Sous 48 h, nous vous envoyons trois leads qualifiés selon vos critères.
                     </p>
                   </div>
 
@@ -198,11 +202,11 @@ const Demo = () => {
                       <Textarea id="message" value={formData.message} onChange={(e) => handleInputChange("message", e.target.value)} placeholder="Votre ICP : zone géographique, formes juridiques, secteurs ciblés, capital min/max, exclusions…" className="resize-none" rows={3} />
                     </div>
                     <Button type="submit" disabled={submitting} className="w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-[0.15em] text-xs font-semibold group disabled:opacity-60">
-                      {submitting ? (language === "en" ? "Sending…" : "Envoi…") : "Recevoir mon premier lead gratuit"}
+                      {submitting ? (language === "en" ? "Sending…" : "Envoi…") : "Demander mon échantillon de 3 leads"}
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
                     <p className="text-center text-xs text-muted-foreground">
-                      1 lead premium livré sous 48 h. Sans CB, sans engagement. Vos coordonnées ne sont jamais revendues.
+                      3 leads livrés sous 48 h. Sans engagement. Vos coordonnées ne sont jamais revendues.
                     </p>
                   </SecureFormWrapper>
                 </>
@@ -243,13 +247,13 @@ const Demo = () => {
                 <div className="p-6 rounded-2xl border border-primary/20 bg-primary/5 text-center">
                   <h4 className="font-bold text-sm mb-2">Encore un doute ?</h4>
                   <p className="text-xs text-muted-foreground mb-4">
-                    Jugez sur pièces : recevez d'abord un lead premium, gratuitement, avant toute décision.
+                    Jugez sur pièces : 3 leads qualifiés livrés sous 48 h, sans engagement, avant toute décision.
                   </p>
                   <Button
                     onClick={() => document.getElementById("demo-form")?.scrollIntoView({ behavior: "smooth" })}
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-[0.15em] text-xs font-semibold"
                   >
-                    Recevoir mon premier lead gratuit
+                    Demander un échantillon de 3 leads
                   </Button>
                 </div>
               </div>
@@ -266,10 +270,10 @@ const Demo = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[150px]" />
           <div className="container mx-auto max-w-3xl text-center relative z-10">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display leading-[1.05] tracking-tight">
-              Un lead premium vaut mille slides.
+              Trois leads valent mille slides.
             </h2>
             <p className="mt-8 text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Recevez gratuitement une société fraîchement immatriculée qualifiée selon votre ICP. Sans CB, sans engagement.
+              Recevez un échantillon de trois sociétés fraîchement immatriculées, qualifiées selon votre ICP. Sans engagement.
             </p>
             <div className="mt-12">
               <Button
@@ -277,12 +281,12 @@ const Demo = () => {
                 onClick={() => document.getElementById("demo-form")?.scrollIntoView({ behavior: "smooth" })}
                 className="h-14 px-12 text-sm font-semibold uppercase tracking-[0.2em] bg-primary text-primary-foreground hover:bg-primary/90 group"
               >
-                Recevoir mon premier lead gratuit
+                Demander un échantillon de 3 leads
                 <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
             <p className="mt-8 text-xs text-muted-foreground tracking-wide">
-              ✓ Sans CB · ✓ Livraison sous 48 h · ✓ Coordonnées jamais revendues
+              Données INSEE officielles · Hébergement France · DPA fourni · Livraison sous 48 h
             </p>
           </div>
         </section>

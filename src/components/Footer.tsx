@@ -11,7 +11,6 @@ export const Footer = () => {
       links: [
         { name: language === 'en' ? 'Overview' : 'Vue d’ensemble', href: language === 'en' ? '/en/product' : '/produit' },
         { name: language === 'en' ? 'How it works' : 'Comment ça marche', href: '/#how' },
-        { name: language === 'en' ? 'ROI calculator' : 'Calculateur ROI', href: '/#roi' },
         { name: language === 'en' ? 'Pricing' : 'Tarifs', href: language === 'en' ? '/en/pricing' : '/tarifs' },
         { name: language === 'en' ? 'Book a demo' : 'Réserver une démo', href: language === 'en' ? '/en/demo' : '/demo' },
       ],
@@ -120,8 +119,13 @@ export const Footer = () => {
           ))}
         </div>
 
-        {/* Bottom Section */}
-        <div className="mt-8 pt-4 border-t border-border">
+        {/* Legal reassurance + bottom section */}
+        <div className="mt-8 pt-4 border-t border-border space-y-3">
+          <p className="text-[11px] text-foreground/60 leading-relaxed max-w-4xl">
+            {language === 'en'
+              ? 'Published by Eligibly SAS — registered in Paris (France). Data hosting in France (European Union). GDPR-compliant — DPA available on request. Official sources only: INPI, INSEE/Sirene, BODACC. Contractual enrichment partners, no transfer outside the EU.'
+              : "Édité par Eligibly SAS — siège social à Paris (France). Hébergement des données en France (Union européenne). Traitement conforme RGPD — DPA fourni sur demande. Sources officielles uniquement : INPI, INSEE/Sirene, BODACC. Partenaires d'enrichissement contractuels, sans transfert hors UE."}
+          </p>
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             <div className="text-xs text-foreground/70">
               © 2026 Eligibly — {language === 'en' ? 'All rights reserved.' : 'Tous droits réservés.'}

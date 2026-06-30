@@ -36,8 +36,8 @@ const copy = {
     finalH2a: "Et si vous passiez ",
     finalH2em: "de la lecture à l'action",
     finalH2b: " ?",
-    finalSub: "Le meilleur moyen de mettre nos analyses en pratique : recevez un premier lead premium sur votre vraie zone et votre vraie verticale, gratuitement.",
-    finalCta: "Recevoir mon premier lead gratuit",
+    finalSub: "Le meilleur moyen de mettre nos analyses en pratique : recevez un échantillon de 3 leads qualifiés sur votre vraie zone et votre vraie verticale.",
+    finalCta: "Demander un échantillon de 3 leads",
     finalChips: "✓ Sans CB · ✓ Livré sous 48 h · ✓ Sur votre zone et votre ICP",
     upcoming: [
       { title: "Baromètre — Édition T4 2026", desc: "Prochaine vague terrain avec une cohorte élargie de cabinets pilotes." },
@@ -80,9 +80,9 @@ const copy = {
     finalH2a: "Ready to move from ",
     finalH2em: "reading to action",
     finalH2b: "?",
-    finalSub: "The best way to put our analyses into practice: receive a first premium lead on your real area and your real vertical, for free.",
-    finalCta: "Get my first lead — free",
-    finalChips: "✓ No credit card · ✓ Delivered within 48h · ✓ On your area and ICP",
+    finalSub: "The best way to put our analyses into practice: get a sample of 3 qualified leads on your real area and your real vertical.",
+    finalCta: "Request a 3-lead sample",
+    finalChips: "Delivered within 48h · On your area and ICP · No commitment",
     upcoming: [
       { title: "Barometer — Q4 2026 edition", desc: "Next field wave with a broader cohort of partner firms." },
       { title: "Observatory — July 2026 edition", desc: "New monthly edition focused on the tech & e-commerce verticals." },

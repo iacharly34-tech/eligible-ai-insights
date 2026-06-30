@@ -22,9 +22,25 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "logo": "https://eligibly.ai/assets/eligibly-logo-main.png",
     "image": "https://eligibly.ai/assets/eligible-ai-opengraph.png",
     "foundingDate": "2023",
+    "founder": {
+      "@type": "Person",
+      "name": "Daniel Lahyani"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "France"
+    },
+    "knowsAbout": [
+      "Lead generation for accounting firms",
+      "SASU and SAS company registrations",
+      "INPI, INSEE Sirene and BODACC data",
+      "AI-powered B2B lead scoring",
+      "GDPR-compliant prospect intelligence"
+    ],
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "FR"
+      "addressCountry": "FR",
+      "addressLocality": "Paris"
     },
     "contactPoint": {
       "@type": "ContactPoint",
@@ -65,7 +81,7 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
           "@type": "SiteNavigationElement", 
           "position": 2,
           "name": language === 'en' ? "Demo" : "Démo",
-          "description": language === 'en' ? "Try Eligibly on premium leads" : "Testez Eligibly sur des leads premium",
+          "description": language === 'en' ? "Request a sample of 3 qualified leads" : "Demander un échantillon de 3 leads qualifiés",
           "url": `https://eligibly.ai${language === 'en' ? '/en/demo' : '/demo'}`
         },
         {
