@@ -80,9 +80,9 @@ const copy = {
     finalH2a: "Ready to move from ",
     finalH2em: "reading to action",
     finalH2b: "?",
-    finalSub: "The best way to put our analyses into practice: receive a first premium lead on your real area and your real vertical, for free.",
-    finalCta: "Get my first lead — free",
-    finalChips: "✓ No credit card · ✓ Delivered within 48h · ✓ On your area and ICP",
+    finalSub: "The best way to put our analyses into practice: get a sample of 3 qualified leads on your real area and your real vertical.",
+    finalCta: "Request a 3-lead sample",
+    finalChips: "Delivered within 48h · On your area and ICP · No commitment",
     upcoming: [
       { title: "Barometer — Q4 2026 edition", desc: "Next field wave with a broader cohort of partner firms." },
       { title: "Observatory — July 2026 edition", desc: "New monthly edition focused on the tech & e-commerce verticals." },
