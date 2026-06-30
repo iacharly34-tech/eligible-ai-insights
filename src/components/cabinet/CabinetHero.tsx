@@ -9,7 +9,7 @@ const copy = {
     badge: "Détection de prospects pour cabinets d'expertise comptable",
     h1a: "L'IA transforme aussi",
     h1b: "votre prospection.",
-    sub: "Chaque matin, Eligibly identifie les sociétés fraîchement immatriculées qui ressemblent à vos meilleurs clients, les qualifie, et livre la sélection à vos associés — là où ils travaillent déjà.",
+    sub: "Chaque matin, Eligibly identifie les sociétés fraîchement immatriculées qui ressemblent à vos meilleurs clients, les qualifie et les livre directement à vos associés.",
     bullets: [
       "Sources officielles INPI · Sirene · BODACC, hébergées en France",
       "Critères ICP : secteur, capital, zone, forme juridique",
@@ -43,7 +43,7 @@ const copy = {
     badge: "Lead detection for accounting firms",
     h1a: "AI is rewriting",
     h1b: "your prospecting too.",
-    sub: "Every morning, Eligibly spots the newly registered companies that look like your best clients, qualifies them, and drops the shortlist where your partners already work.",
+    sub: "Every morning, Eligibly spots the newly registered companies that look like your best clients, qualifies them and delivers them straight to your partners.",
     bullets: [
       "Official sources — INPI · Sirene · BODACC, hosted in France",
       "ICP filters: industry, capital, area, legal form",
