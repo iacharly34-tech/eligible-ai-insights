@@ -5,60 +5,151 @@ import { SafeLink } from "@/components/SafeLink";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
 import { MobileCTABar } from "@/components/MobileCTABar";
-import { ArrowRight, CheckCircle, Building2, Stethoscope, Cpu, Hammer, Scale, Sparkles } from "lucide-react";
+import { ArrowRight, Rocket, Users, MapPin, TrendingUp, UserMinus, Briefcase } from "lucide-react";
 import { useLang, localizedHref } from "@/hooks/useLang";
 
 const copy = {
   fr: {
     eyebrow: "Cas d'usage",
-    h1a: "Une solution par ",
-    h1em: "type de cabinet",
-    h1b: ", pas un outil générique.",
-    sub: "Eligibly se paramètre selon votre verticale, votre zone et votre taille de cabinet. Vous recevez uniquement les nouvelles SASU & SAS qui correspondent réellement à votre ICP.",
-    cta: "Voir une démo sur ma verticale",
-    finalH2a: "Votre verticale n'est pas listée ? ",
-    finalH2em: "Parlons-en",
+    h1a: "Six situations où Eligibly ",
+    h1em: "change la donne",
+    h1b: ".",
+    sub: "Plutôt que de lister des verticales, voici ce qui se passe concrètement dans un cabinet quand le moteur est branché.",
+    cta: "Voir ce cas en démo",
+    quote: "Le contexte",
+    answer: "Ce qu'Eligibly fait",
+    result: "Le résultat à 90 jours",
+    finalH2a: "Votre situation n'est pas là ? ",
+    finalH2em: "Décrivez-la nous",
     finalH2b: ".",
-    finalSub: "Si votre cabinet a un ICP très spécifique (SCI, SCP, holding, transmission, expat…), on regarde ensemble si le moteur peut le couvrir.",
-    finalCta: "Réserver 30 min",
+    finalSub: "30 minutes suffisent pour qualifier si le moteur peut couvrir votre cas — et si non, on vous le dit franchement.",
+    finalCta: "Parler à l'équipe",
   },
   en: {
     eyebrow: "Use cases",
-    h1a: "One solution per ",
-    h1em: "firm type",
-    h1b: ", not a generic tool.",
-    sub: "Eligibly is tuned to your vertical, your area and your firm size. You only receive the newly registered SASU & SAS companies that really match your ICP.",
-    cta: "See a demo for my vertical",
-    finalH2a: "Your vertical isn't listed? ",
-    finalH2em: "Let's talk",
+    h1a: "Six situations where Eligibly ",
+    h1em: "moves the needle",
+    h1b: ".",
+    sub: "Instead of listing verticals, here's what actually happens inside a firm once the engine is plugged in.",
+    cta: "See this case in a demo",
+    quote: "The context",
+    answer: "What Eligibly does",
+    result: "Outcome at 90 days",
+    finalH2a: "Your situation isn't here? ",
+    finalH2em: "Tell us about it",
     finalH2b: ".",
-    finalSub: "If your firm has a very specific ICP (real-estate holdings, SELs, transmission, expats…), we'll review together whether the engine can cover it.",
-    finalCta: "Book 30 min",
+    finalSub: "30 minutes is enough to know whether the engine can cover your case — and if not, we'll say so plainly.",
+    finalCta: "Talk to the team",
   },
 };
+
+const casesFR = [
+  {
+    icon: Rocket,
+    tag: "Lancement d'offre",
+    title: "Vous structurez une offre « création d'entreprise » et il vous faut du flux dès le premier mois.",
+    context: "Le cabinet a investi dans une landing, un parcours d'onboarding, peut-être un SDR. Il manque le carburant : un flux régulier de nouvelles immatriculations alignées sur l'offre.",
+    answer: "Eligibly livre chaque matin les SASU & SAS qui matchent les critères de l'offre (capital, forme, profil dirigeant, zone). Le SDR ouvre son mail et a 15 à 40 dossiers prêts à traiter.",
+    result: "Un pipeline de prospection actif dès la semaine 1, sans dépendre du bouche-à-oreille ou des leads payants.",
+  },
+  {
+    icon: UserMinus,
+    tag: "Départ d'associé",
+    title: "Un associé part et emmène une partie du portefeuille. Il faut compenser sans attendre.",
+    context: "Le départ est connu, les chiffres tombent dans 6 à 12 mois. Recruter prend du temps, racheter un portefeuille coûte cher. La prospection sortante structurée devient l'option la plus rapide.",
+    answer: "Le moteur est calibré sur le profil-type des clients perdus (taille, secteur, zone) et alimente directement les associés restants en leads frais, qualifiés, scorés.",
+    result: "Une trajectoire de remplacement chiffrée et pilotable, présentable en comité tous les mois.",
+  },
+  {
+    icon: MapPin,
+    tag: "Ouverture de bureau",
+    title: "Vous ouvrez un bureau dans une nouvelle ville et il n'y a aucun ancrage local.",
+    context: "Le bureau coûte avant de rapporter. Le réseau local se construit en 18 à 24 mois. Sans flux entrant, l'associé en charge s'épuise à faire du networking.",
+    answer: "Filtres géographiques fins (EPCI, IRIS, code postal) sur les nouvelles immatriculations de la zone. L'associé reçoit chaque matin les sociétés qui viennent de se créer chez lui.",
+    result: "Une raison concrète de décrocher son téléphone tous les jours, et une présence commerciale visible sur le territoire en quelques semaines.",
+  },
+  {
+    icon: TrendingUp,
+    tag: "Croissance par paliers",
+    title: "Vous voulez passer de 80 à 150 clients sans tripler la masse salariale prospection.",
+    context: "L'équipe en place gère déjà les missions. Le développement commercial repose sur 1 ou 2 personnes qui ne peuvent pas absorber plus de dossiers entrants désordonnés.",
+    answer: "Volume calibré au plafond d'absorption de l'équipe. Le moteur ne sur-livre pas : il sélectionne le meilleur ratio fraîcheur × score × proximité chaque jour.",
+    result: "Une croissance prévisible, pilotée par un volume entrant maîtrisé, sans embauche additionnelle dédiée à la prospection.",
+  },
+  {
+    icon: Users,
+    tag: "Réseau & multi-bureaux",
+    title: "Vous pilotez un réseau et chaque bureau veut son propre flux, ses propres critères.",
+    context: "Les bureaux n'ont ni les mêmes ICP, ni les mêmes zones, ni la même maturité commerciale. Un outil unique mal segmenté crée plus de friction que de valeur.",
+    answer: "Une configuration par bureau ou par associé. Le digest matinal est unique par destinataire. Un reporting consolidé remonte au niveau groupe.",
+    result: "Une politique commerciale lisible au niveau groupe, sans imposer un même playbook à tous les bureaux.",
+  },
+  {
+    icon: Briefcase,
+    tag: "Structuration commerciale",
+    title: "Vous voulez professionnaliser la prospection sans recruter une équipe SDR.",
+    context: "Le dirigeant sait que la croissance ne viendra plus que de la recommandation, mais ne veut pas monter une équipe sales interne. Il cherche un système, pas un outil de plus.",
+    answer: "Eligibly fournit la matière première (leads frais, qualifiés, contextualisés). Vous gardez la main sur le contact, la posture et la relation — ce que vos clients viennent chercher.",
+    result: "Un process de prospection répétable, documenté, transmissible — sans dépendre d'une seule personne dans le cabinet.",
+  },
+];
+
+const casesEN = [
+  {
+    icon: Rocket,
+    tag: "New offering launch",
+    title: "You're building a 'company formation' offering and need volume from month one.",
+    context: "The firm has invested in a landing page, an onboarding flow, maybe an SDR. What's missing is fuel: a steady stream of newly registered companies that match the offering.",
+    answer: "Eligibly delivers every morning the SASU & SAS companies matching the offering's criteria (capital, legal form, founder profile, area). The SDR opens their inbox to 15–40 ready-to-work accounts.",
+    result: "An active prospecting pipeline from week 1, without depending on word-of-mouth or paid leads.",
+  },
+  {
+    icon: UserMinus,
+    tag: "Partner leaving",
+    title: "A partner is leaving with part of the book. You need to compensate without waiting.",
+    context: "The departure is known, the revenue gap will show in 6 to 12 months. Hiring takes time, buying a book is expensive. Structured outbound becomes the fastest option.",
+    answer: "The engine is calibrated on the profile of lost clients (size, sector, area) and feeds the remaining partners with fresh, qualified, scored leads.",
+    result: "A measurable replacement trajectory, reviewable in committee every month.",
+  },
+  {
+    icon: MapPin,
+    tag: "New office",
+    title: "You're opening an office in a new city with zero local foothold.",
+    context: "The office costs before it earns. Local network takes 18 to 24 months to build. Without inbound flow, the partner in charge burns out on networking events.",
+    answer: "Fine-grained geographic filters (EPCI, IRIS, postcode) on new registrations. The partner gets every morning the companies that just formed in their area.",
+    result: "A real reason to pick up the phone every day, and visible commercial presence on the territory within weeks.",
+  },
+  {
+    icon: TrendingUp,
+    tag: "Stepped growth",
+    title: "You want to go from 80 to 150 clients without tripling your sales headcount.",
+    context: "The team is already busy on engagements. Business development relies on 1 or 2 people who can't absorb a flood of unstructured inbound.",
+    answer: "Volume calibrated to the team's absorption ceiling. The engine doesn't over-deliver: it picks the best freshness × score × proximity ratio each day.",
+    result: "Predictable growth, steered by a controlled inbound volume, without dedicated sales hires.",
+  },
+  {
+    icon: Users,
+    tag: "Network & multi-office",
+    title: "You run a network and every office wants its own flow, its own criteria.",
+    context: "Offices don't share ICPs, zones or sales maturity. A single, poorly segmented tool creates more friction than value.",
+    answer: "One configuration per office or per partner. The morning digest is unique per recipient. A consolidated report rolls up to group level.",
+    result: "A readable group-level commercial policy without forcing the same playbook on every office.",
+  },
+  {
+    icon: Briefcase,
+    tag: "Sales structuring",
+    title: "You want to professionalise prospecting without hiring an SDR team.",
+    context: "The owner knows growth won't come from referrals alone anymore, but doesn't want to build an internal sales team. They're looking for a system, not yet another tool.",
+    answer: "Eligibly provides the raw material (fresh, qualified, contextualised leads). You keep the contact, the posture and the relationship — what your clients come to you for.",
+    result: "A repeatable, documented, transferable prospecting process — without depending on a single person inside the firm.",
+  },
+];
 
 const Solutions = () => {
   const lang = useLang();
   const t = copy[lang];
   const demoHref = localizedHref("/demo", lang);
-
-  const verticalesFR = [
-    { icon: Cpu, title: "Cabinets spécialisés Tech & SaaS", subtitle: "Startups, éditeurs, freelances tech", description: "Captez les SASU créées par des CTO, freelances dev et fondateurs SaaS dès l'immatriculation — avant qu'un cabinet généraliste ne les contacte.", benefits: ["Filtre code NAF tech (62.01Z, 62.02A, etc.)", "Détection primo-entrepreneur ex-salarié tech", "Signaux levée de fonds amorçage", "Alerte si capital social > 5 k€"] },
-    { icon: Scale, title: "Cabinets conseil & professions libérales", subtitle: "Avocats, consultants, coachs", description: "Adressez les nouvelles structures de consulting et professions libérales qui cherchent un cabinet rompu à la BNC, BIC et l'IS.", benefits: ["Filtre par profession réglementée", "SAS de consulting > 10 k€ capital", "Détection holding personnelle", "Zone géographique fine (IRIS / EPCI)"] },
-    { icon: Stethoscope, title: "Cabinets verticale santé & libérales médicales", subtitle: "Médecins, kinés, infirmiers, vétos", description: "Ciblez les nouvelles installations en libéral et les SEL/SPFPL au moment où elles cherchent un cabinet qui maîtrise leur convention.", benefits: ["Filtres SEL, SELARL, SELAS, SPFPL", "Conventions ordinales", "Zonage ARS", "Détection cession-installation"] },
-    { icon: Hammer, title: "Cabinets artisans, BTP & commerce", subtitle: "TPE locales, micro-entrepreneurs en croissance", description: "Récupérez chaque semaine les nouveaux artisans et commerçants de votre zone qui basculent en société et ont besoin d'un EC de proximité.", benefits: ["Filtre micro vers société", "Zone < 30 km", "Activités CMA / CCI", "Détection franchise / réseau"] },
-    { icon: Building2, title: "Grands cabinets & réseaux", subtitle: "Cabinets > 30 collaborateurs, réseaux", description: "Recevez un flux calibré de leads filtrés selon les critères de chaque bureau ou associé. Pilotez la performance de prospection à l'échelle du groupe sans complexité technique.", benefits: ["Filtres par bureau / associé", "Digest calibré au volume groupe", "SSO entreprise sur demande", "Account manager dédié"] },
-    { icon: Sparkles, title: "Cabinets en structuration commerciale", subtitle: "Responsable développement, associé en charge", description: "Outillez votre démarche de prospection sortante avec un flux structuré, scoré et historisé — sans recruter une équipe SDR.", benefits: ["Flux quotidien clé en main", "Reporting hebdo prêt à présenter", "Onboarding en 30 min", "Engagement mensuel sans abonnement long"] },
-  ];
-  const verticalesEN = [
-    { icon: Cpu, title: "Tech & SaaS-focused firms", subtitle: "Startups, software vendors, tech freelancers", description: "Catch the SASU companies set up by CTOs, dev freelancers and SaaS founders the day they register — before a generalist firm reaches out.", benefits: ["NAF tech-code filter (62.01Z, 62.02A, etc.)", "First-time founder ex-tech-employee detection", "Seed fundraising signals", "Alert if share capital > €5k"] },
-    { icon: Scale, title: "Advisory firms & regulated professions", subtitle: "Lawyers, consultants, coaches", description: "Reach the new consulting structures and regulated professionals looking for a firm fluent in BNC, BIC and corporate tax.", benefits: ["Filter by regulated profession", "Consulting SAS > €10k capital", "Personal holding detection", "Fine-grained geography (IRIS / EPCI)"] },
-    { icon: Stethoscope, title: "Health & medical-professions firms", subtitle: "Doctors, physios, nurses, vets", description: "Target new private practices and SEL/SPFPL structures right when they're looking for a firm that masters their professional rules.", benefits: ["SEL, SELARL, SELAS, SPFPL filters", "Professional-body conventions", "ARS zoning", "Practice transfer detection"] },
-    { icon: Hammer, title: "Trades, construction & retail firms", subtitle: "Local micro-businesses moving up", description: "Pick up every week the new tradespeople and shopkeepers in your area moving from micro to a company and needing a local accountant.", benefits: ["Micro-to-company filter", "Area < 30 km", "CMA / CCI activities", "Franchise / network detection"] },
-    { icon: Building2, title: "Large firms & networks", subtitle: "Firms > 30 staff, networks", description: "Receive a calibrated feed of leads filtered per office or partner criteria. Steer group-level prospecting performance with zero technical complexity.", benefits: ["Per-office / per-partner filters", "Group-volume calibrated digest", "Enterprise SSO on request", "Dedicated account manager"] },
-    { icon: Sparkles, title: "Firms building a sales motion", subtitle: "Business development lead, partner in charge", description: "Equip your outbound effort with a structured, scored, fully-logged feed — without hiring an SDR team.", benefits: ["Daily turnkey feed", "Weekly report ready to present", "30-minute onboarding", "Monthly engagement, no long-term lock-in"] },
-  ];
-  const verticales = lang === "en" ? verticalesEN : verticalesFR;
+  const cases = lang === "en" ? casesEN : casesFR;
 
   return (
     <>
@@ -82,27 +173,44 @@ const Solutions = () => {
             </div>
           </section>
 
-          {/* Verticales */}
-          <section className="pb-24 px-4" aria-label="Verticales">
-            <div className="container mx-auto max-w-5xl space-y-8">
-              {verticales.map((solution, index) => (
-                <div key={index} className="group p-8 sm:p-10 rounded-2xl border border-border bg-card hover:border-primary/30 transition-all duration-500">
+          {/* Cases */}
+          <section className="pb-24 px-4" aria-label="Cas d'usage">
+            <div className="container mx-auto max-w-5xl space-y-6">
+              {cases.map((c, index) => (
+                <article
+                  key={index}
+                  className="group p-8 sm:p-10 rounded-2xl border border-border bg-card hover:border-primary/30 transition-all duration-500"
+                >
                   <div className="flex flex-col md:flex-row gap-8">
-                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                      <solution.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <h2 className="font-display text-2xl font-semibold tracking-tight mb-1">{solution.title}</h2>
-                      <p className="text-xs text-primary uppercase tracking-[0.14em] font-semibold mb-4">{solution.subtitle}</p>
-                      <p className="text-[0.95rem] text-muted-foreground leading-relaxed mb-6">{solution.description}</p>
-                      <div className="grid sm:grid-cols-2 gap-3 mb-8">
-                        {solution.benefits.map((b, i) => (
-                          <div key={i} className="flex items-start gap-3 text-sm">
-                            <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                            <span>{b}</span>
-                          </div>
-                        ))}
+                    <div className="md:w-48 shrink-0">
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                        <c.icon className="w-5 h-5 text-primary" />
                       </div>
+                      <p className="text-[0.7rem] uppercase tracking-[0.14em] text-primary font-semibold mb-2">
+                        {`0${index + 1} — ${c.tag}`}
+                      </p>
+                    </div>
+
+                    <div className="flex-1">
+                      <h2 className="font-display text-xl md:text-2xl font-semibold tracking-tight leading-snug mb-6">
+                        {c.title}
+                      </h2>
+
+                      <div className="grid md:grid-cols-3 gap-6 mb-8">
+                        <div>
+                          <p className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-2">{t.quote}</p>
+                          <p className="text-sm leading-relaxed text-foreground/85">{c.context}</p>
+                        </div>
+                        <div>
+                          <p className="text-[0.7rem] uppercase tracking-[0.14em] text-primary font-semibold mb-2">{t.answer}</p>
+                          <p className="text-sm leading-relaxed text-foreground/85">{c.answer}</p>
+                        </div>
+                        <div>
+                          <p className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-2">{t.result}</p>
+                          <p className="text-sm leading-relaxed text-foreground/85">{c.result}</p>
+                        </div>
+                      </div>
+
                       <SafeLink to={demoHref}>
                         <Button variant="tengo" className="group/btn h-11">
                           {t.cta}
@@ -111,7 +219,7 @@ const Solutions = () => {
                       </SafeLink>
                     </div>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </section>
