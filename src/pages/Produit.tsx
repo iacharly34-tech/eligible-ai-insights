@@ -268,11 +268,18 @@ const Produit = () => {
                 </h2>
               </div>
               <div className="grid md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden">
-                {t.anatRows.map(([title, desc]) => (
-                  <div key={title} className="bg-card p-7">
+                {t.anatRows.map(([title, desc], i) => (
+                  <motion.div
+                    key={title}
+                    initial={{ opacity: 0, y: 18 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-10%" }}
+                    transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                    className="bg-card p-7 hover:bg-card/80 transition-colors"
+                  >
                     <h3 className="font-display text-lg font-semibold mb-2">{title}</h3>
                     <p className="text-[0.95rem] text-muted-foreground leading-relaxed">{desc}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -280,31 +287,55 @@ const Produit = () => {
 
           {/* Livraison */}
           <section className="py-20 md:py-28 px-4 bg-card/30">
-            <div className="container mx-auto max-w-3xl text-center">
-              <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.delivEyebrow}</p>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-6">
-                {t.delivH2a}<em className="italic text-primary font-medium">{t.delivH2em}</em>{t.delivH2b}
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                {t.delivSub}
-              </p>
-              <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground mb-8">
-                <Mail className="w-5 h-5 text-primary" />
-                <RefreshCw className="w-5 h-5 text-primary" />
-                <span>{t.delivMeta}</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                <Slack className="inline-block w-4 h-4 text-primary mr-1 align-text-bottom" />
-                {t.delivExtra}
-              </p>
-            </div>
+            <motion.div
+              className="container mx-auto max-w-3xl text-center"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-10%" }}
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+              }}
+            >
+              {[
+                <p key="eb" className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.delivEyebrow}</p>,
+                <h2 key="h2" className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-6">
+                  {t.delivH2a}<em className="italic text-primary font-medium">{t.delivH2em}</em>{t.delivH2b}
+                </h2>,
+                <p key="sub" className="text-muted-foreground leading-relaxed mb-8">{t.delivSub}</p>,
+                <div key="meta" className="flex items-center justify-center gap-4 text-sm text-muted-foreground mb-8">
+                  <Mail className="w-5 h-5 text-primary" />
+                  <RefreshCw className="w-5 h-5 text-primary" />
+                  <span>{t.delivMeta}</span>
+                </div>,
+                <p key="extra" className="text-sm text-muted-foreground">
+                  <Slack className="inline-block w-4 h-4 text-primary mr-1 align-text-bottom" />
+                  {t.delivExtra}
+                </p>,
+              ].map((child) => (
+                <motion.div
+                  key={(child as any).key}
+                  variants={{
+                    hidden: { opacity: 0, y: 16 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+                  }}
+                >
+                  {child}
+                </motion.div>
+              ))}
+            </motion.div>
           </section>
 
           {/* Apprentissage */}
           <section className="py-20 md:py-28 px-4">
             <div className="container mx-auto max-w-5xl">
               <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
+                <motion.div
+                  initial={{ opacity: 0, x: -24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-10%" }}
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                >
                   <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.learnEyebrow}</p>
                   <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-6">
                     {t.learnH2a}<em className="italic text-primary font-medium">{t.learnH2em}</em>{t.learnH2b}
@@ -313,24 +344,54 @@ const Produit = () => {
                     {t.learnSub}
                   </p>
                   <ul className="space-y-3">
-                    {t.learnBullets.map((b) => (
-                      <li key={b} className="flex items-start gap-3 text-[0.95rem]">
+                    {t.learnBullets.map((b, i) => (
+                      <motion.li
+                        key={b}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-10%" }}
+                        transition={{ duration: 0.4, delay: 0.2 + i * 0.08 }}
+                        className="flex items-start gap-3 text-[0.95rem]"
+                      >
                         <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                         <span>{b}</span>
-                      </li>
+                      </motion.li>
                     ))}
                   </ul>
-                </div>
-                <div className="rounded-2xl border border-border bg-card p-8">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: 24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-10%" }}
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  className="rounded-2xl border border-border bg-card p-8"
+                >
                   <div className="space-y-4 text-sm">
-                    {t.weeks.map(([w, v]) => (
-                      <div key={w}>
-                        <div className="flex justify-between mb-1.5"><span className="text-muted-foreground">{w}</span><span className="font-semibold">{v}</span></div>
-                        <div className="h-2 rounded-full bg-muted overflow-hidden"><div className="h-full bg-primary" style={{ width: v.match(/\d+/)?.[0] + "%" }} /></div>
-                      </div>
-                    ))}
+                    {t.weeks.map(([w, v], i) => {
+                      const pct = v.match(/\d+/)?.[0] ?? "0";
+                      return (
+                        <motion.div
+                          key={w}
+                          initial={{ opacity: 0, y: 8 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, margin: "-10%" }}
+                          transition={{ duration: 0.4, delay: 0.25 + i * 0.1 }}
+                        >
+                          <div className="flex justify-between mb-1.5"><span className="text-muted-foreground">{w}</span><span className="font-semibold">{v}</span></div>
+                          <div className="h-2 rounded-full bg-muted overflow-hidden">
+                            <motion.div
+                              className="h-full bg-primary"
+                              initial={{ width: 0 }}
+                              whileInView={{ width: `${pct}%` }}
+                              viewport={{ once: true, margin: "-10%" }}
+                              transition={{ duration: 0.9, delay: 0.35 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                            />
+                          </div>
+                        </motion.div>
+                      );
+                    })}
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </section>
