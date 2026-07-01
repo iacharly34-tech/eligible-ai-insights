@@ -21,96 +21,60 @@ interface ArticleRecommendationsProps {
 }
 
 export const ArticleRecommendations = ({ currentArticleUrl, currentCategory }: ArticleRecommendationsProps) => {
-  // Articles disponibles (même liste que dans Ressources.tsx)
+  // Articles cabinet d'expertise comptable
   const allArticles: ArticleRecommendation[] = [
     {
-      title: "Le futur de la réponse aux AO : IA, automatisation et stratégie humaine",
-      description: "Vision prospective de l'évolution des marchés publics à l'ère de l'intelligence artificielle",
-      url: "/futur-ia",
-      date: "12 septembre 2025",
-      readTime: "8 min",
-      category: "IA & automatisation",
+      title: "Baromètre acquisition cabinet 2026",
+      description: "Benchmark CAC, taux de conversion et durée du cycle de vente en cabinet d'expertise comptable.",
+      url: "/blog/barometre-acquisition-cabinet",
+      date: "15 janvier 2026",
+      readTime: "10 min",
+      category: "Acquisition",
       icon: () => <BookOpen className="w-4 h-4" />
     },
     {
-      title: "Critères environnementaux et sociaux : comment les intégrer",
-      description: "Guide complet pour réussir sur les marchés publics durables en 2025",
-      url: "/criteres-rse",
-      date: "28 août 2025",
-      readTime: "8 min",
-      category: "Critères RSE & innovation",
+      title: "Observatoire SASU & SAS 2026",
+      description: "Volumes, géographie et secteurs des SASU/SAS fraîchement immatriculées en France.",
+      url: "/blog/observatoire-sasu-sas",
+      date: "10 janvier 2026",
+      readTime: "9 min",
+      category: "Marché",
       icon: () => <BookOpen className="w-4 h-4" />
     },
     {
-      title: "PME, comment rivaliser avec les grands groupes sur les AO",
-      description: "Stratégies concrètes : groupements, niches, différenciation pour inverser le rapport de force",
-      url: "/pme-vs-grands-groupes",
-      date: "19 août 2025",
+      title: "Playbook prospection cabinet 2026",
+      description: "Cadre opérationnel de prospection pour cabinets d'expertise comptable : ICP, séquences, mesure.",
+      url: "/blog/playbook-prospection-cabinet",
+      date: "5 janvier 2026",
+      readTime: "12 min",
+      category: "Prospection",
+      icon: () => <BookOpen className="w-4 h-4" />
+    },
+    {
+      title: "ICP cabinet d'expertise comptable",
+      description: "Comment définir votre profil client idéal et exclure ce qui pollue votre pipeline.",
+      url: "/blog/icp-cabinet-expertise-comptable",
+      date: "18 décembre 2025",
+      readTime: "8 min",
+      category: "Acquisition",
+      icon: () => <BookOpen className="w-4 h-4" />
+    },
+    {
+      title: "Coût d'acquisition client en cabinet",
+      description: "Décomposition du CAC en cabinet et leviers pour le diviser par deux.",
+      url: "/blog/cout-acquisition-client-cabinet",
+      date: "5 décembre 2025",
       readTime: "7 min",
-      category: "Répondre efficacement aux AO",
+      category: "Acquisition",
       icon: () => <BookOpen className="w-4 h-4" />
     },
     {
-      title: "Marchés publics et innovation : où se cachent les vraies opportunités",
-      description: "Guide 2025 pour identifier et conquérir les marchés d'avenir dans la tech publique",
-      url: "/marches-innovation",
-      date: "5 août 2025",
-      readTime: "8 min",
-      category: "Tendances & data clés",
-      icon: () => <BookOpen className="w-4 h-4" />
-    },
-    {
-      title: "Pourquoi 3 appels d'offres sur 5 sont perdus d'avance",
-      description: "Décryptage des mécanismes cachés qui rendent 60% des AO impossibles à gagner",
-      url: "/ao-perdus-avance",
-      date: "22 juillet 2025",
+      title: "Créations d'entreprises 2025",
+      description: "État des lieux INSEE : SASU, SAS et primo-entrepreneurs sur le marché français.",
+      url: "/blog/creations-entreprises-2025",
+      date: "20 novembre 2025",
       readTime: "6 min",
-      category: "Tendances & data clés",
-      icon: () => <BookOpen className="w-4 h-4" />
-    },
-    {
-      title: "Anticiper les appels d'offres : le vrai avantage compétitif",
-      description: "Pourquoi les entreprises gagnantes ne réagissent plus aux publications d'AO mais les anticipent",
-      url: "/anticipation-ao",
-      date: "18 juillet 2025",
-      readTime: "7 min",
-      category: "Répondre efficacement aux AO",
-      icon: () => <BookOpen className="w-4 h-4" />
-    },
-    {
-      title: "Les signaux faibles qui trahissent un marché public verrouillé",
-      description: "Comment détecter les appels d'offres truqués et éviter les procédures biaisées",
-      url: "/signaux-faibles",
-      date: "8 juillet 2025",
-      readTime: "8 min",
-      category: "Répondre efficacement aux AO",
-      icon: () => <BookOpen className="w-4 h-4" />
-    },
-    {
-      title: "Comment bâtir une vraie stratégie AO basée sur les données",
-      description: "De l'intuition à la science : transformer votre approche des marchés publics avec la data",
-      url: "/strategie-donnees",
-      date: "2 juillet 2025",
-      readTime: "7 min",
-      category: "Tendances & data clés",
-      icon: () => <BookOpen className="w-4 h-4" />
-    },
-    {
-      title: "Les 7 plus grosses erreurs des PME sur les marchés publics",
-      description: "Guide pratique pour éviter les pièges administratifs qui éliminent 60% des candidatures",
-      url: "/erreurs-ao",
-      date: "25 juin 2025",
-      readTime: "6 min",
-      category: "Répondre efficacement aux AO",
-      icon: () => <BookOpen className="w-4 h-4" />
-    },
-    {
-      title: "Comment détecter les bons appels d'offres sans perdre des heures",
-      description: "Méthodes et outils IA pour identifier efficacement les AO pertinents et optimiser votre veille",
-      url: "/detection-appels-offres",
-      date: "15 juin 2025",
-      readTime: "7 min",
-      category: "IA & automatisation",
+      category: "Marché",
       icon: () => <BookOpen className="w-4 h-4" />
     }
   ];
@@ -147,7 +111,7 @@ export const ArticleRecommendations = ({ currentArticleUrl, currentCategory }: A
             Articles recommandés pour vous
           </h2>
           <p className="text-muted-foreground">
-            Continuez votre exploration des marchés publics avec ces contenus complémentaires
+            Poursuivez votre lecture sur la prospection en cabinet d'expertise comptable
           </p>
         </div>
 
