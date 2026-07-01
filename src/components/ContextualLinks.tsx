@@ -11,111 +11,32 @@ interface ContextualLinksProps {
 export const ContextualLinks = ({ currentPage, context = 'general' }: ContextualLinksProps) => {
   const { t, language } = useLanguage();
 
-  // Liens contextuels intelligents basés sur la page et le contexte
+  // Liens contextuels — cabinets d'expertise comptable
   const getContextualLinks = () => {
-    const baseUrl = '';
-    
-    switch (context) {
-      case 'article':
-        return [
-          {
-            href: '/appels-d-offres-publics',
-            title: 'Guide complet : Appels d\'offres publics',
-            description: 'Tout ce que vous devez savoir pour réussir vos AO publics',
-            cta: 'Lire le guide',
-            priority: 'high'
-          },
-          {
-            href: '/demo',
-            title: 'Testez notre analyse IA',
-            description: 'Découvrez comment Eligibly analyse vos appels d\'offres',
-            cta: 'Tester gratuitement',
-            priority: 'high'
-          },
-          {
-            href: '/detection-appels-offres',
-            title: 'Détecter les bons AO',
-            description: 'Stratégies pour identifier les opportunités gagnantes',
-            cta: 'Découvrir les techniques',
-            priority: 'medium'
-          }
-        ];
-      
-      case 'product':
-        return [
-          {
-            href: '/appels-d-offres-publics',
-            title: 'Maîtriser les appels d\'offres publics',
-            description: 'Guide expert avec stratégies et conseils pratiques',
-            cta: 'Consulter le guide',
-            priority: 'high'
-          },
-          {
-            href: '/demo',
-            title: 'Voir Eligibly en action',
-            description: 'Démonstration complète de notre plateforme IA',
-            cta: 'Découvrir la démo',
-            priority: 'high'
-          },
-          {
-            href: '/strategie-donnees',
-            title: 'Stratégie data pour AO',
-            description: 'Comment utiliser les données pour optimiser vos candidatures',
-            cta: 'Apprendre la méthode',
-            priority: 'medium'
-          }
-        ];
-      
-      case 'demo':
-        return [
-          {
-            href: '/appels-d-offres-publics',
-            title: 'Comprendre les appels d\'offres publics',
-            description: 'Base théorique pour mieux utiliser notre outil',
-            cta: 'Lire l\'article',
-            priority: 'high'
-          },
-          {
-            href: '/produit',
-            title: 'Fonctionnalités complètes',
-            description: 'Découvrez toutes les capacités de la plateforme Eligibly',
-            cta: 'Explorer le produit',
-            priority: 'high'
-          },
-          {
-            href: '/erreurs-ao',
-            title: 'Éviter les erreurs classiques',
-            description: 'Les 7 erreurs qui éliminent vos candidatures',
-            cta: 'Éviter les pièges',
-            priority: 'medium'
-          }
-        ];
-      
-      default:
-        return [
-          {
-            href: '/appels-d-offres-publics',
-            title: 'Appels d\'offres publics : Guide 2025',
-            description: 'Stratégies expertes pour remporter vos marchés publics',
-            cta: 'Consulter le guide',
-            priority: 'high'
-          },
-          {
-            href: '/demo',
-            title: 'Analyser vos AO avec l\'IA',
-            description: 'Test gratuit de notre solution d\'analyse prédictive',
-            cta: 'Essayer maintenant',
-            priority: 'high'
-          },
-          {
-            href: '/produit',
-            title: 'Solution Eligibly',
-            description: 'Plateforme IA complète pour optimiser vos candidatures',
-            cta: 'Découvrir la solution',
-            priority: 'medium'
-          }
-        ];
-    }
+    const common = [
+      {
+        href: '/produit',
+        title: 'Fonctionnalités Eligibly',
+        description: 'Détection, filtres ICP, scoring expliqué et livraison sur vos canaux.',
+        cta: 'Découvrir le produit',
+        priority: 'high'
+      },
+      {
+        href: '/solutions',
+        title: 'Cas d\'usage cabinet',
+        description: 'Lancement d\'offre, ouverture de bureau, croissance par paliers.',
+        cta: 'Voir les cas d\'usage',
+        priority: 'high'
+      },
+      {
+        href: '/demo',
+        title: 'Recevoir 3 leads qualifiés',
+        description: 'Donnez-nous votre zone et votre ICP, on livre un échantillon sous 48 h.',
+        cta: 'Demander l\'échantillon',
+        priority: 'medium'
+      }
+    ];
+    return common;
   };
 
   const links = getContextualLinks();
