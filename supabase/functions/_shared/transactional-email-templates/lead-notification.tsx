@@ -63,6 +63,9 @@ export const template = {
   subject: (data: Props) =>
     `Eligibly · Nouveau lead${data?.company ? ` — ${data.company}` : ''}`,
   displayName: 'Lead — notification interne',
+  // Fixed internal recipient — the send function ignores caller-provided
+  // recipientEmail for this template. Defense in depth against relay abuse.
+  to: 'lahyani.daniel@gmail.com',
   previewData: {
     fullName: 'Jean Dupont',
     email: 'jean@cabinet-dupont.fr',
