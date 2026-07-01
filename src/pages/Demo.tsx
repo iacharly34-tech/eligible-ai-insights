@@ -44,18 +44,19 @@ const Demo = () => {
     if (submitting) return;
     setSubmitting(true);
 
-    const { error } = await supabase.from("demo_requests").insert({
-      full_name: formData.fullName.trim(),
-      email: formData.email.trim(),
-      company: formData.company.trim(),
-      message: formData.message.trim() || null,
-      source: "/demo",
-      user_agent: typeof navigator !== "undefined" ? navigator.userAgent.slice(0, 500) : null,
+    const { data, error } = await supabase.functions.invoke("submit-lead", {
+      body: {
+        fullName: formData.fullName.trim(),
+        email: formData.email.trim(),
+        company: formData.company.trim(),
+        message: formData.message.trim() || undefined,
+        source: "/demo",
+      },
     });
 
-    if (error) {
+    if (error || (data && (data as any).error)) {
       setSubmitting(false);
-      console.error("demo_requests insert failed", error);
+      console.error("submit-lead failed", error || (data as any).error);
       toast({
         title: language === "en" ? "Submission failed" : "Envoi impossible",
         description:
@@ -67,41 +68,6 @@ const Demo = () => {
       });
       return;
     }
-
-    // Fire-and-forget confirmation email (don't block UX if email infra still verifying DNS)
-    supabase.functions
-      .invoke("send-transactional-email", {
-        body: {
-          templateName: "demo-confirmation",
-          recipientEmail: formData.email.trim(),
-          idempotencyKey: `demo-confirm-${formData.email.trim().toLowerCase()}-${Date.now()}`,
-          templateData: {
-            fullName: formData.fullName.trim(),
-            company: formData.company.trim(),
-            message: formData.message.trim() || undefined,
-          },
-        },
-      })
-      .catch((err) => console.warn("demo confirmation email enqueue failed", err));
-
-    // Internal notification to founder for every new lead
-    supabase.functions
-      .invoke("send-transactional-email", {
-        body: {
-          templateName: "lead-notification",
-          recipientEmail: "lahyani.daniel@gmail.com",
-          idempotencyKey: `lead-notif-${formData.email.trim().toLowerCase()}-${Date.now()}`,
-          templateData: {
-            fullName: formData.fullName.trim(),
-            email: formData.email.trim(),
-            company: formData.company.trim(),
-            message: formData.message.trim() || undefined,
-            source: "/demo",
-            submittedAt: new Date().toLocaleString("fr-FR", { timeZone: "Europe/Paris" }),
-          },
-        },
-      })
-      .catch((err) => console.warn("lead notification email enqueue failed", err));
 
     toast({
       title: language === "en" ? "✅ Request received!" : "✅ Demande reçue !",
