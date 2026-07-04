@@ -1,5 +1,6 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
+import { HelmetProvider } from 'react-helmet-async'
 import App from './App.tsx'
 import { SecurityErrorBoundary } from './components/SecurityErrorBoundary'
 import './index.css'
@@ -26,6 +27,8 @@ measureWebVitals();
 
 createRoot(document.getElementById("root")!).render(
   <SecurityErrorBoundary>
-    <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
   </SecurityErrorBoundary>
 );
