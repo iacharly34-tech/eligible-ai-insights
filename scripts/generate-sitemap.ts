@@ -26,6 +26,11 @@ const entries: Entry[] = [
   { path: "/inscription", changefreq: "monthly", priority: "0.7" },
   { path: "/newsletter", changefreq: "monthly", priority: "0.5" },
   { path: "/connexion", changefreq: "yearly", priority: "0.3" },
+  // Landing SEO cabinet EC
+  { path: "/leads-experts-comptables", changefreq: "weekly", priority: "0.9" },
+  { path: "/prospection-cabinet-comptable", changefreq: "monthly", priority: "0.8" },
+  { path: "/canaux-activation", changefreq: "monthly", priority: "0.7" },
+  { path: "/pourquoi-ce-lead-est-prioritaire", changefreq: "monthly", priority: "0.7" },
   { path: "/mentions-legales", changefreq: "yearly", priority: "0.2" },
   { path: "/confidentialite", changefreq: "yearly", priority: "0.2" },
   { path: "/cgu", changefreq: "yearly", priority: "0.2" },
@@ -49,6 +54,7 @@ const entries: Entry[] = [
   { path: "/blog/observatoire-sasu-sas-juin-2026", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/playbook-prospection-cabinet-ec-2026", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/lexique-marketing-expert-comptable", changefreq: "monthly", priority: "0.6" },
+  { path: "/blog/fichier-siret-vs-plan-action-comptable", changefreq: "monthly", priority: "0.7" },
 ];
 
 function toXml(items: Entry[]) {

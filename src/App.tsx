@@ -45,6 +45,11 @@ const BlogBarometre = lazy(() => import("./pages/blog/BarometreAcquisitionCabine
 const BlogObservatoire = lazy(() => import("./pages/blog/ObservatoireSasuSas"));
 const BlogPlaybook = lazy(() => import("./pages/blog/PlaybookProspectionCabinet"));
 const BlogLexique = lazy(() => import("./pages/blog/LexiqueMarketingExpertComptable"));
+const BlogFichierVsAction = lazy(() => import("./pages/blog/FichierSiretVsPlanAction"));
+const LeadsExpertsComptables = lazy(() => import("./pages/cabinet/LeadsExpertsComptables"));
+const ProspectionCabinetComptable = lazy(() => import("./pages/cabinet/ProspectionCabinetComptable"));
+const CanauxActivation = lazy(() => import("./pages/cabinet/CanauxActivation"));
+const PourquoiCeLeadEstPrioritaire = lazy(() => import("./pages/cabinet/PourquoiCeLeadEstPrioritaire"));
 
 import { LanguageSync } from "@/components/LanguageSync";
 
@@ -98,6 +103,12 @@ const App = () => (
                 <Route path="/newsletter-config" element={<NewsletterConfig />} />
                 <Route path="/unsubscribe" element={<Unsubscribe />} />
 
+                {/* Cabinet EC — landing pages SEO */}
+                <Route path="/leads-experts-comptables" element={<LeadsExpertsComptables />} />
+                <Route path="/prospection-cabinet-comptable" element={<ProspectionCabinetComptable />} />
+                <Route path="/canaux-activation" element={<CanauxActivation />} />
+                <Route path="/pourquoi-ce-lead-est-prioritaire" element={<PourquoiCeLeadEstPrioritaire />} />
+
                 {/* Blog */}
                 <Route path="/blog/creations-entreprises-france-2025" element={<BlogCreations2025 />} />
                 <Route path="/blog/cout-acquisition-client-cabinet-comptable" element={<BlogCAC />} />
@@ -106,6 +117,7 @@ const App = () => (
                 <Route path="/blog/observatoire-sasu-sas-juin-2026" element={<BlogObservatoire />} />
                 <Route path="/blog/playbook-prospection-cabinet-ec-2026" element={<BlogPlaybook />} />
                 <Route path="/blog/lexique-marketing-expert-comptable" element={<BlogLexique />} />
+                <Route path="/blog/fichier-siret-vs-plan-action-comptable" element={<BlogFichierVsAction />} />
 
                 {/* EN routes */}
                 <Route path="/en" element={<Index />} />
