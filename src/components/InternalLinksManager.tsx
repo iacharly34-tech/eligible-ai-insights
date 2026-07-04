@@ -22,143 +22,115 @@ export const InternalLinksManager = ({
 }: InternalLinksProps) => {
   const { t, language } = useLanguage();
 
-  // Définition des liens prioritaires par page
+  // Définition des liens prioritaires par page — cabinet EC / leads
   const linkStructure: Record<string, InternalLink[]> = {
     homepage: [
       {
-        href: '/appels-d-offres-publics',
-        text: 'Appels d\'offres publics',
-        description: 'Guide complet pour réussir vos AO',
-        priority: 'high'
-      },
-      {
         href: '/produit',
         text: t('nav.product'),
-        description: 'Découvrez notre plateforme IA',
+        description: 'Détection, scoring et activation multicanale des nouveaux entrepreneurs',
         priority: 'high'
       },
       {
         href: '/demo',
         text: t('nav.demo'),
-        description: 'Testez gratuitement notre solution',
-        priority: 'high'
-      },
-      {
-        href: '/detection-appels-offres',
-        text: 'Détection automatique des AO',
-        description: 'Comment identifier les bons appels d\'offres',
-        priority: 'medium'
-      },
-      {
-        href: '/strategie-donnees',
-        text: 'Stratégie data pour AO',
-        description: 'Optimisez vos candidatures avec la data',
-        priority: 'medium'
-      }
-    ],
-    'appels-d-offres-publics': [
-      {
-        href: '/produit',
-        text: 'Solution Eligibly',
-        description: 'Notre plateforme IA pour analyser les AO',
-        priority: 'high'
-      },
-      {
-        href: '/demo',
-        text: 'Tester la démo',
-        description: 'Analysez votre premier appel d\'offres',
-        priority: 'high'
-      },
-      {
-        href: '/detection-appels-offres',
-        text: 'Détecter les bons AO',
-        description: 'Stratégies pour identifier les opportunités',
-        priority: 'medium'
-      },
-      {
-        href: '/erreurs-ao',
-        text: 'Éviter les erreurs AO',
-        description: 'Les 7 pièges qui éliminent les candidatures',
-        priority: 'medium'
-      },
-      {
-        href: '/marches-innovation',
-        text: 'Marchés publics innovants',
-        description: 'Opportunités dans l\'innovation publique',
-        priority: 'low'
-      }
-    ],
-    produit: [
-      {
-        href: '/appels-d-offres-publics',
-        text: 'Guide AO publics',
-        description: 'Tout savoir sur les appels d\'offres publics',
-        priority: 'high'
-      },
-      {
-        href: '/demo',
-        text: t('nav.demo'),
-        description: 'Testez notre analyse IA',
+        description: 'Voir Eligibly sur les données réelles de votre zone',
         priority: 'high'
       },
       {
         href: '/tarifs',
         text: t('nav.pricing'),
-        description: 'Découvrez nos tarifs',
+        description: 'Pilote 14 jours gratuit, sans carte bancaire',
+        priority: 'high'
+      },
+      {
+        href: '/solutions',
+        text: t('nav.solutions'),
+        description: 'Cas d\'usage par type de cabinet',
         priority: 'medium'
       },
       {
-        href: '/strategie-donnees',
-        text: 'Stratégie data',
-        description: 'Approche data-driven pour les AO',
+        href: '/ressources',
+        text: t('nav.resources'),
+        description: 'Playbooks prospection cabinet',
+        priority: 'medium'
+      }
+    ],
+    produit: [
+      {
+        href: '/demo',
+        text: t('nav.demo'),
+        description: 'Voir la fiche lead prioritaire en direct',
+        priority: 'high'
+      },
+      {
+        href: '/tarifs',
+        text: t('nav.pricing'),
+        description: '3 offres : Essentiel, Pro, Business',
+        priority: 'high'
+      },
+      {
+        href: '/solutions',
+        text: t('nav.solutions'),
+        description: 'Cas d\'usage par verticale cabinet',
+        priority: 'medium'
+      },
+      {
+        href: '/ressources',
+        text: t('nav.resources'),
+        description: 'Baromètres et playbooks prospection cabinet',
         priority: 'medium'
       }
     ],
     demo: [
       {
-        href: '/appels-d-offres-publics',
-        text: 'Guide complet AO',
-        description: 'Maîtrisez les appels d\'offres publics',
-        priority: 'high'
-      },
-      {
         href: '/produit',
-        text: 'Fonctionnalités complètes',
-        description: 'Toutes les capacités de la plateforme',
+        text: t('nav.product'),
+        description: 'Détail des modules détection / scoring / activation',
         priority: 'high'
       },
       {
-        href: '/detection-appels-offres',
-        text: 'Techniques de détection',
-        description: 'Comment repérer les bonnes opportunités',
+        href: '/tarifs',
+        text: t('nav.pricing'),
+        description: 'Pilote 14 jours gratuit',
+        priority: 'high'
+      },
+      {
+        href: '/solutions',
+        text: t('nav.solutions'),
+        description: 'Approche par type de cabinet',
         priority: 'medium'
       }
     ],
     ressources: [
       {
-        href: '/appels-d-offres-publics',
-        text: 'Appels d\'offres publics',
-        description: 'Article fondamental sur les AO',
+        href: '/blog/playbook-prospection-cabinet-ec-2026',
+        text: 'Playbook prospection cabinet 2026',
+        description: 'Méthode opérationnelle : ICP, séquences, mesure',
         priority: 'high'
       },
       {
-        href: '/detection-appels-offres',
-        text: 'Détection des AO',
+        href: '/blog/barometre-acquisition-cabinet-ec-2026',
+        text: 'Baromètre acquisition cabinet 2026',
+        description: 'CAC, cycle de vente, taux de conversion',
+        priority: 'high'
+      },
+      {
+        href: '/blog/icp-cabinet-expertise-comptable',
+        text: 'ICP cabinet d\'expertise-comptable',
+        description: 'Comment définir votre client idéal',
         priority: 'medium'
       },
       {
-        href: '/erreurs-ao',
-        text: 'Erreurs à éviter',
+        href: '/blog/cout-acquisition-client-cabinet-comptable',
+        text: 'Coût d\'acquisition client en cabinet',
+        description: 'Décomposer et réduire le CAC',
         priority: 'medium'
       },
       {
-        href: '/strategie-donnees',
-        text: 'Stratégie données',
-        priority: 'medium'
-      },
-      {
-        href: '/marches-innovation',
-        text: 'Marchés innovants',
+        href: '/blog/observatoire-sasu-sas-juin-2026',
+        text: 'Observatoire SASU / SAS',
+        description: 'Volumes, géographie, secteurs',
         priority: 'low'
       }
     ]
@@ -167,19 +139,19 @@ export const InternalLinksManager = ({
   // Liens par défaut si la page n'est pas définie
   const defaultLinks: InternalLink[] = [
     {
-      href: '/appels-d-offres-publics',
-      text: 'Appels d\'offres publics',
-      description: 'Guide expert pour réussir vos AO',
-      priority: 'high'
-    },
-    {
       href: '/produit',
       text: t('nav.product'),
+      description: 'Détection, scoring, activation des nouveaux entrepreneurs',
       priority: 'high'
     },
     {
       href: '/demo',
       text: t('nav.demo'),
+      priority: 'high'
+    },
+    {
+      href: '/tarifs',
+      text: t('nav.pricing'),
       priority: 'high'
     }
   ];
