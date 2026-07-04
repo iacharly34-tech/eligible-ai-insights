@@ -26,7 +26,7 @@ export const ArticleRecommendations = ({ currentArticleUrl, currentCategory }: A
     {
       title: "Baromètre acquisition cabinet 2026",
       description: "Benchmark CAC, taux de conversion et durée du cycle de vente en cabinet d'expertise comptable.",
-      url: "/blog/barometre-acquisition-cabinet",
+      url: "/blog/barometre-acquisition-cabinet-ec-2026",
       date: "15 janvier 2026",
       readTime: "10 min",
       category: "Acquisition",
@@ -35,7 +35,7 @@ export const ArticleRecommendations = ({ currentArticleUrl, currentCategory }: A
     {
       title: "Observatoire SASU & SAS 2026",
       description: "Volumes, géographie et secteurs des SASU/SAS fraîchement immatriculées en France.",
-      url: "/blog/observatoire-sasu-sas",
+      url: "/blog/observatoire-sasu-sas-juin-2026",
       date: "10 janvier 2026",
       readTime: "9 min",
       category: "Marché",
@@ -44,7 +44,7 @@ export const ArticleRecommendations = ({ currentArticleUrl, currentCategory }: A
     {
       title: "Playbook prospection cabinet 2026",
       description: "Cadre opérationnel de prospection pour cabinets d'expertise comptable : ICP, séquences, mesure.",
-      url: "/blog/playbook-prospection-cabinet",
+      url: "/blog/playbook-prospection-cabinet-ec-2026",
       date: "5 janvier 2026",
       readTime: "12 min",
       category: "Prospection",
@@ -62,7 +62,7 @@ export const ArticleRecommendations = ({ currentArticleUrl, currentCategory }: A
     {
       title: "Coût d'acquisition client en cabinet",
       description: "Décomposition du CAC en cabinet et leviers pour le diviser par deux.",
-      url: "/blog/cout-acquisition-client-cabinet",
+      url: "/blog/cout-acquisition-client-cabinet-comptable",
       date: "5 décembre 2025",
       readTime: "7 min",
       category: "Acquisition",
@@ -71,7 +71,7 @@ export const ArticleRecommendations = ({ currentArticleUrl, currentCategory }: A
     {
       title: "Créations d'entreprises 2025",
       description: "État des lieux INSEE : SASU, SAS et primo-entrepreneurs sur le marché français.",
-      url: "/blog/creations-entreprises-2025",
+      url: "/blog/creations-entreprises-france-2025",
       date: "20 novembre 2025",
       readTime: "6 min",
       category: "Marché",
