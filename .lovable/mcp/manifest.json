@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "sdk_version": "0.20.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "eligibly-mcp",
+      "version": "0.1.0",
+      "title": "Eligibly MCP"
+    },
+    "tools": [
+      {
+        "name": "list_blog_articles",
+        "title": "List blog articles",
+        "description": "List Eligibly's published blog articles (title, slug, url) about acquisition, prospection and marketing for accounting firms.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "search": {
+              "description": "Optional case-insensitive substring to filter titles/slugs.",
+              "type": "string"
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_pricing",
+        "title": "Get Eligibly pricing",
+        "description": "Return Eligibly's current public pricing for accounting firms (single plan + free pilot).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "submit_lead",
+        "title": "Submit a demo/pilot lead",
+        "description": "Submit a lead requesting a demo or the free 14-day pilot of Eligibly. Sends the request to the Eligibly team.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "openWorldHint": true
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "full_name": {
+              "type": "string",
+              "minLength": 2,
+              "description": "Contact full name."
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
+              "description": "Professional email address."
+            },
+            "firm_name": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Accounting firm name."
+            },
+            "phone": {
+              "description": "Optional phone number.",
+              "type": "string"
+            },
+            "message": {
+              "description": "Optional context or question.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "full_name",
+            "email",
+            "firm_name"
+          ]
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
