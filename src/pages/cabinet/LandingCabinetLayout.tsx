@@ -19,7 +19,7 @@ export interface LandingCabinetProps {
   bullets: string[];
   ctaPrimary: string;
   ctaNote?: string;
-  sections: {
+  sections?: {
     title: string;
     body: ReactNode;
   }[];
@@ -128,6 +128,7 @@ export const LandingCabinetLayout = ({
           {children}
 
           {/* Sections */}
+          {sections && sections.length > 0 && (
           <div className="container mx-auto px-4 max-w-4xl py-16 md:py-20 space-y-14">
             {sections.map((s, i) => (
               <section key={i}>
@@ -138,6 +139,7 @@ export const LandingCabinetLayout = ({
               </section>
             ))}
           </div>
+          )}
 
           {/* FAQ */}
           {faq && faq.length > 0 && (
