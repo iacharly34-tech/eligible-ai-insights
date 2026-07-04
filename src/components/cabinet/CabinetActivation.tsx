@@ -31,15 +31,15 @@ const LEADS_FR: Lead[] = [
 
 const LEADS_EN: Lead[] = LEADS_FR.map((l) => ({ ...l }));
 
-const CHANNEL_META = {
-  linkedin:  { icon: Linkedin,  label: "LinkedIn",     tone: "bg-[hsl(210_100%_50%/0.10)] text-[hsl(210_100%_38%)]" },
-  email:     { icon: Mail,      label: "Email",        tone: "bg-primary/10 text-primary" },
-  call:      { icon: Phone,     label: "Appel",        tone: "bg-emerald-50 text-emerald-700" },
-  instagram: { icon: Instagram, label: "Instagram",    tone: "bg-[hsl(320_70%_50%/0.10)] text-[hsl(320_60%_45%)]" },
-  mail:      { icon: Send,      label: "Courrier",     tone: "bg-amber-50 text-amber-700" },
-} as const;
-
-const CHANNEL_META_EN: typeof CHANNEL_META = {
+type ChannelMeta = { icon: typeof Linkedin; label: string; tone: string };
+const CHANNEL_META: Record<Lead["channel"], ChannelMeta> = {
+  linkedin:  { icon: Linkedin,  label: "LinkedIn",  tone: "bg-[hsl(210_100%_50%/0.10)] text-[hsl(210_100%_38%)]" },
+  email:     { icon: Mail,      label: "Email",     tone: "bg-primary/10 text-primary" },
+  call:      { icon: Phone,     label: "Appel",     tone: "bg-emerald-50 text-emerald-700" },
+  instagram: { icon: Instagram, label: "Instagram", tone: "bg-[hsl(320_70%_50%/0.10)] text-[hsl(320_60%_45%)]" },
+  mail:      { icon: Send,      label: "Courrier",  tone: "bg-amber-50 text-amber-700" },
+};
+const CHANNEL_META_EN: Record<Lead["channel"], ChannelMeta> = {
   ...CHANNEL_META,
   call: { ...CHANNEL_META.call, label: "Call" },
   mail: { ...CHANNEL_META.mail, label: "Letter" },
