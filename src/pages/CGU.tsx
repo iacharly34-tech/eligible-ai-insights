@@ -12,7 +12,7 @@ const CGU = () => {
         <h2 className="text-2xl font-semibold text-foreground mb-4">1. Objet</h2>
         <p>
           Les présentes Conditions Générales d'Utilisation (CGU) régissent l'utilisation de la plateforme Eligibly, 
-          solution d'intelligence artificielle dédiée à l'analyse et au traitement des marchés publics, 
+          assistant de prospection dédié aux cabinets d'expertise-comptable (détection, scoring et activation multicanale de nouveaux entrepreneurs),
           éditée par GM2.0 SAS.
         </p>
         <p>
@@ -50,12 +50,12 @@ const CGU = () => {
         <h2 className="text-2xl font-semibold text-foreground mb-4">4. Description des services</h2>
         <p>GM2.0 propose les services suivants :</p>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Analyse automatisée des appels d'offres publics</li>
-          <li>Veille personnalisée sur les marchés publics</li>
-          <li>Scoring et recommandations d'opportunités</li>
-          <li>Génération de réponses assistée par IA</li>
-          <li>Tableaux de bord et reporting</li>
-          <li>API d'intégration</li>
+          <li>Détection des nouvelles entreprises immatriculées à partir de sources publiques (SIRENE, BODACC, INPI)</li>
+          <li>Scoring de priorité expliqué (fit ICP, complexité, timing, signaux business)</li>
+          <li>Recommandation du canal d'approche (LinkedIn, email, appel, Instagram, courrier à en-tête)</li>
+          <li>Préparation de messages de prospection personnalisés (validation obligatoire par le cabinet)</li>
+          <li>Tableaux de bord de pilotage du pipeline commercial</li>
+          <li>Exports CSV et intégrations CRM</li>
         </ul>
       </section>
 
@@ -95,7 +95,7 @@ const CGU = () => {
         <h2 className="text-2xl font-semibold text-foreground mb-4">1. Purpose</h2>
         <p>
           These Terms of Service (ToS) govern the use of the Eligibly platform, 
-          an artificial intelligence solution dedicated to the analysis and processing of public procurement, 
+          a prospecting assistant dedicated to accounting firms (detection, scoring and multichannel activation of newly-registered entrepreneurs),
           published by GM2.0 SAS.
         </p>
         <p>
@@ -133,12 +133,12 @@ const CGU = () => {
         <h2 className="text-2xl font-semibold text-foreground mb-4">4. Service description</h2>
         <p>GM2.0 offers the following services:</p>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Automated analysis of public tenders</li>
-          <li>Personalized monitoring of public procurement</li>
-          <li>Scoring and opportunity recommendations</li>
-          <li>AI-assisted response generation</li>
-          <li>Dashboards and reporting</li>
-          <li>Integration API</li>
+          <li>Detection of newly-registered companies from public sources (SIRENE, BODACC, INPI)</li>
+          <li>Explained priority scoring (ICP fit, complexity, timing, business signals)</li>
+          <li>Recommended outreach channel (LinkedIn, email, phone, Instagram, letterhead mail)</li>
+          <li>Personalised prospecting messages (mandatory firm validation before sending)</li>
+          <li>Pipeline dashboards and analytics</li>
+          <li>CSV exports and CRM integrations</li>
         </ul>
       </section>
 

@@ -132,7 +132,7 @@ export const NewsletterSubscription = ({ zapierWebhook = "" }: { zapierWebhook?:
             📩 Recevez chaque semaine nos analyses exclusives
           </h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            pour anticiper les appels d'offres et détecter les meilleures opportunités.
+            pour détecter les meilleurs nouveaux entrepreneurs avant vos confrères.
           </p>
         </div>
       </CardHeader>

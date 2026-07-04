@@ -7,56 +7,56 @@ export const SitelinksStructuredData = () => {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Navigation Eligibly",
-    "description": "Navigation principale du site Eligibly pour les appels d'offres publics",
+    "description": language === 'en' ? "Main navigation of Eligibly — lead detection for accounting firms" : "Navigation principale d'Eligibly — détection de leads pour cabinets d'expertise-comptable",
     "url": "https://eligibly.ai",
     "itemListElement": [
       {
         "@type": "SiteNavigationElement",
         "position": 1,
-        "name": language === 'en' ? "AI Product" : "Produit IA",
-        "description": language === 'en' ? "AI analysis platform for public tenders and procurement" : "Plateforme d'analyse IA pour appels d'offres et marchés publics",
+        "name": language === 'en' ? "Product" : "Produit",
+        "description": language === 'en' ? "Detection, scoring and multichannel activation for newly-registered entrepreneurs" : "Détection, scoring et activation multicanale des nouveaux entrepreneurs",
         "url": `https://eligibly.ai${language === 'en' ? '/en/product' : '/produit'}`,
-        "about": language === 'en' ? "Artificial intelligence for public procurement optimization" : "Intelligence artificielle pour l'optimisation des marchés publics"
+        "about": language === 'en' ? "Lead detection and prioritisation for accounting firms" : "Détection et priorisation de leads pour cabinets d'expertise-comptable"
       },
       {
         "@type": "SiteNavigationElement",
         "position": 2, 
-        "name": language === 'en' ? "Free Demo" : "Démo Gratuite",
-        "description": language === 'en' ? "Test Eligibly AI on your public tender projects for free" : "Testez gratuitement l'IA Eligibly sur vos projets d'appels d'offres",
+        "name": language === 'en' ? "Demo" : "Démo",
+        "description": language === 'en' ? "See Eligibly on real data from your area" : "Voyez Eligibly sur les données réelles de votre zone",
         "url": `https://eligibly.ai${language === 'en' ? '/en/demo' : '/demo'}`,
-        "about": language === 'en' ? "Free testing and demonstration of AI capabilities" : "Test gratuit et démonstration des capacités IA"
+        "about": language === 'en' ? "Personalised demo — 10 scored leads live" : "Démo personnalisée — 10 leads scorés en direct"
       },
       {
         "@type": "SiteNavigationElement",
         "position": 3,
-        "name": language === 'en' ? "Complete Solutions" : "Solutions Complètes",
-        "description": language === 'en' ? "End-to-end solutions for public procurement success" : "Solutions de bout en bout pour réussir dans la commande publique", 
+        "name": language === 'en' ? "Use cases" : "Cas d'usage",
+        "description": language === 'en' ? "Approach calibrated to each accounting-firm profile" : "Approche calibrée pour chaque profil de cabinet d'expertise-comptable",
         "url": `https://eligibly.ai${language === 'en' ? '/en/solutions' : '/solutions'}`,
-        "about": language === 'en' ? "Comprehensive strategies and tools for public markets" : "Stratégies et outils complets pour les marchés publics"
+        "about": language === 'en' ? "Verticals: tech, consulting, healthcare, craftsmen, large firms" : "Verticales : tech, conseil, santé, artisans, grands cabinets"
       },
       {
         "@type": "SiteNavigationElement",
         "position": 4,
-        "name": language === 'en' ? "Transparent Pricing" : "Tarifs Transparents", 
+        "name": language === 'en' ? "Pricing" : "Tarifs", 
         "description": language === 'en' ? "Clear and transparent pricing for all business sizes" : "Tarification claire et transparente pour toutes les tailles d'entreprise",
         "url": `https://eligibly.ai${language === 'en' ? '/en/pricing' : '/tarifs'}`,
-        "about": language === 'en' ? "Pricing plans adapted to SMEs and large groups" : "Plans tarifaires adaptés aux PME et grands groupes"
+        "about": language === 'en' ? "Free 14-day pilot, monthly billing, no commitment" : "Pilote 14 jours gratuit, facturation mensuelle, sans engagement"
       },
       {
         "@type": "SiteNavigationElement",
         "position": 5,
-        "name": language === 'en' ? "Expert Resources" : "Ressources Expert",
-        "description": language === 'en' ? "Guides, articles and expertise for public tender success" : "Guides, articles et expertise pour réussir vos appels d'offres publics",
+        "name": language === 'en' ? "Resources" : "Ressources",
+        "description": language === 'en' ? "Playbooks, ROI calculators and prospecting guides for accounting firms" : "Playbooks, calculateurs ROI et guides de prospection pour cabinets d'expertise-comptable",
         "url": `https://eligibly.ai${language === 'en' ? '/en/resources' : '/ressources'}`,
-        "about": language === 'en' ? "Educational content and strategic guides" : "Contenu éducatif et guides stratégiques"
+        "about": language === 'en' ? "Baromètres, ICP guides and prospecting playbooks" : "Baromètres, guides ICP et playbooks de prospection"
       },
       {
         "@type": "SiteNavigationElement",
         "position": 6,
-        "name": language === 'en' ? "Public Tender Guide" : "Guide Appels d'Offres",
-        "description": language === 'en' ? "Complete guide to analyzing and winning public tenders" : "Guide complet pour analyser et remporter les appels d'offres publics",
-        "url": "https://eligibly.ai/appels-d-offres-publics",
-        "about": language === 'en' ? "Comprehensive methodology for public procurement success" : "Méthodologie complète pour réussir dans les marchés publics"
+        "name": language === 'en' ? "About" : "À propos",
+        "description": language === 'en' ? "Our mission: help accounting firms produce their own leads, never mutualised" : "Notre mission : aider les cabinets à produire leurs propres leads, jamais mutualisés",
+        "url": `https://eligibly.ai${language === 'en' ? '/en/about' : '/a-propos'}`,
+        "about": language === 'en' ? "Team, mission and vision" : "Équipe, mission, vision"
       }
     ]
   };
@@ -74,20 +74,20 @@ export const SitelinksStructuredData = () => {
       {
         "@type": "ListItem", 
         "position": 2,
-        "name": "Appels d'Offres Publics",
-        "item": "https://eligibly.ai/appels-d-offres-publics"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
         "name": "Produit",
         "item": "https://eligibly.ai/produit"
       },
       {
         "@type": "ListItem",
-        "position": 4,
+        "position": 3,
         "name": "Solutions",
         "item": "https://eligibly.ai/solutions"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Tarifs",
+        "item": "https://eligibly.ai/tarifs"
       }
     ]
   };

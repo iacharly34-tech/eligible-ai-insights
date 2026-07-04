@@ -8,24 +8,24 @@ interface CategoryIconProps {
 
 const categoryIconMap: Record<string, LucideIcon> = {
   "IA & automatisation": Brain,
-  "Critères RSE": Leaf,
-  "PME & stratégies AO": Users,
-  "Signaux faibles": TrendingUp,
-  "Conformité & sécurité": Shield,
-  "Ciblage opportunités": Target,
-  "Innovation publique": Zap,
-  "Délais & procédures": Clock,
+  "Développement durable": Leaf,
+  "Prospection cabinet": Users,
+  "Signaux business": TrendingUp,
+  "Conformité & RGPD": Shield,
+  "Ciblage & ICP": Target,
+  "Social selling": Zap,
+  "Timing & création": Clock,
 };
 
 const categoryColorMap: Record<string, string> = {
   "IA & automatisation": "from-purple-500 to-indigo-600",
-  "Critères RSE": "from-success/100 to-emerald-600", 
-  "PME & stratégies AO": "from-blue-500 to-cyan-600",
-  "Signaux faibles": "from-orange-500 to-red-600",
-  "Conformité & sécurité": "from-gray-500 to-slate-600",
-  "Ciblage opportunités": "from-teal-500 to-blue-600",
-  "Innovation publique": "from-yellow-500 to-orange-600",
-  "Délais & procédures": "from-rose-500 to-pink-600",
+  "Développement durable": "from-success/100 to-emerald-600",
+  "Prospection cabinet": "from-blue-500 to-cyan-600",
+  "Signaux business": "from-orange-500 to-red-600",
+  "Conformité & RGPD": "from-gray-500 to-slate-600",
+  "Ciblage & ICP": "from-teal-500 to-blue-600",
+  "Social selling": "from-yellow-500 to-orange-600",
+  "Timing & création": "from-rose-500 to-pink-600",
 };
 
 export const CategoryIcon = ({ category, className = "", size = 24 }: CategoryIconProps) => {

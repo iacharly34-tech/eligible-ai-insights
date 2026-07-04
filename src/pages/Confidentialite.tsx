@@ -48,7 +48,7 @@ const Confidentialite = () => {
             <h2 className="text-2xl font-semibold text-foreground mb-4">3. Finalités du traitement</h2>
             <ul className="list-disc pl-6 space-y-2">
               <li>Gestion des demandes de contact et de démonstration</li>
-              <li>Fourniture de nos services d'IA pour les marchés publics</li>
+              <li>Fourniture de nos services de prospection pour cabinets d'expertise-comptable</li>
               <li>Amélioration de nos services et de l'expérience utilisateur</li>
               <li>Envoi d'informations commerciales (avec consentement)</li>
               <li>Respect de nos obligations légales</li>
