@@ -14,6 +14,7 @@ import { CabinetTestimonial } from "@/components/cabinet/CabinetTestimonial";
 import { CabinetPricing } from "@/components/cabinet/CabinetPricing";
 import { CabinetFAQ } from "@/components/cabinet/CabinetFAQ";
 import { CabinetFinalCTA } from "@/components/cabinet/CabinetFinalCTA";
+import { CabinetActivation } from "@/components/cabinet/CabinetActivation";
 
 const HomePage = () => {
   return (
@@ -31,6 +32,7 @@ const HomePage = () => {
           <CabinetHero />
           <CabinetProblems />
           <CabinetHowItWorks />
+          <CabinetActivation />
           <CabinetTransparency />
           <CabinetTestimonial />
           <CabinetCompare />
