@@ -17,6 +17,10 @@ export const Header = () => {
   const location = useLocation();
   const toggleRef = useRef<HTMLButtonElement | null>(null);
   const firstLinkRef = useRef<HTMLAnchorElement | null>(null);
+  const desktopTriggerRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const desktopMenuRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const slugify = (s: string) =>
+    s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
   const base = language === 'en' ? '/en' : '';
   const homePath = base || '/';
@@ -87,6 +91,32 @@ export const Header = () => {
     setMobileOpenGroup(null);
   }, [location.pathname]);
 
+  // Global Escape closes any open desktop dropdown and restores focus to its trigger.
+  useEffect(() => {
+    if (!openMenu) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        const trigger = desktopTriggerRefs.current[openMenu];
+        setOpenMenu(null);
+        trigger?.focus();
+      }
+    };
+    const onClickOutside = (e: MouseEvent) => {
+      const menu = desktopMenuRefs.current[openMenu];
+      const trigger = desktopTriggerRefs.current[openMenu];
+      const target = e.target as Node;
+      if (menu && !menu.contains(target) && trigger && !trigger.contains(target)) {
+        setOpenMenu(null);
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('mousedown', onClickOutside);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('mousedown', onClickOutside);
+    };
+  }, [openMenu]);
+
   return (
     <header 
       className={cn(
@@ -115,18 +145,38 @@ export const Header = () => {
               if (item.children) {
                 const isOpen = openMenu === item.name;
                 const isActive = item.children.some((c) => c.href === location.pathname);
+                const menuId = `desktop-menu-${slugify(item.name)}`;
                 return (
                   <div
                     key={item.name}
                     className="relative"
                     onMouseEnter={() => setOpenMenu(item.name)}
                     onMouseLeave={() => setOpenMenu(null)}
+                    onBlur={(e) => {
+                      if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                        if (openMenu === item.name) setOpenMenu(null);
+                      }
+                    }}
                   >
                     <button
+                      ref={(el) => { desktopTriggerRefs.current[item.name] = el; }}
                       type="button"
                       onClick={() => setOpenMenu(isOpen ? null : item.name)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          setOpenMenu(item.name);
+                          window.setTimeout(() => {
+                            const first = desktopMenuRefs.current[item.name]?.querySelector<HTMLAnchorElement>('[role="menuitem"]');
+                            first?.focus();
+                          }, 0);
+                        } else if (e.key === 'Escape') {
+                          setOpenMenu(null);
+                        }
+                      }}
                       aria-expanded={isOpen}
                       aria-haspopup="true"
+                      aria-controls={menuId}
                       className={cn(
                         "flex items-center gap-1 text-xs font-medium uppercase tracking-[0.15em] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
                         isActive ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground",
@@ -136,7 +186,36 @@ export const Header = () => {
                       <ChevronDown className={cn("w-3 h-3 transition-transform", isOpen && "rotate-180")} aria-hidden="true" />
                     </button>
                     {isOpen && (
-                      <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[360px]">
+                      <div
+                        ref={(el) => { desktopMenuRefs.current[item.name] = el; }}
+                        id={menuId}
+                        role="menu"
+                        aria-label={item.name}
+                        className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[360px]"
+                        onKeyDown={(e) => {
+                          const items = Array.from(
+                            desktopMenuRefs.current[item.name]?.querySelectorAll<HTMLAnchorElement>('[role="menuitem"]') ?? []
+                          );
+                          const idx = items.indexOf(document.activeElement as HTMLAnchorElement);
+                          if (e.key === 'ArrowDown') {
+                            e.preventDefault();
+                            items[(idx + 1) % items.length]?.focus();
+                          } else if (e.key === 'ArrowUp') {
+                            e.preventDefault();
+                            items[(idx - 1 + items.length) % items.length]?.focus();
+                          } else if (e.key === 'Home') {
+                            e.preventDefault();
+                            items[0]?.focus();
+                          } else if (e.key === 'End') {
+                            e.preventDefault();
+                            items[items.length - 1]?.focus();
+                          } else if (e.key === 'Escape' || e.key === 'Tab') {
+                            if (e.key === 'Escape') e.preventDefault();
+                            setOpenMenu(null);
+                            if (e.key === 'Escape') desktopTriggerRefs.current[item.name]?.focus();
+                          }
+                        }}
+                      >
                         <div className="rounded-xl border border-border bg-card shadow-lg p-2">
                           {item.children.map((c) => {
                             const active = location.pathname === c.href;
@@ -144,8 +223,9 @@ export const Header = () => {
                               <SafeLink
                                 key={c.href}
                                 to={c.href}
+                                role="menuitem"
                                 className={cn(
-                                  "block rounded-lg px-4 py-3 transition-colors",
+                                  "block rounded-lg px-4 py-3 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                                   active ? "bg-primary/10" : "hover:bg-muted/60",
                                 )}
                               >
@@ -243,14 +323,16 @@ export const Header = () => {
                     if (item.children) {
                       const isOpen = mobileOpenGroup === item.name;
                       const isActive = item.children.some((c) => c.href === location.pathname);
+                      const panelId = `mobile-panel-${slugify(item.name)}`;
                       return (
                         <li key={item.name}>
                           <button
                             type="button"
                             onClick={() => setMobileOpenGroup(isOpen ? null : item.name)}
                             aria-expanded={isOpen}
+                            aria-controls={panelId}
                             className={cn(
-                              "w-full flex items-center justify-center gap-2 text-lg font-medium uppercase tracking-[0.1em] transition-colors duration-200 px-6 py-4 rounded-xl min-h-[44px]",
+                              "w-full flex items-center justify-center gap-2 text-lg font-medium uppercase tracking-[0.1em] transition-colors duration-200 px-6 py-4 rounded-xl min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                               isActive ? "text-primary font-semibold bg-primary/10" : "text-foreground/80 hover:text-foreground hover:bg-muted",
                             )}
                           >
@@ -258,7 +340,7 @@ export const Header = () => {
                             <ChevronDown className={cn("w-4 h-4 transition-transform", isOpen && "rotate-180")} aria-hidden="true" />
                           </button>
                           {isOpen && (
-                            <ul className="mt-1 mb-1 space-y-1">
+                            <ul id={panelId} role="region" aria-label={item.name} className="mt-1 mb-1 space-y-1">
                               {item.children.map((c) => {
                                 const active = location.pathname === c.href;
                                 return (
@@ -268,7 +350,7 @@ export const Header = () => {
                                       onClick={() => setIsMenuOpen(false)}
                                       tabIndex={isMenuOpen ? 0 : -1}
                                       className={cn(
-                                        "block text-sm px-6 py-3 rounded-lg text-center",
+                                        "block text-sm px-6 py-3 rounded-lg text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                                         active ? "text-primary font-semibold bg-primary/10" : "text-foreground/70 hover:text-foreground hover:bg-muted",
                                       )}
                                     >
