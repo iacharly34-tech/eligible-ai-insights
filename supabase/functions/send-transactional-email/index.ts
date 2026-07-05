@@ -30,9 +30,23 @@ function generateToken(): string {
 // cannot invoke it directly (which would otherwise allow open email relay abuse
 // from the verified sender domain). Trusted callers (edge functions, admin code)
 // must invoke with the service-role key.
-function isServiceRoleJwt(authHeader: string | null): boolean {
+function isServiceRoleAuth(authHeader: string | null): boolean {
   if (!authHeader) return false
   const token = authHeader.replace(/^Bearer\s+/i, '').trim()
+  if (!token) return false
+
+  // New Supabase secret-key system: opaque tokens like `sb_secret_...`.
+  // Compare directly against the configured service role secret(s).
+  const candidates = [
+    Deno.env.get('SUPABASE_SERVICE_ROLE_KEY'),
+    ...(Deno.env.get('SUPABASE_SECRET_KEYS') || '')
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean),
+  ].filter(Boolean) as string[]
+  if (candidates.includes(token)) return true
+
+  // Legacy JWT service role key: verify the `role` claim.
   const parts = token.split('.')
   if (parts.length !== 3) return false
   try {
@@ -50,7 +64,7 @@ Deno.serve(async (req) => {
     return new Response(null, { headers: corsHeaders })
   }
 
-  if (!isServiceRoleJwt(req.headers.get('authorization'))) {
+  if (!isServiceRoleAuth(req.headers.get('authorization'))) {
     return new Response(
       JSON.stringify({ error: 'Forbidden: service role required' }),
       {
