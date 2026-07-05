@@ -10,9 +10,10 @@ interface SafeLinkProps {
   onClick?: () => void;
   tabIndex?: number;
   'aria-label'?: string;
+  role?: string;
 }
 
-export const SafeLink = forwardRef<HTMLAnchorElement, SafeLinkProps>(({ to, children, className, onClick, tabIndex, 'aria-label': ariaLabel }, ref) => {
+export const SafeLink = forwardRef<HTMLAnchorElement, SafeLinkProps>(({ to, children, className, onClick, tabIndex, 'aria-label': ariaLabel, role }, ref) => {
   const { language } = useLanguage();
   const isExternal = /^(https?:)?\/\//.test(to);
   const isEnglish = language === 'en';
@@ -63,6 +64,7 @@ export const SafeLink = forwardRef<HTMLAnchorElement, SafeLinkProps>(({ to, chil
         onClick={onClick}
         tabIndex={tabIndex}
         aria-label={ariaLabel}
+        role={role}
         target="_blank"
         rel="noopener noreferrer nofollow"
       >
@@ -82,6 +84,7 @@ export const SafeLink = forwardRef<HTMLAnchorElement, SafeLinkProps>(({ to, chil
         onClick={onClick} 
         tabIndex={tabIndex}
         aria-label={ariaLabel}
+        role={role}
       >
         {children}
       </Link>
@@ -96,6 +99,7 @@ export const SafeLink = forwardRef<HTMLAnchorElement, SafeLinkProps>(({ to, chil
         onClick={onClick} 
         tabIndex={tabIndex}
         aria-label={ariaLabel}
+        role={role}
       >
         {children}
       </a>
