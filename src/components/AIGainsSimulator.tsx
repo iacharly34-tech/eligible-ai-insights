@@ -22,17 +22,35 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-// Simulateur ROI IA cabinet d'expertise comptable — hypothèses issues des études
-// OEC Paris (2025), CSOEC « Parlons Data & IA », Cegid, Shine, CREOP (2026)
-// et retours pilotes Eligibly.
+// Simulateur ROI IA cabinet d'expertise comptable.
+// Hypothèses volontairement PRUDENTES (fourchette basse des études OEC Paris 2025,
+// CSOEC « Parlons Data & IA », Cegid, Shine, CREOP 2026 + retours pilotes Eligibly).
+// Toutes les recettes additionnelles (conseil, closing, dev commercial) sont
+// pondérées par une marge nette réaliste — on ne compte pas le CA en gain.
 
 const fmt = (n: number) =>
   new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(Math.max(0, Math.round(n)));
 
-const COUT_OUTILS_IA_PAR_COLLAB = 480; // €/an — moyenne suites production + LLM interne
+const COUT_OUTILS_IA_PAR_COLLAB = 480; // €/an — suites production + LLM interne
 const ELIGIBLY_ANNUEL = 290 * 12; // 3 480 €/an
-const SEMAINES = 45;
+const SEMAINES = 45; // semaines travaillées / an
 const ETP_HEURES = 1607;
+
+// Marges nettes appliquées aux recettes additionnelles (le gain n'est pas du CA)
+const MARGE_HONORAIRES = 0.35; // 35 % marge nette sur mission comptable
+const MARGE_DEV = 0.30; // 30 % marge nette sur nouveau dossier
+
+// Cadrage réaliste : plafonds à 100 % d'intensité — fourchette basse des études
+const MAX_PROD_HEURES = 0.35; // 35 % des heures saisie automatisables (vs 60 % théorique)
+const MAX_CONSEIL_HONO = 0.12; // +12 % d'honoraires
+const MAX_CONSEIL_PARC = 0.25; // sur 25 % du parc
+const MAX_RELATION_H = 2.5; // h/sem/collab libérées
+const MAX_RH_COUT = 6000; // € coût moyen remplacement
+const MAX_RH_TAUX = 0.10; // 10 pts turnover évités
+const MAX_GOUV_INCIDENT = 25000 * 0.08; // 8 % de proba × 25 k€
+const MAX_GOUV_CLOSING_PARC = 0.015; // 1,5 % du parc mid-market
+const MAX_GOUV_CLOSING_UPLIFT = 0.15; // +15 % honoraires
+const MAX_DEV_DOSSIERS_MOIS = 2.5; // dossiers nets/mois à 100 %
 
 type ScenarioKey = "prudente" | "realiste" | "ambitieuse";
 
@@ -53,18 +71,18 @@ const SCENARIOS: Record<
 > = {
   prudente: {
     label: "Prudente",
-    tagline: "Premiers pilotes, adoption progressive",
-    intensites: { iProduction: 30, iConseil: 15, iRelation: 20, iRH: 10, iGouvernance: 20, iDev: 25 },
+    tagline: "Pilotes ciblés, adoption progressive",
+    intensites: { iProduction: 25, iConseil: 15, iRelation: 20, iRH: 10, iGouvernance: 20, iDev: 25 },
   },
   realiste: {
     label: "Réaliste",
     tagline: "Cabinet engagé, roadmap 12 mois",
-    intensites: { iProduction: 60, iConseil: 40, iRelation: 50, iRH: 30, iGouvernance: 40, iDev: 70 },
+    intensites: { iProduction: 50, iConseil: 35, iRelation: 45, iRH: 25, iGouvernance: 35, iDev: 55 },
   },
   ambitieuse: {
     label: "Ambitieuse",
     tagline: "Cabinet IA-first, tous les axes activés",
-    intensites: { iProduction: 90, iConseil: 75, iRelation: 85, iRH: 65, iGouvernance: 80, iDev: 95 },
+    intensites: { iProduction: 80, iConseil: 65, iRelation: 75, iRH: 55, iGouvernance: 70, iDev: 80 },
   },
 };
 
@@ -75,15 +93,15 @@ export const AIGainsSimulator = () => {
   const [tjm, setTjm] = useState(450);
   const [clientsActifs, setClientsActifs] = useState(180);
   const [honorairesMoyen, setHonorairesMoyen] = useState(2400);
-  const [ltvNouveauClient, setLtvNouveauClient] = useState(8000);
+  const [ltvNouveauClient, setLtvNouveauClient] = useState(6500);
 
   // Intensité IA sur chacun des 6 axes (0-100 %)
-  const [iProduction, setIProduction] = useState(60);
-  const [iConseil, setIConseil] = useState(40);
-  const [iRelation, setIRelation] = useState(50);
-  const [iRH, setIRH] = useState(30);
-  const [iGouvernance, setIGouvernance] = useState(40);
-  const [iDev, setIDev] = useState(70);
+  const [iProduction, setIProduction] = useState(50);
+  const [iConseil, setIConseil] = useState(35);
+  const [iRelation, setIRelation] = useState(45);
+  const [iRH, setIRH] = useState(25);
+  const [iGouvernance, setIGouvernance] = useState(35);
+  const [iDev, setIDev] = useState(55);
 
   const [scenario, setScenario] = useState<ScenarioKey | null>("realiste");
   const [pulse, setPulse] = useState(false);
@@ -107,34 +125,39 @@ export const AIGainsSimulator = () => {
     const tauxHoraire = tjm / 7; // €/h facturé
 
     // ─── Axe 1 · Production ────────────────────────────────
-    // Gain max = 60 % des heures saisie/lettrage (source Shine 2024)
-    const hProdSem = collabs * hoursSaisiePerCollab * 0.6 * (iProduction / 100);
+    // Max 35 % des heures saisie/lettrage réellement récupérables (net des
+    // temps de contrôle/révision qui restent humains).
+    const hProdSem = collabs * hoursSaisiePerCollab * MAX_PROD_HEURES * (iProduction / 100);
     const eurProd = hProdSem * SEMAINES * tauxHoraire;
 
     // ─── Axe 2 · Conseil & pilotage ────────────────────────
-    // Max : +25 % d'honoraires sur 40 % du parc (offre pilotage — CSOEC)
-    const eurConseil = clientsActifs * 0.4 * honorairesMoyen * 0.25 * (iConseil / 100);
+    // Max : +12 % d'honoraires sur 25 % du parc × marge nette 35 %.
+    const eurConseil =
+      clientsActifs * MAX_CONSEIL_PARC * honorairesMoyen * MAX_CONSEIL_HONO *
+      MARGE_HONORAIRES * (iConseil / 100);
 
     // ─── Axe 3 · Relation client ──────────────────────────
-    // Max : 5 h/sem/collab libérées (emails, RAG, transcriptions RDV)
-    const hRelSem = collabs * 5 * (iRelation / 100);
+    // Max : 2,5 h/sem/collab libérées (emails, RAG, transcriptions RDV).
+    const hRelSem = collabs * MAX_RELATION_H * (iRelation / 100);
     const eurRel = hRelSem * SEMAINES * tauxHoraire;
 
     // ─── Axe 4 · RH & organisation ────────────────────────
-    // Max : -15 % turnover, économie recrutement ≈ 8 000 € × 15 % × collabs
-    const eurRH = collabs * 8000 * 0.15 * (iRH / 100);
+    // Max : -10 pts turnover, coût moyen remplacement 6 000 €.
+    const eurRH = collabs * MAX_RH_COUT * MAX_RH_TAUX * (iRH / 100);
 
     // ─── Axe 5 · Gouvernance & conformité ─────────────────
-    // Max : évite 1 incident RGPD (CNIL 2024, coût médian 25 000 €) × proba
-    // + +30 % de closing sur segment mid-market (2 % du parc, honoraires × 2)
-    const eurGouvIncident = 25000 * 0.2 * (iGouvernance / 100);
-    const eurGouvClosing = clientsActifs * 0.02 * honorairesMoyen * 0.3 * (iGouvernance / 100);
+    // Max : évitement incident RGPD (25 k€ × 8 % proba) + +15 % d'honoraires
+    // sur 1,5 % du parc mid-market × marge 35 %.
+    const eurGouvIncident = MAX_GOUV_INCIDENT * (iGouvernance / 100);
+    const eurGouvClosing =
+      clientsActifs * MAX_GOUV_CLOSING_PARC * honorairesMoyen * MAX_GOUV_CLOSING_UPLIFT *
+      MARGE_HONORAIRES * (iGouvernance / 100);
     const eurGouv = eurGouvIncident + eurGouvClosing;
 
     // ─── Axe 6 · Développement commercial (Eligibly) ───────
-    // Max : 8 nouveaux dossiers/mois × LTV (retour pilotes Eligibly)
-    const nouveauxDossiersAn = 8 * 12 * (iDev / 100);
-    const eurDev = nouveauxDossiersAn * ltvNouveauClient;
+    // Max : 2,5 dossiers nets signés/mois × LTV 3 ans × marge 30 %.
+    const nouveauxDossiersAn = MAX_DEV_DOSSIERS_MOIS * 12 * (iDev / 100);
+    const eurDev = nouveauxDossiersAn * ltvNouveauClient * MARGE_DEV;
 
     // ─── Coûts IA annuels ─────────────────────────────────
     const coutOutils = collabs * COUT_OUTILS_IA_PAR_COLLAB;
