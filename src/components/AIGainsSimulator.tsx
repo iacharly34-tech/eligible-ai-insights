@@ -232,13 +232,10 @@ export const AIGainsSimulator = () => {
           </button>
         </div>
         <h3 className="font-display text-[1.6rem] md:text-3xl font-semibold tracking-tight leading-tight mb-2">
-          Combien votre cabinet gagne réellement en 12 mois selon l'intensité IA déployée ?
+          Combien votre cabinet gagne en 12 mois avec l'IA ?
         </h3>
         <p className="text-sm text-muted-foreground max-w-3xl leading-relaxed">
-          Réglez 6 curseurs d'intensité (production, conseil, relation, RH, gouvernance, développement).
-          Le simulateur applique des <strong className="text-foreground/90">hypothèses prudentes</strong> (fourchette
-          basse des études OEC / CSOEC / Cegid / CREOP) et pondère les recettes additionnelles par une
-          marge nette réaliste — pas de CA brut.
+          Choisissez un scénario, ajustez si besoin. Hypothèses prudentes, marges nettes appliquées.
         </p>
         <button
           type="button"
@@ -250,11 +247,8 @@ export const AIGainsSimulator = () => {
       </header>
 
       {/* Scénarios */}
-      <div className="px-6 py-5 md:px-8 border-b border-border bg-muted/30">
-        <div className="flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.16em] text-muted-foreground font-semibold mb-3">
-          <Wand2 className="w-3.5 h-3.5" /> Scénarios pré-remplis
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+      <div className="px-6 py-4 md:px-8 border-b border-border bg-muted/30">
+        <div className="grid grid-cols-3 gap-2">
           {(Object.keys(SCENARIOS) as ScenarioKey[]).map((key) => {
             const s = SCENARIOS[key];
             const active = scenario === key;
@@ -263,7 +257,7 @@ export const AIGainsSimulator = () => {
                 key={key}
                 type="button"
                 onClick={() => applyScenario(key)}
-                className={`text-left rounded-xl border p-3.5 transition-all ${
+                className={`text-center rounded-lg border px-3 py-2 transition-all ${
                   active
                     ? "border-primary bg-primary/10 shadow-sm"
                     : "border-border bg-background hover:border-primary/50 hover:bg-primary/5"
@@ -272,7 +266,6 @@ export const AIGainsSimulator = () => {
                 <div className={`text-sm font-semibold ${active ? "text-primary" : "text-foreground"}`}>
                   {s.label}
                 </div>
-                <div className="text-[0.72rem] text-muted-foreground leading-snug mt-0.5">{s.tagline}</div>
               </button>
             );
           })}
@@ -283,8 +276,8 @@ export const AIGainsSimulator = () => {
         {/* Inputs */}
         <div className="p-6 md:p-8 space-y-8 border-b lg:border-b-0 lg:border-r border-border">
           <div>
-            <SectionHeading step="1" title="Votre cabinet" description="Taille, économie et portefeuille." />
-            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-6 mt-5">
+            <SectionHeading step="1" title="Votre cabinet" />
+            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-7 mt-5">
               <Slider
             label="Nombre de collaborateurs"
             value={collabs}
@@ -352,10 +345,10 @@ export const AIGainsSimulator = () => {
           <div>
             <SectionHeading
               step="2"
-              title="Intensité IA par axe de modernisation"
-              description="0 % = aucun déploiement · 100 % = axe pleinement industrialisé. Passez la souris sur ⓘ pour la méthode."
+              title="Intensité IA par axe"
+              description="0 % = pas déployé · 100 % = pleinement industrialisé."
             />
-            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-6 mt-5">
+            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-7 mt-5">
               <Slider
                 label="Axe 1 · Production comptable"
                 value={iProduction}
