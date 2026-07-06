@@ -1,4 +1,5 @@
 import { ArticleShell } from "./ArticleShell";
+import { AIGainsSimulator } from "@/components/AIGainsSimulator";
 
 const ModerniserCabinetIA = () => (
   <ArticleShell
@@ -248,6 +249,8 @@ const ModerniserCabinetIA = () => (
     </p>
 
     <h2>Feuille de route pragmatique sur 12 mois</h2>
+    <AIGainsSimulator />
+
     <p>
       La tentation, face à ces six axes, est de tout lancer en parallèle. C'est la meilleure façon de ne rien livrer. Une séquence qui fonctionne, observée chez plusieurs cabinets pilotes :
     </p>
