@@ -15,6 +15,7 @@ import {
   BookOpen,
   ChevronDown,
 } from "lucide-react";
+import { ArrowLeft, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
 import {
