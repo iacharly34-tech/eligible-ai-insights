@@ -10,9 +10,17 @@ import {
   UserCog,
   ShieldCheck,
   Target,
+  Info,
+  Wand2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 // Simulateur ROI IA cabinet d'expertise comptable — hypothèses issues des études
 // OEC Paris (2025), CSOEC « Parlons Data & IA », Cegid, Shine, CREOP (2026)
@@ -25,6 +33,40 @@ const COUT_OUTILS_IA_PAR_COLLAB = 480; // €/an — moyenne suites production +
 const ELIGIBLY_ANNUEL = 290 * 12; // 3 480 €/an
 const SEMAINES = 45;
 const ETP_HEURES = 1607;
+
+type ScenarioKey = "prudente" | "realiste" | "ambitieuse";
+
+const SCENARIOS: Record<
+  ScenarioKey,
+  {
+    label: string;
+    tagline: string;
+    intensites: {
+      iProduction: number;
+      iConseil: number;
+      iRelation: number;
+      iRH: number;
+      iGouvernance: number;
+      iDev: number;
+    };
+  }
+> = {
+  prudente: {
+    label: "Prudente",
+    tagline: "Premiers pilotes, adoption progressive",
+    intensites: { iProduction: 30, iConseil: 15, iRelation: 20, iRH: 10, iGouvernance: 20, iDev: 25 },
+  },
+  realiste: {
+    label: "Réaliste",
+    tagline: "Cabinet engagé, roadmap 12 mois",
+    intensites: { iProduction: 60, iConseil: 40, iRelation: 50, iRH: 30, iGouvernance: 40, iDev: 70 },
+  },
+  ambitieuse: {
+    label: "Ambitieuse",
+    tagline: "Cabinet IA-first, tous les axes activés",
+    intensites: { iProduction: 90, iConseil: 75, iRelation: 85, iRH: 65, iGouvernance: 80, iDev: 95 },
+  },
+};
 
 export const AIGainsSimulator = () => {
   // Contexte cabinet
@@ -42,6 +84,24 @@ export const AIGainsSimulator = () => {
   const [iRH, setIRH] = useState(30);
   const [iGouvernance, setIGouvernance] = useState(40);
   const [iDev, setIDev] = useState(70);
+
+  const [scenario, setScenario] = useState<ScenarioKey | null>("realiste");
+  const [pulse, setPulse] = useState(false);
+
+  const applyScenario = (key: ScenarioKey) => {
+    const s = SCENARIOS[key].intensites;
+    setIProduction(s.iProduction);
+    setIConseil(s.iConseil);
+    setIRelation(s.iRelation);
+    setIRH(s.iRH);
+    setIGouvernance(s.iGouvernance);
+    setIDev(s.iDev);
+    setScenario(key);
+    setPulse(true);
+    setTimeout(() => setPulse(false), 900);
+  };
+
+  const clearScenario = () => setScenario(null);
 
   const gains = useMemo(() => {
     const tauxHoraire = tjm / 7; // €/h facturé
@@ -130,21 +190,52 @@ export const AIGainsSimulator = () => {
         <h3 className="font-display text-2xl md:text-3xl font-semibold tracking-tight mb-2">
           Combien votre cabinet gagne en 12 mois selon l'intensité IA sur chaque axe ?
         </h3>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-muted-foreground mb-5">
           Réglez l'intensité d'IA déployée sur chacun des 6 axes de modernisation (production, conseil, relation
           client, RH, gouvernance, développement commercial). Le simulateur calcule le gain financier annuel,
           le retour sur investissement et le temps libéré — en direct. Hypothèses issues des études OEC Paris,
           CSOEC, Cegid, Shine, CREOP et retours pilotes Eligibly.
         </p>
+
+        {/* Scénarios pré-remplis */}
+        <div>
+          <div className="flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-2">
+            <Wand2 className="w-3.5 h-3.5" /> Scénarios pré-remplis
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            {(Object.keys(SCENARIOS) as ScenarioKey[]).map((key) => {
+              const s = SCENARIOS[key];
+              const active = scenario === key;
+              return (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => applyScenario(key)}
+                  className={`text-left rounded-lg border p-3 transition-all ${
+                    active
+                      ? "border-primary bg-primary/10 shadow-sm"
+                      : "border-border bg-background hover:border-primary/50 hover:bg-primary/5"
+                  }`}
+                >
+                  <div className={`text-sm font-semibold ${active ? "text-primary" : "text-foreground"}`}>
+                    {s.label}
+                  </div>
+                  <div className="text-[0.72rem] text-muted-foreground leading-snug mt-0.5">{s.tagline}</div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       <div className="grid lg:grid-cols-[1.15fr_1fr] gap-0">
         {/* Inputs */}
         <div className="p-6 md:p-8 space-y-8 border-b lg:border-b-0 lg:border-r border-border/60">
           <div>
-            <div className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-4">
+            <div className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-1">
               1 · Votre cabinet
             </div>
+            <p className="text-xs text-muted-foreground mb-4">Décrivez la taille et l'économie de votre cabinet.</p>
             <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
               <Slider
             label="Nombre de collaborateurs"
@@ -152,9 +243,10 @@ export const AIGainsSimulator = () => {
             min={1}
             max={80}
             step={1}
-            onChange={setCollabs}
+            onChange={(v) => { setCollabs(v); clearScenario(); }}
             suffix=" pers."
             icon={<Users className="w-3.5 h-3.5" />}
+            hint="Effectif total (associés + collaborateurs + assistants) concerné par l'IA."
           />
           <Slider
             label="Heures/semaine/collab sur saisie & tenue"
@@ -162,8 +254,9 @@ export const AIGainsSimulator = () => {
             min={0}
             max={35}
             step={1}
-            onChange={setHoursSaisiePerCollab}
+            onChange={(v) => { setHoursSaisiePerCollab(v); clearScenario(); }}
             suffix=" h"
+            hint="Temps hebdo par collaborateur passé à saisir, lettrer, rapprocher (avant IA)."
           />
           <Slider
             label="TJM moyen facturé"
@@ -171,8 +264,9 @@ export const AIGainsSimulator = () => {
             min={200}
             max={1200}
             step={25}
-            onChange={setTjm}
+            onChange={(v) => { setTjm(v); clearScenario(); }}
             suffix=" €"
+            hint="Taux journalier moyen facturé — sert à valoriser les heures libérées."
           />
           <Slider
             label="Clients actifs au portefeuille"
@@ -180,8 +274,9 @@ export const AIGainsSimulator = () => {
             min={10}
             max={800}
             step={10}
-            onChange={setClientsActifs}
+            onChange={(v) => { setClientsActifs(v); clearScenario(); }}
             suffix=""
+            hint="Nombre de dossiers récurrents suivis par le cabinet."
           />
           <Slider
             label="Honoraires moyens / client / an"
@@ -189,8 +284,9 @@ export const AIGainsSimulator = () => {
             min={800}
             max={12000}
             step={100}
-            onChange={setHonorairesMoyen}
+            onChange={(v) => { setHonorairesMoyen(v); clearScenario(); }}
             suffix=" €"
+            hint="Panier moyen annuel par client — base pour l'upsell conseil/pilotage."
           />
           <Slider
             label="LTV nouveau dossier (3 ans)"
@@ -198,16 +294,21 @@ export const AIGainsSimulator = () => {
             min={2000}
             max={30000}
             step={500}
-            onChange={setLtvNouveauClient}
+            onChange={(v) => { setLtvNouveauClient(v); clearScenario(); }}
             suffix=" €"
+            hint="Valeur générée sur 3 ans par un dossier signé via prospection IA."
           />
             </div>
           </div>
 
           <div>
-            <div className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-4">
+            <div className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-1">
               2 · Intensité IA par axe de modernisation
             </div>
+            <p className="text-xs text-muted-foreground mb-4">
+              0 % = aucun déploiement · 100 % = axe pleinement industrialisé. Passez la souris sur
+              <Info className="inline w-3 h-3 mx-1 -mt-0.5" /> pour la méthode de calcul.
+            </p>
             <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
               <Slider
                 label="Axe 1 · Production comptable"
@@ -215,10 +316,11 @@ export const AIGainsSimulator = () => {
                 min={0}
                 max={100}
                 step={5}
-                onChange={setIProduction}
+                onChange={(v) => { setIProduction(v); clearScenario(); }}
                 suffix=" %"
                 icon={<Cpu className="w-3.5 h-3.5" />}
                 hint="OCR factures, pré-lettrage, révision analytique automatisée"
+                tooltip="À 100 %, l'IA absorbe 60 % des heures de saisie/lettrage (source Shine 2024). Le gain € = heures libérées × TJM/7."
               />
               <Slider
                 label="Axe 2 · Conseil & pilotage"
@@ -226,10 +328,11 @@ export const AIGainsSimulator = () => {
                 min={0}
                 max={100}
                 step={5}
-                onChange={setIConseil}
+                onChange={(v) => { setIConseil(v); clearScenario(); }}
                 suffix=" %"
                 icon={<TrendingUp className="w-3.5 h-3.5" />}
                 hint="Dashboards temps réel, détection d'anomalies, rapports narratifs LLM"
+                tooltip="À 100 %, +25 % d'honoraires sur 40 % du parc via offres pilotage (source CSOEC « Parlons Data & IA »)."
               />
               <Slider
                 label="Axe 3 · Relation client"
@@ -237,10 +340,11 @@ export const AIGainsSimulator = () => {
                 min={0}
                 max={100}
                 step={5}
-                onChange={setIRelation}
+                onChange={(v) => { setIRelation(v); clearScenario(); }}
                 suffix=" %"
                 icon={<MessageSquare className="w-3.5 h-3.5" />}
                 hint="Assistant RAG, résumés d'emails, transcription RDV, portail conversationnel"
+                tooltip="À 100 %, 5 h/semaine/collab libérées sur emails, comptes-rendus et Q&A clients (retours pilotes OEC Paris 2025)."
               />
               <Slider
                 label="Axe 4 · RH & organisation"
@@ -248,10 +352,11 @@ export const AIGainsSimulator = () => {
                 min={0}
                 max={100}
                 step={5}
-                onChange={setIRH}
+                onChange={(v) => { setIRH(v); clearScenario(); }}
                 suffix=" %"
                 icon={<UserCog className="w-3.5 h-3.5" />}
                 hint="Fiches de poste réécrites, formation IA, rétention collaborateurs confirmés"
+                tooltip="À 100 %, -15 % de turnover, soit ~8 000 € économisés par collaborateur retenu (coût moyen recrutement + onboarding)."
               />
               <Slider
                 label="Axe 5 · Gouvernance & conformité"
@@ -259,10 +364,11 @@ export const AIGainsSimulator = () => {
                 min={0}
                 max={100}
                 step={5}
-                onChange={setIGouvernance}
+                onChange={(v) => { setIGouvernance(v); clearScenario(); }}
                 suffix=" %"
                 icon={<ShieldCheck className="w-3.5 h-3.5" />}
                 hint="Charte IA, cartographie outils, conformité RGPD/CNIL, secret professionnel"
+                tooltip="À 100 %, évitement d'un incident RGPD (coût médian 25 000 € × 20 % probabilité) + +30 % de closing sur segment mid-market (2 % du parc)."
               />
               <Slider
                 label="Axe 6 · Développement commercial (Eligibly)"
@@ -270,25 +376,35 @@ export const AIGainsSimulator = () => {
                 min={0}
                 max={100}
                 step={5}
-                onChange={setIDev}
+                onChange={(v) => { setIDev(v); clearScenario(); }}
                 suffix=" %"
                 icon={<Target className="w-3.5 h-3.5" />}
                 hint="Détection SASU/SAS temps réel, scoring, canal recommandé, accroche préparée"
                 highlight
+                tooltip="À 100 %, ~8 nouveaux dossiers signés/mois × LTV 3 ans (retours pilotes Eligibly sur cabinets 5-25 collabs)."
               />
             </div>
           </div>
         </div>
 
         {/* Results */}
-        <div className="p-6 md:p-8 bg-foreground text-background">
+        <div className="p-6 md:p-8 bg-foreground text-background lg:sticky lg:top-4 lg:self-start">
           <div className="text-[0.7rem] uppercase tracking-[0.14em] text-background/70 font-semibold mb-4 flex items-center gap-2">
             <Sparkles className="w-3.5 h-3.5 text-primary" /> ROI annuel — gains nets après coûts IA
+            {scenario && (
+              <span className="ml-auto text-[0.65rem] normal-case tracking-normal bg-primary/20 text-primary px-2 py-0.5 rounded-full font-medium">
+                Scénario {SCENARIOS[scenario].label}
+              </span>
+            )}
           </div>
 
-          <div className="mb-6 pb-6 border-b border-background/15">
+          <div
+            className={`mb-6 pb-6 border-b border-background/15 rounded-xl transition-all ${
+              pulse ? "ring-2 ring-primary/60 ring-offset-4 ring-offset-foreground -mx-2 px-2" : ""
+            }`}
+          >
             <div className="text-xs text-background/70 mb-1">Gain net annuel (après coûts outils IA + Eligibly)</div>
-            <div className="font-display text-4xl md:text-5xl font-semibold text-primary tabular-nums leading-none">
+            <div className={`font-display text-4xl md:text-5xl font-semibold text-primary tabular-nums leading-none ${pulse ? "animate-pulse" : ""}`}>
               +{fmt(gains.totalNet)} €
             </div>
             <div className="mt-3 grid grid-cols-3 gap-3 text-[0.72rem]">
@@ -385,6 +501,26 @@ export const AIGainsSimulator = () => {
           </div>
         </div>
       </div>
+
+      {/* Sticky mobile summary */}
+      <div className="lg:hidden sticky bottom-0 left-0 right-0 bg-foreground text-background border-t-2 border-primary/40 px-4 py-3 shadow-2xl z-10 flex items-center justify-between gap-3">
+        <div className="min-w-0">
+          <div className="text-[0.6rem] uppercase tracking-wider text-background/60">Gain net / an</div>
+          <div className="font-display text-xl font-semibold text-primary tabular-nums leading-tight truncate">
+            +{fmt(gains.totalNet)} €
+          </div>
+        </div>
+        <div className="text-[0.6rem] text-background/70 leading-tight text-right">
+          ROI {gains.roiRatio > 0 ? `×${gains.roiRatio.toFixed(1)}` : "—"}
+          <br />
+          {gains.etpEquivalent.toFixed(1)} ETP
+        </div>
+        <SafeLink to="/demo">
+          <Button variant="tengo" size="sm" className="shrink-0 h-9 text-xs font-semibold">
+            Plan ROI
+          </Button>
+        </SafeLink>
+      </div>
     </section>
   );
 };
@@ -400,16 +536,31 @@ interface SliderProps {
   hint?: string;
   icon?: React.ReactNode;
   highlight?: boolean;
+  tooltip?: string;
 }
 
-const Slider = ({ label, value, min, max, step, onChange, suffix = "", hint, icon, highlight }: SliderProps) => (
+const Slider = ({ label, value, min, max, step, onChange, suffix = "", hint, icon, highlight, tooltip }: SliderProps) => (
   <div className={highlight ? "rounded-lg border border-primary/30 bg-primary/5 p-3" : ""}>
-    <div className="flex items-baseline justify-between mb-2">
-      <label className="text-sm font-medium text-foreground flex items-center gap-1.5">
+    <div className="flex items-baseline justify-between gap-2 mb-2">
+      <label className="text-sm font-medium text-foreground flex items-center gap-1.5 min-w-0">
         {icon}
-        {label}
+        <span className="truncate">{label}</span>
+        {tooltip && (
+          <TooltipProvider delayDuration={100}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button type="button" aria-label="Méthode de calcul" className="shrink-0 text-muted-foreground hover:text-primary transition-colors">
+                  <Info className="w-3.5 h-3.5" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent side="top" className="max-w-xs text-xs leading-snug">
+                {tooltip}
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        )}
       </label>
-      <span className="font-display italic text-primary font-semibold tabular-nums text-base">
+      <span className="font-display italic text-primary font-semibold tabular-nums text-base shrink-0">
         {fmt(value)}
         {suffix}
       </span>
@@ -421,10 +572,10 @@ const Slider = ({ label, value, min, max, step, onChange, suffix = "", hint, ico
       step={step}
       value={value}
       onChange={(e) => onChange(Number(e.target.value))}
-      className="w-full accent-primary"
+      className="w-full accent-primary cursor-pointer"
       aria-label={label}
     />
-    {hint && <p className="mt-1 text-[0.7rem] text-muted-foreground italic">{hint}</p>}
+    {hint && <p className="mt-1.5 text-[0.7rem] text-muted-foreground italic leading-snug">{hint}</p>}
   </div>
 );
 
