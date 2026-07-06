@@ -12,6 +12,7 @@ import {
   Target,
   Info,
   Wand2,
+  BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
@@ -21,6 +22,13 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 // Simulateur ROI IA cabinet d'expertise comptable.
 // Hypothèses volontairement PRUDENTES (fourchette basse des études OEC Paris 2025,
@@ -105,6 +113,7 @@ export const AIGainsSimulator = () => {
 
   const [scenario, setScenario] = useState<ScenarioKey | null>("realiste");
   const [pulse, setPulse] = useState(false);
+  const [methodoOpen, setMethodoOpen] = useState(false);
 
   const applyScenario = (key: ScenarioKey) => {
     const s = SCENARIOS[key].intensites;
@@ -208,8 +217,17 @@ export const AIGainsSimulator = () => {
     <section className="not-prose my-12 rounded-2xl border border-border bg-card overflow-hidden shadow-sm">
       {/* Header */}
       <header className="px-6 py-6 md:px-8 md:py-7 border-b border-border bg-gradient-to-br from-primary/8 via-card to-card">
-        <div className="flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.16em] text-primary font-semibold mb-3">
-          <Calculator className="w-3.5 h-3.5" /> Simulateur ROI IA · Cabinet d'expertise comptable
+        <div className="flex items-center justify-between gap-3 mb-3">
+          <div className="flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.16em] text-primary font-semibold">
+            <Calculator className="w-3.5 h-3.5" /> Simulateur ROI IA · Cabinet d'expertise comptable
+          </div>
+          <button
+            type="button"
+            onClick={() => setMethodoOpen(true)}
+            className="hidden sm:inline-flex items-center gap-1.5 text-[0.7rem] font-medium text-primary hover:text-primary/80 border border-primary/30 hover:border-primary/60 rounded-full px-3 py-1 transition-colors"
+          >
+            <BookOpen className="w-3.5 h-3.5" /> Méthodologie & formules
+          </button>
         </div>
         <h3 className="font-display text-[1.6rem] md:text-3xl font-semibold tracking-tight leading-tight mb-2">
           Combien votre cabinet gagne réellement en 12 mois selon l'intensité IA déployée ?
@@ -220,6 +238,13 @@ export const AIGainsSimulator = () => {
           basse des études OEC / CSOEC / Cegid / CREOP) et pondère les recettes additionnelles par une
           marge nette réaliste — pas de CA brut.
         </p>
+        <button
+          type="button"
+          onClick={() => setMethodoOpen(true)}
+          className="mt-3 sm:hidden inline-flex items-center gap-1.5 text-xs font-medium text-primary underline underline-offset-2"
+        >
+          <BookOpen className="w-3.5 h-3.5" /> Voir la méthodologie & les formules
+        </button>
       </header>
 
       {/* Scénarios */}
@@ -451,7 +476,7 @@ export const AIGainsSimulator = () => {
             <ResultLine
               icon={<TrendingUp className="w-4 h-4 text-primary" />}
               title="Axe 2 · Conseil & pilotage"
-              detail="+25 % d'honoraires sur 40 % du parc"
+              detail="+12 % d'honoraires sur 25 % du parc (marge 35 %)"
               value={`+${fmt(gains.eurConseil)} €`}
             />
             <ResultLine
