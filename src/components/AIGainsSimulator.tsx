@@ -13,6 +13,7 @@ import {
   Info,
   Wand2,
   BookOpen,
+  ChevronDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
@@ -114,6 +115,7 @@ export const AIGainsSimulator = () => {
   const [scenario, setScenario] = useState<ScenarioKey | null>("realiste");
   const [pulse, setPulse] = useState(false);
   const [methodoOpen, setMethodoOpen] = useState(false);
+  const [detailOpen, setDetailOpen] = useState(false);
 
   const applyScenario = (key: ScenarioKey) => {
     const s = SCENARIOS[key].intensites;
@@ -432,138 +434,86 @@ export const AIGainsSimulator = () => {
         </div>
 
         {/* Results */}
-        <div className="p-6 md:p-8 bg-foreground text-background lg:sticky lg:top-4 lg:self-start">
-          <div className="text-[0.7rem] uppercase tracking-[0.14em] text-background/70 font-semibold mb-4 flex items-center gap-2">
-            <Sparkles className="w-3.5 h-3.5 text-primary" /> ROI annuel — gains nets après coûts IA
+        <div className="p-6 md:p-8 bg-gradient-to-br from-primary/[0.03] via-accent/[0.02] to-transparent border-l border-border lg:sticky lg:top-4 lg:self-start">
+          <div className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-4 flex items-center gap-2">
+            <Sparkles className="w-3.5 h-3.5 text-primary" /> Résultat annuel
             {scenario && (
-              <span className="ml-auto text-[0.65rem] normal-case tracking-normal bg-primary/20 text-primary px-2 py-0.5 rounded-full font-medium">
-                Scénario {SCENARIOS[scenario].label}
+              <span className="ml-auto text-[0.65rem] normal-case tracking-normal bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium">
+                {SCENARIOS[scenario].label}
               </span>
             )}
           </div>
 
-          <div
-            className={`mb-6 pb-6 border-b border-background/15 rounded-xl transition-all ${
-              pulse ? "ring-2 ring-primary/60 ring-offset-4 ring-offset-foreground -mx-2 px-2" : ""
-            }`}
-          >
-            <div className="text-xs text-background/70 mb-1">Gain net annuel (après coûts outils IA + Eligibly)</div>
+          <div className={`mb-6 pb-6 border-b border-border rounded-xl transition-all ${pulse ? "ring-2 ring-primary/30" : ""}`}>
+            <div className="text-xs text-muted-foreground mb-1">Gain net annuel</div>
             <div className={`font-display text-4xl md:text-5xl font-semibold text-primary tabular-nums leading-none ${pulse ? "animate-pulse" : ""}`}>
               +{fmt(gains.totalNet)} €
             </div>
-            <div className="mt-3 grid grid-cols-3 gap-3 text-[0.72rem]">
-              <KpiBadge label="Gain brut" value={`${fmt(gains.totalBrut)} €`} />
-              <KpiBadge label="Coûts IA" value={`-${fmt(gains.coutTotal)} €`} />
-              <KpiBadge
-                label="ROI"
-                value={gains.roiRatio > 0 ? `×${gains.roiRatio.toFixed(1)}` : "—"}
-                accent
-              />
-            </div>
-            <div className="mt-3 text-xs text-background/70">
-              ~{fmt(gains.totalHSem)} h/semaine libérées · équivalent {gains.etpEquivalent.toFixed(1)} ETP ·
-              payback en {gains.paybackMois > 0 ? `${gains.paybackMois.toFixed(1)} mois` : "—"}
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <ResultLine
-              icon={<Cpu className="w-4 h-4 text-primary" />}
-              title="Axe 1 · Production"
-              detail={`${fmt(gains.hProdSem)} h/sem gagnées sur saisie/lettrage`}
-              value={`+${fmt(gains.eurProd)} €`}
-            />
-            <ResultLine
-              icon={<TrendingUp className="w-4 h-4 text-primary" />}
-              title="Axe 2 · Conseil & pilotage"
-              detail="+12 % d'honoraires sur 25 % du parc (marge 35 %)"
-              value={`+${fmt(gains.eurConseil)} €`}
-            />
-            <ResultLine
-              icon={<MessageSquare className="w-4 h-4 text-primary" />}
-              title="Axe 3 · Relation client"
-              detail={`${fmt(gains.hRelSem)} h/sem libérées (emails, RAG, CR)`}
-              value={`+${fmt(gains.eurRel)} €`}
-            />
-            <ResultLine
-              icon={<UserCog className="w-4 h-4 text-primary" />}
-              title="Axe 4 · RH & organisation"
-              detail="Rétention & économie recrutement"
-              value={`+${fmt(gains.eurRH)} €`}
-            />
-            <ResultLine
-              icon={<ShieldCheck className="w-4 h-4 text-primary" />}
-              title="Axe 5 · Gouvernance & conformité"
-              detail="Évitement incident RGPD + closing mid-market"
-              value={`+${fmt(gains.eurGouv)} €`}
-            />
-            <ResultLine
-              icon={<Target className="w-4 h-4 text-primary" />}
-              title="Axe 6 · Développement commercial · Eligibly"
-              detail={`~${fmt(gains.nouveauxDossiersAn)} nouveaux dossiers signés / an`}
-              value={`+${fmt(gains.eurDev)} €`}
-              highlight
-            />
-            <div className="mt-2 pt-3 border-t border-background/15 flex items-center justify-between gap-4">
-              <div className="text-sm font-semibold uppercase tracking-[0.12em] text-background/80">
-                Total gain brut / an
+            <div className="mt-3 grid grid-cols-3 gap-2 text-[0.72rem]">
+              <div className="rounded-lg bg-card border border-border px-2 py-2">
+                <div className="text-[0.62rem] uppercase tracking-wider text-muted-foreground">Gain brut</div>
+                <div className="font-display italic font-semibold tabular-nums text-sm text-foreground">{fmt(gains.totalBrut)} €</div>
               </div>
-              <div className="font-display italic text-2xl font-semibold text-primary tabular-nums">
-                +{fmt(gains.totalBrut)} €
+              <div className="rounded-lg bg-card border border-border px-2 py-2">
+                <div className="text-[0.62rem] uppercase tracking-wider text-muted-foreground">Coûts IA</div>
+                <div className="font-display italic font-semibold tabular-nums text-sm text-foreground">−{fmt(gains.coutTotal)} €</div>
+              </div>
+              <div className="rounded-lg bg-primary text-primary-foreground px-2 py-2">
+                <div className="text-[0.62rem] uppercase tracking-wider text-primary-foreground/80">ROI</div>
+                <div className="font-display italic font-semibold tabular-nums text-sm">{gains.roiRatio > 0 ? `×${gains.roiRatio.toFixed(1)}` : "—"}</div>
               </div>
             </div>
-            <div className="flex items-center justify-between gap-4">
-              <div className="text-xs text-background/70">− Coûts outils IA + Eligibly</div>
-              <div className="font-display italic text-sm text-background/80 tabular-nums">
-                −{fmt(gains.coutTotal)} €
-              </div>
-            </div>
-            <div className="flex items-center justify-between gap-4 pt-2 border-t border-background/15">
-              <div className="text-sm font-semibold uppercase tracking-[0.12em] text-primary">
-                Total net / an
-              </div>
-              <div className="font-display italic text-3xl font-semibold text-primary tabular-nums">
-                +{fmt(gains.totalNet)} €
-              </div>
+            <div className="mt-3 text-xs text-muted-foreground">
+              ~{fmt(gains.totalHSem)} h/semaine libérées · {gains.etpEquivalent.toFixed(1)} ETP · payback {gains.paybackMois > 0 ? `${gains.paybackMois.toFixed(1)} mois` : "—"}
             </div>
           </div>
 
-          <div className="mt-6 pt-5 border-t border-background/15">
-            <SafeLink to="/demo">
-              <Button variant="tengo" className="w-full h-11 text-sm font-semibold group">
-                Recevoir mon plan ROI personnalisé
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </SafeLink>
-            <p className="mt-3 text-[0.7rem] text-background/60 leading-relaxed">
-              Estimation prudente. Plafonds à 100 % : saisie −35 %, conseil +12 % sur 25 % du parc
-              (marge 35 %), relation client 2,5 h/sem/collab, turnover −10 pts (6 k€/remplacement),
-              RGPD 25 k€ × 8 % + closing mid-market 1,5 % du parc, développement 2,5 dossiers/mois
-              (marge 30 %). Coûts intégrés : {fmt(COUT_OUTILS_IA_PAR_COLLAB)} €/collab/an d'outils IA
-              + 3 480 €/an Eligibly quand l'axe 6 &gt; 0. Sources : OEC Paris 2025, CSOEC, Cegid,
-              Shine, CREOP 2026, pilotes Eligibly.
-            </p>
-          </div>
+          <button
+            type="button"
+            onClick={() => setDetailOpen(!detailOpen)}
+            className="w-full flex items-center justify-between gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors mb-3"
+          >
+            <span>Détail par axe</span>
+            <ChevronDown className={`w-4 h-4 transition-transform ${detailOpen ? "rotate-180" : ""}`} />
+          </button>
+
+          {detailOpen && (
+            <div className="space-y-3 mb-6">
+              <ResultLight icon={<Cpu className="w-4 h-4 text-primary" />} title="Production" value={`+${fmt(gains.eurProd)} €`} sub={`${fmt(gains.hProdSem)} h/sem libérées`} />
+              <ResultLight icon={<TrendingUp className="w-4 h-4 text-primary" />} title="Conseil & pilotage" value={`+${fmt(gains.eurConseil)} €`} sub="+12 % honoraires × 25 % parc" />
+              <ResultLight icon={<MessageSquare className="w-4 h-4 text-primary" />} title="Relation client" value={`+${fmt(gains.eurRel)} €`} sub={`${fmt(gains.hRelSem)} h/sem libérées`} />
+              <ResultLight icon={<UserCog className="w-4 h-4 text-primary" />} title="RH & organisation" value={`+${fmt(gains.eurRH)} €`} sub="Rétention & recrutement" />
+              <ResultLight icon={<ShieldCheck className="w-4 h-4 text-primary" />} title="Gouvernance" value={`+${fmt(gains.eurGouv)} €`} sub="RGPD + closing" />
+              <ResultLight icon={<Target className="w-4 h-4 text-primary" />} title="Développement · Eligibly" value={`+${fmt(gains.eurDev)} €`} sub={`~${fmt(gains.nouveauxDossiersAn)} dossiers/an`} highlight />
+            </div>
+          )}
+
+          <SafeLink to="/demo">
+            <Button variant="tengo" className="w-full h-11 text-sm font-semibold group">
+              Recevoir mon plan ROI personnalisé
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </SafeLink>
         </div>
       </div>
 
       <MethodologyDialog open={methodoOpen} onOpenChange={setMethodoOpen} />
 
       {/* Sticky mobile summary */}
-      <div className="lg:hidden sticky bottom-0 left-0 right-0 bg-foreground text-background border-t-2 border-primary/40 px-4 py-3 shadow-2xl z-10 flex items-center justify-between gap-3">
+      <div className="lg:hidden sticky bottom-0 left-0 right-0 bg-card border-t border-primary/30 px-4 py-2.5 shadow-lg z-10 flex items-center justify-between gap-3">
         <div className="min-w-0">
-          <div className="text-[0.6rem] uppercase tracking-wider text-background/60">Gain net / an</div>
-          <div className="font-display text-xl font-semibold text-primary tabular-nums leading-tight truncate">
+          <div className="text-[0.6rem] uppercase tracking-wider text-muted-foreground">Gain net / an</div>
+          <div className="font-display text-lg font-semibold text-primary tabular-nums leading-tight truncate">
             +{fmt(gains.totalNet)} €
           </div>
         </div>
-        <div className="text-[0.6rem] text-background/70 leading-tight text-right">
+        <div className="text-[0.6rem] text-muted-foreground leading-tight text-right">
           ROI {gains.roiRatio > 0 ? `×${gains.roiRatio.toFixed(1)}` : "—"}
           <br />
           {gains.etpEquivalent.toFixed(1)} ETP
         </div>
         <SafeLink to="/demo">
-          <Button variant="tengo" size="sm" className="shrink-0 h-9 text-xs font-semibold">
+          <Button variant="tengo" size="sm" className="shrink-0 h-8 text-xs font-semibold">
             Plan ROI
           </Button>
         </SafeLink>
@@ -681,6 +631,33 @@ const ResultLine = ({
       </div>
     </div>
     <div className="font-display italic text-lg font-semibold text-primary tabular-nums whitespace-nowrap">
+      {value}
+    </div>
+  </div>
+);
+
+const ResultLight = ({
+  icon,
+  title,
+  value,
+  sub,
+  highlight = false,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  value: string;
+  sub: string;
+  highlight?: boolean;
+}) => (
+  <div className={`flex items-start justify-between gap-3 rounded-lg border px-3 py-2.5 ${highlight ? "border-primary/30 bg-primary/[0.03]" : "border-border bg-card/50"}`}>
+    <div className="flex items-start gap-2 min-w-0">
+      <div className="mt-0.5 shrink-0">{icon}</div>
+      <div className="min-w-0">
+        <div className="text-sm font-medium text-foreground">{title}</div>
+        <div className="text-[0.72rem] text-muted-foreground leading-snug">{sub}</div>
+      </div>
+    </div>
+    <div className="font-display italic text-base font-semibold text-primary tabular-nums whitespace-nowrap">
       {value}
     </div>
   </div>

@@ -65,16 +65,16 @@ export const ArticleShell = ({
     <>
       <SEOHead />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="min-h-screen bg-background">
-        <Header />
-        <MobileCTABar />
-        <main className="pt-32 pb-20">
-          <article className="container mx-auto max-w-3xl px-4">
-            <SafeLink to="/ressources" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8">
-              <ArrowLeft className="w-4 h-4 mr-1.5" /> Retour aux ressources
-            </SafeLink>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <MobileCTABar />
+      <main className="pt-32 pb-20">
+        <article className="container mx-auto max-w-6xl px-4">
+          <SafeLink to="/ressources" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8 max-w-3xl">
+            <ArrowLeft className="w-4 h-4 mr-1.5" /> Retour aux ressources
+          </SafeLink>
 
-            <header className="mb-10">
+            <header className="mb-10 max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-primary/10 text-primary text-[0.7rem] font-semibold uppercase tracking-[0.12em] mb-6">
                 <BookOpen className="w-3.5 h-3.5" /> {badge}
               </div>
@@ -91,7 +91,7 @@ export const ArticleShell = ({
               </div>
             </header>
 
-            <div className="prose prose-lg max-w-none mb-12
+            <div className="prose prose-lg max-w-3xl mx-auto mb-12
               [&_h2]:font-display [&_h2]:text-2xl md:[&_h2]:text-3xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:mt-12 [&_h2]:mb-4
               [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-8 [&_h3]:mb-3
               [&_p]:text-foreground/85 [&_p]:leading-relaxed [&_p]:my-4
