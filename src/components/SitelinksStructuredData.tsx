@@ -20,23 +20,15 @@ export const SitelinksStructuredData = () => {
       },
       {
         "@type": "SiteNavigationElement",
-        "position": 2, 
-        "name": language === 'en' ? "Demo" : "Démo",
-        "description": language === 'en' ? "See Eligibly on real data from your area" : "Voyez Eligibly sur les données réelles de votre zone",
-        "url": `https://eligibly.ai${language === 'en' ? '/en/demo' : '/demo'}`,
-        "about": language === 'en' ? "Personalised demo — 10 scored leads live" : "Démo personnalisée — 10 leads scorés en direct"
-      },
-      {
-        "@type": "SiteNavigationElement",
-        "position": 3,
-        "name": language === 'en' ? "Use cases" : "Cas d'usage",
+        "position": 2,
+        "name": "Solutions",
         "description": language === 'en' ? "Approach calibrated to each accounting-firm profile" : "Approche calibrée pour chaque profil de cabinet d'expertise-comptable",
         "url": `https://eligibly.ai${language === 'en' ? '/en/solutions' : '/solutions'}`,
         "about": language === 'en' ? "Verticals: tech, consulting, healthcare, craftsmen, large firms" : "Verticales : tech, conseil, santé, artisans, grands cabinets"
       },
       {
         "@type": "SiteNavigationElement",
-        "position": 4,
+        "position": 3,
         "name": language === 'en' ? "Pricing" : "Tarifs", 
         "description": language === 'en' ? "Clear and transparent pricing for all business sizes" : "Tarification claire et transparente pour toutes les tailles d'entreprise",
         "url": `https://eligibly.ai${language === 'en' ? '/en/pricing' : '/tarifs'}`,
@@ -44,7 +36,7 @@ export const SitelinksStructuredData = () => {
       },
       {
         "@type": "SiteNavigationElement",
-        "position": 5,
+        "position": 4,
         "name": language === 'en' ? "Resources" : "Ressources",
         "description": language === 'en' ? "Playbooks, ROI calculators and prospecting guides for accounting firms" : "Playbooks, calculateurs ROI et guides de prospection pour cabinets d'expertise-comptable",
         "url": `https://eligibly.ai${language === 'en' ? '/en/resources' : '/ressources'}`,
@@ -52,11 +44,19 @@ export const SitelinksStructuredData = () => {
       },
       {
         "@type": "SiteNavigationElement",
-        "position": 6,
+        "position": 5,
         "name": language === 'en' ? "About" : "À propos",
         "description": language === 'en' ? "Our mission: help accounting firms produce their own leads, never mutualised" : "Notre mission : aider les cabinets à produire leurs propres leads, jamais mutualisés",
         "url": `https://eligibly.ai${language === 'en' ? '/en/about' : '/a-propos'}`,
         "about": language === 'en' ? "Team, mission and vision" : "Équipe, mission, vision"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 6,
+        "name": language === 'en' ? "Demo" : "Démo",
+        "description": language === 'en' ? "See Eligibly on real data from your area" : "Voyez Eligibly sur les données réelles de votre zone",
+        "url": `https://eligibly.ai${language === 'en' ? '/en/demo' : '/demo'}`,
+        "about": language === 'en' ? "Personalised demo — 10 scored leads live" : "Démo personnalisée — 10 leads scorés en direct"
       }
     ]
   };
