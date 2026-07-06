@@ -522,6 +522,8 @@ export const AIGainsSimulator = () => {
         </div>
       </div>
 
+      <MethodologyDialog open={methodoOpen} onOpenChange={setMethodoOpen} />
+
       {/* Sticky mobile summary */}
       <div className="lg:hidden sticky bottom-0 left-0 right-0 bg-foreground text-background border-t-2 border-primary/40 px-4 py-3 shadow-2xl z-10 flex items-center justify-between gap-3">
         <div className="min-w-0">
