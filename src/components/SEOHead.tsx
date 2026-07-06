@@ -109,9 +109,9 @@ export const SEOHead = ({
         keywords: "fichier SIRET, plan d'action commercial, prospection cabinet EC, alternative Manageo"
       },
       '/blog/moderniser-cabinet-expertise-comptable-ia': {
-        title: "Moderniser un cabinet EC à l'ère de l'IA : les 6 axes clés 2026",
-        description: "Production, conseil, relation client, RH, gouvernance, développement commercial : les 6 axes IA pour moderniser un cabinet d'expertise comptable en 2026. Sources OEC, Cegid, CREOP.",
-        keywords: "IA cabinet expertise comptable, modernisation cabinet EC, transformation numérique cabinet comptable, IA experts-comptables 2026"
+        title: "IA cabinet expertise comptable 2026 : 6 axes + simulateur ROI",
+        description: "Moderniser un cabinet d'expertise comptable avec l'IA en 2026 : production, conseil, relation client, RH, gouvernance, prospection. Simulateur ROI IA gratuit, gains chiffrés, sources OEC, CSOEC, Cegid.",
+        keywords: "IA cabinet expertise comptable, IA experts-comptables 2026, modernisation cabinet EC, transformation numérique cabinet comptable, simulateur ROI IA cabinet, prospection IA experts-comptables, automatisation cabinet comptable, OCR facture cabinet EC, dashboards temps réel expert-comptable, Eligibly cabinet comptable, SASU SAS immatriculation prospection"
       }
     };
 
