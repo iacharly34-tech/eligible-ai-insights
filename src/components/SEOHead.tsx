@@ -107,6 +107,11 @@ export const SEOHead = ({
         title: "Fichier SIRET vs plan d'action : lequel choisir en 2026 ?",
         description: "Fichier SIRET brut ou plan d'action scoré : comparatif honnête, coûts, ROI, effort commercial. La bonne réponse dépend de votre cabinet EC.",
         keywords: "fichier SIRET, plan d'action commercial, prospection cabinet EC, alternative Manageo"
+      },
+      '/blog/moderniser-cabinet-expertise-comptable-ia': {
+        title: "Moderniser un cabinet EC à l'ère de l'IA : les 6 axes clés 2026",
+        description: "Production, conseil, relation client, RH, gouvernance, développement commercial : les 6 axes IA pour moderniser un cabinet d'expertise comptable en 2026. Sources OEC, Cegid, CREOP.",
+        keywords: "IA cabinet expertise comptable, modernisation cabinet EC, transformation numérique cabinet comptable, IA experts-comptables 2026"
       }
     };
 
