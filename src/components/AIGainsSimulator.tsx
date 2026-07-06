@@ -530,32 +530,32 @@ interface SliderProps {
 }
 
 const Slider = ({ label, value, min, max, step, onChange, suffix = "", hint, icon, highlight, tooltip }: SliderProps) => (
-  <div className={highlight ? "rounded-lg border border-primary/30 bg-primary/5 p-3" : ""}>
-    {/* Ligne 1 — Paramètre (label) */}
-    <div className="flex items-center gap-1.5 mb-1 text-[0.72rem] uppercase tracking-wider font-semibold text-muted-foreground">
-      {icon && <span className="text-primary/70">{icon}</span>}
-      <span className="truncate">{label}</span>
-      {tooltip && (
-        <TooltipProvider delayDuration={100}>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <button type="button" aria-label="Méthode de calcul" className="shrink-0 text-muted-foreground/70 hover:text-primary transition-colors">
-                <Info className="w-3 h-3" />
-              </button>
-            </TooltipTrigger>
-            <TooltipContent side="top" className="max-w-xs text-xs leading-snug">
-              {tooltip}
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      )}
+  <div className={highlight ? "rounded-lg border border-primary/30 bg-primary/5 px-3 py-2.5" : ""}>
+    {/* Label + valeur sur la même ligne */}
+    <div className="flex items-baseline justify-between gap-3 mb-2">
+      <div className="flex items-center gap-1.5 min-w-0 text-[0.82rem] font-medium text-foreground/85">
+        {icon && <span className="text-primary/70 shrink-0">{icon}</span>}
+        <span className="leading-snug">{label}</span>
+        {tooltip && (
+          <TooltipProvider delayDuration={100}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button type="button" aria-label="Méthode de calcul" className="shrink-0 text-muted-foreground/60 hover:text-primary transition-colors">
+                  <Info className="w-3 h-3" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent side="top" className="max-w-xs text-xs leading-snug">
+                {tooltip}
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        )}
+      </div>
+      <div className="font-display font-semibold text-foreground tabular-nums whitespace-nowrap text-base shrink-0">
+        {fmt(value)}
+        <span className="text-xs text-muted-foreground font-normal ml-0.5">{suffix}</span>
+      </div>
     </div>
-    {/* Ligne 2 — Valeur (grand chiffre) */}
-    <div className="font-display text-2xl font-semibold text-foreground tabular-nums leading-none mb-3">
-      {fmt(value)}
-      <span className="text-base text-muted-foreground font-normal ml-0.5">{suffix}</span>
-    </div>
-    {/* Ligne 3 — Curseur */}
     <input
       type="range"
       min={min}
@@ -566,7 +566,7 @@ const Slider = ({ label, value, min, max, step, onChange, suffix = "", hint, ico
       className="w-full accent-primary cursor-pointer"
       aria-label={label}
     />
-    {hint && <p className="mt-2 text-[0.7rem] text-muted-foreground leading-snug">{hint}</p>}
+    {hint && <p className="mt-1.5 text-[0.7rem] text-muted-foreground leading-snug">{hint}</p>}
   </div>
 );
 
