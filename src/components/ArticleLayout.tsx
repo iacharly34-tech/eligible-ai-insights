@@ -26,8 +26,8 @@ export const ArticleLayout = ({ badge, badgeIcon, title, subtitle, date, readTim
       <div className="min-h-screen bg-background">
         <Header />
         <main className="pt-32 pb-20">
-          <article className="container mx-auto max-w-4xl px-4">
-            <header className="mb-12">
+          <article className="container mx-auto max-w-6xl px-4">
+            <header className="mb-12 max-w-4xl">
               <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
                 {badgeIcon}
                 <span className="ml-2">{badge}</span>
@@ -45,7 +45,7 @@ export const ArticleLayout = ({ badge, badgeIcon, title, subtitle, date, readTim
               </div>
             </header>
 
-            <div className="prose prose-lg max-w-none mb-12 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:font-display [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:font-display [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:text-foreground/80 [&_p]:leading-relaxed [&_ul]:space-y-2 [&_li]:text-foreground/80 [&_strong]:text-foreground">
+            <div className="prose prose-lg max-w-none mb-12 [&>p]:max-w-4xl [&>ul]:max-w-4xl [&>ol]:max-w-4xl [&>h2]:max-w-4xl [&>h3]:max-w-4xl [&>blockquote]:max-w-4xl [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:font-display [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:font-display [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:text-foreground/80 [&_p]:leading-relaxed [&_ul]:space-y-2 [&_li]:text-foreground/80 [&_strong]:text-foreground">
               {children}
             </div>
 
