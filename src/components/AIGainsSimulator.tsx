@@ -145,7 +145,7 @@ export const AIGainsSimulator = () => {
             <div className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-4">
               1 · Votre cabinet
             </div>
-            <div className="space-y-5">
+            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
               <Slider
             label="Nombre de collaborateurs"
             value={collabs}
@@ -208,7 +208,7 @@ export const AIGainsSimulator = () => {
             <div className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-4">
               2 · Intensité IA par axe de modernisation
             </div>
-            <div className="space-y-5">
+            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
               <Slider
                 label="Axe 1 · Production comptable"
                 value={iProduction}
@@ -344,6 +344,28 @@ export const AIGainsSimulator = () => {
               value={`+${fmt(gains.eurDev)} €`}
               highlight
             />
+            <div className="mt-2 pt-3 border-t border-background/15 flex items-center justify-between gap-4">
+              <div className="text-sm font-semibold uppercase tracking-[0.12em] text-background/80">
+                Total gain brut / an
+              </div>
+              <div className="font-display italic text-2xl font-semibold text-primary tabular-nums">
+                +{fmt(gains.totalBrut)} €
+              </div>
+            </div>
+            <div className="flex items-center justify-between gap-4">
+              <div className="text-xs text-background/70">− Coûts outils IA + Eligibly</div>
+              <div className="font-display italic text-sm text-background/80 tabular-nums">
+                −{fmt(gains.coutTotal)} €
+              </div>
+            </div>
+            <div className="flex items-center justify-between gap-4 pt-2 border-t border-background/15">
+              <div className="text-sm font-semibold uppercase tracking-[0.12em] text-primary">
+                Total net / an
+              </div>
+              <div className="font-display italic text-3xl font-semibold text-primary tabular-nums">
+                +{fmt(gains.totalNet)} €
+              </div>
+            </div>
           </div>
 
           <div className="mt-6 pt-5 border-t border-background/15">
