@@ -31,29 +31,14 @@ export const Header = () => {
         { name: t('nav.solutions'), href: '/en/solutions' },
         { name: t('nav.pricing'), href: '/en/pricing' },
         { name: t('nav.resources'), href: '/en/resources' },
+        { name: 'About', href: '/en/about' },
       ]
     : [
-        { name: t('nav.product'), href: '/produit' },
-        {
-          name: 'Cabinet',
-          children: [
-            { name: 'Leads experts-comptables',      href: '/leads-experts-comptables',      desc: 'Sociétés fraîchement immatriculées, filtrées ICP.' },
-            { name: 'Prospection cabinet comptable', href: '/prospection-cabinet-comptable', desc: 'La méthode 2026, du sourcing à la lettre de mission.' },
-            { name: 'Canaux d\u2019activation',      href: '/canaux-activation',             desc: 'LinkedIn, email, appel, Instagram, courrier.' },
-            { name: 'Pourquoi ce lead est prioritaire', href: '/pourquoi-ce-lead-est-prioritaire', desc: 'Fiche lead type : score, signaux, accroche.' },
-          ],
-        },
-        { name: t('nav.pricing'), href: '/tarifs' },
-        {
-          name: t('nav.resources'),
-          children: [
-            { name: 'Toutes les ressources',            href: '/ressources',                                            desc: 'Guides, baromètres, playbooks.' },
-            { name: 'Playbook prospection 2026',        href: '/blog/playbook-prospection-cabinet-ec-2026',             desc: 'Méthodologie associés — 18 min.' },
-            { name: 'Fichier SIRET vs plan d\u2019action', href: '/blog/fichier-siret-vs-plan-action-comptable',        desc: 'PrimoLead & Cie vs Eligibly — 9 min.' },
-            { name: 'Baromètre acquisition cabinet',    href: '/blog/barometre-acquisition-cabinet-ec-2026',            desc: 'Coûts, canaux, benchmarks 2026.' },
-            { name: 'Lexique marketing EC',             href: '/blog/lexique-marketing-expert-comptable',               desc: 'Termes clés de la prospection cabinet.' },
-          ],
-        },
+        { name: 'Produit',    href: '/produit' },
+        { name: 'Solutions',  href: '/solutions' },
+        { name: 'Tarifs',     href: '/tarifs' },
+        { name: 'Ressources', href: '/ressources' },
+        { name: 'À propos',   href: '/a-propos' },
       ];
 
   const [openMenu, setOpenMenu] = useState<string | null>(null);
