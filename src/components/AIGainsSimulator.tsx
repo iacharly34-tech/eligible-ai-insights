@@ -205,61 +205,59 @@ export const AIGainsSimulator = () => {
   ]);
 
   return (
-    <section className="not-prose my-12 rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 via-card to-card overflow-hidden">
-      <div className="p-6 md:p-8 border-b border-border/60 bg-card/60">
-        <div className="flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.14em] text-primary font-semibold mb-3">
-          <Calculator className="w-3.5 h-3.5" /> Simulateur ROI IA — Cabinet d'expertise comptable
+    <section className="not-prose my-12 rounded-2xl border border-border bg-card overflow-hidden shadow-sm">
+      {/* Header */}
+      <header className="px-6 py-6 md:px-8 md:py-7 border-b border-border bg-gradient-to-br from-primary/8 via-card to-card">
+        <div className="flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.16em] text-primary font-semibold mb-3">
+          <Calculator className="w-3.5 h-3.5" /> Simulateur ROI IA · Cabinet d'expertise comptable
         </div>
-        <h3 className="font-display text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-          Combien votre cabinet gagne en 12 mois selon l'intensité IA sur chaque axe ?
+        <h3 className="font-display text-[1.6rem] md:text-3xl font-semibold tracking-tight leading-tight mb-2">
+          Combien votre cabinet gagne réellement en 12 mois selon l'intensité IA déployée ?
         </h3>
-        <p className="text-sm text-muted-foreground mb-5">
-          Réglez l'intensité d'IA déployée sur chacun des 6 axes de modernisation (production, conseil, relation
-          client, RH, gouvernance, développement commercial). Le simulateur calcule le gain financier annuel,
-          le retour sur investissement et le temps libéré — en direct. Hypothèses issues des études OEC Paris,
-          CSOEC, Cegid, Shine, CREOP et retours pilotes Eligibly.
+        <p className="text-sm text-muted-foreground max-w-3xl leading-relaxed">
+          Réglez 6 curseurs d'intensité (production, conseil, relation, RH, gouvernance, développement).
+          Le simulateur applique des <strong className="text-foreground/90">hypothèses prudentes</strong> (fourchette
+          basse des études OEC / CSOEC / Cegid / CREOP) et pondère les recettes additionnelles par une
+          marge nette réaliste — pas de CA brut.
         </p>
+      </header>
 
-        {/* Scénarios pré-remplis */}
-        <div>
-          <div className="flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-2">
-            <Wand2 className="w-3.5 h-3.5" /> Scénarios pré-remplis
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-            {(Object.keys(SCENARIOS) as ScenarioKey[]).map((key) => {
-              const s = SCENARIOS[key];
-              const active = scenario === key;
-              return (
-                <button
-                  key={key}
-                  type="button"
-                  onClick={() => applyScenario(key)}
-                  className={`text-left rounded-lg border p-3 transition-all ${
-                    active
-                      ? "border-primary bg-primary/10 shadow-sm"
-                      : "border-border bg-background hover:border-primary/50 hover:bg-primary/5"
-                  }`}
-                >
-                  <div className={`text-sm font-semibold ${active ? "text-primary" : "text-foreground"}`}>
-                    {s.label}
-                  </div>
-                  <div className="text-[0.72rem] text-muted-foreground leading-snug mt-0.5">{s.tagline}</div>
-                </button>
-              );
-            })}
-          </div>
+      {/* Scénarios */}
+      <div className="px-6 py-5 md:px-8 border-b border-border bg-muted/30">
+        <div className="flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.16em] text-muted-foreground font-semibold mb-3">
+          <Wand2 className="w-3.5 h-3.5" /> Scénarios pré-remplis
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+          {(Object.keys(SCENARIOS) as ScenarioKey[]).map((key) => {
+            const s = SCENARIOS[key];
+            const active = scenario === key;
+            return (
+              <button
+                key={key}
+                type="button"
+                onClick={() => applyScenario(key)}
+                className={`text-left rounded-xl border p-3.5 transition-all ${
+                  active
+                    ? "border-primary bg-primary/10 shadow-sm"
+                    : "border-border bg-background hover:border-primary/50 hover:bg-primary/5"
+                }`}
+              >
+                <div className={`text-sm font-semibold ${active ? "text-primary" : "text-foreground"}`}>
+                  {s.label}
+                </div>
+                <div className="text-[0.72rem] text-muted-foreground leading-snug mt-0.5">{s.tagline}</div>
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-[1.15fr_1fr] gap-0">
+      <div className="grid lg:grid-cols-[1.05fr_1fr]">
         {/* Inputs */}
-        <div className="p-6 md:p-8 space-y-8 border-b lg:border-b-0 lg:border-r border-border/60">
+        <div className="p-6 md:p-8 space-y-8 border-b lg:border-b-0 lg:border-r border-border">
           <div>
-            <div className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-1">
-              1 · Votre cabinet
-            </div>
-            <p className="text-xs text-muted-foreground mb-4">Décrivez la taille et l'économie de votre cabinet.</p>
-            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
+            <SectionHeading step="1" title="Votre cabinet" description="Taille, économie et portefeuille." />
+            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-6 mt-5">
               <Slider
             label="Nombre de collaborateurs"
             value={collabs}
@@ -325,14 +323,12 @@ export const AIGainsSimulator = () => {
           </div>
 
           <div>
-            <div className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-1">
-              2 · Intensité IA par axe de modernisation
-            </div>
-            <p className="text-xs text-muted-foreground mb-4">
-              0 % = aucun déploiement · 100 % = axe pleinement industrialisé. Passez la souris sur
-              <Info className="inline w-3 h-3 mx-1 -mt-0.5" /> pour la méthode de calcul.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
+            <SectionHeading
+              step="2"
+              title="Intensité IA par axe de modernisation"
+              description="0 % = aucun déploiement · 100 % = axe pleinement industrialisé. Passez la souris sur ⓘ pour la méthode."
+            />
+            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-6 mt-5">
               <Slider
                 label="Axe 1 · Production comptable"
                 value={iProduction}
@@ -343,7 +339,7 @@ export const AIGainsSimulator = () => {
                 suffix=" %"
                 icon={<Cpu className="w-3.5 h-3.5" />}
                 hint="OCR factures, pré-lettrage, révision analytique automatisée"
-                tooltip="À 100 %, l'IA absorbe 60 % des heures de saisie/lettrage (source Shine 2024). Le gain € = heures libérées × TJM/7."
+                tooltip="Plafond prudent : 35 % des heures de saisie/lettrage réellement automatisables (net du temps de contrôle humain). Gain € = heures libérées × TJM/7."
               />
               <Slider
                 label="Axe 2 · Conseil & pilotage"
@@ -355,7 +351,7 @@ export const AIGainsSimulator = () => {
                 suffix=" %"
                 icon={<TrendingUp className="w-3.5 h-3.5" />}
                 hint="Dashboards temps réel, détection d'anomalies, rapports narratifs LLM"
-                tooltip="À 100 %, +25 % d'honoraires sur 40 % du parc via offres pilotage (source CSOEC « Parlons Data & IA »)."
+                tooltip="Plafond : +12 % d'honoraires sur 25 % du parc via offres pilotage, pondéré par 35 % de marge nette (fourchette basse CSOEC)."
               />
               <Slider
                 label="Axe 3 · Relation client"
@@ -367,7 +363,7 @@ export const AIGainsSimulator = () => {
                 suffix=" %"
                 icon={<MessageSquare className="w-3.5 h-3.5" />}
                 hint="Assistant RAG, résumés d'emails, transcription RDV, portail conversationnel"
-                tooltip="À 100 %, 5 h/semaine/collab libérées sur emails, comptes-rendus et Q&A clients (retours pilotes OEC Paris 2025)."
+                tooltip="Plafond prudent : 2,5 h/sem/collab libérées sur emails, CR et Q&A clients. Gain € = h × TJM/7."
               />
               <Slider
                 label="Axe 4 · RH & organisation"
@@ -379,7 +375,7 @@ export const AIGainsSimulator = () => {
                 suffix=" %"
                 icon={<UserCog className="w-3.5 h-3.5" />}
                 hint="Fiches de poste réécrites, formation IA, rétention collaborateurs confirmés"
-                tooltip="À 100 %, -15 % de turnover, soit ~8 000 € économisés par collaborateur retenu (coût moyen recrutement + onboarding)."
+                tooltip="Plafond : -10 pts de turnover × 6 000 € de coût moyen de remplacement (recrutement + onboarding) × effectif concerné."
               />
               <Slider
                 label="Axe 5 · Gouvernance & conformité"
@@ -391,7 +387,7 @@ export const AIGainsSimulator = () => {
                 suffix=" %"
                 icon={<ShieldCheck className="w-3.5 h-3.5" />}
                 hint="Charte IA, cartographie outils, conformité RGPD/CNIL, secret professionnel"
-                tooltip="À 100 %, évitement d'un incident RGPD (coût médian 25 000 € × 20 % probabilité) + +30 % de closing sur segment mid-market (2 % du parc)."
+                tooltip="Plafond : évitement RGPD (25 k€ × 8 % de proba) + +15 % d'honoraires sur 1,5 % du parc mid-market × 35 % marge."
               />
               <Slider
                 label="Axe 6 · Développement commercial (Eligibly)"
@@ -404,7 +400,7 @@ export const AIGainsSimulator = () => {
                 icon={<Target className="w-3.5 h-3.5" />}
                 hint="Détection SASU/SAS temps réel, scoring, canal recommandé, accroche préparée"
                 highlight
-                tooltip="À 100 %, ~8 nouveaux dossiers signés/mois × LTV 3 ans (retours pilotes Eligibly sur cabinets 5-25 collabs)."
+                tooltip="Plafond prudent : 2,5 nouveaux dossiers nets signés/mois × LTV 3 ans × 30 % de marge nette (retours pilotes Eligibly)."
               />
             </div>
           </div>
