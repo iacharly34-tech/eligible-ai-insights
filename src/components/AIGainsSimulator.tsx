@@ -232,29 +232,23 @@ export const AIGainsSimulator = () => {
           </button>
         </div>
         <h3 className="font-display text-[1.6rem] md:text-3xl font-semibold tracking-tight leading-tight mb-2">
-          Combien votre cabinet gagne réellement en 12 mois selon l'intensité IA déployée ?
+          Combien votre cabinet gagne en 12 mois avec l'IA ?
         </h3>
         <p className="text-sm text-muted-foreground max-w-3xl leading-relaxed">
-          Réglez 6 curseurs d'intensité (production, conseil, relation, RH, gouvernance, développement).
-          Le simulateur applique des <strong className="text-foreground/90">hypothèses prudentes</strong> (fourchette
-          basse des études OEC / CSOEC / Cegid / CREOP) et pondère les recettes additionnelles par une
-          marge nette réaliste — pas de CA brut.
+          Choisissez un scénario, ajustez si besoin. Hypothèses prudentes, marges nettes appliquées.
         </p>
         <button
           type="button"
           onClick={() => setMethodoOpen(true)}
           className="mt-3 sm:hidden inline-flex items-center gap-1.5 text-xs font-medium text-primary underline underline-offset-2"
         >
-          <BookOpen className="w-3.5 h-3.5" /> Voir la méthodologie & les formules
+          <BookOpen className="w-3.5 h-3.5" /> Méthodologie
         </button>
       </header>
 
       {/* Scénarios */}
-      <div className="px-6 py-5 md:px-8 border-b border-border bg-muted/30">
-        <div className="flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.16em] text-muted-foreground font-semibold mb-3">
-          <Wand2 className="w-3.5 h-3.5" /> Scénarios pré-remplis
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+      <div className="px-6 py-4 md:px-8 border-b border-border bg-muted/30">
+        <div className="grid grid-cols-3 gap-2">
           {(Object.keys(SCENARIOS) as ScenarioKey[]).map((key) => {
             const s = SCENARIOS[key];
             const active = scenario === key;
@@ -263,7 +257,7 @@ export const AIGainsSimulator = () => {
                 key={key}
                 type="button"
                 onClick={() => applyScenario(key)}
-                className={`text-left rounded-xl border p-3.5 transition-all ${
+                className={`text-center rounded-lg border px-3 py-2 transition-all ${
                   active
                     ? "border-primary bg-primary/10 shadow-sm"
                     : "border-border bg-background hover:border-primary/50 hover:bg-primary/5"
@@ -272,7 +266,6 @@ export const AIGainsSimulator = () => {
                 <div className={`text-sm font-semibold ${active ? "text-primary" : "text-foreground"}`}>
                   {s.label}
                 </div>
-                <div className="text-[0.72rem] text-muted-foreground leading-snug mt-0.5">{s.tagline}</div>
               </button>
             );
           })}
@@ -283,8 +276,8 @@ export const AIGainsSimulator = () => {
         {/* Inputs */}
         <div className="p-6 md:p-8 space-y-8 border-b lg:border-b-0 lg:border-r border-border">
           <div>
-            <SectionHeading step="1" title="Votre cabinet" description="Taille, économie et portefeuille." />
-            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-6 mt-5">
+            <SectionHeading step="1" title="Votre cabinet" />
+            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-7 mt-5">
               <Slider
             label="Nombre de collaborateurs"
             value={collabs}
@@ -352,10 +345,10 @@ export const AIGainsSimulator = () => {
           <div>
             <SectionHeading
               step="2"
-              title="Intensité IA par axe de modernisation"
-              description="0 % = aucun déploiement · 100 % = axe pleinement industrialisé. Passez la souris sur ⓘ pour la méthode."
+              title="Intensité IA par axe"
+              description="0 % = pas déployé · 100 % = pleinement industrialisé."
             />
-            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-6 mt-5">
+            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-7 mt-5">
               <Slider
                 label="Axe 1 · Production comptable"
                 value={iProduction}
@@ -538,30 +531,31 @@ interface SliderProps {
 
 const Slider = ({ label, value, min, max, step, onChange, suffix = "", hint, icon, highlight, tooltip }: SliderProps) => (
   <div className={highlight ? "rounded-lg border border-primary/30 bg-primary/5 p-3" : ""}>
-    <div className="flex items-start justify-between gap-3 mb-2">
-      <label className="text-sm font-medium text-foreground flex items-start gap-1.5 min-w-0 flex-1 leading-snug">
-        {icon && <span className="mt-0.5 shrink-0">{icon}</span>}
-        <span className="break-words">{label}</span>
-        {tooltip && (
-          <TooltipProvider delayDuration={100}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <button type="button" aria-label="Méthode de calcul" className="shrink-0 mt-0.5 text-muted-foreground hover:text-primary transition-colors">
-                  <Info className="w-3.5 h-3.5" />
-                </button>
-              </TooltipTrigger>
-              <TooltipContent side="top" className="max-w-xs text-xs leading-snug">
-                {tooltip}
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        )}
-      </label>
-      <span className="font-display italic text-primary font-semibold tabular-nums text-base shrink-0">
-        {fmt(value)}
-        {suffix}
-      </span>
+    {/* Ligne 1 — Paramètre (label) */}
+    <div className="flex items-center gap-1.5 mb-1 text-[0.72rem] uppercase tracking-wider font-semibold text-muted-foreground">
+      {icon && <span className="text-primary/70">{icon}</span>}
+      <span className="truncate">{label}</span>
+      {tooltip && (
+        <TooltipProvider delayDuration={100}>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <button type="button" aria-label="Méthode de calcul" className="shrink-0 text-muted-foreground/70 hover:text-primary transition-colors">
+                <Info className="w-3 h-3" />
+              </button>
+            </TooltipTrigger>
+            <TooltipContent side="top" className="max-w-xs text-xs leading-snug">
+              {tooltip}
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      )}
     </div>
+    {/* Ligne 2 — Valeur (grand chiffre) */}
+    <div className="font-display text-2xl font-semibold text-foreground tabular-nums leading-none mb-3">
+      {fmt(value)}
+      <span className="text-base text-muted-foreground font-normal ml-0.5">{suffix}</span>
+    </div>
+    {/* Ligne 3 — Curseur */}
     <input
       type="range"
       min={min}
@@ -572,7 +566,7 @@ const Slider = ({ label, value, min, max, step, onChange, suffix = "", hint, ico
       className="w-full accent-primary cursor-pointer"
       aria-label={label}
     />
-    {hint && <p className="mt-1.5 text-[0.7rem] text-muted-foreground italic leading-snug">{hint}</p>}
+    {hint && <p className="mt-2 text-[0.7rem] text-muted-foreground leading-snug">{hint}</p>}
   </div>
 );
 
@@ -592,7 +586,7 @@ const SectionHeading = ({
 }: {
   step: string;
   title: string;
-  description: string;
+  description?: string;
 }) => (
   <div>
     <div className="flex items-center gap-2.5">
@@ -603,9 +597,11 @@ const SectionHeading = ({
         {title}
       </h4>
     </div>
-    <p className="text-xs text-muted-foreground mt-1.5 ml-[2.125rem] leading-relaxed">
-      {description}
-    </p>
+    {description && (
+      <p className="text-xs text-muted-foreground mt-1.5 ml-[2.125rem] leading-relaxed">
+        {description}
+      </p>
+    )}
   </div>
 );
 
