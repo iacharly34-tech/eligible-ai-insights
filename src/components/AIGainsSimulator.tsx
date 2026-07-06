@@ -13,6 +13,7 @@ import {
   Info,
   Wand2,
   BookOpen,
+  ChevronDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
