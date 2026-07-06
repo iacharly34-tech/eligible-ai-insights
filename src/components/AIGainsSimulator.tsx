@@ -607,6 +607,30 @@ const KpiBadge = ({ label, value, accent = false }: { label: string; value: stri
   </div>
 );
 
+const SectionHeading = ({
+  step,
+  title,
+  description,
+}: {
+  step: string;
+  title: string;
+  description: string;
+}) => (
+  <div>
+    <div className="flex items-center gap-2.5">
+      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/15 text-primary text-[0.72rem] font-bold tabular-nums">
+        {step}
+      </span>
+      <h4 className="font-display text-lg md:text-xl font-semibold tracking-tight text-foreground">
+        {title}
+      </h4>
+    </div>
+    <p className="text-xs text-muted-foreground mt-1.5 ml-8.5 pl-0 leading-relaxed">
+      {description}
+    </p>
+  </div>
+);
+
 const ResultLine = ({
   icon,
   title,
