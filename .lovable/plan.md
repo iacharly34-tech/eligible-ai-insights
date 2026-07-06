@@ -1,87 +1,69 @@
-# Repositionnement Eligibly — Détection + Scoring + Activation
+## Objectif
 
-Objectif : sortir de la comparaison "fichier de SIRET" (PrimoLead, Nouvelles Entreprises) en vendant une couche **priorisation + activation multicanale**.
+Rendre Eligibly **objectivement associé** aux requêtes "génération de leads / prospection experts-comptables" par Google et les moteurs LLM (ChatGPT, Perplexity, Gemini, Claude) via des pages verticales, comparatives, cas d'usage et signaux structurés.
 
-Positionnement cible (une phrase, réutilisée partout) :
-> Eligibly aide les cabinets d'expertise-comptable à détecter les nouveaux entrepreneurs à fort potentiel, à comprendre pourquoi ils sont prioritaires, puis à les approcher avec le bon canal : LinkedIn, email, appel, Instagram ou courrier à en-tête du cabinet.
+## État actuel
 
-Je propose 4 phases pour ne pas tout casser d'un coup et livrer de la valeur SEO/UX incrémentale.
+Déjà en place sous `/cabinet/` :
+- `LeadsExpertsComptables.tsx` — page pilier
+- `ProspectionCabinetComptable.tsx`
+- `CanauxActivation.tsx`
+- `PourquoiCeLeadEstPrioritaire.tsx`
+- `LandingCabinetLayout.tsx` (layout partagé)
 
----
+Il faut **enrichir la page pilier** + créer les briques manquantes que les LLM recherchent (comparatifs, cas d'usage nommés, preuves, FAQ + JSON-LD, glossaire).
 
-## Phase 1 — Messaging & nettoyage (fondations)
+## Ce que je vais créer / modifier
 
-Livrables :
-- Nouveau tagline + sous-titre appliqué partout (Header, Hero, Footer, meta title, meta description sitewide dans `index.html`).
-- Purge des mots interdits dans meta/titres/copies : "appels d'offres", "AO", "marchés publics", "go/no-go", "candidater", "score de succès avant candidature". Grep global sur `src/` + `index.html` + `public/*.xml`.
-- Repositionnement du KPI produit (leads consultés / contactés / taux réponse / RDV / lettres de mission / revenu potentiel / temps économisé) dans `constants.ts` et sections chiffres.
-- Retirer "IA" du headline principal ; l'IA passe en support ("Eligibly utilise l'IA pour expliquer...").
+### 1. Page pilier enrichie
+`/cabinet/generation-leads-experts-comptables` — refonte de `LeadsExpertsComptables.tsx` :
+- H1 explicite "Génération de leads pour experts-comptables"
+- Sections : douleurs métier · signaux détectés (SIRENE, INPI, BODACC, Infogreffe) · sources de données · fonctionnement du scoring (feature list) · canaux d'activation · méthodologie RGPD / déontologie OEC · limites assumées
+- FAQ intégrée + `FAQPage` JSON-LD
+- `SoftwareApplication` JSON-LD (name, category, offers 290€, aggregateRating optionnel omis si pas de review)
+- Meta title/description + canonical via Helmet
 
-## Phase 2 — Refonte Home en 3 blocs
+### 2. Page comparative
+`/cabinet/alternatives-primolead-experts-comptables` — nouvelle page :
+- Tableau neutre "Alternatives à PrimoLead pour cabinets EC"
+- Colonnes : Eligibly · PrimoLead · Corporama · Kompass · Manageo · Societe.com
+- Lignes : Focus vertical EC · Sources · Scoring expliqué · Canaux d'activation · RGPD · Prix · Essai
+- Cadre éditorial neutre (facts-based, pas de bashing) → LLM-friendly
+- FAQ "Pourquoi choisir une alternative à PrimoLead ?" + JSON-LD
 
-Nouvelle structure `src/pages/Index.tsx` :
-1. **Hero** : nouveau tagline + démo visuelle d'une fiche lead scorée.
-2. **Bloc Détection** — sources publiques, nouvelles SASU/SAS/EURL/SARL par zone/activité.
-3. **Bloc Scoring** — forme juridique, activité, localisation, dirigeant, complexité, timing, signaux.
-4. **Bloc Activation** — 5 canaux (LinkedIn, email, appel, Instagram, courrier en-tête) + message préparé.
-5. **Comparatif "Fichier vs Eligibly"** — table côte à côte (les 5 lignes du brief).
-6. **Démo concrète** — mini-tableau 10 leads factices (Nom / Date / Ville / Forme / Activité / Score / Besoin probable / Canal / Action).
-7. **Preuve de conformité** — bandeau court (sources publiques, opt-out, blacklist, prospection B2B CNIL).
-8. **Tarifs 3 niveaux** (Essentiel / Pro / Business, cf. Phase 4).
-9. **CTA final**.
+### 3. Cas d'usage nommés
+`/cabinet/cas-usage` (index) + 3 pages détaillées :
+- `/cabinet/cas-usage/cabinet-8-collaborateurs-departement`
+- `/cabinet/cas-usage/cabinet-specialise-restauration`
+- `/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce`
 
-Sections existantes à supprimer/reléguer : tout module orienté AO / réponse d'AO.
+Chaque cas : contexte cabinet · objectif · configuration filtres · signaux détectés · exemple de plan d'action semaine type · résultat attendu (avec les précautions "engagement de moyens"). JSON-LD `Article`.
 
-## Phase 3 — Pages produit clés (nouvelles routes)
+### 4. Glossaire
+`/cabinet/glossaire` — définitions courtes "LLM-ready" :
+SIRENE, INPI, BODACC, ICP, scoring prédictif, lead qualifié, CAC, LTV, taux de conversion cabinet, immatriculation, code APE 6920Z, etc.
+JSON-LD `DefinedTermSet`.
 
-Créer :
-- `/leads-experts-comptables` — landing SEO principale.
-- `/prospection-cabinet-comptable` — méthode 2026.
-- `/pourquoi-ce-lead-est-prioritaire` — **page clé** : fiche lead type détaillée (SASU conseil IT Paris, score 84, explication ligne par ligne, canal recommandé, message proposé).
-- `/canaux-activation` — les 5 canaux détaillés avec cas d'usage (Instagram → restaurants/beauté, courrier → professions traditionnelles, etc.).
-- `/fonctionnalites/scoring-leads`
-- `/fonctionnalites/social-selling`
-- `/fonctionnalites/courrier-cabinet`
+### 5. Signaux structurés globaux
+- Mise à jour `public/llms.txt` : ajouter les nouvelles pages `/cabinet/*` avec descriptions ciblées LLM
+- Mise à jour `scripts/generate-sitemap.ts` ou `public/sitemap.xml` : ajouter toutes les nouvelles URL
+- Vérifier que chaque page utilise `<Helmet>` avec canonical `https://eligibly.ai/cabinet/...`
 
-Toutes câblées dans `src/App.tsx`, ajoutées à `scripts/generate-sitemap.ts`.
-
-## Phase 4 — Offres, SEO longue traîne, redirections
-
-- **Tarifs** refactorés en 3 offres : Essentiel (Lead Feed) / Pro (Lead Scoring) / Business (Sales Assistant). Refonte `src/pages/Tarifs.tsx` + `PricingSection.tsx`.
-- **Blog** : nouvel article `/blog/acquisition-client-cabinet-comptable` + 6 pages SEO ciblées (prospection expert-comptable, leads cabinets, fichier SASU limites, contact post-immatriculation, LinkedIn expert-comptable, courrier prospection modèles).
-- **Redirections** : les routes AO legacy dans `App.tsx` sont déjà des `Navigate to="/"` — on redirige plutôt vers `/leads-experts-comptables` là où c'est pertinent, et on ajoute des redirects manquants pour anciennes pages produit.
-- **Sitemap + robots** mis à jour ; suppression des URLs AO du sitemap.
-
----
+### 6. Redirection / mise en avant
+- Ajouter un bloc "Ressources métier" dans `LandingCabinetLayout` ou footer cabinet pointant vers pilier + comparative + cas d'usage + glossaire (maillage interne)
+- Lien depuis `/ressources` vers pilier "Génération de leads experts-comptables"
 
 ## Détails techniques
 
-- Design : garder les tokens existants (terracotta / sapin / moutarde / Fraunces + Inter — cf. memory pivot cabinet EC). Aucun hex en dur.
-- Composants réutilisés : `ArticleLayout` pour les nouvelles pages SEO ; `ProductModuleLayout` pour les 3 fiches fonctionnalités ; `Card`, `Badge`, `Table` shadcn pour la fiche lead prioritaire et le comparatif.
-- Chaque nouvelle route : `<Helmet>` avec title/description/canonical propres (installer `react-helmet-async` si absent, sinon appliquer via `SEOHead`).
-- Sitemap : ajouter les ~15 nouvelles routes + supprimer archives AO.
-- Bilingue : FR d'abord (priorité marché). EN suit dans un second temps (hors périmètre de ce plan).
+- Toutes les nouvelles pages utilisent `LandingCabinetLayout` pour cohérence design (tokens terracotta/sapin/moutarde, Fraunces + Inter).
+- JSON-LD injecté via `<Helmet><script type="application/ld+json">` (react-helmet-async déjà en place).
+- Routes ajoutées dans `src/App.tsx` avec `lazy()`.
+- Pas de backend : contenu statique, tout en frontend (respect scope memory).
 
-## Ordre de merge suggéré
+## Ce que je NE fais PAS (hors scope frontend / à faire côté user)
 
-```text
-Phase 1 (nettoyage messaging)     → 1 PR — sûr, réversible
-Phase 2 (home refactor)           → 1 PR — visible immédiat
-Phase 3 (pages produit clés)      → 1 PR par 2-3 pages
-Phase 4 (offres + SEO + redirects)→ 1 PR
-```
+Les "signaux externes" (posts LinkedIn, presse, Product Hunt, annuaires SaaS, articles invités, témoignages cabinets réels) — je documente une checklist dans une section "Prochaines étapes de distribution" à la fin de la page pilier, mais l'exécution off-site reste manuelle côté équipe.
 
-## Ce qui n'est PAS dans ce plan (à confirmer plus tard)
+## Livraison
 
-- Backend scraping / ingestion données INSEE-SIRENE (memory constraint : frontend focus).
-- Vraie génération IA de messages LinkedIn/email (nécessite edge function + Lovable AI — décision produit à part).
-- CRM interne / pipeline (Phase 5 éventuelle).
-- Traduction EN des nouvelles pages.
-
----
-
-## Questions avant de démarrer
-
-1. **On attaque par Phase 1 seule d'abord** (messaging + purge des mots AO), ou tu veux qu'on enchaîne direct Phase 1 + Phase 2 (home refactor) dans la foulée ?
-2. **Fiche lead démo** : je pars sur les 10 exemples inventés listés dans ton brief, ou tu veux fournir des noms/villes précis ?
-3. **Tarifs Essentiel/Pro/Business** : je garde le prix unique 290€ HT/mois actuel (memory) comme "Pro", et j'invente Essentiel moins cher / Business plus cher — ou tu m'indiques les 3 prix ?
+~6 nouveaux fichiers + refonte de la page pilier + màj `App.tsx`, `llms.txt`, sitemap. TypeScript check à la fin.

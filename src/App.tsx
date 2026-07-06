@@ -52,6 +52,12 @@ const LeadsExpertsComptables = lazy(() => import("./pages/cabinet/LeadsExpertsCo
 const ProspectionCabinetComptable = lazy(() => import("./pages/cabinet/ProspectionCabinetComptable"));
 const CanauxActivation = lazy(() => import("./pages/cabinet/CanauxActivation"));
 const PourquoiCeLeadEstPrioritaire = lazy(() => import("./pages/cabinet/PourquoiCeLeadEstPrioritaire"));
+const AlternativesPrimolead = lazy(() => import("./pages/cabinet/AlternativesPrimolead"));
+const GlossaireCabinet = lazy(() => import("./pages/cabinet/Glossaire"));
+const CasUsageIndex = lazy(() => import("./pages/cabinet/CasUsageIndex"));
+const CasUsage8Collabs = lazy(() => import("./pages/cabinet/CasUsage8Collaborateurs"));
+const CasUsageRestauration = lazy(() => import("./pages/cabinet/CasUsageRestauration"));
+const CasUsageFullRemote = lazy(() => import("./pages/cabinet/CasUsageFullRemote"));
 
 import { LanguageSync } from "@/components/LanguageSync";
 
@@ -110,6 +116,12 @@ const App = () => (
                 <Route path="/prospection-cabinet-comptable" element={<ProspectionCabinetComptable />} />
                 <Route path="/canaux-activation" element={<CanauxActivation />} />
                 <Route path="/pourquoi-ce-lead-est-prioritaire" element={<PourquoiCeLeadEstPrioritaire />} />
+                <Route path="/alternatives-primolead-experts-comptables" element={<AlternativesPrimolead />} />
+                <Route path="/cabinet/glossaire" element={<GlossaireCabinet />} />
+                <Route path="/cabinet/cas-usage" element={<CasUsageIndex />} />
+                <Route path="/cabinet/cas-usage/cabinet-8-collaborateurs-departement" element={<CasUsage8Collabs />} />
+                <Route path="/cabinet/cas-usage/cabinet-specialise-restauration" element={<CasUsageRestauration />} />
+                <Route path="/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce" element={<CasUsageFullRemote />} />
 
                 {/* Blog */}
                 <Route path="/blog/creations-entreprises-france-2025" element={<BlogCreations2025 />} />
