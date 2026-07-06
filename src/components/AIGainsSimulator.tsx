@@ -636,6 +636,33 @@ const ResultLine = ({
   </div>
 );
 
+const ResultLight = ({
+  icon,
+  title,
+  value,
+  sub,
+  highlight = false,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  value: string;
+  sub: string;
+  highlight?: boolean;
+}) => (
+  <div className={`flex items-start justify-between gap-3 rounded-lg border px-3 py-2.5 ${highlight ? "border-primary/30 bg-primary/[0.03]" : "border-border bg-card/50"}`}>
+    <div className="flex items-start gap-2 min-w-0">
+      <div className="mt-0.5 shrink-0">{icon}</div>
+      <div className="min-w-0">
+        <div className="text-sm font-medium text-foreground">{title}</div>
+        <div className="text-[0.72rem] text-muted-foreground leading-snug">{sub}</div>
+      </div>
+    </div>
+    <div className="font-display italic text-base font-semibold text-primary tabular-nums whitespace-nowrap">
+      {value}
+    </div>
+  </div>
+);
+
 const METHODO_AXES: Array<{
   n: string;
   title: string;
