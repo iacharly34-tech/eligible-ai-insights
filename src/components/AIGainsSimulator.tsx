@@ -1,8 +1,6 @@
 import { useMemo, useState } from "react";
 import {
   Calculator,
-  Clock,
-  Wallet,
   TrendingUp,
   Users,
   Sparkles,
