@@ -173,6 +173,52 @@ const Ressources = () => {
             </div>
           </section>
 
+          {/* À la une */}
+          <section className="py-16 px-4">
+            <div className="container mx-auto max-w-6xl">
+              <div className="mb-8">
+                <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-3">{t.featuredEyebrow}</p>
+              </div>
+              <div className="grid md:grid-cols-5 gap-6">
+                <SafeLink to="/blog/moderniser-cabinet-expertise-comptable-ia" className="group md:col-span-3 block rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/5 to-transparent p-8 hover:border-primary/60 transition-colors">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[0.65rem] uppercase tracking-[0.12em] bg-primary/10 text-primary font-semibold mb-5">
+                    <Star className="w-3 h-3" /> {t.featuredBadge}
+                  </div>
+                  <h3 className="font-display text-2xl md:text-3xl font-semibold mb-4 leading-snug group-hover:text-primary transition-colors">
+                    Moderniser un cabinet EC à l'ère de l'IA — Les 6 axes clés 2026
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    Production, conseil, relation client, RH, gouvernance, développement commercial : le tour d'horizon opérationnel de la transformation IA d'un cabinet EC — et l'axe le plus sous-estimé, la visibilité. <strong>Simulateur ROI intégré.</strong>
+                  </p>
+                  <div className="flex items-center gap-4 flex-wrap">
+                    <span className="text-primary font-semibold inline-flex items-center text-sm">
+                      {t.read} <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                    <SafeLink to="/simulateur-roi-ia-cabinet" className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors bg-muted/50 px-4 py-2 rounded-lg border border-border hover:border-primary/40">
+                      <Calculator className="w-4 h-4" />
+                      {t.featuredCta}
+                    </SafeLink>
+                  </div>
+                </SafeLink>
+                <div className="md:col-span-2 grid grid-cols-1 gap-5">
+                  {liveArticles.slice(1, 3).map((a) => (
+                    <SafeLink key={a.href} to={a.href} className="group block rounded-2xl border border-border bg-background p-6 hover:border-primary/40 transition-colors">
+                      <div className="inline-flex items-center gap-1.5 px-2 py-1 rounded text-[0.65rem] uppercase tracking-[0.12em] bg-success/10 text-success font-semibold mb-4">
+                        <CheckCircle className="w-3 h-3" /> {t.onlineBadge}
+                      </div>
+                      <h3 className="font-display text-lg font-semibold mb-2 leading-snug group-hover:text-primary transition-colors">{a.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4">{a.desc}</p>
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-muted-foreground">{a.meta}</span>
+                        <span className="text-primary font-semibold inline-flex items-center">{t.read} <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" /></span>
+                      </div>
+                    </SafeLink>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Articles publiés (réels, sourcés) */}
           <section className="py-16 px-4 bg-card/30 border-y border-border">
             <div className="container mx-auto max-w-6xl">
@@ -186,7 +232,7 @@ const Ressources = () => {
                 </p>
               </div>
               <div className="grid md:grid-cols-3 gap-5">
-                {liveArticles.map((a) => (
+                {liveArticles.slice(3).map((a) => (
                   <SafeLink key={a.href} to={a.href} className="group block rounded-2xl border border-border bg-background p-7 hover:border-primary/40 transition-colors">
                     <div className="inline-flex items-center gap-1.5 px-2 py-1 rounded text-[0.65rem] uppercase tracking-[0.12em] bg-success/10 text-success font-semibold mb-5">
                       <CheckCircle className="w-3 h-3" /> {t.onlineBadge}
