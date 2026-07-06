@@ -15,6 +15,7 @@ import {
   BookOpen,
   ChevronDown,
 } from "lucide-react";
+import { ArrowLeft, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
 import {
@@ -116,6 +117,15 @@ export const AIGainsSimulator = () => {
   const [pulse, setPulse] = useState(false);
   const [methodoOpen, setMethodoOpen] = useState(false);
   const [detailOpen, setDetailOpen] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
+
+  const STEPS = [
+    { n: 1, label: "Scénario de départ" },
+    { n: 2, label: "Votre cabinet" },
+    { n: 3, label: "Intensité IA par axe" },
+    { n: 4, label: "Résultats" },
+  ] as const;
+  const totalSteps = STEPS.length;
 
   const applyScenario = (key: ScenarioKey) => {
     const s = SCENARIOS[key].intensites;
@@ -217,294 +227,279 @@ export const AIGainsSimulator = () => {
 
   return (
     <section className="not-prose my-12 rounded-2xl border border-border bg-card overflow-hidden shadow-sm">
-      {/* Header */}
-      <header className="px-6 py-6 md:px-8 md:py-7 border-b border-border bg-gradient-to-br from-primary/8 via-card to-card">
-        <div className="flex items-center justify-between gap-3 mb-3">
-          <div className="flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.16em] text-primary font-semibold">
-            <Calculator className="w-3.5 h-3.5" /> Simulateur ROI IA · Cabinet d'expertise comptable
-          </div>
+      {/* Bandeau haut */}
+      <header className="px-6 py-8 md:px-10 md:py-10 bg-gradient-to-br from-primary/90 to-primary text-primary-foreground text-center">
+        <div className="flex items-center justify-center gap-2 text-[0.68rem] uppercase tracking-[0.18em] font-semibold mb-3 opacity-90">
+          <Calculator className="w-3.5 h-3.5" /> Simulateur ROI IA · Cabinet d'expertise comptable
+        </div>
+        <h3 className="font-display text-2xl md:text-4xl font-semibold tracking-tight leading-tight">
+          Combien votre cabinet gagne en 12 mois avec l'IA ?
+        </h3>
+        <p className="mt-2 text-sm md:text-base opacity-90 max-w-2xl mx-auto">
+          Répondez en 4 étapes. Hypothèses prudentes, marges nettes appliquées.
+        </p>
+      </header>
+
+      {/* Corps wizard */}
+      <div className="grid md:grid-cols-[240px_1fr] bg-muted/20">
+        {/* Sidebar étapes */}
+        <aside className="p-6 md:p-8 border-b md:border-b-0 md:border-r border-border bg-card">
+          <div className="text-sm font-semibold text-foreground mb-4">Étapes</div>
+          <ol className="space-y-1.5">
+            {STEPS.map((s) => {
+              const active = currentStep === s.n;
+              const done = currentStep > s.n;
+              return (
+                <li key={s.n}>
+                  <button
+                    type="button"
+                    onClick={() => setCurrentStep(s.n)}
+                    className={`w-full text-left flex items-center gap-3 rounded-lg px-3 py-2.5 transition-all ${
+                      active
+                        ? "bg-primary/10 ring-1 ring-primary/40"
+                        : "hover:bg-muted/60"
+                    }`}
+                  >
+                    <span
+                      className={`shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full text-[0.72rem] font-bold tabular-nums transition-colors ${
+                        active
+                          ? "bg-primary text-primary-foreground"
+                          : done
+                          ? "bg-primary/80 text-primary-foreground"
+                          : "bg-muted text-muted-foreground"
+                      }`}
+                    >
+                      {done ? <Check className="w-3.5 h-3.5" /> : s.n}
+                    </span>
+                    <span
+                      className={`text-sm leading-snug ${
+                        active ? "text-foreground font-semibold" : "text-muted-foreground"
+                      }`}
+                    >
+                      {s.label}
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
+
           <button
             type="button"
             onClick={() => setMethodoOpen(true)}
-            className="hidden sm:inline-flex items-center gap-1.5 text-[0.7rem] font-medium text-primary hover:text-primary/80 border border-primary/30 hover:border-primary/60 rounded-full px-3 py-1 transition-colors"
+            className="mt-6 w-full inline-flex items-center justify-center gap-1.5 text-[0.72rem] font-medium text-primary hover:text-primary/80 border border-primary/30 hover:border-primary/60 rounded-full px-3 py-1.5 transition-colors"
           >
             <BookOpen className="w-3.5 h-3.5" /> Méthodologie & formules
           </button>
-        </div>
-        <h3 className="font-display text-[1.6rem] md:text-3xl font-semibold tracking-tight leading-tight mb-2">
-          Combien votre cabinet gagne en 12 mois avec l'IA ?
-        </h3>
-        <p className="text-sm text-muted-foreground max-w-3xl leading-relaxed">
-          Choisissez un scénario, ajustez si besoin. Hypothèses prudentes, marges nettes appliquées.
-        </p>
-        <button
-          type="button"
-          onClick={() => setMethodoOpen(true)}
-          className="mt-3 sm:hidden inline-flex items-center gap-1.5 text-xs font-medium text-primary underline underline-offset-2"
-        >
-          <BookOpen className="w-3.5 h-3.5" /> Méthodologie
-        </button>
-      </header>
+        </aside>
 
-      {/* Scénarios */}
-      <div className="px-6 py-4 md:px-8 border-b border-border bg-muted/30">
-        <div className="grid grid-cols-3 gap-2">
-          {(Object.keys(SCENARIOS) as ScenarioKey[]).map((key) => {
-            const s = SCENARIOS[key];
-            const active = scenario === key;
-            return (
-              <button
-                key={key}
-                type="button"
-                onClick={() => applyScenario(key)}
-                className={`text-center rounded-lg border px-3 py-2 transition-all ${
-                  active
-                    ? "border-primary bg-primary/10 shadow-sm"
-                    : "border-border bg-background hover:border-primary/50 hover:bg-primary/5"
-                }`}
-              >
-                <div className={`text-sm font-semibold ${active ? "text-primary" : "text-foreground"}`}>
-                  {s.label}
+        {/* Contenu étape */}
+        <div className="p-6 md:p-10">
+          <div className="rounded-2xl border border-border bg-card p-6 md:p-8 min-h-[420px]">
+            {currentStep === 1 && (
+              <div>
+                <h4 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-1">
+                  Choisissez un scénario de départ
+                </h4>
+                <p className="text-sm text-muted-foreground mb-6">
+                  Trois presets calibrés sur les études OEC/CSOEC 2025. Vous pourrez ajuster ensuite.
+                </p>
+                <div className="grid sm:grid-cols-3 gap-3">
+                  {(Object.keys(SCENARIOS) as ScenarioKey[]).map((key) => {
+                    const s = SCENARIOS[key];
+                    const active = scenario === key;
+                    return (
+                      <button
+                        key={key}
+                        type="button"
+                        onClick={() => applyScenario(key)}
+                        className={`text-left rounded-xl border-2 px-4 py-4 transition-all ${
+                          active
+                            ? "border-primary bg-primary/5 shadow-sm"
+                            : "border-border bg-background hover:border-primary/50 hover:bg-primary/[0.03]"
+                        }`}
+                      >
+                        <div className={`text-base font-semibold mb-1 ${active ? "text-primary" : "text-foreground"}`}>
+                          {s.label}
+                        </div>
+                        <div className="text-xs text-muted-foreground leading-snug">
+                          {s.tagline}
+                        </div>
+                      </button>
+                    );
+                  })}
                 </div>
-              </button>
-            );
-          })}
-        </div>
-      </div>
+              </div>
+            )}
 
-      <div className="grid lg:grid-cols-[1.05fr_1fr]">
-        {/* Inputs */}
-        <div className="p-6 md:p-8 space-y-8 border-b lg:border-b-0 lg:border-r border-border">
-          <div>
-            <SectionHeading step="1" title="Votre cabinet" />
-            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5 mt-5">
-              <Slider
-            label="Collaborateurs concernés"
-            value={collabs}
-            min={1}
-            max={80}
-            step={1}
-            onChange={(v) => { setCollabs(v); clearScenario(); }}
-            suffix=" pers."
-            icon={<Users className="w-3.5 h-3.5" />}
-            tooltip="Effectif total (associés + collaborateurs + assistants) concerné par le déploiement IA."
-          />
-          <Slider
-            label="Heures/sem sur saisie & tenue"
-            value={hoursSaisiePerCollab}
-            min={0}
-            max={35}
-            step={1}
-            onChange={(v) => { setHoursSaisiePerCollab(v); clearScenario(); }}
-            suffix=" h"
-            tooltip="Temps hebdo par collaborateur passé à saisir, lettrer, rapprocher (avant IA)."
-          />
-          <Slider
-            label="TJM moyen facturé"
-            value={tjm}
-            min={200}
-            max={1200}
-            step={25}
-            onChange={(v) => { setTjm(v); clearScenario(); }}
-            suffix=" €"
-            tooltip="Taux journalier moyen facturé — sert à valoriser les heures libérées (taux horaire = TJM / 7)."
-          />
-          <Slider
-            label="Clients actifs"
-            value={clientsActifs}
-            min={10}
-            max={800}
-            step={10}
-            onChange={(v) => { setClientsActifs(v); clearScenario(); }}
-            suffix=""
-            tooltip="Nombre de dossiers récurrents suivis par le cabinet."
-          />
-          <Slider
-            label="Honoraires moyens / an"
-            value={honorairesMoyen}
-            min={800}
-            max={12000}
-            step={100}
-            onChange={(v) => { setHonorairesMoyen(v); clearScenario(); }}
-            suffix=" €"
-            tooltip="Panier moyen annuel par client — base pour l'upsell conseil/pilotage."
-          />
-          <Slider
-            label="LTV nouveau dossier"
-            value={ltvNouveauClient}
-            min={2000}
-            max={30000}
-            step={500}
-            onChange={(v) => { setLtvNouveauClient(v); clearScenario(); }}
-            suffix=" €"
-            tooltip="Valeur générée sur 3 ans par un dossier signé via prospection IA."
-          />
-            </div>
-          </div>
+            {currentStep === 2 && (
+              <div>
+                <h4 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-1">
+                  Votre cabinet
+                </h4>
+                <p className="text-sm text-muted-foreground mb-6">
+                  Ajustez les 6 paramètres qui décrivent votre structure actuelle.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
+                  <Slider label="Collaborateurs concernés" value={collabs} min={1} max={80} step={1}
+                    onChange={(v) => { setCollabs(v); clearScenario(); }} suffix=" pers."
+                    icon={<Users className="w-3.5 h-3.5" />}
+                    tooltip="Effectif total (associés + collaborateurs + assistants) concerné par le déploiement IA." />
+                  <Slider label="Heures/sem sur saisie & tenue" value={hoursSaisiePerCollab} min={0} max={35} step={1}
+                    onChange={(v) => { setHoursSaisiePerCollab(v); clearScenario(); }} suffix=" h"
+                    tooltip="Temps hebdo par collaborateur passé à saisir, lettrer, rapprocher (avant IA)." />
+                  <Slider label="TJM moyen facturé" value={tjm} min={200} max={1200} step={25}
+                    onChange={(v) => { setTjm(v); clearScenario(); }} suffix=" €"
+                    tooltip="Taux journalier moyen facturé — sert à valoriser les heures libérées (taux horaire = TJM / 7)." />
+                  <Slider label="Clients actifs" value={clientsActifs} min={10} max={800} step={10}
+                    onChange={(v) => { setClientsActifs(v); clearScenario(); }} suffix=""
+                    tooltip="Nombre de dossiers récurrents suivis par le cabinet." />
+                  <Slider label="Honoraires moyens / an" value={honorairesMoyen} min={800} max={12000} step={100}
+                    onChange={(v) => { setHonorairesMoyen(v); clearScenario(); }} suffix=" €"
+                    tooltip="Panier moyen annuel par client — base pour l'upsell conseil/pilotage." />
+                  <Slider label="LTV nouveau dossier" value={ltvNouveauClient} min={2000} max={30000} step={500}
+                    onChange={(v) => { setLtvNouveauClient(v); clearScenario(); }} suffix=" €"
+                    tooltip="Valeur générée sur 3 ans par un dossier signé via prospection IA." />
+                </div>
+              </div>
+            )}
 
-          <div>
-            <SectionHeading
-              step="2"
-              title="Intensité IA par axe"
-              description="0 % = pas déployé · 100 % = pleinement industrialisé."
-            />
-            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5 mt-5">
-              <Slider
-                label="1 · Production comptable"
-                value={iProduction}
-                min={0}
-                max={100}
-                step={5}
-                onChange={(v) => { setIProduction(v); clearScenario(); }}
-                suffix=" %"
-                icon={<Cpu className="w-3.5 h-3.5" />}
-                tooltip="Plafond prudent : 35 % des heures de saisie/lettrage réellement automatisables (net du temps de contrôle humain). Gain € = heures libérées × TJM/7."
-              />
-              <Slider
-                label="2 · Conseil & pilotage"
-                value={iConseil}
-                min={0}
-                max={100}
-                step={5}
-                onChange={(v) => { setIConseil(v); clearScenario(); }}
-                suffix=" %"
-                icon={<TrendingUp className="w-3.5 h-3.5" />}
-                tooltip="Plafond : +12 % d'honoraires sur 25 % du parc via offres pilotage, pondéré par 35 % de marge nette (fourchette basse CSOEC)."
-              />
-              <Slider
-                label="3 · Relation client"
-                value={iRelation}
-                min={0}
-                max={100}
-                step={5}
-                onChange={(v) => { setIRelation(v); clearScenario(); }}
-                suffix=" %"
-                icon={<MessageSquare className="w-3.5 h-3.5" />}
-                tooltip="Plafond prudent : 2,5 h/sem/collab libérées sur emails, CR et Q&A clients. Gain € = h × TJM/7."
-              />
-              <Slider
-                label="4 · RH & organisation"
-                value={iRH}
-                min={0}
-                max={100}
-                step={5}
-                onChange={(v) => { setIRH(v); clearScenario(); }}
-                suffix=" %"
-                icon={<UserCog className="w-3.5 h-3.5" />}
-                tooltip="Plafond : -10 pts de turnover × 6 000 € de coût moyen de remplacement (recrutement + onboarding) × effectif concerné."
-              />
-              <Slider
-                label="5 · Gouvernance & conformité"
-                value={iGouvernance}
-                min={0}
-                max={100}
-                step={5}
-                onChange={(v) => { setIGouvernance(v); clearScenario(); }}
-                suffix=" %"
-                icon={<ShieldCheck className="w-3.5 h-3.5" />}
-                tooltip="Plafond : évitement RGPD (25 k€ × 8 % de proba) + +15 % d'honoraires sur 1,5 % du parc mid-market × 35 % marge."
-              />
-              <Slider
-                label="6 · Développement (Eligibly)"
-                value={iDev}
-                min={0}
-                max={100}
-                step={5}
-                onChange={(v) => { setIDev(v); clearScenario(); }}
-                suffix=" %"
-                icon={<Target className="w-3.5 h-3.5" />}
-                highlight
-                tooltip="Plafond prudent : 2,5 nouveaux dossiers nets signés/mois × LTV 3 ans × 30 % de marge nette (retours pilotes Eligibly)."
-              />
-            </div>
-          </div>
-        </div>
+            {currentStep === 3 && (
+              <div>
+                <h4 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-1">
+                  Intensité IA par axe
+                </h4>
+                <p className="text-sm text-muted-foreground mb-6">
+                  0 % = pas déployé · 100 % = pleinement industrialisé. Cliquez sur ⓘ pour la formule de chaque axe.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
+                  <Slider label="1 · Production comptable" value={iProduction} min={0} max={100} step={5}
+                    onChange={(v) => { setIProduction(v); clearScenario(); }} suffix=" %"
+                    icon={<Cpu className="w-3.5 h-3.5" />}
+                    tooltip="Plafond prudent : 35 % des heures de saisie/lettrage réellement automatisables. Gain € = heures libérées × TJM/7." />
+                  <Slider label="2 · Conseil & pilotage" value={iConseil} min={0} max={100} step={5}
+                    onChange={(v) => { setIConseil(v); clearScenario(); }} suffix=" %"
+                    icon={<TrendingUp className="w-3.5 h-3.5" />}
+                    tooltip="Plafond : +12 % d'honoraires sur 25 % du parc via offres pilotage, marge nette 35 % (fourchette basse CSOEC)." />
+                  <Slider label="3 · Relation client" value={iRelation} min={0} max={100} step={5}
+                    onChange={(v) => { setIRelation(v); clearScenario(); }} suffix=" %"
+                    icon={<MessageSquare className="w-3.5 h-3.5" />}
+                    tooltip="Plafond prudent : 2,5 h/sem/collab libérées sur emails, CR et Q&A clients." />
+                  <Slider label="4 · RH & organisation" value={iRH} min={0} max={100} step={5}
+                    onChange={(v) => { setIRH(v); clearScenario(); }} suffix=" %"
+                    icon={<UserCog className="w-3.5 h-3.5" />}
+                    tooltip="Plafond : -10 pts de turnover × 6 000 € de coût moyen de remplacement × effectif concerné." />
+                  <Slider label="5 · Gouvernance & conformité" value={iGouvernance} min={0} max={100} step={5}
+                    onChange={(v) => { setIGouvernance(v); clearScenario(); }} suffix=" %"
+                    icon={<ShieldCheck className="w-3.5 h-3.5" />}
+                    tooltip="Plafond : évitement RGPD (25 k€ × 8 %) + +15 % honoraires sur 1,5 % du parc mid-market × 35 % marge." />
+                  <Slider label="6 · Développement (Eligibly)" value={iDev} min={0} max={100} step={5}
+                    onChange={(v) => { setIDev(v); clearScenario(); }} suffix=" %"
+                    icon={<Target className="w-3.5 h-3.5" />} highlight
+                    tooltip="Plafond prudent : 2,5 nouveaux dossiers nets/mois × LTV 3 ans × 30 % marge nette." />
+                </div>
+              </div>
+            )}
 
-        {/* Results */}
-        <div className="p-6 md:p-8 bg-gradient-to-br from-primary/[0.03] via-accent/[0.02] to-transparent border-l border-border lg:sticky lg:top-4 lg:self-start">
-          <div className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-4 flex items-center gap-2">
-            <Sparkles className="w-3.5 h-3.5 text-primary" /> Résultat annuel
-            {scenario && (
-              <span className="ml-auto text-[0.65rem] normal-case tracking-normal bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium">
-                {SCENARIOS[scenario].label}
-              </span>
+            {currentStep === 4 && (
+              <div>
+                <div className="flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-4">
+                  <Sparkles className="w-3.5 h-3.5 text-primary" /> Résultat annuel
+                  {scenario && (
+                    <span className="ml-auto text-[0.65rem] normal-case tracking-normal bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium">
+                      {SCENARIOS[scenario].label}
+                    </span>
+                  )}
+                </div>
+
+                <div className={`mb-6 pb-6 border-b border-border transition-all ${pulse ? "ring-2 ring-primary/30 rounded-xl" : ""}`}>
+                  <div className="text-xs text-muted-foreground mb-1">Gain net annuel</div>
+                  <div className={`font-display text-4xl md:text-5xl font-semibold text-primary tabular-nums leading-none ${pulse ? "animate-pulse" : ""}`}>
+                    +{fmt(gains.totalNet)} €
+                  </div>
+                  <div className="mt-4 grid grid-cols-3 gap-2 text-[0.72rem]">
+                    <div className="rounded-lg bg-muted/60 border border-border px-2 py-2">
+                      <div className="text-[0.62rem] uppercase tracking-wider text-muted-foreground">Gain brut</div>
+                      <div className="font-display italic font-semibold tabular-nums text-sm text-foreground">{fmt(gains.totalBrut)} €</div>
+                    </div>
+                    <div className="rounded-lg bg-muted/60 border border-border px-2 py-2">
+                      <div className="text-[0.62rem] uppercase tracking-wider text-muted-foreground">Coûts IA</div>
+                      <div className="font-display italic font-semibold tabular-nums text-sm text-foreground">−{fmt(gains.coutTotal)} €</div>
+                    </div>
+                    <div className="rounded-lg bg-primary text-primary-foreground px-2 py-2">
+                      <div className="text-[0.62rem] uppercase tracking-wider text-primary-foreground/80">ROI</div>
+                      <div className="font-display italic font-semibold tabular-nums text-sm">{gains.roiRatio > 0 ? `×${gains.roiRatio.toFixed(1)}` : "—"}</div>
+                    </div>
+                  </div>
+                  <div className="mt-3 text-xs text-muted-foreground">
+                    ~{fmt(gains.totalHSem)} h/semaine libérées · {gains.etpEquivalent.toFixed(1)} ETP · payback {gains.paybackMois > 0 ? `${gains.paybackMois.toFixed(1)} mois` : "—"}
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setDetailOpen(!detailOpen)}
+                  className="w-full flex items-center justify-between gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors mb-3"
+                >
+                  <span>Détail par axe</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${detailOpen ? "rotate-180" : ""}`} />
+                </button>
+
+                {detailOpen && (
+                  <div className="space-y-2 mb-6">
+                    <ResultLight icon={<Cpu className="w-4 h-4 text-primary" />} title="Production" value={`+${fmt(gains.eurProd)} €`} sub={`${fmt(gains.hProdSem)} h/sem libérées`} />
+                    <ResultLight icon={<TrendingUp className="w-4 h-4 text-primary" />} title="Conseil & pilotage" value={`+${fmt(gains.eurConseil)} €`} sub="+12 % honoraires × 25 % parc" />
+                    <ResultLight icon={<MessageSquare className="w-4 h-4 text-primary" />} title="Relation client" value={`+${fmt(gains.eurRel)} €`} sub={`${fmt(gains.hRelSem)} h/sem libérées`} />
+                    <ResultLight icon={<UserCog className="w-4 h-4 text-primary" />} title="RH & organisation" value={`+${fmt(gains.eurRH)} €`} sub="Rétention & recrutement" />
+                    <ResultLight icon={<ShieldCheck className="w-4 h-4 text-primary" />} title="Gouvernance" value={`+${fmt(gains.eurGouv)} €`} sub="RGPD + closing" />
+                    <ResultLight icon={<Target className="w-4 h-4 text-primary" />} title="Développement · Eligibly" value={`+${fmt(gains.eurDev)} €`} sub={`~${fmt(gains.nouveauxDossiersAn)} dossiers/an`} highlight />
+                  </div>
+                )}
+
+                <SafeLink to="/demo">
+                  <Button variant="tengo" className="w-full h-11 text-sm font-semibold group">
+                    Recevoir mon plan ROI personnalisé
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </SafeLink>
+              </div>
             )}
           </div>
 
-          <div className={`mb-6 pb-6 border-b border-border rounded-xl transition-all ${pulse ? "ring-2 ring-primary/30" : ""}`}>
-            <div className="text-xs text-muted-foreground mb-1">Gain net annuel</div>
-            <div className={`font-display text-4xl md:text-5xl font-semibold text-primary tabular-nums leading-none ${pulse ? "animate-pulse" : ""}`}>
-              +{fmt(gains.totalNet)} €
+          {/* Navigation Précédent / Suivant */}
+          <div className="mt-6 flex items-center justify-between gap-3">
+            <button
+              type="button"
+              onClick={() => setCurrentStep((n) => Math.max(1, n - 1))}
+              disabled={currentStep === 1}
+              className="inline-flex items-center gap-2 h-10 px-4 rounded-lg border border-border bg-card text-sm font-medium text-foreground hover:border-primary/50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" /> Précédent
+            </button>
+            <div className="text-xs text-muted-foreground">
+              Étape {currentStep} / {totalSteps}
             </div>
-            <div className="mt-3 grid grid-cols-3 gap-2 text-[0.72rem]">
-              <div className="rounded-lg bg-card border border-border px-2 py-2">
-                <div className="text-[0.62rem] uppercase tracking-wider text-muted-foreground">Gain brut</div>
-                <div className="font-display italic font-semibold tabular-nums text-sm text-foreground">{fmt(gains.totalBrut)} €</div>
-              </div>
-              <div className="rounded-lg bg-card border border-border px-2 py-2">
-                <div className="text-[0.62rem] uppercase tracking-wider text-muted-foreground">Coûts IA</div>
-                <div className="font-display italic font-semibold tabular-nums text-sm text-foreground">−{fmt(gains.coutTotal)} €</div>
-              </div>
-              <div className="rounded-lg bg-primary text-primary-foreground px-2 py-2">
-                <div className="text-[0.62rem] uppercase tracking-wider text-primary-foreground/80">ROI</div>
-                <div className="font-display italic font-semibold tabular-nums text-sm">{gains.roiRatio > 0 ? `×${gains.roiRatio.toFixed(1)}` : "—"}</div>
-              </div>
-            </div>
-            <div className="mt-3 text-xs text-muted-foreground">
-              ~{fmt(gains.totalHSem)} h/semaine libérées · {gains.etpEquivalent.toFixed(1)} ETP · payback {gains.paybackMois > 0 ? `${gains.paybackMois.toFixed(1)} mois` : "—"}
-            </div>
+            {currentStep < totalSteps ? (
+              <button
+                type="button"
+                onClick={() => setCurrentStep((n) => Math.min(totalSteps, n + 1))}
+                className="inline-flex items-center gap-2 h-10 px-5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
+              >
+                Suivant <ArrowRight className="w-4 h-4" />
+              </button>
+            ) : (
+              <SafeLink to="/demo">
+                <Button variant="tengo" className="h-10 px-5 text-sm font-semibold">
+                  Mon plan ROI
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </SafeLink>
+            )}
           </div>
-
-          <button
-            type="button"
-            onClick={() => setDetailOpen(!detailOpen)}
-            className="w-full flex items-center justify-between gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors mb-3"
-          >
-            <span>Détail par axe</span>
-            <ChevronDown className={`w-4 h-4 transition-transform ${detailOpen ? "rotate-180" : ""}`} />
-          </button>
-
-          {detailOpen && (
-            <div className="space-y-3 mb-6">
-              <ResultLight icon={<Cpu className="w-4 h-4 text-primary" />} title="Production" value={`+${fmt(gains.eurProd)} €`} sub={`${fmt(gains.hProdSem)} h/sem libérées`} />
-              <ResultLight icon={<TrendingUp className="w-4 h-4 text-primary" />} title="Conseil & pilotage" value={`+${fmt(gains.eurConseil)} €`} sub="+12 % honoraires × 25 % parc" />
-              <ResultLight icon={<MessageSquare className="w-4 h-4 text-primary" />} title="Relation client" value={`+${fmt(gains.eurRel)} €`} sub={`${fmt(gains.hRelSem)} h/sem libérées`} />
-              <ResultLight icon={<UserCog className="w-4 h-4 text-primary" />} title="RH & organisation" value={`+${fmt(gains.eurRH)} €`} sub="Rétention & recrutement" />
-              <ResultLight icon={<ShieldCheck className="w-4 h-4 text-primary" />} title="Gouvernance" value={`+${fmt(gains.eurGouv)} €`} sub="RGPD + closing" />
-              <ResultLight icon={<Target className="w-4 h-4 text-primary" />} title="Développement · Eligibly" value={`+${fmt(gains.eurDev)} €`} sub={`~${fmt(gains.nouveauxDossiersAn)} dossiers/an`} highlight />
-            </div>
-          )}
-
-          <SafeLink to="/demo">
-            <Button variant="tengo" className="w-full h-11 text-sm font-semibold group">
-              Recevoir mon plan ROI personnalisé
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </SafeLink>
         </div>
       </div>
 
       <MethodologyDialog open={methodoOpen} onOpenChange={setMethodoOpen} />
-
-      {/* Sticky mobile summary */}
-      <div className="lg:hidden sticky bottom-0 left-0 right-0 bg-card border-t border-primary/30 px-4 py-2.5 shadow-lg z-10 flex items-center justify-between gap-3">
-        <div className="min-w-0">
-          <div className="text-[0.6rem] uppercase tracking-wider text-muted-foreground">Gain net / an</div>
-          <div className="font-display text-lg font-semibold text-primary tabular-nums leading-tight truncate">
-            +{fmt(gains.totalNet)} €
-          </div>
-        </div>
-        <div className="text-[0.6rem] text-muted-foreground leading-tight text-right">
-          ROI {gains.roiRatio > 0 ? `×${gains.roiRatio.toFixed(1)}` : "—"}
-          <br />
-          {gains.etpEquivalent.toFixed(1)} ETP
-        </div>
-        <SafeLink to="/demo">
-          <Button variant="tengo" size="sm" className="shrink-0 h-8 text-xs font-semibold">
-            Plan ROI
-          </Button>
-        </SafeLink>
-      </div>
     </section>
   );
 };
