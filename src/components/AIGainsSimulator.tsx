@@ -245,7 +245,7 @@ export const AIGainsSimulator = () => {
           onClick={() => setMethodoOpen(true)}
           className="mt-3 sm:hidden inline-flex items-center gap-1.5 text-xs font-medium text-primary underline underline-offset-2"
         >
-          <BookOpen className="w-3.5 h-3.5" /> Voir la méthodologie & les formules
+          <BookOpen className="w-3.5 h-3.5" /> Méthodologie
         </button>
       </header>
 
