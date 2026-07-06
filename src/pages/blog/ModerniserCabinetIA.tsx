@@ -248,9 +248,9 @@ const ModerniserCabinetIA = () => (
       C'est ce basculement — d'une visibilité subie à une visibilité <em>pilotée</em> — qui fait passer un cabinet de la stagnation à une croissance choisie. Pour aller plus loin, voir le <a href="/blog/playbook-prospection-cabinet-ec-2026">Playbook 2026 de la prospection en cabinet EC</a>, le <a href="/blog/icp-cabinet-expertise-comptable">guide de construction de l'ICP</a> et le <a href="/blog/cout-acquisition-client-cabinet-comptable">benchmark du CAC en cabinet</a>.
     </p>
 
-    <h2>Feuille de route pragmatique sur 12 mois</h2>
     <AIGainsSimulator />
 
+    <h2>Feuille de route pragmatique sur 12 mois</h2>
     <p>
       La tentation, face à ces six axes, est de tout lancer en parallèle. C'est la meilleure façon de ne rien livrer. Une séquence qui fonctionne, observée chez plusieurs cabinets pilotes :
     </p>
