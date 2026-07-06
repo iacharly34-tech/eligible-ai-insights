@@ -1,5 +1,6 @@
 import { ArticleShell } from "./ArticleShell";
-import { AIGainsSimulator } from "@/components/AIGainsSimulator";
+import { SafeLink } from "@/components/SafeLink";
+import { ArrowRight, Calculator } from "lucide-react";
 
 const ModerniserCabinetIA = () => (
   <ArticleShell
@@ -256,7 +257,29 @@ const ModerniserCabinetIA = () => (
       heures libérées, équivalent ETP et payback. Réglez l'intensité IA de chaque axe entre 0 % (statu quo) et
       100 % (déploiement complet) — l'estimation se met à jour en direct.
     </p>
-    <AIGainsSimulator />
+    <SafeLink
+      to="/simulateur-roi-ia-cabinet"
+      className="not-prose block rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent p-6 md:p-8 my-6 hover:border-primary/40 transition-colors group"
+    >
+      <div className="flex items-start gap-4">
+        <div className="shrink-0 w-11 h-11 rounded-xl bg-primary/15 text-primary flex items-center justify-center">
+          <Calculator className="w-5 h-5" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="font-display text-lg md:text-xl font-semibold tracking-tight mb-1">
+            Ouvrir le simulateur ROI IA cabinet
+          </div>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+            4 étapes guidées&nbsp;: scénario, cabinet, intensité IA par axe, résultats. Estimation en direct
+            des gains annuels, heures libérées, ETP et payback.
+          </p>
+          <span className="inline-flex items-center text-sm font-medium text-primary">
+            Lancer le simulateur
+            <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
+          </span>
+        </div>
+      </div>
+    </SafeLink>
     <p>
       À retenir : les gains de <strong>l'axe 6 — développement commercial IA</strong> dominent souvent l'équation, car
       la <em>prospection IA verticale</em> (Eligibly) monétise directement de nouveaux dossiers (LTV 6 à 12 k€ sur 3 ans
