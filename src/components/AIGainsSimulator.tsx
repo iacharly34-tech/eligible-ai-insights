@@ -626,7 +626,7 @@ const SectionHeading = ({
         {title}
       </h4>
     </div>
-    <p className="text-xs text-muted-foreground mt-1.5 ml-8.5 pl-0 leading-relaxed">
+    <p className="text-xs text-muted-foreground mt-1.5 ml-[2.125rem] leading-relaxed">
       {description}
     </p>
   </div>
