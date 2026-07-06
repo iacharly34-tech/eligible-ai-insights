@@ -248,9 +248,24 @@ const ModerniserCabinetIA = () => (
       C'est ce basculement — d'une visibilité subie à une visibilité <em>pilotée</em> — qui fait passer un cabinet de la stagnation à une croissance choisie. Pour aller plus loin, voir le <a href="/blog/playbook-prospection-cabinet-ec-2026">Playbook 2026 de la prospection en cabinet EC</a>, le <a href="/blog/icp-cabinet-expertise-comptable">guide de construction de l'ICP</a> et le <a href="/blog/cout-acquisition-client-cabinet-comptable">benchmark du CAC en cabinet</a>.
     </p>
 
+    <h2 id="simulateur-roi-ia-cabinet">Simulateur ROI IA cabinet d'expertise comptable : chiffrez les gains sur les 6 axes</h2>
+    <p>
+      Combien votre cabinet peut-il réellement gagner en déployant l'IA sur la production comptable, le conseil,
+      la relation client, les RH, la gouvernance et la prospection commerciale&nbsp;? Ce <strong>simulateur ROI IA
+      pour cabinet d'expertise comptable</strong> traduit chaque axe de modernisation en gains financiers annuels,
+      heures libérées, équivalent ETP et payback. Réglez l'intensité IA de chaque axe entre 0 % (statu quo) et
+      100 % (déploiement complet) — l'estimation se met à jour en direct.
+    </p>
     <AIGainsSimulator />
+    <p>
+      À retenir : les gains de <strong>l'axe 6 — développement commercial IA</strong> dominent souvent l'équation, car
+      la <em>prospection IA verticale</em> (Eligibly) monétise directement de nouveaux dossiers (LTV 6 à 12 k€ sur 3 ans
+      en cabinet EC). Les axes 1 (production automatisée), 2 (offre de pilotage facturée) et 3 (relation client
+      augmentée) créent la marge nécessaire pour financer la transformation. Les axes 4 (RH) et 5 (gouvernance /
+      conformité RGPD) sécurisent le socle et évitent les coûts cachés.
+    </p>
 
-    <h2>Feuille de route pragmatique sur 12 mois</h2>
+    <h2>Feuille de route pragmatique sur 12 mois pour moderniser un cabinet EC avec l'IA</h2>
     <p>
       La tentation, face à ces six axes, est de tout lancer en parallèle. C'est la meilleure façon de ne rien livrer. Une séquence qui fonctionne, observée chez plusieurs cabinets pilotes :
     </p>
@@ -271,6 +286,111 @@ const ModerniserCabinetIA = () => (
     <p>
       Si vous voulez tester concrètement ce qu'une couche de détection IA change sur votre zone et votre ICP : Eligibly livre un échantillon gratuit de 3 leads qualifiés sous 48 h, sans engagement.
     </p>
+
+    <h2 id="faq">FAQ — IA et modernisation des cabinets d'expertise comptable</h2>
+    <h3>Quels sont les principaux axes IA pour moderniser un cabinet d'expertise comptable en 2026 ?</h3>
+    <p>
+      Les six axes de modernisation IA d'un cabinet EC sont&nbsp;: (1) <strong>production comptable</strong>
+      (OCR factures, pré-lettrage, révision analytique), (2) <strong>conseil et pilotage</strong> (dashboards temps
+      réel, détection d'anomalies, rapports narratifs LLM), (3) <strong>relation client</strong> (assistants
+      conversationnels, transcription RDV, portail client), (4) <strong>RH et organisation</strong> (repositionnement
+      des fiches de poste, formation continue IA), (5) <strong>gouvernance et conformité</strong> (charte IA,
+      cartographie outils, RGPD/CNIL, secret professionnel), (6) <strong>développement commercial et visibilité</strong>
+      (détection de prospects SASU/SAS, scoring, canal d'approche recommandé).
+    </p>
+    <h3>Combien coûte l'IA pour un cabinet d'expertise comptable ?</h3>
+    <p>
+      Un cabinet EC de 5 à 20 collaborateurs investit en moyenne <strong>400 à 800 € par collaborateur et par an</strong>
+      pour la stack IA embarquée dans la production (Cegid, Pennylane, Tiime, MyUnisoft, ACD) et les LLM internes.
+      À cela s'ajoute une couche de <strong>prospection IA verticale</strong> comme Eligibly&nbsp;: 290 € HT/mois pour un
+      cabinet, sans engagement, avec un pilote gratuit de 14 jours sans carte bancaire.
+    </p>
+    <h3>Quel ROI attendre de l'IA en cabinet d'expertise comptable ?</h3>
+    <p>
+      Sur les cabinets pilotes observés, l'IA sur les 6 axes génère un ROI brut annuel de <strong>×5 à ×20</strong>
+      des coûts d'outils, avec un <em>payback</em> de <strong>2 à 6 mois</strong>. Les postes de gain principaux&nbsp;:
+      30 à 60 % de temps saisie économisé (Shine), +15 à +25 % d'honoraires sur les clients basculés en offre de
+      pilotage (CSOEC), 3 à 8 nouveaux dossiers signés par mois via une couche de prospection IA verticale
+      (retour pilotes Eligibly). Utilisez le <a href="#simulateur-roi-ia-cabinet">simulateur ROI IA cabinet</a>
+      ci-dessus pour chiffrer votre cas.
+    </p>
+    <h3>L'IA remplace-t-elle l'expert-comptable ?</h3>
+    <p>
+      Non. L'IA automatise les tâches répétitives (saisie, lettrage, extraction de pièces, brouillon de rapport)
+      mais ne remplace ni le jugement professionnel, ni la responsabilité déontologique. L'article 21 du Code de
+      déontologie et la doctrine du CSOEC rappellent que la <strong>responsabilité de l'expert-comptable reste pleine
+      et entière</strong>, quel que soit l'outil IA utilisé. L'IA déplace la valeur du cabinet vers le conseil, le
+      pilotage et la relation client — pas vers la disparition.
+    </p>
+    <h3>Comment l'IA change-t-elle la prospection d'un cabinet d'expertise comptable ?</h3>
+    <p>
+      L'IA transforme la prospection cabinet EC de trois façons&nbsp;: (1) <strong>détection temps réel</strong> des
+      nouvelles immatriculations SASU/SAS/EURL depuis les sources officielles (INPI, base Sirene INSEE, BODACC) dans
+      les 24 à 72 h suivant l'immatriculation ; (2) <strong>filtres ICP durs et scoring expliqué</strong> pour ne
+      traiter que les 10 à 30 leads du jour méritant un contact ; (3) <strong>canal d'approche recommandé et accroche
+      pré-rédigée</strong> (LinkedIn, email, appel, courrier à en-tête). C'est le rôle d'un CRM de prospection vertical
+      comme Eligibly, pensé exclusivement pour les cabinets d'expertise comptable.
+    </p>
+    <h3>Quelle intensité IA privilégier sur chacun des 6 axes de modernisation ?</h3>
+    <p>
+      La séquence observée chez les cabinets pilotes&nbsp;: commencer par les axes 1 (production) et 5 (gouvernance) pour
+      poser le socle, puis passer à l'axe 2 (conseil facturé) qui monétise le temps gagné, puis à l'axe 6
+      (développement commercial IA) qui alimente le pipeline. Les axes 3 (relation client) et 4 (RH) s'installent
+      en continu. Le <a href="#simulateur-roi-ia-cabinet">simulateur ROI</a> permet de tester l'impact d'un curseur
+      remonté de 20 points sur chaque axe.
+    </p>
+
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Quels sont les principaux axes IA pour moderniser un cabinet d'expertise comptable en 2026 ?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Les six axes de modernisation IA d'un cabinet EC en 2026 sont : production comptable (OCR, pré-lettrage, révision analytique), conseil et pilotage (dashboards temps réel, détection d'anomalies, rapports LLM), relation client (assistants RAG, transcription RDV, portail client), RH et organisation, gouvernance et conformité RGPD/CNIL, et développement commercial (détection de prospects SASU/SAS, scoring, canal recommandé).",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Combien coûte l'IA pour un cabinet d'expertise comptable ?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Un cabinet EC de 5 à 20 collaborateurs investit en moyenne 400 à 800 € par collaborateur et par an pour la stack IA production (Cegid, Pennylane, Tiime, MyUnisoft, ACD) et les LLM internes. Une couche de prospection IA verticale comme Eligibly coûte 290 € HT/mois pour un cabinet, sans engagement, avec un pilote gratuit de 14 jours sans carte bancaire.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Quel ROI attendre de l'IA en cabinet d'expertise comptable ?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Sur les cabinets pilotes, l'IA sur les 6 axes génère un ROI brut annuel de ×5 à ×20 des coûts d'outils, avec un payback de 2 à 6 mois. Postes principaux : 30 à 60 % de temps saisie économisé (Shine), +15 à +25 % d'honoraires sur les clients pilotés (CSOEC), 3 à 8 nouveaux dossiers signés/mois via prospection IA verticale (pilotes Eligibly).",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "L'IA remplace-t-elle l'expert-comptable ?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Non. L'IA automatise les tâches répétitives (saisie, lettrage, brouillon de rapport) mais ne remplace ni le jugement professionnel ni la responsabilité déontologique. L'article 21 du Code de déontologie et la doctrine du CSOEC rappellent que la responsabilité de l'expert-comptable reste pleine et entière quel que soit l'outil IA utilisé.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Comment l'IA change-t-elle la prospection d'un cabinet d'expertise comptable ?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "L'IA permet la détection temps réel des nouvelles immatriculations SASU/SAS/EURL (INPI, Sirene, BODACC) sous 24-72 h, applique des filtres ICP durs avec scoring expliqué pour ne traiter que 10-30 leads/jour, et recommande un canal d'approche (LinkedIn, email, appel, courrier) avec accroche pré-rédigée. C'est le rôle d'un CRM de prospection vertical comme Eligibly, dédié aux cabinets EC.",
+              },
+            },
+          ],
+        }),
+      }}
+    />
   </ArticleShell>
 );
 
