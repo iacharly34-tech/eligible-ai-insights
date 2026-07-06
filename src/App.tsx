@@ -116,6 +116,12 @@ const App = () => (
                 <Route path="/prospection-cabinet-comptable" element={<ProspectionCabinetComptable />} />
                 <Route path="/canaux-activation" element={<CanauxActivation />} />
                 <Route path="/pourquoi-ce-lead-est-prioritaire" element={<PourquoiCeLeadEstPrioritaire />} />
+                <Route path="/alternatives-primolead-experts-comptables" element={<AlternativesPrimolead />} />
+                <Route path="/cabinet/glossaire" element={<GlossaireCabinet />} />
+                <Route path="/cabinet/cas-usage" element={<CasUsageIndex />} />
+                <Route path="/cabinet/cas-usage/cabinet-8-collaborateurs-departement" element={<CasUsage8Collabs />} />
+                <Route path="/cabinet/cas-usage/cabinet-specialise-restauration" element={<CasUsageRestauration />} />
+                <Route path="/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce" element={<CasUsageFullRemote />} />
 
                 {/* Blog */}
                 <Route path="/blog/creations-entreprises-france-2025" element={<BlogCreations2025 />} />
