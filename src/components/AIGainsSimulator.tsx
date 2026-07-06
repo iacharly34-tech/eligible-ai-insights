@@ -277,9 +277,9 @@ export const AIGainsSimulator = () => {
         <div className="p-6 md:p-8 space-y-8 border-b lg:border-b-0 lg:border-r border-border">
           <div>
             <SectionHeading step="1" title="Votre cabinet" />
-            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-7 mt-5">
+            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5 mt-5">
               <Slider
-            label="Nombre de collaborateurs"
+            label="Collaborateurs concernés"
             value={collabs}
             min={1}
             max={80}
@@ -287,17 +287,17 @@ export const AIGainsSimulator = () => {
             onChange={(v) => { setCollabs(v); clearScenario(); }}
             suffix=" pers."
             icon={<Users className="w-3.5 h-3.5" />}
-            hint="Effectif total (associés + collaborateurs + assistants) concerné par l'IA."
+            tooltip="Effectif total (associés + collaborateurs + assistants) concerné par le déploiement IA."
           />
           <Slider
-            label="Heures/semaine/collab sur saisie & tenue"
+            label="Heures/sem sur saisie & tenue"
             value={hoursSaisiePerCollab}
             min={0}
             max={35}
             step={1}
             onChange={(v) => { setHoursSaisiePerCollab(v); clearScenario(); }}
             suffix=" h"
-            hint="Temps hebdo par collaborateur passé à saisir, lettrer, rapprocher (avant IA)."
+            tooltip="Temps hebdo par collaborateur passé à saisir, lettrer, rapprocher (avant IA)."
           />
           <Slider
             label="TJM moyen facturé"
@@ -307,37 +307,37 @@ export const AIGainsSimulator = () => {
             step={25}
             onChange={(v) => { setTjm(v); clearScenario(); }}
             suffix=" €"
-            hint="Taux journalier moyen facturé — sert à valoriser les heures libérées."
+            tooltip="Taux journalier moyen facturé — sert à valoriser les heures libérées (taux horaire = TJM / 7)."
           />
           <Slider
-            label="Clients actifs au portefeuille"
+            label="Clients actifs"
             value={clientsActifs}
             min={10}
             max={800}
             step={10}
             onChange={(v) => { setClientsActifs(v); clearScenario(); }}
             suffix=""
-            hint="Nombre de dossiers récurrents suivis par le cabinet."
+            tooltip="Nombre de dossiers récurrents suivis par le cabinet."
           />
           <Slider
-            label="Honoraires moyens / client / an"
+            label="Honoraires moyens / an"
             value={honorairesMoyen}
             min={800}
             max={12000}
             step={100}
             onChange={(v) => { setHonorairesMoyen(v); clearScenario(); }}
             suffix=" €"
-            hint="Panier moyen annuel par client — base pour l'upsell conseil/pilotage."
+            tooltip="Panier moyen annuel par client — base pour l'upsell conseil/pilotage."
           />
           <Slider
-            label="LTV nouveau dossier (3 ans)"
+            label="LTV nouveau dossier"
             value={ltvNouveauClient}
             min={2000}
             max={30000}
             step={500}
             onChange={(v) => { setLtvNouveauClient(v); clearScenario(); }}
             suffix=" €"
-            hint="Valeur générée sur 3 ans par un dossier signé via prospection IA."
+            tooltip="Valeur générée sur 3 ans par un dossier signé via prospection IA."
           />
             </div>
           </div>
@@ -348,9 +348,9 @@ export const AIGainsSimulator = () => {
               title="Intensité IA par axe"
               description="0 % = pas déployé · 100 % = pleinement industrialisé."
             />
-            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-7 mt-5">
+            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5 mt-5">
               <Slider
-                label="Axe 1 · Production comptable"
+                label="1 · Production comptable"
                 value={iProduction}
                 min={0}
                 max={100}
@@ -358,11 +358,10 @@ export const AIGainsSimulator = () => {
                 onChange={(v) => { setIProduction(v); clearScenario(); }}
                 suffix=" %"
                 icon={<Cpu className="w-3.5 h-3.5" />}
-                hint="OCR factures, pré-lettrage, révision analytique automatisée"
                 tooltip="Plafond prudent : 35 % des heures de saisie/lettrage réellement automatisables (net du temps de contrôle humain). Gain € = heures libérées × TJM/7."
               />
               <Slider
-                label="Axe 2 · Conseil & pilotage"
+                label="2 · Conseil & pilotage"
                 value={iConseil}
                 min={0}
                 max={100}
@@ -370,11 +369,10 @@ export const AIGainsSimulator = () => {
                 onChange={(v) => { setIConseil(v); clearScenario(); }}
                 suffix=" %"
                 icon={<TrendingUp className="w-3.5 h-3.5" />}
-                hint="Dashboards temps réel, détection d'anomalies, rapports narratifs LLM"
                 tooltip="Plafond : +12 % d'honoraires sur 25 % du parc via offres pilotage, pondéré par 35 % de marge nette (fourchette basse CSOEC)."
               />
               <Slider
-                label="Axe 3 · Relation client"
+                label="3 · Relation client"
                 value={iRelation}
                 min={0}
                 max={100}
@@ -382,11 +380,10 @@ export const AIGainsSimulator = () => {
                 onChange={(v) => { setIRelation(v); clearScenario(); }}
                 suffix=" %"
                 icon={<MessageSquare className="w-3.5 h-3.5" />}
-                hint="Assistant RAG, résumés d'emails, transcription RDV, portail conversationnel"
                 tooltip="Plafond prudent : 2,5 h/sem/collab libérées sur emails, CR et Q&A clients. Gain € = h × TJM/7."
               />
               <Slider
-                label="Axe 4 · RH & organisation"
+                label="4 · RH & organisation"
                 value={iRH}
                 min={0}
                 max={100}
@@ -394,11 +391,10 @@ export const AIGainsSimulator = () => {
                 onChange={(v) => { setIRH(v); clearScenario(); }}
                 suffix=" %"
                 icon={<UserCog className="w-3.5 h-3.5" />}
-                hint="Fiches de poste réécrites, formation IA, rétention collaborateurs confirmés"
                 tooltip="Plafond : -10 pts de turnover × 6 000 € de coût moyen de remplacement (recrutement + onboarding) × effectif concerné."
               />
               <Slider
-                label="Axe 5 · Gouvernance & conformité"
+                label="5 · Gouvernance & conformité"
                 value={iGouvernance}
                 min={0}
                 max={100}
@@ -406,11 +402,10 @@ export const AIGainsSimulator = () => {
                 onChange={(v) => { setIGouvernance(v); clearScenario(); }}
                 suffix=" %"
                 icon={<ShieldCheck className="w-3.5 h-3.5" />}
-                hint="Charte IA, cartographie outils, conformité RGPD/CNIL, secret professionnel"
                 tooltip="Plafond : évitement RGPD (25 k€ × 8 % de proba) + +15 % d'honoraires sur 1,5 % du parc mid-market × 35 % marge."
               />
               <Slider
-                label="Axe 6 · Développement commercial (Eligibly)"
+                label="6 · Développement (Eligibly)"
                 value={iDev}
                 min={0}
                 max={100}
@@ -418,7 +413,6 @@ export const AIGainsSimulator = () => {
                 onChange={(v) => { setIDev(v); clearScenario(); }}
                 suffix=" %"
                 icon={<Target className="w-3.5 h-3.5" />}
-                hint="Détection SASU/SAS temps réel, scoring, canal recommandé, accroche préparée"
                 highlight
                 tooltip="Plafond prudent : 2,5 nouveaux dossiers nets signés/mois × LTV 3 ans × 30 % de marge nette (retours pilotes Eligibly)."
               />
