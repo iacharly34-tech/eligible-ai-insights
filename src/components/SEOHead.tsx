@@ -180,10 +180,28 @@ export const SEOHead = ({
     } else {
       // French pages
       switch (path) {
+        case '/mentions-legales':
+          return {
+            title: "Mentions légales — Eligibly",
+            description: "Mentions légales d'Eligibly : éditeur GM2.0 SAS, RCS Paris 930 166 913, siège 9 Avenue de Bouvines 75011 Paris, hébergement et contact.",
+            keywords: "mentions légales eligibly, éditeur, GM2.0, RCS Paris"
+          };
+        case '/confidentialite':
+          return {
+            title: "Politique de confidentialité — Eligibly",
+            description: "Politique de confidentialité et RGPD d'Eligibly : données collectées, finalités, durées de conservation, droits d'accès et de suppression.",
+            keywords: "politique confidentialité eligibly, RGPD, données personnelles, cabinet expertise-comptable"
+          };
+        case '/cgu':
+          return {
+            title: "Conditions générales d'utilisation — Eligibly",
+            description: "Conditions générales d'utilisation d'Eligibly : accès au service, obligations utilisateurs, propriété intellectuelle, responsabilités et résiliation.",
+            keywords: "CGU eligibly, conditions générales utilisation, cabinet expertise-comptable"
+          };
         case '/':
         case '/accueil':
           return {
-            title: "Eligibly — 100+ SASU/SAS scorées/semaine pour votre cabinet EC",
+            title: "Eligibly — Leads SASU/SAS pour cabinets d'expertise-comptable",
             description: "Recevez chaque semaine 100 à 300 SASU/SAS fraîchement immatriculées dans votre zone, scorées ICP, avec le canal d'approche recommandé. Pilote 14 j gratuit, sans CB.",
             keywords: "prospection cabinet expertise-comptable, leads experts-comptables, SASU SAS immatriculation, nouveaux entrepreneurs, scoring leads, social selling, courrier à en-tête, eligibly"
           };
@@ -274,7 +292,7 @@ export const SEOHead = ({
     upsertMetaTag("property", "og:title", resolvedTitle);
     upsertMetaTag("property", "og:description", resolvedDescription);
     upsertMetaTag("property", "og:url", canonicalUrl);
-    upsertMetaTag("property", "og:type", "website");
+    upsertMetaTag("property", "og:type", location.pathname.startsWith("/blog/") ? "article" : "website");
     upsertMetaTag("property", "og:image", ogImageUrl);
     upsertMetaTag("property", "og:image:width", "1200");
     upsertMetaTag("property", "og:image:height", "630");

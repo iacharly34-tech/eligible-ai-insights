@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -64,6 +65,20 @@ export const ArticleShell = ({
   return (
     <>
       <SEOHead />
+      <Helmet>
+        <title>{`${title} — Eligibly`}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={`https://eligibly.ai${url}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={`https://eligibly.ai${url}`} />
+        <meta property="article:published_time" content={date} />
+        <meta property="article:section" content={category} />
+        <meta property="article:author" content={author} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+      </Helmet>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <div className="min-h-screen bg-background">
       <Header />
