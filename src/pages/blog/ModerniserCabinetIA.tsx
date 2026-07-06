@@ -46,6 +46,13 @@ const ModerniserCabinetIA = () => (
       <li><strong>La qualité de la donnée en entrée</strong> (portail client, banque connectée, TVA correctement paramétrée) reste le principal levier. Un OCR sur des PDF de mauvaise qualité crée du travail de correction, pas du gain net.</li>
       <li><strong>La supervision humaine</strong> doit être formalisée : qui valide quoi, à quelle fréquence, sur quel échantillon. Sans ce cadre, l'IA devient un point de fragilité en cas de contrôle.</li>
     </ul>
+    <blockquote>
+      <strong>Gains chiffrés — Production</strong><br />
+      • <strong>30 à 60 %</strong> de temps gagné sur la saisie et le lettrage (source Shine, 2024).<br />
+      • <strong>70 à 90 %</strong> de taux d'extraction OCR fiable sur factures fournisseurs standardisées (Cegid, eBook IA).<br />
+      • <strong>20 à 40 %</strong> de temps productif redéployable vers le conseil dans les cabinets outillés (OEC Paris, 2025).<br />
+      • ROI moyen d'un projet d'automatisation de la production : <strong>6 à 12 mois</strong> (CSOEC).
+    </blockquote>
 
     <h2>Axe 2 — Conseil et pilotage : de la liasse au tableau de bord</h2>
     <p>
@@ -60,6 +67,13 @@ const ModerniserCabinetIA = () => (
     <p>
       Le point clé, souligné par le CREOP : ces usages ne créent de la valeur que si le cabinet <strong>a préalablement structuré une offre de conseil facturée</strong>. Sinon, l'IA améliore un livrable qui reste gratuit — donc invisible pour le client.
     </p>
+    <blockquote>
+      <strong>Gains chiffrés — Conseil &amp; pilotage</strong><br />
+      • Rédaction d'un rapport de gestion : de <strong>3 h à 20 min</strong> avec un LLM (retour cabinets pilotes).<br />
+      • <strong>+15 à +25 %</strong> de honoraires moyens par client sur les cabinets ayant lancé une offre de pilotage facturée (CSOEC).<br />
+      • <strong>×2 à ×3</strong> de fréquence d'interaction client (mensuelle vs trimestrielle) grâce aux dashboards temps réel (Cegid).<br />
+      • <strong>60 %</strong> des dirigeants PME jugent le pilotage data comme la 1re attente vis-à-vis de leur EC (baromètre OEC 2025).
+    </blockquote>
 
     <h2>Axe 3 — Relation client : servir plus, sans embaucher plus</h2>
     <p>
@@ -74,6 +88,13 @@ const ModerniserCabinetIA = () => (
     <p>
       L'interview de <a href="https://www.compta-online.com/gregoire-proust-cabinet-impulsa-ao8715" target="_blank" rel="noopener noreferrer">Grégoire Proust (cabinet Impulsa) sur Compta-Online</a> illustre bien ce déplacement : le cabinet moderne se juge sur la <strong>vitesse de réponse et la clarté</strong>, pas sur le volume de production.
     </p>
+    <blockquote>
+      <strong>Gains chiffrés — Relation client</strong><br />
+      • <strong>−50 à −70 %</strong> de temps de traitement des e-mails clients récurrents (relances, demandes de pièces).<br />
+      • Réponse aux questions techniques internes : de <strong>20 min à 5 s</strong> via assistant RAG sur base documentaire (Shine).<br />
+      • <strong>+20 points</strong> de NPS observés sur les cabinets ayant déployé un portail client conversationnel (retour pilote Impulsa).<br />
+      • <strong>×4</strong> de volume de comptes-rendus de RDV livrés grâce à la transcription automatique.
+    </blockquote>
 
     <h2>Axe 4 — Ressources humaines : nouvelle chaîne de valeur, nouveaux profils</h2>
     <p>
@@ -87,6 +108,13 @@ const ModerniserCabinetIA = () => (
     <p>
       Cette évolution a des conséquences concrètes : les fiches de poste doivent être réécrites, les grilles de rémunération repensées, et surtout <strong>la formation continue devient un actif stratégique</strong>. Le CSOEC comme l'OEC Paris insistent : sans plan de montée en compétence formalisé (2 à 5 jours par an et par collaborateur), le cabinet perd ses talents ou dégrade sa qualité.
     </p>
+    <blockquote>
+      <strong>Gains chiffrés — RH &amp; organisation</strong><br />
+      • <strong>−30 à −50 %</strong> de postes d'assistants comptables purs sur 5 ans (projection CREOP 2026).<br />
+      • <strong>+10 à +20 %</strong> de rétention des collaborateurs confirmés dans les cabinets ayant repositionné les fiches de poste vers le conseil (OEC Paris).<br />
+      • Coût d'un plan de formation IA : <strong>800 à 1 500 €</strong> / collaborateur / an, amorti en moins de 6 mois par le temps gagné.<br />
+      • <strong>2 à 5 jours</strong> de formation IA/an et par collaborateur : le seuil minimum recommandé par le CSOEC.
+    </blockquote>
 
     <h2>Axe 5 — Gouvernance, sécurité et conformité : le socle indispensable</h2>
     <p>
@@ -100,6 +128,13 @@ const ModerniserCabinetIA = () => (
     <p>
       Ce socle n'est pas glamour, mais son absence bloque tout le reste : un client sensibilisé (fonds d'investissement, grand groupe, secteur régulé) exigera une charte IA avant même de signer.
     </p>
+    <blockquote>
+      <strong>Gains chiffrés — Gouvernance &amp; conformité</strong><br />
+      • <strong>60 %</strong> des cabinets n'ont aucune charte IA formalisée fin 2025 (CSOEC).<br />
+      • Coût moyen d'un incident RGPD en cabinet EC : <strong>15 à 80 k€</strong> (sanction CNIL + remédiation, données CNIL 2024).<br />
+      • Temps de mise en place d'une charte IA + cartographie des outils : <strong>3 à 6 semaines</strong> pour un cabinet &lt; 50 pers.<br />
+      • <strong>+30 %</strong> de taux de signature observés chez les cabinets présentant une charte IA en RDV nouveau client segment mid-market.
+    </blockquote>
 
     <h2>Axe 6 — Développement commercial et visibilité : le grand angle mort</h2>
     <p>
@@ -129,6 +164,14 @@ const ModerniserCabinetIA = () => (
     <p>
       Le résultat opérationnel : un chargé de développement ou un collaborateur senior peut traiter le flux quotidien en <strong>1 h 30 à 2 h</strong>, avec un taux de RDV observé de 5 à 12 % — sans que l'associé perde une minute avant le rendez-vous de cadrage.
     </p>
+    <blockquote>
+      <strong>Gains chiffrés — Développement commercial IA</strong><br />
+      • <strong>25 000+</strong> SASU/SAS créées par mois en France, dont ~80 % ont besoin d'un EC dès l'année 1 (INSEE / INPI).<br />
+      • Fraîcheur des leads : <strong>24 à 72 h</strong> post-immatriculation vs 6 à 12 mois pour un fichier SIRET annuel.<br />
+      • <strong>×3 à ×5</strong> de taux de réponse vs prospection sur fichier brut (retour pilotes Eligibly).<br />
+      • CAC observé : <strong>150 à 400 €</strong> / dossier signé, contre 800 à 2 000 € en acquisition Google Ads pour un cabinet EC.<br />
+      • ROI d'un abonnement 290 €/mois : <strong>1 dossier signé</strong> (LTV 6-12 k€) rembourse <strong>18 à 36 mois</strong> d'outil.
+    </blockquote>
 
     <h3>L'approche Eligibly</h3>
     <p>
