@@ -685,3 +685,162 @@ const ResultLine = ({
     </div>
   </div>
 );
+
+const METHODO_AXES: Array<{
+  n: string;
+  title: string;
+  params: string[];
+  formula: string;
+}> = [
+  {
+    n: "1",
+    title: "Production comptable",
+    params: [
+      "Plafond : 35 % des heures de saisie/lettrage automatisables (net des contrôles humains)",
+      "Curseur : intensité IA (0-100 %)",
+    ],
+    formula:
+      "gain € = collabs × h_saisie/sem × 35 % × (intensité/100) × 45 sem × (TJM / 7)",
+  },
+  {
+    n: "2",
+    title: "Conseil & pilotage",
+    params: [
+      "Plafond : +12 % d'honoraires sur 25 % du parc",
+      "Marge nette appliquée : 35 %",
+    ],
+    formula:
+      "gain € = clients × 25 % × honoraires × 12 % × 35 % × (intensité/100)",
+  },
+  {
+    n: "3",
+    title: "Relation client",
+    params: [
+      "Plafond : 2,5 h/sem/collab libérées (emails, RAG, transcriptions RDV)",
+    ],
+    formula:
+      "gain € = collabs × 2,5 h × (intensité/100) × 45 sem × (TJM / 7)",
+  },
+  {
+    n: "4",
+    title: "RH & organisation",
+    params: [
+      "Plafond : -10 pts de turnover",
+      "Coût moyen de remplacement : 6 000 € (recrutement + onboarding)",
+    ],
+    formula: "gain € = collabs × 6 000 € × 10 % × (intensité/100)",
+  },
+  {
+    n: "5",
+    title: "Gouvernance & conformité",
+    params: [
+      "Évitement RGPD : 25 000 € × 8 % de probabilité",
+      "Closing mid-market : +15 % d'honoraires sur 1,5 % du parc × marge 35 %",
+    ],
+    formula:
+      "gain € = 2 000 × (intensité/100) + clients × 1,5 % × honoraires × 15 % × 35 % × (intensité/100)",
+  },
+  {
+    n: "6",
+    title: "Développement commercial (Eligibly)",
+    params: [
+      "Plafond : 2,5 nouveaux dossiers nets signés par mois",
+      "Marge nette appliquée à la LTV 3 ans : 30 %",
+    ],
+    formula:
+      "gain € = 2,5 × 12 × (intensité/100) × LTV × 30 %",
+  },
+];
+
+const MethodologyDialog = ({
+  open,
+  onOpenChange,
+}: {
+  open: boolean;
+  onOpenChange: (v: boolean) => void;
+}) => (
+  <Dialog open={open} onOpenChange={onOpenChange}>
+    <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
+      <DialogHeader>
+        <DialogTitle className="font-display text-2xl">Méthodologie & formules</DialogTitle>
+        <DialogDescription>
+          Hypothèses volontairement prudentes — fourchette basse des études OEC Paris 2025, CSOEC
+          « Parlons Data & IA », Cegid, Shine, CREOP 2026 et retours pilotes Eligibly. Toutes les
+          recettes additionnelles sont pondérées par une marge nette (jamais du CA brut).
+        </DialogDescription>
+      </DialogHeader>
+
+      <div className="space-y-5 mt-2">
+        <section>
+          <h4 className="font-semibold text-sm text-foreground mb-2">Paramètres cabinet</h4>
+          <ul className="text-xs text-muted-foreground space-y-1.5 list-disc pl-5">
+            <li><strong className="text-foreground">Collaborateurs</strong> — effectif concerné par l'IA.</li>
+            <li><strong className="text-foreground">Heures/sem/collab sur saisie</strong> — base pour l'automatisation production.</li>
+            <li><strong className="text-foreground">TJM facturé</strong> — valorise les heures libérées (taux horaire = TJM/7).</li>
+            <li><strong className="text-foreground">Clients actifs</strong> — parc pour l'upsell conseil & closing.</li>
+            <li><strong className="text-foreground">Honoraires moyens/client/an</strong> — base des uplifts conseil et gouvernance.</li>
+            <li><strong className="text-foreground">LTV nouveau dossier (3 ans)</strong> — valeur générée par un dossier signé via Eligibly.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4 className="font-semibold text-sm text-foreground mb-2">Les 6 axes d'intensité IA</h4>
+          <div className="space-y-3">
+            {METHODO_AXES.map((a) => (
+              <div key={a.n} className="rounded-lg border border-border bg-muted/40 p-3">
+                <div className="text-sm font-semibold text-foreground mb-1.5">
+                  Axe {a.n} · {a.title}
+                </div>
+                <ul className="text-[0.72rem] text-muted-foreground space-y-1 list-disc pl-4 mb-2">
+                  {a.params.map((p, i) => (
+                    <li key={i}>{p}</li>
+                  ))}
+                </ul>
+                <code className="block text-[0.72rem] font-mono bg-background border border-border rounded px-2 py-1.5 text-foreground/90 leading-relaxed">
+                  {a.formula}
+                </code>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h4 className="font-semibold text-sm text-foreground mb-2">Coûts intégrés</h4>
+          <ul className="text-xs text-muted-foreground space-y-1.5 list-disc pl-5">
+            <li>Suite outils IA (production + LLM interne) : <strong className="text-foreground">480 €/collab/an</strong></li>
+            <li>Abonnement Eligibly : <strong className="text-foreground">290 € HT/mois × 12 = 3 480 €/an</strong> (comptabilisé uniquement si l'axe 6 &gt; 0)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4 className="font-semibold text-sm text-foreground mb-2">Formules d'agrégation</h4>
+          <div className="space-y-2 text-xs">
+            <code className="block font-mono bg-muted border border-border rounded px-2 py-1.5 text-foreground/90">
+              gain_brut = Σ gains des 6 axes
+            </code>
+            <code className="block font-mono bg-muted border border-border rounded px-2 py-1.5 text-foreground/90">
+              coûts = collabs × 480 € + (axe6 &gt; 0 ? 3 480 € : 0)
+            </code>
+            <code className="block font-mono bg-muted border border-border rounded px-2 py-1.5 text-foreground/90">
+              gain_net = gain_brut − coûts
+            </code>
+            <code className="block font-mono bg-muted border border-border rounded px-2 py-1.5 text-foreground/90">
+              ROI = gain_brut / coûts
+            </code>
+            <code className="block font-mono bg-muted border border-border rounded px-2 py-1.5 text-foreground/90">
+              payback (mois) = (coûts / gain_brut) × 12
+            </code>
+            <code className="block font-mono bg-muted border border-border rounded px-2 py-1.5 text-foreground/90">
+              ETP libérés = (h_prod/sem + h_relation/sem) × 45 / 1 607
+            </code>
+          </div>
+        </section>
+
+        <p className="text-[0.7rem] text-muted-foreground italic leading-relaxed">
+          Estimation indicative. Le ROI réel dépend de l'exécution (change management, refacturation
+          effective du temps libéré, montée en compétences). À valider lors d'un audit personnalisé.
+        </p>
+      </div>
+    </DialogContent>
+  </Dialog>
+);
