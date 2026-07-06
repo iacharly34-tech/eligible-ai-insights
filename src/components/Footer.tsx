@@ -9,10 +9,12 @@ export const Footer = () => {
     {
       title: language === 'en' ? 'Product' : 'Produit',
       links: [
-        { name: language === 'en' ? 'Overview' : 'Vue d’ensemble', href: language === 'en' ? '/en/product' : '/produit' },
-        { name: language === 'en' ? 'How it works' : 'Comment ça marche', href: '/#how' },
-        { name: language === 'en' ? 'Pricing' : 'Tarifs', href: language === 'en' ? '/en/pricing' : '/tarifs' },
-        { name: language === 'en' ? 'Book a demo' : 'Réserver une démo', href: language === 'en' ? '/en/demo' : '/demo' },
+        { name: language === 'en' ? 'Product' : 'Produit',       href: language === 'en' ? '/en/product'   : '/produit' },
+        { name: language === 'en' ? 'Solutions' : 'Solutions',   href: language === 'en' ? '/en/solutions' : '/solutions' },
+        { name: language === 'en' ? 'Pricing' : 'Tarifs',        href: language === 'en' ? '/en/pricing'   : '/tarifs' },
+        { name: language === 'en' ? 'Resources' : 'Ressources',  href: language === 'en' ? '/en/resources' : '/ressources' },
+        { name: language === 'en' ? 'About' : 'À propos',        href: language === 'en' ? '/en/about'     : '/a-propos' },
+        { name: language === 'en' ? 'Demo' : 'Démo',             href: language === 'en' ? '/en/demo'      : '/demo' },
       ],
     },
     {
@@ -35,8 +37,6 @@ export const Footer = () => {
     {
       title: language === 'en' ? 'Company' : 'Société',
       links: [
-        { name: language === 'en' ? 'About' : 'À propos', href: language === 'en' ? '/en/about' : '/a-propos' },
-        { name: language === 'en' ? 'Resources' : 'Ressources', href: language === 'en' ? '/en/resources' : '/ressources' },
         { name: language === 'en' ? 'Sign in' : 'Connexion', href: language === 'en' ? '/en/login' : '/connexion' },
         { name: 'Contact', href: 'mailto:contact@eligibly.ai' },
         { name: language === 'en' ? 'Legal' : 'Mentions légales', href: language === 'en' ? '/en/legal' : '/mentions-legales' },
