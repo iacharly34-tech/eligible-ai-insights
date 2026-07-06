@@ -11,8 +11,8 @@ const CHANNELS = [
 
 const CanauxActivation = () => (
   <LandingCabinetLayout
-    seoTitle="Canaux d'activation : LinkedIn, email, appel, Instagram, courrier | Eligibly"
-    seoDescription="Pour chaque lead cabinet, Eligibly recommande le meilleur canal d'approche : LinkedIn, email, appel, Instagram DM ou courrier en-tête. Méthode, timing et taux de conversion observés."
+   seoTitle="Canaux d'activation cabinet : LinkedIn, email, appel, courrier"
+   seoDescription="Pour chaque lead cabinet, le meilleur canal : LinkedIn, email, appel, Instagram DM ou courrier en-tête. Timing, méthode, taux de conversion observés."
     canonicalPath="/canaux-activation"
     eyebrow="Activation multicanal"
     h1a="Le bon lead, sur le"

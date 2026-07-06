@@ -2,8 +2,8 @@ import { LandingCabinetLayout } from "./LandingCabinetLayout";
 
 const ProspectionCabinetComptable = () => (
   <LandingCabinetLayout
-    seoTitle="Prospection cabinet comptable : la méthode 2026 | Eligibly"
-    seoDescription="Comment structurer une prospection régulière et rentable pour un cabinet d'expertise comptable en 2026 : sourcing, scoring, séquences multicanal, gouvernance et indicateurs."
+   seoTitle="Prospection cabinet comptable — La méthode 2026 (guide complet)"
+   seoDescription="Structurer une prospection rentable pour cabinet EC en 2026 : sourcing, scoring, séquences multicanal, gouvernance, KPIs. Guide opérationnel + modèles."
     canonicalPath="/prospection-cabinet-comptable"
     eyebrow="Prospection cabinet EC"
     h1a="La prospection cabinet,"

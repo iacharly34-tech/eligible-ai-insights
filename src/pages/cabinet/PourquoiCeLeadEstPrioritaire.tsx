@@ -4,8 +4,8 @@ import { Building2, MapPin, Calendar, Euro, Briefcase, Linkedin, Mail } from "lu
 
 const PourquoiCeLeadEstPrioritaire = () => (
   <LandingCabinetLayout
-    seoTitle="Pourquoi ce lead est prioritaire — fiche type Eligibly | Score expliqué"
-    seoDescription="Exemple concret de fiche lead cabinet : SASU conseil IT à Paris, capital 5 000 €, score 84/100. Signaux positifs, points à vérifier, canal d'approche recommandé et accroche prête à envoyer."
+   seoTitle="Fiche lead cabinet EC : score 84/100 expliqué (exemple)"
+   seoDescription="Exemple concret : SASU conseil IT à Paris, capital 5 000 €, score 84/100. Signaux positifs, points à vérifier, canal recommandé, accroche prête à envoyer."
     canonicalPath="/pourquoi-ce-lead-est-prioritaire"
     eyebrow="Fiche lead — exemple"
     h1a="Pourquoi ce lead"
