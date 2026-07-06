@@ -115,6 +115,7 @@ export const AIGainsSimulator = () => {
   const [scenario, setScenario] = useState<ScenarioKey | null>("realiste");
   const [pulse, setPulse] = useState(false);
   const [methodoOpen, setMethodoOpen] = useState(false);
+  const [detailOpen, setDetailOpen] = useState(false);
 
   const applyScenario = (key: ScenarioKey) => {
     const s = SCENARIOS[key].intensites;
