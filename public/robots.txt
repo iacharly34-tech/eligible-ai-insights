@@ -47,6 +47,36 @@ Disallow: /tmp/
 # Block search pages (redirect to main)
 Disallow: /search*
 
+# Legacy routes (redirected client-side to /) — stop Google from indexing them
+Disallow: /appels-d-offres-publics
+Disallow: /detection-appels-offres
+Disallow: /erreurs-ao
+Disallow: /signaux-faibles
+Disallow: /anticipation-ao
+Disallow: /criteres-rse
+Disallow: /strategie-donnees
+Disallow: /ao-perdus-avance
+Disallow: /marches-innovation
+Disallow: /pme-vs-grands-groupes
+Disallow: /go-no-go
+Disallow: /documents-ao
+Disallow: /retours-ao
+Disallow: /prix-qualite
+Disallow: /numerique-responsable
+Disallow: /veille-strategique
+Disallow: /formation-ao
+Disallow: /a-propos-eligibly
+# Legacy English legacy routes (no longer exist)
+Disallow: /en/go-no-go-decision
+Disallow: /en/strategic-watch
+Disallow: /en/public-tender-training
+Disallow: /en/price-quality-balance
+Disallow: /en/tender-feedback
+# Utility routes (not for indexation)
+Disallow: /waitlist/success
+Disallow: /newsletter-config
+Disallow: /unsubscribe
+
 # Pages prioritaires — détection IA de leads pour cabinets d'expertise comptable
 Allow: /produit
 Allow: /solutions
