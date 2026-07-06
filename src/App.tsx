@@ -47,6 +47,7 @@ const BlogPlaybook = lazy(() => import("./pages/blog/PlaybookProspectionCabinet"
 const BlogLexique = lazy(() => import("./pages/blog/LexiqueMarketingExpertComptable"));
 const BlogFichierVsAction = lazy(() => import("./pages/blog/FichierSiretVsPlanAction"));
 const BlogModerniserIA = lazy(() => import("./pages/blog/ModerniserCabinetIA"));
+const SimulateurIACabinet = lazy(() => import("./pages/SimulateurIACabinet"));
 const LeadsExpertsComptables = lazy(() => import("./pages/cabinet/LeadsExpertsComptables"));
 const ProspectionCabinetComptable = lazy(() => import("./pages/cabinet/ProspectionCabinetComptable"));
 const CanauxActivation = lazy(() => import("./pages/cabinet/CanauxActivation"));
@@ -120,6 +121,7 @@ const App = () => (
                 <Route path="/blog/lexique-marketing-expert-comptable" element={<BlogLexique />} />
                 <Route path="/blog/fichier-siret-vs-plan-action-comptable" element={<BlogFichierVsAction />} />
                 <Route path="/blog/moderniser-cabinet-expertise-comptable-ia" element={<BlogModerniserIA />} />
+                <Route path="/simulateur-roi-ia-cabinet" element={<SimulateurIACabinet />} />
 
                 {/* EN routes */}
                 <Route path="/en" element={<Index />} />
