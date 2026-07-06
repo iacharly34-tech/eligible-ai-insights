@@ -6,6 +6,8 @@ import { MobileCTABar } from "@/components/MobileCTABar";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
 import { ArrowRight, ArrowLeft, BookOpen, Sparkles } from "lucide-react";
+import { ArticleRecommendations } from "@/components/ArticleRecommendations";
+import { ContextualLinks } from "@/components/ContextualLinks";
 
 interface Source {
   label: string;
@@ -144,7 +146,13 @@ export const ArticleShell = ({
                 </div>
               </section>
             )}
+
+            {/* Contextual product links — internal mesh */}
+            <ContextualLinks currentPage={url} context="article" />
           </article>
+
+          {/* Broader related articles widget — prominent internal mesh */}
+          <ArticleRecommendations currentArticleUrl={url} currentCategory={category} />
         </main>
         <Footer />
       </div>
