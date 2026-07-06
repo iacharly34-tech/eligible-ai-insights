@@ -45,6 +45,7 @@ const copy = {
       { title: "Guide du dirigeant SASU", desc: "Le contenu que vos prospects lisent. Comprendre leurs critères de choix." },
     ],
     liveArticles: [
+      { href: "/blog/moderniser-cabinet-expertise-comptable-ia", title: "Moderniser un cabinet EC à l'ère de l'IA — Les 6 axes clés 2026", desc: "Production, conseil, relation client, RH, gouvernance, développement commercial : le tour d'horizon opérationnel de la transformation IA d'un cabinet EC — et l'axe le plus sous-estimé, la visibilité.", meta: "16 min · Dossier · sources OEC, Cegid, CREOP, Shine" },
       { href: "/blog/lexique-marketing-expert-comptable", title: "Lexique marketing pour experts-comptables — 30 mots à connaître", desc: "ICP, scoring, pipeline, touchpoints, CAC, MQL, séquence outbound… Le glossaire du marketing B2B traduit pour le quotidien d'un cabinet d'expertise comptable.", meta: "8 min · Lexique · pour associés et collaborateurs" },
       { href: "/blog/barometre-acquisition-cabinet-ec-2026", title: "Baromètre 2026 — Acquisition client en cabinet d'expertise comptable", desc: "Synthèse de l'état du marché : CAC par canal, cycle de vente, mix gagnant, conversion. Lecture stratégique pour passer du producteur au conseiller.", meta: "14 min · Étude · sources INSEE, OEC, Atlas" },
       { href: "/blog/observatoire-sasu-sas-juin-2026", title: "Observatoire des SASU & SAS créées en France — Juin 2026", desc: "25 000 immatriculations / mois : volumes, verticales, capital moyen, géographie, profils. Comment lire ces données pour orienter la prospection.", meta: "11 min · Données · sources INSEE, INPI, BODACC" },
@@ -89,6 +90,7 @@ const copy = {
       { title: "SASU founder guide", desc: "The content your prospects read. Understand their decision criteria." },
     ],
     liveArticles: [
+      { href: "/blog/moderniser-cabinet-expertise-comptable-ia", title: "Modernising an accounting firm in the AI era — 6 key axes for 2026", desc: "Production, advisory, client relations, HR, governance, growth: the operational tour of an accounting firm's AI transformation — and the most underrated axis, visibility.", meta: "16 min · Dossier · sources OEC, Cegid, CREOP, Shine" },
       { href: "/blog/lexique-marketing-expert-comptable", title: "Marketing glossary for accountants — 30 words to know", desc: "ICP, scoring, pipeline, touchpoints, CAC, MQL, outbound sequence… The B2B marketing glossary translated for the daily life of an accounting firm.", meta: "8 min · Glossary · for partners and staff" },
       { href: "/blog/barometre-acquisition-cabinet-ec-2026", title: "2026 Barometer — Client acquisition for accounting firms", desc: "State of the market: CAC by channel, sales cycle, winning mix, conversion. Strategic reading to move from producer to advisor.", meta: "14 min · Study · sources INSEE, OEC, Atlas" },
       { href: "/blog/observatoire-sasu-sas-juin-2026", title: "SASU & SAS observatory in France — June 2026", desc: "25,000 registrations / month: volumes, verticals, average capital, geography, profiles. How to read this data to steer prospecting.", meta: "11 min · Data · sources INSEE, INPI, BODACC" },
