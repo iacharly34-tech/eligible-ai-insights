@@ -122,7 +122,7 @@ export const AIGainsSimulator = () => {
   const STEPS = [
     { n: 1, label: "Scénario de départ" },
     { n: 2, label: "Votre cabinet" },
-    { n: 3, label: "Intensité IA par axe" },
+    { n: 3, label: "Implémentation de l'IA" },
     { n: 4, label: "Résultats" },
   ] as const;
   const totalSteps = STEPS.length;
@@ -381,7 +381,7 @@ export const AIGainsSimulator = () => {
             {currentStep === 3 && (
               <div>
                 <h4 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-1">
-                  Intensité IA par axe
+                  Implémentation de l'IA
                 </h4>
                 <p className="text-sm text-muted-foreground mb-6">
                   0 % = pas déployé · 100 % = pleinement industrialisé. Cliquez sur ⓘ pour la formule de chaque axe.
