@@ -145,7 +145,7 @@ export const AIGainsSimulator = () => {
             <div className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-4">
               1 · Votre cabinet
             </div>
-            <div className="space-y-5">
+            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
               <Slider
             label="Nombre de collaborateurs"
             value={collabs}
@@ -208,7 +208,7 @@ export const AIGainsSimulator = () => {
             <div className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-4">
               2 · Intensité IA par axe de modernisation
             </div>
-            <div className="space-y-5">
+            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
               <Slider
                 label="Axe 1 · Production comptable"
                 value={iProduction}
