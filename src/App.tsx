@@ -52,6 +52,12 @@ const LeadsExpertsComptables = lazy(() => import("./pages/cabinet/LeadsExpertsCo
 const ProspectionCabinetComptable = lazy(() => import("./pages/cabinet/ProspectionCabinetComptable"));
 const CanauxActivation = lazy(() => import("./pages/cabinet/CanauxActivation"));
 const PourquoiCeLeadEstPrioritaire = lazy(() => import("./pages/cabinet/PourquoiCeLeadEstPrioritaire"));
+const AlternativesPrimolead = lazy(() => import("./pages/cabinet/AlternativesPrimolead"));
+const GlossaireCabinet = lazy(() => import("./pages/cabinet/Glossaire"));
+const CasUsageIndex = lazy(() => import("./pages/cabinet/CasUsageIndex"));
+const CasUsage8Collabs = lazy(() => import("./pages/cabinet/CasUsage8Collaborateurs"));
+const CasUsageRestauration = lazy(() => import("./pages/cabinet/CasUsageRestauration"));
+const CasUsageFullRemote = lazy(() => import("./pages/cabinet/CasUsageFullRemote"));
 
 import { LanguageSync } from "@/components/LanguageSync";
 
