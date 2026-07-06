@@ -22,17 +22,35 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-// Simulateur ROI IA cabinet d'expertise comptable — hypothèses issues des études
-// OEC Paris (2025), CSOEC « Parlons Data & IA », Cegid, Shine, CREOP (2026)
-// et retours pilotes Eligibly.
+// Simulateur ROI IA cabinet d'expertise comptable.
+// Hypothèses volontairement PRUDENTES (fourchette basse des études OEC Paris 2025,
+// CSOEC « Parlons Data & IA », Cegid, Shine, CREOP 2026 + retours pilotes Eligibly).
+// Toutes les recettes additionnelles (conseil, closing, dev commercial) sont
+// pondérées par une marge nette réaliste — on ne compte pas le CA en gain.
 
 const fmt = (n: number) =>
   new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(Math.max(0, Math.round(n)));
 
-const COUT_OUTILS_IA_PAR_COLLAB = 480; // €/an — moyenne suites production + LLM interne
+const COUT_OUTILS_IA_PAR_COLLAB = 480; // €/an — suites production + LLM interne
 const ELIGIBLY_ANNUEL = 290 * 12; // 3 480 €/an
-const SEMAINES = 45;
+const SEMAINES = 45; // semaines travaillées / an
 const ETP_HEURES = 1607;
+
+// Marges nettes appliquées aux recettes additionnelles (le gain n'est pas du CA)
+const MARGE_HONORAIRES = 0.35; // 35 % marge nette sur mission comptable
+const MARGE_DEV = 0.30; // 30 % marge nette sur nouveau dossier
+
+// Cadrage réaliste : plafonds à 100 % d'intensité — fourchette basse des études
+const MAX_PROD_HEURES = 0.35; // 35 % des heures saisie automatisables (vs 60 % théorique)
+const MAX_CONSEIL_HONO = 0.12; // +12 % d'honoraires
+const MAX_CONSEIL_PARC = 0.25; // sur 25 % du parc
+const MAX_RELATION_H = 2.5; // h/sem/collab libérées
+const MAX_RH_COUT = 6000; // € coût moyen remplacement
+const MAX_RH_TAUX = 0.10; // 10 pts turnover évités
+const MAX_GOUV_INCIDENT = 25000 * 0.08; // 8 % de proba × 25 k€
+const MAX_GOUV_CLOSING_PARC = 0.015; // 1,5 % du parc mid-market
+const MAX_GOUV_CLOSING_UPLIFT = 0.15; // +15 % honoraires
+const MAX_DEV_DOSSIERS_MOIS = 2.5; // dossiers nets/mois à 100 %
 
 type ScenarioKey = "prudente" | "realiste" | "ambitieuse";
 
@@ -53,18 +71,18 @@ const SCENARIOS: Record<
 > = {
   prudente: {
     label: "Prudente",
-    tagline: "Premiers pilotes, adoption progressive",
-    intensites: { iProduction: 30, iConseil: 15, iRelation: 20, iRH: 10, iGouvernance: 20, iDev: 25 },
+    tagline: "Pilotes ciblés, adoption progressive",
+    intensites: { iProduction: 25, iConseil: 15, iRelation: 20, iRH: 10, iGouvernance: 20, iDev: 25 },
   },
   realiste: {
     label: "Réaliste",
     tagline: "Cabinet engagé, roadmap 12 mois",
-    intensites: { iProduction: 60, iConseil: 40, iRelation: 50, iRH: 30, iGouvernance: 40, iDev: 70 },
+    intensites: { iProduction: 50, iConseil: 35, iRelation: 45, iRH: 25, iGouvernance: 35, iDev: 55 },
   },
   ambitieuse: {
     label: "Ambitieuse",
     tagline: "Cabinet IA-first, tous les axes activés",
-    intensites: { iProduction: 90, iConseil: 75, iRelation: 85, iRH: 65, iGouvernance: 80, iDev: 95 },
+    intensites: { iProduction: 80, iConseil: 65, iRelation: 75, iRH: 55, iGouvernance: 70, iDev: 80 },
   },
 };
 
@@ -75,15 +93,15 @@ export const AIGainsSimulator = () => {
   const [tjm, setTjm] = useState(450);
   const [clientsActifs, setClientsActifs] = useState(180);
   const [honorairesMoyen, setHonorairesMoyen] = useState(2400);
-  const [ltvNouveauClient, setLtvNouveauClient] = useState(8000);
+  const [ltvNouveauClient, setLtvNouveauClient] = useState(6500);
 
   // Intensité IA sur chacun des 6 axes (0-100 %)
-  const [iProduction, setIProduction] = useState(60);
-  const [iConseil, setIConseil] = useState(40);
-  const [iRelation, setIRelation] = useState(50);
-  const [iRH, setIRH] = useState(30);
-  const [iGouvernance, setIGouvernance] = useState(40);
-  const [iDev, setIDev] = useState(70);
+  const [iProduction, setIProduction] = useState(50);
+  const [iConseil, setIConseil] = useState(35);
+  const [iRelation, setIRelation] = useState(45);
+  const [iRH, setIRH] = useState(25);
+  const [iGouvernance, setIGouvernance] = useState(35);
+  const [iDev, setIDev] = useState(55);
 
   const [scenario, setScenario] = useState<ScenarioKey | null>("realiste");
   const [pulse, setPulse] = useState(false);
@@ -107,34 +125,39 @@ export const AIGainsSimulator = () => {
     const tauxHoraire = tjm / 7; // €/h facturé
 
     // ─── Axe 1 · Production ────────────────────────────────
-    // Gain max = 60 % des heures saisie/lettrage (source Shine 2024)
-    const hProdSem = collabs * hoursSaisiePerCollab * 0.6 * (iProduction / 100);
+    // Max 35 % des heures saisie/lettrage réellement récupérables (net des
+    // temps de contrôle/révision qui restent humains).
+    const hProdSem = collabs * hoursSaisiePerCollab * MAX_PROD_HEURES * (iProduction / 100);
     const eurProd = hProdSem * SEMAINES * tauxHoraire;
 
     // ─── Axe 2 · Conseil & pilotage ────────────────────────
-    // Max : +25 % d'honoraires sur 40 % du parc (offre pilotage — CSOEC)
-    const eurConseil = clientsActifs * 0.4 * honorairesMoyen * 0.25 * (iConseil / 100);
+    // Max : +12 % d'honoraires sur 25 % du parc × marge nette 35 %.
+    const eurConseil =
+      clientsActifs * MAX_CONSEIL_PARC * honorairesMoyen * MAX_CONSEIL_HONO *
+      MARGE_HONORAIRES * (iConseil / 100);
 
     // ─── Axe 3 · Relation client ──────────────────────────
-    // Max : 5 h/sem/collab libérées (emails, RAG, transcriptions RDV)
-    const hRelSem = collabs * 5 * (iRelation / 100);
+    // Max : 2,5 h/sem/collab libérées (emails, RAG, transcriptions RDV).
+    const hRelSem = collabs * MAX_RELATION_H * (iRelation / 100);
     const eurRel = hRelSem * SEMAINES * tauxHoraire;
 
     // ─── Axe 4 · RH & organisation ────────────────────────
-    // Max : -15 % turnover, économie recrutement ≈ 8 000 € × 15 % × collabs
-    const eurRH = collabs * 8000 * 0.15 * (iRH / 100);
+    // Max : -10 pts turnover, coût moyen remplacement 6 000 €.
+    const eurRH = collabs * MAX_RH_COUT * MAX_RH_TAUX * (iRH / 100);
 
     // ─── Axe 5 · Gouvernance & conformité ─────────────────
-    // Max : évite 1 incident RGPD (CNIL 2024, coût médian 25 000 €) × proba
-    // + +30 % de closing sur segment mid-market (2 % du parc, honoraires × 2)
-    const eurGouvIncident = 25000 * 0.2 * (iGouvernance / 100);
-    const eurGouvClosing = clientsActifs * 0.02 * honorairesMoyen * 0.3 * (iGouvernance / 100);
+    // Max : évitement incident RGPD (25 k€ × 8 % proba) + +15 % d'honoraires
+    // sur 1,5 % du parc mid-market × marge 35 %.
+    const eurGouvIncident = MAX_GOUV_INCIDENT * (iGouvernance / 100);
+    const eurGouvClosing =
+      clientsActifs * MAX_GOUV_CLOSING_PARC * honorairesMoyen * MAX_GOUV_CLOSING_UPLIFT *
+      MARGE_HONORAIRES * (iGouvernance / 100);
     const eurGouv = eurGouvIncident + eurGouvClosing;
 
     // ─── Axe 6 · Développement commercial (Eligibly) ───────
-    // Max : 8 nouveaux dossiers/mois × LTV (retour pilotes Eligibly)
-    const nouveauxDossiersAn = 8 * 12 * (iDev / 100);
-    const eurDev = nouveauxDossiersAn * ltvNouveauClient;
+    // Max : 2,5 dossiers nets signés/mois × LTV 3 ans × marge 30 %.
+    const nouveauxDossiersAn = MAX_DEV_DOSSIERS_MOIS * 12 * (iDev / 100);
+    const eurDev = nouveauxDossiersAn * ltvNouveauClient * MARGE_DEV;
 
     // ─── Coûts IA annuels ─────────────────────────────────
     const coutOutils = collabs * COUT_OUTILS_IA_PAR_COLLAB;
@@ -182,61 +205,59 @@ export const AIGainsSimulator = () => {
   ]);
 
   return (
-    <section className="not-prose my-12 rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 via-card to-card overflow-hidden">
-      <div className="p-6 md:p-8 border-b border-border/60 bg-card/60">
-        <div className="flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.14em] text-primary font-semibold mb-3">
-          <Calculator className="w-3.5 h-3.5" /> Simulateur ROI IA — Cabinet d'expertise comptable
+    <section className="not-prose my-12 rounded-2xl border border-border bg-card overflow-hidden shadow-sm">
+      {/* Header */}
+      <header className="px-6 py-6 md:px-8 md:py-7 border-b border-border bg-gradient-to-br from-primary/8 via-card to-card">
+        <div className="flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.16em] text-primary font-semibold mb-3">
+          <Calculator className="w-3.5 h-3.5" /> Simulateur ROI IA · Cabinet d'expertise comptable
         </div>
-        <h3 className="font-display text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-          Combien votre cabinet gagne en 12 mois selon l'intensité IA sur chaque axe ?
+        <h3 className="font-display text-[1.6rem] md:text-3xl font-semibold tracking-tight leading-tight mb-2">
+          Combien votre cabinet gagne réellement en 12 mois selon l'intensité IA déployée ?
         </h3>
-        <p className="text-sm text-muted-foreground mb-5">
-          Réglez l'intensité d'IA déployée sur chacun des 6 axes de modernisation (production, conseil, relation
-          client, RH, gouvernance, développement commercial). Le simulateur calcule le gain financier annuel,
-          le retour sur investissement et le temps libéré — en direct. Hypothèses issues des études OEC Paris,
-          CSOEC, Cegid, Shine, CREOP et retours pilotes Eligibly.
+        <p className="text-sm text-muted-foreground max-w-3xl leading-relaxed">
+          Réglez 6 curseurs d'intensité (production, conseil, relation, RH, gouvernance, développement).
+          Le simulateur applique des <strong className="text-foreground/90">hypothèses prudentes</strong> (fourchette
+          basse des études OEC / CSOEC / Cegid / CREOP) et pondère les recettes additionnelles par une
+          marge nette réaliste — pas de CA brut.
         </p>
+      </header>
 
-        {/* Scénarios pré-remplis */}
-        <div>
-          <div className="flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-2">
-            <Wand2 className="w-3.5 h-3.5" /> Scénarios pré-remplis
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-            {(Object.keys(SCENARIOS) as ScenarioKey[]).map((key) => {
-              const s = SCENARIOS[key];
-              const active = scenario === key;
-              return (
-                <button
-                  key={key}
-                  type="button"
-                  onClick={() => applyScenario(key)}
-                  className={`text-left rounded-lg border p-3 transition-all ${
-                    active
-                      ? "border-primary bg-primary/10 shadow-sm"
-                      : "border-border bg-background hover:border-primary/50 hover:bg-primary/5"
-                  }`}
-                >
-                  <div className={`text-sm font-semibold ${active ? "text-primary" : "text-foreground"}`}>
-                    {s.label}
-                  </div>
-                  <div className="text-[0.72rem] text-muted-foreground leading-snug mt-0.5">{s.tagline}</div>
-                </button>
-              );
-            })}
-          </div>
+      {/* Scénarios */}
+      <div className="px-6 py-5 md:px-8 border-b border-border bg-muted/30">
+        <div className="flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.16em] text-muted-foreground font-semibold mb-3">
+          <Wand2 className="w-3.5 h-3.5" /> Scénarios pré-remplis
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+          {(Object.keys(SCENARIOS) as ScenarioKey[]).map((key) => {
+            const s = SCENARIOS[key];
+            const active = scenario === key;
+            return (
+              <button
+                key={key}
+                type="button"
+                onClick={() => applyScenario(key)}
+                className={`text-left rounded-xl border p-3.5 transition-all ${
+                  active
+                    ? "border-primary bg-primary/10 shadow-sm"
+                    : "border-border bg-background hover:border-primary/50 hover:bg-primary/5"
+                }`}
+              >
+                <div className={`text-sm font-semibold ${active ? "text-primary" : "text-foreground"}`}>
+                  {s.label}
+                </div>
+                <div className="text-[0.72rem] text-muted-foreground leading-snug mt-0.5">{s.tagline}</div>
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-[1.15fr_1fr] gap-0">
+      <div className="grid lg:grid-cols-[1.05fr_1fr]">
         {/* Inputs */}
-        <div className="p-6 md:p-8 space-y-8 border-b lg:border-b-0 lg:border-r border-border/60">
+        <div className="p-6 md:p-8 space-y-8 border-b lg:border-b-0 lg:border-r border-border">
           <div>
-            <div className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-1">
-              1 · Votre cabinet
-            </div>
-            <p className="text-xs text-muted-foreground mb-4">Décrivez la taille et l'économie de votre cabinet.</p>
-            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
+            <SectionHeading step="1" title="Votre cabinet" description="Taille, économie et portefeuille." />
+            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-6 mt-5">
               <Slider
             label="Nombre de collaborateurs"
             value={collabs}
@@ -302,14 +323,12 @@ export const AIGainsSimulator = () => {
           </div>
 
           <div>
-            <div className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-1">
-              2 · Intensité IA par axe de modernisation
-            </div>
-            <p className="text-xs text-muted-foreground mb-4">
-              0 % = aucun déploiement · 100 % = axe pleinement industrialisé. Passez la souris sur
-              <Info className="inline w-3 h-3 mx-1 -mt-0.5" /> pour la méthode de calcul.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
+            <SectionHeading
+              step="2"
+              title="Intensité IA par axe de modernisation"
+              description="0 % = aucun déploiement · 100 % = axe pleinement industrialisé. Passez la souris sur ⓘ pour la méthode."
+            />
+            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-6 mt-5">
               <Slider
                 label="Axe 1 · Production comptable"
                 value={iProduction}
@@ -320,7 +339,7 @@ export const AIGainsSimulator = () => {
                 suffix=" %"
                 icon={<Cpu className="w-3.5 h-3.5" />}
                 hint="OCR factures, pré-lettrage, révision analytique automatisée"
-                tooltip="À 100 %, l'IA absorbe 60 % des heures de saisie/lettrage (source Shine 2024). Le gain € = heures libérées × TJM/7."
+                tooltip="Plafond prudent : 35 % des heures de saisie/lettrage réellement automatisables (net du temps de contrôle humain). Gain € = heures libérées × TJM/7."
               />
               <Slider
                 label="Axe 2 · Conseil & pilotage"
@@ -332,7 +351,7 @@ export const AIGainsSimulator = () => {
                 suffix=" %"
                 icon={<TrendingUp className="w-3.5 h-3.5" />}
                 hint="Dashboards temps réel, détection d'anomalies, rapports narratifs LLM"
-                tooltip="À 100 %, +25 % d'honoraires sur 40 % du parc via offres pilotage (source CSOEC « Parlons Data & IA »)."
+                tooltip="Plafond : +12 % d'honoraires sur 25 % du parc via offres pilotage, pondéré par 35 % de marge nette (fourchette basse CSOEC)."
               />
               <Slider
                 label="Axe 3 · Relation client"
@@ -344,7 +363,7 @@ export const AIGainsSimulator = () => {
                 suffix=" %"
                 icon={<MessageSquare className="w-3.5 h-3.5" />}
                 hint="Assistant RAG, résumés d'emails, transcription RDV, portail conversationnel"
-                tooltip="À 100 %, 5 h/semaine/collab libérées sur emails, comptes-rendus et Q&A clients (retours pilotes OEC Paris 2025)."
+                tooltip="Plafond prudent : 2,5 h/sem/collab libérées sur emails, CR et Q&A clients. Gain € = h × TJM/7."
               />
               <Slider
                 label="Axe 4 · RH & organisation"
@@ -356,7 +375,7 @@ export const AIGainsSimulator = () => {
                 suffix=" %"
                 icon={<UserCog className="w-3.5 h-3.5" />}
                 hint="Fiches de poste réécrites, formation IA, rétention collaborateurs confirmés"
-                tooltip="À 100 %, -15 % de turnover, soit ~8 000 € économisés par collaborateur retenu (coût moyen recrutement + onboarding)."
+                tooltip="Plafond : -10 pts de turnover × 6 000 € de coût moyen de remplacement (recrutement + onboarding) × effectif concerné."
               />
               <Slider
                 label="Axe 5 · Gouvernance & conformité"
@@ -368,7 +387,7 @@ export const AIGainsSimulator = () => {
                 suffix=" %"
                 icon={<ShieldCheck className="w-3.5 h-3.5" />}
                 hint="Charte IA, cartographie outils, conformité RGPD/CNIL, secret professionnel"
-                tooltip="À 100 %, évitement d'un incident RGPD (coût médian 25 000 € × 20 % probabilité) + +30 % de closing sur segment mid-market (2 % du parc)."
+                tooltip="Plafond : évitement RGPD (25 k€ × 8 % de proba) + +15 % d'honoraires sur 1,5 % du parc mid-market × 35 % marge."
               />
               <Slider
                 label="Axe 6 · Développement commercial (Eligibly)"
@@ -381,7 +400,7 @@ export const AIGainsSimulator = () => {
                 icon={<Target className="w-3.5 h-3.5" />}
                 hint="Détection SASU/SAS temps réel, scoring, canal recommandé, accroche préparée"
                 highlight
-                tooltip="À 100 %, ~8 nouveaux dossiers signés/mois × LTV 3 ans (retours pilotes Eligibly sur cabinets 5-25 collabs)."
+                tooltip="Plafond prudent : 2,5 nouveaux dossiers nets signés/mois × LTV 3 ans × 30 % de marge nette (retours pilotes Eligibly)."
               />
             </div>
           </div>
@@ -492,11 +511,12 @@ export const AIGainsSimulator = () => {
               </Button>
             </SafeLink>
             <p className="mt-3 text-[0.7rem] text-background/60 leading-relaxed">
-              Estimation indicative. Hypothèses max (à 100 %) : gain saisie 60 % (Shine),
-              +25 % honoraires sur 40 % du parc (CSOEC), 5 h/sem/collab en relation client,
-              -15 % turnover (OEC), évitement RGPD 25 k€ (CNIL), 8 dossiers/mois via prospection
-              IA verticale (pilotes Eligibly). Coûts intégrés : {fmt(COUT_OUTILS_IA_PAR_COLLAB)} €/collab/an
-              d'outils IA + 3 480 €/an Eligibly quand l'axe 6 &gt; 0.
+              Estimation prudente. Plafonds à 100 % : saisie −35 %, conseil +12 % sur 25 % du parc
+              (marge 35 %), relation client 2,5 h/sem/collab, turnover −10 pts (6 k€/remplacement),
+              RGPD 25 k€ × 8 % + closing mid-market 1,5 % du parc, développement 2,5 dossiers/mois
+              (marge 30 %). Coûts intégrés : {fmt(COUT_OUTILS_IA_PAR_COLLAB)} €/collab/an d'outils IA
+              + 3 480 €/an Eligibly quand l'axe 6 &gt; 0. Sources : OEC Paris 2025, CSOEC, Cegid,
+              Shine, CREOP 2026, pilotes Eligibly.
             </p>
           </div>
         </div>
@@ -585,6 +605,30 @@ const KpiBadge = ({ label, value, accent = false }: { label: string; value: stri
       {label}
     </div>
     <div className="font-display italic font-semibold tabular-nums text-base leading-tight">{value}</div>
+  </div>
+);
+
+const SectionHeading = ({
+  step,
+  title,
+  description,
+}: {
+  step: string;
+  title: string;
+  description: string;
+}) => (
+  <div>
+    <div className="flex items-center gap-2.5">
+      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/15 text-primary text-[0.72rem] font-bold tabular-nums">
+        {step}
+      </span>
+      <h4 className="font-display text-lg md:text-xl font-semibold tracking-tight text-foreground">
+        {title}
+      </h4>
+    </div>
+    <p className="text-xs text-muted-foreground mt-1.5 ml-[2.125rem] leading-relaxed">
+      {description}
+    </p>
   </div>
 );
 
