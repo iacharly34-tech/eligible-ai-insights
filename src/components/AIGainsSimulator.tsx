@@ -192,6 +192,14 @@ export const AIGainsSimulator = () => {
     const roiRatio = coutTotal > 0 ? totalBrut / coutTotal : 0;
     const paybackMois = totalBrut > 0 ? (coutTotal / totalBrut) * 12 : 0;
 
+    // ─── Split : Économies IA vs Opportunités commerciales Eligibly ───
+    // 1) Économies IA = axes 1 à 5 (temps + marges internes) − coût outils/formations IA
+    const economiesBrut = eurProd + eurConseil + eurRel + eurRH + eurGouv;
+    const economiesNet = economiesBrut - coutOutils;
+    // 2) Opportunités commerciales = axe 6 (Eligibly) − coût Eligibly
+    const opportunitesBrut = eurDev;
+    const opportunitesNet = opportunitesBrut - coutEligibly;
+
     return {
       hProdSem,
       eurProd,
@@ -203,6 +211,12 @@ export const AIGainsSimulator = () => {
       nouveauxDossiersAn,
       eurDev,
       coutTotal,
+      coutOutils,
+      coutEligibly,
+      economiesBrut,
+      economiesNet,
+      opportunitesBrut,
+      opportunitesNet,
       totalBrut,
       totalNet,
       roiRatio,
