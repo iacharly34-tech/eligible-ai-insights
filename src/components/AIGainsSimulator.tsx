@@ -426,27 +426,76 @@ export const AIGainsSimulator = () => {
                   )}
                 </div>
 
-                <div className={`mb-6 pb-6 border-b border-border transition-all ${pulse ? "ring-2 ring-primary/30 rounded-xl" : ""}`}>
-                  <div className="text-xs text-muted-foreground mb-1">Gain net annuel</div>
-                  <div className={`font-display text-4xl md:text-5xl font-semibold text-primary tabular-nums leading-none ${pulse ? "animate-pulse" : ""}`}>
-                    +{fmt(gains.totalNet)} €
+                {/* Deux cartes côte à côte : Économies IA vs Opportunités commerciales Eligibly */}
+                <div className={`grid md:grid-cols-2 gap-4 mb-6 transition-all ${pulse ? "ring-2 ring-primary/30 rounded-xl" : ""}`}>
+                  {/* 1 · Économies IA */}
+                  <div className="rounded-xl border border-border bg-muted/30 p-5">
+                    <div className="flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold mb-2">
+                      <Cpu className="w-3.5 h-3.5" /> 1 · Économies IA
+                    </div>
+                    <div className="text-[0.72rem] text-muted-foreground mb-2 leading-snug">
+                      Temps économisé (axes 1-5) − investissement outils &amp; formations IA
+                    </div>
+                    <div className={`font-display text-3xl md:text-4xl font-semibold text-foreground tabular-nums leading-none ${pulse ? "animate-pulse" : ""}`}>
+                      +{fmt(gains.economiesNet)} €
+                    </div>
+                    <div className="mt-3 grid grid-cols-2 gap-2 text-[0.7rem]">
+                      <div className="rounded-md bg-background border border-border px-2 py-1.5">
+                        <div className="text-[0.6rem] uppercase tracking-wider text-muted-foreground">Temps économisé</div>
+                        <div className="font-display italic font-semibold tabular-nums text-sm text-foreground">+{fmt(gains.economiesBrut)} €</div>
+                      </div>
+                      <div className="rounded-md bg-background border border-border px-2 py-1.5">
+                        <div className="text-[0.6rem] uppercase tracking-wider text-muted-foreground">Outils &amp; formations</div>
+                        <div className="font-display italic font-semibold tabular-nums text-sm text-foreground">−{fmt(gains.coutOutils)} €</div>
+                      </div>
+                    </div>
+                    <div className="mt-2 text-[0.7rem] text-muted-foreground">
+                      ~{fmt(gains.totalHSem)} h/sem libérées · {gains.etpEquivalent.toFixed(1)} ETP
+                    </div>
                   </div>
-                  <div className="mt-4 grid grid-cols-3 gap-2 text-[0.72rem]">
-                    <div className="rounded-lg bg-muted/60 border border-border px-2 py-2">
-                      <div className="text-[0.62rem] uppercase tracking-wider text-muted-foreground">Gain brut</div>
-                      <div className="font-display italic font-semibold tabular-nums text-sm text-foreground">{fmt(gains.totalBrut)} €</div>
+
+                  {/* 2 · Opportunités commerciales Eligibly */}
+                  <div className="rounded-xl border-2 border-primary/40 bg-primary/5 p-5">
+                    <div className="flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.14em] text-primary font-semibold mb-2">
+                      <Target className="w-3.5 h-3.5" /> 2 · Opportunités commerciales · Eligibly
                     </div>
-                    <div className="rounded-lg bg-muted/60 border border-border px-2 py-2">
-                      <div className="text-[0.62rem] uppercase tracking-wider text-muted-foreground">Coûts IA</div>
-                      <div className="font-display italic font-semibold tabular-nums text-sm text-foreground">−{fmt(gains.coutTotal)} €</div>
+                    <div className="text-[0.72rem] text-muted-foreground mb-2 leading-snug">
+                      Nouveaux dossiers signés grâce au moteur IA Eligibly (marge nette 3 ans)
                     </div>
-                    <div className="rounded-lg bg-primary text-primary-foreground px-2 py-2">
-                      <div className="text-[0.62rem] uppercase tracking-wider text-primary-foreground/80">ROI</div>
-                      <div className="font-display italic font-semibold tabular-nums text-sm">{gains.roiRatio > 0 ? `×${gains.roiRatio.toFixed(1)}` : "—"}</div>
+                    <div className={`font-display text-3xl md:text-4xl font-semibold text-primary tabular-nums leading-none ${pulse ? "animate-pulse" : ""}`}>
+                      +{fmt(gains.opportunitesNet)} €
+                    </div>
+                    <div className="mt-3 grid grid-cols-2 gap-2 text-[0.7rem]">
+                      <div className="rounded-md bg-background border border-border px-2 py-1.5">
+                        <div className="text-[0.6rem] uppercase tracking-wider text-muted-foreground">Marge nouveaux dossiers</div>
+                        <div className="font-display italic font-semibold tabular-nums text-sm text-foreground">+{fmt(gains.opportunitesBrut)} €</div>
+                      </div>
+                      <div className="rounded-md bg-background border border-border px-2 py-1.5">
+                        <div className="text-[0.6rem] uppercase tracking-wider text-muted-foreground">Abonnement Eligibly</div>
+                        <div className="font-display italic font-semibold tabular-nums text-sm text-foreground">−{fmt(gains.coutEligibly)} €</div>
+                      </div>
+                    </div>
+                    <div className="mt-2 text-[0.7rem] text-muted-foreground">
+                      ~{fmt(gains.nouveauxDossiersAn)} nouveaux dossiers/an
                     </div>
                   </div>
-                  <div className="mt-3 text-xs text-muted-foreground">
-                    ~{fmt(gains.totalHSem)} h/semaine libérées · {gains.etpEquivalent.toFixed(1)} ETP · payback {gains.paybackMois > 0 ? `${gains.paybackMois.toFixed(1)} mois` : "—"}
+                </div>
+
+                {/* Total consolidé */}
+                <div className="mb-6 pb-6 border-b border-border flex flex-wrap items-baseline justify-between gap-3">
+                  <div>
+                    <div className="text-[0.68rem] uppercase tracking-[0.14em] text-muted-foreground font-semibold">Gain net total annuel</div>
+                    <div className="font-display text-2xl md:text-3xl font-semibold text-foreground tabular-nums leading-none mt-1">
+                      +{fmt(gains.totalNet)} €
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 text-[0.72rem]">
+                    <span className="rounded-md bg-primary text-primary-foreground px-2.5 py-1 font-display italic font-semibold tabular-nums">
+                      ROI {gains.roiRatio > 0 ? `×${gains.roiRatio.toFixed(1)}` : "—"}
+                    </span>
+                    <span className="text-muted-foreground">
+                      Payback {gains.paybackMois > 0 ? `${gains.paybackMois.toFixed(1)} mois` : "—"}
+                    </span>
                   </div>
                 </div>
 
