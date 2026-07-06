@@ -588,15 +588,15 @@ interface SliderProps {
 
 const Slider = ({ label, value, min, max, step, onChange, suffix = "", hint, icon, highlight, tooltip }: SliderProps) => (
   <div className={highlight ? "rounded-lg border border-primary/30 bg-primary/5 p-3" : ""}>
-    <div className="flex items-baseline justify-between gap-2 mb-2">
-      <label className="text-sm font-medium text-foreground flex items-center gap-1.5 min-w-0">
-        {icon}
-        <span className="truncate">{label}</span>
+    <div className="flex items-start justify-between gap-3 mb-2">
+      <label className="text-sm font-medium text-foreground flex items-start gap-1.5 min-w-0 flex-1 leading-snug">
+        {icon && <span className="mt-0.5 shrink-0">{icon}</span>}
+        <span className="break-words">{label}</span>
         {tooltip && (
           <TooltipProvider delayDuration={100}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <button type="button" aria-label="Méthode de calcul" className="shrink-0 text-muted-foreground hover:text-primary transition-colors">
+                <button type="button" aria-label="Méthode de calcul" className="shrink-0 mt-0.5 text-muted-foreground hover:text-primary transition-colors">
                   <Info className="w-3.5 h-3.5" />
                 </button>
               </TooltipTrigger>
