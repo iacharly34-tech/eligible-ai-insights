@@ -6,6 +6,15 @@ Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets
 
 ## Pages
 - [Accueil](/): Vue d'ensemble du moteur de détection IA pour cabinets d'expertise comptable.
+- [Génération de leads pour experts-comptables](/leads-experts-comptables): Page pilier — logiciel vertical de génération de leads pour cabinets EC. Sources INPI/Sirene/BODACC, filtres amont, scoring expliqué, canaux d'activation, RGPD, cas d'usage.
+- [Alternatives à PrimoLead pour cabinets d'expertise comptable](/alternatives-primolead-experts-comptables): Comparatif neutre PrimoLead vs Corporama vs Societe.com vs Eligibly sur 12 critères objectifs (sources, filtres, scoring, canaux, prix, essai).
+- [Cas d'usage cabinets EC](/cabinet/cas-usage): Trois cas d'usage détaillés — cabinet généraliste 8 collaborateurs, cabinet spécialisé restauration, cabinet full-remote startups/e-commerce.
+- [Cas d'usage — cabinet généraliste 8 collaborateurs, 30 leads/semaine](/cabinet/cas-usage/cabinet-8-collaborateurs-departement)
+- [Cas d'usage — cabinet spécialisé restauration, cibler nouvelles SAS/SARL CHR](/cabinet/cas-usage/cabinet-specialise-restauration)
+- [Cas d'usage — cabinet full-remote, startups & e-commerçants nationaux](/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce)
+- [Glossaire prospection & génération de leads cabinet EC](/cabinet/glossaire): Définitions courtes — SIRENE, INPI, BODACC, ICP, scoring prédictif, CAC, LTV, code APE 6920Z, SASU, SAS, EURL, canal d'activation.
+- [Prospection cabinet comptable : méthode 2026](/prospection-cabinet-comptable): Méthode complète de prospection pour cabinet EC.
+- [Canaux d'activation : LinkedIn, email, appel, courrier](/canaux-activation): Quel canal pour quel type de lead créateur.
 - [Fonctionnalités](/produit): Sources, filtres IA, scoring expliqué, alertes multi-canaux, sécurité et conformité RGPD.
 - [Cas d'usage](/solutions): Verticales par type de cabinet (Tech, Conseil, Santé, Artisans, Grands cabinets & réseaux, Structuration).
 - [Tarifs](/tarifs): À partir de 10 € par lead qualifié, devis personnalisé. Démarrage sans CB, résiliable mensuellement.
