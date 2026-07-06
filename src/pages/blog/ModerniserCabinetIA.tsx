@@ -132,20 +132,76 @@ const ModerniserCabinetIA = () => (
 
     <h3>L'approche Eligibly</h3>
     <p>
-      C'est exactement ce qu'Eligibly construit pour les cabinets d'expertise comptable : un CRM de prospection vertical qui transforme le flux d'immatriculations quotidien en <strong>plan d'action commercial priorisé</strong>. Pas un fichier SIRET brut à retraiter, pas une plateforme généraliste à configurer pendant trois mois — un moteur métier qui livre chaque matin les 10 à 30 prospects qui méritent un contact <em>ce jour-là</em>, avec le contexte et l'accroche.
+      Eligibly est un <strong>CRM de prospection vertical</strong>, conçu <em>exclusivement</em> pour les cabinets d'expertise comptable. Ce n'est pas un fichier SIRET à retraiter, pas un Salesforce à paramétrer pendant trois mois, pas une plateforme d'AO publics recyclée. C'est un moteur métier qui transforme le flux quotidien d'immatriculations en <strong>plan d'action commercial priorisé, livré chaque matin</strong>.
+    </p>
+
+    <h4>Ce qui se passe concrètement chaque jour</h4>
+    <p>
+      À 7 h 30, avant l'arrivée des collaborateurs :
+    </p>
+    <ol>
+      <li><strong>Détection</strong> — Eligibly a ingéré la nuit précédente les <strong>800 à 1 200 SASU/SAS/EURL immatriculées la veille</strong> en France (sources officielles : INPI, base Sirene INSEE, BODACC).</li>
+      <li><strong>Filtrage ICP dur</strong> — Application des critères que votre cabinet a définis : forme juridique acceptée, codes NAF ciblés, capital social minimum, zone géographique (département, région ou rayon kilométrique autour de vos bureaux), âge de la société, présence ou absence de commissaire aux comptes.</li>
+      <li><strong>Enrichissement</strong> — Pour chaque société retenue : identité complète du dirigeant, LinkedIn quand disponible, site web s'il existe déjà, signaux d'activité (levée annoncée, ouverture de compte pro, dépôt de marque, publications BODACC connexes).</li>
+      <li><strong>Scoring expliqué</strong> — Chaque lead reçoit un score sur 100 avec les 3 à 5 signaux qui l'ont fait monter ou baisser (« capital 15 k€ = signal positif », « code NAF hors ICP = -20 »). Pas de boîte noire : votre collaborateur comprend en 10 secondes pourquoi ce lead est en haut de pile.</li>
+      <li><strong>Recommandation de canal</strong> — Selon le profil du dirigeant et les signaux détectés, Eligibly recommande le meilleur premier canal : LinkedIn si profil actif, email pro si site web pro trouvé, courrier à en-tête pour les capitaux &gt; 50 k€, appel direct pour les artisans-commerçants.</li>
+      <li><strong>Accroche préparée</strong> — Un premier message (LinkedIn ou email) est <em>pré-rédigé</em> à partir du contexte du dirigeant : forme juridique, activité, signal saillant. Pas un template générique — un message contextualisé que votre collaborateur relit, ajuste et envoie en 30 secondes.</li>
+      <li><strong>Livraison</strong> — À 8 h, le digest arrive sur l'e-mail du chargé de développement (et en option sur Slack ou Teams). Format : les 10 à 30 leads du jour, triés par score, avec la fiche complète et le message prêt.</li>
+    </ol>
+
+    <h4>Ce que ça remplace concrètement dans le cabinet</h4>
+    <ul>
+      <li>❌ Le <strong>fichier SIRET annuel</strong> acheté 2 à 5 k€ à Manageo, Kompass ou Corporama, non filtré, périmé à 30 % au bout de trois mois.</li>
+      <li>❌ Le <strong>collaborateur qui scrute Infogreffe/Pappers</strong> le lundi matin pour repérer les nouvelles immatriculations « à la main » (2 à 4 h/semaine, résultat aléatoire).</li>
+      <li>❌ Le <strong>chargé de développement junior</strong> qui appelle sans priorisation et brûle le fichier en trois mois.</li>
+      <li>❌ Le <strong>« on verra si Google ou LinkedIn ramènent quelqu'un »</strong> — c'est-à-dire l'absence de stratégie commerciale.</li>
+    </ul>
+
+    <h4>Pourquoi c'est différent d'un fichier ou d'un CRM généraliste</h4>
+    <ul>
+      <li><strong>Fraîcheur</strong> : les leads sont livrés dans les <strong>24 à 72 h après immatriculation</strong>. Un fichier annuel livre des sociétés déjà signées par un concurrent.</li>
+      <li><strong>Filtres verticaux préconstruits</strong> pour l'expertise comptable : codes NAF pertinents, seuils de capital réalistes, exclusion automatique des micro-entrepreneurs (autre marché), des holdings sans activité, des sociétés déjà accompagnées par un CAC.</li>
+      <li><strong>Score métier</strong>, pas score générique : les signaux qui priorisent sont ceux qu'un associé regarderait (capital, profil du dirigeant, verticale) — pas un score « intent » importé du B2B tech.</li>
+      <li><strong>Aucune saisie</strong> : le cabinet ne crée pas de comptes, ne configure pas de pipelines, ne mappe pas de champs. Une conversation de 30 minutes pour définir l'ICP suffit à démarrer.</li>
+      <li><strong>RGPD documenté</strong> : données publiques, base légale « intérêt légitime » avec analyse d'impact fournie, mention d'information et opt-out systématique dans chaque message.</li>
+    </ul>
+
+    <h4>Ce que ça coûte, et ce que ça rapporte</h4>
+    <p>
+      Tarif : <strong>290 € HT / mois</strong> pour un cabinet, sans engagement, avec un pilote de 14 jours gratuit sans carte bancaire. À comparer à un fichier SIRET (≈ 3 000 € / an, non actualisé) ou au coût d'un chargé d'affaires junior (35 à 45 k€ / an chargé). Un seul dossier client signé grâce à Eligibly (LTV moyenne 6 à 12 k€ sur 3 ans en cabinet EC) rembourse l'abonnement pour <strong>18 à 36 mois</strong>.
     </p>
     <p>
-      La logique s'articule avec les cinq autres axes de modernisation :
+      Sur les cabinets pilotes, la mesure observée à 90 jours :
     </p>
     <ul>
-      <li>Elle <strong>alimente la production</strong> avec des dossiers qualifiés en amont, donc moins coûteux à onboarder.</li>
-      <li>Elle <strong>nourrit l'offre de conseil</strong> : les primo-entrepreneurs sont la cible la plus demandeuse de pilotage et de simulations.</li>
-      <li>Elle <strong>outille le chargé de développement</strong> — le nouveau profil RH du cabinet moderne.</li>
-      <li>Elle <strong>respecte le cadre RGPD</strong> (données publiques, base légale intérêt légitime documentée, opt-out systématique).</li>
-      <li>Et surtout, elle rend <strong>la visibilité du cabinet mesurable</strong> : combien de prospects touchés, quelle verticale performe, quel canal convertit.</li>
+      <li>10 à 30 leads qualifiés / jour ouvré → <strong>200 à 600 / mois</strong>.</li>
+      <li>Taux de contact utile (LinkedIn accepté ou email répondu) : <strong>12 à 18 %</strong>.</li>
+      <li>Taux de RDV : <strong>5 à 12 %</strong> des contacts utiles.</li>
+      <li>Taux de signature au RDV : <strong>25 à 40 %</strong> (dépend fortement de l'offre et du closing).</li>
+      <li>Soit <strong>3 à 8 nouveaux dossiers signés / mois</strong> pour un cabinet qui traite le flux avec 1,5 h/jour d'un collaborateur.</li>
+    </ul>
+
+    <h4>Comment ça s'articule avec les 5 autres axes de modernisation</h4>
+    <ul>
+      <li><strong>Production</strong> — Les dossiers arrivent avec un ICP validé, donc onboardables plus vite (paramétrage TVA, régime fiscal et compte connu à l'avance).</li>
+      <li><strong>Conseil</strong> — Les primo-entrepreneurs SASU/SAS sont la cible la plus demandeuse de pilotage, prévisionnel, aide au pacte associés. Eligibly livre la matière première de l'offre conseil.</li>
+      <li><strong>Relation client</strong> — L'accroche préparée et le premier RDV structuré posent d'emblée la posture conseil, pas producteur de liasse.</li>
+      <li><strong>RH</strong> — Eligibly permet de justifier le poste de chargé de développement (alternant ou junior) qui n'est plus « payé à chercher » mais « payé à traiter un flux qualifié ». C'est le nouveau job du cabinet moderne.</li>
+      <li><strong>Gouvernance</strong> — Chaque envoi est loggué, chaque opt-out est respecté automatiquement, chaque source de donnée est traçable. Le DPO du cabinet a un dossier complet.</li>
+    </ul>
+
+    <h4>La visibilité : ce qu'Eligibly rend enfin mesurable</h4>
+    <p>
+      La question « quelle est la visibilité commerciale de mon cabinet ? » est restée floue tant qu'elle reposait sur la prescription et le bouche-à-oreille. Avec Eligibly, elle devient chiffrée :
+    </p>
+    <ul>
+      <li><strong>Combien de dirigeants ont vu le nom du cabinet ce mois-ci</strong> (LinkedIn, e-mail, courrier) — la vraie mesure de la notoriété active sur la cible.</li>
+      <li><strong>Quelle verticale performe</strong> : les SAS conseil signent-elles mieux que les SASU e-commerce ? Sur quelle zone ?</li>
+      <li><strong>Quel canal convertit</strong> : LinkedIn vs email vs courrier à en-tête, avec les taux réels par persona.</li>
+      <li><strong>Quel CAC réel</strong>, calculé sur les dossiers signés — pas estimé.</li>
     </ul>
     <p>
-      Pour aller plus loin sur cet axe, voir le <a href="/blog/playbook-prospection-cabinet-ec-2026">Playbook 2026 de la prospection en cabinet EC</a> et le <a href="/blog/icp-cabinet-expertise-comptable">guide de construction de l'ICP</a>.
+      C'est ce basculement — d'une visibilité subie à une visibilité <em>pilotée</em> — qui fait passer un cabinet de la stagnation à une croissance choisie. Pour aller plus loin, voir le <a href="/blog/playbook-prospection-cabinet-ec-2026">Playbook 2026 de la prospection en cabinet EC</a>, le <a href="/blog/icp-cabinet-expertise-comptable">guide de construction de l'ICP</a> et le <a href="/blog/cout-acquisition-client-cabinet-comptable">benchmark du CAC en cabinet</a>.
     </p>
 
     <h2>Feuille de route pragmatique sur 12 mois</h2>
