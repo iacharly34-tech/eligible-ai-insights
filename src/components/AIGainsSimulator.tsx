@@ -585,7 +585,7 @@ const SectionHeading = ({
 }: {
   step: string;
   title: string;
-  description: string;
+  description?: string;
 }) => (
   <div>
     <div className="flex items-center gap-2.5">
@@ -596,9 +596,11 @@ const SectionHeading = ({
         {title}
       </h4>
     </div>
-    <p className="text-xs text-muted-foreground mt-1.5 ml-[2.125rem] leading-relaxed">
-      {description}
-    </p>
+    {description && (
+      <p className="text-xs text-muted-foreground mt-1.5 ml-[2.125rem] leading-relaxed">
+        {description}
+      </p>
+    )}
   </div>
 );
 
