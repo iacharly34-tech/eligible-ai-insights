@@ -76,6 +76,15 @@ export const ArticleRecommendations = ({ currentArticleUrl, currentCategory }: A
       readTime: "6 min",
       category: "Marché",
       icon: () => <BookOpen className="w-4 h-4" />
+    },
+    {
+      title: "Moderniser un cabinet EC à l'ère de l'IA",
+      description: "Les 6 axes IA pour moderniser un cabinet d'expertise comptable en 2026 : production, conseil, RH, visibilité.",
+      url: "/blog/moderniser-cabinet-expertise-comptable-ia",
+      date: "6 juillet 2026",
+      readTime: "16 min",
+      category: "Transformation",
+      icon: () => <BookOpen className="w-4 h-4" />
     }
   ];
 
