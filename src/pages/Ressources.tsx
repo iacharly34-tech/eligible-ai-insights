@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { SafeLink } from "@/components/SafeLink";
 import { SEOHead } from "@/components/SEOHead";
 import { MobileCTABar } from "@/components/MobileCTABar";
-import { ArrowRight, CheckCircle, Sparkles, Clock } from "lucide-react";
+import { ArrowRight, CheckCircle, Sparkles, Clock, Star, Calculator } from "lucide-react";
 import { useLang, localizedHref } from "@/hooks/useLang";
 
 const copy = {
