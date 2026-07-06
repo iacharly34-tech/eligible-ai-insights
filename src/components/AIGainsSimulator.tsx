@@ -407,7 +407,7 @@ export const AIGainsSimulator = () => {
                     onChange={(v) => { setIGouvernance(v); clearScenario(); }} suffix=" %"
                     icon={<ShieldCheck className="w-3.5 h-3.5" />}
                     tooltip="Plafond : évitement RGPD (25 k€ × 8 %) + +15 % honoraires sur 1,5 % du parc mid-market × 35 % marge." />
-                  <Slider label="6 · Développement (Eligibly)" value={iDev} min={0} max={100} step={5}
+                  <Slider label="6 · Développement commercial (Eligibly)" value={iDev} min={0} max={100} step={5}
                     onChange={(v) => { setIDev(v); clearScenario(); }} suffix=" %"
                     icon={<Target className="w-3.5 h-3.5" />} highlight
                     tooltip="Plafond prudent : 2,5 nouveaux dossiers nets/mois × LTV 3 ans × 30 % marge nette." />
@@ -515,7 +515,7 @@ export const AIGainsSimulator = () => {
                     <ResultLight icon={<MessageSquare className="w-4 h-4 text-primary" />} title="Relation client" value={`+${fmt(gains.eurRel)} €`} sub={`${fmt(gains.hRelSem)} h/sem libérées`} />
                     <ResultLight icon={<UserCog className="w-4 h-4 text-primary" />} title="RH & organisation" value={`+${fmt(gains.eurRH)} €`} sub="Rétention & recrutement" />
                     <ResultLight icon={<ShieldCheck className="w-4 h-4 text-primary" />} title="Gouvernance" value={`+${fmt(gains.eurGouv)} €`} sub="RGPD + closing" />
-                    <ResultLight icon={<Target className="w-4 h-4 text-primary" />} title="Développement · Eligibly" value={`+${fmt(gains.eurDev)} €`} sub={`~${fmt(gains.nouveauxDossiersAn)} dossiers/an`} highlight />
+                    <ResultLight icon={<Target className="w-4 h-4 text-primary" />} title="Développement commercial · Eligibly" value={`+${fmt(gains.eurDev)} €`} sub={`~${fmt(gains.nouveauxDossiersAn)} dossiers/an`} highlight />
                   </div>
                 )}
 
