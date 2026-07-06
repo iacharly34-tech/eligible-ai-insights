@@ -511,11 +511,12 @@ export const AIGainsSimulator = () => {
               </Button>
             </SafeLink>
             <p className="mt-3 text-[0.7rem] text-background/60 leading-relaxed">
-              Estimation indicative. Hypothèses max (à 100 %) : gain saisie 60 % (Shine),
-              +25 % honoraires sur 40 % du parc (CSOEC), 5 h/sem/collab en relation client,
-              -15 % turnover (OEC), évitement RGPD 25 k€ (CNIL), 8 dossiers/mois via prospection
-              IA verticale (pilotes Eligibly). Coûts intégrés : {fmt(COUT_OUTILS_IA_PAR_COLLAB)} €/collab/an
-              d'outils IA + 3 480 €/an Eligibly quand l'axe 6 &gt; 0.
+              Estimation prudente. Plafonds à 100 % : saisie −35 %, conseil +12 % sur 25 % du parc
+              (marge 35 %), relation client 2,5 h/sem/collab, turnover −10 pts (6 k€/remplacement),
+              RGPD 25 k€ × 8 % + closing mid-market 1,5 % du parc, développement 2,5 dossiers/mois
+              (marge 30 %). Coûts intégrés : {fmt(COUT_OUTILS_IA_PAR_COLLAB)} €/collab/an d'outils IA
+              + 3 480 €/an Eligibly quand l'axe 6 &gt; 0. Sources : OEC Paris 2025, CSOEC, Cegid,
+              Shine, CREOP 2026, pilotes Eligibly.
             </p>
           </div>
         </div>
