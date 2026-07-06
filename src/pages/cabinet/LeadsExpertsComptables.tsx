@@ -2,8 +2,8 @@ import { LandingCabinetLayout } from "./LandingCabinetLayout";
 
 const LeadsExpertsComptables = () => (
   <LandingCabinetLayout
-    seoTitle="Leads pour experts-comptables — sociétés fraîchement immatriculées | Eligibly"
-    seoDescription="Recevez chaque semaine 100 à 300 sociétés SASU, SAS, EURL et SARL immatriculées dans votre zone, filtrées ICP, scorées et prêtes à contacter. Sources INPI · Sirene · BODACC."
+   seoTitle="Leads experts-comptables : 100 à 300 SASU/SAS/semaine"
+   seoDescription="Recevez chaque semaine 100 à 300 SASU/SAS/EURL immatriculées dans votre zone, filtrées ICP et scorées. Sources INPI · Sirene · BODACC. Pilote 14 j gratuit."
     canonicalPath="/leads-experts-comptables"
     eyebrow="Leads experts-comptables"
     h1a="Vos prochains clients"
