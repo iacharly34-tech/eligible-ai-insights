@@ -69,39 +69,44 @@ export const SEOHead = ({
     // Blog articles cabinet EC
     const blogRoutes: Record<string, { title: string; description: string; keywords: string }> = {
       '/blog/creations-entreprises-france-2025': {
-        title: "Créations d'entreprises en France 2025 : chiffres INSEE | Eligibly",
-        description: "État des lieux INSEE des créations d'entreprises en France : SASU, SAS, EURL, SARL, micro-entreprises. Volumes, régions, secteurs porteurs pour cabinets d'expertise-comptable.",
+        title: "Créations d'entreprises 2025 : 1,1 M immat. [INSEE]",
+        description: "Chiffres INSEE 2025 des créations d'entreprises en France : SASU, SAS, EURL, micro. Volumes par région, secteurs porteurs, opportunités cabinet EC.",
         keywords: "créations entreprises 2025, SASU SAS, INSEE, primo-entrepreneurs, cabinet expertise-comptable"
       },
       '/blog/cout-acquisition-client-cabinet-comptable': {
-        title: "Coût d'acquisition client en cabinet d'expertise-comptable | Eligibly",
-        description: "Décomposition du CAC en cabinet d'expertise-comptable et leviers concrets pour le diviser par deux : sourcing, qualification, séquences, canaux.",
+        title: "CAC cabinet comptable : combien coûte 1 client en 2026 ?",
+        description: "Benchmark 2026 du CAC en cabinet EC (300 à 1 200 €) et 6 leviers concrets pour le diviser par deux. Sources chiffrées : Booster, Oltega, 425PPM.",
         keywords: "CAC cabinet comptable, coût acquisition client, prospection expertise-comptable, marketing cabinet"
       },
       '/blog/icp-cabinet-expertise-comptable': {
-        title: "ICP cabinet d'expertise-comptable : définir son client idéal | Eligibly",
-        description: "Comment définir l'ICP d'un cabinet d'expertise-comptable : forme juridique, activité, taille, complexité, zone. Et surtout : ce qu'il faut exclure du pipeline.",
+        title: "ICP cabinet EC : la méthode en 5 étapes (+ modèle prêt)",
+        description: "Définir l'ICP de votre cabinet en 5 étapes : forme juridique, activité, taille, zone. Modèle prêt à copier et critères d'exclusion. Sources OEC, Atlas.",
         keywords: "ICP cabinet expertise-comptable, client idéal, ciblage prospection, segmentation cabinet"
       },
       '/blog/barometre-acquisition-cabinet-ec-2026': {
-        title: "Baromètre acquisition cabinet d'expertise-comptable 2026 | Eligibly",
-        description: "Benchmark 2026 : CAC, taux de conversion, durée du cycle de vente et canaux d'acquisition les plus efficaces pour les cabinets d'expertise-comptable français.",
+        title: "Baromètre 2026 — Acquisition client en cabinet EC",
+        description: "CAC, taux de conversion, cycle de vente et canaux gagnants pour cabinets EC en 2026. Données terrain + sources OEC, INSEE, Atlas.",
         keywords: "baromètre acquisition cabinet, CAC 2026, cycle de vente cabinet, benchmark cabinet expertise-comptable"
       },
       '/blog/observatoire-sasu-sas-juin-2026': {
-        title: "Observatoire SASU / SAS — juin 2026 | Eligibly",
-        description: "Volumes, géographie et secteurs des SASU et SAS fraîchement immatriculées en France : les données que tout cabinet d'expertise-comptable doit connaître.",
+        title: "Observatoire SASU/SAS France — 25 000 immat./mois",
+        description: "Volumes, géographie, secteurs et capital moyen des SASU/SAS créées en France (juin 2026). Comment lire ces données pour orienter votre prospection.",
         keywords: "observatoire SASU SAS, immatriculations, primo-entrepreneurs, marché cabinet expertise-comptable"
       },
       '/blog/playbook-prospection-cabinet-ec-2026': {
-        title: "Playbook prospection cabinet expertise-comptable 2026 | Eligibly",
-        description: "Cadre opérationnel de prospection pour cabinets d'expertise-comptable : ICP, séquences multi-canal (LinkedIn, email, appel, courrier), mesure et pilotage.",
+        title: "Playbook 2026 : prospection cabinet EC (18 min de lecture)",
+        description: "Méthode complète de prospection cabinet EC : ICP, séquences multicanal (LinkedIn, email, appel, courrier), IA, KPIs. De la détection à la signature.",
         keywords: "playbook prospection cabinet, séquences prospection expertise-comptable, LinkedIn cabinet, courrier cabinet"
       },
       '/blog/lexique-marketing-expert-comptable': {
-        title: "Lexique marketing pour expert-comptable | Eligibly",
-        description: "Tous les termes marketing utiles à un cabinet d'expertise-comptable : CAC, LTV, ICP, MQL/SQL, taux de conversion, cycle de vente, social selling.",
+        title: "Lexique marketing pour experts-comptables — 30 mots clés",
+        description: "CAC, LTV, ICP, MQL/SQL, pipeline, séquences outbound… Le glossaire du marketing B2B traduit pour le quotidien d'un cabinet d'expertise-comptable.",
         keywords: "lexique marketing expert-comptable, CAC LTV, MQL SQL, glossaire prospection cabinet"
+      },
+      '/blog/fichier-siret-vs-plan-action-comptable': {
+        title: "Fichier SIRET vs plan d'action : lequel choisir en 2026 ?",
+        description: "Fichier SIRET brut ou plan d'action scoré : comparatif honnête, coûts, ROI, effort commercial. La bonne réponse dépend de votre cabinet EC.",
+        keywords: "fichier SIRET, plan d'action commercial, prospection cabinet EC, alternative Manageo"
       }
     };
 
@@ -114,26 +119,26 @@ export const SEOHead = ({
         case '/en':
         case '/en/':
           return {
-            title: "Eligibly — AI lead detection for French accounting firms",
-            description: "Eligibly's AI detects newly registered French SASU/SAS each day, applies your ICP filters, and delivers your morning digest of PREMIUM leads directly to your inbox.",
+            title: "Eligibly — 100+ fresh SASU/SAS leads / week for your firm",
+            description: "Every week, receive 100–300 newly registered French SASU/SAS in your area, ICP-scored, with the recommended outreach channel. 14-day free pilot.",
             keywords: "accounting firm prospecting, SASU SAS leads, AI for accountants, lead detection, eligibly"
           };
         case '/en/product':
           return {
-            title: "Eligibly Features — AI lead detection engine",
-            description: "Official immatriculation sources, AI filters, explained scoring and a morning PREMIUM-leads digest delivered to your inbox. Slack and Microsoft Teams integrations available on request.",
+            title: "Eligibly Product — Detection, scoring & multichannel activation",
+            description: "Daily detection of new SASU/SAS, ICP filters, explained scoring, recommended channel (LinkedIn, email, letter). GDPR-compliant. Delivered to your inbox.",
             keywords: "eligibly features, lead detection engine, AI SASU SAS, lead scoring, morning digest"
           };
         case '/en/demo':
           return {
-            title: "Eligibly Demo — AI lead detection for accounting firms",
-            description: "Book a personalised Eligibly demo and see how the AI surfaces fresh SASU/SAS prospects in your area every morning.",
+            title: "Eligibly Demo — 10 scored leads on your area, 20 min",
+            description: "Book a 20-min demo: 10 SASU/SAS scored on your area, recommended channel, ready-to-send opener. No card, no commitment.",
             keywords: "eligibly demo, accountant lead detection, accounting firm prospecting"
           };
         case '/en/pricing':
           return {
-            title: "Eligibly Pricing — tailored quote · 14-day pilot",
-            description: "Monthly subscription calibrated to your firm, shared after a scoping call. 14-day pilot, no credit card.",
+            title: "Eligibly Pricing — €290/mo · 14-day free pilot, no card",
+            description: "€290/mo, all inclusive, for your accounting firm. 14-day pilot without a credit card. Monthly cancellation. Leads delivered to your channels.",
             keywords: "eligibly pricing, accounting firm prospecting price, accountant subscription"
           };
         case '/en/solutions':
@@ -173,44 +178,44 @@ export const SEOHead = ({
         case '/':
         case '/accueil':
           return {
-            title: "Eligibly — Prospection nouveaux entrepreneurs pour cabinets d'expertise-comptable",
-            description: "Chaque semaine, recevez les nouveaux entrepreneurs à fort potentiel pour votre cabinet : SASU, SAS, EURL, SARL fraîchement immatriculées, priorisées par score, avec le canal d'approche recommandé.",
+            title: "Eligibly — 100+ SASU/SAS scorées/semaine pour votre cabinet EC",
+            description: "Recevez chaque semaine 100 à 300 SASU/SAS fraîchement immatriculées dans votre zone, scorées ICP, avec le canal d'approche recommandé. Pilote 14 j gratuit, sans CB.",
             keywords: "prospection cabinet expertise-comptable, leads experts-comptables, SASU SAS immatriculation, nouveaux entrepreneurs, scoring leads, social selling, courrier à en-tête, eligibly"
           };
         case '/produit':
           return {
-            title: "Fonctionnalités Eligibly — Détection, scoring, activation multicanale",
-            description: "Détection des nouvelles immatriculations, scoring de priorité expliqué, recommandation du canal d'approche (LinkedIn, email, appel, Instagram, courrier à en-tête) et message préparé. Conformité RGPD.",
+            title: "Produit Eligibly — Détection, scoring & activation multicanale",
+            description: "Détection quotidienne des nouvelles SASU/SAS, filtres ICP, scoring expliqué, canal d'approche recommandé (LinkedIn, email, appel, courrier). RGPD.",
             keywords: "fonctionnalités eligibly, détection leads cabinet, scoring priorité, canal d'approche, social selling, courrier cabinet"
           };
         case '/demo':
           return {
-            title: "Démo Eligibly — Voir 10 leads scorés sur votre zone",
-            description: "Réservez une démo personnalisée d'Eligibly et voyez 10 nouveaux entrepreneurs scorés sur votre zone : forme juridique, activité, besoin probable, canal d'approche recommandé.",
+            title: "Démo Eligibly — 10 leads scorés sur votre zone, en 20 min",
+            description: "Réservez une démo 20 min : 10 SASU/SAS scorées sur votre zone, canal d'approche recommandé, accroche prête à envoyer. Sans CB, sans engagement.",
             keywords: "démo eligibly, prospection cabinet expertise-comptable, leads scorés, canal d'approche"
           };
         case '/tarifs':
           return {
-            title: "Tarifs Eligibly — 290 € HT / mois, pilote 14 jours gratuit",
-            description: "290 € HT / mois pour votre cabinet d'expertise-comptable, sans engagement. 14 jours de pilote gratuit sans carte bancaire. Résiliation mensuelle.",
+            title: "Tarifs Eligibly — 290 € HT/mois · Pilote 14 j gratuit, sans CB",
+            description: "290 € HT/mois tout compris pour votre cabinet EC. Pilote 14 jours sans carte bancaire. Résiliation mensuelle. Alertes livrées sur vos canaux.",
             keywords: "tarifs eligibly, prix prospection cabinet, abonnement expert-comptable, pilote gratuit"
           };
         case '/solutions':
           return {
-            title: "Cas d'usage Eligibly — Par type de cabinet",
-            description: "6 verticales pour cabinets d'expertise-comptable : Tech, Conseil, Santé, Artisans & commerces, Grands cabinets & réseaux, Structuration commerciale. Filtres et bénéfices par profil.",
+            title: "Cas d'usage cabinet EC — 6 profils, filtres & bénéfices concrets",
+            description: "6 verticales cabinet EC : Tech, Conseil, Santé, Artisans, Grands cabinets, Structuration commerciale. Filtres appliqués et gains chiffrés par profil.",
             keywords: "cas d'usage cabinet expertise-comptable, verticales prospection cabinet, eligibly"
           };
         case '/ressources':
           return {
-            title: "Ressources Eligibly — Playbooks prospection cabinet",
-            description: "Playbooks, baromètres et guides pour développer le portefeuille de votre cabinet d'expertise-comptable : CAC, ICP, séquences multi-canal, social selling, courrier à en-tête.",
+            title: "Ressources cabinet EC — Baromètres, playbooks & analyses sourcées",
+            description: "Baromètres CAC, playbooks de prospection, ICP, séquences multicanal, observatoires SASU/SAS : les analyses sourcées (INSEE, OEC, Atlas) pour votre cabinet.",
             keywords: "ressources cabinet expertise-comptable, playbook prospection, baromètre CAC, ICP cabinet"
           };
         case '/a-propos':
           return {
-            title: "À propos d'Eligibly — Stop buying leads",
-            description: "Eligibly aide les cabinets d'expertise-comptable à produire leurs propres leads, jamais mutualisés. Notre mission, notre équipe, notre vision.",
+            title: "À propos d'Eligibly — Stop buying leads. Produisez les vôtres.",
+            description: "Notre mission : que chaque cabinet EC produise ses propres leads, jamais mutualisés. Équipe, vision, valeurs et engagement de moyens.",
             keywords: "à propos eligibly, mission, équipe cabinet expertise-comptable"
           };
         default:
