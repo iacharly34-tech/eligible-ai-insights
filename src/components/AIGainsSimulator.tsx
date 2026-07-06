@@ -117,6 +117,15 @@ export const AIGainsSimulator = () => {
   const [pulse, setPulse] = useState(false);
   const [methodoOpen, setMethodoOpen] = useState(false);
   const [detailOpen, setDetailOpen] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
+
+  const STEPS = [
+    { n: 1, label: "Scénario de départ" },
+    { n: 2, label: "Votre cabinet" },
+    { n: 3, label: "Intensité IA par axe" },
+    { n: 4, label: "Résultats" },
+  ] as const;
+  const totalSteps = STEPS.length;
 
   const applyScenario = (key: ScenarioKey) => {
     const s = SCENARIOS[key].intensites;
