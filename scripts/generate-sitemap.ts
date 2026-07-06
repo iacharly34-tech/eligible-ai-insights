@@ -40,6 +40,8 @@ const entries: Entry[] = [
   { path: "/mentions-legales", changefreq: "yearly", priority: "0.2" },
   { path: "/confidentialite", changefreq: "yearly", priority: "0.2" },
   { path: "/cgu", changefreq: "yearly", priority: "0.2" },
+  // Blog article added récemment
+  { path: "/blog/moderniser-cabinet-expertise-comptable-ia", changefreq: "monthly", priority: "0.7" },
   // English
   { path: "/en", changefreq: "weekly", priority: "0.8" },
   { path: "/en/product", changefreq: "monthly", priority: "0.6" },
