@@ -314,7 +314,7 @@ function ExclusionsView({ t, lang = "fr" }: { t: typeof labels.fr; lang?: "fr" |
                   )}
                 </div>
               </div>
-              <span className={`text-xs font-mono ${item.kept ? "text-muted-foreground" : "text-muted-foreground/50"}`}>
+              <span className={`text-xs font-mono ${item.kept ? "text-muted-foreground" : "text-muted-foreground"}`}>
                 {item.siren}
               </span>
             </motion.div>

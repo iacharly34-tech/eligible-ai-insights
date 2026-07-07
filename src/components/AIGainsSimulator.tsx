@@ -624,7 +624,7 @@ const Slider = ({ label, value, min, max, step, onChange, suffix = "", hint, ico
 
 const KpiBadge = ({ label, value, accent = false }: { label: string; value: string; accent?: boolean }) => (
   <div className={`rounded-lg px-3 py-2 ${accent ? "bg-primary text-primary-foreground" : "bg-background/10 text-background"}`}>
-    <div className={`text-[0.62rem] uppercase tracking-wider ${accent ? "text-primary-foreground/80" : "text-background/60"}`}>
+    <div className={`text-[0.62rem] uppercase tracking-wider ${accent ? "text-primary-foreground/80" : "text-background/85"}`}>
       {label}
     </div>
     <div className="font-display italic font-semibold tabular-nums text-base leading-tight">{value}</div>
