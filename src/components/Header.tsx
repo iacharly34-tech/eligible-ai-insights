@@ -118,10 +118,10 @@ export const Header = () => {
           {/* Brand — centered on mobile, left on desktop */}
           <SafeLink 
             to={homePath} 
-            className="text-lg md:text-xl font-bold tracking-tight text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md ml-4 md:ml-6 h-10 leading-10 uppercase font-display" 
+            className="text-lg md:text-xl font-semibold tracking-tight text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md ml-4 md:ml-6 h-10 leading-10 font-display" 
             aria-label={t('accessibility.home')}
           >
-            eligibly.ai
+            Eligibly
           </SafeLink>
 
           {/* Desktop Navigation */}
@@ -163,7 +163,7 @@ export const Header = () => {
                       aria-haspopup="true"
                       aria-controls={menuId}
                       className={cn(
-                        "flex items-center gap-1 text-xs font-medium uppercase tracking-[0.15em] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
+                        "flex items-center gap-1 text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
                         isActive ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground",
                       )}
                     >
@@ -235,7 +235,7 @@ export const Header = () => {
                   key={item.name}
                   to={item.href!}
                   className={cn(
-                    "text-xs font-medium uppercase tracking-[0.15em] transition-colors duration-300 relative group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
+                    "text-sm font-medium transition-colors duration-200 relative group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
                     isActive 
                       ? "text-primary font-semibold" 
                       : "text-muted-foreground hover:text-foreground"
@@ -260,7 +260,7 @@ export const Header = () => {
             <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
               <Button 
                 size="sm" 
-                className="text-xs font-semibold uppercase tracking-[0.15em] px-6 py-2 h-10 min-h-[40px] bg-primary text-primary-foreground hover:bg-primary/90"
+                className="text-sm font-semibold px-5 py-2 h-10 min-h-[40px] rounded-lg bg-primary text-primary-foreground hover:bg-primary/90"
                 aria-label={t('accessibility.demo')}
               >
                 {t('nav.demo')}
