@@ -31,33 +31,34 @@ export const CabinetProblems = () => {
   const lang = useLang();
   const t = copy[lang];
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-20 md:py-28 border-b border-border/60">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mb-14">
-          <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">
-            {t.eyebrow}
-          </p>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
-            {t.h2a} <em className="italic text-primary font-medium">{t.h2b}</em> {t.h2c}
-          </h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            {t.sub}
-          </p>
-        </div>
+        <div className="grid lg:grid-cols-[0.9fr_1.6fr] gap-12 lg:gap-20">
+          <div>
+            <p className="text-[0.72rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">
+              {t.eyebrow}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.15]">
+              {t.h2a} <span className="text-primary">{t.h2b}</span> {t.h2c}
+            </h2>
+            <p className="mt-5 text-muted-foreground leading-relaxed max-w-md">
+              {t.sub}
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {t.items.map((p) => (
-            <article
-              key={p.n}
-              className="group rounded-2xl border border-border bg-card p-7 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-foreground/5 transition-all"
-            >
-              <div className="w-10 h-10 rounded-full bg-primary/10 text-primary font-display italic font-semibold flex items-center justify-center mb-5">
-                {p.n}
-              </div>
-              <h3 className="font-display text-xl font-semibold text-foreground mb-3">{p.title}</h3>
-              <p className="text-muted-foreground leading-relaxed text-[0.95rem]">{p.body}</p>
-            </article>
-          ))}
+          <ol className="divide-y divide-border border-t border-border">
+            {t.items.map((p) => (
+              <li key={p.n} className="grid grid-cols-[auto_1fr] gap-6 py-7">
+                <div className="font-display text-sm font-semibold text-primary tabular-nums pt-1 w-8">
+                  {p.n}
+                </div>
+                <div>
+                  <h3 className="font-display text-lg md:text-xl font-semibold text-foreground mb-2">{p.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed text-[0.95rem] max-w-2xl">{p.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>
