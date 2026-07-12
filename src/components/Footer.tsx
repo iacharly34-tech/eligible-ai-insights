@@ -1,4 +1,4 @@
-import { Mail, MapPin, Linkedin, Sparkles } from "lucide-react";
+import { Mail, MapPin, Linkedin } from "lucide-react";
 import { SafeLink } from "./SafeLink";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -46,40 +46,37 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="bg-background border-t border-border">
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid lg:grid-cols-6 gap-6">
+    <footer className="bg-muted/30 border-t border-border">
+      <div className="container mx-auto px-4 py-14">
+        <div className="grid lg:grid-cols-6 gap-10">
           {/* Logo & Description */}
-          <div className="lg:col-span-2 space-y-3">
-            <div className="flex items-center space-x-2">
-              <div className="w-6 h-6 bg-primary rounded flex items-center justify-center">
-                <Sparkles className="w-3.5 h-3.5 text-primary-foreground" />
-              </div>
-              <span className="font-display text-lg font-semibold tracking-tight text-foreground">
-               eligibly.ai
+          <div className="lg:col-span-2 space-y-4">
+            <SafeLink to={language === 'en' ? '/en' : '/'} className="inline-flex items-center">
+              <span className="font-display text-xl font-semibold tracking-tight text-foreground">
+                Eligibly
               </span>
-            </div>
+            </SafeLink>
             
-            <p className="text-sm text-muted-foreground max-w-sm">
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
               {language === 'en'
                 ? 'The lead detection engine for French accounting firms. Newly registered SASU and SAS, AI-filtered and scored, delivered every morning to your preferred channel. Pricing calibrated to your firm — on request.'
                 : "Le moteur de détection de nouveaux clients pour cabinets d’expertise comptable. SASU et SAS fraîchement immatriculées, filtrées et scorées par notre IA, livrées chaque matin dans votre canal de travail. Tarif calibré sur votre cabinet — sur demande."}
             </p>
 
-            <div className="flex items-center space-x-6 text-xs text-foreground/70">
-              <div className="flex items-center space-x-1">
-                <Mail className="w-3 h-3" />
+            <div className="flex items-center gap-6 text-xs text-foreground/70 pt-1">
+              <a href="mailto:contact@eligibly.ai" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
+                <Mail className="w-3.5 h-3.5" aria-hidden="true" />
                 <span>contact@eligibly.ai</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <MapPin className="w-3 h-3" />
+              </a>
+              <div className="flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
                 <span>Paris</span>
               </div>
             </div>
 
             <a 
               href="https://www.linkedin.com/company/eligible-ai/" 
-              className="inline-flex w-8 h-8 bg-secondary rounded flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-200"
+              className="inline-flex w-9 h-9 bg-background border border-border rounded-md items-center justify-center text-foreground/70 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200"
               aria-label="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
@@ -90,15 +87,15 @@ export const Footer = () => {
 
           {/* Footer Links */}
           {footerSections.map((section, index) => (
-            <div key={index} className="space-y-2">
-              <h3 className="text-sm font-semibold">{section.title}</h3>
-              <ul className="space-y-1">
+            <div key={index} className="space-y-4">
+              <h3 className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-foreground/60">{section.title}</h3>
+              <ul className="space-y-2.5">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     {link.href.startsWith('mailto:') || link.href.startsWith('tel:') || link.href.startsWith('http') ? (
                       <a 
                         href={link.href}
-                        className="text-xs text-foreground/70 hover:text-foreground transition-colors duration-200"
+                        className="text-sm text-foreground/75 hover:text-primary transition-colors duration-200"
                         target={link.href.startsWith('http') ? "_blank" : undefined}
                         rel={link.href.startsWith('http') ? "noopener noreferrer" : undefined}
                       >
@@ -107,7 +104,7 @@ export const Footer = () => {
                     ) : (
                       <SafeLink 
                         to={link.href}
-                        className="text-xs text-foreground/70 hover:text-foreground transition-colors duration-200"
+                        className="text-sm text-foreground/75 hover:text-primary transition-colors duration-200"
                       >
                         {link.name}
                       </SafeLink>
@@ -120,13 +117,13 @@ export const Footer = () => {
         </div>
 
         {/* Legal reassurance + bottom section */}
-        <div className="mt-8 pt-4 border-t border-border space-y-3">
-          <p className="text-[11px] text-foreground/60 leading-relaxed max-w-4xl">
+        <div className="mt-14 pt-6 border-t border-border space-y-4">
+          <p className="text-xs text-foreground/60 leading-relaxed max-w-4xl">
             {language === 'en'
               ? 'Published by Eligibly SAS — registered in Paris (France). Data hosting in France (European Union). GDPR-compliant — DPA available on request. Official sources only: INPI, INSEE/Sirene, BODACC. Contractual enrichment partners, no transfer outside the EU.'
               : "Édité par Eligibly SAS — siège social à Paris (France). Hébergement des données en France (Union européenne). Traitement conforme RGPD — DPA fourni sur demande. Sources officielles uniquement : INPI, INSEE/Sirene, BODACC. Partenaires d'enrichissement contractuels, sans transfert hors UE."}
           </p>
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3">
             <div className="text-xs text-foreground/70">
               © 2026 Eligibly — {language === 'en' ? 'All rights reserved.' : 'Tous droits réservés.'}
             </div>
