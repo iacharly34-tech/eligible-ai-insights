@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageCircle, CheckCircle, Shield, Sparkles, Star, Mail } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { ArrowRight, MessageCircle, CheckCircle, Shield, Star, Mail } from "lucide-react";
 import { SafeLink } from "@/components/SafeLink";
 import { useLang, localizedHref } from "@/hooks/useLang";
 
@@ -81,45 +80,36 @@ export const CabinetHero = () => {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-gradient-hero pt-16 pb-20 sm:pt-20 sm:pb-28"
+      className="relative overflow-hidden bg-background pt-24 pb-20 sm:pt-28 sm:pb-24 border-b border-border/60"
     >
-      <div className="absolute inset-0 bg-grid-pattern opacity-[0.04]" aria-hidden="true" />
-      <div className="absolute top-20 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl" aria-hidden="true" />
-      <div className="absolute bottom-0 -right-32 w-[28rem] h-[28rem] bg-accent/10 rounded-full blur-3xl" aria-hidden="true" />
-
       <div className="container mx-auto relative px-4">
-        <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-20 items-center">
           {/* LEFT — copy column */}
           <div className="animate-fade-in">
-            <Badge variant="outline" className="text-primary border-primary/30 bg-primary/5 px-3 py-1.5 text-xs sm:text-sm mb-6 inline-flex">
-              <Sparkles className="w-3.5 h-3.5 mr-1.5" aria-hidden="true" />
+            <div className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.14em] font-semibold text-primary mb-6">
+              <span className="inline-block w-6 h-px bg-primary/60" aria-hidden="true" />
               {t.badge}
-            </Badge>
+            </div>
 
-            <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-6xl leading-[1.12] tracking-tight text-foreground font-semibold">
-              {t.h1a}{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent italic font-display inline-block">
-                {t.h1b}
-              </span>
+            <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-[3.75rem] leading-[1.05] tracking-tight text-foreground font-semibold">
+              {t.h1a} <span className="text-primary">{t.h1b}</span>
             </h1>
 
-            <p className="mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl">
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl">
               {t.sub}
             </p>
 
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-8 space-y-3">
               {t.bullets.map((b, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm sm:text-base">
-                  <span className="mt-0.5 inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/10">
-                    <CheckCircle className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
-                  </span>
-                  <span className="text-foreground/90">{b}</span>
+                  <CheckCircle className="w-4 h-4 text-primary mt-1 shrink-0" aria-hidden="true" strokeWidth={2.5} />
+                  <span className="text-foreground/85">{b}</span>
                 </li>
               ))}
             </ul>
 
             {/* CTAs */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <div className="mt-10 flex flex-col sm:flex-row gap-3">
               <SafeLink to={localizedHref("/demo", lang)}>
                 <Button variant="tengo" className="w-full sm:w-auto h-12 px-6 text-sm font-semibold group">
                   {t.ctaPrimary}
@@ -138,7 +128,7 @@ export const CabinetHero = () => {
             </p>
 
             {/* Trust strip */}
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+            <div className="mt-10 pt-8 border-t border-border/60 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <Shield className="w-4 h-4 text-success" aria-hidden="true" />
                 <span className="text-muted-foreground">{t.trustSources} <strong className="text-foreground">INPI · Sirene · BODACC</strong></span>
@@ -154,11 +144,9 @@ export const CabinetHero = () => {
 
           {/* RIGHT — morning email mockup */}
           <div className="relative animate-fade-in lg:pl-4">
-            <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 via-accent/10 to-transparent rounded-3xl blur-2xl" aria-hidden="true" />
-
-            <div className="relative bg-card rounded-2xl shadow-elegant border border-border/60 overflow-hidden">
+            <div className="relative bg-card rounded-2xl border border-border overflow-hidden shadow-[0_1px_2px_rgba(15,23,42,0.04),0_20px_40px_-16px_rgba(15,23,42,0.12)]">
               {/* Email header */}
-              <div className="px-5 py-4 border-b border-border/60 bg-muted/20">
+              <div className="px-5 py-4 border-b border-border bg-muted/40">
                 <div className="flex items-center gap-2 text-[11px] text-muted-foreground mb-2">
                   <Mail className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
                   <span>{t.mailInbox}</span>
@@ -168,48 +156,44 @@ export const CabinetHero = () => {
                   <span className="font-medium text-foreground">eligibly@</span> {t.mailFrom}
                 </div>
                 <div className="mt-1 font-display text-base sm:text-lg font-semibold text-foreground leading-snug">
-                  {t.mailSubjectA} <em className="italic text-primary">{t.mailSubjectB}</em>
+                  {t.mailSubjectA} <span className="text-primary font-semibold">{t.mailSubjectB}</span>
                 </div>
               </div>
 
               {/* Email body */}
               <div className="p-5 sm:p-6 space-y-3">
                 {t.leads.map((l, i) => (
-                  <div key={i} className="flex items-center gap-3 p-3 rounded-xl border border-border/60 bg-background/50 hover:border-primary/40 transition-colors">
-                    <div className="w-9 h-9 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground text-xs font-semibold flex-shrink-0">{l.ini}</div>
+                  <div key={i} className="flex items-center gap-3 p-3 rounded-lg border border-border bg-background hover:border-primary/40 transition-colors">
+                    <div className="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-semibold flex-shrink-0 tabular-nums">{l.ini}</div>
                     <div className="flex-1 min-w-0">
                       <div className="text-sm font-medium text-foreground truncate">{l.name} · {l.co}</div>
                       <div className="text-[11px] text-muted-foreground truncate">{l.meta}</div>
                     </div>
                     <div className="text-right flex-shrink-0">
                       <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Score</div>
-                      <div className="font-display text-lg font-semibold text-primary tabular-nums">{l.score}</div>
+                      <div className="font-display text-lg font-semibold text-foreground tabular-nums">{l.score}</div>
                     </div>
                   </div>
                 ))}
 
-                <div className="pt-3 mt-2 border-t border-border/40 flex items-center justify-between text-xs">
+                <div className="pt-3 mt-2 border-t border-border flex items-center justify-between text-xs">
                   <span className="text-muted-foreground">{t.mailMore}</span>
                   <span className="text-primary font-semibold">{t.mailCta}</span>
                 </div>
               </div>
             </div>
 
-            {/* Floating: autonomy badge */}
-            <div className="hidden sm:flex absolute -bottom-6 -left-6 items-center gap-3 bg-card rounded-xl shadow-elegant border border-border/60 p-3 pr-5">
-              <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center">
-                <Shield className="w-4 h-4 text-primary" aria-hidden="true" />
+            {/* Data footnote — sober inline, no floating cards */}
+            <div className="mt-6 grid grid-cols-2 gap-4 text-xs">
+              <div className="flex items-start gap-2">
+                <Shield className="w-3.5 h-3.5 text-primary mt-0.5 shrink-0" aria-hidden="true" />
+                <div>
+                  <div className="font-semibold text-foreground">{t.floatA}</div>
+                  <div className="text-muted-foreground">{t.floatB}</div>
+                </div>
               </div>
-              <div>
-                <div className="text-sm font-semibold text-foreground">{t.floatA}</div>
-                <div className="text-xs text-muted-foreground">{t.floatB}</div>
-              </div>
-            </div>
-
-            {/* Floating: pricing badge */}
-            <div className="hidden sm:flex absolute -top-4 -right-4 items-center gap-3 bg-card rounded-xl shadow-elegant border border-border/60 p-3 pr-5">
-              <div>
-                <div className="text-xs text-muted-foreground">{t.floatC}</div>
+              <div className="text-right">
+                <div className="text-muted-foreground">{t.floatC}</div>
                 <div className="font-display text-base font-semibold text-foreground">{t.floatD}</div>
               </div>
             </div>
