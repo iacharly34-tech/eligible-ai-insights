@@ -8,7 +8,7 @@ const Page = () => (
     <Helmet><script type="application/ld+json">{JSON.stringify(jsonLd)}</script></Helmet>
     <LandingCabinetLayout
       seoTitle="Verticale BTP & Artisans — Eligibly pour cabinets EC du bâtiment"
-      seoDescription="Détectez chaque nouvelle SASU/SARL BTP (NAF 41-43). Signaux : capital, qualification RGE, sous-traitance. Besoins autoliquidation TVA, garantie décennale, paie."
+      seoDescription="Détectez chaque nouvelle SASU/SAS/EURL/SARL/SEL BTP (NAF 41-43). Signaux : capital, qualification RGE, sous-traitance. Besoins autoliquidation TVA, garantie décennale, paie."
       canonicalPath="/verticales/btp-artisans"
       eyebrow="Verticale · BTP & Artisans"
       h1a="Cabinets spécialisés bâtiment :"
