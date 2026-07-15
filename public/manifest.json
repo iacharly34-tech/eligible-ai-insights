@@ -1,7 +1,7 @@
 {
   "name": "Eligibly — Détection IA de leads pour cabinets d'expertise comptable",
   "short_name": "Eligibly",
-  "description": "Moteur de détection IA de leads pour cabinets d'expertise comptable. Chaque matin, les SASU/SAS fraîchement immatriculées qualifiées selon votre ICP.",
+  "description": "Moteur de détection IA de leads pour cabinets d'expertise comptable. Chaque matin, les SASU/SAS/EURL/SARL/SEL fraîchement immatriculées qualifiées selon votre ICP.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

@@ -124,20 +124,20 @@ export const SEOHead = ({
         case '/en':
         case '/en/':
           return {
-            title: "Eligibly — 100+ fresh SASU/SAS leads / week for your firm",
-            description: "Every week, receive 100–300 newly registered French SASU/SAS in your area, ICP-scored, with the recommended outreach channel. 14-day free pilot.",
+            title: "Eligibly — 100+ fresh leads / week for your firm",
+            description: "Every week, receive 100–300 newly registered French SASU, SAS, EURL, SARL and SEL in your area, ICP-scored, with the recommended outreach channel. 14-day free pilot.",
             keywords: "accounting firm prospecting, SASU SAS leads, AI for accountants, lead detection, eligibly"
           };
         case '/en/product':
           return {
             title: "Eligibly Product — Detection, scoring & multichannel activation",
-            description: "Daily detection of new SASU/SAS, ICP filters, explained scoring, recommended channel (LinkedIn, email, letter). GDPR-compliant. Delivered to your inbox.",
+            description: "Daily detection of new SASU, SAS, EURL, SARL and SEL, ICP filters, explained scoring, recommended channel (LinkedIn, email, letter). GDPR-compliant. Delivered to your inbox.",
             keywords: "eligibly features, lead detection engine, AI SASU SAS, lead scoring, morning digest"
           };
         case '/en/demo':
           return {
             title: "Eligibly Demo — 10 scored leads on your area, 20 min",
-            description: "Book a 20-min demo: 10 SASU/SAS scored on your area, recommended channel, ready-to-send opener. No card, no commitment.",
+            description: "Book a 20-min demo: 10 SASU/SAS/EURL/SARL/SEL scored on your area, recommended channel, ready-to-send opener. No card, no commitment.",
             keywords: "eligibly demo, accountant lead detection, accounting firm prospecting"
           };
         case '/en/pricing':
@@ -173,7 +173,7 @@ export const SEOHead = ({
         default:
           return {
             title: "Eligibly — AI lead detection for accounting firms",
-            description: "Eligibly's AI detects newly registered French SASU/SAS each day, applies your ICP filters, and delivers your morning digest of PREMIUM leads directly to your inbox.",
+            description: "Eligibly's AI detects newly registered French SASU, SAS, EURL, SARL and SEL each day, applies your ICP filters, and delivers your morning digest of PREMIUM leads directly to your inbox.",
             keywords: "eligibly, accountant lead detection, AI for accounting firms, SASU SAS"
           };
       }
@@ -201,20 +201,20 @@ export const SEOHead = ({
         case '/':
         case '/accueil':
           return {
-            title: "Eligibly — Leads SASU/SAS pour cabinets d'expertise-comptable",
-            description: "Recevez chaque semaine 100 à 300 SASU/SAS fraîchement immatriculées dans votre zone, scorées ICP, avec le canal d'approche recommandé. Pilote 14 j gratuit, sans CB.",
+            title: "Eligibly — Leads SASU/SAS/EURL/SARL/SEL pour cabinets d'expertise-comptable",
+            description: "Recevez chaque semaine 100 à 300 SASU/SAS/EURL/SARL/SEL fraîchement immatriculées dans votre zone, scorées ICP, avec le canal d'approche recommandé. Pilote 14 j gratuit, sans CB.",
             keywords: "prospection cabinet expertise-comptable, leads experts-comptables, SASU SAS immatriculation, nouveaux entrepreneurs, scoring leads, social selling, courrier à en-tête, eligibly"
           };
         case '/produit':
           return {
             title: "Produit Eligibly — Détection, scoring & activation multicanale",
-            description: "Détection quotidienne des nouvelles SASU/SAS, filtres ICP, scoring expliqué, canal d'approche recommandé (LinkedIn, email, appel, courrier). RGPD.",
+            description: "Détection quotidienne des nouvelles SASU/SAS/EURL/SARL/SEL, filtres ICP, scoring expliqué, canal d'approche recommandé (LinkedIn, email, appel, courrier). RGPD.",
             keywords: "fonctionnalités eligibly, détection leads cabinet, scoring priorité, canal d'approche, social selling, courrier cabinet"
           };
         case '/demo':
           return {
             title: "Démo Eligibly — 10 leads scorés sur votre zone, en 20 min",
-            description: "Réservez une démo 20 min : 10 SASU/SAS scorées sur votre zone, canal d'approche recommandé, accroche prête à envoyer. Sans CB, sans engagement.",
+            description: "Réservez une démo 20 min : 10 SASU/SAS/EURL/SARL/SEL scorées sur votre zone, canal d'approche recommandé, accroche prête à envoyer. Sans CB, sans engagement.",
             keywords: "démo eligibly, prospection cabinet expertise-comptable, leads scorés, canal d'approche"
           };
         case '/tarifs':

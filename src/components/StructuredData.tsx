@@ -16,8 +16,8 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "@type": "Organization",
     "name": "Eligibly",
     "description": language === 'en' 
-      ? "Lead detection engine for French accounting firms. Daily qualified leads of newly registered SASU and SAS."
-      : "moteur de détection de leads pour cabinets d'expertise comptable français. Leads quotidiens de SASU et SAS fraîchement immatriculées.",
+      ? "Lead detection engine for French accounting firms. Daily qualified leads of newly registered SASU, SAS, EURL, SARL and SEL."
+      : "moteur de détection de leads pour cabinets d'expertise comptable français. Leads quotidiens de SASU, SAS, EURL, SARL et SEL fraîchement immatriculées.",
     "url": "https://eligibly.ai",
     "logo": "https://eligibly.ai/assets/eligibly-logo-main.png",
     "image": "https://eligibly.ai/assets/eligible-ai-opengraph.png",
@@ -262,7 +262,7 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
         "name": "Qu'est-ce qu'Eligibly ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Eligibly est un moteur de détection de leads pour cabinets d'expertise comptable français. Chaque jour, il consolide les SASU et SAS fraîchement immatriculées, applique des filtres amont qualité (CAC mandaté, procédure collective, holding, serial entrepreneur) et présente au cabinet les leads potentiellement adressables, avec un score expliqué et un plan d'action."
+          "text": "Eligibly est un moteur de détection de leads pour cabinets d'expertise comptable français. Chaque jour, il consolide les SASU, SAS, EURL, SARL et SEL fraîchement immatriculées, applique des filtres amont qualité (CAC mandaté, procédure collective, holding, serial entrepreneur) et présente au cabinet les leads potentiellement adressables, avec un score expliqué et un plan d'action."
         }
       },
       {

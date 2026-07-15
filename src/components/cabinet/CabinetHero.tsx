@@ -8,7 +8,7 @@ const copy = {
     badge: "Moteur de détection pour cabinets d'expertise comptable",
     h1a: "Détectez. Scorez. Signez.",
     h1b: "Vos futurs clients, chaque matin à 7h.",
-    sub: "Eligibly détecte chaque immatriculation SASU/SAS en France, isole celles qui ressemblent à vos meilleurs clients et vous dit quand les contacter — chaque matin, à 7h, dans votre canal de travail.",
+    sub: "Eligibly détecte chaque immatriculation SASU/SAS/EURL/SARL/SEL en France, isole celles qui ressemblent à vos meilleurs clients et vous dit quand les contacter — chaque matin, à 7h, dans votre canal de travail.",
     bullets: [
       "Fenêtre de contact ≤ 90 j — on vous dit quand appeler, pas seulement qui",
       "Sources officielles INPI · Sirene · BODACC + enrichissement dirigeant (Pappers, Kaspr)",
@@ -42,7 +42,7 @@ const copy = {
     badge: "Lead detection engine for accounting firms",
     h1a: "Detect. Score. Win.",
     h1b: "Your future clients, every morning at 7am.",
-    sub: "Eligibly tracks every French SASU/SAS registration, isolates the ones matching your best clients and tells you when to contact them — every morning at 7am, in your channel of choice.",
+    sub: "Eligibly tracks every French SASU/SAS/EURL/SARL/SEL registration, isolates the ones matching your best clients and tells you when to contact them — every morning at 7am, in your channel of choice.",
     bullets: [
       "≤ 90-day contact window — we tell you when to call, not just who",
       "Official sources INPI · Sirene · BODACC + founder enrichment (Pappers, Kaspr)",

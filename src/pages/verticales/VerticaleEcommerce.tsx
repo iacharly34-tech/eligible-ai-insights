@@ -13,7 +13,7 @@ const Page = () => (
     <Helmet><script type="application/ld+json">{JSON.stringify(jsonLd)}</script></Helmet>
     <LandingCabinetLayout
       seoTitle="Verticale E-commerce — Eligibly pour cabinets EC spécialisés DNVB & marketplaces"
-      seoDescription="Ciblez les nouvelles SASU/SAS e-commerce (NAF 47.91B, 47.19B). Signaux : Shopify, WooCommerce, dropshipping. Besoins TVA UE, OSS/IOSS, marketplaces."
+      seoDescription="Ciblez les nouvelles SASU/SAS/EURL/SARL/SEL e-commerce (NAF 47.91B, 47.19B). Signaux : Shopify, WooCommerce, dropshipping. Besoins TVA UE, OSS/IOSS, marketplaces."
       canonicalPath="/verticales/e-commerce"
       eyebrow="Verticale · E-commerce & DNVB"
       h1a="Cabinets spécialisés e-commerce :"
