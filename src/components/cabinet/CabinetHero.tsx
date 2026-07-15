@@ -6,8 +6,8 @@ import { useLang, localizedHref } from "@/hooks/useLang";
 const copy = {
   fr: {
     badge: "Moteur de détection pour cabinets d'expertise comptable",
-    h1a: "Stop buying leads.",
-    h1b: "Produisez les vôtres.",
+    h1a: "Détectez. Scorez. Signez.",
+    h1b: "Vos futurs clients en moins de 90 jours.",
     sub: "Eligibly détecte chaque immatriculation SASU/SAS en France, isole celles qui ressemblent à vos meilleurs clients et vous dit quand les contacter — chaque matin, à 7h, dans votre canal de travail.",
     bullets: [
       "Fenêtre de contact ≤ 90 j — on vous dit quand appeler, pas seulement qui",
@@ -40,8 +40,8 @@ const copy = {
   },
   en: {
     badge: "Lead detection engine for accounting firms",
-    h1a: "Stop buying leads.",
-    h1b: "Produce your own.",
+    h1a: "Detect. Score. Win.",
+    h1b: "Your future clients in under 90 days.",
     sub: "Eligibly tracks every French SASU/SAS registration, isolates the ones matching your best clients and tells you when to contact them — every morning at 7am, in your channel of choice.",
     bullets: [
       "≤ 90-day contact window — we tell you when to call, not just who",

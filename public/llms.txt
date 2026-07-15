@@ -20,7 +20,7 @@ Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets
 - [Tarifs](/tarifs): À partir de 10 € par lead qualifié, devis personnalisé. Démarrage sans CB, résiliable mensuellement.
 - [Ressources](/ressources): Playbooks, calculateurs ROI, guides de prospection pour experts-comptables.
 - [Lexique marketing pour experts-comptables](/blog/lexique-marketing-expert-comptable): Glossaire des termes marketing (ICP, scoring, pipeline, touchpoints, CAC) traduits pour le métier EC.
-- [À propos](/a-propos): Mission, équipe, vision « Stop buying leads ».
+- [À propos](/a-propos): Mission, équipe, vision « Détectez. Scorez. Signez. ».
 - [Demander une démo](/demo): Démonstration personnalisée du moteur de détection.
 
 ## Optional

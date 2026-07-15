@@ -78,10 +78,10 @@ const APropos = () => {
                 {en ? "Our mission" : "Notre mission"}
               </p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-foreground">
-                {en ? (
-                  <>Stop buying leads. <em className="italic text-primary font-medium">Produce</em> them.</>
+              {en ? (
+                  <>The best time to contact a founder is <em className="italic text-primary font-medium">the day they register.</em></>
                 ) : (
-                  <>Arrêtez d'acheter des leads. <em className="italic text-primary font-medium">Produisez-les.</em></>
+                  <>Le meilleur moment de contacter un entrepreneur est <em className="italic text-primary font-medium">le jour de sa création.</em></>
                 )}
               </h2>
             </div>

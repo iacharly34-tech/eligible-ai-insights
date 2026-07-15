@@ -160,7 +160,7 @@ export const SEOHead = ({
           };
         case '/en/about':
           return {
-            title: "About Eligibly — Stop buying leads",
+            title: "About Eligibly — Detect, score and win your future clients",
             description: "Eligibly helps accounting firms produce their own leads, never mutualised. Our mission, team and vision.",
             keywords: "about eligibly, mission, accounting firm team"
           };
@@ -237,7 +237,7 @@ export const SEOHead = ({
           };
         case '/a-propos':
           return {
-            title: "À propos d'Eligibly — Stop buying leads. Produisez les vôtres.",
+            title: "À propos d'Eligibly — Détectez, scorez et signez vos futurs clients",
             description: "Notre mission : que chaque cabinet EC produise ses propres leads, jamais mutualisés. Équipe, vision, valeurs et engagement de moyens.",
             keywords: "à propos eligibly, mission, équipe cabinet expertise-comptable"
           };
