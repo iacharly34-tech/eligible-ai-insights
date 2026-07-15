@@ -75,7 +75,7 @@ export const CORE_FEATURES = [
     key: "detection",
     icon: Database,
     description: "Détection continue des nouvelles entreprises immatriculées en France à partir des données publiques SIRENE et des annonces légales.",
-    shortDesc: "Nouvelles SASU/SAS/EURL/SARL détectées chaque jour",
+    shortDesc: "Nouvelles SASU/SAS/EURL/SARL/SEL détectées chaque jour",
     details: ["SIRENE", "BODACC", "Annonces légales", "Registre du commerce", "Signaux professionnels ouverts"],
     color: "primary",
     stat: COMPANY_STATS.sources,

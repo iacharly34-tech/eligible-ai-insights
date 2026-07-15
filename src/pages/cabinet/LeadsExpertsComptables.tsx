@@ -9,7 +9,7 @@ const softwareJsonLd = {
   applicationSubCategory: "Lead generation software for accounting firms",
   operatingSystem: "Web",
   description:
-    "Logiciel vertical de génération de leads pour cabinets d'expertise comptable : détection quotidienne de SASU/SAS/EURL immatriculées, filtrage ICP, scoring expliqué et canaux d'activation.",
+    "Logiciel vertical de génération de leads pour cabinets d'expertise comptable : détection quotidienne de SASU/SAS/EURL/SARL/SEL immatriculées, filtrage ICP, scoring expliqué et canaux d'activation.",
   url: "https://eligibly.ai/leads-experts-comptables",
   offers: {
     "@type": "Offer",
@@ -23,7 +23,7 @@ const softwareJsonLd = {
     audienceType: "Cabinets d'expertise comptable (3 à 80 collaborateurs)",
   },
   featureList: [
-    "Détection quotidienne SASU/SAS/EURL immatriculées",
+    "Détection quotidienne SASU/SAS/EURL/SARL/SEL immatriculées",
     "Filtres amont : CAC, procédures collectives, holdings pures, serial entrepreneurs",
     "Score 0–100 expliqué (3 raisons clés)",
     "Enrichissement dirigeant (email, LinkedIn)",
@@ -40,7 +40,7 @@ const LeadsExpertsComptables = () => (
     </Helmet>
     <LandingCabinetLayout
       seoTitle="Génération de leads pour experts-comptables — Eligibly"
-      seoDescription="Logiciel de génération de leads vertical pour cabinets d'expertise comptable. Détection SASU/SAS immatriculées, scoring expliqué, canaux d'activation. Sources INPI · Sirene · BODACC. Pilote 14 j sans CB."
+      seoDescription="Logiciel de génération de leads vertical pour cabinets d'expertise comptable. Détection SASU/SAS/EURL/SARL/SEL immatriculées, scoring expliqué, canaux d'activation. Sources INPI · Sirene · BODACC. Pilote 14 j sans CB."
       canonicalPath="/leads-experts-comptables"
       eyebrow="Génération de leads experts-comptables"
       h1a="Génération de leads pour"
@@ -149,7 +149,7 @@ const LeadsExpertsComptables = () => (
         },
       ]}
       faq={[
-        { q: "Eligibly est-il un logiciel de génération de leads pour experts-comptables ?", a: "Oui. Eligibly est un logiciel vertical de génération et de scoring de leads B2B conçu spécifiquement pour les cabinets d'expertise comptable français. Il détecte les SASU/SAS/EURL fraîchement immatriculées, applique vos filtres ICP, score chaque lead et recommande un canal d'approche." },
+        { q: "Eligibly est-il un logiciel de génération de leads pour experts-comptables ?", a: "Oui. Eligibly est un logiciel vertical de génération et de scoring de leads B2B conçu spécifiquement pour les cabinets d'expertise comptable français. Il détecte les SASU/SAS/EURL/SARL/SEL fraîchement immatriculées, applique vos filtres ICP, score chaque lead et recommande un canal d'approche." },
         { q: "Est-ce une alternative à PrimoLead ?", a: "Oui. PrimoLead est un fichier de créateurs d'entreprises filtré par département et forme juridique. Eligibly va plus loin : filtres amont, scoring expliqué, enrichissement dirigeant et recommandation d'accroche. Comparatif détaillé sur /alternatives-primolead-experts-comptables." },
         { q: "D'où viennent les données ?", a: "Registres officiels français : INPI, Sirene (INSEE), BODACC. Enrichissements dirigeant via partenaires contractuels conformes RGPD, sans transfert hors UE." },
         { q: "Vous garantissez des RDV ?", a: "Non. Nous garantissons la qualité de la donnée (remplacement gratuit des leads non conformes). Le taux de conversion en RDV puis en lettre de mission dépend de votre exécution commerciale. Engagement de moyens, pas de résultat." },
