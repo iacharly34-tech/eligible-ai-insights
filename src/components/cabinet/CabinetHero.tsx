@@ -40,7 +40,6 @@ const copy = {
   en: {
     badge: "Lead detection engine for accounting firms",
     h1a: "Detect. Score. Win.",
-    h1b: "Your future clients, every morning at 7am.",
     sub: "Eligibly tracks every French SASU/SAS/EURL/SARL/SEL registration, isolates the ones matching your best clients and tells you when to contact them — every morning at 7am, in your channel of choice.",
     bullets: [
       "≤ 90-day contact window — we tell you when to call, not just who",
