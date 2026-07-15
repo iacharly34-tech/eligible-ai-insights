@@ -58,6 +58,13 @@ const CasUsageIndex = lazy(() => import("./pages/cabinet/CasUsageIndex"));
 const CasUsage8Collabs = lazy(() => import("./pages/cabinet/CasUsage8Collaborateurs"));
 const CasUsageRestauration = lazy(() => import("./pages/cabinet/CasUsageRestauration"));
 const CasUsageFullRemote = lazy(() => import("./pages/cabinet/CasUsageFullRemote"));
+const SalesAssistant = lazy(() => import("./pages/SalesAssistant"));
+const VerticaleSasuTech = lazy(() => import("./pages/verticales/VerticaleSasuTech"));
+const VerticaleEcommerce = lazy(() => import("./pages/verticales/VerticaleEcommerce"));
+const VerticaleRestaurationChr = lazy(() => import("./pages/verticales/VerticaleRestaurationChr"));
+const VerticaleBtpArtisans = lazy(() => import("./pages/verticales/VerticaleBtpArtisans"));
+const VerticaleProfessionsLiberalesSante = lazy(() => import("./pages/verticales/VerticaleProfessionsLiberalesSante"));
+const VerticaleHoldingsGroupes = lazy(() => import("./pages/verticales/VerticaleHoldingsGroupes"));
 
 import { LanguageSync } from "@/components/LanguageSync";
 
@@ -134,6 +141,15 @@ const App = () => (
                 <Route path="/blog/fichier-siret-vs-plan-action-comptable" element={<BlogFichierVsAction />} />
                 <Route path="/blog/moderniser-cabinet-expertise-comptable-ia" element={<BlogModerniserIA />} />
                 <Route path="/simulateur-roi-ia-cabinet" element={<SimulateurIACabinet />} />
+
+                {/* Sales Assistant + Verticales sectorielles */}
+                <Route path="/sales-assistant" element={<SalesAssistant />} />
+                <Route path="/verticales/sasu-tech" element={<VerticaleSasuTech />} />
+                <Route path="/verticales/e-commerce" element={<VerticaleEcommerce />} />
+                <Route path="/verticales/restauration-chr" element={<VerticaleRestaurationChr />} />
+                <Route path="/verticales/btp-artisans" element={<VerticaleBtpArtisans />} />
+                <Route path="/verticales/professions-liberales-sante" element={<VerticaleProfessionsLiberalesSante />} />
+                <Route path="/verticales/holdings-groupes" element={<VerticaleHoldingsGroupes />} />
 
                 {/* EN routes */}
                 <Route path="/en" element={<Index />} />
