@@ -7,7 +7,6 @@ const copy = {
   fr: {
     badge: "Moteur de détection pour cabinets d'expertise comptable",
     h1a: "Détectez. Scorez. Signez.",
-    h1b: "Vos futurs clients, chaque matin à 7h.",
     sub: "Eligibly détecte chaque immatriculation SASU/SAS/EURL/SARL/SEL en France, isole celles qui ressemblent à vos meilleurs clients et vous dit quand les contacter — chaque matin, à 7h, dans votre canal de travail.",
     bullets: [
       "Fenêtre de contact ≤ 90 j — on vous dit quand appeler, pas seulement qui",
