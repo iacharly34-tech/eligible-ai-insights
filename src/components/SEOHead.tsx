@@ -124,9 +124,9 @@ export const SEOHead = ({
         case '/en':
         case '/en/':
           return {
-            title: "Eligibly — 100+ fresh leads / week for your firm",
-            description: "Every week, receive 100–300 newly registered French SASU, SAS, EURL, SARL and SEL in your area, ICP-scored, with the recommended outreach channel. 14-day free pilot.",
-            keywords: "accounting firm prospecting, SASU SAS leads, AI for accountants, lead detection, eligibly"
+            title: "Eligibly — Detect. Score. Win. Future clients in 90 days.",
+            description: "Detect every newly registered French SASU/SAS/EURL/SARL/SEL, score ICP fit and reach out within the ≤ 90-day contact window. Morning digest at 7am. 14-day pilot, no card.",
+            keywords: "accounting firm prospecting, SASU SAS leads, AI for accountants, lead detection, 90 day contact window, eligibly"
           };
         case '/en/product':
           return {
@@ -201,9 +201,9 @@ export const SEOHead = ({
         case '/':
         case '/accueil':
           return {
-            title: "Eligibly — Leads SASU/SAS/EURL/SARL/SEL pour cabinets d'expertise-comptable",
-            description: "Recevez chaque semaine 100 à 300 SASU/SAS/EURL/SARL/SEL fraîchement immatriculées dans votre zone, scorées ICP, avec le canal d'approche recommandé. Pilote 14 j gratuit, sans CB.",
-            keywords: "prospection cabinet expertise-comptable, leads experts-comptables, SASU SAS immatriculation, nouveaux entrepreneurs, scoring leads, social selling, courrier à en-tête, eligibly"
+            title: "Eligibly — Détectez. Scorez. Signez. Vos futurs clients en 90 j.",
+            description: "Détectez chaque SASU/SAS/EURL/SARL/SEL immatriculée en France, scorez-la sur votre ICP, contactez-la dans la fenêtre ≤ 90 jours. Digest livré à 7h chaque matin. Pilote 14 j gratuit, sans CB.",
+            keywords: "détectez scorez signez, prospection cabinet expertise-comptable, fenêtre 90 jours, leads experts-comptables, SASU SAS EURL SARL SEL immatriculation, scoring ICP, digest matinal, eligibly"
           };
         case '/produit':
           return {

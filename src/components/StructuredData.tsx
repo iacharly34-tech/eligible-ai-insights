@@ -15,9 +15,9 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Eligibly",
-    "description": language === 'en' 
-      ? "Lead detection engine for French accounting firms. Daily qualified leads of newly registered SASU, SAS, EURL, SARL and SEL."
-      : "moteur de détection de leads pour cabinets d'expertise comptable français. Leads quotidiens de SASU, SAS, EURL, SARL et SEL fraîchement immatriculées.",
+    "description": language === 'en'
+      ? "Detect. Score. Win. — Eligibly detects every newly registered French SASU/SAS/EURL/SARL/SEL, scores ICP fit and triggers outreach within the ≤ 90-day contact window for accounting firms."
+      : "Détectez. Scorez. Signez. — Eligibly détecte chaque SASU/SAS/EURL/SARL/SEL fraîchement immatriculée, score son adéquation à votre ICP et déclenche le contact dans la fenêtre ≤ 90 jours pour les cabinets d'expertise-comptable.",
     "url": "https://eligibly.ai",
     "logo": "https://eligibly.ai/assets/eligibly-logo-main.png",
     "image": "https://eligibly.ai/assets/eligible-ai-opengraph.png",
@@ -58,8 +58,8 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "name": "Eligibly",
     "alternateName": "Eligibly.ai",
     "description": language === 'en'
-      ? "Lead detection engine for accounting firms — qualified leads of newly registered French companies."
-      : "moteur de détection de leads pour cabinets d'expertise comptable — leads qualifiés de sociétés fraîchement immatriculées en France.",
+      ? "Detect. Score. Win. Future clients in 90 days — daily detection, ICP scoring and outreach plan for accounting firms."
+      : "Détectez. Scorez. Signez. Vos futurs clients en moins de 90 jours — détection quotidienne, scoring ICP et plan d'action pour les cabinets d'expertise-comptable.",
     "url": "https://eligibly.ai",
     "sameAs": [
       "https://www.linkedin.com/company/eligibly",
@@ -114,8 +114,8 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
     "@type": "SoftwareApplication",
     "name": "Eligibly",
     "description": language === 'en'
-      ? "Lead detection engine that delivers daily qualified leads of newly registered French companies to accounting firms, with explained scoring and action plans."
-      : "Moteur de détection de leads qui livre chaque jour aux cabinets d'expertise comptable des leads qualifiés de sociétés fraîchement immatriculées, avec score expliqué et plan d'action.",
+      ? "Detect, score and win. Eligibly delivers a daily digest of newly registered French SASU/SAS/EURL/SARL/SEL to accounting firms, with ICP scoring and an outreach plan within the 90-day contact window."
+      : "Détectez, scorez, signez. Eligibly livre chaque matin aux cabinets d'expertise-comptable un digest des SASU/SAS/EURL/SARL/SEL fraîchement immatriculées, avec scoring ICP et plan d'action dans la fenêtre de 90 jours.",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "url": "https://eligibly.ai",
