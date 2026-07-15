@@ -90,7 +90,7 @@ export const CabinetHero = () => {
             </div>
 
             <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-[3.75rem] leading-[1.05] tracking-tight text-foreground font-semibold">
-              {t.h1a} <span className="text-primary">{t.h1b}</span>
+              {t.h1a}
             </h1>
 
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl">
