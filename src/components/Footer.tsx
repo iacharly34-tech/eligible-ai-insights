@@ -59,8 +59,8 @@ export const Footer = () => {
             
             <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
               {language === 'en'
-                ? 'The lead detection engine for French accounting firms. Newly registered SASU and SAS, AI-filtered and scored, delivered every morning to your preferred channel. €290/month — 14-day free pilot, no credit card.'
-                : "Le moteur de détection de nouveaux clients pour cabinets d’expertise comptable. SASU et SAS fraîchement immatriculées, filtrées et scorées par notre IA, livrées chaque matin dans votre canal de travail. 290 € HT/mois — pilote 14 jours sans carte bancaire."}
+                ? 'The lead detection engine for French accounting firms. Newly registered SASU, SAS, EURL, SARL and SEL, AI-filtered and scored, delivered every morning to your preferred channel. €290/month — 14-day free pilot, no credit card.'
+                : "Le moteur de détection de nouveaux clients pour cabinets d’expertise comptable. SASU, SAS, EURL, SARL et SEL fraîchement immatriculées, filtrées et scorées par notre IA, livrées chaque matin dans votre canal de travail. 290 € HT/mois — pilote 14 jours sans carte bancaire."}
             </p>
 
             <div className="flex items-center gap-6 text-xs text-foreground/70 pt-1">

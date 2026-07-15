@@ -87,9 +87,9 @@ const APropos = () => {
             </div>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>
-                {en
-                  ? "France has 3,000+ new SASU and SAS registered every week. Compta-Online, Companeo and the like resell the same lead to 3 to 5 firms — for 50 to 150 € a piece. Cabinets pay more and more for less and less attention."
-                  : "La France enregistre plus de 3 000 SASU et SAS chaque semaine. Compta-Online, Companeo et consorts revendent le même lead à 3 à 5 cabinets — pour 50 à 150 € pièce. Les cabinets paient de plus en plus pour de moins en moins d'attention."}
+              {en
+                  ? "France has 3,000+ new SASU, SAS, EURL, SARL and SEL registered every week. Compta-Online, Companeo and the like resell the same lead to 3 to 5 firms — for 50 to 150 € a piece. Cabinets pay more and more for less and less attention."
+                  : "La France enregistre plus de 3 000 SASU, SAS, EURL, SARL et SEL chaque semaine. Compta-Online, Companeo et consorts revendent le même lead à 3 à 5 cabinets — pour 50 à 150 € pièce. Les cabinets paient de plus en plus pour de moins en moins d'attention."}
               </p>
               <p>
                 {en

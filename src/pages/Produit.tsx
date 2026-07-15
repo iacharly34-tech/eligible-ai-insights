@@ -23,7 +23,7 @@ const copy = {
     howH2em: "rendez-vous qualifiés",
     howH2b: ".",
     pillars: [
-      { t: "Consolidation des sources", d: "INPI, Sirene, BODACC, RNCS, RNE. Toutes les SASU et SAS françaises fraîchement immatriculées, rafraîchies chaque nuit.", bullets: ["INPI · Sirene · BODACC · RNE", "Rafraîchissement quotidien à minuit", "Dédoublonnage SIREN automatique"] },
+      { t: "Consolidation des sources", d: "INPI, Sirene, BODACC, RNCS, RNE. Toutes les SASU, SAS, EURL, SARL et SEL françaises fraîchement immatriculées, rafraîchies chaque nuit.", bullets: ["INPI · Sirene · BODACC · RNE", "Rafraîchissement quotidien à minuit", "Dédoublonnage SIREN automatique"] },
       { t: "Filtres IA amont", d: "Verticale, capital, forme juridique, zone, dirigeant primo-entrepreneur, présence d'un CAC. Vous décrivez votre cabinet idéal, l'IA fait le reste.", bullets: ["+30 critères paramétrables", "Géo fine : EPCI, IRIS, code postal", "Exclusions sectorielles natives"] },
       { t: "Scoring expliqué", d: "Chaque société reçoit un score 0-100 avec les 3 raisons clés. Pas de boîte noire — votre équipe sait pourquoi un lead est prioritaire.", bullets: ["Score 0-100 par lead", "3 raisons clés affichées", "Modèle propre à votre cabinet"] },
       { t: "Alertes là où vous travaillez", d: "Vos canaux et outils de prédilection. Vous décidez du canal et du rythme. Pas un dashboard de plus.", bullets: ["Email, Slack, Teams, WhatsApp", "Cadence quotidienne ou hebdo", "Webhook vers vos outils internes"] },

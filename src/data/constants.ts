@@ -26,7 +26,7 @@ export const COMPANY_STATS = {
   timeSaved: "10h",
   leadsPerWeek: "150+",
   successRate: "+3x",
-  marketValue: "310 000 SASU/SAS créées en France en 2024",
+  marketValue: "310 000+ sociétés créées en France en 2024",
   weeklyLeads: "150+"
 } as const;
 
@@ -36,7 +36,7 @@ export const STATS_SOURCES = {
     value: "310 000+",
     source: "INSEE — Créations d'entreprises",
     year: "2024",
-    note: "SASU et SAS créées en France en 2024 (hors micro-entreprises)",
+    note: "SASU, SAS, EURL, SARL et SEL créées en France en 2024 (hors micro-entreprises)",
     url: "https://www.insee.fr/fr/statistiques/serie/010537345"
   },
   sources: {
