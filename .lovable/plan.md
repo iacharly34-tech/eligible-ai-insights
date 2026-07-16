@@ -20,7 +20,7 @@ Il faut **enrichir la page pilier** + créer les briques manquantes que les LLM 
 - H1 explicite "Génération de leads pour experts-comptables"
 - Sections : douleurs métier · signaux détectés (SIRENE, INPI, BODACC, Infogreffe) · sources de données · fonctionnement du scoring (feature list) · canaux d'activation · méthodologie RGPD / déontologie OEC · limites assumées
 - FAQ intégrée + `FAQPage` JSON-LD
-- `SoftwareApplication` JSON-LD (name, category, offers 290€, aggregateRating optionnel omis si pas de review)
+- `SoftwareApplication` JSON-LD (name, category, offers from €10 per qualified lead, aggregateRating optionnel omis si pas de review)
 - Meta title/description + canonical via Helmet
 
 ### 2. Page comparative
