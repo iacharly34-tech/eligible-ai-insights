@@ -1,19 +1,13 @@
 import { useEffect, useState } from 'react';
-import { ResourceOptimizer } from '@/utils/resourceOptimizer';
 
 export const useOptimizedAnimation = () => {
   const [shouldAnimate, setShouldAnimate] = useState(true);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
 
   useEffect(() => {
-    const optimizer = ResourceOptimizer.getInstance();
-    const shouldReduce = optimizer.shouldReduceAnimations();
-    
-    setShouldAnimate(!shouldReduce);
-    setIsReducedMotion(shouldReduce);
-
-    // Listen for preference changes
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setIsReducedMotion(mediaQuery.matches);
+    setShouldAnimate(!mediaQuery.matches);
     const handleChange = (e: MediaQueryListEvent) => {
       setIsReducedMotion(e.matches);
       setShouldAnimate(!e.matches);
