@@ -14,7 +14,7 @@ const rows: Row[] = [
   { criteria: "Canaux d'activation", eligibly: "Email · LinkedIn · appel · courrier · Instagram", primolead: "Export fichier", corporama: "Export CRM", societecom: "Fiche à consulter" },
   { criteria: "Exclusivité géographique", eligibly: "Oui — 1 cabinet / lead / semaine / zone", primolead: "Non — fichier mutualisé", corporama: "Non", societecom: "Non" },
   { criteria: "Conformité RGPD (hébergement FR)", eligibly: "Oui", primolead: "Oui", corporama: "Variable", societecom: "Oui" },
-  { criteria: "Tarif", eligibly: "290 € HT / mois tout inclus", primolead: "Sur devis", corporama: "Sur devis", societecom: "Freemium + Premium" },
+  { criteria: "Tarif", eligibly: "À partir de 10 € HT / lead", primolead: "Sur devis", corporama: "Sur devis", societecom: "Freemium + Premium" },
   { criteria: "Essai gratuit sans CB", eligibly: "14 jours + 3 leads test", primolead: "Sur demande", corporama: "Démo", societecom: "Freemium limité" },
 ];
 
@@ -22,7 +22,7 @@ const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
-    { "@type": "Question", name: "Quelle est la meilleure alternative à PrimoLead pour un cabinet d'expertise comptable ?", acceptedAnswer: { "@type": "Answer", text: "Eligibly est l'alternative la plus complète : même fenêtre de fraîcheur (SASU/SAS/EURL/SARL/SEL 0–90 j), mais avec scoring expliqué, enrichissement dirigeant, recommandation d'accroche et exclusivité géographique. 290 €/mois tout inclus, pilote 14 j sans CB." } },
+    { "@type": "Question", name: "Quelle est la meilleure alternative à PrimoLead pour un cabinet d'expertise comptable ?", acceptedAnswer: { "@type": "Answer", text: "Eligibly est l'alternative la plus complète : même fenêtre de fraîcheur (SASU/SAS/EURL/SARL/SEL 0–90 j), mais avec scoring expliqué, enrichissement dirigeant, recommandation d'accroche et exclusivité géographique. À partir de 10 € HT / lead, pilote 14 j sans CB." } },
     { "@type": "Question", name: "Pourquoi comparer PrimoLead à Corporama ou Societe.com ?", acceptedAnswer: { "@type": "Answer", text: "PrimoLead, Corporama et Societe.com sont trois logiques différentes : PrimoLead vend un fichier de créateurs, Corporama un annuaire B2B généraliste, Societe.com un annuaire d'entreprises actives. Aucun ne fait de scoring vertical pour cabinets EC — Eligibly est conçu pour ça." } },
     { "@type": "Question", name: "Peut-on cumuler Eligibly avec PrimoLead ?", acceptedAnswer: { "@type": "Answer", text: "Oui, sans conflit. En pratique la majorité des cabinets qui adoptent Eligibly arrêtent leur abonnement fichier au bout de 2 à 3 mois : les filtres amont, le scoring et l'accroche pré-rédigée absorbent le travail que le fichier obligeait à faire à la main." } },
   ],
@@ -99,13 +99,13 @@ const AlternativesPrimolead = () => (
               <li>Cabinet de 3 à 80 collaborateurs, sans business developer dédié.</li>
               <li>Objectif : structurer un flux régulier de leads créateurs (SASU/SAS/EURL/SARL/SEL) sans y consacrer 5 h/semaine de tri.</li>
               <li>Besoin d'un scoring explicable pour prioriser en équipe.</li>
-              <li>Volonté d'un tarif prévisible (290 €/mois tout inclus) plutôt qu'un devis fichier.</li>
+              <li>Volonté d'un tarif prévisible à partir de 10 € HT / lead plutôt qu'un devis fichier.</li>
             </ul>
           ),
         },
       ]}
       faq={[
-        { q: "Quelle est la meilleure alternative à PrimoLead pour un cabinet d'expertise comptable ?", a: "Eligibly est l'alternative la plus complète : même fenêtre de fraîcheur (SASU/SAS/EURL/SARL/SEL 0–90 j), mais avec scoring expliqué, enrichissement dirigeant, recommandation d'accroche et exclusivité géographique. 290 €/mois tout inclus, pilote 14 j sans CB." },
+        { q: "Quelle est la meilleure alternative à PrimoLead pour un cabinet d'expertise comptable ?", a: "Eligibly est l'alternative la plus complète : même fenêtre de fraîcheur (SASU/SAS/EURL/SARL/SEL 0–90 j), mais avec scoring expliqué, enrichissement dirigeant, recommandation d'accroche et exclusivité géographique. À partir de 10 € HT / lead, pilote 14 j sans CB." },
         { q: "Pourquoi comparer PrimoLead à Corporama ou Societe.com ?", a: "Trois logiques différentes : PrimoLead vend un fichier de créateurs, Corporama un annuaire B2B généraliste, Societe.com un annuaire d'entreprises actives. Aucun n'est vertical cabinet EC — Eligibly est conçu pour ça." },
         { q: "Peut-on cumuler Eligibly avec PrimoLead ?", a: "Oui. En pratique la majorité des cabinets qui adoptent Eligibly arrêtent leur abonnement fichier au bout de 2 à 3 mois." },
         { q: "Existe-t-il d'autres alternatives ?", a: "Oui : Kompass, Manageo, DataInfogreffe, Sirene Data. Elles couvrent le même marché de la donnée B2B mais ne sont pas verticales cabinets EC et n'intègrent pas de scoring ni de recommandation d'approche." },
