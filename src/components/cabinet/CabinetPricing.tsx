@@ -76,7 +76,7 @@ export const CabinetPricing = () => {
               <span className="font-display text-4xl md:text-5xl font-semibold text-foreground italic">{t.priceTitle}</span>
             </div>
             <p className="text-center text-sm text-muted-foreground mb-8">
-              Tarif final sur devis selon votre volume mensuel et la taille de votre cabinet.
+              {t.priceSub}
             </p>
 
             <div className="rounded-lg bg-primary/5 border border-primary/15 p-4 mb-8">
