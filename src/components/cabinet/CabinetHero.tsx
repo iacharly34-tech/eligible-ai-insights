@@ -84,9 +84,9 @@ export const CabinetHero = () => {
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-20 items-center">
           {/* LEFT — copy column */}
           <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.14em] font-semibold text-primary mb-6">
-              <span className="inline-block w-6 h-px bg-primary/60" aria-hidden="true" />
-              {t.badge}
+            <div className="flex items-start gap-2 text-[0.72rem] uppercase tracking-[0.14em] font-semibold text-primary mb-6">
+              <span className="inline-block w-6 h-px bg-primary/60 mt-2 flex-shrink-0" aria-hidden="true" />
+              <span className="leading-snug">{t.badge}</span>
             </div>
 
             <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-[3.75rem] leading-[1.05] tracking-tight text-foreground font-semibold">
