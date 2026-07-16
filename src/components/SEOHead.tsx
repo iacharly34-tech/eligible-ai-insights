@@ -265,7 +265,7 @@ export const SEOHead = ({
     ?? (location.pathname === "/" ? "https://eligibly.ai" : `https://eligibly.ai${location.pathname}`);
   const alternateFrHref = frenchPath === "/" ? "https://eligibly.ai" : `https://eligibly.ai${frenchPath}`;
   const alternateEnHref = `https://eligibly.ai${englishPath}`;
-  const ogImageUrl = "https://eligibly.ai/og-image.png";
+  const ogImageUrl = "https://eligibly.ai/og-image.jpg";
   const isArticlePage = !noindex && location.pathname !== "/" && !location.pathname.startsWith("/en");
 
   useEffect(() => {
