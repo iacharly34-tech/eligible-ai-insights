@@ -13,8 +13,9 @@ const softwareJsonLd = {
   url: "https://eligibly.ai/leads-experts-comptables",
   offers: {
     "@type": "Offer",
-    price: "290",
+    price: "10",
     priceCurrency: "EUR",
+    priceUnit: "per qualified lead",
     availability: "https://schema.org/InStock",
   },
   provider: { "@type": "Organization", name: "Eligibly", url: "https://eligibly.ai" },
@@ -154,7 +155,7 @@ const LeadsExpertsComptables = () => (
         { q: "D'où viennent les données ?", a: "Registres officiels français : INPI, Sirene (INSEE), BODACC. Enrichissements dirigeant via partenaires contractuels conformes RGPD, sans transfert hors UE." },
         { q: "Vous garantissez des RDV ?", a: "Non. Nous garantissons la qualité de la donnée (remplacement gratuit des leads non conformes). Le taux de conversion en RDV puis en lettre de mission dépend de votre exécution commerciale. Engagement de moyens, pas de résultat." },
         { q: "Les leads sont-ils exclusifs à mon cabinet ?", a: "Oui. Un lead livré à votre cabinet n'est pas re-livré à un autre cabinet la même semaine dans votre zone géographique." },
-        { q: "Combien ça coûte ?", a: "290 € HT / mois, tarif unique tout inclus. Pilote de 14 jours gratuit sans carte bancaire. Résiliable mensuellement." },
+        { q: "Combien ça coûte ?", a: "À partir de 10 € HT par lead qualifié, tarif ajusté à votre volume et à la taille de votre cabinet. Pilote de 14 jours gratuit sans carte bancaire. Résiliable mensuellement." },
         { q: "Quels cabinets utilisent Eligibly ?", a: "Cabinets EC de 3 à 80 collaborateurs. Cas d'usage détaillés sur /cabinet/cas-usage." },
       ]}
       related={[

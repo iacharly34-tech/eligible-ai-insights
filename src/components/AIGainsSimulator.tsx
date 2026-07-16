@@ -42,7 +42,7 @@ const fmt = (n: number) =>
   new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(Math.max(0, Math.round(n)));
 
 const COUT_OUTILS_IA_PAR_COLLAB = 480; // €/an — suites production + LLM interne
-const ELIGIBLY_ANNUEL = 290 * 12; // 3 480 €/an
+const ELIGIBLY_ANNUEL = 10 * 12 * 30; // 3 600 €/an — 1 lead/jour au tarif d'ancrage
 const SEMAINES = 45; // semaines travaillées / an
 const ETP_HEURES = 1607;
 
@@ -833,7 +833,7 @@ const MethodologyDialog = ({
           <h4 className="font-semibold text-sm text-foreground mb-2">Coûts intégrés</h4>
           <ul className="text-xs text-muted-foreground space-y-1.5 list-disc pl-5">
             <li>Suite outils IA (production + LLM interne) : <strong className="text-foreground">480 €/collab/an</strong></li>
-            <li>Abonnement Eligibly : <strong className="text-foreground">290 € HT/mois × 12 = 3 480 €/an</strong> (comptabilisé uniquement si l'axe 6 &gt; 0)</li>
+            <li>Abonnement Eligibly : <strong className="text-foreground">à partir de 10 € HT/lead</strong> (coût intégré uniquement si l'axe 6 &gt; 0)</li>
           </ul>
         </section>
 
