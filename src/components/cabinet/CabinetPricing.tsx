@@ -9,9 +9,8 @@ const copy = {
     h2a: "À partir de 10 € le lead qualifié,",
     h2b: "tarif sur devis",
     sub: "Notre tarification démarre à 10 € par lead qualifié et s'ajuste à votre volume, votre zone et la taille de votre cabinet. Nous la finalisons après un échange de cadrage de 20 minutes — pour caler ensemble vos critères ICP et votre cible mensuelle.",
-    plan: "Plan Pro",
     priceTitle: "À partir de 10 € / lead",
-    priceNote: "Tarif final sur devis, adapté à votre volume et à la taille de votre cabinet · démarrage rapide, sans CB · résiliable avec préavis 30 jours",
+    priceSub: "Tarif final sur devis selon votre volume mensuel et la taille de votre cabinet.",
     guaranteeLabel: "Engagement de qualité par filtres amont",
     guarantee: "Aucun lead avec CAC mandaté, procédure collective, cessation, holding pure (10+ sociétés) ou serial entrepreneur (5+ sociétés). Lead non conforme détecté → remplacement gratuit.",
     guaranteeEm: "Pas de garantie de résultats sur le nombre de RDV : votre conversion dépend de votre exécution commerciale.",
@@ -34,9 +33,8 @@ const copy = {
     h2a: "Starting at €10 per qualified lead,",
     h2b: "pricing on quote",
     sub: "Pricing starts at €10 per qualified lead and adjusts to your volume, area and firm size. We finalize it after a 20-minute scoping call — to align on your ICP and monthly target together.",
-    plan: "Pro plan",
     priceTitle: "From €10 / lead",
-    priceNote: "Final quote tailored to your volume and firm size · quick start, no card · 30-day notice to cancel",
+    priceSub: "Final quote based on your monthly volume and firm size.",
     guaranteeLabel: "Upstream quality commitment",
     guarantee: "No lead with a mandated auditor, insolvency proceedings, dissolution, pure holding (10+ companies) or serial founder (5+ companies). Any non-compliant lead is replaced free of charge.",
     guaranteeEm: "No guarantee on the number of meetings: conversion depends on your sales execution.",
@@ -73,15 +71,12 @@ export const CabinetPricing = () => {
         </div>
 
         <div className="max-w-2xl mx-auto rounded-2xl border-2 border-primary bg-card shadow-xl shadow-primary/10 overflow-hidden relative">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[0.65rem] uppercase tracking-[0.16em] font-bold px-4 py-1 rounded-b-md">
-            {t.plan}
-          </div>
-          <div className="p-8 md:p-10 pt-12">
+          <div className="p-8 md:p-10 pt-10">
             <div className="text-center mb-2">
               <span className="font-display text-4xl md:text-5xl font-semibold text-foreground italic">{t.priceTitle}</span>
             </div>
             <p className="text-center text-sm text-muted-foreground mb-8">
-              {t.priceNote}
+              {t.priceSub}
             </p>
 
             <div className="rounded-lg bg-primary/5 border border-primary/15 p-4 mb-8">

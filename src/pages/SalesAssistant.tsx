@@ -34,13 +34,13 @@ const jsonLd = {
   name: "Sales Assistant Eligibly",
   description: "Copilote IA de prospection pour cabinets d'expertise comptable : 4 canaux, 9 besoins détectés, plan d'action prêt à envoyer.",
   brand: { "@type": "Brand", name: "Eligibly" },
-  offers: { "@type": "Offer", price: "290", priceCurrency: "EUR", url: "https://eligibly.ai/sales-assistant" },
+  offers: { "@type": "Offer", price: "10", priceUnit: "per qualified lead", priceCurrency: "EUR", url: "https://eligibly.ai/sales-assistant" },
 };
 
 const SalesAssistant = () => {
   const lang = useLang();
   const seoTitle = "Sales Assistant Eligibly — Copilote IA de prospection pour cabinets EC";
-  const seoDescription = "4 canaux (LinkedIn · Email · Téléphone · Courrier), 9 besoins détectés par lead, plan d'action prêt à envoyer. 290 € HT/mois, pilote 14 jours sans CB.";
+  const seoDescription = "4 canaux (LinkedIn · Email · Téléphone · Courrier), 9 besoins détectés par lead, plan d'action prêt à envoyer. À partir de 10 € HT/lead, pilote 14 jours sans CB.";
   const canonical = "https://eligibly.ai/sales-assistant";
 
   return (
@@ -85,7 +85,7 @@ const SalesAssistant = () => {
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </Button>
                 </SafeLink>
-                <p className="text-xs text-muted-foreground">290 € HT/mois · sans carte bancaire · sans engagement</p>
+                <p className="text-xs text-muted-foreground">À partir de 10 € HT/lead · sans carte bancaire · sans engagement</p>
               </div>
             </div>
           </section>
@@ -199,7 +199,7 @@ const SalesAssistant = () => {
 
           <CTAFooter
             title="Prêt à voir votre premier digest ?"
-            subtitle="Pilote 14 jours, 290 € HT/mois ensuite. Sans carte bancaire, sans engagement."
+            subtitle="Pilote 14 jours. Sans carte bancaire, sans engagement."
             primaryButtonText="Démarrer le pilote"
             secondaryButtonText="Voir la démo produit"
           />

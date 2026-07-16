@@ -142,9 +142,9 @@ export const SEOHead = ({
           };
         case '/en/pricing':
           return {
-            title: "Eligibly Pricing — €290/mo · 14-day free pilot, no card",
-            description: "€290/mo, all inclusive, for your accounting firm. 14-day pilot without a credit card. Monthly cancellation. Leads delivered to your channels.",
-            keywords: "eligibly pricing, accounting firm prospecting price, accountant subscription"
+            title: "Eligibly Pricing — From €10 per qualified lead, custom quote",
+            description: "From €10 per qualified lead, tailored to your accounting firm's volume and size. 14-day pilot without a credit card. Leads delivered to your channels.",
+            keywords: "eligibly pricing, accounting firm prospecting price, from 10 euro per lead"
           };
         case '/en/solutions':
           return {
@@ -219,9 +219,9 @@ export const SEOHead = ({
           };
         case '/tarifs':
           return {
-            title: "Tarifs Eligibly — 290 € HT/mois · Pilote 14 j gratuit, sans CB",
-            description: "290 € HT/mois tout compris pour votre cabinet EC. Pilote 14 jours sans carte bancaire. Résiliation mensuelle. Alertes livrées sur vos canaux.",
-            keywords: "tarifs eligibly, prix prospection cabinet, abonnement expert-comptable, pilote gratuit"
+            title: "Tarifs Eligibly — À partir de 10 € le lead qualifié, devis sur mesure",
+            description: "À partir de 10 € le lead qualifié, ajusté à votre volume et à la taille de votre cabinet EC. Pilote 14 jours sans carte bancaire. Résiliation mensuelle.",
+            keywords: "tarifs eligibly, prix prospection cabinet, 10 euros lead qualifié, devis personnalisé"
           };
         case '/solutions':
           return {

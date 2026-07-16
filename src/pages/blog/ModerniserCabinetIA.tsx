@@ -172,7 +172,7 @@ const ModerniserCabinetIA = () => (
       • Fraîcheur des leads : <strong>24 à 72 h</strong> post-immatriculation vs 6 à 12 mois pour un fichier SIRET annuel.<br />
       • <strong>×3 à ×5</strong> de taux de réponse vs prospection sur fichier brut (retour pilotes Eligibly).<br />
       • CAC observé : <strong>150 à 400 €</strong> / dossier signé, contre 800 à 2 000 € en acquisition Google Ads pour un cabinet EC.<br />
-      • ROI d'un abonnement 290 €/mois : <strong>1 dossier signé</strong> (LTV 6-12 k€) rembourse <strong>18 à 36 mois</strong> d'outil.
+      • ROI d'un abonnement à partir de 10 € HT/lead : <strong>1 dossier signé</strong> (LTV 6-12 k€) rembourse <strong>plusieurs années</strong> d'outil.
     </blockquote>
 
     <h3>L'approche Eligibly</h3>
@@ -213,7 +213,7 @@ const ModerniserCabinetIA = () => (
 
     <h4>Ce que ça coûte, et ce que ça rapporte</h4>
     <p>
-      Tarif : <strong>290 € HT / mois</strong> pour un cabinet, sans engagement, avec un pilote de 14 jours gratuit sans carte bancaire. À comparer à un fichier SIRET (≈ 3 000 € / an, non actualisé) ou au coût d'un chargé d'affaires junior (35 à 45 k€ / an chargé). Un seul dossier client signé grâce à Eligibly (LTV moyenne 6 à 12 k€ sur 3 ans en cabinet EC) rembourse l'abonnement pour <strong>18 à 36 mois</strong>.
+      Tarif : <strong>à partir de 10 € HT par lead qualifié</strong>, ajusté au volume et à la taille du cabinet, avec un pilote de 14 jours gratuit sans carte bancaire. À comparer à un fichier SIRET (≈ 3 000 € / an, non actualisé) ou au coût d'un chargé d'affaires junior (35 à 45 k€ / an chargé). Un seul dossier client signé grâce à Eligibly (LTV moyenne 6 à 12 k€ sur 3 ans en cabinet EC) rembourse l'abonnement sur plusieurs années.
     </p>
     <p>
       Sur les cabinets pilotes, la mesure observée à 90 jours :
@@ -325,8 +325,8 @@ const ModerniserCabinetIA = () => (
     <p>
       Un cabinet EC de 5 à 20 collaborateurs investit en moyenne <strong>400 à 800 € par collaborateur et par an</strong>
       pour la stack IA embarquée dans la production (Cegid, Pennylane, Tiime, MyUnisoft, ACD) et les LLM internes.
-      À cela s'ajoute une couche de <strong>prospection IA verticale</strong> comme Eligibly&nbsp;: 290 € HT/mois pour un
-      cabinet, sans engagement, avec un pilote gratuit de 14 jours sans carte bancaire.
+      À cela s'ajoute une couche de <strong>prospection IA verticale</strong> comme Eligibly&nbsp;: à partir de 10 € HT par lead
+      qualifié, sans engagement, avec un pilote gratuit de 14 jours sans carte bancaire.
     </p>
     <h3>Quel ROI attendre de l'IA en cabinet d'expertise comptable ?</h3>
     <p>
@@ -383,7 +383,7 @@ const ModerniserCabinetIA = () => (
               name: "Combien coûte l'IA pour un cabinet d'expertise comptable ?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Un cabinet EC de 5 à 20 collaborateurs investit en moyenne 400 à 800 € par collaborateur et par an pour la stack IA production (Cegid, Pennylane, Tiime, MyUnisoft, ACD) et les LLM internes. Une couche de prospection IA verticale comme Eligibly coûte 290 € HT/mois pour un cabinet, sans engagement, avec un pilote gratuit de 14 jours sans carte bancaire.",
+                text: "Un cabinet EC de 5 à 20 collaborateurs investit en moyenne 400 à 800 € par collaborateur et par an pour la stack IA production (Cegid, Pennylane, Tiime, MyUnisoft, ACD) et les LLM internes. Une couche de prospection IA verticale comme Eligibly coûte à partir de 10 € HT par lead qualifié, sans engagement, avec un pilote gratuit de 14 jours sans carte bancaire.",
               },
             },
             {

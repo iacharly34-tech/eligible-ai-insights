@@ -95,7 +95,7 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
           "@type": "SiteNavigationElement",
           "position": 4,
           "name": language === 'en' ? "Pricing" : "Tarifs",
-          "description": language === 'en' ? "Pro plan from €10 per qualified lead, custom quote" : "Plan Pro à partir de 10 € le lead, devis personnalisé", 
+          "description": language === 'en' ? "From €10 per qualified lead, custom quote" : "À partir de 10 € le lead qualifié, devis personnalisé",
           "url": `https://eligibly.ai${language === 'en' ? '/en/pricing' : '/tarifs'}`
         },
         {
