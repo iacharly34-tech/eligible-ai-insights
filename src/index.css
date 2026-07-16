@@ -216,6 +216,11 @@ All colors MUST be HSL.
     overflow-x: hidden;
   }
 
+  /* Prevent long unbreakable tokens (SASU/SAS/EURL/SARL/SEL, URLs) from overflowing on mobile */
+  p, li, span, h1, h2, h3, h4, h5, h6, a, div {
+    overflow-wrap: anywhere;
+  }
+
   @media (min-width: 768px) {
     body {
       font-size: 18px;

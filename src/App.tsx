@@ -1,14 +1,11 @@
-import React, { Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { CriticalResourcePreloader, PerformanceMonitor } from "./components/PerformanceOptimizer";
-import { WebVitalsMonitor } from "./components/WebVitalsMonitor";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { SkipNavigation } from "@/components/SkipNavigation";
-import { WCAGAccessibilityComponent } from "@/components/WCAGAccessibilityComponent";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { StructuredData } from "@/components/StructuredData";
 import { SitelinksStructuredData } from "@/components/SitelinksStructuredData";
@@ -16,12 +13,8 @@ import { SEOHead } from "@/components/SEOHead";
 import { HighContrastToggle, FontSizeAdjuster, FocusEnhancer, ScreenReaderAnnouncer, KeyboardNavigationEnhancer } from "@/components/AccessibilityEnhancer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { CookieConsent } from "@/components/CookieConsent";
-import { LazyLoadEnhancer } from "@/components/LazyLoadEnhancer";
 import { Header } from "@/components/Header";
-import { WebVitalsReporter } from "@/components/WebVitalsReporter";
 import { FormUXEnhancer } from "@/components/FormUXEnhancer";
-import { SpaServerConfig } from "@/components/SpaServerConfig";
-import { ResourceOptimizer } from "@/utils/resourceOptimizer";
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Produit = lazy(() => import("./pages/Produit"));
@@ -68,27 +61,18 @@ const VerticaleHoldingsGroupes = lazy(() => import("./pages/verticales/Verticale
 
 import { LanguageSync } from "@/components/LanguageSync";
 
-const queryClient = new QueryClient();
-
-// Initialize resource optimizer
-if (typeof window !== 'undefined') {
-  const optimizer = ResourceOptimizer.getInstance();
-  optimizer.preloadCriticalResources();
-}
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: { staleTime: 60_000, refetchOnWindowFocus: false, retry: 1 },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ErrorBoundary>
       <LanguageProvider>
         <TooltipProvider>
-          <CriticalResourcePreloader />
-          <PerformanceMonitor />
-          <WebVitalsMonitor />
-          <WebVitalsReporter />
-          <LazyLoadEnhancer />
           <FormUXEnhancer />
-          <SpaServerConfig />
-          <WCAGAccessibilityComponent />
           <SkipNavigation />
           <Toaster />
           <Sonner />

@@ -15,33 +15,14 @@
     <!-- Google Search Console verification (lovable preview domain) -->
     <meta name="google-site-verification" content="DU6-5ONzXwKsCKMVInRm8TLzCOg4mtxPbD4Lz8YTjjM" />
     
-    <!-- Performance optimizations -->
+    <!-- Fonts: preconnect + non-blocking stylesheet -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Preload the LCP display font to speed up above-the-fold headline paint -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"></noscript>
     <style>
-      body { 
-        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      }
-      h1, h2, h3, h4, h5, h6, .font-display {
-        font-family: 'Sora', 'Manrope', sans-serif;
-        letter-spacing: -0.015em;
-      }
-    </style>
-    
-    <!-- Resource hints -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel="preconnect" href="//api.lovable.dev">
-    
-    <!-- Critical CSS for faster LCP -->
-    <style>
-      /* Critical above-the-fold styles */
-      body { margin: 0; font-family: Manrope, system-ui, sans-serif; }
-      .hero-section { min-height: 100vh; }
-      .nav-header { position: fixed; top: 0; width: 100%; z-index: 50; }
+      body { margin: 0; font-family: Manrope, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; }
+      h1, h2, h3, h4, h5, h6, .font-display { font-family: Sora, Manrope, system-ui, sans-serif; letter-spacing: -0.015em; }
     </style>
     <title>Eligibly — Détectez. Scorez. Signez. Vos futurs clients en 90 j.</title>
     <meta name="description" content="Détectez chaque SASU/SAS/EURL/SARL/SEL immatriculée, scorez-la sur votre ICP, contactez-la dans la fenêtre ≤ 90 jours. Digest livré chaque matin à 7h. Pilote 14 j sans CB." />
@@ -65,7 +46,7 @@
     <meta property="og:title" content="Eligibly — Détectez. Scorez. Signez. Vos futurs clients en 90 j." />
     <meta property="og:description" content="Détection quotidienne des SASU/SAS/EURL/SARL/SEL, scoring ICP expliqué et plan d'action dans la fenêtre ≤ 90 jours. Digest matinal à 7h. Pilote 14 j sans CB." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://eligibly.ai/og-image.png" />
+    <meta property="og:image" content="https://eligibly.ai/og-image.jpg" />
     <meta property="og:url" content="https://eligibly.ai" />
     <meta property="og:site_name" content="Eligibly" />
 
@@ -74,7 +55,7 @@
     <meta name="twitter:description" content="Détection quotidienne des SASU/SAS/EURL/SARL/SEL, scoring ICP expliqué et plan d'action dans la fenêtre ≤ 90 jours. Digest matinal à 7h. Pilote 14 j sans CB." />
     <meta name="twitter:site" content="@eligibly_ai" />
     <meta name="twitter:creator" content="@eligibly_ai" />
-    <meta name="twitter:image" content="https://eligibly.ai/og-image.png" />
+    <meta name="twitter:image" content="https://eligibly.ai/og-image.jpg" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://eligibly.ai" />
@@ -132,11 +113,6 @@
     ]
   }
   </script>
-  
-  <!-- Preload critical resources -->
-  <link rel="modulepreload" href="/src/main.tsx">
-  <link rel="preload" href="/src/index.css" as="style">
-  <link rel="preload" href="/src/components/Hero.tsx" as="script">
   
   <!-- Service Worker -->
   <script src="/scripts/sw-register.js" defer></script>

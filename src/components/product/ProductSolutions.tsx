@@ -5,7 +5,6 @@ import { SafeLink } from "@/components/SafeLink";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight, CheckCircle, Building2, Users, Briefcase } from "lucide-react";
 import aiAssistantMain from "@/assets/ai-assistant-main.jpg";
-import { OptimizedImageWithSources } from "@/components/PerformanceOptimizer";
 
 export const ProductSolutions = () => {
   const { t, language } = useLanguage();
@@ -120,10 +119,12 @@ export const ProductSolutions = () => {
               
               <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
                 <div className="relative">
-                  <OptimizedImageWithSources
+                  <img
                     src={aiAssistantMain}
                     alt={`Solution ${solution.title}`}
                     className="w-full h-auto rounded-2xl shadow-2xl"
+                    loading="lazy"
+                    decoding="async"
                     sizes="(min-width: 1024px) 560px, 100vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl"></div>
