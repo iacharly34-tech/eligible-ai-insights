@@ -73,15 +73,12 @@ export const CabinetPricing = () => {
         </div>
 
         <div className="max-w-2xl mx-auto rounded-2xl border-2 border-primary bg-card shadow-xl shadow-primary/10 overflow-hidden relative">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[0.65rem] uppercase tracking-[0.16em] font-bold px-4 py-1 rounded-b-md">
-            {t.plan}
-          </div>
-          <div className="p-8 md:p-10 pt-12">
+          <div className="p-8 md:p-10 pt-10">
             <div className="text-center mb-2">
               <span className="font-display text-4xl md:text-5xl font-semibold text-foreground italic">{t.priceTitle}</span>
             </div>
             <p className="text-center text-sm text-muted-foreground mb-8">
-              {t.priceNote}
+              Tarif final sur devis selon votre volume mensuel et la taille de votre cabinet.
             </p>
 
             <div className="rounded-lg bg-primary/5 border border-primary/15 p-4 mb-8">
