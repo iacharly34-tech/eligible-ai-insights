@@ -36,7 +36,7 @@
       {
         "name": "get_pricing",
         "title": "Get Eligibly pricing",
-        "description": "Return Eligibly's current public pricing for accounting firms (single plan + free pilot).",
+        "description": "Return Eligibly's current public pricing for accounting firms (per-lead model + free pilot).",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
