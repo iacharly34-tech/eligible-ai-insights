@@ -18,20 +18,25 @@ export const Footer = () => {
       ],
     },
     {
-      title: language === 'en' ? 'Data sources' : 'Sources de données',
+      title: language === 'en' ? 'Verticals' : 'Secteurs',
       links: [
-        { name: 'INPI / RNE', href: 'https://data.inpi.fr/' },
-        { name: 'Sirene · INSEE', href: 'https://www.sirene.fr/' },
-        { name: 'BODACC', href: 'https://www.bodacc.fr/' },
+        { name: language === 'en' ? 'SASU & tech founders' : 'SASU tech', href: '/verticales/sasu-tech' },
+        { name: 'E-commerce', href: '/verticales/e-commerce' },
+        { name: language === 'en' ? 'Restaurants & hospitality' : 'Restauration & CHR', href: '/verticales/restauration-chr' },
+        { name: language === 'en' ? 'Construction & trades' : 'BTP & artisans', href: '/verticales/btp-artisans' },
+        { name: language === 'en' ? 'Healthcare professionals' : 'Professions libérales santé', href: '/verticales/professions-liberales-sante' },
+        { name: language === 'en' ? 'Holdings & groups' : 'Holdings & groupes', href: '/verticales/holdings-groupes' },
       ],
     },
     {
       title: language === 'en' ? 'Who it’s for' : 'Pour qui',
       links: [
-        { name: language === 'en' ? 'Solo & micro firms' : 'Cabinets solo & micro (1-4)', href: '/#personas' },
-        { name: language === 'en' ? 'Growing firms (5-30)' : 'Cabinets en croissance (5-30)', href: '/#personas' },
-        { name: language === 'en' ? 'Verticalized firms' : 'Cabinets verticalisés', href: '/solutions' },
-        { name: language === 'en' ? 'Large firms & networks' : 'Grands cabinets & réseaux', href: '/solutions' },
+        { name: language === 'en' ? 'Lead generation for accountants' : 'Génération de leads experts-comptables', href: '/leads-experts-comptables' },
+        { name: language === 'en' ? 'PrimoLead alternative' : 'Alternatives à PrimoLead', href: '/alternatives-primolead-experts-comptables' },
+        { name: language === 'en' ? 'Sales Assistant' : 'Sales Assistant', href: '/sales-assistant' },
+        { name: language === 'en' ? 'ROI simulator' : 'Simulateur ROI IA', href: '/simulateur-roi-ia-cabinet' },
+        { name: language === 'en' ? 'Use cases' : 'Cas d’usage cabinets', href: '/cabinet/cas-usage' },
+        { name: language === 'en' ? 'Glossary' : 'Glossaire cabinet', href: '/cabinet/glossaire' },
       ],
     },
     {
