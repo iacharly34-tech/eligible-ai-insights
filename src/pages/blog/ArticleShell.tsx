@@ -62,6 +62,16 @@ export const ArticleShell = ({
     citation: sources.map((s) => ({ "@type": "CreativeWork", name: s.label, url: s.url })),
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://eligibly.ai/" },
+      { "@type": "ListItem", position: 2, name: "Ressources", item: "https://eligibly.ai/ressources" },
+      { "@type": "ListItem", position: 3, name: title, item: `https://eligibly.ai${url}` },
+    ],
+  };
+
   return (
     <>
       <SEOHead />
@@ -80,6 +90,7 @@ export const ArticleShell = ({
         <meta name="twitter:description" content={description} />
       </Helmet>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
     <div className="min-h-screen bg-background">
       <Header />
       <MobileCTABar />
