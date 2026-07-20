@@ -60,6 +60,26 @@ export const LandingCabinetLayout = ({
     })),
   } : null;
 
+  // BreadcrumbList JSON-LD dérivé du canonicalPath — améliore le rich result et le CTR.
+  const humanize = (seg: string) =>
+    decodeURIComponent(seg)
+      .replace(/-/g, " ")
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+  const segments = canonicalPath.split("/").filter(Boolean);
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://eligibly.ai/" },
+      ...segments.map((seg, i) => ({
+        "@type": "ListItem",
+        position: i + 2,
+        name: humanize(seg),
+        item: `https://eligibly.ai/${segments.slice(0, i + 1).join("/")}`,
+      })),
+    ],
+  };
+
   return (
     <>
       <Helmet>
@@ -76,6 +96,7 @@ export const LandingCabinetLayout = ({
         {faqJsonLd && (
           <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
         )}
+        <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
