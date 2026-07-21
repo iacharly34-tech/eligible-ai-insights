@@ -64,6 +64,9 @@ const entries: Entry[] = [
   { path: "/blog/playbook-prospection-cabinet-ec-2026", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/lexique-marketing-expert-comptable", changefreq: "monthly", priority: "0.6" },
   { path: "/blog/fichier-siret-vs-plan-action-comptable", changefreq: "monthly", priority: "0.7" },
+  { path: "/blog/barometre-immatriculations-juillet-2026", changefreq: "monthly", priority: "0.8" },
+  { path: "/blog/moderniser-cabinet-etat-lieux-2026", changefreq: "monthly", priority: "0.8" },
+  { path: "/blog/5-leviers-croissance-cabinet-expertise-comptable", changefreq: "monthly", priority: "0.7" },
 ];
 
 function toXml(items: Entry[]) {

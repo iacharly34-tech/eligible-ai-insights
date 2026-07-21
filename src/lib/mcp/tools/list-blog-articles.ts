@@ -9,6 +9,9 @@ const ARTICLES = [
   { slug: "observatoire-sasu-sas-juin-2026", title: "Observatoire SASU/SAS — juin 2026", url: "https://eligibly.ai/blog/observatoire-sasu-sas-juin-2026" },
   { slug: "playbook-prospection-cabinet-ec-2026", title: "Playbook prospection cabinet EC 2026", url: "https://eligibly.ai/blog/playbook-prospection-cabinet-ec-2026" },
   { slug: "lexique-marketing-expert-comptable", title: "Lexique marketing expert-comptable", url: "https://eligibly.ai/blog/lexique-marketing-expert-comptable" },
+  { slug: "barometre-immatriculations-juillet-2026", title: "Baromètre des nouvelles sociétés commerciales — Juillet 2026", url: "https://eligibly.ai/blog/barometre-immatriculations-juillet-2026" },
+  { slug: "moderniser-cabinet-etat-lieux-2026", title: "Le Signal N°1 — Moderniser son cabinet : état des lieux 2026", url: "https://eligibly.ai/blog/moderniser-cabinet-etat-lieux-2026" },
+  { slug: "5-leviers-croissance-cabinet-expertise-comptable", title: "5 leviers pour provoquer la croissance d'un cabinet", url: "https://eligibly.ai/blog/5-leviers-croissance-cabinet-expertise-comptable" },
 ];
 
 export default defineTool({
