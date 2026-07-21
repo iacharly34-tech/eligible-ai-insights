@@ -15,7 +15,10 @@ var ARTICLES = [
   { slug: "barometre-acquisition-cabinet-ec-2026", title: "Barom\xE8tre acquisition cabinet EC 2026", url: "https://eligibly.ai/blog/barometre-acquisition-cabinet-ec-2026" },
   { slug: "observatoire-sasu-sas-juin-2026", title: "Observatoire SASU/SAS \u2014 juin 2026", url: "https://eligibly.ai/blog/observatoire-sasu-sas-juin-2026" },
   { slug: "playbook-prospection-cabinet-ec-2026", title: "Playbook prospection cabinet EC 2026", url: "https://eligibly.ai/blog/playbook-prospection-cabinet-ec-2026" },
-  { slug: "lexique-marketing-expert-comptable", title: "Lexique marketing expert-comptable", url: "https://eligibly.ai/blog/lexique-marketing-expert-comptable" }
+  { slug: "lexique-marketing-expert-comptable", title: "Lexique marketing expert-comptable", url: "https://eligibly.ai/blog/lexique-marketing-expert-comptable" },
+  { slug: "barometre-immatriculations-juillet-2026", title: "Barom\xE8tre des nouvelles soci\xE9t\xE9s commerciales \u2014 Juillet 2026", url: "https://eligibly.ai/blog/barometre-immatriculations-juillet-2026" },
+  { slug: "moderniser-cabinet-etat-lieux-2026", title: "Le Signal N\xB01 \u2014 Moderniser son cabinet : \xE9tat des lieux 2026", url: "https://eligibly.ai/blog/moderniser-cabinet-etat-lieux-2026" },
+  { slug: "5-leviers-croissance-cabinet-expertise-comptable", title: "5 leviers pour provoquer la croissance d'un cabinet", url: "https://eligibly.ai/blog/5-leviers-croissance-cabinet-expertise-comptable" }
 ];
 var list_blog_articles_default = defineTool({
   name: "list_blog_articles",
