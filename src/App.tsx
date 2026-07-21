@@ -40,6 +40,9 @@ const BlogPlaybook = lazy(() => import("./pages/blog/PlaybookProspectionCabinet"
 const BlogLexique = lazy(() => import("./pages/blog/LexiqueMarketingExpertComptable"));
 const BlogFichierVsAction = lazy(() => import("./pages/blog/FichierSiretVsPlanAction"));
 const BlogModerniserIA = lazy(() => import("./pages/blog/ModerniserCabinetIA"));
+const BlogBarometreJuillet2026 = lazy(() => import("./pages/blog/BarometreImmatriculationsJuillet2026"));
+const BlogSignal1EtatLieux = lazy(() => import("./pages/blog/ModerniserCabinetEtatLieux2026"));
+const Blog5Leviers = lazy(() => import("./pages/blog/CinqLeviersCroissanceCabinet"));
 const SimulateurIACabinet = lazy(() => import("./pages/SimulateurIACabinet"));
 const LeadsExpertsComptables = lazy(() => import("./pages/cabinet/LeadsExpertsComptables"));
 const ProspectionCabinetComptable = lazy(() => import("./pages/cabinet/ProspectionCabinetComptable"));
@@ -124,6 +127,9 @@ const App = () => (
                 <Route path="/blog/lexique-marketing-expert-comptable" element={<BlogLexique />} />
                 <Route path="/blog/fichier-siret-vs-plan-action-comptable" element={<BlogFichierVsAction />} />
                 <Route path="/blog/moderniser-cabinet-expertise-comptable-ia" element={<BlogModerniserIA />} />
+                <Route path="/blog/barometre-immatriculations-juillet-2026" element={<BlogBarometreJuillet2026 />} />
+                <Route path="/blog/moderniser-cabinet-etat-lieux-2026" element={<BlogSignal1EtatLieux />} />
+                <Route path="/blog/5-leviers-croissance-cabinet-expertise-comptable" element={<Blog5Leviers />} />
                 <Route path="/simulateur-roi-ia-cabinet" element={<SimulateurIACabinet />} />
 
                 {/* Sales Assistant + Verticales sectorielles */}
