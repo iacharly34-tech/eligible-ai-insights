@@ -8,7 +8,7 @@ import { CTAFooter } from "@/components/CTAFooter";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SafeLink } from "@/components/SafeLink";
-import { useLang, localizedHref } from "@/hooks/useLang";
+import { useLang, localizedHref, alternateHref } from "@/hooks/useLang";
 
 export interface LandingCabinetProps {
   eyebrow: string;
@@ -50,6 +50,15 @@ export const LandingCabinetLayout = ({
 }: LandingCabinetProps) => {
   const lang = useLang();
   const canonical = `https://eligibly.ai${canonicalPath}`;
+  const alt = alternateHref(canonicalPath);
+  const altUrl = alt ? `https://eligibly.ai${alt}` : null;
+  const isEn = lang === "en";
+  const homeLabel = isEn ? "Home" : "Accueil";
+  const readAlsoLabel = isEn ? "Read next" : "À lire aussi";
+  const ctaFooterTitle = isEn ? "Ready to receive your first leads?" : "Prêt à recevoir vos premiers leads ?";
+  const ctaFooterSubtitle = isEn ? "3 test leads delivered within 48 h — no commitment, no card required." : "3 leads test livrés sous 48 h, sans engagement ni carte bancaire.";
+  const ctaFooterPrimary = isEn ? "Request my 3 leads" : "Demander mes 3 leads";
+  const ctaFooterSecondary = isEn ? "See product demo" : "Voir la démo produit";
   const faqJsonLd = faq && faq.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -70,7 +79,7 @@ export const LandingCabinetLayout = ({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://eligibly.ai/" },
+      { "@type": "ListItem", position: 1, name: homeLabel, item: `https://eligibly.ai${isEn ? "/en" : "/"}` },
       ...segments.map((seg, i) => ({
         "@type": "ListItem",
         position: i + 2,
@@ -86,9 +95,14 @@ export const LandingCabinetLayout = ({
         <title>{seoTitle}</title>
         <meta name="description" content={seoDescription} />
         <link rel="canonical" href={canonical} />
+        <html lang={isEn ? "en-GB" : "fr-FR"} />
+        {altUrl && <link rel="alternate" hrefLang={isEn ? "fr-FR" : "en-GB"} href={altUrl} />}
+        <link rel="alternate" hrefLang={isEn ? "en-GB" : "fr-FR"} href={canonical} />
+        {altUrl && <link rel="alternate" hrefLang="x-default" href={isEn ? altUrl : canonical} />}
         <meta property="og:title" content={seoTitle} />
         <meta property="og:description" content={seoDescription} />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content={isEn ? "en_GB" : "fr_FR"} />
         <meta property="og:url" content={canonical} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={seoTitle} />
@@ -186,7 +200,7 @@ export const LandingCabinetLayout = ({
             <section className="py-14">
               <div className="container mx-auto px-4 max-w-4xl">
                 <div className="text-[0.7rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">
-                  À lire aussi
+                  {readAlsoLabel}
                 </div>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {related.map((r) => (
@@ -200,10 +214,10 @@ export const LandingCabinetLayout = ({
           )}
 
           <CTAFooter
-            title="Prêt à recevoir vos premiers leads ?"
-            subtitle="3 leads test livrés sous 48 h, sans engagement ni carte bancaire."
-            primaryButtonText="Demander mes 3 leads"
-            secondaryButtonText="Voir la démo produit"
+            title={ctaFooterTitle}
+            subtitle={ctaFooterSubtitle}
+            primaryButtonText={ctaFooterPrimary}
+            secondaryButtonText={ctaFooterSecondary}
           />
         </main>
 
