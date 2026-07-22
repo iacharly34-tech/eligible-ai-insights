@@ -9,6 +9,7 @@ import { SafeLink } from "@/components/SafeLink";
 import { ArrowRight, ArrowLeft, BookOpen, Sparkles } from "lucide-react";
 import { ArticleRecommendations } from "@/components/ArticleRecommendations";
 import { ContextualLinks } from "@/components/ContextualLinks";
+import { alternateHref } from "@/hooks/useLang";
 
 interface Source {
   label: string;
@@ -28,6 +29,7 @@ interface ArticleShellProps {
   sources: Source[];
   children: ReactNode;
   related?: { title: string; href: string }[];
+  lang?: "fr" | "en";
 }
 
 export const ArticleShell = ({
@@ -36,14 +38,32 @@ export const ArticleShell = ({
   subtitle,
   date,
   readTime,
-  author = "Équipe Eligibly",
+  author,
   url,
   description,
   category,
   sources,
   children,
   related = [],
+  lang = "fr",
 }: ArticleShellProps) => {
+  const isEn = lang === "en";
+  const resolvedAuthor = author ?? (isEn ? "Eligibly team" : "Équipe Eligibly");
+  const backLabel = isEn ? "Back to resources" : "Retour aux ressources";
+  const backHref = isEn ? "/en/resources" : "/ressources";
+  const sourcesLabel = isEn ? "Sources & references" : "Sources & références";
+  const ctaTitle = isEn ? "From reading to action." : "Passez de la lecture à l'action.";
+  const ctaBody = isEn
+    ? "Every morning, receive the newly-registered UK Ltd companies matching your ICP — filtered, scored, with a ready-to-send opener. From £10 per qualified lead, no card required."
+    : "Recevez chaque matin les SASU & SAS fraîchement immatriculées correspondant à votre ICP, filtrées, scorées et avec une recommandation d'accroche prête à envoyer. À partir de 10 € le lead qualifié, sans CB.";
+  const ctaButton = isEn ? "Get my first free lead" : "Recevoir mon premier lead gratuit";
+  const ctaHref = isEn ? "/en/demo" : "/demo";
+  const relatedLabel = isEn ? "Read next" : "À lire ensuite";
+  const readLabel = isEn ? "Read" : "Lire";
+  const alt = alternateHref(url);
+  const altUrl = alt ? `https://eligibly.ai${alt}` : null;
+  const homeCrumb = isEn ? "Home" : "Accueil";
+  const resourcesCrumb = isEn ? "Resources" : "Ressources";
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -52,6 +72,7 @@ export const ArticleShell = ({
     datePublished: date,
     dateModified: date,
     author: { "@type": "Organization", name: "Eligibly" },
+    inLanguage: isEn ? "en-GB" : "fr-FR",
     publisher: {
       "@type": "Organization",
       name: "Eligibly",
@@ -66,8 +87,8 @@ export const ArticleShell = ({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://eligibly.ai/" },
-      { "@type": "ListItem", position: 2, name: "Ressources", item: "https://eligibly.ai/ressources" },
+      { "@type": "ListItem", position: 1, name: homeCrumb, item: `https://eligibly.ai${isEn ? "/en" : "/"}` },
+      { "@type": "ListItem", position: 2, name: resourcesCrumb, item: `https://eligibly.ai${isEn ? "/en/resources" : "/ressources"}` },
       { "@type": "ListItem", position: 3, name: title, item: `https://eligibly.ai${url}` },
     ],
   };
@@ -79,13 +100,18 @@ export const ArticleShell = ({
         <title>{`${title} — Eligibly`}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={`https://eligibly.ai${url}`} />
+        <html lang={isEn ? "en-GB" : "fr-FR"} />
+        {altUrl && <link rel="alternate" hrefLang={isEn ? "fr-FR" : "en-GB"} href={altUrl} />}
+        <link rel="alternate" hrefLang={isEn ? "en-GB" : "fr-FR"} href={`https://eligibly.ai${url}`} />
+        {altUrl && <link rel="alternate" hrefLang="x-default" href={isEn ? altUrl : `https://eligibly.ai${url}`} />}
         <meta property="og:type" content="article" />
+        <meta property="og:locale" content={isEn ? "en_GB" : "fr_FR"} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={`https://eligibly.ai${url}`} />
         <meta property="article:published_time" content={date} />
         <meta property="article:section" content={category} />
-        <meta property="article:author" content={author} />
+        <meta property="article:author" content={resolvedAuthor} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
       </Helmet>
@@ -96,8 +122,8 @@ export const ArticleShell = ({
       <MobileCTABar />
       <main className="pt-32 pb-20">
         <article className="container mx-auto max-w-6xl px-4">
-          <SafeLink to="/ressources" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8 max-w-3xl">
-            <ArrowLeft className="w-4 h-4 mr-1.5" /> Retour aux ressources
+          <SafeLink to={backHref} className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8 max-w-3xl">
+            <ArrowLeft className="w-4 h-4 mr-1.5" /> {backLabel}
           </SafeLink>
 
             <header className="mb-10 max-w-3xl mx-auto">
@@ -109,9 +135,9 @@ export const ArticleShell = ({
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">{subtitle}</p>
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground border-t border-border pt-4">
-                <span>{author}</span>
+                <span>{resolvedAuthor}</span>
                 <span>·</span>
-                <span>{new Date(date).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}</span>
+                <span>{new Date(date).toLocaleDateString(isEn ? "en-GB" : "fr-FR", { day: "numeric", month: "long", year: "numeric" })}</span>
                 <span>·</span>
                 <span>{readTime}</span>
               </div>
@@ -130,7 +156,7 @@ export const ArticleShell = ({
 
             {sources.length > 0 && (
               <section className="rounded-2xl border border-border bg-card/40 p-6 mb-12">
-                <h2 className="font-display text-lg font-semibold mb-3">Sources &amp; références</h2>
+                <h2 className="font-display text-lg font-semibold mb-3">{sourcesLabel}</h2>
                 <ol className="list-decimal pl-5 space-y-2 text-sm text-muted-foreground">
                   {sources.map((s, i) => (
                     <li key={i}>
@@ -146,14 +172,14 @@ export const ArticleShell = ({
             <section className="rounded-2xl bg-gradient-to-br from-primary/10 via-accent/5 to-transparent border border-primary/20 p-8 md:p-10 text-center mb-12">
               <Sparkles className="w-7 h-7 text-primary mx-auto mb-4" />
               <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight mb-3">
-                Passez de la lecture à <em className="italic text-primary">l'action</em>.
+                {ctaTitle}
               </h2>
               <p className="text-muted-foreground max-w-lg mx-auto mb-6">
-                Recevez chaque matin les SASU &amp; SAS fraîchement immatriculées correspondant à votre ICP, filtrées, scorées et avec une recommandation d'accroche prête à envoyer. À partir de 10 € le lead qualifié, sans CB.
+                {ctaBody}
               </p>
-              <SafeLink to="/demo">
+              <SafeLink to={ctaHref}>
                 <Button variant="tengo" size="lg" className="h-12 px-7 group">
-                  Recevoir mon premier lead gratuit
+                  {ctaButton}
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </SafeLink>
@@ -161,12 +187,12 @@ export const ArticleShell = ({
 
             {related.length > 0 && (
               <section>
-                <h2 className="font-display text-xl font-semibold mb-4">À lire ensuite</h2>
+                <h2 className="font-display text-xl font-semibold mb-4">{relatedLabel}</h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {related.map((r) => (
                     <SafeLink key={r.href} to={r.href} className="block rounded-xl border border-border p-5 hover:border-primary/40 transition-colors">
                       <div className="font-display text-base font-semibold leading-snug">{r.title}</div>
-                      <div className="text-xs text-primary mt-2 inline-flex items-center">Lire <ArrowRight className="w-3 h-3 ml-1" /></div>
+                      <div className="text-xs text-primary mt-2 inline-flex items-center">{readLabel} <ArrowRight className="w-3 h-3 ml-1" /></div>
                     </SafeLink>
                   ))}
                 </div>

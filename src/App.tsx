@@ -62,6 +62,15 @@ const VerticaleBtpArtisans = lazy(() => import("./pages/verticales/VerticaleBtpA
 const VerticaleProfessionsLiberalesSante = lazy(() => import("./pages/verticales/VerticaleProfessionsLiberalesSante"));
 const VerticaleHoldingsGroupes = lazy(() => import("./pages/verticales/VerticaleHoldingsGroupes"));
 
+// EN pages
+const EnBlogRegistrationsBarometer = lazy(() => import("./pages/en/blog/RegistrationsBarometerJuly2026"));
+const EnBlogModernise = lazy(() => import("./pages/en/blog/ModerniseAccountingFirm2026"));
+const EnBlog5Levers = lazy(() => import("./pages/en/blog/FiveGrowthLevers"));
+const EnAccountantLeadGen = lazy(() => import("./pages/en/cabinet/AccountantLeadGeneration"));
+const EnPrimoleadAlternative = lazy(() => import("./pages/en/cabinet/PrimoleadAlternative"));
+const EnGlossary = lazy(() => import("./pages/en/cabinet/Glossary"));
+const EnUseCasesIndex = lazy(() => import("./pages/en/cabinet/UseCasesIndex"));
+
 import { LanguageSync } from "@/components/LanguageSync";
 
 const queryClient = new QueryClient({
@@ -154,6 +163,17 @@ const App = () => (
                 <Route path="/en/legal" element={<MentionsLegales />} />
                 <Route path="/en/privacy" element={<Confidentialite />} />
                 <Route path="/en/terms" element={<CGU />} />
+
+                {/* EN — cabinet pillar pages */}
+                <Route path="/en/accountant-lead-generation" element={<EnAccountantLeadGen />} />
+                <Route path="/en/primolead-alternative" element={<EnPrimoleadAlternative />} />
+                <Route path="/en/glossary" element={<EnGlossary />} />
+                <Route path="/en/use-cases" element={<EnUseCasesIndex />} />
+
+                {/* EN — blog */}
+                <Route path="/en/blog/registrations-barometer-july-2026" element={<EnBlogRegistrationsBarometer />} />
+                <Route path="/en/blog/modernise-accounting-firm-2026" element={<EnBlogModernise />} />
+                <Route path="/en/blog/5-growth-levers-accounting-firm" element={<EnBlog5Levers />} />
 
                 {/* Search redirects (for SEO) - redirect search queries to main page */}
                 <Route path="/search" element={<Navigate to="/" replace />} />
