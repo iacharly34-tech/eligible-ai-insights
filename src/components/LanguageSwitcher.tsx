@@ -29,6 +29,13 @@ export const LanguageSwitcher = () => {
       '/mentions-legales': '/en/legal',
       '/confidentialite': '/en/privacy',
       '/cgu': '/en/terms',
+      '/leads-experts-comptables': '/en/accountant-lead-generation',
+      '/alternatives-primolead-experts-comptables': '/en/primolead-alternative',
+      '/cabinet/glossaire': '/en/glossary',
+      '/cabinet/cas-usage': '/en/use-cases',
+      '/blog/barometre-immatriculations-juillet-2026': '/en/blog/registrations-barometer-july-2026',
+      '/blog/moderniser-cabinet-etat-lieux-2026': '/en/blog/modernise-accounting-firm-2026',
+      '/blog/5-leviers-croissance-cabinet-expertise-comptable': '/en/blog/5-growth-levers-accounting-firm',
     };
 
     const enToFr: Record<string, string> = {
@@ -44,6 +51,13 @@ export const LanguageSwitcher = () => {
       '/en/legal': '/mentions-legales',
       '/en/privacy': '/confidentialite',
       '/en/terms': '/cgu',
+      '/en/accountant-lead-generation': '/leads-experts-comptables',
+      '/en/primolead-alternative': '/alternatives-primolead-experts-comptables',
+      '/en/glossary': '/cabinet/glossaire',
+      '/en/use-cases': '/cabinet/cas-usage',
+      '/en/blog/registrations-barometer-july-2026': '/blog/barometre-immatriculations-juillet-2026',
+      '/en/blog/modernise-accounting-firm-2026': '/blog/moderniser-cabinet-etat-lieux-2026',
+      '/en/blog/5-growth-levers-accounting-firm': '/blog/5-leviers-croissance-cabinet-expertise-comptable',
     };
 
     let newPath = pathname;

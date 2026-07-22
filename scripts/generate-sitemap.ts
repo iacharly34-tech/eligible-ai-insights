@@ -67,6 +67,14 @@ const entries: Entry[] = [
   { path: "/blog/barometre-immatriculations-juillet-2026", changefreq: "monthly", priority: "0.8" },
   { path: "/blog/moderniser-cabinet-etat-lieux-2026", changefreq: "monthly", priority: "0.8" },
   { path: "/blog/5-leviers-croissance-cabinet-expertise-comptable", changefreq: "monthly", priority: "0.7" },
+  // EN — cabinet pillars & blog (en-GB)
+  { path: "/en/accountant-lead-generation", changefreq: "weekly", priority: "0.9" },
+  { path: "/en/primolead-alternative", changefreq: "monthly", priority: "0.85" },
+  { path: "/en/glossary", changefreq: "monthly", priority: "0.7" },
+  { path: "/en/use-cases", changefreq: "monthly", priority: "0.75" },
+  { path: "/en/blog/registrations-barometer-july-2026", changefreq: "monthly", priority: "0.75" },
+  { path: "/en/blog/modernise-accounting-firm-2026", changefreq: "monthly", priority: "0.75" },
+  { path: "/en/blog/5-growth-levers-accounting-firm", changefreq: "monthly", priority: "0.7" },
 ];
 
 function toXml(items: Entry[]) {

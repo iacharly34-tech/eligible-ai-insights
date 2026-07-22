@@ -26,6 +26,15 @@ Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets
 - [À propos](/a-propos): Mission, équipe, vision « Détectez. Scorez. Signez. ».
 - [Demander une démo](/demo): Démonstration personnalisée du moteur de détection.
 
+## English pages (en-GB)
+- [Lead generation for accounting firms](/en/accountant-lead-generation): Pillar page — vertical lead-generation software for accounting firms.
+- [PrimoLead alternative for accounting firms](/en/primolead-alternative): Neutral comparison PrimoLead vs Corporama vs Societe.com vs Eligibly.
+- [Glossary — prospecting & lead generation](/en/glossary): Definitions — INPI, SIRENE, BODACC, ICP, predictive scoring, CAC, LTV, SAS/SASU/SARL/EURL/SEL.
+- [Use cases](/en/use-cases): Three concrete configurations — regional firm, hospitality specialist, remote-first firm.
+- [July 2026 registrations barometer](/en/blog/registrations-barometer-july-2026)
+- [Modernise your firm — 2026 state of play](/en/blog/modernise-accounting-firm-2026)
+- [5 growth levers for an accounting firm](/en/blog/5-growth-levers-accounting-firm)
+
 ## Optional
 - [Mentions légales](/mentions-legales)
 - [Confidentialité](/confidentialite)
