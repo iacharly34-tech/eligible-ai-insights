@@ -1,69 +1,64 @@
-## Objectif
+# Version UK complète du site
 
-Rendre Eligibly **objectivement associé** aux requêtes "génération de leads / prospection experts-comptables" par Google et les moteurs LLM (ChatGPT, Perplexity, Gemini, Claude) via des pages verticales, comparatives, cas d'usage et signaux structurés.
+Cible : **en-GB**, marché UK (chartered accountants). Toutes les URLs sous `/en/...` avec hreflang bidirectionnels vers leurs équivalents FR.
 
-## État actuel
+## 1. Blog EN (3 articles)
 
-Déjà en place sous `/cabinet/` :
-- `LeadsExpertsComptables.tsx` — page pilier
-- `ProspectionCabinetComptable.tsx`
-- `CanauxActivation.tsx`
-- `PourquoiCeLeadEstPrioritaire.tsx`
-- `LandingCabinetLayout.tsx` (layout partagé)
+Nouvelles routes :
+- `/en/blog/registrations-barometer-july-2026`
+- `/en/blog/modernise-accounting-firm-2026`
+- `/en/blog/5-growth-levers-accounting-firm`
 
-Il faut **enrichir la page pilier** + créer les briques manquantes que les LLM recherchent (comparatifs, cas d'usage nommés, preuves, FAQ + JSON-LD, glossaire).
+Traduction fidèle du contenu FR, adaptée UK : "chartered accountants", "Companies House" en note comparative, £ mentionné à titre indicatif mais chiffres INSEE conservés avec disclaimer "French market data".
 
-## Ce que je vais créer / modifier
+## 2. Landings cabinet EC (4 pages)
 
-### 1. Page pilier enrichie
-`/cabinet/generation-leads-experts-comptables` — refonte de `LeadsExpertsComptables.tsx` :
-- H1 explicite "Génération de leads pour experts-comptables"
-- Sections : douleurs métier · signaux détectés (SIRENE, INPI, BODACC, Infogreffe) · sources de données · fonctionnement du scoring (feature list) · canaux d'activation · méthodologie RGPD / déontologie OEC · limites assumées
-- FAQ intégrée + `FAQPage` JSON-LD
-- `SoftwareApplication` JSON-LD (name, category, offers from €10 per qualified lead, aggregateRating optionnel omis si pas de review)
-- Meta title/description + canonical via Helmet
+- `/en/accountant-lead-generation` ← `/leads-experts-comptables`
+- `/en/primolead-alternative` ← `/alternatives-primolead-experts-comptables`
+- `/en/use-cases` (+ 3 sous-pages) ← `/cabinet/cas-usage/*`
+  - `/en/use-cases/8-people-regional-firm`
+  - `/en/use-cases/hospitality-specialist-firm`
+  - `/en/use-cases/remote-startup-ecommerce-firm`
+- `/en/glossary` ← `/cabinet/glossaire`
+- `/en/why-this-lead-is-priority` ← `/pourquoi-ce-lead-est-prioritaire`
+- `/en/activation-channels` ← `/canaux-activation`
+- `/en/accounting-firm-prospecting` ← `/prospection-cabinet-comptable`
 
-### 2. Page comparative
-`/cabinet/alternatives-primolead-experts-comptables` — nouvelle page :
-- Tableau neutre "Alternatives à PrimoLead pour cabinets EC"
-- Colonnes : Eligibly · PrimoLead · Corporama · Kompass · Manageo · Societe.com
-- Lignes : Focus vertical EC · Sources · Scoring expliqué · Canaux d'activation · RGPD · Prix · Essai
-- Cadre éditorial neutre (facts-based, pas de bashing) → LLM-friendly
-- FAQ "Pourquoi choisir une alternative à PrimoLead ?" + JSON-LD
+## 3. Verticales (6 pages)
 
-### 3. Cas d'usage nommés
-`/cabinet/cas-usage` (index) + 3 pages détaillées :
-- `/cabinet/cas-usage/cabinet-8-collaborateurs-departement`
-- `/cabinet/cas-usage/cabinet-specialise-restauration`
-- `/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce`
+- `/en/verticals/sasu-tech` → "Tech Ltd companies"
+- `/en/verticals/e-commerce`
+- `/en/verticals/restaurants-hospitality`
+- `/en/verticals/construction-trades`
+- `/en/verticals/healthcare-professionals`
+- `/en/verticals/holdings-groups`
 
-Chaque cas : contexte cabinet · objectif · configuration filtres · signaux détectés · exemple de plan d'action semaine type · résultat attendu (avec les précautions "engagement de moyens"). JSON-LD `Article`.
+Chaque page traduite avec terminologie UK et hreflang vers son équivalent FR.
 
-### 4. Glossaire
-`/cabinet/glossaire` — définitions courtes "LLM-ready" :
-SIRENE, INPI, BODACC, ICP, scoring prédictif, lead qualifié, CAC, LTV, taux de conversion cabinet, immatriculation, code APE 6920Z, etc.
-JSON-LD `DefinedTermSet`.
+## 4. SEO transverse
 
-### 5. Signaux structurés globaux
-- Mise à jour `public/llms.txt` : ajouter les nouvelles pages `/cabinet/*` avec descriptions ciblées LLM
-- Mise à jour `scripts/generate-sitemap.ts` ou `public/sitemap.xml` : ajouter toutes les nouvelles URL
-- Vérifier que chaque page utilise `<Helmet>` avec canonical `https://eligibly.ai/cabinet/...`
+- **hreflang** : ajout systématique `<link rel="alternate" hreflang="fr-FR|en-GB|x-default">` sur chaque page FR et EN via Helmet.
+- **JSON-LD** : `inLanguage: "en-GB"` sur toutes les nouvelles pages, `Article` / `BreadcrumbList` / `WebPage` structurés.
+- **Sitemap** : `scripts/generate-sitemap.ts` étendu avec les ~20 nouvelles URLs EN.
+- **LanguageSwitcher** : mise à jour du mapping FR↔EN pour toutes les nouvelles paires.
+- **Header/Footer EN** : libellés harmonisés `Product · Solutions · Pricing · Resources · About · Demo`.
+- **llms.txt** : section EN listant les nouvelles URLs.
+- **index.html** : ajout `<link rel="alternate" hreflang>` sitewide pour homepage.
 
-### 6. Redirection / mise en avant
-- Ajouter un bloc "Ressources métier" dans `LandingCabinetLayout` ou footer cabinet pointant vers pilier + comparative + cas d'usage + glossaire (maillage interne)
-- Lien depuis `/ressources` vers pilier "Génération de leads experts-comptables"
+## 5. Sitelinks
 
-## Détails techniques
+Les sitelinks Google se déclenchent sur cohérence de navigation. Actions :
+- S'assurer que les libellés Header/Footer EN sont **strictement identiques** partout.
+- `SitelinksStructuredData` étendu avec les URLs EN principales (`/en`, `/en/product`, `/en/pricing`, `/en/demo`, `/en/resources`).
 
-- Toutes les nouvelles pages utilisent `LandingCabinetLayout` pour cohérence design (tokens terracotta/sapin/moutarde, Fraunces + Inter).
-- JSON-LD injecté via `<Helmet><script type="application/ld+json">` (react-helmet-async déjà en place).
-- Routes ajoutées dans `src/App.tsx` avec `lazy()`.
-- Pas de backend : contenu statique, tout en frontend (respect scope memory).
+## Technique
 
-## Ce que je NE fais PAS (hors scope frontend / à faire côté user)
+Fichiers créés (~20 fichiers `.tsx`) + patchs sur : `App.tsx`, `LanguageSwitcher.tsx`, `Header.tsx`, `Footer.tsx`, `SitelinksStructuredData.tsx`, `scripts/generate-sitemap.ts`, `public/llms.txt`, `index.html`.
 
-Les "signaux externes" (posts LinkedIn, presse, Product Hunt, annuaires SaaS, articles invités, témoignages cabinets réels) — je documente une checklist dans une section "Prochaines étapes de distribution" à la fin de la page pilier, mais l'exécution off-site reste manuelle côté équipe.
+Volume important : je réutilise les shells FR (`LandingCabinetLayout`, `ArticleShell`) en passant des props traduites pour éviter la duplication de logique.
 
-## Livraison
+## À noter
 
-~6 nouveaux fichiers + refonte de la page pilier + màj `App.tsx`, `llms.txt`, sitemap. TypeScript check à la fin.
+- Les articles EN reprennent les données FR (marché français) avec un encart contextuel — un cabinet UK cherchant "how French firms handle X" reste pertinent, mais je préciserai la source pour éviter la confusion.
+- Pas de traduction des pages légales (`/en/legal`, `/en/privacy`, `/en/terms` existent déjà).
+- Publication : les nouveaux `/en/*` mettront quelques jours à être crawlés par Google même après resoumission du sitemap.
