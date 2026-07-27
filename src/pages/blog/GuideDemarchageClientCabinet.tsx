@@ -87,9 +87,9 @@ const GuideDemarchageClientCabinet = () => (
       Un cabinet « qui fait tout pour tout le monde » se retrouve comparé au prix. Un cabinet qui affiche <em>« nous accompagnons les SASU tech de moins de 10 salariés en Île-de-France, de la création à la levée »</em> devient <strong>évident</strong> pour son ICP.
     </p>
 
-    <h3>Étape 3 · Rendre le cabinet visible (voir §4 et §5)</h3>
+    <h3>Étape 3 · Rendre le cabinet visible</h3>
     <p>
-      Présence digitale (site, SEO, LLM) et présence sociale : traitées en détail dans les deux sections suivantes.
+      Présence digitale (site, SEO, LLM) et présence sociale : traitées en détail dans la section suivante et dans la checklist de fin d'article.
     </p>
 
     <h3>Étape 4 · Provoquer la rencontre</h3>
@@ -107,47 +107,7 @@ const GuideDemarchageClientCabinet = () => (
       Nombre de RDV / mois, taux de signature, CAC par canal, LTV par verticale. Ce que le cabinet ne mesure pas, il ne le pilote pas.
     </p>
 
-    <h2>4. Checklist présence digitale 2026 (site · SEO · LLM)</h2>
-    <p>
-      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist opérationnelle — à cocher point par point — s'appuie sur les orientations officielles du CNOEC (Leadtech 2026, travaux Data & IA) et sur ce qui fonctionne concrètement chez nos cabinets pilotes.
-    </p>
-
-    <h3>✅ Site web du cabinet</h3>
-    <ul>
-      <li>☐ <strong>Promesse claire dès le hero</strong> : verticale servie, zone, offre en une phrase.</li>
-      <li>☐ <strong>Une page par verticale</strong> (SASU tech, e-commerce, CHR, holdings, professions libérales…) — c'est ce que Google indexe et ce que les prospects cherchent.</li>
-      <li>☐ <strong>Page « À propos »</strong> avec associés nommés, photo, parcours et numéro d'inscription à l'Ordre.</li>
-      <li>☐ <strong>Preuve sociale</strong> : témoignages clients, chiffres du cabinet, logos partenaires.</li>
-      <li>☐ <strong>Appel à l'action explicite</strong> (RDV de 15 min, audit gratuit) présent en haut et en bas de chaque page.</li>
-      <li>☐ <strong>Temps de chargement &lt; 2 s</strong>, site 100 % responsive, HTTPS et accessibilité de base (WCAG AA).</li>
-      <li>☐ <strong>Mentions légales, RGPD et politique de confidentialité</strong> à jour — obligation déontologique et légale.</li>
-    </ul>
-
-    <h3>✅ SEO — sortir de la commodité</h3>
-    <ul>
-      <li>☐ <strong>Cibler des requêtes ICP</strong> (« expert-comptable SASU e-commerce Lyon ») plutôt que des requêtes génériques perdues d'avance.</li>
-      <li>☐ <strong>Fondamentaux techniques</strong> : titre unique par page, méta-description unique, balisage <code>H1/H2/H3</code> propre, sitemap.xml, robots.txt, canonical.</li>
-      <li>☐ <strong>Données structurées</strong> (JSON-LD) : <code>Organization</code>, <code>LocalBusiness</code>, <code>Article</code>, <code>FAQPage</code>, <code>BreadcrumbList</code>.</li>
-      <li>☐ <strong>Contenus sourcés</strong> : appuyer chaque article sur des sources officielles (INSEE, CNOEC, Légifrance, Bulletin officiel des finances publiques).</li>
-      <li>☐ <strong>Fiche Google Business Profile</strong> complète (photos, horaires, avis).</li>
-      <li>☐ <strong>Google Search Console + Analytics</strong> configurés, indexation vérifiée, sitemap soumis.</li>
-      <li>☐ <strong>Maillage interne</strong> cohérent (verticales ↔ articles ↔ page contact).</li>
-    </ul>
-
-    <h3>✅ Présence dans les LLM (ChatGPT, Perplexity, Gemini, Claude)</h3>
-    <p>
-      De plus en plus de dirigeants formulent leur recherche dans une IA générative avant Google (« quel expert-comptable pour une SASU tech ? »). Le CNOEC en fait explicitement un enjeu profession dans ses <a href="https://www.experts-comptables.fr/travaux-data-et-ia" target="_blank" rel="noopener noreferrer">travaux Data et IA</a>.
-    </p>
-    <ul>
-      <li>☐ <strong>Fichier <code>llms.txt</code></strong> à la racine du site pour signaler les pages clés aux modèles.</li>
-      <li>☐ <strong>Pages piliers explicites</strong> (méthode, verticale, tarifs, cas clients) que les LLM peuvent citer sans ambiguïté.</li>
-      <li>☐ <strong>Balisage sémantique clair</strong> (titres, listes, tableaux) — les LLM extraient mieux le contenu structuré.</li>
-      <li>☐ <strong>Mentions externes cohérentes</strong> : annuaire officiel OEC, LinkedIn du cabinet, presse professionnelle (Le Monde du Chiffre, SIC).</li>
-      <li>☐ <strong>Nom de marque unique</strong> et bio cohérente sur tous les canaux — un LLM ne peut citer qu'un cabinet qu'il identifie sans doute.</li>
-      <li>☐ <strong>Contenu à jour et daté</strong> : les LLM récents privilégient les sources datées et versionnées.</li>
-    </ul>
-
-    <h2>5. La présence sociale : les experts-comptables prennent la parole</h2>
+    <h2>4. La présence sociale : les experts-comptables prennent la parole</h2>
     <p>
       La profession s'installe sur les réseaux — et c'est un mouvement de fond. LinkedIn concentre l'essentiel du trafic B2B utile ; Instagram, TikTok et YouTube émergent pour les cabinets qui parlent aux créateurs de moins de 40 ans.
     </p>
