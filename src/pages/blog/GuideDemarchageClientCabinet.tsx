@@ -31,7 +31,7 @@ const GuideDemarchageClientCabinet = () => (
       Longtemps, la profession comptable a considéré le démarchage comme une pratique presque déplacée. La déontologie l'a d'ailleurs longtemps encadré strictement. Mais depuis la <strong>réforme de 2014</strong>, le démarchage est <strong>autorisé</strong> pour les experts-comptables — à condition d'être loyal, sincère et respectueux du secret professionnel. Ce que le 75<sup>e</sup> Congrès de l'OEC a résumé en trois mots : <em>« Osez le marketing »</em>.
     </p>
     <p>
-      Ce guide couvre le cadre déontologique, la construction d'une <strong>présence digitale</strong> (site, SEO, LLM), la <strong>présence sociale</strong>, la <strong>fluidification des canaux de contact</strong> (Slack, WhatsApp), le démarchage direct, et le <strong>timing d'immatriculation</strong> — le levier n°1 pour croître sans dépendre du bouche-à-oreille.
+      Ce <strong>kit marketing</strong> couvre l'ensemble de la chaîne d'acquisition d'un cabinet en 2026 : cadre déontologique, <strong>présence digitale</strong> (site, SEO, LLM) sous forme de checklist, <strong>présence sociale</strong>, <strong>fluidification des canaux de contact</strong> (Slack, WhatsApp), démarchage direct, et <strong>timing d'immatriculation</strong> — le levier n°1 pour croître sans dépendre du bouche-à-oreille.
     </p>
 
     <h2>1. Ce que dit vraiment le cadre déontologique</h2>
