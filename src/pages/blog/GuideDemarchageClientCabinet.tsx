@@ -34,7 +34,7 @@ const GuideDemarchageClientCabinet = () => (
       En 2026, cette posture coûte cher. Le marché s'est concentré, digitalisé et concurrentiel. Les créateurs d'entreprises choisissent leur expert-comptable dans les premières semaines. Celui qui arrive en premier avec le bon message gagne la signature. Celui qui attend la recommandation subit son marché.
     </p>
     <p>
-      Ce <strong>kit marketing</strong> vous donne une trame complète pour passer de la posture d'attente à une <strong>machine d'acquisition maîtrisée</strong> : cadre déontologique, définition de votre client idéal, présence sociale, fluidification des canaux de contact, démarchage direct, timing d'immatriculation et, en fin d'article, une <strong>checklist présence digitale</strong> opérationnelle (site, SEO, présence dans les LLM). Tout est sourcé, conforme et directement applicable.
+      Ce <strong>kit marketing</strong> vous donne une trame complète pour passer de la posture d'attente à une <strong>machine d'acquisition maîtrisée</strong> : cadre déontologique, définition de votre client idéal, présence sociale, fluidification des canaux de contact, démarchage direct, timing d'immatriculation et, en fin d'article, une <strong>checklist marketing en 7 axes</strong> (site web qui convertit, Google avis, SEO, visibilité LLM, réseaux sociaux, formulaires de contact, outbound Eligibly). Tout est sourcé, conforme et directement applicable.
     </p>
 
     <h2>1. Le cadre déontologique : une permission, pas une contrainte</h2>
