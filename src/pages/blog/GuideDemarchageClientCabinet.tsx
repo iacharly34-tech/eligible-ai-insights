@@ -4,11 +4,11 @@ const GuideDemarchageClientCabinet = () => (
   <ArticleShell
     badge="Kit marketing cabinet"
     title="Kit marketing 2026 pour experts-comptables : sortir de la posture d'attente"
-    subtitle="Cadre déontologique, présence sociale, canaux fluides, démarchage, timing d'immatriculation et checklist présence digitale. Le kit complet pour structurer l'acquisition d'un cabinet en 2026 — sobre, conforme, opérationnel."
+    subtitle="Cadre déontologique, présence sociale, canaux fluides, démarchage, timing d'immatriculation et checklist marketing en 7 axes : site web, Google avis, SEO, LLM, réseaux sociaux, formulaires de contact et outbound Eligibly."
     date="2026-07-27"
-    readTime="12 min de lecture"
+    readTime="14 min de lecture"
     url="/blog/guide-demarchage-client-expert-comptable"
-    description="Kit marketing 2026 pour experts-comptables : cadre déontologique post-2014, présence sociale, canaux fluides (Slack, WhatsApp), démarchage direct, timing d'immatriculation et checklist présence digitale (site, SEO, LLM). Sources CNOEC, INSEE, Légifrance. Cas Empartners : 3 leads / semaine en 3 mois."
+    description="Kit marketing 2026 pour experts-comptables : cadre déontologique post-2014, présence sociale, canaux fluides (Slack, WhatsApp), démarchage direct, timing d'immatriculation et checklist marketing en 7 axes (site web qui convertit, Google avis, SEO, visibilité LLM, réseaux sociaux, formulaires de contact, outbound Eligibly). Sources CNOEC, INSEE, Légifrance. Cas Empartners : 3 leads / semaine en 3 mois."
     category="Kit marketing cabinet"
     sources={[
       { label: "OEC — Code de déontologie des professionnels de l'expertise comptable", url: "https://www.experts-comptables.fr/code-de-deontologie" },
