@@ -43,6 +43,7 @@ const BlogModerniserIA = lazy(() => import("./pages/blog/ModerniserCabinetIA"));
 const BlogBarometreJuillet2026 = lazy(() => import("./pages/blog/BarometreImmatriculationsJuillet2026"));
 const BlogSignal1EtatLieux = lazy(() => import("./pages/blog/ModerniserCabinetEtatLieux2026"));
 const Blog5Leviers = lazy(() => import("./pages/blog/CinqLeviersCroissanceCabinet"));
+const BlogGuideDemarchage = lazy(() => import("./pages/blog/GuideDemarchageClientCabinet"));
 const SimulateurIACabinet = lazy(() => import("./pages/SimulateurIACabinet"));
 const LeadsExpertsComptables = lazy(() => import("./pages/cabinet/LeadsExpertsComptables"));
 const ProspectionCabinetComptable = lazy(() => import("./pages/cabinet/ProspectionCabinetComptable"));
@@ -139,6 +140,7 @@ const App = () => (
                 <Route path="/blog/barometre-immatriculations-juillet-2026" element={<BlogBarometreJuillet2026 />} />
                 <Route path="/blog/moderniser-cabinet-etat-lieux-2026" element={<BlogSignal1EtatLieux />} />
                 <Route path="/blog/5-leviers-croissance-cabinet-expertise-comptable" element={<Blog5Leviers />} />
+                <Route path="/blog/guide-demarchage-client-expert-comptable" element={<BlogGuideDemarchage />} />
                 <Route path="/simulateur-roi-ia-cabinet" element={<SimulateurIACabinet />} />
 
                 {/* Sales Assistant + Verticales sectorielles */}
