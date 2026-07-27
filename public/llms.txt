@@ -23,6 +23,7 @@ Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets
 - [Baromètre des immatriculations — Juillet 2026](/blog/barometre-immatriculations-juillet-2026): 718 sociétés commerciales analysées, structure sectorielle, dynamique juin→juillet, capital, univers métier, problématiques d'accompagnement estimées.
 - [Le Signal N°1 — État des lieux 2026 de la profession](/blog/moderniser-cabinet-etat-lieux-2026): CNOEC, INSEE, Cegid, Salesforce, OpinionWay — marché, rétention, démarchage, IA et nouvelle concurrence.
 - [5 leviers pour provoquer la croissance d'un cabinet](/blog/5-leviers-croissance-cabinet-expertise-comptable): Réseau prescripteur, spécialisation, automatisation, LinkedIn, timing de création.
+- [Guide du démarchage client pour experts-comptables](/blog/guide-demarchage-client-expert-comptable): Cadre déontologique depuis 2014, méthode marketing 5 étapes, canaux (LinkedIn, email, réseau, timing d'immatriculation), erreurs à éviter. Sources OEC, Compta Online, RFC, Shine.
 - [À propos](/a-propos): Mission, équipe, vision « Détectez. Scorez. Signez. ».
 - [Demander une démo](/demo): Démonstration personnalisée du moteur de détection.
 
