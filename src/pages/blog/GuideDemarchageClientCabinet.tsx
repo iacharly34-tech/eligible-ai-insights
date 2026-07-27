@@ -54,7 +54,7 @@ const GuideDemarchageClientCabinet = () => (
       Autrement dit : <strong>le marketing est autorisé, la publicité mensongère ne l'est pas</strong>. La plupart des cabinets s'auto-censurent bien au-delà de ce que la loi impose. Le premier blocage n'est pas juridique, il est culturel.
     </p>
     <p>
-      Le 75<sup>e</sup> Congrès de l'OEC l'a dit sans ambiguïté : <em>« Osez le marketing »</em>. La question n'est plus de savoir si vous avez le droit de prospecter. Elle est de savoir <strong>comment le faire avec sérieux et efficacité</strong>.
+      Le 75<sup>e</sup> Congrès de l'OEC (édition 2020, tenue en distanciel) l'a dit sans ambiguïté : <em>« Osez le marketing »</em>. La question n'est plus de savoir si vous avez le droit de prospecter. Elle est de savoir <strong>comment le faire avec sérieux et efficacité</strong>.
     </p>
 
     <h2>2. Pourquoi le démarchage devient indispensable en 2026</h2>
