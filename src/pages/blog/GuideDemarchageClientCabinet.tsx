@@ -2,14 +2,14 @@ import { ArticleShell } from "./ArticleShell";
 
 const GuideDemarchageClientCabinet = () => (
   <ArticleShell
-    badge="Développement cabinet"
-    title="Guide du démarchage client pour experts-comptables : sortir de la posture d'attente"
-    subtitle="Le démarchage est autorisé depuis 2014, la profession y vient à peine. Voici comment structurer une démarche commerciale sobre, conforme et efficace — et pourquoi le timing d'immatriculation change tout."
+    badge="Kit marketing cabinet"
+    title="Kit marketing 2026 pour experts-comptables : sortir de la posture d'attente"
+    subtitle="Cadre déontologique, présence digitale, présence sociale, canaux fluides, démarchage et timing d'immatriculation. Le kit complet pour structurer l'acquisition d'un cabinet en 2026 — sobre, conforme, opérationnel."
     date="2026-07-27"
-    readTime="10 min de lecture"
+    readTime="12 min de lecture"
     url="/blog/guide-demarchage-client-expert-comptable"
-    description="Démarchage client pour experts-comptables : cadre déontologique post-2014, présence digitale (site, SEO, LLM), présence sociale, canaux fluides (Slack, WhatsApp), démarchage direct et timing d'immatriculation. Cas Empartners : 3 leads / semaine en 3 mois avec Eligibly."
-    category="Développement cabinet"
+    description="Kit marketing 2026 pour experts-comptables : cadre déontologique post-2014, checklist présence digitale (site, SEO, LLM), présence sociale, canaux fluides (Slack, WhatsApp), démarchage direct et timing d'immatriculation. Sources CNOEC, INSEE, Légifrance. Cas Empartners : 3 leads / semaine en 3 mois."
+    category="Kit marketing cabinet"
     sources={[
       { label: "OEC — Code de déontologie des professionnels de l'expertise comptable", url: "https://www.experts-comptables.fr/code-de-deontologie" },
       { label: "SIC — 75e Congrès de l'Ordre : Osez le marketing", url: "https://www.experts-comptables.fr/sic-emissions-evenements-presse/sic-webzine/75e-congres-osez-le-marketing" },
