@@ -121,7 +121,8 @@ const Ressources = () => {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
-  const liveArticles = t.liveArticles;
+  const HERO_HREF = "/blog/moderniser-cabinet-expertise-comptable-ia";
+  const liveArticles = t.liveArticles.filter((a) => a.href !== HERO_HREF);
   const upcoming = t.upcoming;
 
   const handleSubscribe = (e: React.FormEvent) => {
@@ -208,7 +209,7 @@ const Ressources = () => {
                   </div>
                 </SafeLink>
                 <div className="md:col-span-2 grid grid-cols-1 gap-5">
-                  {liveArticles.slice(1, 3).map((a) => (
+                  {liveArticles.slice(0, 2).map((a) => (
                     <SafeLink key={a.href} to={a.href} className="group block rounded-2xl border border-border bg-background p-6 hover:border-primary/40 transition-colors">
                       <div className="inline-flex items-center gap-1.5 px-2 py-1 rounded text-[0.65rem] uppercase tracking-[0.12em] bg-success/10 text-success font-semibold mb-4">
                         <CheckCircle className="w-3 h-3" /> {t.onlineBadge}
@@ -239,7 +240,7 @@ const Ressources = () => {
                 </p>
               </div>
               <div className="grid md:grid-cols-3 gap-5">
-                {liveArticles.slice(3).map((a) => (
+                {liveArticles.slice(2).map((a) => (
                   <SafeLink key={a.href} to={a.href} className="group block rounded-2xl border border-border bg-background p-7 hover:border-primary/40 transition-colors">
                     <div className="inline-flex items-center gap-1.5 px-2 py-1 rounded text-[0.65rem] uppercase tracking-[0.12em] bg-success/10 text-success font-semibold mb-5">
                       <CheckCircle className="w-3 h-3" /> {t.onlineBadge}
