@@ -4,11 +4,11 @@ const GuideDemarchageClientCabinet = () => (
   <ArticleShell
     badge="Kit marketing cabinet"
     title="Kit marketing 2026 pour experts-comptables : sortir de la posture d'attente"
-    subtitle="Cadre déontologique, présence digitale, présence sociale, canaux fluides, démarchage et timing d'immatriculation. Le kit complet pour structurer l'acquisition d'un cabinet en 2026 — sobre, conforme, opérationnel."
+    subtitle="Cadre déontologique, présence sociale, canaux fluides, démarchage, timing d'immatriculation et checklist présence digitale. Le kit complet pour structurer l'acquisition d'un cabinet en 2026 — sobre, conforme, opérationnel."
     date="2026-07-27"
     readTime="12 min de lecture"
     url="/blog/guide-demarchage-client-expert-comptable"
-    description="Kit marketing 2026 pour experts-comptables : cadre déontologique post-2014, checklist présence digitale (site, SEO, LLM), présence sociale, canaux fluides (Slack, WhatsApp), démarchage direct et timing d'immatriculation. Sources CNOEC, INSEE, Légifrance. Cas Empartners : 3 leads / semaine en 3 mois."
+    description="Kit marketing 2026 pour experts-comptables : cadre déontologique post-2014, présence sociale, canaux fluides (Slack, WhatsApp), démarchage direct, timing d'immatriculation et checklist présence digitale (site, SEO, LLM). Sources CNOEC, INSEE, Légifrance. Cas Empartners : 3 leads / semaine en 3 mois."
     category="Kit marketing cabinet"
     sources={[
       { label: "OEC — Code de déontologie des professionnels de l'expertise comptable", url: "https://www.experts-comptables.fr/code-de-deontologie" },
@@ -31,7 +31,7 @@ const GuideDemarchageClientCabinet = () => (
       Longtemps, la profession comptable a considéré le démarchage comme une pratique presque déplacée. La déontologie l'a d'ailleurs longtemps encadré strictement. Mais depuis la <strong>réforme de 2014</strong>, le démarchage est <strong>autorisé</strong> pour les experts-comptables — à condition d'être loyal, sincère et respectueux du secret professionnel. Ce que le 75<sup>e</sup> Congrès de l'OEC a résumé en trois mots : <em>« Osez le marketing »</em>.
     </p>
     <p>
-      Ce <strong>kit marketing</strong> couvre l'ensemble de la chaîne d'acquisition d'un cabinet en 2026 : cadre déontologique, <strong>présence digitale</strong> (site, SEO, LLM) sous forme de checklist, <strong>présence sociale</strong>, <strong>fluidification des canaux de contact</strong> (Slack, WhatsApp), démarchage direct, et <strong>timing d'immatriculation</strong> — le levier n°1 pour croître sans dépendre du bouche-à-oreille.
+      Ce <strong>kit marketing</strong> couvre l'ensemble de la chaîne d'acquisition d'un cabinet en 2026 : cadre déontologique, <strong>présence sociale</strong>, <strong>fluidification des canaux de contact</strong> (Slack, WhatsApp), démarchage direct, <strong>timing d'immatriculation</strong> et <strong>présence digitale</strong> (site, SEO, LLM) sous forme de checklist en fin d'article — le levier n°1 pour croître sans dépendre du bouche-à-oreille.
     </p>
 
     <h2>1. Ce que dit vraiment le cadre déontologique</h2>
@@ -87,9 +87,9 @@ const GuideDemarchageClientCabinet = () => (
       Un cabinet « qui fait tout pour tout le monde » se retrouve comparé au prix. Un cabinet qui affiche <em>« nous accompagnons les SASU tech de moins de 10 salariés en Île-de-France, de la création à la levée »</em> devient <strong>évident</strong> pour son ICP.
     </p>
 
-    <h3>Étape 3 · Rendre le cabinet visible (voir §4 et §5)</h3>
+    <h3>Étape 3 · Rendre le cabinet visible</h3>
     <p>
-      Présence digitale (site, SEO, LLM) et présence sociale : traitées en détail dans les deux sections suivantes.
+      Présence digitale (site, SEO, LLM) et présence sociale : traitées en détail dans la section suivante et dans la checklist de fin d'article.
     </p>
 
     <h3>Étape 4 · Provoquer la rencontre</h3>
@@ -107,7 +107,74 @@ const GuideDemarchageClientCabinet = () => (
       Nombre de RDV / mois, taux de signature, CAC par canal, LTV par verticale. Ce que le cabinet ne mesure pas, il ne le pilote pas.
     </p>
 
-    <h2>4. Checklist présence digitale 2026 (site · SEO · LLM)</h2>
+    <h2>4. La présence sociale : les experts-comptables prennent la parole</h2>
+    <p>
+      La profession s'installe sur les réseaux — et c'est un mouvement de fond. LinkedIn concentre l'essentiel du trafic B2B utile ; Instagram, TikTok et YouTube émergent pour les cabinets qui parlent aux créateurs de moins de 40 ans.
+    </p>
+    <ul>
+      <li><strong>LinkedIn</strong> : 1 à 2 posts / semaine, un point de vue, pas des news. Les associés qui postent en leur nom performent mieux que les pages cabinet.</li>
+      <li><strong>Instagram / TikTok</strong> : format court, pédagogie fiscale, réponses aux questions récurrentes des créateurs. Un cabinet qui vulgarise attire son ICP.</li>
+      <li><strong>Podcast / YouTube</strong> : format long, interviews de dirigeants clients, positionnement d'expertise sur une verticale.</li>
+    </ul>
+    <p>
+      Objectif : que le cabinet devienne <strong>reconnaissable</strong>. Un dirigeant qui a vu 3 posts d'un associé avant de le contacter arrive en RDV déjà à moitié convaincu.
+    </p>
+
+    <h2>5. Fluidifier l'accès à l'expert-comptable : Slack, WhatsApp, canaux modernes</h2>
+    <p>
+      Les dirigeants nés après 2000 ne veulent plus téléphoner à un standard ni attendre 48 h une réponse par email. Les cabinets qui gagnent des clients aujourd'hui <strong>fluidifient le contact</strong> :
+    </p>
+    <ul>
+      <li><strong>Canal Slack partagé</strong> avec les clients qui l'utilisent déjà (SaaS, tech, agences) : une question, une réponse, tracée.</li>
+      <li><strong>WhatsApp Business</strong> pour les questions rapides et les rappels d'échéance : taux d'ouverture &gt; 90 %.</li>
+      <li><strong>Prise de RDV en ligne</strong> (Cal.com, Calendly) directement depuis le site et les signatures d'email.</li>
+      <li><strong>Portail client</strong> pour déposer les pièces, signer, suivre : réduit les allers-retours de 60 % en moyenne dans nos cabinets pilotes.</li>
+    </ul>
+    <p>
+      Ce n'est pas cosmétique : la <strong>facilité de contact</strong> est un critère de choix explicite pour les créateurs. Un cabinet difficilement joignable perd la vente avant même la première proposition.
+    </p>
+
+    <h2>6. Cas client — Empartners : 3 leads par semaine en 3 mois</h2>
+    <p>
+      <a href="https://empartners.fr" target="_blank" rel="noopener noreferrer">Empartners</a>, cabinet dirigé par Mickaël, illustre concrètement ce que produit la combinaison <em>présence digitale + timing d'immatriculation</em>.
+    </p>
+    <ul>
+      <li><strong>Site publié depuis 3 mois</strong>, quelques centaines de visites par semaine ;</li>
+      <li><strong>3 leads qualifiés / semaine</strong> livrés par Eligibly sur sa zone et sa verticale ;</li>
+      <li>Un cycle de démarchage <strong>court</strong> : la société est contactée pendant qu'elle cherche encore son expert-comptable.</li>
+    </ul>
+    <p>
+      Autrement dit : un site jeune, un trafic modeste, mais une <strong>machine d'acquisition qui tourne</strong> — parce que le cabinet ne dépend pas du hasard du référencement, il agit sur le timing.
+    </p>
+
+    <h2>7. Le canal le plus sous-estimé : le timing d'immatriculation</h2>
+    <p>
+      Une entreprise choisit son expert-comptable dans ses <strong>premières semaines d'existence</strong>. Arriver 3 mois après l'immatriculation, c'est arriver après la signature d'un confrère — ou pire, d'une plateforme.
+    </p>
+    <p>
+      C'est précisément la logique d'Eligibly :
+    </p>
+    <ul>
+      <li>Chaque matin à 7h, les sociétés <strong>fraîchement immatriculées</strong> (SASU, SAS, EURL, SARL, SEL) sur votre zone et votre verticale ;</li>
+      <li>Filtrées sur votre ICP (capital, effectif, code NAF, dirigeant) ;</li>
+      <li>Scorées sur la probabilité de conversion ;</li>
+      <li>Avec une recommandation d'accroche prête à envoyer.</li>
+    </ul>
+    <p>
+      Là où les fichiers SIRET livrent une liste morte, Eligibly livre une <strong>décision commerciale</strong> : qui contacter aujourd'hui, sur quel canal, avec quel message.
+    </p>
+
+    <h2>8. Les erreurs à éviter</h2>
+    <ul>
+      <li><strong>Le publipostage massif non ciblé</strong> — inefficace, mal perçu et coûteux.</li>
+      <li><strong>Le message générique « bonjour, nous sommes un cabinet »</strong> — supprimé en 3 secondes.</li>
+      <li><strong>Attendre le bouche-à-oreille seul</strong> — c'est structurellement décroissant.</li>
+      <li><strong>Confondre visibilité et démarchage</strong> — LinkedIn nourrit le pipeline, il ne le remplace pas.</li>
+      <li><strong>Négliger la fluidité du contact</strong> — un formulaire lourd ou un standard non joignable annule tout l'effort marketing amont.</li>
+      <li><strong>Ne pas former les collaborateurs à la posture conseil</strong> — 80 % des ventes se jouent en RDV, pas en amont.</li>
+    </ul>
+
+    <h2>9. Checklist présence digitale 2026 (site · SEO · LLM)</h2>
     <p>
       Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist opérationnelle — à cocher point par point — s'appuie sur les orientations officielles du CNOEC (Leadtech 2026, travaux Data & IA) et sur ce qui fonctionne concrètement chez nos cabinets pilotes.
     </p>
@@ -145,73 +212,6 @@ const GuideDemarchageClientCabinet = () => (
       <li>☐ <strong>Mentions externes cohérentes</strong> : annuaire officiel OEC, LinkedIn du cabinet, presse professionnelle (Le Monde du Chiffre, SIC).</li>
       <li>☐ <strong>Nom de marque unique</strong> et bio cohérente sur tous les canaux — un LLM ne peut citer qu'un cabinet qu'il identifie sans doute.</li>
       <li>☐ <strong>Contenu à jour et daté</strong> : les LLM récents privilégient les sources datées et versionnées.</li>
-    </ul>
-
-    <h2>5. La présence sociale : les experts-comptables prennent la parole</h2>
-    <p>
-      La profession s'installe sur les réseaux — et c'est un mouvement de fond. LinkedIn concentre l'essentiel du trafic B2B utile ; Instagram, TikTok et YouTube émergent pour les cabinets qui parlent aux créateurs de moins de 40 ans.
-    </p>
-    <ul>
-      <li><strong>LinkedIn</strong> : 1 à 2 posts / semaine, un point de vue, pas des news. Les associés qui postent en leur nom performent mieux que les pages cabinet.</li>
-      <li><strong>Instagram / TikTok</strong> : format court, pédagogie fiscale, réponses aux questions récurrentes des créateurs. Un cabinet qui vulgarise attire son ICP.</li>
-      <li><strong>Podcast / YouTube</strong> : format long, interviews de dirigeants clients, positionnement d'expertise sur une verticale.</li>
-    </ul>
-    <p>
-      Objectif : que le cabinet devienne <strong>reconnaissable</strong>. Un dirigeant qui a vu 3 posts d'un associé avant de le contacter arrive en RDV déjà à moitié convaincu.
-    </p>
-
-    <h2>6. Fluidifier l'accès à l'expert-comptable : Slack, WhatsApp, canaux modernes</h2>
-    <p>
-      Les dirigeants nés après 2000 ne veulent plus téléphoner à un standard ni attendre 48 h une réponse par email. Les cabinets qui gagnent des clients aujourd'hui <strong>fluidifient le contact</strong> :
-    </p>
-    <ul>
-      <li><strong>Canal Slack partagé</strong> avec les clients qui l'utilisent déjà (SaaS, tech, agences) : une question, une réponse, tracée.</li>
-      <li><strong>WhatsApp Business</strong> pour les questions rapides et les rappels d'échéance : taux d'ouverture &gt; 90 %.</li>
-      <li><strong>Prise de RDV en ligne</strong> (Cal.com, Calendly) directement depuis le site et les signatures d'email.</li>
-      <li><strong>Portail client</strong> pour déposer les pièces, signer, suivre : réduit les allers-retours de 60 % en moyenne dans nos cabinets pilotes.</li>
-    </ul>
-    <p>
-      Ce n'est pas cosmétique : la <strong>facilité de contact</strong> est un critère de choix explicite pour les créateurs. Un cabinet difficilement joignable perd la vente avant même la première proposition.
-    </p>
-
-    <h2>7. Cas client — Empartners : 3 leads par semaine en 3 mois</h2>
-    <p>
-      <a href="https://empartners.fr" target="_blank" rel="noopener noreferrer">Empartners</a>, cabinet dirigé par Mickaël, illustre concrètement ce que produit la combinaison <em>présence digitale + timing d'immatriculation</em>.
-    </p>
-    <ul>
-      <li><strong>Site publié depuis 3 mois</strong>, quelques centaines de visites par semaine ;</li>
-      <li><strong>3 leads qualifiés / semaine</strong> livrés par Eligibly sur sa zone et sa verticale ;</li>
-      <li>Un cycle de démarchage <strong>court</strong> : la société est contactée pendant qu'elle cherche encore son expert-comptable.</li>
-    </ul>
-    <p>
-      Autrement dit : un site jeune, un trafic modeste, mais une <strong>machine d'acquisition qui tourne</strong> — parce que le cabinet ne dépend pas du hasard du référencement, il agit sur le timing.
-    </p>
-
-    <h2>8. Le canal le plus sous-estimé : le timing d'immatriculation</h2>
-    <p>
-      Une entreprise choisit son expert-comptable dans ses <strong>premières semaines d'existence</strong>. Arriver 3 mois après l'immatriculation, c'est arriver après la signature d'un confrère — ou pire, d'une plateforme.
-    </p>
-    <p>
-      C'est précisément la logique d'Eligibly :
-    </p>
-    <ul>
-      <li>Chaque matin à 7h, les sociétés <strong>fraîchement immatriculées</strong> (SASU, SAS, EURL, SARL, SEL) sur votre zone et votre verticale ;</li>
-      <li>Filtrées sur votre ICP (capital, effectif, code NAF, dirigeant) ;</li>
-      <li>Scorées sur la probabilité de conversion ;</li>
-      <li>Avec une recommandation d'accroche prête à envoyer.</li>
-    </ul>
-    <p>
-      Là où les fichiers SIRET livrent une liste morte, Eligibly livre une <strong>décision commerciale</strong> : qui contacter aujourd'hui, sur quel canal, avec quel message.
-    </p>
-
-    <h2>9. Les erreurs à éviter</h2>
-    <ul>
-      <li><strong>Le publipostage massif non ciblé</strong> — inefficace, mal perçu et coûteux.</li>
-      <li><strong>Le message générique « bonjour, nous sommes un cabinet »</strong> — supprimé en 3 secondes.</li>
-      <li><strong>Attendre le bouche-à-oreille seul</strong> — c'est structurellement décroissant.</li>
-      <li><strong>Confondre visibilité et démarchage</strong> — LinkedIn nourrit le pipeline, il ne le remplace pas.</li>
-      <li><strong>Négliger la fluidité du contact</strong> — un formulaire lourd ou un standard non joignable annule tout l'effort marketing amont.</li>
-      <li><strong>Ne pas former les collaborateurs à la posture conseil</strong> — 80 % des ventes se jouent en RDV, pas en amont.</li>
     </ul>
 
     <h2>Conclusion — Osez, sobrement.</h2>
