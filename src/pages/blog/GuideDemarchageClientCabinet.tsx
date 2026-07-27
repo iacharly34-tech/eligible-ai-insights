@@ -180,10 +180,15 @@ const GuideDemarchageClientCabinet = () => (
       Autrement dit : un site jeune, un trafic modeste, mais une <strong>machine d'acquisition qui tourne</strong> — parce que le cabinet ne dépend pas du hasard du référencement, il agit sur le timing. C'est la preuve que la méthode fonctionne avant d'avoir investi des années en SEO.
     </p>
 
+    <KitEmpartnersStats />
+
     <h2>7. Le canal le plus sous-estimé : le timing d'immatriculation</h2>
     <p>
       Une entreprise choisit son expert-comptable dans ses <strong>premières semaines d'existence</strong>. Arriver 3 mois après l'immatriculation, c'est arriver après la signature d'un confrère — ou pire, d'une plateforme.
     </p>
+
+    <KitTimingTimeline />
+
     <p>
       C'est précisément la logique d'Eligibly :
     </p>
@@ -377,6 +382,7 @@ const GuideDemarchageClientCabinet = () => (
     </ul>
 
     <h2>Conclusion — Osez, sobrement.</h2>
+    <KitFourCategories />
     <p>
       Le message du 75<sup>e</sup> Congrès de l'OEC tient en une ligne : <em>le marketing n'est plus un tabou, c'est un devoir de gestion</em>. Un cabinet qui ne pilote pas son acquisition subit son marché ; un cabinet qui structure sa démarche — ICP, offre, visibilité, démarchage, mesure — reprend la main.
     </p>
