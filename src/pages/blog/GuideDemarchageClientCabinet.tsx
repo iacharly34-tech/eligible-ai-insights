@@ -4,11 +4,11 @@ const GuideDemarchageClientCabinet = () => (
   <ArticleShell
     badge="Kit marketing cabinet"
     title="Kit marketing 2026 pour experts-comptables : sortir de la posture d'attente"
-    subtitle="Cadre déontologique, présence sociale, canaux fluides, démarchage, timing d'immatriculation et checklist présence digitale. Le kit complet pour structurer l'acquisition d'un cabinet en 2026 — sobre, conforme, opérationnel."
+    subtitle="Cadre déontologique, présence sociale, canaux fluides, démarchage, timing d'immatriculation et checklist marketing en 7 axes : site web, Google avis, SEO, LLM, réseaux sociaux, formulaires de contact et outbound Eligibly."
     date="2026-07-27"
-    readTime="12 min de lecture"
+    readTime="14 min de lecture"
     url="/blog/guide-demarchage-client-expert-comptable"
-    description="Kit marketing 2026 pour experts-comptables : cadre déontologique post-2014, présence sociale, canaux fluides (Slack, WhatsApp), démarchage direct, timing d'immatriculation et checklist présence digitale (site, SEO, LLM). Sources CNOEC, INSEE, Légifrance. Cas Empartners : 3 leads / semaine en 3 mois."
+    description="Kit marketing 2026 pour experts-comptables : cadre déontologique post-2014, présence sociale, canaux fluides (Slack, WhatsApp), démarchage direct, timing d'immatriculation et checklist marketing en 7 axes (site web qui convertit, Google avis, SEO, visibilité LLM, réseaux sociaux, formulaires de contact, outbound Eligibly). Sources CNOEC, INSEE, Légifrance. Cas Empartners : 3 leads / semaine en 3 mois."
     category="Kit marketing cabinet"
     sources={[
       { label: "OEC — Code de déontologie des professionnels de l'expertise comptable", url: "https://www.experts-comptables.fr/code-de-deontologie" },
@@ -34,7 +34,7 @@ const GuideDemarchageClientCabinet = () => (
       En 2026, cette posture coûte cher. Le marché s'est concentré, digitalisé et concurrentiel. Les créateurs d'entreprises choisissent leur expert-comptable dans les premières semaines. Celui qui arrive en premier avec le bon message gagne la signature. Celui qui attend la recommandation subit son marché.
     </p>
     <p>
-      Ce <strong>kit marketing</strong> vous donne une trame complète pour passer de la posture d'attente à une <strong>machine d'acquisition maîtrisée</strong> : cadre déontologique, définition de votre client idéal, présence sociale, fluidification des canaux de contact, démarchage direct, timing d'immatriculation et, en fin d'article, une <strong>checklist présence digitale</strong> opérationnelle (site, SEO, présence dans les LLM). Tout est sourcé, conforme et directement applicable.
+      Ce <strong>kit marketing</strong> vous donne une trame complète pour passer de la posture d'attente à une <strong>machine d'acquisition maîtrisée</strong> : cadre déontologique, définition de votre client idéal, présence sociale, fluidification des canaux de contact, démarchage direct, timing d'immatriculation et, en fin d'article, une <strong>checklist marketing en 7 axes</strong> (site web qui convertit, Google avis, SEO, visibilité LLM, réseaux sociaux, formulaires de contact, outbound Eligibly). Tout est sourcé, conforme et directement applicable.
     </p>
 
     <h2>1. Le cadre déontologique : une permission, pas une contrainte</h2>
@@ -222,34 +222,49 @@ const GuideDemarchageClientCabinet = () => (
       Éviter ces erreurs, c'est déjà gagner la moitié de la bataille. L'autre moitié tient dans l'exécution quotidienne — et dans la checklist qui suit.
     </p>
 
-    <h2>9. Checklist : se différencier en ligne en 2026</h2>
+    <h2>9. Checklist marketing : les 7 axes qui génèrent des rendez-vous</h2>
     <p>
-      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist ne vise pas à faire de vous un expert technique : elle identifie les axes concrets qui font la différence entre un site vitrine et un site qui génère des rendez-vous. Elle s'appuie sur les orientations du CNOEC (Leadtech 2026, travaux Data & IA) et sur ce qui fonctionne chez nos cabinets pilotes.
+      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist ne vise pas à faire de vous un expert technique : elle identifie les 7 axes concrets qui font la différence entre un site vitrine et une machine d'acquisition. Elle s'appuie sur les orientations du CNOEC (Leadtech 2026, travaux Data & IA), les retours de nos cabinets pilotes et le cas Empartners (3 leads / semaine en 3 mois).
     </p>
 
-    <h3>✅ Votre site doit dire en 3 secondes pourquoi vous</h3>
+    <h3>1. Site web qui convertit</h3>
+    <p>
+      Votre site est votre premier commercial silencieux. Il doit dire en 3 secondes pourquoi un prospect devrait vous contacter plutôt qu'un confrère.
+    </p>
     <ul>
       <li>☐ <strong>Une promesse visible dès la première page</strong> : quel métier vous servez, dans quelle zone, avec quel résultat concret. Exemple : « Expert-comptable des SASU tech en Île-de-France, de la création à la levée. »</li>
       <li>☐ <strong>Une page par métier ciblé</strong> (SASU tech, e-commerce, CHR, holdings, professions libérales…). Cela montre que vous comprenez leurs contraintes spécifiques — TVA, paie, charges, financement.</li>
       <li>☐ <strong>Une page « Équipe » crédible</strong> avec les associés nommés, leurs parcours et leurs numéros d'inscription à l'Ordre. La confiance commence par la transparence.</li>
       <li>☐ <strong>Des preuves concrètes</strong> : témoignages clients, chiffres du cabinet (nombre de dossiers, années d'expérience), logos des partenaires ou réseaux.</li>
-      <li>☐ <strong>Un RDV facile à prendre</strong> : bouton de prise de rendez-vous en ligne visible en haut et en bas de chaque page.</li>
       <li>☐ <strong>Un site rapide sur mobile</strong> : il s'affiche en moins de 2 secondes, les textes se lisent sans zoom, et les formulaires sont courts.</li>
       <li>☐ <strong>Mentions légales, RGPD et politique de confidentialité à jour</strong> — c'est un gage de sérieux et une obligation déontologique.</li>
     </ul>
 
-    <h3>✅ Apparaître quand un prospect vous cherche sur Google</h3>
+    <h3>2. Google avis</h3>
+    <p>
+      Avant de vous contacter, un prospect tape votre nom sur Google. La fiche Google Business Profile et les avis clients sont souvent le premier contact réel avec votre cabinet.
+    </p>
     <ul>
-      <li>☐ <strong>Cibler les recherches de votre client idéal</strong> : « expert-comptable SASU e-commerce Lyon » plutôt que « expert-comptable Paris » où tout le monde est perdu.</li>
+      <li>☐ <strong>Une fiche Google Business Profile complète et à jour</strong> : adresse, téléphone, horaires, photos du cabinet, services proposés.</li>
+      <li>☐ <strong>Demander systématiquement un avis après 6 mois de collaboration</strong> — pas au début (trop tôt), pas après un contentieux (trop risqué).</li>
+      <li>☐ <strong>Répondre à tous les avis</strong>, y compris les négatifs, avec professionnalisme et sans dénigrer les confrères.</li>
+      <li>☐ <strong>Viser un score supérieur à 4,5 étoiles</strong> avec au moins 10 avis pour déclencher la confiance.</li>
+    </ul>
+
+    <h3>3. Visibilité sur les moteurs de recherche</h3>
+    <p>
+      Le SEO reste le canal d'acquisition à plus fort ROI sur le long terme. Il ne s'agit pas d'être premier sur « expert-comptable Paris » mais d'apparaître sur les recherches précises de votre client idéal.
+    </p>
+    <ul>
+      <li>☐ <strong>Cibler les recherches de votre ICP</strong> : « expert-comptable SASU e-commerce Lyon » plutôt que des requêtes génériques où tout le monde est perdu.</li>
       <li>☐ <strong>Un titre et une description unique par page</strong>, avec une structure de titres claire (H1, H2, H3) pour guider le lecteur et Google.</li>
       <li>☐ <strong>Un balisage LocalBusiness</strong> pour que Google affiche le cabinet comme une entreprise locale avec adresse, téléphone et horaires.</li>
       <li>☐ <strong>Des contenus sourcés</strong> : chaque article s'appuie sur des sources officielles (INSEE, CNOEC, Légifrance, BOFiP) pour renforcer l'autorité.</li>
-      <li>☐ <strong>Une fiche Google Business Profile complète</strong> : photos du cabinet, horaires, services, avis clients.</li>
       <li>☐ <strong>Google Search Console et Analytics configurés</strong> : pour savoir quelles pages attirent du trafic et où corriger.</li>
       <li>☐ <strong>Un maillage interne cohérent</strong> : les pages verticales renvoient vers les articles, qui renvoient vers la page de contact.</li>
     </ul>
 
-    <h3>✅ Être recommandé par ChatGPT, Perplexity et Gemini</h3>
+    <h3>4. Visibilité dans les LLM</h3>
     <p>
       De plus en plus de dirigeants posent leurs questions à une IA avant de taper sur Google (« quel expert-comptable pour une SASU tech à Lyon ? »). Le CNOEC en fait explicitement un enjeu professionnel dans ses <a href="https://www.experts-comptables.fr/travaux-data-et-ia" target="_blank" rel="noopener noreferrer">travaux Data et IA</a>.
     </p>
@@ -260,6 +275,42 @@ const GuideDemarchageClientCabinet = () => (
       <li>☐ <strong>Des mentions externes cohérentes</strong> : annuaire officiel de l'OEC, page LinkedIn du cabinet, articles de presse professionnelle.</li>
       <li>☐ <strong>Un nom de marque identifiable</strong> et une bio cohérente sur tous les canaux — un modèle ne recommande que ce qu'il identifie sans doute.</li>
       <li>☐ <strong>Des contenus datés et à jour</strong> : les modèles récents privilégient les sources récentes et maintenues.</li>
+    </ul>
+
+    <h3>5. Réseaux sociaux</h3>
+    <p>
+      La profession s'installe sur les réseaux — et c'est un mouvement de fond. LinkedIn concentre le trafic B2B utile ; Instagram, TikTok et YouTube émergent pour les cabinets qui parlent aux créateurs de moins de 40 ans.
+    </p>
+    <ul>
+      <li>☐ <strong>LinkedIn</strong> : 1 à 2 posts / semaine, un point de vue, pas des news. Les associés qui postent en leur nom performent mieux que les pages cabinet.</li>
+      <li>☐ <strong>Instagram / TikTok</strong> : format court, pédagogie fiscale, réponses aux questions récurrentes des créateurs. Un cabinet qui vulgarise attire son ICP.</li>
+      <li>☐ <strong>Podcast / YouTube</strong> : format long, interviews de dirigeants clients, positionnement d'expertise sur une verticale.</li>
+      <li>☐ <strong>Objectif</strong> : que le cabinet devienne reconnaissable. Un dirigeant qui a vu 3 posts d'un associé avant de le contacter arrive en RDV déjà à moitié convaincu.</li>
+    </ul>
+
+    <h3>6. Faciliter les formulaires de contact</h3>
+    <p>
+      La meilleure prospection du monde ne sert à rien si le prospect ne peut pas vous joindre facilement. Un créateur qui cherche un expert-comptable aujourd'hui ne vous rappellera pas demain : il appellera le suivant.
+    </p>
+    <ul>
+      <li>☐ <strong>Un formulaire de contact à 3 champs maximum</strong> : nom, email, téléphone. Demandez le reste en RDV.</li>
+      <li>☐ <strong>Une prise de RDV en ligne visible</strong> (Cal.com, Calendly) en haut et en bas de chaque page, et dans les signatures d'email.</li>
+      <li>☐ <strong>Un numéro de téléphone joignable</strong> et un temps de réponse email inférieur à 4 heures ouvrées.</li>
+      <li>☐ <strong>Canaux modernes proposés</strong> : WhatsApp Business pour les questions rapides, Slack partagé pour les clients tech/SaaS.</li>
+      <li>☐ <strong>Confirmation immédiate</strong> après soumission : le prospect sait que sa demande est prise en compte.</li>
+    </ul>
+
+    <h3>7. Stratégie d'outbound avec Eligibly</h3>
+    <p>
+      La visibilité inbound ne suffit pas à court terme. Le démarchage direct devient légitime dès qu'il est pertinent : ciblé sur votre ICP, contextualisé et déclenché au bon moment. Eligibly transforme les immatriculations de la veille en décisions commerciales actionnables.
+    </p>
+    <ul>
+      <li>☐ <strong>Définir votre ICP formel</strong> : formes juridiques (SASU, SAS, EURL, SARL, SEL), zone géographique, code NAF, capital et effectif cible.</li>
+      <li>☐ <strong>Recevoir chaque matin à 7h les sociétés fraîchement immatriculées</strong> correspondant à votre ICP, filtrées et scorées.</li>
+      <li>☐ <strong>Contacter dans les premières semaines</strong> : c'est le moment où le dirigeant choisit encore son expert-comptable.</li>
+      <li>☐ <strong>Utiliser l'accroche contextuelle</strong> fournie par Eligibly (ex: « Madame, votre SASU de conseil IT, immatriculée le 12 juillet, entre dans sa première période de TVA. Voici les 3 pièges à éviter. »).</li>
+      <li>☐ <strong>Piloter par le nombre de RDV / mois</strong> et par le taux de conversion, pas par le nombre de emails envoyés.</li>
+      <li>☐ <strong>Objectif réaliste à 3 mois</strong> : 1 à 3 leads qualifiés par semaine sur une zone et une verticale ciblées, comme le cas Empartners.</li>
     </ul>
 
     <h2>Conclusion — Osez, sobrement.</h2>
