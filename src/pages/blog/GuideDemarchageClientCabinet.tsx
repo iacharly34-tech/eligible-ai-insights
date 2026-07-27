@@ -28,15 +28,21 @@ const GuideDemarchageClientCabinet = () => (
     ]}
   >
     <p>
-      Longtemps, la profession comptable a considéré le démarchage comme une pratique presque déplacée. La déontologie l'a d'ailleurs longtemps encadré strictement. Mais depuis la <strong>réforme de 2014</strong>, le démarchage est <strong>autorisé</strong> pour les experts-comptables — à condition d'être loyal, sincère et respectueux du secret professionnel. Ce que le 75<sup>e</sup> Congrès de l'OEC a résumé en trois mots : <em>« Osez le marketing »</em>.
+      <strong>Le marketing n'est plus un tabou pour les experts-comptables.</strong> Depuis la réforme de 2014, il est autorisé — et depuis le 75<sup>e</sup> Congrès de l'OEC, il est presque un devoir de gestion. Pourtant, la plupart des cabinets restent en posture d'attente : site vitrine, bouche-à-oreille, et l'espoir qu'un client « tombe » au bon moment.
     </p>
     <p>
-      Ce <strong>kit marketing</strong> couvre l'ensemble de la chaîne d'acquisition d'un cabinet en 2026 : cadre déontologique, <strong>présence sociale</strong>, <strong>fluidification des canaux de contact</strong> (Slack, WhatsApp), démarchage direct, <strong>timing d'immatriculation</strong> et <strong>présence digitale</strong> (site, SEO, LLM) sous forme de checklist en fin d'article — le levier n°1 pour croître sans dépendre du bouche-à-oreille.
+      En 2026, cette posture coûte cher. Le marché s'est concentré, digitalisé et concurrentiel. Les créateurs d'entreprises choisissent leur expert-comptable dans les premières semaines. Celui qui arrive en premier avec le bon message gagne la signature. Celui qui attend la recommandation subit son marché.
+    </p>
+    <p>
+      Ce <strong>kit marketing</strong> vous donne une trame complète pour passer de la posture d'attente à une <strong>machine d'acquisition maîtrisée</strong> : cadre déontologique, définition de votre client idéal, présence sociale, fluidification des canaux de contact, démarchage direct, timing d'immatriculation et, en fin d'article, une <strong>checklist présence digitale</strong> opérationnelle (site, SEO, présence dans les LLM). Tout est sourcé, conforme et directement applicable.
     </p>
 
-    <h2>1. Ce que dit vraiment le cadre déontologique</h2>
+    <h2>1. Le cadre déontologique : une permission, pas une contrainte</h2>
     <p>
-      Depuis le décret du 30 juin 2014, un expert-comptable peut prospecter — y compris par démarchage direct. Le Code de déontologie impose simplement de :
+      Longtemps, la profession comptable a considéré le démarchage comme une pratique presque déplacée. La déontologie l'encadrait strictement. Mais depuis le <strong>décret du 30 juin 2014</strong>, un expert-comptable peut prospecter — y compris par démarchage direct.
+    </p>
+    <p>
+      Le Code de déontologie impose simplement de :
     </p>
     <ul>
       <li>Ne pas dénigrer les confrères ;</li>
@@ -45,12 +51,15 @@ const GuideDemarchageClientCabinet = () => (
       <li>Respecter le secret professionnel et le RGPD.</li>
     </ul>
     <p>
-      Autrement dit : <strong>le marketing est autorisé, la publicité mensongère ne l'est pas</strong>. La plupart des cabinets s'auto-censurent bien au-delà de ce que la loi impose.
+      Autrement dit : <strong>le marketing est autorisé, la publicité mensongère ne l'est pas</strong>. La plupart des cabinets s'auto-censurent bien au-delà de ce que la loi impose. Le premier blocage n'est pas juridique, il est culturel.
+    </p>
+    <p>
+      Le 75<sup>e</sup> Congrès de l'OEC l'a dit sans ambiguïté : <em>« Osez le marketing »</em>. La question n'est plus de savoir si vous avez le droit de prospecter. Elle est de savoir <strong>comment le faire avec sérieux et efficacité</strong>.
     </p>
 
-    <h2>2. Pourquoi le démarchage devient indispensable</h2>
+    <h2>2. Pourquoi le démarchage devient indispensable en 2026</h2>
     <p>
-      Le marché de l'expertise comptable s'est <strong>concentré, digitalisé et rendu concurrentiel</strong>. Selon le CNOEC, la profession compte <strong>plus de 22 000 experts-comptables et 186 000 salariés</strong> pour un chiffre d'affaires estimé entre 16 et 17 Md€, partenaires de <strong>plus de 7 entreprises sur 10</strong> (<a href="https://evenements.experts-comptables.org/evenement/les-chiffres-de-la-profession-2025" target="_blank" rel="noopener noreferrer">source CNOEC 2025</a>). Côté flux, l'<a href="https://www.insee.fr/fr/statistiques/2015204" target="_blank" rel="noopener noreferrer">INSEE</a> mesure plusieurs centaines de milliers de créations d'entreprises par trimestre en 2026 — autant de prospects qui choisissent leur expert-comptable dans les toutes premières semaines. Les cabinets qui attendent la recommandation perdent structurellement des parts.
+      Le marché de l'expertise comptable a changé de nature. Selon le CNOEC, la profession compte <strong>plus de 22 000 experts-comptables et 186 000 salariés</strong> pour un chiffre d'affaires estimé entre 16 et 17 Md€, partenaires de <strong>plus de 7 entreprises sur 10</strong> (<a href="https://evenements.experts-comptables.org/evenement/les-chiffres-de-la-profession-2025" target="_blank" rel="noopener noreferrer">source CNOEC 2025</a>). Côté flux, l'<a href="https://www.insee.fr/fr/statistiques/2015204" target="_blank" rel="noopener noreferrer">INSEE</a> mesure plusieurs centaines de milliers de créations d'entreprises par trimestre en 2026 — autant de prospects qui choisissent leur expert-comptable dans les toutes premières semaines.
     </p>
 
     <h3 id="actualites-profession">Ce que dit officiellement la profession</h3>
@@ -71,30 +80,33 @@ const GuideDemarchageClientCabinet = () => (
       <li>La <strong>pression tarifaire</strong> qui s'exerce sur les honoraires ;</li>
       <li>La <strong>bascule vers le conseil</strong> qui suppose d'aller chercher les bons clients, pas les subir.</li>
     </ul>
+    <p>
+      Si vous ne prospectez pas, vous laissez le marché aux cabinets qui le font — et aux plateformes qui industrialisent déjà la relation client.
+    </p>
 
     <h2>3. La méthode marketing en 5 étapes</h2>
     <p>
-      Une trame simple et pragmatique, validée sur le terrain avec nos cabinets pilotes.
+      Passer à l'action suppose une trame claire. Voici celle que nous avons validée avec nos cabinets pilotes : choisir sa cible, afficher son offre, devenir visible, provoquer la rencontre, puis mesurer ce qui marche.
     </p>
 
     <h3>Étape 1 · Définir son ICP (client idéal)</h3>
     <p>
-      Quel type d'entreprise sert-on le mieux, avec la meilleure marge et le meilleur NPS ? Verticale (SASU tech, restauration, e-commerce, holdings…), taille, zone, maturité. <strong>Sans ICP, il n'y a pas de démarchage — il n'y a que du bruit.</strong>
+      Vous ne pouvez pas contacter tout le monde. Commencez par la question : <strong>quel type d'entreprise sert-on le mieux, avec la meilleure marge et le meilleur NPS ?</strong> Verticale (SASU tech, restauration, e-commerce, holdings…), taille, zone géographique, maturité. Sans ICP, il n'y a pas de démarchage — il n'y a que du bruit.
     </p>
 
     <h3>Étape 2 · Formaliser une offre différenciante</h3>
     <p>
-      Un cabinet « qui fait tout pour tout le monde » se retrouve comparé au prix. Un cabinet qui affiche <em>« nous accompagnons les SASU tech de moins de 10 salariés en Île-de-France, de la création à la levée »</em> devient <strong>évident</strong> pour son ICP.
+      Un cabinet « qui fait tout pour tout le monde » se retrouve comparé au prix. Un cabinet qui affiche <em>« nous accompagnons les SASU tech de moins de 10 salariés en Île-de-France, de la création à la levée »</em> devient <strong>évident</strong> pour son ICP. L'offre doit être spécifique, factuelle et facile à répéter.
     </p>
 
     <h3>Étape 3 · Rendre le cabinet visible</h3>
     <p>
-      Présence digitale (site, SEO, LLM) et présence sociale : traitées en détail dans la section suivante et dans la checklist de fin d'article.
+      Le prospect ne peut pas vous choisir s'il ne vous trouve pas. La visibilité se joue aujourd'hui sur trois terrains : le site web et son SEO, la présence sociale (LinkedIn, Instagram, TikTok), et la présence dans les LLM (ChatGPT, Perplexity, Gemini). Nous détaillons les deux premiers dans les sections suivantes et fournissons la checklist digitale en fin d'article.
     </p>
 
     <h3>Étape 4 · Provoquer la rencontre</h3>
     <p>
-      Le démarchage <strong>direct</strong> devient légitime dès qu'il est <em>pertinent</em>. Trois canaux tiennent la corde :
+      La visibilité ne suffit pas. Le démarchage <strong>direct</strong> devient légitime dès qu'il est <em>pertinent</em> — c'est-à-dire ciblé sur votre ICP et contextualisé. Trois canaux tiennent la corde :
     </p>
     <ul>
       <li><strong>Réseau prescripteur</strong> : banquiers, avocats, notaires, courtiers — 1 déjeuner / trimestre avec 5 prescripteurs bien choisis.</li>
@@ -104,7 +116,10 @@ const GuideDemarchageClientCabinet = () => (
 
     <h3>Étape 5 · Mesurer et itérer</h3>
     <p>
-      Nombre de RDV / mois, taux de signature, CAC par canal, LTV par verticale. Ce que le cabinet ne mesure pas, il ne le pilote pas.
+      Nombre de RDV / mois, taux de signature, CAC par canal, LTV par verticale. Ce que le cabinet ne mesure pas, il ne le pilote pas. La mesure transforme le démarchage en une discipline d'entreprise, pas en une suite d'actions isolées.
+    </p>
+    <p>
+      À ce stade, la question est : comment rendre cette méthode concrète et quotidienne ? Les deux sections suivantes répondent à l'étape 3 — la visibilité et la fluidité du contact.
     </p>
 
     <h2>4. La présence sociale : les experts-comptables prennent la parole</h2>
@@ -117,7 +132,7 @@ const GuideDemarchageClientCabinet = () => (
       <li><strong>Podcast / YouTube</strong> : format long, interviews de dirigeants clients, positionnement d'expertise sur une verticale.</li>
     </ul>
     <p>
-      Objectif : que le cabinet devienne <strong>reconnaissable</strong>. Un dirigeant qui a vu 3 posts d'un associé avant de le contacter arrive en RDV déjà à moitié convaincu.
+      Objectif : que le cabinet devienne <strong>reconnaissable</strong>. Un dirigeant qui a vu 3 posts d'un associé avant de le contacter arrive en RDV déjà à moitié convaincu. La présence sociale ne remplace pas le démarchage : elle le prépare.
     </p>
 
     <h2>5. Fluidifier l'accès à l'expert-comptable : Slack, WhatsApp, canaux modernes</h2>
@@ -131,7 +146,7 @@ const GuideDemarchageClientCabinet = () => (
       <li><strong>Portail client</strong> pour déposer les pièces, signer, suivre : réduit les allers-retours de 60 % en moyenne dans nos cabinets pilotes.</li>
     </ul>
     <p>
-      Ce n'est pas cosmétique : la <strong>facilité de contact</strong> est un critère de choix explicite pour les créateurs. Un cabinet difficilement joignable perd la vente avant même la première proposition.
+      Ce n'est pas cosmétique : la <strong>facilité de contact</strong> est un critère de choix explicite pour les créateurs. Un cabinet difficilement joignable perd la vente avant même la première proposition. La meilleure prospection du monde ne sert à rien si le prospect ne peut pas vous joindre facilement.
     </p>
 
     <h2>6. Cas client — Empartners : 3 leads par semaine en 3 mois</h2>
@@ -144,7 +159,7 @@ const GuideDemarchageClientCabinet = () => (
       <li>Un cycle de démarchage <strong>court</strong> : la société est contactée pendant qu'elle cherche encore son expert-comptable.</li>
     </ul>
     <p>
-      Autrement dit : un site jeune, un trafic modeste, mais une <strong>machine d'acquisition qui tourne</strong> — parce que le cabinet ne dépend pas du hasard du référencement, il agit sur le timing.
+      Autrement dit : un site jeune, un trafic modeste, mais une <strong>machine d'acquisition qui tourne</strong> — parce que le cabinet ne dépend pas du hasard du référencement, il agit sur le timing. C'est la preuve que la méthode fonctionne avant d'avoir investi des années en SEO.
     </p>
 
     <h2>7. Le canal le plus sous-estimé : le timing d'immatriculation</h2>
@@ -161,10 +176,13 @@ const GuideDemarchageClientCabinet = () => (
       <li>Avec une recommandation d'accroche prête à envoyer.</li>
     </ul>
     <p>
-      Là où les fichiers SIRET livrent une liste morte, Eligibly livre une <strong>décision commerciale</strong> : qui contacter aujourd'hui, sur quel canal, avec quel message.
+      Là où les fichiers SIRET livrent une liste morte, Eligibly livre une <strong>décision commerciale</strong> : qui contacter aujourd'hui, sur quel canal, avec quel message. Le timing d'immatriculation est le levier qui transforme une méthode marketing en résultats mesurables rapidement.
     </p>
 
     <h2>8. Les erreurs à éviter</h2>
+    <p>
+      Même avec la bonne méthode, certains écueils reviennent. Les voici pour les anticiper :
+    </p>
     <ul>
       <li><strong>Le publipostage massif non ciblé</strong> — inefficace, mal perçu et coûteux.</li>
       <li><strong>Le message générique « bonjour, nous sommes un cabinet »</strong> — supprimé en 3 secondes.</li>
@@ -173,10 +191,13 @@ const GuideDemarchageClientCabinet = () => (
       <li><strong>Négliger la fluidité du contact</strong> — un formulaire lourd ou un standard non joignable annule tout l'effort marketing amont.</li>
       <li><strong>Ne pas former les collaborateurs à la posture conseil</strong> — 80 % des ventes se jouent en RDV, pas en amont.</li>
     </ul>
+    <p>
+      Éviter ces erreurs, c'est déjà gagner la moitié de la bataille. L'autre moitié tient dans l'exécution quotidienne — et dans la checklist qui suit.
+    </p>
 
     <h2>9. Checklist présence digitale 2026 (site · SEO · LLM)</h2>
     <p>
-      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist opérationnelle — à cocher point par point — s'appuie sur les orientations officielles du CNOEC (Leadtech 2026, travaux Data & IA) et sur ce qui fonctionne concrètement chez nos cabinets pilotes.
+      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist opérationnelle — à cocher point par point — s'appuie sur les orientations officielles du CNOEC (Leadtech 2026, travaux Data & IA) et sur ce qui fonctionne concrètement chez nos cabinets pilotes. Elle reprend les fondamentaux de l'étape 3 sous forme d'actions concrètes.
     </p>
 
     <h3>✅ Site web du cabinet</h3>
@@ -203,7 +224,7 @@ const GuideDemarchageClientCabinet = () => (
 
     <h3>✅ Présence dans les LLM (ChatGPT, Perplexity, Gemini, Claude)</h3>
     <p>
-      De plus en plus de dirigeants formulent leur recherche dans une IA générative avant Google (« quel expert-comptable pour une SASU tech ? »). Le CNOEC en fait explicitement un enjeu profession dans ses <a href="https://www.experts-comptables.fr/travaux-data-et-ia" target="_blank" rel="noopener noreferrer">travaux Data et IA</a>.
+      De plus en plus de dirigeants formulent leur recherche dans une IA générative avant Google (« quel expert-comptable pour une SASU tech ? »). Le CNOEC en fait explicitement un enjeu professionnel dans ses <a href="https://www.experts-comptables.fr/travaux-data-et-ia" target="_blank" rel="noopener noreferrer">travaux Data et IA</a>.
     </p>
     <ul>
       <li>☐ <strong>Fichier <code>llms.txt</code></strong> à la racine du site pour signaler les pages clés aux modèles.</li>
@@ -219,7 +240,7 @@ const GuideDemarchageClientCabinet = () => (
       Le message du 75<sup>e</sup> Congrès de l'OEC tient en une ligne : <em>le marketing n'est plus un tabou, c'est un devoir de gestion</em>. Un cabinet qui ne pilote pas son acquisition subit son marché ; un cabinet qui structure sa démarche — ICP, offre, visibilité, démarchage, mesure — reprend la main.
     </p>
     <p>
-      <strong>Le bon client, au bon moment, avec le bon message.</strong> C'est exactement ce à quoi sert Eligibly : transformer chaque matin les immatriculations de la veille en RDV signés.
+      <strong>Le bon client, au bon moment, avec le bon message.</strong> C'est exactement ce à quoi sert Eligibly : transformer chaque matin les immatriculations de la veille en RDV signés. Vous avez maintenant la trame. Il ne reste plus qu'à l'activer.
     </p>
   </ArticleShell>
 );
