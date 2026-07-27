@@ -196,15 +196,27 @@ const GuideDemarchageClientCabinet = () => (
 
     <h2>8. Les erreurs à éviter</h2>
     <p>
-      Même avec la bonne méthode, certains écueils reviennent. Les voici pour les anticiper :
+      Même avec la bonne méthode, certains écueils reviennent. Les voici, avec des exemples concrets pour les repérer avant qu'ils ne coûtent des rendez-vous.
     </p>
     <ul>
-      <li><strong>Le publipostage massif non ciblé</strong> — inefficace, mal perçu et coûteux.</li>
-      <li><strong>Le message générique « bonjour, nous sommes un cabinet »</strong> — supprimé en 3 secondes.</li>
-      <li><strong>Attendre le bouche-à-oreille seul</strong> — c'est structurellement décroissant.</li>
-      <li><strong>Confondre visibilité et démarchage</strong> — LinkedIn nourrit le pipeline, il ne le remplace pas.</li>
-      <li><strong>Négliger la fluidité du contact</strong> — un formulaire lourd ou un standard non joignable annule tout l'effort marketing amont.</li>
-      <li><strong>Ne pas former les collaborateurs à la posture conseil</strong> — 80 % des ventes se jouent en RDV, pas en amont.</li>
+      <li>
+        <strong>Le publipostage massif non ciblé</strong> — envoyer 500 courriers identiques à toutes les sociétés du département, sans filtre sur le code NAF, l'effectif ou l'ancienneté d'immatriculation, produit 0 RDV et abîme l'image du cabinet. Mieux vaut 50 courriers personnalisés à des créations de la semaine sur votre verticale.
+      </li>
+      <li>
+        <strong>Le message générique « Bonjour, nous sommes un cabinet d'expertise comptable »</strong> — ce type d'approche est supprimé en 3 secondes. À l'inverse, un message du type « Madame, votre SASU de conseil IT, immatriculée le 12 juillet, entre dans sa première période de TVA. Voici les 3 pièges à éviter » obtient un taux de réponse nettement supérieur, parce qu'il prouve que vous avez fait le travail amont.
+      </li>
+      <li>
+        <strong>Attendre le bouche-à-oreille seul</strong> — un cabinet qui perd 4 clients par an (cession, cessation, départ) et n'en signe que 2 par recommandation réduit mécaniquement son chiffre. Le bouche-à-oreille est un levier ; il ne doit pas être le seul moteur de croissance.
+      </li>
+      <li>
+        <strong>Confondre visibilité et démarchage</strong> — un post LinkedIn par semaine est utile, mais il ne remplace pas un contact direct. Un prospect qui vous a vu 3 fois sur LinkedIn acceptera plus facilement votre appel ; un prospect qui ne vous a jamais vu raccrochera plus vite.
+      </li>
+      <li>
+        <strong>Négliger la fluidité du contact</strong> — un formulaire de contact à 8 champs, un standard injoignable entre 12h et 14h, ou l'absence de prise de RDV en ligne annulent l'effort marketing. Un créateur qui cherche un expert-comptable aujourd'hui ne vous rappellera pas demain : il appellera le suivant.
+      </li>
+      <li>
+        <strong>Ne pas former les collaborateurs à la posture conseil</strong> — en RDV, un collaborateur qui cite d'abord ses honoraires avant de parler de la situation du dirigeant perd 80 % des ventes. La vente se joue sur la capacité à écouter, structurer et rassurer, pas sur la grille tarifaire.
+      </li>
     </ul>
     <p>
       Éviter ces erreurs, c'est déjà gagner la moitié de la bataille. L'autre moitié tient dans l'exécution quotidienne — et dans la checklist qui suit.
