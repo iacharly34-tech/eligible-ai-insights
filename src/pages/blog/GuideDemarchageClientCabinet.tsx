@@ -72,6 +72,21 @@ const GuideDemarchageClientCabinet = () => (
     <p>
       Autrement dit : en 2026, la question n'est plus <em>« faut-il se digitaliser ? »</em> mais <em>« à quelle vitesse ? »</em>.
     </p>
+
+    <h3>L'IA abaisse le seuil d'action sur ces thématiques marketing</h3>
+    <p>
+      L'IA générative ne remplace pas la stratégie du cabinet, mais elle abaisse le seuil d'entrée sur des actions jusqu'ici jugées trop chronophages. Concrètement, elle permet d'aller plus vite sur :
+    </p>
+    <ul>
+      <li><strong>Contenu et visibilité</strong> : rédiger des posts LinkedIn, des articles de blog et des réponses aux questions fréquentes des créateurs, à partir de sources officielles.</li>
+      <li><strong>Segmentation et personnalisation</strong> : qualifier un prospect selon sa forme juridique, son capital, son code NAF et sa zone géographique, avant le premier contact.</li>
+      <li><strong>Timing et démarchage</strong> : détecter les signaux d'immatriculation et d'activité pour contacter le bon dirigeant dans les premières semaines.</li>
+      <li><strong>Posture conseil</strong> : produire des supports pédagogiques (checklist fiscale, FAQ) qui positionnent l'expert-comptable comme référent avant même le RDV.</li>
+    </ul>
+    <p>
+      Le cabinet conserve le contrôle éditorial et déontologique. L'IA accélère l'exécution et réduit la friction. C'est l'angle retenu par Eligibly : l'IA au service de la décision commerciale, sans jamais remplacer l'expert-comptable.
+    </p>
+
     <p>
       Le bouche-à-oreille reste puissant, mais il ne suffit plus à compenser :
     </p>
