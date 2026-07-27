@@ -50,7 +50,18 @@ const GuideDemarchageClientCabinet = () => (
 
     <h2>2. Pourquoi le démarchage devient indispensable</h2>
     <p>
-      Le marché de l'expertise comptable s'est <strong>concentré, digitalisé et rendu concurrentiel</strong>. Selon l'<a href="https://www.insee.fr/fr/statistiques/serie/000728988" target="_blank" rel="noopener noreferrer">INSEE</a>, plus d'un million d'entreprises sont immatriculées chaque année en France, et les créateurs choisissent leur expert-comptable dans les toutes premières semaines. Les cabinets qui attendent la recommandation perdent structurellement des parts.
+      Le marché de l'expertise comptable s'est <strong>concentré, digitalisé et rendu concurrentiel</strong>. Selon le CNOEC, la profession compte <strong>plus de 22 000 experts-comptables et 186 000 salariés</strong> pour un chiffre d'affaires estimé entre 16 et 17 Md€, partenaires de <strong>plus de 7 entreprises sur 10</strong> (<a href="https://evenements.experts-comptables.org/evenement/les-chiffres-de-la-profession-2025" target="_blank" rel="noopener noreferrer">source CNOEC 2025</a>). Côté flux, l'<a href="https://www.insee.fr/fr/statistiques/2015204" target="_blank" rel="noopener noreferrer">INSEE</a> mesure plusieurs centaines de milliers de créations d'entreprises par trimestre en 2026 — autant de prospects qui choisissent leur expert-comptable dans les toutes premières semaines. Les cabinets qui attendent la recommandation perdent structurellement des parts.
+    </p>
+
+    <h3 id="mise-a-jour-2026">Mise à jour 2026 — ce que dit officiellement la profession</h3>
+    <ul>
+      <li><strong>Leadtech 2026</strong> (CNOEC, 4 juin 2026, Paris) : premier rendez-vous annuel dédié à la transformation digitale — facturation électronique, IA, data, identité numérique — au cœur de la profession (<a href="https://evenements.experts-comptables.org/evenement/leadtech-2026-linnovation-choisie" target="_blank" rel="noopener noreferrer">source CNOEC</a>).</li>
+      <li><strong>Travaux Data et IA du CNOEC</strong> (« Parlons Data-IA ») : l'Ordre reconnaît explicitement que l'IA générative va transformer les méthodes de travail des cabinets et publie des outils concrets pour passer à l'action (<a href="https://www.experts-comptables.fr/travaux-data-et-ia" target="_blank" rel="noopener noreferrer">source CNOEC</a>).</li>
+      <li><strong>INSEE — juin 2026</strong> : repli partiel des créations d'entreprises après un rebond de +10,7 % en mai. Le flux est volatil, ce qui rend le <strong>timing d'immatriculation</strong> d'autant plus décisif (<a href="https://www.insee.fr/fr/statistiques/9025111" target="_blank" rel="noopener noreferrer">Informations rapides n°170</a>).</li>
+      <li><strong>Facturation électronique et identité numérique</strong> : le président du CNOEC Damien Charrier a placé ces deux chantiers au centre du mandat 2025-2028 — le cabinet qui n'a pas de présence digitale claire ne pourra plus accompagner ses clients sur ces sujets.</li>
+    </ul>
+    <p>
+      Autrement dit : en 2026, la question n'est plus <em>« faut-il se digitaliser ? »</em> mais <em>« à quelle vitesse ? »</em>.
     </p>
     <p>
       Le bouche-à-oreille reste puissant, mais il ne suffit plus à compenser :
@@ -96,37 +107,44 @@ const GuideDemarchageClientCabinet = () => (
       Nombre de RDV / mois, taux de signature, CAC par canal, LTV par verticale. Ce que le cabinet ne mesure pas, il ne le pilote pas.
     </p>
 
-    <h2>4. La présence digitale : site, SEO, LLM</h2>
+    <h2>4. Checklist présence digitale 2026 (site · SEO · LLM)</h2>
     <p>
-      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. La présence digitale se joue sur trois plans indissociables.
+      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist opérationnelle — à cocher point par point — s'appuie sur les orientations officielles du CNOEC (Leadtech 2026, travaux Data & IA) et sur ce qui fonctionne concrètement chez nos cabinets pilotes.
     </p>
 
-    <h3>Un site web qui convertit</h3>
+    <h3>✅ Site web du cabinet</h3>
     <ul>
-      <li>Une <strong>promesse claire dès le hero</strong> (verticale, zone, offre) ;</li>
-      <li>Une <strong>page par verticale</strong> (SASU tech, e-commerce, CHR, holdings, professions libérales…) : c'est ce que Google indexe et ce que les prospects cherchent ;</li>
-      <li>Un <strong>appel à l'action explicite</strong> (RDV de 15 min, audit gratuit) et une preuve sociale (témoignages, chiffres) ;</li>
-      <li>Un <strong>temps de chargement &lt; 2 s</strong> et un site responsive : Google en tient compte pour le classement.</li>
+      <li>☐ <strong>Promesse claire dès le hero</strong> : verticale servie, zone, offre en une phrase.</li>
+      <li>☐ <strong>Une page par verticale</strong> (SASU tech, e-commerce, CHR, holdings, professions libérales…) — c'est ce que Google indexe et ce que les prospects cherchent.</li>
+      <li>☐ <strong>Page « À propos »</strong> avec associés nommés, photo, parcours et numéro d'inscription à l'Ordre.</li>
+      <li>☐ <strong>Preuve sociale</strong> : témoignages clients, chiffres du cabinet, logos partenaires.</li>
+      <li>☐ <strong>Appel à l'action explicite</strong> (RDV de 15 min, audit gratuit) présent en haut et en bas de chaque page.</li>
+      <li>☐ <strong>Temps de chargement &lt; 2 s</strong>, site 100 % responsive, HTTPS et accessibilité de base (WCAG AA).</li>
+      <li>☐ <strong>Mentions légales, RGPD et politique de confidentialité</strong> à jour — obligation déontologique et légale.</li>
     </ul>
 
-    <h3>Un SEO qui sort de la commodité</h3>
-    <p>
-      Se positionner sur <em>« expert-comptable Paris »</em> est perdu d'avance. Se positionner sur <em>« expert-comptable SASU e-commerce Lyon »</em> l'est déjà beaucoup moins. Trois principes :
-    </p>
+    <h3>✅ SEO — sortir de la commodité</h3>
     <ul>
-      <li>Écrire pour un ICP précis, pas pour tout le monde ;</li>
-      <li>Publier régulièrement des <strong>contenus sourcés</strong> (données INSEE, textes de l'OEC, retours terrain) plutôt que des articles génériques ;</li>
-      <li>Soigner les fondamentaux techniques : titres, méta-descriptions, balisage sémantique, sitemap, hreflang si multi-langue.</li>
+      <li>☐ <strong>Cibler des requêtes ICP</strong> (« expert-comptable SASU e-commerce Lyon ») plutôt que des requêtes génériques perdues d'avance.</li>
+      <li>☐ <strong>Fondamentaux techniques</strong> : titre unique par page, méta-description unique, balisage <code>H1/H2/H3</code> propre, sitemap.xml, robots.txt, canonical.</li>
+      <li>☐ <strong>Données structurées</strong> (JSON-LD) : <code>Organization</code>, <code>LocalBusiness</code>, <code>Article</code>, <code>FAQPage</code>, <code>BreadcrumbList</code>.</li>
+      <li>☐ <strong>Contenus sourcés</strong> : appuyer chaque article sur des sources officielles (INSEE, CNOEC, Légifrance, Bulletin officiel des finances publiques).</li>
+      <li>☐ <strong>Fiche Google Business Profile</strong> complète (photos, horaires, avis).</li>
+      <li>☐ <strong>Google Search Console + Analytics</strong> configurés, indexation vérifiée, sitemap soumis.</li>
+      <li>☐ <strong>Maillage interne</strong> cohérent (verticales ↔ articles ↔ page contact).</li>
     </ul>
 
-    <h3>La présence dans les LLM (ChatGPT, Perplexity, Gemini, Claude)</h3>
+    <h3>✅ Présence dans les LLM (ChatGPT, Perplexity, Gemini, Claude)</h3>
     <p>
-      De plus en plus de dirigeants ouvrent <em>« quel expert-comptable pour une SASU tech ? »</em> dans ChatGPT ou Perplexity avant Google. Un cabinet cité dans ces réponses génère des prospects <strong>hors du canal Google</strong>. Pour y apparaître :
+      De plus en plus de dirigeants formulent leur recherche dans une IA générative avant Google (« quel expert-comptable pour une SASU tech ? »). Le CNOEC en fait explicitement un enjeu profession dans ses <a href="https://www.experts-comptables.fr/travaux-data-et-ia" target="_blank" rel="noopener noreferrer">travaux Data et IA</a>.
     </p>
     <ul>
-      <li>Un site rapide, bien balisé, avec un <code>llms.txt</code> à la racine ;</li>
-      <li>Des pages piliers explicites (verticale, méthode, tarifs, cas clients) que les LLM peuvent citer sans ambiguïté ;</li>
-      <li>Des mentions externes cohérentes (annuaire OEC, LinkedIn, presse professionnelle) qui renforcent la crédibilité de la marque.</li>
+      <li>☐ <strong>Fichier <code>llms.txt</code></strong> à la racine du site pour signaler les pages clés aux modèles.</li>
+      <li>☐ <strong>Pages piliers explicites</strong> (méthode, verticale, tarifs, cas clients) que les LLM peuvent citer sans ambiguïté.</li>
+      <li>☐ <strong>Balisage sémantique clair</strong> (titres, listes, tableaux) — les LLM extraient mieux le contenu structuré.</li>
+      <li>☐ <strong>Mentions externes cohérentes</strong> : annuaire officiel OEC, LinkedIn du cabinet, presse professionnelle (Le Monde du Chiffre, SIC).</li>
+      <li>☐ <strong>Nom de marque unique</strong> et bio cohérente sur tous les canaux — un LLM ne peut citer qu'un cabinet qu'il identifie sans doute.</li>
+      <li>☐ <strong>Contenu à jour et daté</strong> : les LLM récents privilégient les sources datées et versionnées.</li>
     </ul>
 
     <h2>5. La présence sociale : les experts-comptables prennent la parole</h2>
