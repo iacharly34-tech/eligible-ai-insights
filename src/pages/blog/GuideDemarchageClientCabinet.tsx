@@ -4,11 +4,11 @@ const GuideDemarchageClientCabinet = () => (
   <ArticleShell
     badge="Kit marketing cabinet"
     title="Kit marketing 2026 pour experts-comptables : sortir de la posture d'attente"
-    subtitle="Cadre déontologique, présence sociale, canaux fluides, démarchage, timing d'immatriculation et checklist marketing en 7 axes : site web, Google avis, SEO, LLM, réseaux sociaux, formulaires de contact et outbound Eligibly."
+    subtitle="Cadre déontologique, présence sociale, canaux fluides, démarchage, timing d'immatriculation et checklist marketing en 12 axes : site web, Google avis, SEO, LLM, réseaux sociaux, formulaires de contact, outbound Eligibly, canal prescripteur, lead magnets, webinaires, témoignages et parrainage."
     date="2026-07-27"
     readTime="14 min de lecture"
     url="/blog/guide-demarchage-client-expert-comptable"
-    description="Kit marketing 2026 pour experts-comptables : cadre déontologique post-2014, présence sociale, canaux fluides (Slack, WhatsApp), démarchage direct, timing d'immatriculation et checklist marketing en 7 axes (site web qui convertit, Google avis, SEO, visibilité LLM, réseaux sociaux, formulaires de contact, outbound Eligibly). Sources CNOEC, INSEE, Légifrance. Cas Empartners : 3 leads / semaine en 3 mois."
+    description="Kit marketing 2026 pour experts-comptables : cadre déontologique post-2014, présence sociale, canaux fluides (Slack, WhatsApp), démarchage direct, timing d'immatriculation et checklist marketing en 12 axes (site web qui convertit, Google avis, SEO, visibilité LLM, réseaux sociaux, formulaires de contact, outbound Eligibly, canal prescripteur, lead magnets, webinaires, témoignages et parrainage). Sources CNOEC, INSEE, Légifrance. Cas Empartners : 3 leads / semaine en 3 mois."
     category="Kit marketing cabinet"
     sources={[
       { label: "OEC — Code de déontologie des professionnels de l'expertise comptable", url: "https://www.experts-comptables.fr/code-de-deontologie" },
@@ -34,7 +34,7 @@ const GuideDemarchageClientCabinet = () => (
       En 2026, cette posture coûte cher. Le marché s'est concentré, digitalisé et concurrentiel. Les créateurs d'entreprises choisissent leur expert-comptable dans les premières semaines. Celui qui arrive en premier avec le bon message gagne la signature. Celui qui attend la recommandation subit son marché.
     </p>
     <p>
-      Ce <strong>kit marketing</strong> vous donne une trame complète pour passer de la posture d'attente à une <strong>machine d'acquisition maîtrisée</strong> : cadre déontologique, définition de votre client idéal, présence sociale, fluidification des canaux de contact, démarchage direct, timing d'immatriculation et, en fin d'article, une <strong>checklist marketing en 7 axes</strong> (site web qui convertit, Google avis, SEO, visibilité LLM, réseaux sociaux, formulaires de contact, outbound Eligibly). Tout est sourcé, conforme et directement applicable.
+      Ce <strong>kit marketing</strong> vous donne une trame complète pour passer de la posture d'attente à une <strong>machine d'acquisition maîtrisée</strong> : cadre déontologique, définition de votre client idéal, présence sociale, fluidification des canaux de contact, démarchage direct, timing d'immatriculation et, en fin d'article, une <strong>checklist marketing en 12 axes</strong> (site web qui convertit, Google avis, SEO, visibilité LLM, réseaux sociaux, formulaires de contact, outbound Eligibly, canal prescripteur, lead magnets, webinaires, témoignages et parrainage). Tout est sourcé, conforme et directement applicable.
     </p>
 
     <h2>1. Le cadre déontologique : une permission, pas une contrainte</h2>
@@ -222,9 +222,9 @@ const GuideDemarchageClientCabinet = () => (
       Éviter ces erreurs, c'est déjà gagner la moitié de la bataille. L'autre moitié tient dans l'exécution quotidienne — et dans la checklist qui suit.
     </p>
 
-    <h2>9. Checklist marketing : les 7 axes qui génèrent des rendez-vous</h2>
+    <h2>9. Checklist marketing : les 12 axes qui génèrent des rendez-vous</h2>
     <p>
-      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist ne vise pas à faire de vous un expert technique : elle identifie les 7 axes concrets qui font la différence entre un site vitrine et une machine d'acquisition. Elle s'appuie sur les orientations du CNOEC (Leadtech 2026, travaux Data & IA), les retours de nos cabinets pilotes et le cas Empartners (3 leads / semaine en 3 mois).
+      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist ne vise pas à faire de vous un expert technique : elle identifie les 12 axes concrets qui font la différence entre un site vitrine et une machine d'acquisition. Elle s'appuie sur les orientations du CNOEC (Leadtech 2026, travaux Data & IA), les retours de nos cabinets pilotes et le cas Empartners (3 leads / semaine en 3 mois).
     </p>
 
     <h3>1. Site web qui convertit</h3>
