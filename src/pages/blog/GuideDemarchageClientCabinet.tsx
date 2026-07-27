@@ -14,7 +14,12 @@ const GuideDemarchageClientCabinet = () => (
       { label: "OEC — Code de déontologie des professionnels de l'expertise comptable", url: "https://www.experts-comptables.fr/code-de-deontologie" },
       { label: "SIC — 75e Congrès de l'Ordre : Osez le marketing", url: "https://www.experts-comptables.fr/sic-emissions-evenements-presse/sic-webzine/75e-congres-osez-le-marketing" },
       { label: "Décret n° 2014-912 du 18 août 2014 — Légifrance", url: "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000029388477/" },
-      { label: "INSEE — Créations d'entreprises en France", url: "https://www.insee.fr/fr/statistiques/serie/000728988" },
+      { label: "INSEE — Créations d'entreprises (données trimestrielles, avril 2026)", url: "https://www.insee.fr/fr/statistiques/2015204" },
+      { label: "INSEE — Repli des créations d'entreprises en juin 2026 (Informations rapides n°170)", url: "https://www.insee.fr/fr/statistiques/9025111" },
+      { label: "CNOEC — Travaux Data et IA (Parlons Data-IA)", url: "https://www.experts-comptables.fr/travaux-data-et-ia" },
+      { label: "CNOEC — Leadtech 2026, l'innovation choisie (4 juin 2026, Paris)", url: "https://evenements.experts-comptables.org/evenement/leadtech-2026-linnovation-choisie" },
+      { label: "CNOEC — Les chiffres de la profession 2025 (22 000 EC, 186 000 salariés)", url: "https://evenements.experts-comptables.org/evenement/les-chiffres-de-la-profession-2025" },
+      { label: "OEC Paris — Rapport moral 2024", url: "https://www.oec-paris.fr/wp-content/uploads/2025/07/rapport-moral-2024.pdf" },
       { label: "Cas client Eligibly — Empartners", url: "https://empartners.fr" },
     ]}
     related={[
