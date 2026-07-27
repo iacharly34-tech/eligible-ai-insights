@@ -1,4 +1,5 @@
 import { ArticleShell } from "./ArticleShell";
+import { KitTimingTimeline, KitEmpartnersStats, KitPillars12, KitFourCategories } from "@/components/blog/KitMarketingVisuals";
 
 const GuideDemarchageClientCabinet = () => (
   <ArticleShell
@@ -36,6 +37,8 @@ const GuideDemarchageClientCabinet = () => (
     <p>
       Ce <strong>kit marketing</strong> vous donne une trame complète pour passer de la posture d'attente à une <strong>machine d'acquisition maîtrisée</strong> : cadre déontologique, définition de votre client idéal, présence sociale, fluidification des canaux de contact, démarchage direct, timing d'immatriculation et, en fin d'article, une <strong>checklist marketing en 12 axes</strong> (site web qui convertit, Google avis, SEO, visibilité LLM, réseaux sociaux, formulaires de contact, outbound Eligibly, canal prescripteur, lead magnets, webinaires, témoignages et parrainage). Tout est sourcé, conforme et directement applicable.
     </p>
+
+    <KitPillars12 />
 
     <h2>1. Le cadre déontologique : une permission, pas une contrainte</h2>
     <p>
