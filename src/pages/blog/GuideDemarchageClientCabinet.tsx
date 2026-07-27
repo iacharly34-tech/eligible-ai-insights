@@ -4,11 +4,11 @@ const GuideDemarchageClientCabinet = () => (
   <ArticleShell
     badge="Kit marketing cabinet"
     title="Kit marketing 2026 pour experts-comptables : sortir de la posture d'attente"
-    subtitle="Cadre déontologique, présence sociale, canaux fluides, démarchage, timing d'immatriculation et checklist marketing en 7 axes : site web, Google avis, SEO, LLM, réseaux sociaux, formulaires de contact et outbound Eligibly."
+    subtitle="Cadre déontologique, présence sociale, canaux fluides, démarchage, timing d'immatriculation et checklist marketing en 12 axes : site web, Google avis, SEO, LLM, réseaux sociaux, formulaires de contact, outbound Eligibly, canal prescripteur, lead magnets, webinaires, témoignages et parrainage."
     date="2026-07-27"
     readTime="14 min de lecture"
     url="/blog/guide-demarchage-client-expert-comptable"
-    description="Kit marketing 2026 pour experts-comptables : cadre déontologique post-2014, présence sociale, canaux fluides (Slack, WhatsApp), démarchage direct, timing d'immatriculation et checklist marketing en 7 axes (site web qui convertit, Google avis, SEO, visibilité LLM, réseaux sociaux, formulaires de contact, outbound Eligibly). Sources CNOEC, INSEE, Légifrance. Cas Empartners : 3 leads / semaine en 3 mois."
+    description="Kit marketing 2026 pour experts-comptables : cadre déontologique post-2014, présence sociale, canaux fluides (Slack, WhatsApp), démarchage direct, timing d'immatriculation et checklist marketing en 12 axes (site web qui convertit, Google avis, SEO, visibilité LLM, réseaux sociaux, formulaires de contact, outbound Eligibly, canal prescripteur, lead magnets, webinaires, témoignages et parrainage). Sources CNOEC, INSEE, Légifrance. Cas Empartners : 3 leads / semaine en 3 mois."
     category="Kit marketing cabinet"
     sources={[
       { label: "OEC — Code de déontologie des professionnels de l'expertise comptable", url: "https://www.experts-comptables.fr/code-de-deontologie" },
@@ -34,7 +34,7 @@ const GuideDemarchageClientCabinet = () => (
       En 2026, cette posture coûte cher. Le marché s'est concentré, digitalisé et concurrentiel. Les créateurs d'entreprises choisissent leur expert-comptable dans les premières semaines. Celui qui arrive en premier avec le bon message gagne la signature. Celui qui attend la recommandation subit son marché.
     </p>
     <p>
-      Ce <strong>kit marketing</strong> vous donne une trame complète pour passer de la posture d'attente à une <strong>machine d'acquisition maîtrisée</strong> : cadre déontologique, définition de votre client idéal, présence sociale, fluidification des canaux de contact, démarchage direct, timing d'immatriculation et, en fin d'article, une <strong>checklist marketing en 7 axes</strong> (site web qui convertit, Google avis, SEO, visibilité LLM, réseaux sociaux, formulaires de contact, outbound Eligibly). Tout est sourcé, conforme et directement applicable.
+      Ce <strong>kit marketing</strong> vous donne une trame complète pour passer de la posture d'attente à une <strong>machine d'acquisition maîtrisée</strong> : cadre déontologique, définition de votre client idéal, présence sociale, fluidification des canaux de contact, démarchage direct, timing d'immatriculation et, en fin d'article, une <strong>checklist marketing en 12 axes</strong> (site web qui convertit, Google avis, SEO, visibilité LLM, réseaux sociaux, formulaires de contact, outbound Eligibly, canal prescripteur, lead magnets, webinaires, témoignages et parrainage). Tout est sourcé, conforme et directement applicable.
     </p>
 
     <h2>1. Le cadre déontologique : une permission, pas une contrainte</h2>
@@ -222,9 +222,9 @@ const GuideDemarchageClientCabinet = () => (
       Éviter ces erreurs, c'est déjà gagner la moitié de la bataille. L'autre moitié tient dans l'exécution quotidienne — et dans la checklist qui suit.
     </p>
 
-    <h2>9. Checklist marketing : les 7 axes qui génèrent des rendez-vous</h2>
+    <h2>9. Checklist marketing : les 12 axes qui génèrent des rendez-vous</h2>
     <p>
-      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist ne vise pas à faire de vous un expert technique : elle identifie les 7 axes concrets qui font la différence entre un site vitrine et une machine d'acquisition. Elle s'appuie sur les orientations du CNOEC (Leadtech 2026, travaux Data & IA), les retours de nos cabinets pilotes et le cas Empartners (3 leads / semaine en 3 mois).
+      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist ne vise pas à faire de vous un expert technique : elle identifie les 12 axes concrets qui font la différence entre un site vitrine et une machine d'acquisition. Elle s'appuie sur les orientations du CNOEC (Leadtech 2026, travaux Data & IA), les retours de nos cabinets pilotes et le cas Empartners (3 leads / semaine en 3 mois).
     </p>
 
     <h3>1. Site web qui convertit</h3>
@@ -311,6 +311,66 @@ const GuideDemarchageClientCabinet = () => (
       <li>☐ <strong>Utiliser l'accroche contextuelle</strong> fournie par Eligibly (ex: « Madame, votre SASU de conseil IT, immatriculée le 12 juillet, entre dans sa première période de TVA. Voici les 3 pièges à éviter. »).</li>
       <li>☐ <strong>Piloter par le nombre de RDV / mois</strong> et par le taux de conversion, pas par le nombre de emails envoyés.</li>
       <li>☐ <strong>Objectif réaliste à 3 mois</strong> : 1 à 3 leads qualifiés par semaine sur une zone et une verticale ciblées, comme le cas Empartners.</li>
+    </ul>
+
+    <h3>8. Canal prescripteur : banquiers, avocats, notaires, courtiers</h3>
+    <p>
+      C'est souvent le canal à plus fort taux de conversion — et le moins structuré. Les prescripteurs voient passer des créateurs d'entreprise avant tout le monde. Un bon partenariat génère des rendez-vous chauds sans démarchage froid.
+    </p>
+    <ul>
+      <li>☐ <strong>Identifier 10 à 20 prescripteurs actifs</strong> sur votre zone : banquiers conseiller entreprise, avocats d'affaires, notaires, courtiers en prêts, cabinets de recrutement, incubateurs.</li>
+      <li>☐ <strong>Préparer un one-pager de présentation</strong> : votre ICP, vos verticales, votre différence, comment vous rémunérez ou remerciez les recommandations.</li>
+      <li>☐ <strong>Organiser 1 déjeuner / trimestre</strong> avec 5 prescripteurs bien choisis. Objectif : rester en tête lorsqu'un créateur leur demande « tu connais un bon expert-comptable ? ».</li>
+      <li>☐ <strong>Tracer les recommandations</strong> dans un simple tableau ou votre CRM : origine, date, statut, résultat.</li>
+      <li>☐ <strong>Réactiver les prescripteurs inactifs</strong> tous les 6 mois avec un email court et un contenu utile (ex. « 3 changements fiscaux à communiquer à vos créateurs »).</li>
+    </ul>
+
+    <h3>9. Lead magnets : transformer les visiteurs en leads</h3>
+    <p>
+      Un créateur qui arrive sur votre site n'est pas prêt à appeler. Proposez-lui un contenu utile en échange de son email. C'est le principe du lead magnet : faible friction, forte valeur, début d'une relation.
+    </p>
+    <ul>
+      <li>☐ <strong>Choisir 3 sujets ciblés sur votre ICP</strong> : par exemple « Checklist TVA pour SASU tech », « Guide rémunération président SAS », « 5 pièges à éviter à la création d'une SARL ».</li>
+      <li>☐ <strong>Formater en PDF de 2 à 5 pages</strong> : concret, sans jargon, avec des cases à cocher et des exemples chiffrés.</li>
+      <li>☐ <strong>Proposer le téléchargement contre un email</strong> sur les pages verticales, les articles de blog et la page d'accueil.</li>
+      <li>☐ <strong>Envoyer une séquence de 3 emails de nurture</strong> après téléchargement : approfondissement, témoignage, proposition de RDV.</li>
+      <li>☐ <strong>Mesurer le taux de conversion</strong> : téléchargements / visiteurs de la page, puis RDV / téléchargements.</li>
+    </ul>
+
+    <h3>10. Webinaires et ateliers : vendre en enseignant</h3>
+    <p>
+      Les dirigeants paient cher leur méconnaissance fiscale. Un cabinet qui enseigne sur une verticale précise attire des prospects déjà qualifiés et positionne l'expert-comptable comme référent.
+    </p>
+    <ul>
+      <li>☐ <strong>Choisir 3 thématiques récurrentes</strong> : « Créer sa SASU en 2026 », « IS ou IR : comment choisir ? », « Optimiser sa rémunération de dirigeant ».</li>
+      <li>☐ <strong>Format 45 min + 15 min de questions</strong> : dense, pratique, avec des cas chiffrés.</li>
+      <li>☐ <strong>Diffuser sur LinkedIn</strong>, votre newsletter et les partenariats prescripteurs 2 semaines avant.</li>
+      <li>☐ <strong>Transformer le replay</strong> en article de blog, post LinkedIn et extrait court pour les réseaux.</li>
+      <li>☐ <strong>Proposer un RDV individuel à la fin</strong> : le taux de conversion est élevé car le public est déjà engagé.</li>
+    </ul>
+
+    <h3>11. Témoignages et cas clients : la preuve sociale</h3>
+    <p>
+      Un prospect doute toujours. Les avis et les témoignages réduisent ce doute avant le premier contact. Ils sont aussi un signal fort pour Google et les LLM.
+    </p>
+    <ul>
+      <li>☐ <strong>Collecter 1 témoignage vidéo par verticale</strong> : 2 à 3 minutes, client qui raconte son problème, la solution et le résultat chiffré.</li>
+      <li>☐ <strong>Afficher des chiffres concrets</strong> : « temps gagné sur la paie », « réduction des délais de clôture », « taux de satisfaction ».</li>
+      <li>☐ <strong>Intégrer les témoignages sur les pages verticales</strong> et la page d'accueil, pas seulement sur une page isolée.</li>
+      <li>☐ <strong>Demander un avis Google après 6 mois de collaboration</strong> — et répondre à tous les avis, positifs comme négatifs.</li>
+      <li>☐ <strong>Créer des fiches cas clients écrites</strong> : situation, actions, résultats, nom du client (avec autorisation).</li>
+    </ul>
+
+    <h3>12. Programme de parrainage : activer ses clients ambassadeurs</h3>
+    <p>
+      Vos clients existants sont votre meilleur canal d'acquisition — s'ils ont un motif simple et immédiat de recommander. Un programme de parrainage structuré transforme le bouche-à-oreille en levier pilotable.
+    </p>
+    <ul>
+      <li>☐ <strong>Formaliser l'offre de parrainage</strong> : crédit d'honoraires, remise sur la prochaine mission, ou cadeau professionnel.</li>
+      <li>☐ <strong>Communiquer à chaque nouvelle signature</strong> : « Vous connaissez un créateur qui aurait besoin d'un expert-comptable ? ».</li>
+      <li>☐ <strong>Faciliter l'action</strong> : un formulaire simple, un email type, ou un lien à partager.</li>
+      <li>☐ <strong>Traiter les recommandations sous 48 h</strong> : un prospect parrainé qui attend perd confiance.</li>
+      <li>☐ <strong>Mesurer le nombre de clients signés par parrainage</strong> par trimestre et le coût moyen de ce canal.</li>
     </ul>
 
     <h2>Conclusion — Osez, sobrement.</h2>
