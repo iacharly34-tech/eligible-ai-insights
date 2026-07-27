@@ -31,7 +31,7 @@ const GuideDemarchageClientCabinet = () => (
       Longtemps, la profession comptable a considéré le démarchage comme une pratique presque déplacée. La déontologie l'a d'ailleurs longtemps encadré strictement. Mais depuis la <strong>réforme de 2014</strong>, le démarchage est <strong>autorisé</strong> pour les experts-comptables — à condition d'être loyal, sincère et respectueux du secret professionnel. Ce que le 75<sup>e</sup> Congrès de l'OEC a résumé en trois mots : <em>« Osez le marketing »</em>.
     </p>
     <p>
-      Ce <strong>kit marketing</strong> couvre l'ensemble de la chaîne d'acquisition d'un cabinet en 2026 : cadre déontologique, <strong>présence digitale</strong> (site, SEO, LLM) sous forme de checklist, <strong>présence sociale</strong>, <strong>fluidification des canaux de contact</strong> (Slack, WhatsApp), démarchage direct, et <strong>timing d'immatriculation</strong> — le levier n°1 pour croître sans dépendre du bouche-à-oreille.
+      Ce <strong>kit marketing</strong> couvre l'ensemble de la chaîne d'acquisition d'un cabinet en 2026 : cadre déontologique, <strong>présence sociale</strong>, <strong>fluidification des canaux de contact</strong> (Slack, WhatsApp), démarchage direct, <strong>timing d'immatriculation</strong> et <strong>présence digitale</strong> (site, SEO, LLM) sous forme de checklist en fin d'article — le levier n°1 pour croître sans dépendre du bouche-à-oreille.
     </p>
 
     <h2>1. Ce que dit vraiment le cadre déontologique</h2>
@@ -120,7 +120,7 @@ const GuideDemarchageClientCabinet = () => (
       Objectif : que le cabinet devienne <strong>reconnaissable</strong>. Un dirigeant qui a vu 3 posts d'un associé avant de le contacter arrive en RDV déjà à moitié convaincu.
     </p>
 
-    <h2>6. Fluidifier l'accès à l'expert-comptable : Slack, WhatsApp, canaux modernes</h2>
+    <h2>5. Fluidifier l'accès à l'expert-comptable : Slack, WhatsApp, canaux modernes</h2>
     <p>
       Les dirigeants nés après 2000 ne veulent plus téléphoner à un standard ni attendre 48 h une réponse par email. Les cabinets qui gagnent des clients aujourd'hui <strong>fluidifient le contact</strong> :
     </p>
@@ -134,7 +134,7 @@ const GuideDemarchageClientCabinet = () => (
       Ce n'est pas cosmétique : la <strong>facilité de contact</strong> est un critère de choix explicite pour les créateurs. Un cabinet difficilement joignable perd la vente avant même la première proposition.
     </p>
 
-    <h2>7. Cas client — Empartners : 3 leads par semaine en 3 mois</h2>
+    <h2>6. Cas client — Empartners : 3 leads par semaine en 3 mois</h2>
     <p>
       <a href="https://empartners.fr" target="_blank" rel="noopener noreferrer">Empartners</a>, cabinet dirigé par Mickaël, illustre concrètement ce que produit la combinaison <em>présence digitale + timing d'immatriculation</em>.
     </p>
@@ -147,7 +147,7 @@ const GuideDemarchageClientCabinet = () => (
       Autrement dit : un site jeune, un trafic modeste, mais une <strong>machine d'acquisition qui tourne</strong> — parce que le cabinet ne dépend pas du hasard du référencement, il agit sur le timing.
     </p>
 
-    <h2>8. Le canal le plus sous-estimé : le timing d'immatriculation</h2>
+    <h2>7. Le canal le plus sous-estimé : le timing d'immatriculation</h2>
     <p>
       Une entreprise choisit son expert-comptable dans ses <strong>premières semaines d'existence</strong>. Arriver 3 mois après l'immatriculation, c'est arriver après la signature d'un confrère — ou pire, d'une plateforme.
     </p>
@@ -164,7 +164,7 @@ const GuideDemarchageClientCabinet = () => (
       Là où les fichiers SIRET livrent une liste morte, Eligibly livre une <strong>décision commerciale</strong> : qui contacter aujourd'hui, sur quel canal, avec quel message.
     </p>
 
-    <h2>9. Les erreurs à éviter</h2>
+    <h2>8. Les erreurs à éviter</h2>
     <ul>
       <li><strong>Le publipostage massif non ciblé</strong> — inefficace, mal perçu et coûteux.</li>
       <li><strong>Le message générique « bonjour, nous sommes un cabinet »</strong> — supprimé en 3 secondes.</li>
@@ -172,6 +172,46 @@ const GuideDemarchageClientCabinet = () => (
       <li><strong>Confondre visibilité et démarchage</strong> — LinkedIn nourrit le pipeline, il ne le remplace pas.</li>
       <li><strong>Négliger la fluidité du contact</strong> — un formulaire lourd ou un standard non joignable annule tout l'effort marketing amont.</li>
       <li><strong>Ne pas former les collaborateurs à la posture conseil</strong> — 80 % des ventes se jouent en RDV, pas en amont.</li>
+    </ul>
+
+    <h2>9. Checklist présence digitale 2026 (site · SEO · LLM)</h2>
+    <p>
+      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist opérationnelle — à cocher point par point — s'appuie sur les orientations officielles du CNOEC (Leadtech 2026, travaux Data & IA) et sur ce qui fonctionne concrètement chez nos cabinets pilotes.
+    </p>
+
+    <h3>✅ Site web du cabinet</h3>
+    <ul>
+      <li>☐ <strong>Promesse claire dès le hero</strong> : verticale servie, zone, offre en une phrase.</li>
+      <li>☐ <strong>Une page par verticale</strong> (SASU tech, e-commerce, CHR, holdings, professions libérales…) — c'est ce que Google indexe et ce que les prospects cherchent.</li>
+      <li>☐ <strong>Page « À propos »</strong> avec associés nommés, photo, parcours et numéro d'inscription à l'Ordre.</li>
+      <li>☐ <strong>Preuve sociale</strong> : témoignages clients, chiffres du cabinet, logos partenaires.</li>
+      <li>☐ <strong>Appel à l'action explicite</strong> (RDV de 15 min, audit gratuit) présent en haut et en bas de chaque page.</li>
+      <li>☐ <strong>Temps de chargement &lt; 2 s</strong>, site 100 % responsive, HTTPS et accessibilité de base (WCAG AA).</li>
+      <li>☐ <strong>Mentions légales, RGPD et politique de confidentialité</strong> à jour — obligation déontologique et légale.</li>
+    </ul>
+
+    <h3>✅ SEO — sortir de la commodité</h3>
+    <ul>
+      <li>☐ <strong>Cibler des requêtes ICP</strong> (« expert-comptable SASU e-commerce Lyon ») plutôt que des requêtes génériques perdues d'avance.</li>
+      <li>☐ <strong>Fondamentaux techniques</strong> : titre unique par page, méta-description unique, balisage <code>H1/H2/H3</code> propre, sitemap.xml, robots.txt, canonical.</li>
+      <li>☐ <strong>Données structurées</strong> (JSON-LD) : <code>Organization</code>, <code>LocalBusiness</code>, <code>Article</code>, <code>FAQPage</code>, <code>BreadcrumbList</code>.</li>
+      <li>☐ <strong>Contenus sourcés</strong> : appuyer chaque article sur des sources officielles (INSEE, CNOEC, Légifrance, Bulletin officiel des finances publiques).</li>
+      <li>☐ <strong>Fiche Google Business Profile</strong> complète (photos, horaires, avis).</li>
+      <li>☐ <strong>Google Search Console + Analytics</strong> configurés, indexation vérifiée, sitemap soumis.</li>
+      <li>☐ <strong>Maillage interne</strong> cohérent (verticales ↔ articles ↔ page contact).</li>
+    </ul>
+
+    <h3>✅ Présence dans les LLM (ChatGPT, Perplexity, Gemini, Claude)</h3>
+    <p>
+      De plus en plus de dirigeants formulent leur recherche dans une IA générative avant Google (« quel expert-comptable pour une SASU tech ? »). Le CNOEC en fait explicitement un enjeu profession dans ses <a href="https://www.experts-comptables.fr/travaux-data-et-ia" target="_blank" rel="noopener noreferrer">travaux Data et IA</a>.
+    </p>
+    <ul>
+      <li>☐ <strong>Fichier <code>llms.txt</code></strong> à la racine du site pour signaler les pages clés aux modèles.</li>
+      <li>☐ <strong>Pages piliers explicites</strong> (méthode, verticale, tarifs, cas clients) que les LLM peuvent citer sans ambiguïté.</li>
+      <li>☐ <strong>Balisage sémantique clair</strong> (titres, listes, tableaux) — les LLM extraient mieux le contenu structuré.</li>
+      <li>☐ <strong>Mentions externes cohérentes</strong> : annuaire officiel OEC, LinkedIn du cabinet, presse professionnelle (Le Monde du Chiffre, SIC).</li>
+      <li>☐ <strong>Nom de marque unique</strong> et bio cohérente sur tous les canaux — un LLM ne peut citer qu'un cabinet qu'il identifie sans doute.</li>
+      <li>☐ <strong>Contenu à jour et daté</strong> : les LLM récents privilégient les sources datées et versionnées.</li>
     </ul>
 
     <h2>Conclusion — Osez, sobrement.</h2>
