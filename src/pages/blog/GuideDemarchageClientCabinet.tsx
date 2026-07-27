@@ -222,44 +222,44 @@ const GuideDemarchageClientCabinet = () => (
       Éviter ces erreurs, c'est déjà gagner la moitié de la bataille. L'autre moitié tient dans l'exécution quotidienne — et dans la checklist qui suit.
     </p>
 
-    <h2>9. Checklist présence digitale 2026 (site · SEO · LLM)</h2>
+    <h2>9. Checklist : se différencier en ligne en 2026</h2>
     <p>
-      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist opérationnelle — à cocher point par point — s'appuie sur les orientations officielles du CNOEC (Leadtech 2026, travaux Data & IA) et sur ce qui fonctionne concrètement chez nos cabinets pilotes. Elle reprend les fondamentaux de l'étape 3 sous forme d'actions concrètes.
+      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist ne vise pas à faire de vous un expert technique : elle identifie les axes concrets qui font la différence entre un site vitrine et un site qui génère des rendez-vous. Elle s'appuie sur les orientations du CNOEC (Leadtech 2026, travaux Data & IA) et sur ce qui fonctionne chez nos cabinets pilotes.
     </p>
 
-    <h3>✅ Site web du cabinet</h3>
+    <h3>✅ Votre site doit dire en 3 secondes pourquoi vous</h3>
     <ul>
-      <li>☐ <strong>Promesse claire dès le hero</strong> : verticale servie, zone, offre en une phrase.</li>
-      <li>☐ <strong>Une page par verticale</strong> (SASU tech, e-commerce, CHR, holdings, professions libérales…) — c'est ce que Google indexe et ce que les prospects cherchent.</li>
-      <li>☐ <strong>Page « À propos »</strong> avec associés nommés, photo, parcours et numéro d'inscription à l'Ordre.</li>
-      <li>☐ <strong>Preuve sociale</strong> : témoignages clients, chiffres du cabinet, logos partenaires.</li>
-      <li>☐ <strong>Appel à l'action explicite</strong> (RDV de 15 min, audit gratuit) présent en haut et en bas de chaque page.</li>
-      <li>☐ <strong>Temps de chargement &lt; 2 s</strong>, site 100 % responsive, HTTPS et accessibilité de base (WCAG AA).</li>
-      <li>☐ <strong>Mentions légales, RGPD et politique de confidentialité</strong> à jour — obligation déontologique et légale.</li>
+      <li>☐ <strong>Une promesse visible dès la première page</strong> : quel métier vous servez, dans quelle zone, avec quel résultat concret. Exemple : « Expert-comptable des SASU tech en Île-de-France, de la création à la levée. »</li>
+      <li>☐ <strong>Une page par métier ciblé</strong> (SASU tech, e-commerce, CHR, holdings, professions libérales…). Cela montre que vous comprenez leurs contraintes spécifiques — TVA, paie, charges, financement.</li>
+      <li>☐ <strong>Une page « Équipe » crédible</strong> avec les associés nommés, leurs parcours et leurs numéros d'inscription à l'Ordre. La confiance commence par la transparence.</li>
+      <li>☐ <strong>Des preuves concrètes</strong> : témoignages clients, chiffres du cabinet (nombre de dossiers, années d'expérience), logos des partenaires ou réseaux.</li>
+      <li>☐ <strong>Un RDV facile à prendre</strong> : bouton de prise de rendez-vous en ligne visible en haut et en bas de chaque page.</li>
+      <li>☐ <strong>Un site rapide sur mobile</strong> : il s'affiche en moins de 2 secondes, les textes se lisent sans zoom, et les formulaires sont courts.</li>
+      <li>☐ <strong>Mentions légales, RGPD et politique de confidentialité à jour</strong> — c'est un gage de sérieux et une obligation déontologique.</li>
     </ul>
 
-    <h3>✅ SEO — sortir de la commodité</h3>
+    <h3>✅ Apparaître quand un prospect vous cherche sur Google</h3>
     <ul>
-      <li>☐ <strong>Cibler des requêtes ICP</strong> (« expert-comptable SASU e-commerce Lyon ») plutôt que des requêtes génériques perdues d'avance.</li>
-      <li>☐ <strong>Fondamentaux techniques</strong> : titre unique par page, méta-description unique, balisage <code>H1/H2/H3</code> propre, sitemap.xml, robots.txt, canonical.</li>
-      <li>☐ <strong>Données structurées</strong> (JSON-LD) : <code>Organization</code>, <code>LocalBusiness</code>, <code>Article</code>, <code>FAQPage</code>, <code>BreadcrumbList</code>.</li>
-      <li>☐ <strong>Contenus sourcés</strong> : appuyer chaque article sur des sources officielles (INSEE, CNOEC, Légifrance, Bulletin officiel des finances publiques).</li>
-      <li>☐ <strong>Fiche Google Business Profile</strong> complète (photos, horaires, avis).</li>
-      <li>☐ <strong>Google Search Console + Analytics</strong> configurés, indexation vérifiée, sitemap soumis.</li>
-      <li>☐ <strong>Maillage interne</strong> cohérent (verticales ↔ articles ↔ page contact).</li>
+      <li>☐ <strong>Cibler les recherches de votre client idéal</strong> : « expert-comptable SASU e-commerce Lyon » plutôt que « expert-comptable Paris » où tout le monde est perdu.</li>
+      <li>☐ <strong>Un titre et une description unique par page</strong>, avec une structure de titres claire (H1, H2, H3) pour guider le lecteur et Google.</li>
+      <li>☐ <strong>Un balisage LocalBusiness</strong> pour que Google affiche le cabinet comme une entreprise locale avec adresse, téléphone et horaires.</li>
+      <li>☐ <strong>Des contenus sourcés</strong> : chaque article s'appuie sur des sources officielles (INSEE, CNOEC, Légifrance, BOFiP) pour renforcer l'autorité.</li>
+      <li>☐ <strong>Une fiche Google Business Profile complète</strong> : photos du cabinet, horaires, services, avis clients.</li>
+      <li>☐ <strong>Google Search Console et Analytics configurés</strong> : pour savoir quelles pages attirent du trafic et où corriger.</li>
+      <li>☐ <strong>Un maillage interne cohérent</strong> : les pages verticales renvoient vers les articles, qui renvoient vers la page de contact.</li>
     </ul>
 
-    <h3>✅ Présence dans les LLM (ChatGPT, Perplexity, Gemini, Claude)</h3>
+    <h3>✅ Être recommandé par ChatGPT, Perplexity et Gemini</h3>
     <p>
-      De plus en plus de dirigeants formulent leur recherche dans une IA générative avant Google (« quel expert-comptable pour une SASU tech ? »). Le CNOEC en fait explicitement un enjeu professionnel dans ses <a href="https://www.experts-comptables.fr/travaux-data-et-ia" target="_blank" rel="noopener noreferrer">travaux Data et IA</a>.
+      De plus en plus de dirigeants posent leurs questions à une IA avant de taper sur Google (« quel expert-comptable pour une SASU tech à Lyon ? »). Le CNOEC en fait explicitement un enjeu professionnel dans ses <a href="https://www.experts-comptables.fr/travaux-data-et-ia" target="_blank" rel="noopener noreferrer">travaux Data et IA</a>.
     </p>
     <ul>
-      <li>☐ <strong>Fichier <code>llms.txt</code></strong> à la racine du site pour signaler les pages clés aux modèles.</li>
-      <li>☐ <strong>Pages piliers explicites</strong> (méthode, verticale, tarifs, cas clients) que les LLM peuvent citer sans ambiguïté.</li>
-      <li>☐ <strong>Balisage sémantique clair</strong> (titres, listes, tableaux) — les LLM extraient mieux le contenu structuré.</li>
-      <li>☐ <strong>Mentions externes cohérentes</strong> : annuaire officiel OEC, LinkedIn du cabinet, presse professionnelle (Le Monde du Chiffre, SIC).</li>
-      <li>☐ <strong>Nom de marque unique</strong> et bio cohérente sur tous les canaux — un LLM ne peut citer qu'un cabinet qu'il identifie sans doute.</li>
-      <li>☐ <strong>Contenu à jour et daté</strong> : les LLM récents privilégient les sources datées et versionnées.</li>
+      <li>☐ <strong>Un fichier <code>llms.txt</code> à la racine du site</strong> pour indiquer aux modèles quelles pages sont importantes.</li>
+      <li>☐ <strong>Des pages claires sur votre méthode, vos verticales et vos résultats</strong> — ce que l'IA peut citer sans ambiguïté.</li>
+      <li>☐ <strong>Un contenu bien structuré</strong> : titres, listes et tableaux que les modèles extraient facilement.</li>
+      <li>☐ <strong>Des mentions externes cohérentes</strong> : annuaire officiel de l'OEC, page LinkedIn du cabinet, articles de presse professionnelle.</li>
+      <li>☐ <strong>Un nom de marque identifiable</strong> et une bio cohérente sur tous les canaux — un modèle ne recommande que ce qu'il identifie sans doute.</li>
+      <li>☐ <strong>Des contenus datés et à jour</strong> : les modèles récents privilégient les sources récentes et maintenues.</li>
     </ul>
 
     <h2>Conclusion — Osez, sobrement.</h2>
