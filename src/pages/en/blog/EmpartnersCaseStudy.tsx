@@ -18,7 +18,7 @@ const EmpartnersCaseStudy = () => (
       { label: "INSEE — Business creations", url: "https://www.insee.fr/fr/statistiques/2015204" },
     ]}
     related={[
-      { title: "2026 marketing kit for accounting firms", href: "/en/blog/accountant-marketing-kit-2026" },
+      { title: "Modernise your firm — 2026 state of play", href: "/en/blog/modernise-accounting-firm-2026" },
       { title: "5 concrete levers to provoke growth in an accounting firm", href: "/en/blog/5-growth-levers-accounting-firm" },
     ]}
   >
