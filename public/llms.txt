@@ -24,6 +24,7 @@ Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets
 - [Le Signal N°1 — État des lieux 2026 de la profession](/blog/moderniser-cabinet-etat-lieux-2026): CNOEC, INSEE, Cegid, Salesforce, OpinionWay — marché, rétention, démarchage, IA et nouvelle concurrence.
 - [5 leviers pour provoquer la croissance d'un cabinet](/blog/5-leviers-croissance-cabinet-expertise-comptable): Réseau prescripteur, spécialisation, automatisation, LinkedIn, timing de création.
 - [Guide du démarchage client pour experts-comptables](/blog/guide-demarchage-client-expert-comptable): Cadre déontologique depuis 2014, méthode marketing 5 étapes, canaux (LinkedIn, email, réseau, timing d'immatriculation), erreurs à éviter. Sources OEC, Compta Online, RFC, Shine.
+- [Cas client Empartners](/blog/cas-client-empartners): Cabinet d'expertise comptable accompagné par Eligibly sur l'image de marque, le site web, le référencement local et la génération de leads. Résultat : 3 leads qualifiés par semaine dès 3 mois, depuis février 2026.
 - [À propos](/a-propos): Mission, équipe, vision « Détectez. Scorez. Signez. ».
 - [Demander une démo](/demo): Démonstration personnalisée du moteur de détection.
 
@@ -35,6 +36,7 @@ Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets
 - [July 2026 registrations barometer](/en/blog/registrations-barometer-july-2026)
 - [Modernise your firm — 2026 state of play](/en/blog/modernise-accounting-firm-2026)
 - [5 growth levers for an accounting firm](/en/blog/5-growth-levers-accounting-firm)
+- [Empartners case study](/en/blog/empartners-case-study): Accounting firm supported by Eligibly on branding, website, local SEO and lead generation. Result: 3 qualified leads per week within 3 months, since February 2026.
 
 ## Optional
 - [Mentions légales](/mentions-legales)

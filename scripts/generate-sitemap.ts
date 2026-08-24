@@ -68,6 +68,7 @@ const entries: Entry[] = [
   { path: "/blog/moderniser-cabinet-etat-lieux-2026", changefreq: "monthly", priority: "0.8" },
   { path: "/blog/5-leviers-croissance-cabinet-expertise-comptable", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/guide-demarchage-client-expert-comptable", changefreq: "monthly", priority: "0.8" },
+  { path: "/blog/cas-client-empartners", changefreq: "monthly", priority: "0.8" },
   // EN — cabinet pillars & blog (en-GB)
   { path: "/en/accountant-lead-generation", changefreq: "weekly", priority: "0.9" },
   { path: "/en/primolead-alternative", changefreq: "monthly", priority: "0.85" },
@@ -76,6 +77,7 @@ const entries: Entry[] = [
   { path: "/en/blog/registrations-barometer-july-2026", changefreq: "monthly", priority: "0.75" },
   { path: "/en/blog/modernise-accounting-firm-2026", changefreq: "monthly", priority: "0.75" },
   { path: "/en/blog/5-growth-levers-accounting-firm", changefreq: "monthly", priority: "0.7" },
+  { path: "/en/blog/empartners-case-study", changefreq: "monthly", priority: "0.75" },
 ];
 
 function toXml(items: Entry[]) {

@@ -45,6 +45,7 @@ export const localizedHref = (path: string, lang: Lang): string => {
     "/blog/barometre-immatriculations-juillet-2026": "/en/blog/registrations-barometer-july-2026",
     "/blog/moderniser-cabinet-etat-lieux-2026": "/en/blog/modernise-accounting-firm-2026",
     "/blog/5-leviers-croissance-cabinet-expertise-comptable": "/en/blog/5-growth-levers-accounting-firm",
+    "/blog/cas-client-empartners": "/en/blog/empartners-case-study",
     "/sales-assistant": "/en/sales-assistant",
   };
   return map[path] ?? path;
@@ -82,6 +83,7 @@ const EN_TO_FR: Record<string, string> = {
   "/en/blog/registrations-barometer-july-2026": "/blog/barometre-immatriculations-juillet-2026",
   "/en/blog/modernise-accounting-firm-2026": "/blog/moderniser-cabinet-etat-lieux-2026",
   "/en/blog/5-growth-levers-accounting-firm": "/blog/5-leviers-croissance-cabinet-expertise-comptable",
+  "/en/blog/empartners-case-study": "/blog/cas-client-empartners",
   "/en/sales-assistant": "/sales-assistant",
 };
 

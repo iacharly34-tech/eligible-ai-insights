@@ -44,6 +44,7 @@ const BlogBarometreJuillet2026 = lazy(() => import("./pages/blog/BarometreImmatr
 const BlogSignal1EtatLieux = lazy(() => import("./pages/blog/ModerniserCabinetEtatLieux2026"));
 const Blog5Leviers = lazy(() => import("./pages/blog/CinqLeviersCroissanceCabinet"));
 const BlogGuideDemarchage = lazy(() => import("./pages/blog/GuideDemarchageClientCabinet"));
+const BlogCasClientEmpartners = lazy(() => import("./pages/blog/CasClientEmpartners"));
 const SimulateurIACabinet = lazy(() => import("./pages/SimulateurIACabinet"));
 const LeadsExpertsComptables = lazy(() => import("./pages/cabinet/LeadsExpertsComptables"));
 const ProspectionCabinetComptable = lazy(() => import("./pages/cabinet/ProspectionCabinetComptable"));
@@ -67,6 +68,7 @@ const VerticaleHoldingsGroupes = lazy(() => import("./pages/verticales/Verticale
 const EnBlogRegistrationsBarometer = lazy(() => import("./pages/en/blog/RegistrationsBarometerJuly2026"));
 const EnBlogModernise = lazy(() => import("./pages/en/blog/ModerniseAccountingFirm2026"));
 const EnBlog5Levers = lazy(() => import("./pages/en/blog/FiveGrowthLevers"));
+const EnBlogEmpartnersCaseStudy = lazy(() => import("./pages/en/blog/EmpartnersCaseStudy"));
 const EnAccountantLeadGen = lazy(() => import("./pages/en/cabinet/AccountantLeadGeneration"));
 const EnPrimoleadAlternative = lazy(() => import("./pages/en/cabinet/PrimoleadAlternative"));
 const EnGlossary = lazy(() => import("./pages/en/cabinet/Glossary"));
@@ -141,6 +143,7 @@ const App = () => (
                 <Route path="/blog/moderniser-cabinet-etat-lieux-2026" element={<BlogSignal1EtatLieux />} />
                 <Route path="/blog/5-leviers-croissance-cabinet-expertise-comptable" element={<Blog5Leviers />} />
                 <Route path="/blog/guide-demarchage-client-expert-comptable" element={<BlogGuideDemarchage />} />
+                <Route path="/blog/cas-client-empartners" element={<BlogCasClientEmpartners />} />
                 <Route path="/simulateur-roi-ia-cabinet" element={<SimulateurIACabinet />} />
 
                 {/* Sales Assistant + Verticales sectorielles */}
@@ -176,6 +179,7 @@ const App = () => (
                 <Route path="/en/blog/registrations-barometer-july-2026" element={<EnBlogRegistrationsBarometer />} />
                 <Route path="/en/blog/modernise-accounting-firm-2026" element={<EnBlogModernise />} />
                 <Route path="/en/blog/5-growth-levers-accounting-firm" element={<EnBlog5Levers />} />
+                <Route path="/en/blog/empartners-case-study" element={<EnBlogEmpartnersCaseStudy />} />
 
                 {/* Search redirects (for SEO) - redirect search queries to main page */}
                 <Route path="/search" element={<Navigate to="/" replace />} />
