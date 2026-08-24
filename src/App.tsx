@@ -44,6 +44,7 @@ const BlogBarometreJuillet2026 = lazy(() => import("./pages/blog/BarometreImmatr
 const BlogSignal1EtatLieux = lazy(() => import("./pages/blog/ModerniserCabinetEtatLieux2026"));
 const Blog5Leviers = lazy(() => import("./pages/blog/CinqLeviersCroissanceCabinet"));
 const BlogGuideDemarchage = lazy(() => import("./pages/blog/GuideDemarchageClientCabinet"));
+const BlogCasClientEmpartners = lazy(() => import("./pages/blog/CasClientEmpartners"));
 const SimulateurIACabinet = lazy(() => import("./pages/SimulateurIACabinet"));
 const LeadsExpertsComptables = lazy(() => import("./pages/cabinet/LeadsExpertsComptables"));
 const ProspectionCabinetComptable = lazy(() => import("./pages/cabinet/ProspectionCabinetComptable"));
