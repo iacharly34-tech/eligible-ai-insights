@@ -67,10 +67,16 @@ const CasClientEmpartners = () => (
       <li><strong>SEO on-page</strong> : balises title/description uniques, structure Hn cohérente, temps de chargement optimisé, images compressées.</li>
     </ul>
 
+    <EmpartnersSiteMockup lang="fr" />
+
+    <EmpartnersCtaVariants lang="fr" />
+
     <h3>3.3. Référencement local et Google Business Profile</h3>
     <p>
       Pour un cabinet d'expertise comptable, la recherche locale est critique. Nous avons structuré la fiche Google Business Profile, harmonisé les NAP (Nom, Adresse, Téléphone) sur les annuaires professionnels, et mis en place un socle de <strong>avis clients</strong> réels. Ce travail amont amplifie tout le reste : quand un prospect cherche « expert-comptable [ville] », la fiche apparaît, et le site capte le trafic qualifié.
     </p>
+
+    <EmpartnersGoogleReviews lang="fr" />
 
     <h2>4. Activation du moteur Eligibly : depuis février 2026</h2>
     <p>
@@ -86,6 +92,8 @@ const CasClientEmpartners = () => (
       Chaque matin, Empartners reçoit les nouvelles immatriculations correspondant à son ICP, avec un score et une recommandation d'approche. Pas de fichier Excel inerte : une liste de décision commerciale.
     </p>
 
+    <EmpartnersLeadsDigest lang="fr" />
+
     <h2>5. Les résultats à 6 mois</h2>
     <p>
       Depuis le démarrage en <strong>février 2026</strong>, les indicateurs sont les suivants :
@@ -99,6 +107,8 @@ const CasClientEmpartners = () => (
     <p>
       Ces chiffres ne sont pas une garantie reproductible à l'identique : ils dépendent de la zone, de l'ICP et du flux d'immatriculations. Mais ils montrent l'ordre de grandeur atteignable quand le socle digital et le moteur de leads fonctionnent ensemble.
     </p>
+
+    <EmpartnersDealsWon lang="fr" />
 
     <h2>6. Ce qui a fait la différence : trois leviers techniques</h2>
     <p>
