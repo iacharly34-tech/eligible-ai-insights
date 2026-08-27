@@ -68,10 +68,16 @@ const EmpartnersCaseStudy = () => (
       <li><strong>On-page SEO</strong>: unique title/description tags, coherent Hn structure, optimised load times, compressed images.</li>
     </ul>
 
+    <EmpartnersSiteMockup lang="en" />
+
+    <EmpartnersCtaVariants lang="en" />
+
     <h3>3.3. Local SEO and Google Business Profile</h3>
     <p>
       For an accounting firm, local search is critical. We structured the Google Business Profile, harmonised NAP (Name, Address, Phone) across professional directories, and put in place a foundation of genuine <strong>client reviews</strong>. This upstream work amplifies everything else: when a prospect searches "accountant [city]", the profile shows up and the site captures qualified traffic.
     </p>
+
+    <EmpartnersGoogleReviews lang="en" />
 
     <h2>4. Turning on the Eligibly engine: since February 2026</h2>
     <p>
@@ -87,6 +93,8 @@ const EmpartnersCaseStudy = () => (
       Every morning, Empartners receives the new registrations matching its ICP, with a score and an approach recommendation. No inert Excel file: a list of commercial decisions.
     </p>
 
+    <EmpartnersLeadsDigest lang="en" />
+
     <h2>5. Results at 6 months</h2>
     <p>
       Since launch in <strong>February 2026</strong>, the indicators are:
@@ -100,6 +108,8 @@ const EmpartnersCaseStudy = () => (
     <p>
       These figures are not a guarantee reproducible identically: they depend on area, ICP and registration flow. But they show the order of magnitude achievable when the digital foundation and lead engine work together.
     </p>
+
+    <EmpartnersDealsWon lang="en" />
 
     <h2>6. What made the difference: three technical levers</h2>
     <p>
