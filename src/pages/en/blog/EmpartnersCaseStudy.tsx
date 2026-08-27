@@ -1,4 +1,11 @@
 import { ArticleShell } from "@/pages/blog/ArticleShell";
+import {
+  EmpartnersSiteMockup,
+  EmpartnersCtaVariants,
+  EmpartnersGoogleReviews,
+  EmpartnersLeadsDigest,
+  EmpartnersDealsWon,
+} from "@/components/blog/EmpartnersVisuals";
 
 const EmpartnersCaseStudy = () => (
   <ArticleShell
