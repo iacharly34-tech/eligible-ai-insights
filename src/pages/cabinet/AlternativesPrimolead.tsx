@@ -11,7 +11,7 @@ const rows: Row[] = [
   { criteria: "Scoring expliqué", eligibly: "Score 0–100 + 3 raisons clés", primolead: "Non", corporama: "Non", societecom: "Non" },
   { criteria: "Enrichissement dirigeant", eligibly: "Email pro vérifié + LinkedIn", primolead: "Coordonnées basiques", corporama: "Contacts B2B", societecom: "Coordonnées légales" },
   { criteria: "Recommandation d'accroche IA", eligibly: "Oui — pré-rédigée par lead", primolead: "Non", corporama: "Non", societecom: "Non" },
-  { criteria: "Canaux d'activation", eligibly: "Email · LinkedIn · appel · courrier · Instagram", primolead: "Export fichier", corporama: "Export CRM", societecom: "Fiche à consulter" },
+  { criteria: "Canaux d'activation", eligibly: "WhatsApp · Email · LinkedIn · appel · courrier · Instagram", primolead: "Export fichier", corporama: "Export CRM", societecom: "Fiche à consulter" },
   { criteria: "Exclusivité géographique", eligibly: "Oui — 1 cabinet / lead / semaine / zone", primolead: "Non — fichier mutualisé", corporama: "Non", societecom: "Non" },
   { criteria: "Conformité RGPD (hébergement FR)", eligibly: "Oui", primolead: "Oui", corporama: "Variable", societecom: "Oui" },
   { criteria: "Tarif", eligibly: "À partir de 10 € HT / lead", primolead: "Sur devis", corporama: "Sur devis", societecom: "Freemium + Premium" },

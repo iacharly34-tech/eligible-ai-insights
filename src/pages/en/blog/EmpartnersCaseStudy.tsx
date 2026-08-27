@@ -127,7 +127,7 @@ const EmpartnersCaseStudy = () => (
     </p>
     <ul>
       <li>Monday morning: review the week's leads.</li>
-      <li>Tuesday to Thursday: personalised outreach (email, LinkedIn, call depending on profile).</li>
+      <li>Tuesday to Thursday: personalised outreach (WhatsApp Business, email, LinkedIn, call depending on profile).</li>
       <li>Friday: follow up on meetings and adjust ICP filters if needed.</li>
     </ul>
     <p>

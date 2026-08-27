@@ -11,16 +11,17 @@ const CHANNELS = [
 
 const CanauxActivation = () => (
   <LandingCabinetLayout
-   seoTitle="Canaux d'activation cabinet : LinkedIn, email, appel, courrier"
-   seoDescription="Pour chaque lead cabinet, le meilleur canal : LinkedIn, email, appel, Instagram DM ou courrier en-tête. Timing, méthode, taux de conversion observés."
+   seoTitle="Canaux d'activation cabinet : WhatsApp Business, LinkedIn, email, appel, courrier"
+   seoDescription="Pour chaque lead cabinet, le meilleur canal : WhatsApp Business, LinkedIn, email, appel, Instagram DM ou courrier en-tête. Timing, méthode, taux de conversion observés."
     canonicalPath="/canaux-activation"
     eyebrow="Activation multicanal"
     h1a="Le bon lead, sur le"
     h1b="bon canal, au bon moment"
     h1c="."
-    intro="Contacter un chef d'entreprise du BTP comme un fondateur de SaaS est le meilleur moyen d'être ignoré. Pour chaque lead, Eligibly recommande le canal le plus efficace selon la verticale, la forme juridique et le profil du dirigeant."
+    intro="Contacter un chef d'entreprise du BTP comme un fondateur de SaaS est le meilleur moyen d'être ignoré. Pour chaque lead, Eligibly recommande le canal le plus efficace selon la verticale, la forme juridique et le profil du dirigeant. WhatsApp Business en tête : c'est le canal avec le taux d'engagement le plus fort observé en cabinet."
     bullets={[
-      "5 canaux testés en cabinet : LinkedIn, email, appel, Instagram, courrier",
+      "6 canaux testés en cabinet : WhatsApp Business, LinkedIn, email, appel, Instagram, courrier",
+      "WhatsApp Business : ouverture > 90 %, réponse en moins d'une heure",
       "Une accroche pré-rédigée par lead, personnalisable en 30 secondes",
       "Le meilleur moment de contact selon l'activité",
       "Un tracking des retours pour affiner le modèle de votre cabinet",
