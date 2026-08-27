@@ -11,7 +11,7 @@ const CasClientEmpartners = () => (
   <ArticleShell
     badge="Cas client cabinet EC"
     title="Cas client Empartners : 3 leads qualifiés par semaine, dès 3 mois, sur un site générant quelques centaines de visites"
-    subtitle="Comment Eligibly a accompagné Mickael Beddok et son cabinet Empartners.fr de l'image de marque au site web, en passant par le référencement local et la prospection ciblée sur les nouvelles immatriculations."
+    subtitle="Comment Eligibly a accompagné Mickael Fellous et son cabinet Empartners.fr de l'image de marque au site web, en passant par le référencement local et la prospection ciblée sur les nouvelles immatriculations."
     date="2026-08-24"
     readTime="9 min de lecture"
     url="/blog/cas-client-empartners"
@@ -28,12 +28,12 @@ const CasClientEmpartners = () => (
       { title: "5 leviers concrets pour provoquer la croissance d'un cabinet", href: "/blog/5-leviers-croissance-cabinet-expertise-comptable" },
     ]}
   >
-    <h2>1. Le contexte : un cabinet en création qui doit sortir du silence</h2>
+    <h2>1. Le contexte : un cabinet en création qui doit exister avant de recruter</h2>
     <p>
-      <strong>Empartners</strong> est un cabinet d'expertise comptable dirigé par <strong>Mickael Beddok</strong>, positionné sur l'accompagnement des dirigeants de SASU, SAS, EURL, SARL et SEL. Au démarrage, le cabinet avait besoin de trois choses simultanément : une <strong>image crédible</strong>, un <strong>site web qui convertit</strong>, et un <strong>flux de prospects régulier</strong>.
+      <strong>Empartners</strong> est un cabinet d'expertise comptable dirigé par <strong>Mickael Fellous</strong>, positionné sur l'accompagnement des dirigeants de SASU, SAS, EURL, SARL et SEL. Au lancement, le défi n'était pas technique : il fallait <strong>exister sur internet, être visible dans les LLM et être reconnu</strong> comme un cabinet crédible avant même le premier contact commercial.
     </p>
     <p>
-      La contrainte classique du cabinet en lancement : pas de portefeuille historique à déployer, pas de notoriété locale installée, et un marché où les créateurs d'entreprises choisissent leur expert-comptable dans les premières semaines. Attendre la recommandation n'était pas une option viable.
+      Sans portefeuille historique ni notoriété locale installée, la prospection à froid ne pouvait pas compenser une absence de présence digitale. Un créateur d'entreprise qui cherche aujourd'hui un expert-comptable passe par Google, les avis et désormais les assistants IA. S'il ne trouve rien, il passe à un concurrent. Attendre la recommandation n'était donc pas une option viable.
     </p>
 
     <h2>2. Le diagnostic : trois failles à corriger avant de prospecter</h2>
@@ -41,7 +41,7 @@ const CasClientEmpartners = () => (
       Avant toute campagne de démarchage, le diagnostic a révélé trois points de friction :
     </p>
     <ul>
-      <li><strong>Image de marque absente ou amateur</strong> : pas de logo cohérent, pas de charte, pas de baseline métier. Un dirigeant qui cherche un expert-comptable juge la qualité perçue en quelques secondes.</li>
+      <li><strong>Présence digitale non déployée</strong> : pas de logo cohérent, pas de baseline métier, et surtout pas de socle web structuré pour exister sur internet, apparaître dans les LLM et être reconnu comme un cabinet crédible. Un dirigeant qui cherche un expert-comptable juge la qualité perçue en quelques secondes.</li>
       <li><strong>Site web inexistant ou obsolète</strong> : pas de vitrine crédible, pas de pages dédiées aux formes juridiques ciblées, pas de parcours de conversion clair.</li>
       <li><strong>Pas de flux structuré</strong> : la prospection reposait sur des actions ponctuelles (réseau, forums, annuaires) sans système de renouvellement.</li>
     </ul>
@@ -135,7 +135,7 @@ const CasClientEmpartners = () => (
 
     <h2>8. Ce que ce cas client dit aux autres cabinets</h2>
     <p>
-      Le cas Empartners illustre une chose simple : <strong>la prospection outbound fonctionne quand elle s'appuie sur un socle crédible</strong>. Un bon site et une fiche Google soignée ne suffisent pas à générer des leads seuls. Un moteur de détection seul ne suffit pas à convertir si le prospect, en cliquant, tombe sur une vitrine amateur.
+      Le cas Empartners illustre une chose simple : <strong>la prospection outbound fonctionne quand elle s'appuie sur un socle crédible</strong>. Un bon site et une fiche Google soignée ne suffisent pas à générer des leads seuls. Un moteur de détection seul ne suffit pas à convertir si le prospect, en cliquant, ne trouve pas une présence numérique crédible et reconnaissable.
     </p>
     <p>
       La combinaison des deux — <strong>présence digitale crédible + flux de leads frais et scorés</strong> — est ce qui crée un système d'acquisition prévisible. Pour un cabinet en développement, c'est un levier beaucoup plus rapide et maîtrisable que le recrutement d'un business developer ou l'achat d'un portefeuille.
