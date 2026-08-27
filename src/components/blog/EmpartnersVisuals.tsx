@@ -244,21 +244,24 @@ export const EmpartnersGoogleReviews = ({ lang = "fr" as Lang }) => (
     title={t(lang, "La preuve sociale qui précède le premier appel", "The social proof that precedes the first call")}
     note={t(
       lang,
-      "Exemples d'avis représentatifs du type de retours collectés. Les avis sont sollicités après livraison d'un livrable, jamais achetés.",
-      "Representative examples of the type of feedback collected. Reviews are requested after a deliverable, never bought."
+      "Note réelle de la fiche EM Partners (Charenton-le-Pont) : 5,0 / 5 sur 95 avis. Les avis reproduits ci-dessous sont des exemples représentatifs du type de retours collectés, sollicités après livraison d'un livrable, jamais achetés.",
+      "Actual rating of the EM Partners listing (Charenton-le-Pont): 5.0 / 5 across 95 reviews. The reviews below are representative examples of the feedback collected, requested after a deliverable, never bought."
     )}
   >
     <div className="rounded-xl border border-border bg-background p-5 mb-4">
       <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
         <div>
           <div className="flex items-baseline gap-2">
-            <span className="font-display text-3xl font-bold text-primary leading-none">4,9</span>
+            <span className="font-display text-3xl font-bold text-primary leading-none">{t(lang, "5,0", "5.0")}</span>
             <span className="text-xs text-muted-foreground">/ 5</span>
           </div>
           <div className="flex gap-0.5 mt-1.5">
             {[0, 1, 2, 3, 4].map((i) => (
               <Star key={i} className="w-3.5 h-3.5 text-primary fill-current" />
             ))}
+          </div>
+          <div className="text-[0.65rem] text-muted-foreground mt-1.5">
+            {t(lang, "95 avis Google", "95 Google reviews")}
           </div>
         </div>
         <div className="text-xs text-muted-foreground leading-relaxed">
@@ -268,11 +271,12 @@ export const EmpartnersGoogleReviews = ({ lang = "fr" as Lang }) => (
           </div>
           <div className="flex items-center gap-1.5">
             <MapPin className="w-3.5 h-3.5" />
-            <span>{t(lang, "Fiche vérifiée · NAP harmonisé sur les annuaires", "Verified listing · NAP aligned across directories")}</span>
+            <span>{t(lang, "6 rue de Verdun, Charenton-le-Pont (94) · NAP harmonisé sur les annuaires", "6 rue de Verdun, Charenton-le-Pont (94) · NAP aligned across directories")}</span>
           </div>
         </div>
       </div>
     </div>
+
 
     <div className="grid md:grid-cols-3 gap-4">
       {(lang === "fr" ? REVIEWS_FR : REVIEWS_EN).map((r) => (
