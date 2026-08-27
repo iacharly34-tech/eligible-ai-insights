@@ -12,7 +12,7 @@ const EmpartnersCaseStudy = () => (
     lang="en"
     badge="Accounting firm case study"
     title="Empartners case study: 3 qualified leads per week within 3 months, from a site driving a few hundred visits"
-    subtitle="How Eligibly supported Mickael Beddok and his accounting firm Empartners.fr from branding and website to local SEO and targeted prospecting on newly registered companies."
+    subtitle="How Eligibly supported Mickael Fellous and his accounting firm Empartners.fr from branding and website to local SEO and targeted prospecting on newly registered companies."
     date="2026-08-24"
     readTime="9 min read"
     url="/en/blog/empartners-case-study"
@@ -29,12 +29,12 @@ const EmpartnersCaseStudy = () => (
       { title: "5 concrete levers to provoke growth in an accounting firm", href: "/en/blog/5-growth-levers-accounting-firm" },
     ]}
   >
-    <h2>1. Context: a new firm that needed to break the silence</h2>
+    <h2>1. Context: a new firm that must exist before it can recruit</h2>
     <p>
-      <strong>Empartners</strong> is an accounting firm led by <strong>Mickael Beddok</strong>, focused on supporting directors of SASU, SAS, EURL, SARL and SEL companies. At launch, the firm needed three things at once: a <strong>credible brand</strong>, a <strong>website that converts</strong>, and a <strong>steady flow of prospects</strong>.
+      <strong>Empartners</strong> is an accounting firm led by <strong>Mickael Fellous</strong>, focused on supporting directors of SASU, SAS, EURL, SARL and SEL companies. At launch, the challenge was not technical: the firm had to <strong>exist on the internet, be visible to LLMs and be recognised</strong> as a credible accountant before the first sales call.
     </p>
     <p>
-      The classic constraint for a new firm: no historical book to leverage, no established local reputation, and a market where entrepreneurs choose their accountant within the first few weeks. Waiting for referrals was not a viable option.
+      With no historical book or established local reputation, cold outreach could not make up for a missing digital presence. A founder looking for an accountant today searches Google, reviews and increasingly AI assistants. If they find nothing, they move to a competitor. Waiting for referrals was not a viable option.
     </p>
 
     <h2>2. Diagnosis: three gaps to fix before prospecting</h2>
@@ -42,7 +42,7 @@ const EmpartnersCaseStudy = () => (
       Before any outreach campaign, the diagnosis revealed three friction points:
     </p>
     <ul>
-      <li><strong>Missing or amateur brand identity</strong>: no coherent logo, no brand guidelines, no business-focused tagline. A founder looking for an accountant judges perceived quality in seconds.</li>
+      <li><strong>No discoverable digital presence</strong>: no coherent logo, no business-focused tagline, and above all no structured web foundation to exist on the internet, appear in LLMs and be recognised as a credible firm. A founder looking for an accountant judges perceived credibility in seconds.</li>
       <li><strong>No website or outdated one</strong>: no credible showcase, no dedicated pages for the targeted legal forms, no clear conversion path.</li>
       <li><strong>No structured flow</strong>: prospecting relied on sporadic actions (networking, forums, directories) with no renewal system.</li>
     </ul>
@@ -136,7 +136,7 @@ const EmpartnersCaseStudy = () => (
 
     <h2>8. What this case study says to other firms</h2>
     <p>
-      The Empartners case illustrates a simple point: <strong>outbound prospecting works when it rests on a credible foundation</strong>. A good website and a polished Google profile alone do not generate leads. A lead engine alone does not convert if the prospect, on clicking, lands on an amateur showcase.
+      The Empartners case illustrates a simple point: <strong>outbound prospecting works when it rests on a credible foundation</strong>. A good website and a polished Google profile alone do not generate leads. A lead engine alone does not convert if the prospect, on clicking, lands on a presence that does not exist or is not recognisable as credible.
     </p>
     <p>
       The combination of the two — <strong>credible digital presence + fresh, scored lead flow</strong> — is what creates a predictable acquisition system. For a developing firm, this is a much faster and more controllable lever than hiring a business developer or buying a book.
