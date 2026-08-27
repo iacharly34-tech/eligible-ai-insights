@@ -74,7 +74,7 @@ const EmpartnersCaseStudy = () => (
 
     <h3>3.3. Local SEO and Google Business Profile</h3>
     <p>
-      For an accounting firm, local search is critical. We structured the Google Business Profile, harmonised NAP (Name, Address, Phone) across professional directories, and put in place a foundation of genuine <strong>client reviews</strong>. This upstream work amplifies everything else: when a prospect searches "accountant [city]", the profile shows up and the site captures qualified traffic.
+      For an accounting firm, local search is critical. We structured the firm's Google Business Profile (6 rue de Verdun, Charenton-le-Pont), harmonised NAP (Name, Address, Phone) across professional directories — including the French Institute of Chartered Accountants register — and systematised the collection of genuine <strong>client reviews</strong> after every deliverable. Measurable outcome: <strong>95 Google reviews, 5.0 / 5 rating</strong>. That foundation amplifies everything else: when a prospect searches "accountant [city]", the profile shows up first and the site captures qualified traffic.
     </p>
 
     <EmpartnersGoogleReviews lang="en" />

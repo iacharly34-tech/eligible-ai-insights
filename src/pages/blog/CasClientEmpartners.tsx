@@ -73,7 +73,7 @@ const CasClientEmpartners = () => (
 
     <h3>3.3. Référencement local et Google Business Profile</h3>
     <p>
-      Pour un cabinet d'expertise comptable, la recherche locale est critique. Nous avons structuré la fiche Google Business Profile, harmonisé les NAP (Nom, Adresse, Téléphone) sur les annuaires professionnels, et mis en place un socle de <strong>avis clients</strong> réels. Ce travail amont amplifie tout le reste : quand un prospect cherche « expert-comptable [ville] », la fiche apparaît, et le site capte le trafic qualifié.
+      Pour un cabinet d'expertise comptable, la recherche locale est critique. Nous avons structuré la fiche Google Business Profile du cabinet (6 rue de Verdun, Charenton-le-Pont), harmonisé les NAP (Nom, Adresse, Téléphone) sur les annuaires professionnels — dont l'annuaire de l'Ordre des experts-comptables — et industrialisé la collecte d'<strong>avis clients</strong> réels après chaque livrable. Résultat mesurable : <strong>95 avis Google, note de 5,0 / 5</strong>. Ce socle amplifie tout le reste : quand un prospect cherche « expert-comptable [ville] », la fiche apparaît en premier, et le site capte le trafic qualifié.
     </p>
 
     <EmpartnersGoogleReviews lang="fr" />
