@@ -126,7 +126,7 @@ const CasClientEmpartners = () => (
     </p>
     <ul>
       <li>Lundi matin : revue des leads de la semaine.</li>
-      <li>Mardi à jeudi : contacts personnalisés (email, LinkedIn, appel selon le profil).</li>
+      <li>Mardi à jeudi : contacts personnalisés (WhatsApp Business, email, LinkedIn, appel selon le profil).</li>
       <li>Vendredi : suivi des rendez-vous et ajustement des filtres ICP si besoin.</li>
     </ul>
     <p>

@@ -1,9 +1,10 @@
 import { LandingCabinetLayout } from "./LandingCabinetLayout";
-import { Linkedin, Mail, Phone, Instagram, Send } from "lucide-react";
+import { Linkedin, Mail, Phone, Instagram, Send, MessageCircle } from "lucide-react";
 
 const CHANNELS = [
+  { icon: MessageCircle, title: "WhatsApp Business", when: "Tous dirigeants mobiles, particulièrement artisans, retail, créateurs, professions du soin.", how: "Message court personnalisé avec lien Calendly ou prise de RDV directe. Taux d'ouverture > 90 %, réponse en moins d'une heure dans nos cabinets pilotes. Canal le plus fort de la stack." },
   { icon: Linkedin,  title: "LinkedIn",     when: "Dirigeants digitaux, freelances, tech, conseil.", how: "Invitation avec note perso sur les 3 signaux du lead (forme, capital, verticale). Taux d'acceptation observé : 45–60 %." },
-  { icon: Mail,      title: "Email",        when: "Scale-ups B2B, professions libérales, activités formalisées.", how: "Séquence 3 touches sur 10 jours : bilan d'ouverture, question ouverte, relance courte. Taux d'ouverture 55 %+." },
+  { icon: Mail,      title: "Email",        when: "Scale-ups B2B, professions libérales, activités formalisées.", how: "Séquence 3 touches sur 10 jours : bilan d'ouverture, question ouverte, relance courte. Taux d'ouverture 55 %+ ." },
   { icon: Phone,     title: "Appel court",  when: "Restauration, retail, artisanat, professions où l'email est faible.", how: "Script 90 secondes adapté à la forme juridique. Meilleur créneau : mardi/jeudi 10h ou 14h." },
   { icon: Instagram, title: "Instagram DM", when: "Créateurs, artisans, design, professions du soin, coach.", how: "DM avec référence à l'univers visuel + lien Calendly. Peu concurrentiel — 80 % de vue, 25 % de réponse." },
   { icon: Send,      title: "Courrier en-tête", when: "Artisans locaux, TPE traditionnelles, professions médicales.", how: "Lettre A4 sur en-tête du cabinet + carte de visite. Taux d'ouverture proche de 90 %, effet mémoriel fort." },
@@ -11,16 +12,17 @@ const CHANNELS = [
 
 const CanauxActivation = () => (
   <LandingCabinetLayout
-   seoTitle="Canaux d'activation cabinet : LinkedIn, email, appel, courrier"
-   seoDescription="Pour chaque lead cabinet, le meilleur canal : LinkedIn, email, appel, Instagram DM ou courrier en-tête. Timing, méthode, taux de conversion observés."
+   seoTitle="Canaux d'activation cabinet : WhatsApp Business, LinkedIn, email, appel, courrier"
+   seoDescription="Pour chaque lead cabinet, le meilleur canal : WhatsApp Business, LinkedIn, email, appel, Instagram DM ou courrier en-tête. Timing, méthode, taux de conversion observés."
     canonicalPath="/canaux-activation"
     eyebrow="Activation multicanal"
     h1a="Le bon lead, sur le"
     h1b="bon canal, au bon moment"
     h1c="."
-    intro="Contacter un chef d'entreprise du BTP comme un fondateur de SaaS est le meilleur moyen d'être ignoré. Pour chaque lead, Eligibly recommande le canal le plus efficace selon la verticale, la forme juridique et le profil du dirigeant."
+    intro="Contacter un chef d'entreprise du BTP comme un fondateur de SaaS est le meilleur moyen d'être ignoré. Pour chaque lead, Eligibly recommande le canal le plus efficace selon la verticale, la forme juridique et le profil du dirigeant. WhatsApp Business en tête : c'est le canal avec le taux d'engagement le plus fort observé en cabinet."
     bullets={[
-      "5 canaux testés en cabinet : LinkedIn, email, appel, Instagram, courrier",
+      "6 canaux testés en cabinet : WhatsApp Business, LinkedIn, email, appel, Instagram, courrier",
+      "WhatsApp Business : ouverture > 90 %, réponse en moins d'une heure",
       "Une accroche pré-rédigée par lead, personnalisable en 30 secondes",
       "Le meilleur moment de contact selon l'activité",
       "Un tracking des retours pour affiner le modèle de votre cabinet",

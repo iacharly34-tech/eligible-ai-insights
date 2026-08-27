@@ -1,4 +1,4 @@
-import { Star, Monitor, MousePointerClick, Inbox, Trophy, Phone, Mail, CalendarCheck, MapPin, Building2, ArrowRight } from "lucide-react";
+import { Star, Monitor, MousePointerClick, Inbox, Trophy, Phone, Mail, CalendarCheck, MapPin, Building2, ArrowRight, MessageCircle } from "lucide-react";
 
 type Lang = "fr" | "en";
 
@@ -133,21 +133,28 @@ export const EmpartnersCtaVariants = ({ lang = "fr" as Lang }) => (
   <Frame
     eyebrow={t(lang, "Appels à l'action", "Calls to action")}
     icon={MousePointerClick}
-    title={t(lang, "Trois CTA, trois niveaux d'engagement", "Three CTAs, three levels of commitment")}
+    title={t(lang, "Quatre CTA, quatre niveaux d'engagement", "Four CTAs, four levels of commitment")}
     note={t(
       lang,
-      "Chaque CTA correspond à une intention différente : découverte, décision, urgence. Aucun formulaire de plus de 3 champs.",
-      "Each CTA maps to a different intent: discovery, decision, urgency. No form longer than 3 fields."
+      "WhatsApp Business est le canal le plus fort : taux d'ouverture > 90 %, réponse en quelques minutes, aucune friction. Les autres CTA captent les intentions découverte, décision et urgence.",
+      "WhatsApp Business is the strongest channel: > 90 % open rate, reply within minutes, zero friction. The other CTAs capture discovery, decision and urgency intent."
     )}
   >
-    <div className="grid md:grid-cols-3 gap-4">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
       {[
+        {
+          icon: MessageCircle,
+          step: t(lang, "Canal fort", "Strong channel"),
+          label: t(lang, "WhatsApp Business", "WhatsApp Business"),
+          sub: t(lang, "Réponse en minutes · ouverture > 90 % · 0 friction", "Reply in minutes · > 90 % open rate · zero friction"),
+          solid: true,
+        },
         {
           icon: CalendarCheck,
           step: t(lang, "Découverte", "Discovery"),
           label: t(lang, "Réserver un échange de 20 min", "Book a 20-min call"),
           sub: t(lang, "Sans engagement, agenda en ligne", "No commitment, online calendar"),
-          solid: true,
+          solid: false,
         },
         {
           icon: Mail,
