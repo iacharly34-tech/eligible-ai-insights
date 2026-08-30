@@ -185,7 +185,19 @@ export const ArticleShell = ({
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </SafeLink>
+              <p className="mt-6 text-sm text-muted-foreground">
+                Voir en détail{" "}
+                <SafeLink to="/produit" className="text-primary underline underline-offset-4">
+                  comment fonctionne le moteur de détection de leads pour cabinets d'expertise comptable
+                </SafeLink>{" "}
+                ou{" "}
+                <SafeLink to="/demo" className="text-primary underline underline-offset-4">
+                  réserver une démo de 20 minutes avec 10 leads scorés sur votre zone
+                </SafeLink>
+                .
+              </p>
             </section>
+
 
             {related.length > 0 && (
               <section>
