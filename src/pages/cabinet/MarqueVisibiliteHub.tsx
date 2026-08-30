@@ -45,7 +45,7 @@ const cases = [
   },
   {
     label: "Kit marketing 2026 pour experts-comptables",
-    href: "/blog/guide-demarchage-client-cabinet",
+    href: "/blog/guide-demarchage-client-expert-comptable",
     detail: "12 axes de différenciation, lead magnets, réseau de prescripteurs et checklist opérationnelle.",
   },
   {
@@ -55,7 +55,7 @@ const cases = [
   },
   {
     label: "Coût d'acquisition d'un client en cabinet",
-    href: "/blog/cout-acquisition-client-cabinet",
+    href: "/blog/cout-acquisition-client-cabinet-comptable",
     detail: "Méthode de calcul, ordres de grandeur par canal, et arbitrage inbound / outbound.",
   },
 ];
