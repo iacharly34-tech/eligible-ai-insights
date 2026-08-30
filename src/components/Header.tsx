@@ -34,13 +34,19 @@ export const Header = () => {
         { name: 'About', href: '/en/about' },
       ]
     : [
-        { name: 'Produit',    href: '/produit' },
+        {
+          name: 'Produit',
+          children: [
+            { name: 'Offre Outbound — Eligibly', href: '/produit', desc: 'Détection, scoring et activation des sociétés fraîchement immatriculées.' },
+            { name: 'Offre Image de marque', href: '/marque-et-visibilite-expert-comptable', desc: 'La couche de visibilité à installer avant de démarcher.' },
+            { name: 'Sales Assistant', href: '/sales-assistant', desc: 'Séquences et messages d’approche prêts à envoyer.' },
+          ],
+        },
         { name: 'Solutions',  href: '/solutions' },
         { name: 'Tarifs',     href: '/tarifs' },
         {
           name: 'Ressources',
           children: [
-            { name: 'Hub marque & visibilité', href: '/marque-et-visibilite-expert-comptable', desc: 'Actifs digitaux, calculateur d’impact et tableaux de bord.' },
             { name: 'Blog & études', href: '/ressources', desc: 'Baromètres, playbooks et cas clients cabinets EC.' },
             { name: 'Visibilité expert-comptable', href: '/visibilite-expert-comptable', desc: 'Recherche locale, avis, site, assistants IA.' },
             { name: 'Image de marque cabinet', href: '/image-de-marque-expert-comptable', desc: 'Positionnement, verticalisation, preuves.' },
