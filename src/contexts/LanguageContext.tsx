@@ -164,7 +164,7 @@ const translations = {
     
     // Footer
     'footer.company': 'Société',
-    'footer.product': 'Produit',
+    'footer.product': 'Offres',
     'footer.support': 'Support',
     'footer.legal': 'Légal',
     'footer.copyright': '© 2026 Eligibly.ai. Tous droits réservés.',
@@ -801,7 +801,7 @@ const translations = {
     
     // Footer
     'footer.company': 'Company',
-    'footer.product': 'Product',
+    'footer.product': 'Offers',
     'footer.support': 'Support',
     'footer.legal': 'Legal',
     'footer.copyright': '© 2026 Eligibly.ai. All rights reserved.',

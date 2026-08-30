@@ -73,7 +73,7 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
         {
           "@type": "SiteNavigationElement",
           "position": 1,
-          "name": language === 'en' ? "Product" : "Produit",
+          "name": language === 'en' ? "Offers" : "Offres",
           "description": language === 'en' ? "Lead detection engine for accounting firms" : "moteur d'alertes nouveaux clients pour cabinets d'expertise comptable",
           "url": `https://eligibly.ai${language === 'en' ? '/en/product' : '/produit'}`
         },

@@ -35,7 +35,7 @@ export const Header = () => {
       ]
     : [
         {
-          name: 'Produit',
+          name: 'Offres',
           children: [
             { name: 'Offre Outbound — Eligibly', href: '/produit', desc: 'Détection, scoring et activation des sociétés fraîchement immatriculées.' },
             { name: 'Offre Image de marque', href: '/marque-et-visibilite-expert-comptable', desc: 'La couche de visibilité à installer avant de démarcher.' },
