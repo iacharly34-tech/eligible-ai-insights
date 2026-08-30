@@ -33,6 +33,7 @@ const entries: Entry[] = [
   { path: "/canaux-activation", changefreq: "monthly", priority: "0.7" },
   { path: "/pourquoi-ce-lead-est-prioritaire", changefreq: "monthly", priority: "0.7" },
   { path: "/alternatives-primolead-experts-comptables", changefreq: "monthly", priority: "0.85" },
+  { path: "/marque-et-visibilite-expert-comptable", changefreq: "monthly", priority: "0.9" },
   { path: "/visibilite-expert-comptable", changefreq: "monthly", priority: "0.85" },
   { path: "/image-de-marque-expert-comptable", changefreq: "monthly", priority: "0.8" },
   { path: "/presence-digitale-cabinet-comptable", changefreq: "monthly", priority: "0.8" },
