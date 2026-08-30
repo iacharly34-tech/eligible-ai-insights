@@ -9,7 +9,6 @@ import { SafeLink } from "@/components/SafeLink";
 import { ArrowRight, ArrowLeft, BookOpen, Sparkles } from "lucide-react";
 import { ArticleRecommendations } from "@/components/ArticleRecommendations";
 import { ContextualLinks } from "@/components/ContextualLinks";
-import { alternateHref } from "@/hooks/useLang";
 
 interface Source {
   label: string;
@@ -62,8 +61,6 @@ export const ArticleShell = ({
   const ctaHref = isEn ? "/en/demo" : "/demo";
   const relatedLabel = isEn ? "Read next" : "À lire ensuite";
   const readLabel = isEn ? "Read" : "Lire";
-  const alt = alternateHref(url);
-  const altUrl = alt ? `https://eligibly.ai${alt}` : null;
   const homeCrumb = isEn ? "Home" : "Accueil";
   const resourcesCrumb = isEn ? "Resources" : "Ressources";
   const jsonLd = {
