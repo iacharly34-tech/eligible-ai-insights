@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { TarifsJsonLd, CabinetProofBlock } from "@/components/seo/CabinetJsonLd";
 import { MobileCTABar } from "@/components/MobileCTABar";
 import { useState } from "react";
 import { CheckCircle, ArrowRight, Shield, ChevronDown } from "lucide-react";
@@ -167,6 +168,7 @@ const Tarifs = () => {
     <>
       <SEOHead />
       <StructuredData page="pricing" />
+      <TarifsJsonLd />
       <div className="min-h-screen bg-background">
         <Header />
         <MobileCTABar />
@@ -308,6 +310,7 @@ const Tarifs = () => {
           </section>
         </main>
 
+        <CabinetProofBlock />
         <Footer />
       </div>
     </>

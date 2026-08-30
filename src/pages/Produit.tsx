@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
+import { ProduitJsonLd, CabinetProofBlock } from "@/components/seo/CabinetJsonLd";
 import { MobileCTABar } from "@/components/MobileCTABar";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
@@ -134,6 +135,7 @@ const Produit = () => {
     <>
       <SEOHead />
       <StructuredData page="product" />
+      <ProduitJsonLd />
       <div className="min-h-screen bg-background">
         <Header />
         <MobileCTABar />
@@ -456,6 +458,7 @@ const Produit = () => {
           </section>
         </main>
 
+        <CabinetProofBlock />
         <Footer />
       </div>
     </>

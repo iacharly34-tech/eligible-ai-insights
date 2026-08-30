@@ -65,14 +65,6 @@ const VerticaleProfessionsLiberalesSante = lazy(() => import("./pages/verticales
 const VerticaleHoldingsGroupes = lazy(() => import("./pages/verticales/VerticaleHoldingsGroupes"));
 
 // EN pages
-const EnBlogRegistrationsBarometer = lazy(() => import("./pages/en/blog/RegistrationsBarometerJuly2026"));
-const EnBlogModernise = lazy(() => import("./pages/en/blog/ModerniseAccountingFirm2026"));
-const EnBlog5Levers = lazy(() => import("./pages/en/blog/FiveGrowthLevers"));
-const EnBlogEmpartnersCaseStudy = lazy(() => import("./pages/en/blog/EmpartnersCaseStudy"));
-const EnAccountantLeadGen = lazy(() => import("./pages/en/cabinet/AccountantLeadGeneration"));
-const EnPrimoleadAlternative = lazy(() => import("./pages/en/cabinet/PrimoleadAlternative"));
-const EnGlossary = lazy(() => import("./pages/en/cabinet/Glossary"));
-const EnUseCasesIndex = lazy(() => import("./pages/en/cabinet/UseCasesIndex"));
 
 import { LanguageSync } from "@/components/LanguageSync";
 
@@ -155,31 +147,29 @@ const App = () => (
                 <Route path="/verticales/professions-liberales-sante" element={<VerticaleProfessionsLiberalesSante />} />
                 <Route path="/verticales/holdings-groupes" element={<VerticaleHoldingsGroupes />} />
 
-                {/* EN routes */}
-                <Route path="/en" element={<Index />} />
-                <Route path="/en/product" element={<Produit />} />
-                <Route path="/en/solutions" element={<Solutions />} />
-                <Route path="/en/pricing" element={<Tarifs />} />
-                <Route path="/en/resources" element={<Ressources />} />
-                <Route path="/en/about" element={<APropos />} />
-                <Route path="/en/login" element={<Connexion />} />
-                <Route path="/en/demo" element={<Demo />} />
-                <Route path="/en/waitlist/success" element={<WaitlistSuccess />} />
-                <Route path="/en/legal" element={<MentionsLegales />} />
-                <Route path="/en/privacy" element={<Confidentialite />} />
-                <Route path="/en/terms" element={<CGU />} />
+                {/* EN retiré (août 2026) — la version anglaise servait du contenu FR dupliqué.
+                    Toutes les URLs /en* redirigent vers leur équivalent français. */}
+                <Route path="/en" element={<Navigate to="/" replace />} />
+                <Route path="/en/product" element={<Navigate to="/produit" replace />} />
+                <Route path="/en/solutions" element={<Navigate to="/solutions" replace />} />
+                <Route path="/en/pricing" element={<Navigate to="/tarifs" replace />} />
+                <Route path="/en/resources" element={<Navigate to="/ressources" replace />} />
+                <Route path="/en/about" element={<Navigate to="/a-propos" replace />} />
+                <Route path="/en/login" element={<Navigate to="/connexion" replace />} />
+                <Route path="/en/demo" element={<Navigate to="/demo" replace />} />
+                <Route path="/en/legal" element={<Navigate to="/mentions-legales" replace />} />
+                <Route path="/en/privacy" element={<Navigate to="/confidentialite" replace />} />
+                <Route path="/en/terms" element={<Navigate to="/cgu" replace />} />
+                <Route path="/en/accountant-lead-generation" element={<Navigate to="/leads-experts-comptables" replace />} />
+                <Route path="/en/primolead-alternative" element={<Navigate to="/alternatives-primolead-experts-comptables" replace />} />
+                <Route path="/en/glossary" element={<Navigate to="/cabinet/glossaire" replace />} />
+                <Route path="/en/use-cases" element={<Navigate to="/cabinet/cas-usage" replace />} />
+                <Route path="/en/blog/registrations-barometer-july-2026" element={<Navigate to="/blog/barometre-immatriculations-juillet-2026" replace />} />
+                <Route path="/en/blog/modernise-accounting-firm-2026" element={<Navigate to="/blog/moderniser-cabinet-etat-lieux-2026" replace />} />
+                <Route path="/en/blog/5-growth-levers-accounting-firm" element={<Navigate to="/blog/5-leviers-croissance-cabinet-expertise-comptable" replace />} />
+                <Route path="/en/blog/empartners-case-study" element={<Navigate to="/blog/cas-client-empartners" replace />} />
+                <Route path="/en/*" element={<Navigate to="/" replace />} />
 
-                {/* EN — cabinet pillar pages */}
-                <Route path="/en/accountant-lead-generation" element={<EnAccountantLeadGen />} />
-                <Route path="/en/primolead-alternative" element={<EnPrimoleadAlternative />} />
-                <Route path="/en/glossary" element={<EnGlossary />} />
-                <Route path="/en/use-cases" element={<EnUseCasesIndex />} />
-
-                {/* EN — blog */}
-                <Route path="/en/blog/registrations-barometer-july-2026" element={<EnBlogRegistrationsBarometer />} />
-                <Route path="/en/blog/modernise-accounting-firm-2026" element={<EnBlogModernise />} />
-                <Route path="/en/blog/5-growth-levers-accounting-firm" element={<EnBlog5Levers />} />
-                <Route path="/en/blog/empartners-case-study" element={<EnBlogEmpartnersCaseStudy />} />
 
                 {/* Search redirects (for SEO) - redirect search queries to main page */}
                 <Route path="/search" element={<Navigate to="/" replace />} />
@@ -233,13 +223,6 @@ const App = () => (
                 <Route path="/automatiser-veille-marches-publics" element={<Navigate to="/" replace />} />
                 <Route path="/checklist-conformite-ao" element={<Navigate to="/" replace />} />
                 <Route path="/kpi-marches-publics" element={<Navigate to="/" replace />} />
-                <Route path="/en/about-eligibly" element={<Navigate to="/en/about" replace />} />
-                <Route path="/en/strategic-watch" element={<Navigate to="/en" replace />} />
-                <Route path="/en/go-no-go-decision" element={<Navigate to="/en" replace />} />
-                <Route path="/en/public-tender-training" element={<Navigate to="/en" replace />} />
-                <Route path="/en/technical-proposal" element={<Navigate to="/en" replace />} />
-                <Route path="/en/tender-feedback" element={<Navigate to="/en" replace />} />
-                <Route path="/en/price-quality-balance" element={<Navigate to="/en" replace />} />
                 
                 {/* CATCH-ALL */}
                 <Route path="*" element={<NotFound />} />

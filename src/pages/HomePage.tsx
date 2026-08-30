@@ -17,6 +17,8 @@ import { CabinetPricing } from "@/components/cabinet/CabinetPricing";
 import { CabinetFAQ } from "@/components/cabinet/CabinetFAQ";
 import { CabinetFinalCTA } from "@/components/cabinet/CabinetFinalCTA";
 import { CabinetActivation } from "@/components/cabinet/CabinetActivation";
+import { CabinetLatestArticles } from "@/components/cabinet/CabinetLatestArticles";
+import { CabinetProofBlock } from "@/components/seo/CabinetJsonLd";
 
 const HomePage = () => {
   return (
@@ -41,7 +43,9 @@ const HomePage = () => {
           <CabinetTestimonial />
           <CabinetCompare />
           <CabinetPricing />
+          <CabinetProofBlock />
           <CabinetFAQ />
+          <CabinetLatestArticles />
           <CabinetFinalCTA />
         </main>
 

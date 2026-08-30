@@ -9,7 +9,6 @@ import { SafeLink } from "@/components/SafeLink";
 import { ArrowRight, ArrowLeft, BookOpen, Sparkles } from "lucide-react";
 import { ArticleRecommendations } from "@/components/ArticleRecommendations";
 import { ContextualLinks } from "@/components/ContextualLinks";
-import { alternateHref } from "@/hooks/useLang";
 
 interface Source {
   label: string;
@@ -21,6 +20,7 @@ interface ArticleShellProps {
   title: string;
   subtitle: string;
   date: string;
+  dateModified?: string;
   readTime: string;
   author?: string;
   url: string;
@@ -37,6 +37,7 @@ export const ArticleShell = ({
   title,
   subtitle,
   date,
+  dateModified,
   readTime,
   author,
   url,
@@ -60,8 +61,6 @@ export const ArticleShell = ({
   const ctaHref = isEn ? "/en/demo" : "/demo";
   const relatedLabel = isEn ? "Read next" : "À lire ensuite";
   const readLabel = isEn ? "Read" : "Lire";
-  const alt = alternateHref(url);
-  const altUrl = alt ? `https://eligibly.ai${alt}` : null;
   const homeCrumb = isEn ? "Home" : "Accueil";
   const resourcesCrumb = isEn ? "Resources" : "Ressources";
   const jsonLd = {
@@ -70,8 +69,13 @@ export const ArticleShell = ({
     headline: title,
     description,
     datePublished: date,
-    dateModified: date,
-    author: { "@type": "Organization", name: "Eligibly" },
+    dateModified: dateModified ?? date,
+    author: {
+      "@type": "Person",
+      name: resolvedAuthor,
+      url: "https://www.linkedin.com/company/eligibly",
+      worksFor: { "@type": "Organization", name: "Eligibly", url: "https://eligibly.ai" },
+    },
     inLanguage: isEn ? "en-GB" : "fr-FR",
     publisher: {
       "@type": "Organization",
@@ -101,15 +105,13 @@ export const ArticleShell = ({
         <meta name="description" content={description} />
         <link rel="canonical" href={`https://eligibly.ai${url}`} />
         <html lang={isEn ? "en-GB" : "fr-FR"} />
-        {altUrl && <link rel="alternate" hrefLang={isEn ? "fr-FR" : "en-GB"} href={altUrl} />}
-        <link rel="alternate" hrefLang={isEn ? "en-GB" : "fr-FR"} href={`https://eligibly.ai${url}`} />
-        {altUrl && <link rel="alternate" hrefLang="x-default" href={isEn ? altUrl : `https://eligibly.ai${url}`} />}
         <meta property="og:type" content="article" />
         <meta property="og:locale" content={isEn ? "en_GB" : "fr_FR"} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={`https://eligibly.ai${url}`} />
         <meta property="article:published_time" content={date} />
+        <meta property="article:modified_time" content={dateModified ?? date} />
         <meta property="article:section" content={category} />
         <meta property="article:author" content={resolvedAuthor} />
         <meta name="twitter:title" content={title} />
@@ -183,7 +185,19 @@ export const ArticleShell = ({
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </SafeLink>
+              <p className="mt-6 text-sm text-muted-foreground">
+                Voir en détail{" "}
+                <SafeLink to="/produit" className="text-primary underline underline-offset-4">
+                  comment fonctionne le moteur de détection de leads pour cabinets d'expertise comptable
+                </SafeLink>{" "}
+                ou{" "}
+                <SafeLink to="/demo" className="text-primary underline underline-offset-4">
+                  réserver une démo de 20 minutes avec 10 leads scorés sur votre zone
+                </SafeLink>
+                .
+              </p>
             </section>
+
 
             {related.length > 0 && (
               <section>

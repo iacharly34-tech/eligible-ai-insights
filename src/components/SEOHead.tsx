@@ -254,19 +254,16 @@ export const SEOHead = ({
   const seo = getPageSEO();
   const resolvedTitle = titleOverride ?? seo.title;
   const resolvedDescription = descriptionOverride ?? seo.description;
-  const isEnglishPath = location.pathname === "/en" || location.pathname.startsWith("/en/");
-  const frenchPath = isEnglishPath
-    ? location.pathname.replace(/^\/en(?=\/|$)/, "") || "/"
-    : location.pathname;
-  const englishPath = isEnglishPath
-    ? location.pathname
-    : (location.pathname === "/" ? "/en" : `/en${location.pathname}`);
   const canonicalUrl = canonicalOverride
     ?? (location.pathname === "/" ? "https://eligibly.ai" : `https://eligibly.ai${location.pathname}`);
-  const alternateFrHref = frenchPath === "/" ? "https://eligibly.ai" : `https://eligibly.ai${frenchPath}`;
-  const alternateEnHref = `https://eligibly.ai${englishPath}`;
-  const ogImageUrl = "https://eligibly.ai/og-image.jpg";
-  const isArticlePage = !noindex && location.pathname !== "/" && !location.pathname.startsWith("/en");
+  // OG images dédiées par page clé (1200×630, charte violette).
+  const ogImageByPath: Record<string, string> = {
+    "/produit": "https://eligibly.ai/og-produit.jpg",
+    "/tarifs": "https://eligibly.ai/og-tarifs.jpg",
+  };
+  const ogImageUrl = ogImageByPath[location.pathname] ?? "https://eligibly.ai/og-image.jpg";
+  const isArticlePage = !noindex && location.pathname.startsWith("/blog/");
+
 
   useEffect(() => {
     document.title = resolvedTitle;
@@ -283,8 +280,8 @@ export const SEOHead = ({
     upsertMetaTag("name", "twitter:title", resolvedTitle);
     upsertMetaTag("name", "twitter:description", resolvedDescription);
     upsertMetaTag("name", "twitter:image", ogImageUrl);
-    upsertMetaTag("name", "twitter:site", "@eligibly_ai");
-    upsertMetaTag("name", "twitter:creator", "@eligibly_ai");
+    removeMetaTag("name", "twitter:site");
+    removeMetaTag("name", "twitter:creator");
     upsertMetaTag("name", "news_keywords", "experts-comptables, leads, prospection, SASU, SAS, IA");
     upsertMetaTag("name", "author", "Eligibly Team");
     upsertMetaTag("name", "publisher", "Eligibly.ai");
@@ -300,9 +297,9 @@ export const SEOHead = ({
     upsertMetaTag("property", "og:site_name", "Eligibly");
 
     upsertLinkTag("canonical", canonicalUrl);
-    upsertLinkTag("alternate", alternateFrHref, { hreflang: "fr" });
-    upsertLinkTag("alternate", alternateEnHref, { hreflang: "en" });
-    upsertLinkTag("alternate", "https://eligibly.ai", { hreflang: "x-default" });
+    removeLinkTag("alternate", { hreflang: "fr" });
+    removeLinkTag("alternate", { hreflang: "en" });
+    removeLinkTag("alternate", { hreflang: "x-default" });
 
     if (isArticlePage) {
       upsertMetaTag("property", "article:published_time", "2025-08-20T10:00:00Z");
@@ -318,15 +315,9 @@ export const SEOHead = ({
       removeMetaTag("property", "article:tag");
     }
 
-    return () => {
-      removeLinkTag("alternate", { hreflang: "fr" });
-      removeLinkTag("alternate", { hreflang: "en" });
-      removeLinkTag("alternate", { hreflang: "x-default" });
-    };
   }, [
-    alternateEnHref,
-    alternateFrHref,
     canonicalUrl,
+    ogImageUrl,
     isArticlePage,
     language,
     noindex,
