@@ -1,11 +1,11 @@
 // Auto-generated sitemap. Runs on predev and prebuild.
-// Writes public/sitemap.xml with today's lastmod for every listed route.
+// Writes public/sitemap.xml. Pas de <lastmod> : aucune date de modification
+// fiable par page (une date de build serait un faux signal pour Google).
 
 import { writeFileSync } from "fs";
 import { resolve } from "path";
 
 const BASE_URL = "https://eligibly.ai";
-const today = new Date().toISOString().slice(0, 10);
 
 interface Entry {
   path: string;
@@ -65,7 +65,6 @@ function toXml(items: Entry[]) {
       [
         "  <url>",
         `    <loc>${BASE_URL}${e.path}</loc>`,
-        `    <lastmod>${today}</lastmod>`,
         e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
         e.priority ? `    <priority>${e.priority}</priority>` : null,
         "  </url>",
@@ -78,4 +77,4 @@ function toXml(items: Entry[]) {
 }
 
 writeFileSync(resolve("public/sitemap.xml"), toXml(entries));
-console.log(`✓ sitemap.xml regenerated (${entries.length} URLs, lastmod=${today})`);
+console.log(`✓ sitemap.xml regenerated (${entries.length} URLs)`);
