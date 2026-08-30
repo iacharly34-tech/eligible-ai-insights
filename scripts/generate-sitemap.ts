@@ -42,6 +42,15 @@ const entries: Entry[] = [
   { path: "/cabinet/cas-usage/cabinet-8-collaborateurs-departement", changefreq: "monthly", priority: "0.7" },
   { path: "/cabinet/cas-usage/cabinet-specialise-restauration", changefreq: "monthly", priority: "0.7" },
   { path: "/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce", changefreq: "monthly", priority: "0.7" },
+  // Sales Assistant (brique incluse dans l'offre détection)
+  { path: "/sales-assistant", changefreq: "monthly", priority: "0.75" },
+  // Verticales métier
+  { path: "/verticales/sasu-tech", changefreq: "monthly", priority: "0.75" },
+  { path: "/verticales/e-commerce", changefreq: "monthly", priority: "0.75" },
+  { path: "/verticales/restauration-chr", changefreq: "monthly", priority: "0.75" },
+  { path: "/verticales/btp-artisans", changefreq: "monthly", priority: "0.75" },
+  { path: "/verticales/professions-liberales-sante", changefreq: "monthly", priority: "0.75" },
+  { path: "/verticales/holdings-groupes", changefreq: "monthly", priority: "0.75" },
   { path: "/mentions-legales", changefreq: "yearly", priority: "0.2" },
   { path: "/confidentialite", changefreq: "yearly", priority: "0.2" },
   { path: "/cgu", changefreq: "yearly", priority: "0.2" },

@@ -126,6 +126,41 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://eligibly.ai/sales-assistant</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://eligibly.ai/verticales/sasu-tech</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://eligibly.ai/verticales/e-commerce</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://eligibly.ai/verticales/restauration-chr</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://eligibly.ai/verticales/btp-artisans</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://eligibly.ai/verticales/professions-liberales-sante</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://eligibly.ai/verticales/holdings-groupes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://eligibly.ai/mentions-legales</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
