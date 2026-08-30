@@ -43,7 +43,7 @@ const copy = {
     roiH2b: ".",
     roiCards: [
       ["1 client", "rembourse largement l'année"],
-      ["~1 800 €", "panier moyen annuel d'un client SASU"],
+      ["~250 €", "panier moyen mensuel HT d'un client SASU"],
       ["+8 à +20", "nouveaux clients signés / an constatés en pilote"],
     ],
     guarH2: "Démarrage sans friction",
@@ -102,7 +102,7 @@ const copy = {
     roiH2b: ".",
     roiCards: [
       ["1 client", "more than pays for the year"],
-      ["~€1,800", "average annual revenue per SASU client"],
+      ["~€250", "average monthly revenue per SASU client"],
       ["+8 to +20", "new clients signed / year seen in pilot"],
     ],
     guarH2: "Frictionless start",

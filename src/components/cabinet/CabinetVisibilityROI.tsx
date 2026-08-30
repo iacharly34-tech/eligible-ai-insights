@@ -12,7 +12,7 @@ export const CabinetVisibilityROI = () => {
   const [ctrAfter, setCtrAfter] = useState(9); // % de clics dans le pack local / top 3
   const [contactRate, setContactRate] = useState(6); // % de visiteurs qui prennent contact
   const [closeRate, setCloseRate] = useState(35); // % de contacts signés
-  const [arpa, setArpa] = useState(2400); // honoraires annuels moyens par client
+  const [monthlyArpa, setMonthlyArpa] = useState(250); // honoraires mensuels moyens par client
 
   const r = useMemo(() => {
     const clicksBefore = (impressions * ctrBefore) / 100;
@@ -28,9 +28,9 @@ export const CabinetVisibilityROI = () => {
       signedBefore: signed(clicksBefore),
       signedAfter: signed(clicksAfter),
       deltaSigned,
-      annualDelta: deltaSigned * 12 * arpa,
+      annualDelta: deltaSigned * 12 * monthlyArpa,
     };
-  }, [impressions, ctrBefore, ctrAfter, contactRate, closeRate, arpa]);
+  }, [impressions, ctrBefore, ctrAfter, contactRate, closeRate, monthlyArpa]);
 
   const fmt = (n: number, d = 0) =>
     new Intl.NumberFormat("fr-FR", { maximumFractionDigits: d, minimumFractionDigits: d }).format(
@@ -67,10 +67,10 @@ export const CabinetVisibilityROI = () => {
             <Slider label="Taux de prise de contact du site" value={contactRate} onChange={setContactRate} max={25} />
             <Slider label="Taux de signature sur contacts entrants" value={closeRate} onChange={setCloseRate} max={80} />
             <Field
-              label="Honoraires annuels moyens par client"
-              value={arpa}
-              onChange={setArpa}
-              suffix="€ HT / an"
+              label="Honoraires mensuels moyens par client"
+              value={monthlyArpa}
+              onChange={setMonthlyArpa}
+              suffix="€ HT / mois"
             />
           </div>
 
