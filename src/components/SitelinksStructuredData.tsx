@@ -74,7 +74,7 @@ export const SitelinksStructuredData = () => {
       {
         "@type": "ListItem", 
         "position": 2,
-        "name": "Produit",
+        "name": "Offres",
         "item": "https://eligibly.ai/produit"
       },
       {
