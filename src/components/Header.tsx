@@ -37,9 +37,8 @@ export const Header = () => {
         {
           name: 'Offres',
           children: [
-            { name: 'Offre Outbound — Eligibly', href: '/produit', desc: 'Détection, scoring et activation des sociétés fraîchement immatriculées.' },
+            { name: 'Offre Outbound — Eligibly', href: '/produit', desc: 'Détection, scoring et activation des sociétés fraîchement immatriculées. Inclut le Sales Assistant.' },
             { name: 'Offre Image de marque', href: '/marque-et-visibilite-expert-comptable', desc: 'La couche de visibilité à installer avant de démarcher.' },
-            { name: 'Sales Assistant', href: '/sales-assistant', desc: 'Séquences et messages d’approche prêts à envoyer.' },
           ],
         },
         { name: 'Solutions',  href: '/solutions' },
