@@ -81,6 +81,21 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://eligibly.ai/visibilite-expert-comptable</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://eligibly.ai/image-de-marque-expert-comptable</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://eligibly.ai/presence-digitale-cabinet-comptable</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://eligibly.ai/cabinet/glossaire</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
