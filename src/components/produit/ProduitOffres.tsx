@@ -12,7 +12,7 @@ const copy = {
     offers: [
       {
         step: "Couche 1",
-        title: "Offre Image de marque",
+        title: "Marque & visibilité",
         icon: Megaphone,
         desc: "Nous construisons la couche de crédibilité que vos prospects consultent avant de vous répondre : site indexable, fiche Google, balisage structuré, présence LinkedIn, annuaires et référencement dans les assistants IA.",
         bullets: [
@@ -22,13 +22,13 @@ const copy = {
           "Mesure : positions, backlinks, preuve sociale",
         ],
         href: "/marque-et-visibilite-expert-comptable",
-        cta: "Voir l'offre image de marque",
+        cta: "Voir l'offre marque & visibilité",
       },
       {
         step: "Couche 2",
-        title: "Offre Outbound — le produit Eligibly",
+        title: "Détection & prospection",
         icon: Radar,
-        desc: "Une fois le cabinet crédible en ligne, Eligibly détecte chaque matin les sociétés fraîchement immatriculées sur votre zone et votre ICP, les score et vous livre un plan d'activation multicanal.",
+        desc: "Le produit Eligibly. Une fois le cabinet crédible en ligne, il détecte chaque matin les sociétés fraîchement immatriculées sur votre zone et votre ICP, les score et vous livre un plan d'activation multicanal.",
         bullets: [
           "Sources officielles : INPI, Sirene, BODACC, RNE",
           "Filtres ICP amont + scoring 0-100 expliqué",
@@ -36,7 +36,7 @@ const copy = {
           "Activation LinkedIn, email, appel, WhatsApp",
         ],
         href: "/tarifs",
-        cta: "Voir les tarifs outbound",
+        cta: "Voir les tarifs de la détection",
       },
     ],
     seqTitle: "Pourquoi cet ordre n'est pas négociable",
@@ -55,7 +55,7 @@ const copy = {
     offers: [
       {
         step: "Layer 1",
-        title: "Brand & visibility offer",
+        title: "Brand & visibility",
         icon: Megaphone,
         desc: "We build the credibility layer prospects check before replying: indexable website, Google profile, structured markup, LinkedIn presence, directories and AI-assistant coverage.",
         bullets: [
@@ -69,7 +69,7 @@ const copy = {
       },
       {
         step: "Layer 2",
-        title: "Outbound offer — the Eligibly product",
+        title: "Lead detection & outreach",
         icon: Radar,
         desc: "Once the firm is credible online, Eligibly detects newly registered companies in your area and ICP every morning, scores them and delivers a multichannel activation plan.",
         bullets: [

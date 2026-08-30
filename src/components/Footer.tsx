@@ -9,13 +9,13 @@ export const Footer = () => {
     {
       title: language === 'en' ? 'Offers' : 'Offres',
       links: [
-        { name: language === 'en' ? 'Outbound offer — Eligibly' : 'Offre Outbound — Eligibly', href: language === 'en' ? '/en/product' : '/produit' },
-        { name: language === 'en' ? 'Brand & visibility offer' : 'Offre Image de marque',      href: '/marque-et-visibilite-expert-comptable' },
-        { name: language === 'en' ? 'Solutions' : 'Solutions',   href: language === 'en' ? '/en/solutions' : '/solutions' },
-        { name: language === 'en' ? 'Pricing' : 'Tarifs',        href: language === 'en' ? '/en/pricing'   : '/tarifs' },
-        { name: language === 'en' ? 'Resources' : 'Ressources',  href: language === 'en' ? '/en/resources' : '/ressources' },
-        { name: language === 'en' ? 'About' : 'À propos',        href: language === 'en' ? '/en/about'     : '/a-propos' },
-        { name: language === 'en' ? 'Demo' : 'Démo',             href: language === 'en' ? '/en/demo'      : '/demo' },
+        { name: language === 'en' ? 'Brand & visibility' : 'Marque & visibilité', href: '/marque-et-visibilite-expert-comptable' },
+        { name: language === 'en' ? 'Lead detection & outreach' : 'Détection & prospection', href: '/produit' },
+        { name: language === 'en' ? 'Solutions' : 'Solutions',   href: '/solutions' },
+        { name: language === 'en' ? 'Pricing' : 'Tarifs',        href: '/tarifs' },
+        { name: language === 'en' ? 'Resources' : 'Ressources',  href: '/ressources' },
+        { name: language === 'en' ? 'About' : 'À propos',        href: '/a-propos' },
+        { name: language === 'en' ? 'Demo' : 'Démo',             href: '/demo' },
       ],
     },
     {
@@ -38,7 +38,6 @@ export const Footer = () => {
         { name: language === 'en' ? 'ROI simulator' : 'Simulateur ROI IA', href: '/simulateur-roi-ia-cabinet' },
         { name: language === 'en' ? 'Use cases' : 'Cas d’usage cabinets', href: '/cabinet/cas-usage' },
         { name: language === 'en' ? 'Glossary' : 'Glossaire cabinet', href: '/cabinet/glossaire' },
-        { name: language === 'en' ? 'Brand & visibility hub' : 'Hub marque & visibilité', href: '/marque-et-visibilite-expert-comptable' },
         { name: language === 'en' ? 'Accountant visibility' : 'Visibilité expert-comptable', href: '/visibilite-expert-comptable' },
         { name: language === 'en' ? 'Firm branding' : 'Image de marque cabinet', href: '/image-de-marque-expert-comptable' },
         { name: language === 'en' ? 'Digital presence' : 'Présence digitale cabinet', href: '/presence-digitale-cabinet-comptable' },
@@ -47,10 +46,10 @@ export const Footer = () => {
     {
       title: language === 'en' ? 'Company' : 'Société',
       links: [
-        { name: language === 'en' ? 'Sign in' : 'Connexion', href: language === 'en' ? '/en/login' : '/connexion' },
+        { name: language === 'en' ? 'Sign in' : 'Connexion', href: '/connexion' },
         { name: 'Contact', href: 'mailto:contact@eligibly.ai' },
-        { name: language === 'en' ? 'Legal' : 'Mentions légales', href: language === 'en' ? '/en/legal' : '/mentions-legales' },
-        { name: language === 'en' ? 'Privacy' : 'Confidentialité', href: language === 'en' ? '/en/privacy' : '/confidentialite' },
+        { name: language === 'en' ? 'Legal' : 'Mentions légales', href: '/mentions-legales' },
+        { name: language === 'en' ? 'Privacy' : 'Confidentialité', href: '/confidentialite' },
       ],
     },
   ];
@@ -61,7 +60,7 @@ export const Footer = () => {
         <div className="grid lg:grid-cols-6 gap-10">
           {/* Logo & Description */}
           <div className="lg:col-span-2 space-y-4">
-            <SafeLink to={language === 'en' ? '/en' : '/'} className="inline-flex items-center">
+            <SafeLink to="/" className="inline-flex items-center">
               <span className="font-display text-xl font-semibold tracking-tight text-foreground">
                 Eligibly
               </span>

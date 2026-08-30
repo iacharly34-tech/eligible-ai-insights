@@ -207,9 +207,9 @@ export const SEOHead = ({
           };
         case '/produit':
           return {
-            title: "Produit Eligibly — Détection, scoring & activation multicanale",
-            description: "Détection quotidienne des nouvelles SASU/SAS/EURL/SARL/SEL, filtres ICP, scoring expliqué, canal d'approche recommandé (LinkedIn, email, appel, courrier). RGPD.",
-            keywords: "fonctionnalités eligibly, détection leads cabinet, scoring priorité, canal d'approche, social selling, courrier cabinet"
+            title: "Détection & prospection — L'offre Eligibly pour cabinets EC",
+            description: "Détection quotidienne des nouvelles SASU/SAS/EURL/SARL/SEL, filtres ICP, scoring expliqué et canal d'approche recommandé (LinkedIn, email, appel, WhatsApp, courrier). Sales Assistant inclus. RGPD.",
+            keywords: "détection prospection cabinet expertise-comptable, offre eligibly, scoring priorité, canal d'approche, sales assistant, marque et visibilité expert-comptable"
           };
         case '/demo':
           return {

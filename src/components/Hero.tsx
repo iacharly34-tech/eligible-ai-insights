@@ -41,7 +41,7 @@ export const Hero = memo(() => {
     { icon: Users, text: t('hero.trust.teams'), iconClass: 'text-accent' },
   ], [t]);
 
-  const demoPath = language === 'en' ? '/en/demo' : '/demo';
+  const demoPath = '/demo';
 
   return (
     <section 

@@ -15,11 +15,11 @@ Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets
 - [Glossaire prospection & génération de leads cabinet EC](/cabinet/glossaire): Définitions courtes — SIRENE, INPI, BODACC, ICP, scoring prédictif, CAC, LTV, code APE 6920Z, SASU, SAS, EURL, canal d'activation.
 - [Prospection cabinet comptable : méthode 2026](/prospection-cabinet-comptable): Méthode complète de prospection pour cabinet EC.
 - [Canaux d'activation : LinkedIn, email, appel, courrier](/canaux-activation): Quel canal pour quel type de lead créateur.
-- [Hub marque & visibilité expert-comptable](/marque-et-visibilite-expert-comptable): Les 6 actifs digitaux d'une marque de cabinet, cas clients documentés (EM Partners, 5,0/5 sur 95 avis Google), calculateur d'impact visibilité et tableaux de bord (visibilité search, santé des backlinks, preuve sociale).
+- [Offre Marque & visibilité](/marque-et-visibilite-expert-comptable): Les 6 actifs digitaux d'une marque de cabinet, cas clients documentés (EM Partners, 5,0/5 sur 95 avis Google), calculateur d'impact visibilité et tableaux de bord (visibilité search, santé des backlinks, preuve sociale).
 - [Visibilité expert-comptable](/visibilite-expert-comptable): Les 4 surfaces de visibilité d'un cabinet (recherche locale, avis, site, assistants IA), leviers de référencement local, conditions pour être cité par les LLM, 7 indicateurs de suivi.
 - [Image de marque expert-comptable](/image-de-marque-expert-comptable): Positionnement en une phrase, verticalisation, 4 familles de preuves, cohérence entre surfaces, cadre déontologique de la communication des experts-comptables.
 - [Présence digitale cabinet comptable](/presence-digitale-cabinet-comptable): Socle de 6 actifs (fiche Google Business, site, avis, LinkedIn, annuaires métier, mesure), arborescence de site recommandée, exigences techniques d'indexation, coûts et cadence observés.
-- [Fonctionnalités](/produit): Sources, filtres IA, scoring expliqué, alertes multi-canaux, sécurité et conformité RGPD.
+- [Offre Détection & prospection](/produit): Sources, filtres IA, scoring expliqué, alertes multi-canaux, sécurité et conformité RGPD.
 - [Cas d'usage](/solutions): Verticales par type de cabinet (Tech, Conseil, Santé, Artisans, Grands cabinets & réseaux, Structuration).
 - [Tarifs](/tarifs): À partir de 10 € par lead qualifié, devis personnalisé. Démarrage sans CB, résiliable mensuellement.
 - [Ressources](/ressources): Playbooks, calculateurs ROI, guides de prospection pour experts-comptables.
