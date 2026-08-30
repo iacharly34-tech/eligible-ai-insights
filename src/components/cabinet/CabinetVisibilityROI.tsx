@@ -29,8 +29,6 @@ export const CabinetVisibilityROI = () => {
       annualBase: signedBase * 12 * monthlyArpa,
       annualVisible: signedVisible * 12 * monthlyArpa,
       annualDelta: deltaSigned * 12 * monthlyArpa,
-      // valeur d'un portefeuille signé sur 12 mois, en régime établi
-      portfolio12m: signedVisible * 12 * monthlyArpa * 6.5,
     };
   }, [leadsPerWeek, reachRate, closeBase, closeVisible, monthlyArpa]);
 
