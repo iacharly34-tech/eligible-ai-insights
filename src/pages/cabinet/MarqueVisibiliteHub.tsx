@@ -62,10 +62,10 @@ const cases = [
 
 const MarqueVisibiliteHub = () => (
   <LandingCabinetLayout
-    seoTitle="Marque et visibilité expert-comptable : le hub complet (2026)"
-    seoDescription="Hub de construction de marque pour cabinet d'expertise comptable : actifs digitaux, cas clients documentés, calculateur d'impact visibilité et tableaux de bord de maturité."
+    seoTitle="Marque & visibilité expert-comptable — l'offre Eligibly (2026)"
+    seoDescription="Offre marque & visibilité pour cabinet d'expertise comptable : actifs digitaux, cas clients documentés, calculateur d'impact visibilité et tableaux de bord de maturité."
     canonicalPath="/marque-et-visibilite-expert-comptable"
-    eyebrow="Hub marque & visibilité"
+    eyebrow="Offre Marque & visibilité"
     h1a="Marque et visibilité"
     h1b="du cabinet"
     h1c=" : les actifs, les preuves, les indicateurs."
