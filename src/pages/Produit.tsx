@@ -4,6 +4,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { StructuredData } from "@/components/StructuredData";
 import { ProduitJsonLd, CabinetProofBlock } from "@/components/seo/CabinetJsonLd";
 import { MobileCTABar } from "@/components/MobileCTABar";
+import { ProduitOffres } from "@/components/produit/ProduitOffres";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
 import { ArrowRight, Database, Filter, Sparkles, Bell, RefreshCw, CheckCircle2, Slack, Mail, Shield, Lock, FileText, Server } from "lucide-react";
