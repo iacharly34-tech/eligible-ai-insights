@@ -140,7 +140,9 @@ export const ProduitOffres = ({ compact = false }: { compact?: boolean }) => {
           })}
         </div>
 
+        {!compact && (
         <div className="mt-10 rounded-2xl border border-border bg-background p-7">
+
           <h3 className="font-display text-lg font-semibold tracking-tight mb-5">{t.seqTitle}</h3>
           <ol className="grid md:grid-cols-3 gap-6">
             {t.seq.map((s, i) => (
