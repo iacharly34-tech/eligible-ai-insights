@@ -2,35 +2,35 @@ import { useMemo, useState } from "react";
 import { Calculator } from "lucide-react";
 
 /**
- * Calculateur d'impact de la visibilité pour un cabinet d'expertise comptable.
- * Modèle volontairement simple et auditable : recherches locales → clics → contacts → signatures.
- * Aucune donnée n'est envoyée : tout est calculé côté navigateur.
+ * Calculateur d'impact : volume de leads détectés × qualité de la mise en relation × taux de signature.
+ * La couche visibilité (moteurs de recherche + assistants IA) n'est pas une fin en soi :
+ * elle agit comme un multiplicateur sur le taux de réponse et le taux de signature des leads travaillés.
+ * Tout est calculé côté navigateur, aucune donnée n'est envoyée.
  */
 export const CabinetVisibilityROI = () => {
-  const [impressions, setImpressions] = useState(1200); // recherches locales / mois sur vos requêtes
-  const [ctrBefore, setCtrBefore] = useState(2); // % de clics en position actuelle
-  const [ctrAfter, setCtrAfter] = useState(9); // % de clics dans le pack local / top 3
-  const [contactRate, setContactRate] = useState(6); // % de visiteurs qui prennent contact
-  const [closeRate, setCloseRate] = useState(35); // % de contacts signés
+  const [leadsPerWeek, setLeadsPerWeek] = useState(2); // objectif : 2 leads qualifiés / semaine
+  const [reachRate, setReachRate] = useState(70); // % de leads réellement joints (WhatsApp, appel, email, LinkedIn)
+  const [closeBase, setCloseBase] = useState(20); // % de signature sans couche visibilité
+  const [closeVisible, setCloseVisible] = useState(40); // % de signature avec couche visibilité
   const [monthlyArpa, setMonthlyArpa] = useState(250); // honoraires mensuels moyens par client
 
   const r = useMemo(() => {
-    const clicksBefore = (impressions * ctrBefore) / 100;
-    const clicksAfter = (impressions * ctrAfter) / 100;
-    const contacts = (c: number) => (c * contactRate) / 100;
-    const signed = (c: number) => (contacts(c) * closeRate) / 100;
-    const deltaSigned = signed(clicksAfter) - signed(clicksBefore);
+    const leadsMonth = leadsPerWeek * 4.33;
+    const reached = (leadsMonth * reachRate) / 100;
+    const signedBase = (reached * closeBase) / 100;
+    const signedVisible = (reached * closeVisible) / 100;
+    const deltaSigned = signedVisible - signedBase;
     return {
-      clicksBefore,
-      clicksAfter,
-      contactsBefore: contacts(clicksBefore),
-      contactsAfter: contacts(clicksAfter),
-      signedBefore: signed(clicksBefore),
-      signedAfter: signed(clicksAfter),
+      leadsMonth,
+      reached,
+      signedBase,
+      signedVisible,
       deltaSigned,
+      annualBase: signedBase * 12 * monthlyArpa,
+      annualVisible: signedVisible * 12 * monthlyArpa,
       annualDelta: deltaSigned * 12 * monthlyArpa,
     };
-  }, [impressions, ctrBefore, ctrAfter, contactRate, closeRate, monthlyArpa]);
+  }, [leadsPerWeek, reachRate, closeBase, closeVisible, monthlyArpa]);
 
   const fmt = (n: number, d = 0) =>
     new Intl.NumberFormat("fr-FR", { maximumFractionDigits: d, minimumFractionDigits: d }).format(
@@ -41,31 +41,45 @@ export const CabinetVisibilityROI = () => {
     <section id="calculateur-visibilite" className="py-16 md:py-20 bg-muted/30 border-y border-border">
       <div className="container mx-auto px-4 max-w-5xl">
         <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-3 flex items-center gap-2">
-          <Calculator className="w-3.5 h-3.5" aria-hidden="true" /> Calculateur d'impact visibilité
+          <Calculator className="w-3.5 h-3.5" aria-hidden="true" /> Calculateur d'impact leads
         </p>
         <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
-          Ce que vaut une place dans le pack local
+          Ce que valent 2 leads par semaine, signés à 40 %
         </h2>
         <p className="mt-3 text-muted-foreground max-w-3xl leading-relaxed">
-          Le modèle est délibérément élémentaire : recherches locales mensuelles, taux de clic avant/après,
-          taux de prise de contact, taux de signature, honoraires annuels moyens. Ajustez chaque paramètre avec
-          vos données Search Console et votre CRM — les valeurs par défaut sont des ordres de grandeur observés
-          sur des cabinets de 5 à 20 collaborateurs, pas une promesse.
+          Le modèle part du volume de leads détectés, pas du référencement. La couche marque &amp; visibilité
+          (fiche Google, avis, site indexable, présence dans ChatGPT / Perplexity / Gemini) intervient comme
+          multiplicateur : à volume de leads identique, un cabinet que le créateur peut vérifier en ligne signe
+          nettement plus. Ajustez les curseurs avec vos propres taux.
         </p>
 
         <div className="mt-8 grid lg:grid-cols-2 gap-6">
           <div className="rounded-2xl border border-border bg-card p-6 sm:p-7 space-y-6">
             <Field
-              label="Recherches locales mensuelles sur vos requêtes cibles"
-              hint="Impressions Search Console + volume estimé « expert-comptable + ville »."
-              value={impressions}
-              onChange={setImpressions}
-              suffix="/ mois"
+              label="Leads qualifiés détectés par semaine"
+              hint="Objectif de référence : 2 immatriculations scorées et exploitables par semaine."
+              value={leadsPerWeek}
+              onChange={setLeadsPerWeek}
+              suffix="/ semaine"
             />
-            <Slider label="Taux de clic actuel" value={ctrBefore} onChange={setCtrBefore} max={30} />
-            <Slider label="Taux de clic visé (top 3 / pack local)" value={ctrAfter} onChange={setCtrAfter} max={30} />
-            <Slider label="Taux de prise de contact du site" value={contactRate} onChange={setContactRate} max={25} />
-            <Slider label="Taux de signature sur contacts entrants" value={closeRate} onChange={setCloseRate} max={80} />
+            <Slider
+              label="Taux de mise en relation (WhatsApp, appel, email, LinkedIn)"
+              value={reachRate}
+              onChange={setReachRate}
+              max={100}
+            />
+            <Slider
+              label="Taux de signature sans couche visibilité"
+              value={closeBase}
+              onChange={setCloseBase}
+              max={80}
+            />
+            <Slider
+              label="Taux de signature avec visibilité search + IA"
+              value={closeVisible}
+              onChange={setCloseVisible}
+              max={80}
+            />
             <Field
               label="Honoraires mensuels moyens par client"
               value={monthlyArpa}
@@ -83,14 +97,19 @@ export const CabinetVisibilityROI = () => {
                 <thead>
                   <tr className="text-background/70 text-xs uppercase tracking-wider">
                     <th className="text-left font-medium pb-2">Étape</th>
-                    <th className="text-right font-medium pb-2">Actuel</th>
-                    <th className="text-right font-medium pb-2">Visé</th>
+                    <th className="text-right font-medium pb-2">Sans visibilité</th>
+                    <th className="text-right font-medium pb-2">Avec visibilité</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-background/15">
-                  <Row label="Visites depuis la recherche locale" a={fmt(r.clicksBefore)} b={fmt(r.clicksAfter)} />
-                  <Row label="Prises de contact" a={fmt(r.contactsBefore, 1)} b={fmt(r.contactsAfter, 1)} />
-                  <Row label="Clients signés" a={fmt(r.signedBefore, 1)} b={fmt(r.signedAfter, 1)} />
+                  <Row label="Leads détectés / mois" a={fmt(r.leadsMonth, 1)} b={fmt(r.leadsMonth, 1)} />
+                  <Row label="Créateurs réellement joints" a={fmt(r.reached, 1)} b={fmt(r.reached, 1)} />
+                  <Row label="Clients signés" a={fmt(r.signedBase, 1)} b={fmt(r.signedVisible, 1)} />
+                  <Row
+                    label="Honoraires récurrents ajoutés (12 mois)"
+                    a={`${fmt(r.annualBase)} €`}
+                    b={`${fmt(r.annualVisible)} €`}
+                  />
                 </tbody>
               </table>
             </div>
@@ -103,7 +122,7 @@ export const CabinetVisibilityROI = () => {
                 </span>
               </div>
               <div className="flex items-baseline justify-between gap-4">
-                <span className="text-background/85 text-sm">Honoraires récurrents ajoutés (12 mois)</span>
+                <span className="text-background/85 text-sm">Écart d'honoraires sur 12 mois</span>
                 <span className="font-display text-2xl font-semibold text-background tabular-nums">
                   {fmt(r.annualDelta)} €
                 </span>
@@ -111,9 +130,9 @@ export const CabinetVisibilityROI = () => {
             </div>
 
             <p className="mt-auto pt-6 text-[0.72rem] text-background/70 leading-relaxed">
-              Lecture : la visibilité agit sur le haut de l'entonnoir entrant. Elle ne couvre pas les créateurs
-              qui ne vous cherchent pas — d'où la complémentarité avec la détection d'immatriculations dans la
-              fenêtre de 90 jours.
+              Lecture : la détection fixe le volume, la visibilité fixe le taux de transformation. Un créateur
+              qui vérifie votre cabinet sur Google, vos avis et via un assistant IA avant de répondre ne signe
+              pas au même taux qu'un cabinet introuvable — d'où l'enchaînement visibilité puis prospection.
             </p>
           </div>
         </div>
@@ -121,6 +140,7 @@ export const CabinetVisibilityROI = () => {
     </section>
   );
 };
+
 
 const Row = ({ label, a, b }: { label: string; a: string; b: string }) => (
   <tr>
