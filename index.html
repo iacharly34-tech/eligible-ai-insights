@@ -3,7 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    
+
+    <!-- Hôte canonique : www.eligibly.ai -> eligibly.ai (l'hébergement sert les deux en 200,
+         ce garde-fou évite le contenu dupliqué et unifie les signaux SEO). -->
+    <script>
+      (function () {
+        var h = window.location.hostname;
+        if (h === 'www.eligibly.ai' || h === 'www.eligibly.fr') {
+          window.location.replace(
+            window.location.protocol + '//' + h.slice(4) +
+            window.location.pathname + window.location.search + window.location.hash
+          );
+        }
+      })();
+    </script>
+
     <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https: https://plausible.io; worker-src 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">

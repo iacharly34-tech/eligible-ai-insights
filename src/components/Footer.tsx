@@ -37,6 +37,9 @@ export const Footer = () => {
         { name: language === 'en' ? 'ROI simulator' : 'Simulateur ROI IA', href: '/simulateur-roi-ia-cabinet' },
         { name: language === 'en' ? 'Use cases' : 'Cas d’usage cabinets', href: '/cabinet/cas-usage' },
         { name: language === 'en' ? 'Glossary' : 'Glossaire cabinet', href: '/cabinet/glossaire' },
+        { name: language === 'en' ? 'Accountant visibility' : 'Visibilité expert-comptable', href: '/visibilite-expert-comptable' },
+        { name: language === 'en' ? 'Firm branding' : 'Image de marque cabinet', href: '/image-de-marque-expert-comptable' },
+        { name: language === 'en' ? 'Digital presence' : 'Présence digitale cabinet', href: '/presence-digitale-cabinet-comptable' },
       ],
     },
     {

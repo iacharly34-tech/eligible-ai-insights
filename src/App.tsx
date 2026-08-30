@@ -52,6 +52,9 @@ const CanauxActivation = lazy(() => import("./pages/cabinet/CanauxActivation"));
 const PourquoiCeLeadEstPrioritaire = lazy(() => import("./pages/cabinet/PourquoiCeLeadEstPrioritaire"));
 const AlternativesPrimolead = lazy(() => import("./pages/cabinet/AlternativesPrimolead"));
 const GlossaireCabinet = lazy(() => import("./pages/cabinet/Glossaire"));
+const VisibiliteExpertComptable = lazy(() => import("./pages/cabinet/VisibiliteExpertComptable"));
+const ImageDeMarqueExpertComptable = lazy(() => import("./pages/cabinet/ImageDeMarqueExpertComptable"));
+const PresenceDigitaleCabinetComptable = lazy(() => import("./pages/cabinet/PresenceDigitaleCabinetComptable"));
 const CasUsageIndex = lazy(() => import("./pages/cabinet/CasUsageIndex"));
 const CasUsage8Collabs = lazy(() => import("./pages/cabinet/CasUsage8Collaborateurs"));
 const CasUsageRestauration = lazy(() => import("./pages/cabinet/CasUsageRestauration"));
@@ -115,6 +118,9 @@ const App = () => (
                 <Route path="/canaux-activation" element={<CanauxActivation />} />
                 <Route path="/pourquoi-ce-lead-est-prioritaire" element={<PourquoiCeLeadEstPrioritaire />} />
                 <Route path="/alternatives-primolead-experts-comptables" element={<AlternativesPrimolead />} />
+                <Route path="/visibilite-expert-comptable" element={<VisibiliteExpertComptable />} />
+                <Route path="/image-de-marque-expert-comptable" element={<ImageDeMarqueExpertComptable />} />
+                <Route path="/presence-digitale-cabinet-comptable" element={<PresenceDigitaleCabinetComptable />} />
                 <Route path="/cabinet/glossaire" element={<GlossaireCabinet />} />
                 <Route path="/cabinet/cas-usage" element={<CasUsageIndex />} />
                 <Route path="/cabinet/cas-usage/cabinet-8-collaborateurs-departement" element={<CasUsage8Collabs />} />
