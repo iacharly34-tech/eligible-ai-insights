@@ -13,7 +13,7 @@ export const SitelinksStructuredData = () => {
       {
         "@type": "SiteNavigationElement",
         "position": 1,
-        "name": language === 'en' ? "Product" : "Produit",
+        "name": language === 'en' ? "Offers" : "Offres",
         "description": language === 'en' ? "Detection, scoring and multichannel activation for newly-registered entrepreneurs" : "Détection, scoring et activation multicanale des nouveaux entrepreneurs",
         "url": `https://eligibly.ai${language === 'en' ? '/en/product' : '/produit'}`,
         "about": language === 'en' ? "Lead detection and prioritisation for accounting firms" : "Détection et priorisation de leads pour cabinets d'expertise-comptable"
