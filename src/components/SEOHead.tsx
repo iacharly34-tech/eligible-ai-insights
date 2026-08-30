@@ -254,19 +254,16 @@ export const SEOHead = ({
   const seo = getPageSEO();
   const resolvedTitle = titleOverride ?? seo.title;
   const resolvedDescription = descriptionOverride ?? seo.description;
-  const isEnglishPath = location.pathname === "/en" || location.pathname.startsWith("/en/");
-  const frenchPath = isEnglishPath
-    ? location.pathname.replace(/^\/en(?=\/|$)/, "") || "/"
-    : location.pathname;
-  const englishPath = isEnglishPath
-    ? location.pathname
-    : (location.pathname === "/" ? "/en" : `/en${location.pathname}`);
   const canonicalUrl = canonicalOverride
     ?? (location.pathname === "/" ? "https://eligibly.ai" : `https://eligibly.ai${location.pathname}`);
-  const alternateFrHref = frenchPath === "/" ? "https://eligibly.ai" : `https://eligibly.ai${frenchPath}`;
-  const alternateEnHref = `https://eligibly.ai${englishPath}`;
-  const ogImageUrl = "https://eligibly.ai/og-image.jpg";
-  const isArticlePage = !noindex && location.pathname !== "/" && !location.pathname.startsWith("/en");
+  // OG images dédiées par page clé (1200×630, charte violette).
+  const ogImageByPath: Record<string, string> = {
+    "/produit": "https://eligibly.ai/og-produit.jpg",
+    "/tarifs": "https://eligibly.ai/og-tarifs.jpg",
+  };
+  const ogImageUrl = ogImageByPath[location.pathname] ?? "https://eligibly.ai/og-image.jpg";
+  const isArticlePage = !noindex && location.pathname.startsWith("/blog/");
+
 
   useEffect(() => {
     document.title = resolvedTitle;
