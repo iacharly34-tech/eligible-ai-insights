@@ -280,8 +280,8 @@ export const SEOHead = ({
     upsertMetaTag("name", "twitter:title", resolvedTitle);
     upsertMetaTag("name", "twitter:description", resolvedDescription);
     upsertMetaTag("name", "twitter:image", ogImageUrl);
-    upsertMetaTag("name", "twitter:site", "@eligibly_ai");
-    upsertMetaTag("name", "twitter:creator", "@eligibly_ai");
+    removeMetaTag("name", "twitter:site");
+    removeMetaTag("name", "twitter:creator");
     upsertMetaTag("name", "news_keywords", "experts-comptables, leads, prospection, SASU, SAS, IA");
     upsertMetaTag("name", "author", "Eligibly Team");
     upsertMetaTag("name", "publisher", "Eligibly.ai");
@@ -297,9 +297,9 @@ export const SEOHead = ({
     upsertMetaTag("property", "og:site_name", "Eligibly");
 
     upsertLinkTag("canonical", canonicalUrl);
-    upsertLinkTag("alternate", alternateFrHref, { hreflang: "fr" });
-    upsertLinkTag("alternate", alternateEnHref, { hreflang: "en" });
-    upsertLinkTag("alternate", "https://eligibly.ai", { hreflang: "x-default" });
+    removeLinkTag("alternate", { hreflang: "fr" });
+    removeLinkTag("alternate", { hreflang: "en" });
+    removeLinkTag("alternate", { hreflang: "x-default" });
 
     if (isArticlePage) {
       upsertMetaTag("property", "article:published_time", "2025-08-20T10:00:00Z");
@@ -315,15 +315,9 @@ export const SEOHead = ({
       removeMetaTag("property", "article:tag");
     }
 
-    return () => {
-      removeLinkTag("alternate", { hreflang: "fr" });
-      removeLinkTag("alternate", { hreflang: "en" });
-      removeLinkTag("alternate", { hreflang: "x-default" });
-    };
   }, [
-    alternateEnHref,
-    alternateFrHref,
     canonicalUrl,
+    ogImageUrl,
     isArticlePage,
     language,
     noindex,
