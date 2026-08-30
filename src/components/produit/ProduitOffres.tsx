@@ -91,12 +91,13 @@ const copy = {
   },
 };
 
-export const ProduitOffres = () => {
+export const ProduitOffres = ({ compact = false }: { compact?: boolean }) => {
   const lang = useLang();
   const t = copy[lang];
 
   return (
-    <section className="py-20 md:py-28 px-4 border-y border-border bg-card/30">
+    <section className={`${compact ? "py-16 md:py-20" : "py-20 md:py-28"} px-4 border-y border-border bg-card/30`}>
+
       <div className="container mx-auto max-w-6xl">
         <div className="max-w-3xl mb-14">
           <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.eyebrow}</p>
