@@ -7,9 +7,10 @@ export const Footer = () => {
 
   const footerSections = [
     {
-      title: language === 'en' ? 'Product' : 'Produit',
+      title: language === 'en' ? 'Offers' : 'Offres',
       links: [
-        { name: language === 'en' ? 'Product' : 'Produit',       href: language === 'en' ? '/en/product'   : '/produit' },
+        { name: language === 'en' ? 'Outbound offer — Eligibly' : 'Offre Outbound — Eligibly', href: language === 'en' ? '/en/product' : '/produit' },
+        { name: language === 'en' ? 'Brand & visibility offer' : 'Offre Image de marque',      href: '/marque-et-visibilite-expert-comptable' },
         { name: language === 'en' ? 'Solutions' : 'Solutions',   href: language === 'en' ? '/en/solutions' : '/solutions' },
         { name: language === 'en' ? 'Pricing' : 'Tarifs',        href: language === 'en' ? '/en/pricing'   : '/tarifs' },
         { name: language === 'en' ? 'Resources' : 'Ressources',  href: language === 'en' ? '/en/resources' : '/ressources' },
