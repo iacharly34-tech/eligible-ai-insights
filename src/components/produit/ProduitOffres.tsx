@@ -155,6 +155,8 @@ export const ProduitOffres = ({ compact = false }: { compact?: boolean }) => {
             ))}
           </ol>
         </div>
+        )}
+
       </div>
     </section>
   );
