@@ -21,8 +21,8 @@ export const Header = () => {
   const slugify = (s: string) =>
     s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
-  const base = language === 'en' ? '/en' : '';
-  const homePath = base || '/';
+  const homePath = '/';
+
 
   const navigation: NavItem[] = [
     {
