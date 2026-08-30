@@ -43,18 +43,6 @@ const entries: Entry[] = [
   { path: "/cgu", changefreq: "yearly", priority: "0.2" },
   // Blog article added récemment
   { path: "/blog/moderniser-cabinet-expertise-comptable-ia", changefreq: "monthly", priority: "0.7" },
-  // English
-  { path: "/en", changefreq: "weekly", priority: "0.8" },
-  { path: "/en/product", changefreq: "monthly", priority: "0.6" },
-  { path: "/en/solutions", changefreq: "monthly", priority: "0.6" },
-  { path: "/en/pricing", changefreq: "monthly", priority: "0.6" },
-  { path: "/en/resources", changefreq: "weekly", priority: "0.5" },
-  { path: "/en/about", changefreq: "monthly", priority: "0.4" },
-  { path: "/en/demo", changefreq: "monthly", priority: "0.6" },
-  { path: "/en/login", changefreq: "yearly", priority: "0.3" },
-  { path: "/en/legal", changefreq: "yearly", priority: "0.2" },
-  { path: "/en/privacy", changefreq: "yearly", priority: "0.2" },
-  { path: "/en/terms", changefreq: "yearly", priority: "0.2" },
   // Blog (cabinet EC)
   { path: "/blog/creations-entreprises-france-2025", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/cout-acquisition-client-cabinet-comptable", changefreq: "monthly", priority: "0.7" },
@@ -69,15 +57,6 @@ const entries: Entry[] = [
   { path: "/blog/5-leviers-croissance-cabinet-expertise-comptable", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/guide-demarchage-client-expert-comptable", changefreq: "monthly", priority: "0.8" },
   { path: "/blog/cas-client-empartners", changefreq: "monthly", priority: "0.8" },
-  // EN — cabinet pillars & blog (en-GB)
-  { path: "/en/accountant-lead-generation", changefreq: "weekly", priority: "0.9" },
-  { path: "/en/primolead-alternative", changefreq: "monthly", priority: "0.85" },
-  { path: "/en/glossary", changefreq: "monthly", priority: "0.7" },
-  { path: "/en/use-cases", changefreq: "monthly", priority: "0.75" },
-  { path: "/en/blog/registrations-barometer-july-2026", changefreq: "monthly", priority: "0.75" },
-  { path: "/en/blog/modernise-accounting-firm-2026", changefreq: "monthly", priority: "0.75" },
-  { path: "/en/blog/5-growth-levers-accounting-firm", changefreq: "monthly", priority: "0.7" },
-  { path: "/en/blog/empartners-case-study", changefreq: "monthly", priority: "0.75" },
 ];
 
 function toXml(items: Entry[]) {

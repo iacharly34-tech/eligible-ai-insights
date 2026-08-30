@@ -223,13 +223,6 @@ const App = () => (
                 <Route path="/automatiser-veille-marches-publics" element={<Navigate to="/" replace />} />
                 <Route path="/checklist-conformite-ao" element={<Navigate to="/" replace />} />
                 <Route path="/kpi-marches-publics" element={<Navigate to="/" replace />} />
-                <Route path="/en/about-eligibly" element={<Navigate to="/en/about" replace />} />
-                <Route path="/en/strategic-watch" element={<Navigate to="/en" replace />} />
-                <Route path="/en/go-no-go-decision" element={<Navigate to="/en" replace />} />
-                <Route path="/en/public-tender-training" element={<Navigate to="/en" replace />} />
-                <Route path="/en/technical-proposal" element={<Navigate to="/en" replace />} />
-                <Route path="/en/tender-feedback" element={<Navigate to="/en" replace />} />
-                <Route path="/en/price-quality-balance" element={<Navigate to="/en" replace />} />
                 
                 {/* CATCH-ALL */}
                 <Route path="*" element={<NotFound />} />
