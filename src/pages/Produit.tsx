@@ -160,6 +160,8 @@ const Produit = () => {
             </div>
           </section>
 
+          <ProduitOffres />
+
           {/* 4 piliers — interactive explorer */}
           <section className="py-20 md:py-28 px-4 bg-card/30">
             <div className="container mx-auto max-w-6xl">
