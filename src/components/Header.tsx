@@ -3,7 +3,6 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 import { SafeLink } from "./SafeLink";
 import { useLocation } from "react-router-dom";
 
@@ -25,37 +24,37 @@ export const Header = () => {
   const base = language === 'en' ? '/en' : '';
   const homePath = base || '/';
 
-  const navigation: NavItem[] = language === 'en'
-    ? [
-        { name: t('nav.product'), href: '/en/product' },
-        { name: t('nav.solutions'), href: '/en/solutions' },
-        { name: t('nav.pricing'), href: '/en/pricing' },
-        { name: t('nav.resources'), href: '/en/resources' },
-        { name: 'About', href: '/en/about' },
-      ]
-    : [
+  const navigation: NavItem[] = [
+    {
+      name: 'Offres',
+      children: [
         {
-          name: 'Offres',
-          children: [
-            { name: 'Offre Outbound — Eligibly', href: '/produit', desc: 'Détection, scoring et activation des sociétés fraîchement immatriculées. Inclut le Sales Assistant.' },
-            { name: 'Offre Image de marque', href: '/marque-et-visibilite-expert-comptable', desc: 'La couche de visibilité à installer avant de démarcher.' },
-          ],
+          name: 'Marque & visibilité',
+          href: '/marque-et-visibilite-expert-comptable',
+          desc: 'Rendre le cabinet trouvable et crédible : site indexable, fiche Google, avis, LinkedIn, assistants IA.',
         },
-        { name: 'Solutions',  href: '/solutions' },
-        { name: 'Tarifs',     href: '/tarifs' },
         {
-          name: 'Ressources',
-          children: [
-            { name: 'Blog & études', href: '/ressources', desc: 'Baromètres, playbooks et cas clients cabinets EC.' },
-            { name: 'Visibilité expert-comptable', href: '/visibilite-expert-comptable', desc: 'Recherche locale, avis, site, assistants IA.' },
-            { name: 'Image de marque cabinet', href: '/image-de-marque-expert-comptable', desc: 'Positionnement, verticalisation, preuves.' },
-            { name: 'Présence digitale cabinet', href: '/presence-digitale-cabinet-comptable', desc: 'Checklist des 6 actifs à mettre en place.' },
-            { name: 'Simulateur ROI IA', href: '/simulateur-roi-ia-cabinet', desc: 'Gains nets et opportunités en 4 étapes.' },
-            { name: 'Glossaire cabinet', href: '/cabinet/glossaire', desc: 'Le vocabulaire acquisition traduit pour les cabinets.' },
-          ],
+          name: 'Détection & prospection',
+          href: '/produit',
+          desc: 'Le produit Eligibly : immatriculations détectées, scorées et livrées chaque matin, Sales Assistant inclus.',
         },
-        { name: 'À propos',   href: '/a-propos' },
-      ];
+      ],
+    },
+    { name: 'Solutions', href: '/solutions' },
+    { name: 'Tarifs', href: '/tarifs' },
+    {
+      name: 'Ressources',
+      children: [
+        { name: 'Blog & études', href: '/ressources', desc: 'Baromètres, playbooks et cas clients cabinets EC.' },
+        { name: 'Visibilité expert-comptable', href: '/visibilite-expert-comptable', desc: 'Recherche locale, avis, site, assistants IA.' },
+        { name: 'Image de marque cabinet', href: '/image-de-marque-expert-comptable', desc: 'Positionnement, verticalisation, preuves.' },
+        { name: 'Présence digitale cabinet', href: '/presence-digitale-cabinet-comptable', desc: 'Checklist des 6 actifs à mettre en place.' },
+        { name: 'Simulateur ROI IA', href: '/simulateur-roi-ia-cabinet', desc: 'Gains nets et opportunités en 4 étapes.' },
+        { name: 'Glossaire cabinet', href: '/cabinet/glossaire', desc: 'Le vocabulaire acquisition traduit pour les cabinets.' },
+      ],
+    },
+    { name: 'À propos', href: '/a-propos' },
+  ];
 
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [mobileOpenGroup, setMobileOpenGroup] = useState<string | null>(null);
@@ -272,8 +271,7 @@ export const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <LanguageSwitcher />
-            <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
+            <SafeLink to="/demo">
               <Button 
                 size="sm" 
                 className="text-sm font-semibold px-5 py-2 h-10 min-h-[40px] rounded-lg bg-primary text-primary-foreground hover:bg-primary/90"
@@ -388,9 +386,8 @@ export const Header = () => {
                 </ul>
                 <div className="space-y-4 px-6">
                   <div className="flex justify-center mb-4">
-                    <LanguageSwitcher />
-                  </div>
-                  <SafeLink to={language === 'en' ? '/en/demo' : '/demo'}>
+                          </div>
+                  <SafeLink to="/demo">
                     <Button 
                       className="w-full h-12 text-sm font-semibold uppercase tracking-[0.15em] bg-primary text-primary-foreground"
                       onClick={() => setIsMenuOpen(false)}

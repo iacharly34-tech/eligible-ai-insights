@@ -55,7 +55,7 @@ export const ProductSolutions = () => {
     }
   ];
 
-  const demoHref = language === 'en' ? '/en/demo' : '/demo';
+  const demoHref = '/demo';
 
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-background to-gray-100">
