@@ -40,8 +40,8 @@ export const Header = () => {
         {
           name: 'Ressources',
           children: [
-            { name: 'Blog & études', href: '/ressources', desc: 'Baromètres, playbooks et cas clients cabinets EC.' },
             { name: 'Hub marque & visibilité', href: '/marque-et-visibilite-expert-comptable', desc: 'Actifs digitaux, calculateur d’impact et tableaux de bord.' },
+            { name: 'Blog & études', href: '/ressources', desc: 'Baromètres, playbooks et cas clients cabinets EC.' },
             { name: 'Visibilité expert-comptable', href: '/visibilite-expert-comptable', desc: 'Recherche locale, avis, site, assistants IA.' },
             { name: 'Image de marque cabinet', href: '/image-de-marque-expert-comptable', desc: 'Positionnement, verticalisation, preuves.' },
             { name: 'Présence digitale cabinet', href: '/presence-digitale-cabinet-comptable', desc: 'Checklist des 6 actifs à mettre en place.' },
