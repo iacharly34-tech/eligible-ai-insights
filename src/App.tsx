@@ -65,14 +65,6 @@ const VerticaleProfessionsLiberalesSante = lazy(() => import("./pages/verticales
 const VerticaleHoldingsGroupes = lazy(() => import("./pages/verticales/VerticaleHoldingsGroupes"));
 
 // EN pages
-const EnBlogRegistrationsBarometer = lazy(() => import("./pages/en/blog/RegistrationsBarometerJuly2026"));
-const EnBlogModernise = lazy(() => import("./pages/en/blog/ModerniseAccountingFirm2026"));
-const EnBlog5Levers = lazy(() => import("./pages/en/blog/FiveGrowthLevers"));
-const EnBlogEmpartnersCaseStudy = lazy(() => import("./pages/en/blog/EmpartnersCaseStudy"));
-const EnAccountantLeadGen = lazy(() => import("./pages/en/cabinet/AccountantLeadGeneration"));
-const EnPrimoleadAlternative = lazy(() => import("./pages/en/cabinet/PrimoleadAlternative"));
-const EnGlossary = lazy(() => import("./pages/en/cabinet/Glossary"));
-const EnUseCasesIndex = lazy(() => import("./pages/en/cabinet/UseCasesIndex"));
 
 import { LanguageSync } from "@/components/LanguageSync";
 
