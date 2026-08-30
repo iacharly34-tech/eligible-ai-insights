@@ -102,7 +102,7 @@ export const AIGainsSimulator = () => {
   const [hoursSaisiePerCollab, setHoursSaisiePerCollab] = useState(12);
   const [tjm, setTjm] = useState(450);
   const [clientsActifs, setClientsActifs] = useState(180);
-  const [honorairesMoyen, setHonorairesMoyen] = useState(2400);
+  const [honorairesMoyen, setHonorairesMoyen] = useState(3000);
   const [ltvNouveauClient, setLtvNouveauClient] = useState(6500);
 
   // Intensité IA sur chacun des 6 axes (0-100 %)
