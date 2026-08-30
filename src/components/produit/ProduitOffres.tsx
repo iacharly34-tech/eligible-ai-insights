@@ -91,14 +91,15 @@ const copy = {
   },
 };
 
-export const ProduitOffres = () => {
+export const ProduitOffres = ({ compact = false }: { compact?: boolean }) => {
   const lang = useLang();
   const t = copy[lang];
 
   return (
-    <section className="py-20 md:py-28 px-4 border-y border-border bg-card/30">
+    <section className={`${compact ? "py-16 md:py-20" : "py-20 md:py-28"} px-4 border-y border-border bg-card/30`}>
+
       <div className="container mx-auto max-w-6xl">
-        <div className="max-w-3xl mb-14">
+        <div className={`max-w-3xl ${compact ? "mb-10" : "mb-14"}`}>
           <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.eyebrow}</p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-5">
             {t.h2a}<em className="italic text-primary font-medium">{t.h2em}</em>{t.h2b}
@@ -139,7 +140,9 @@ export const ProduitOffres = () => {
           })}
         </div>
 
+        {!compact && (
         <div className="mt-10 rounded-2xl border border-border bg-background p-7">
+
           <h3 className="font-display text-lg font-semibold tracking-tight mb-5">{t.seqTitle}</h3>
           <ol className="grid md:grid-cols-3 gap-6">
             {t.seq.map((s, i) => (
@@ -152,6 +155,8 @@ export const ProduitOffres = () => {
             ))}
           </ol>
         </div>
+        )}
+
       </div>
     </section>
   );

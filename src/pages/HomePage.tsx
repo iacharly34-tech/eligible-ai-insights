@@ -7,6 +7,7 @@ import { InternalLinksManager } from "@/components/InternalLinksManager";
 
 import { CabinetHero } from "@/components/cabinet/CabinetHero";
 import { CabinetProblems } from "@/components/cabinet/CabinetProblems";
+import { ProduitOffres } from "@/components/produit/ProduitOffres";
 import { CabinetHowItWorks } from "@/components/cabinet/CabinetHowItWorks";
 import { CabinetCockpit } from "@/components/cabinet/CabinetCockpit";
 import { CabinetTransparency } from "@/components/cabinet/CabinetTransparency";
@@ -35,6 +36,7 @@ const HomePage = () => {
               ROI calculator et Personas déplacés sur /tarifs et /solutions pour resserrer le scroll. */}
           <CabinetHero />
           <CabinetProblems />
+          <ProduitOffres compact />
           <CabinetHowItWorks />
           <CabinetCockpit />
           <CabinetActivation />
