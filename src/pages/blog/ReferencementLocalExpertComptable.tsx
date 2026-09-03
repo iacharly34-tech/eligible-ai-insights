@@ -12,6 +12,8 @@ const ReferencementLocalExpertComptable = () => (
     category="Guide référencement local"
     sources={[
       { label: "Google Business Profile — Aide officielle", url: "https://support.google.com/business" },
+      { label: "BrightLocal — Local Consumer Review Survey 2025", url: "https://www.brightlocal.com/research/local-consumer-review-survey-2025/" },
+      { label: "BrightLocal — Local Business Discovery & Trust Report", url: "https://www.brightlocal.com/research/local-business-discovery-trust-report/" },
       { label: "Google Business Profile — Règles de représentation d'une entreprise", url: "https://support.google.com/business/answer/3038177" },
       { label: "Google Search Central — Améliorer le classement local", url: "https://developers.google.com/search/docs/appearance/local-search-results" },
       { label: "Schema.org — AccountingService", url: "https://schema.org/AccountingService" },
@@ -35,6 +37,24 @@ const ReferencementLocalExpertComptable = () => (
     <h2>Comment Google classe les résultats locaux</h2>
     <p>
       Google documente trois critères de classement local : la <strong>pertinence</strong> (la fiche et le site correspondent-ils à la requête), la <strong>distance</strong> (proximité entre le point de recherche et l'établissement) et la <strong>notoriété</strong> (avis, mentions, presse, cohérence des informations en ligne). Vous ne pouvez pas agir sur la distance ; vous pouvez agir intégralement sur la pertinence et la notoriété. C'est là que se situe tout le travail utile.
+    </p>
+
+    <h2>Ce que mesurent les études de comportement local</h2>
+    <p>
+      Les chiffres ci-dessous proviennent du <a href="https://www.brightlocal.com/research/local-consumer-review-survey-2025/" target="_blank" rel="noopener noreferrer">Local Consumer Review Survey 2025</a> de BrightLocal (panel de consommateurs, édition annuelle depuis 2010). Ils portent sur les entreprises locales en général, pas spécifiquement sur l'expertise comptable, mais ils décrivent le comportement de recherche auquel votre fiche est confrontée.
+    </p>
+    <ul>
+      <li><strong>81 % des consommateurs</strong> utilisent Google pour lire des avis sur une entreprise locale — loin devant tout autre support. Votre fiche est donc, dans les faits, votre première page d'accueil.</li>
+      <li><strong>74 % consultent deux sources d'avis ou plus</strong> avant de décider : la cohérence entre Google, l'annuaire de l'Ordre, LinkedIn et votre site n'est pas cosmétique.</li>
+      <li><strong>Seulement 4 % ne lisent jamais d'avis</strong> ; l'absence d'avis n'est donc pas neutre, elle est lue comme un signal.</li>
+      <li><strong>42 % accordent aux avis autant de poids qu'à une recommandation personnelle</strong> — contre 79 % en 2020. La preuve sociale reste décisive, mais elle est devenue plus exigeante : les avis détaillés et récents pèsent davantage que le volume brut.</li>
+      <li><strong>96 % des consommateurs se disent prêts à laisser un avis</strong> si on le leur demande. Le frein n'est pas la bonne volonté du client, c'est l'absence de demande structurée par le cabinet.</li>
+      <li><strong>63 % attendent une réponse à leur avis dans un délai de deux à sept jours</strong>, et seuls 7 % n'attendent aucune réponse. Répondre fait partie du service perçu.</li>
+      <li><strong>42 % jugent un avis suspect</strong> s'ils soupçonnent une contrepartie : les avis incités abîment la crédibilité au lieu de la construire.</li>
+      <li><strong>63 % perdent confiance</strong> face à des informations d'entreprise erronées ou à une majorité d'avis négatifs (<a href="https://www.brightlocal.com/research/local-business-discovery-trust-report/" target="_blank" rel="noopener noreferrer">Local Business Discovery &amp; Trust Report</a>) : un horaire faux ou une ancienne adresse coûtent des appels.</li>
+    </ul>
+    <p>
+      Lecture opérationnelle pour un cabinet : la priorité n'est pas d'accumuler des avis, c'est d'obtenir un <strong>flux régulier d'avis détaillés</strong>, d'y répondre sous une semaine, et de garantir l'exactitude des informations publiées partout.
     </p>
 
     <h2>Levier 1 — La fiche Google Business Profile</h2>
@@ -145,6 +165,15 @@ const ReferencementLocalExpertComptable = () => (
       <li><strong>Impressions et clics</strong> sur les requêtes non-marque dans Search Console ;</li>
       <li><strong>Demandes de rendez-vous qualifiées / mois</strong> et taux de signature ;</li>
       <li><strong>Citations dans les assistants IA</strong> sur vos requêtes métier et géographiques.</li>
+    </ul>
+
+    <h2>Ce que nous observons sur le terrain</h2>
+    <p>
+      Eligibly a été conçu avec <strong>4 cabinets partenaires</strong>, et nous documentons publiquement les résultats que nous pouvons vérifier plutôt que d'annoncer des moyennes non démontrables.
+    </p>
+    <ul>
+      <li><strong>EM Partners (Charenton-le-Pont)</strong> : fiche Google Business Profile structurée, NAP harmonisés sur les annuaires professionnels — dont celui de l'Ordre — et collecte d'avis systématisée après chaque livrable. État public constaté : <strong>95 avis Google, note de 5,0 / 5</strong>, puis leads entrants quotidiens. Le détail est dans le <a href="/blog/cas-client-empartners">cas client complet</a>, et la fiche comme le site sont vérifiables directement.</li>
+      <li>Sur les autres cabinets accompagnés, les résultats ne sont pas encore publiables : nous préférons ne rien avancer plutôt que de présenter des chiffres non attribuables.</li>
     </ul>
 
     <h2>La limite du référencement local — et ce qui le complète</h2>

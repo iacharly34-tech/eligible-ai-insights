@@ -15,6 +15,9 @@ const SiteWebExpertComptable = () => (
       { label: "Décret n° 2014-912 du 18 août 2014 — Légifrance", url: "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000029388477/" },
       { label: "Google Search Central — Documentation SEO et données structurées", url: "https://developers.google.com/search/docs" },
       { label: "web.dev — Core Web Vitals (LCP, INP, CLS)", url: "https://web.dev/articles/vitals" },
+      { label: "BrightLocal — Local Consumer Review Survey 2025", url: "https://www.brightlocal.com/research/local-consumer-review-survey-2025/" },
+      { label: "Google Search Central — Améliorer le classement local", url: "https://developers.google.com/search/docs/appearance/local-search-results" },
+      { label: "CNOEC — Les chiffres de la profession 2025", url: "https://evenements.experts-comptables.org/evenement/les-chiffres-de-la-profession-2025" },
       { label: "CNIL — Cookies et traceurs : ce que dit la loi", url: "https://www.cnil.fr/fr/cookies-et-autres-traceurs" },
       { label: "INSEE — Créations d'entreprises (données trimestrielles)", url: "https://www.insee.fr/fr/statistiques/2015204" },
       { label: "Cas client Eligibly — Empartners", url: "https://empartners.fr" },
@@ -45,6 +48,17 @@ const SiteWebExpertComptable = () => (
     <p>
       Cette décision détermine directement l'arborescence : chaque verticale prioritaire mérite sa page, chaque page cible une intention de recherche précise. Pour formaliser cette étape, voir notre guide <a href="/blog/icp-cabinet-expertise-comptable">définir l'ICP d'un cabinet d'expertise comptable</a>.
     </p>
+
+    <h2>Ce que disent les données sur le comportement des prospects</h2>
+    <p>
+      Trois faits documentés cadrent la conception d'un site de cabinet.
+    </p>
+    <ul>
+      <li><strong>La recherche précède le contact.</strong> Le <a href="https://www.brightlocal.com/research/local-consumer-review-survey-2025/" target="_blank" rel="noopener noreferrer">Local Consumer Review Survey 2025</a> de BrightLocal mesure que <strong>81 % des consommateurs</strong> passent par Google pour se renseigner sur une entreprise locale et que <strong>74 % croisent au moins deux sources</strong>. Votre site n'est donc pas le point d'entrée : c'est l'étape de vérification. Il doit confirmer ce que la fiche Google, l'annuaire de l'Ordre et LinkedIn annoncent — mêmes noms, mêmes coordonnées, même positionnement.</li>
+      <li><strong>Les informations erronées coûtent des dossiers.</strong> Toujours selon BrightLocal, <strong>63 % des consommateurs perdent confiance</strong> face à des informations d'entreprise inexactes. Un horaire faux, un numéro obsolète ou une page « équipe » périmée annulent l'effet d'un beau design.</li>
+      <li><strong>Le volume de prospects est structurel, pas conjoncturel.</strong> L'<a href="https://www.insee.fr/fr/statistiques/2015204" target="_blank" rel="noopener noreferrer">INSEE</a> enregistre plusieurs centaines de milliers de créations d'entreprises par an, et le <a href="https://evenements.experts-comptables.org/evenement/les-chiffres-de-la-profession-2025" target="_blank" rel="noopener noreferrer">CNOEC</a> recense plus de 22 000 experts-comptables pour 186 000 salariés. La demande existe ; c'est l'exposition qui se dispute.</li>
+      <li><strong>Google explicite ses critères locaux</strong> — pertinence, distance, notoriété (<a href="https://developers.google.com/search/docs/appearance/local-search-results" target="_blank" rel="noopener noreferrer">Search Central</a>). Deux des trois dépendent directement de ce que votre site publie : pages thématiques et géographiques, cohérence des données, citations externes.</li>
+    </ul>
 
     <h2>2. L'arborescence type d'un site de cabinet</h2>
     <p>
@@ -121,6 +135,19 @@ const SiteWebExpertComptable = () => (
       Le poste le plus souvent sous-évalué n'est pas le développement mais la <strong>rédaction</strong>. Un cabinet qui délègue ses textes à un prestataire non spécialisé obtient des pages interchangeables, donc invisibles.
     </p>
 
+    <h2>Les seuils techniques à tenir, chiffres officiels</h2>
+    <p>
+      Les seuils Core Web Vitals publiés par <a href="https://web.dev/articles/vitals" target="_blank" rel="noopener noreferrer">web.dev</a> s'évaluent au 75<sup>e</sup> centile des visites réelles, mobile inclus :
+    </p>
+    <ul>
+      <li><strong>LCP</strong> (affichage du plus grand élément) : bon &lt; 2,5 s, à corriger au-delà de 4 s ;</li>
+      <li><strong>INP</strong> (réactivité aux interactions) : bon &lt; 200 ms, à corriger au-delà de 500 ms ;</li>
+      <li><strong>CLS</strong> (stabilité visuelle) : bon &lt; 0,1, à corriger au-delà de 0,25.</li>
+    </ul>
+    <p>
+      Sur un site de cabinet, les trois causes d'échec les plus fréquentes sont identifiables sans audit : une image de bandeau non compressée, un lecteur de vidéo ou un widget d'avis chargé au premier rendu, et des polices web sans <code>font-display</code> qui décalent la mise en page. Corriger ces trois points suffit généralement à passer les seuils.
+    </p>
+
     <h2>7. Ce qu'il faut mesurer après la mise en ligne</h2>
     <ul>
       <li><strong>Demandes de contact qualifiées / mois</strong> (et non visites totales) ;</li>
@@ -139,6 +166,11 @@ const SiteWebExpertComptable = () => (
     </p>
     <p>
       Le <a href="/blog/cas-client-empartners">cas Empartners</a> illustre cette séquence : site, fiche Google notée 5,0/5 sur 95 avis, indexation dans les assistants IA, puis digest quotidien de leads qualifiés.
+    </p>
+
+    <h2>Ce que nous pouvons démontrer</h2>
+    <p>
+      Eligibly a été conçu avec <strong>4 cabinets partenaires</strong>. Nous ne publions que ce qui est vérifiable publiquement : sur <strong>EM Partners</strong>, la refonte du site, la structuration de la fiche Google (<strong>95 avis, 5,0 / 5</strong>) et l'indexation dans les assistants IA ont précédé la mise en place d'un digest quotidien de leads qualifiés. Le déroulé complet est documenté dans le <a href="/blog/cas-client-empartners">cas client</a>, site et fiche consultables directement. Les autres accompagnements ne sont pas encore publiables : plutôt qu'une moyenne invérifiable, nous préférons une preuve consultable.
     </p>
 
     <h2>Checklist de conception</h2>
