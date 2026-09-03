@@ -45,6 +45,8 @@ const BlogSignal1EtatLieux = lazy(() => import("./pages/blog/ModerniserCabinetEt
 const Blog5Leviers = lazy(() => import("./pages/blog/CinqLeviersCroissanceCabinet"));
 const BlogGuideDemarchage = lazy(() => import("./pages/blog/GuideDemarchageClientCabinet"));
 const BlogCasClientEmpartners = lazy(() => import("./pages/blog/CasClientEmpartners"));
+const BlogSiteWebEC = lazy(() => import("./pages/blog/SiteWebExpertComptable"));
+const BlogSeoLocalEC = lazy(() => import("./pages/blog/ReferencementLocalExpertComptable"));
 const SimulateurIACabinet = lazy(() => import("./pages/SimulateurIACabinet"));
 const LeadsExpertsComptables = lazy(() => import("./pages/cabinet/LeadsExpertsComptables"));
 const ProspectionCabinetComptable = lazy(() => import("./pages/cabinet/ProspectionCabinetComptable"));
@@ -144,6 +146,8 @@ const App = () => (
                 <Route path="/blog/5-leviers-croissance-cabinet-expertise-comptable" element={<Blog5Leviers />} />
                 <Route path="/blog/guide-demarchage-client-expert-comptable" element={<BlogGuideDemarchage />} />
                 <Route path="/blog/cas-client-empartners" element={<BlogCasClientEmpartners />} />
+                <Route path="/blog/creer-site-web-expert-comptable-guide" element={<BlogSiteWebEC />} />
+                <Route path="/blog/referencement-local-expert-comptable" element={<BlogSeoLocalEC />} />
                 <Route path="/simulateur-roi-ia-cabinet" element={<SimulateurIACabinet />} />
 
                 {/* Sales Assistant + Verticales sectorielles */}

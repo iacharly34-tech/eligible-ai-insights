@@ -68,6 +68,8 @@ const entries: Entry[] = [
   { path: "/blog/5-leviers-croissance-cabinet-expertise-comptable", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/guide-demarchage-client-expert-comptable", changefreq: "monthly", priority: "0.8" },
   { path: "/blog/cas-client-empartners", changefreq: "monthly", priority: "0.8" },
+  { path: "/blog/creer-site-web-expert-comptable-guide", changefreq: "monthly", priority: "0.8" },
+  { path: "/blog/referencement-local-expert-comptable", changefreq: "monthly", priority: "0.8" },
 ];
 
 function toXml(items: Entry[]) {
