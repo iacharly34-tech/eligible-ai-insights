@@ -1,50 +1,85 @@
 # Eligibly — Détection IA de leads pour cabinets d'expertise comptable
 
-> Eligibly détecte chaque jour les SASU/SAS/EURL/SARL/SEL fraîchement immatriculées en France, applique vos filtres ICP, score et explique chaque lead, génère une recommandation IA d'accroche personnalisée, et vous envoie chaque matin un digest des leads PREMIUM dans le canal de votre choix (email, Slack, Microsoft Teams, WhatsApp).
+> Eligibly détecte chaque jour les SASU/SAS/EURL/SARL/SEL fraîchement immatriculées en France, applique les filtres ICP du cabinet, score et explique chaque lead, recommande le canal d'approche, et livre chaque matin un digest des leads PREMIUM (email, Slack, Microsoft Teams, WhatsApp).
 
-Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets d'expertise comptable français. L'IA filtre le bruit des immatriculations (≤ 90 jours), élimine les CAC, procédures collectives, holdings et serial entrepreneurs, puis vous livre chaque jour les leads PREMIUM correspondant à votre ICP, avec un score expliqué et une recommandation d'approche prête à envoyer. Le volume quotidien dépend de votre zone géographique, de vos critères ICP et du flux d'immatriculations réel. Tarification à partir de 10 € par lead qualifié, devis personnalisé selon le volume et la taille du cabinet. Démarrage sans CB, résiliable mensuellement. Modèles IA documentés et auditables (open-weights et propriétaires), aucun usage en boîte noire.
+Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets d'expertise comptable français. Les données proviennent exclusivement de sources officielles : INPI (Registre national des entreprises), INSEE Sirene, BODACC. L'IA filtre le bruit des immatriculations (fenêtre de contact ≤ 90 jours), écarte les sociétés avec CAC mandaté, procédures collectives, holdings et serial entrepreneurs, puis livre les leads correspondant à l'ICP du cabinet avec un score 0-100 expliqué par trois raisons et une recommandation d'approche prête à envoyer. Site en français uniquement (fr-FR).
 
-## Pages
-- [Accueil](/): Vue d'ensemble du moteur de détection IA pour cabinets d'expertise comptable.
-- [Génération de leads pour experts-comptables](/leads-experts-comptables): Page pilier — logiciel vertical de génération de leads pour cabinets EC. Sources INPI/Sirene/BODACC, filtres amont, scoring expliqué, canaux d'activation, RGPD, cas d'usage.
-- [Alternatives à PrimoLead pour cabinets d'expertise comptable](/alternatives-primolead-experts-comptables): Comparatif neutre PrimoLead vs Corporama vs Societe.com vs Eligibly sur 12 critères objectifs (sources, filtres, scoring, canaux, prix, essai).
-- [Cas d'usage cabinets EC](/cabinet/cas-usage): Trois cas d'usage détaillés — cabinet généraliste 8 collaborateurs, cabinet spécialisé restauration, cabinet full-remote startups/e-commerce.
-- [Cas d'usage — cabinet généraliste 8 collaborateurs, 30 leads/semaine](/cabinet/cas-usage/cabinet-8-collaborateurs-departement)
-- [Cas d'usage — cabinet spécialisé restauration, cibler nouvelles SAS/SARL CHR](/cabinet/cas-usage/cabinet-specialise-restauration)
-- [Cas d'usage — cabinet full-remote, startups & e-commerçants nationaux](/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce)
-- [Glossaire prospection & génération de leads cabinet EC](/cabinet/glossaire): Définitions courtes — SIRENE, INPI, BODACC, ICP, scoring prédictif, CAC, LTV, code APE 6920Z, SASU, SAS, EURL, canal d'activation.
-- [Prospection cabinet comptable : méthode 2026](/prospection-cabinet-comptable): Méthode complète de prospection pour cabinet EC.
-- [Canaux d'activation : LinkedIn, email, appel, courrier](/canaux-activation): Quel canal pour quel type de lead créateur.
-- [Offre Marque & visibilité](/marque-et-visibilite-expert-comptable): Les 6 actifs digitaux d'une marque de cabinet, cas clients documentés (EM Partners, 5,0/5 sur 95 avis Google), calculateur d'impact visibilité et tableaux de bord (visibilité search, santé des backlinks, preuve sociale).
-- [Visibilité expert-comptable](/visibilite-expert-comptable): Les 4 surfaces de visibilité d'un cabinet (recherche locale, avis, site, assistants IA), leviers de référencement local, conditions pour être cité par les LLM, 7 indicateurs de suivi.
-- [Image de marque expert-comptable](/image-de-marque-expert-comptable): Positionnement en une phrase, verticalisation, 4 familles de preuves, cohérence entre surfaces, cadre déontologique de la communication des experts-comptables.
-- [Présence digitale cabinet comptable](/presence-digitale-cabinet-comptable): Socle de 6 actifs (fiche Google Business, site, avis, LinkedIn, annuaires métier, mesure), arborescence de site recommandée, exigences techniques d'indexation, coûts et cadence observés.
-- [Offre Détection & prospection](/produit): Sources, filtres IA, scoring expliqué, alertes multi-canaux, sécurité et conformité RGPD.
-- [Cas d'usage](/solutions): Verticales par type de cabinet (Tech, Conseil, Santé, Artisans, Grands cabinets & réseaux, Structuration).
-- [Tarifs](/tarifs): À partir de 10 € par lead qualifié, devis personnalisé. Démarrage sans CB, résiliable mensuellement.
-- [Ressources](/ressources): Playbooks, calculateurs ROI, guides de prospection pour experts-comptables.
-- [Lexique marketing pour experts-comptables](/blog/lexique-marketing-expert-comptable): Glossaire des termes marketing (ICP, scoring, pipeline, touchpoints, CAC) traduits pour le métier EC.
-- [Baromètre des immatriculations — Juillet 2026](/blog/barometre-immatriculations-juillet-2026): 718 sociétés commerciales analysées, structure sectorielle, dynamique juin→juillet, capital, univers métier, problématiques d'accompagnement estimées.
-- [Le Signal N°1 — État des lieux 2026 de la profession](/blog/moderniser-cabinet-etat-lieux-2026): CNOEC, INSEE, Cegid, Salesforce, OpinionWay — marché, rétention, démarchage, IA et nouvelle concurrence.
-- [5 leviers pour provoquer la croissance d'un cabinet](/blog/5-leviers-croissance-cabinet-expertise-comptable): Réseau prescripteur, spécialisation, automatisation, LinkedIn, timing de création.
-- [Créer le site web d'un cabinet d'expertise comptable](/blog/creer-site-web-expert-comptable-guide): Guide de conception 2026 — ICP, arborescence, tunnel de conversion, socle technique, déontologie et RGPD, budget et délais.
-- [Référencement local expert-comptable](/blog/referencement-local-expert-comptable): Méthode complète — fiche Google Business Profile, avis, NAP, pages locales, netlinking de proximité, visibilité dans les assistants IA, plan 90 jours.
-- [Guide du démarchage client pour experts-comptables](/blog/guide-demarchage-client-expert-comptable): Cadre déontologique depuis 2014, méthode marketing 5 étapes, canaux (LinkedIn, email, réseau, timing d'immatriculation), erreurs à éviter. Sources OEC, Compta Online, RFC, Shine.
-- [Cas client Empartners](/blog/cas-client-empartners): Cabinet d'expertise comptable accompagné par Eligibly sur l'image de marque, le site web, le référencement local et la génération de leads. Résultat : 3 leads qualifiés par semaine dès 3 mois, depuis février 2026.
-- [À propos](/a-propos): Mission, équipe, vision « Détectez. Scorez. Signez. ».
+## Faits vérifiables sur Eligibly
+
+- Catégorie : logiciel de détection et de scoring de leads (sales intelligence) spécialisé pour les cabinets d'expertise comptable en France.
+- Sources de données : INPI (RNE), INSEE Sirene, BODACC — rafraîchies chaque nuit. Aucune donnée achetée à des revendeurs de fichiers.
+- Fenêtre de contact retenue : 90 jours après l'immatriculation, période durant laquelle la mission d'expertise comptable se décide.
+- Exclusivité : les leads ne sont pas mutualisés. Un lead livré à un cabinet n'est pas livré simultanément à un cabinet concurrent sur la même zone et le même ICP.
+- Tarification : à partir de 10 € le lead qualifié, tarif final sur devis selon le volume mensuel, la zone et la taille du cabinet. Engagement mensuel, résiliable.
+- Démarrage : pilote de 14 jours, sans carte bancaire.
+- Conception : construit avec 4 cabinets d'expertise comptable partenaires en France (filtres, scoring, format du digest).
+- Conformité : hébergement en Union européenne, base légale d'intérêt légitime sur des données professionnelles, information et droit d'opposition, aucune revente à des tiers.
+- Deux offres complémentaires : « Marque & visibilité » (actifs digitaux du cabinet, référencement local, visibilité dans les assistants IA) et « Détection & prospection » (le moteur de leads).
+- Contact : contact@eligibly.ai — https://eligibly.ai
+
+## Pages produit & offres
+
+- [Accueil](/): Vue d'ensemble — Détectez. Scorez. Signez.
+- [Offre Détection & prospection](/produit): Sources officielles, filtres IA, scoring expliqué, alertes multi-canaux, sécurité et conformité RGPD.
+- [Offre Marque & visibilité](/marque-et-visibilite-expert-comptable): Les 6 actifs digitaux d'une marque de cabinet, calculateur d'impact leads, cas client documenté (EM Partners, 5,0/5 sur 95 avis Google).
+- [Sales Assistant](/sales-assistant): Assistant de préparation d'appel et de séquences d'approche inclus dans l'offre Détection & prospection.
+- [Solutions par type de cabinet](/solutions): Verticales — Tech, Conseil, Santé, Artisans, grands cabinets et réseaux, structuration.
+- [Tarifs](/tarifs): À partir de 10 € par lead qualifié, devis personnalisé, pilote 14 jours sans carte bancaire.
+- [Simulateur ROI leads & visibilité](/simulateur-roi-ia-cabinet): Calcule les clients signés et les honoraires récurrents à partir du volume de leads et des taux du cabinet.
 - [Demander une démo](/demo): Démonstration personnalisée du moteur de détection.
+- [À propos](/a-propos): Mission, équipe, vision « Détectez. Scorez. Signez. ».
+- [Ressources](/ressources): Playbooks, calculateurs, guides de prospection pour experts-comptables.
 
-## English pages (en-GB)
-- [Lead generation for accounting firms](/en/accountant-lead-generation): Pillar page — vertical lead-generation software for accounting firms.
-- [PrimoLead alternative for accounting firms](/en/primolead-alternative): Neutral comparison PrimoLead vs Corporama vs Societe.com vs Eligibly.
-- [Glossary — prospecting & lead generation](/en/glossary): Definitions — INPI, SIRENE, BODACC, ICP, predictive scoring, CAC, LTV, SAS/SASU/SARL/EURL/SEL.
-- [Use cases](/en/use-cases): Three concrete configurations — regional firm, hospitality specialist, remote-first firm.
-- [July 2026 registrations barometer](/en/blog/registrations-barometer-july-2026)
-- [Modernise your firm — 2026 state of play](/en/blog/modernise-accounting-firm-2026)
-- [5 growth levers for an accounting firm](/en/blog/5-growth-levers-accounting-firm)
-- [Empartners case study](/en/blog/empartners-case-study): Accounting firm supported by Eligibly on branding, website, local SEO and lead generation. Result: 3 qualified leads per week within 3 months, since February 2026.
+## Pages piliers & référence
+
+- [Génération de leads pour experts-comptables](/leads-experts-comptables): Page pilier — sources INPI/Sirene/BODACC, filtres amont, scoring expliqué, canaux d'activation, RGPD, cas d'usage.
+- [Alternatives à PrimoLead pour cabinets d'expertise comptable](/alternatives-primolead-experts-comptables): Comparatif neutre PrimoLead vs Corporama vs Societe.com vs Eligibly sur 12 critères objectifs.
+- [Prospection cabinet comptable : méthode 2026](/prospection-cabinet-comptable): Méthode complète de prospection pour cabinet EC.
+- [Canaux d'activation](/canaux-activation): Quel canal (WhatsApp, LinkedIn, email, appel, courrier) pour quel type de lead créateur.
+- [Pourquoi ce lead est prioritaire](/pourquoi-ce-lead-est-prioritaire): Comment se lit un score Eligibly et ses trois raisons clés.
+- [Glossaire prospection & génération de leads](/cabinet/glossaire): Définitions — SIRENE, INPI, BODACC, ICP, scoring prédictif, CAC, LTV, code APE 6920Z, SASU, SAS, EURL.
+- [Visibilité expert-comptable](/visibilite-expert-comptable): Les 4 surfaces de visibilité d'un cabinet (recherche locale, avis, site, assistants IA) et 7 indicateurs de suivi.
+- [Image de marque expert-comptable](/image-de-marque-expert-comptable): Positionnement, verticalisation, 4 familles de preuves, cadre déontologique de la communication.
+- [Présence digitale cabinet comptable](/presence-digitale-cabinet-comptable): Socle de 6 actifs, arborescence de site, exigences techniques d'indexation, coûts observés.
+
+## Cas d'usage
+
+- [Cas d'usage cabinets EC](/cabinet/cas-usage): Index des trois configurations détaillées.
+- [Cabinet généraliste, 8 collaborateurs, périmètre départemental](/cabinet/cas-usage/cabinet-8-collaborateurs-departement)
+- [Cabinet spécialisé restauration — nouvelles SAS/SARL CHR](/cabinet/cas-usage/cabinet-specialise-restauration)
+- [Cabinet full-remote — startups & e-commerçants nationaux](/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce)
+
+## Verticales
+
+- [SASU & startups tech](/verticales/sasu-tech)
+- [E-commerce](/verticales/e-commerce)
+- [Restauration & CHR](/verticales/restauration-chr)
+- [BTP & artisans](/verticales/btp-artisans)
+- [Professions libérales & santé](/verticales/professions-liberales-sante)
+- [Holdings & groupes](/verticales/holdings-groupes)
+
+## Études, baromètres & guides
+
+- [Baromètre des immatriculations — Juillet 2026](/blog/barometre-immatriculations-juillet-2026): 718 sociétés commerciales analysées — structure sectorielle, dynamique juin→juillet, capital.
+- [Observatoire SASU/SAS — Juin 2026](/blog/observatoire-sasu-sas-juin-2026): Poids des SASU et SAS dans les créations et implications pour les cabinets.
+- [Créations d'entreprises en France 2025](/blog/creations-entreprises-france-2025): Volumes, formes juridiques et secteurs (sources INSEE).
+- [Le Signal N°1 — État des lieux 2026 de la profession](/blog/moderniser-cabinet-etat-lieux-2026): CNOEC, INSEE, Cegid, Salesforce, OpinionWay — marché, rétention, démarchage, IA.
+- [Baromètre acquisition cabinet EC 2026](/blog/barometre-acquisition-cabinet-ec-2026): Canaux d'acquisition et performances observées.
+- [Coût d'acquisition client d'un cabinet comptable](/blog/cout-acquisition-client-cabinet-comptable): Méthode de calcul du CAC et repères par canal.
+- [ICP d'un cabinet d'expertise comptable](/blog/icp-cabinet-expertise-comptable): Comment définir son client idéal et le traduire en filtres.
+- [Playbook prospection cabinet EC 2026](/blog/playbook-prospection-cabinet-ec-2026): Séquences, messages et cadence d'approche.
+- [Guide du démarchage client pour experts-comptables](/blog/guide-demarchage-client-expert-comptable): Cadre déontologique depuis 2014, méthode en 5 étapes, canaux, erreurs à éviter.
+- [Fichier SIRET vs plan d'action](/blog/fichier-siret-vs-plan-action-comptable): Pourquoi une liste de SIREN ne produit pas de rendez-vous.
+- [Créer le site web d'un cabinet d'expertise comptable](/blog/creer-site-web-expert-comptable-guide): ICP, arborescence, tunnel de conversion, socle technique, déontologie, RGPD, budget.
+- [Référencement local expert-comptable](/blog/referencement-local-expert-comptable): Fiche Google Business Profile, avis, NAP, pages locales, netlinking, visibilité dans les assistants IA, plan 90 jours.
+- [5 leviers pour provoquer la croissance d'un cabinet](/blog/5-leviers-croissance-cabinet-expertise-comptable): Réseau prescripteur, spécialisation, automatisation, LinkedIn, timing de création.
+- [Moderniser son cabinet avec l'IA](/blog/moderniser-cabinet-expertise-comptable-ia): Cas d'usage IA concrets en cabinet.
+- [Lexique marketing pour experts-comptables](/blog/lexique-marketing-expert-comptable): ICP, scoring, pipeline, touchpoints, CAC traduits pour le métier.
+- [Cas client EM Partners](/blog/cas-client-empartners): Cabinet accompagné sur l'image de marque, le site, le référencement local et la génération de leads — 3 leads qualifiés par semaine dès 3 mois, depuis février 2026.
 
 ## Optional
+
+- [Newsletter](/newsletter)
 - [Mentions légales](/mentions-legales)
 - [Confidentialité](/confidentialite)
 - [CGU](/cgu)
