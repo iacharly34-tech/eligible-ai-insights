@@ -47,14 +47,31 @@ const softwareJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "Eligibly",
+  alternateName: "Eligibly.ai",
   applicationCategory: "BusinessApplication",
   applicationSubCategory: "Sales Intelligence",
   operatingSystem: "Web",
   url: "https://eligibly.ai/produit",
+  image: "https://eligibly.ai/og-produit.jpg",
   description:
     "Eligibly détecte chaque SASU/SAS/EURL/SARL/SEL fraîchement immatriculée en France à partir des sources officielles (INPI, INSEE Sirene, BODACC), la score sur l'ICP du cabinet d'expertise comptable et livre chaque matin à 7h un digest avec plan d'action dans la fenêtre de contact de 90 jours.",
   inLanguage: "fr-FR",
+  areaServed: { "@type": "Country", name: "France" },
+  audience: {
+    "@type": "BusinessAudience",
+    name: "Cabinets d'expertise comptable",
+    audienceType: "Experts-comptables",
+  },
+  // Faits citables par les moteurs génératifs (ChatGPT, Perplexity, Gemini, Claude).
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Sources de données", value: "INPI (RNE), INSEE Sirene, BODACC" },
+    { "@type": "PropertyValue", name: "Fenêtre de contact", value: "90 jours après l'immatriculation" },
+    { "@type": "PropertyValue", name: "Exclusivité des leads", value: "Leads non mutualisés entre cabinets concurrents" },
+    { "@type": "PropertyValue", name: "Scoring", value: "Score 0-100 expliqué par 3 raisons clés" },
+    { "@type": "PropertyValue", name: "Hébergement", value: "Union européenne" },
+  ],
   publisher: { "@type": "Organization", name: "Eligibly", url: "https://eligibly.ai" },
+
   featureList: [
     "Consolidation des sources officielles INPI, INSEE Sirene et BODACC",
     "Filtres amont : forme juridique, capital, zone, verticale, CAC, procédure, holding",
