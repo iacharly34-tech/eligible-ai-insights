@@ -170,7 +170,7 @@ export const LandingCabinetLayout = ({
                 <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-5">
                   {s.title}
                 </h2>
-                <div className="text-foreground/85 leading-relaxed space-y-4 text-[1.02rem]">{s.body}</div>
+                <div className="text-foreground/85 leading-relaxed space-y-4 text-[1.02rem] max-w-[85ch]">{s.body}</div>
               </section>
             ))}
           </div>
