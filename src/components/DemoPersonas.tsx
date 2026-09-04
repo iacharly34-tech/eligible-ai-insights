@@ -107,7 +107,7 @@ export const DemoPersonas = () => {
       id="demo" 
       className="py-10 px-4 bg-gradient-subtle"
     >
-      <div className="container mx-auto max-w-7xl w-full">
+      <div className="container mx-auto w-full">
         {/* Header Section */}
         <div className="text-center mb-8">
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 font-medium">

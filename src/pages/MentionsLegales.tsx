@@ -8,7 +8,7 @@ const MentionsLegales = () => {
       <SEOHead noindex />
       <div className="min-h-screen bg-background">
         <Header />
-      <main className="container mx-auto px-4 py-16 max-w-4xl">
+      <main className="container mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold text-foreground mb-8">Mentions Légales</h1>
         
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-8">

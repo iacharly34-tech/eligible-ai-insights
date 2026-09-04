@@ -253,7 +253,7 @@ export const ProcessDemo = () => {
         id="demo" 
         className="py-6 px-0 sm:px-4 bg-[hsl(var(--hero-dark))]"
       >
-        <div className="container mx-auto max-w-[1400px]">
+        <div className="container mx-auto">
           {/* Contenu principal - différencié mobile / desktop */}
           {isMobile ? (
             <>

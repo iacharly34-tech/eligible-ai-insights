@@ -67,7 +67,7 @@ export const ProductModuleLayout = ({
         <main>
           {/* Hero */}
           <section className="pt-32 pb-20 px-4 bg-[hsl(var(--hero-dark))]">
-            <div className="container mx-auto max-w-5xl">
+            <div className="container mx-auto">
               <SafeLink to={language === "en" ? "/en/product" : "/produit"} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-8 transition-colors">
                 <ArrowLeft className="w-4 h-4" />
                 {language === "en" ? "Back to product" : "Retour au produit"}
@@ -104,7 +104,7 @@ export const ProductModuleLayout = ({
 
           {/* Stats bar */}
           <section className="py-12 px-4 border-b border-border/30 bg-card/30">
-            <div className="container mx-auto max-w-5xl">
+            <div className="container mx-auto">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 {stats.map((stat, i) => (
                   <div key={i} className="text-center">
@@ -118,14 +118,14 @@ export const ProductModuleLayout = ({
 
           {/* Description */}
           <section className="py-20 px-4">
-            <div className="container mx-auto max-w-4xl">
+            <div className="container mx-auto">
               <p className="text-lg text-muted-foreground leading-relaxed">{description}</p>
             </div>
           </section>
 
           {/* Features */}
           <section className="py-20 px-4 bg-[hsl(var(--hero-dark))]">
-            <div className="container mx-auto max-w-7xl">
+            <div className="container mx-auto">
               <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-12 text-center">
                 {language === "en" ? "Key capabilities" : "Fonctionnalités clés"}
               </h2>
@@ -147,7 +147,7 @@ export const ProductModuleLayout = ({
 
           {/* Use cases */}
           <section className="py-20 px-4">
-            <div className="container mx-auto max-w-7xl">
+            <div className="container mx-auto">
               <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-12 text-center">
                 {language === "en" ? "Use cases" : "Cas d'usage concrets"}
               </h2>
@@ -167,7 +167,7 @@ export const ProductModuleLayout = ({
 
           {/* Related content */}
           <section className="py-16 px-4 bg-[hsl(var(--hero-dark))]">
-            <div className="container mx-auto max-w-5xl">
+            <div className="container mx-auto">
               {relatedArticle && (
                 <div className="mb-12 p-8 rounded-2xl border border-primary/20 bg-primary/5">
                   <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-2">

@@ -85,7 +85,7 @@ const softwareJsonLd = {
 /** Preuves écrites en dur dans le HTML — jamais en compteur animé. */
 export const CabinetProofBlock = () => (
   <section aria-label="Preuves et sources Eligibly" className="border-t border-border/60 bg-muted/30 py-10">
-    <div className="container mx-auto max-w-5xl px-4">
+    <div className="container mx-auto px-4">
       <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
         Ce sur quoi repose Eligibly
       </h2>

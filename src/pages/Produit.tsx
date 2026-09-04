@@ -144,7 +144,7 @@ const Produit = () => {
         <main>
           {/* Hero */}
           <section className="pt-32 pb-20 px-4">
-            <div className="container mx-auto max-w-4xl text-center">
+            <div className="container mx-auto text-center">
               <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-6">{t.eyebrow}</p>
               <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-8">
                 {t.h1a}<em className="italic text-primary font-medium">{t.h1em}</em>{t.h1b}
@@ -165,7 +165,7 @@ const Produit = () => {
 
           {/* 4 piliers — interactive explorer */}
           <section className="py-20 md:py-28 px-4 bg-card/30">
-            <div className="container mx-auto max-w-7xl">
+            <div className="container mx-auto">
               <div className="max-w-2xl mb-14">
                 <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.howEyebrow}</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
@@ -265,7 +265,7 @@ const Produit = () => {
 
           {/* Anatomie alerte */}
           <section className="py-20 md:py-28 px-4">
-            <div className="container mx-auto max-w-5xl">
+            <div className="container mx-auto">
               <div className="max-w-2xl mb-12">
                 <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.anatEyebrow}</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
@@ -293,7 +293,7 @@ const Produit = () => {
           {/* Livraison */}
           <section className="py-20 md:py-28 px-4 bg-card/30">
             <motion.div
-              className="container mx-auto max-w-3xl text-center"
+              className="container mx-auto max-w-5xl text-center"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-10%" }}
@@ -333,7 +333,7 @@ const Produit = () => {
 
           {/* Apprentissage */}
           <section className="py-20 md:py-28 px-4">
-            <div className="container mx-auto max-w-5xl">
+            <div className="container mx-auto">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <motion.div
                   initial={{ opacity: 0, x: -24 }}
@@ -403,7 +403,7 @@ const Produit = () => {
 
           {/* Sécurité & Conformité — bento */}
           <section className="py-20 md:py-28 px-4">
-            <div className="container mx-auto max-w-7xl">
+            <div className="container mx-auto">
               <div className="max-w-2xl mb-14">
                 <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.secEyebrow}</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
@@ -446,7 +446,7 @@ const Produit = () => {
 
           {/* CTA */}
           <section className="py-20 md:py-28 px-4 bg-card/30">
-            <div className="container mx-auto max-w-3xl text-center">
+            <div className="container mx-auto max-w-5xl text-center">
               <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-tight mb-6">
                 {t.finalH2}
               </h2>

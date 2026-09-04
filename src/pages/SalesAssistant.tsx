@@ -65,7 +65,7 @@ const SalesAssistant = () => {
           {/* Hero */}
           <section className="relative pt-28 pb-16 md:pt-36 md:pb-20 bg-gradient-hero overflow-hidden">
             <div className="absolute inset-0 bg-grid-pattern opacity-[0.04]" aria-hidden="true" />
-            <div className="container mx-auto relative px-4 max-w-4xl">
+            <div className="container mx-auto relative px-4">
               <Badge variant="outline" className="text-primary border-primary/30 bg-primary/5 px-3 py-1.5 text-xs sm:text-sm mb-6 inline-flex">
                 <Bot className="w-3.5 h-3.5 mr-1.5" aria-hidden="true" />
                 Sales Assistant
@@ -92,7 +92,7 @@ const SalesAssistant = () => {
 
           {/* 4 channels */}
           <section className="py-20 md:py-24 bg-background">
-            <div className="container mx-auto px-4 max-w-7xl">
+            <div className="container mx-auto px-4">
               <div className="max-w-3xl mb-14">
                 <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">4 canaux d'activation</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
@@ -121,7 +121,7 @@ const SalesAssistant = () => {
 
           {/* Copilote IA */}
           <section className="py-20 md:py-24 bg-muted/30 border-y border-border">
-            <div className="container mx-auto px-4 max-w-7xl">
+            <div className="container mx-auto px-4">
               <div className="grid lg:grid-cols-2 gap-12 items-start">
                 <div>
                   <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">Copilote IA</p>
@@ -168,7 +168,7 @@ const SalesAssistant = () => {
 
           {/* 9 needs */}
           <section className="py-20 md:py-24 bg-background">
-            <div className="container mx-auto px-4 max-w-7xl">
+            <div className="container mx-auto px-4">
               <div className="max-w-3xl mb-12">
                 <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">9 besoins probables détectés</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">

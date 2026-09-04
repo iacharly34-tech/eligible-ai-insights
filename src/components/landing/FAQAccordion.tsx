@@ -32,7 +32,7 @@ export const FAQAccordion = () => {
 
   return (
     <section className="py-24 sm:py-32 px-4" id="faq" aria-label="FAQ">
-      <div className="container mx-auto max-w-3xl">
+      <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
           <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">FAQ</span>
           <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-extrabold font-display leading-[1.1] tracking-tight">

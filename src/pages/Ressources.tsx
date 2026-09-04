@@ -147,7 +147,7 @@ const Ressources = () => {
         <main>
           {/* Hero */}
           <section className="pt-32 pb-16 px-4">
-            <div className="container mx-auto max-w-4xl text-center">
+            <div className="container mx-auto text-center">
               <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-6">{t.eyebrow}</p>
               <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-8">
                 {t.h1a}<em className="italic text-primary font-medium">{t.h1em}</em>{t.h1b}
@@ -187,7 +187,7 @@ const Ressources = () => {
 
           {/* À la une */}
           <section className="py-16 px-4">
-            <div className="container mx-auto max-w-7xl">
+            <div className="container mx-auto">
               <div className="mb-8">
                 <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-3">{t.featuredEyebrow}</p>
               </div>
@@ -233,7 +233,7 @@ const Ressources = () => {
 
           {/* Articles publiés (réels, sourcés) */}
           <section className="py-16 px-4 bg-card/30 border-y border-border">
-            <div className="container mx-auto max-w-7xl">
+            <div className="container mx-auto">
               <div className="mb-10">
                 <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-3">{t.liveEyebrow}</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
@@ -263,7 +263,7 @@ const Ressources = () => {
 
           {/* Bientôt — feuille de route éditoriale, honnête */}
           <section className="py-20 px-4">
-            <div className="container mx-auto max-w-7xl">
+            <div className="container mx-auto">
               <div className="mb-10">
                 <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-3">{t.roadmapEyebrow}</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
@@ -289,7 +289,7 @@ const Ressources = () => {
 
           {/* CTA final */}
           <section className="py-24 px-4">
-            <div className="container mx-auto max-w-3xl text-center">
+            <div className="container mx-auto max-w-5xl text-center">
               <Sparkles className="w-8 h-8 text-primary mx-auto mb-6" />
               <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-tight mb-6">
                 {t.finalH2a}<em className="italic text-primary font-medium">{t.finalH2em}</em>{t.finalH2b}

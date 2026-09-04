@@ -28,7 +28,7 @@ const LATEST = [
 
 export const CabinetLatestArticles = () => (
   <section aria-labelledby="derniers-articles" className="border-t border-border/60 py-16 md:py-20">
-    <div className="container mx-auto max-w-7xl px-4">
+    <div className="container mx-auto px-4">
       <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
         <h2 id="derniers-articles" className="font-display text-2xl md:text-3xl font-semibold tracking-tight">
           Dernières analyses pour les cabinets

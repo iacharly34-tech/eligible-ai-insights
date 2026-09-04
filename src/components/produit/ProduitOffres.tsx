@@ -98,7 +98,7 @@ export const ProduitOffres = ({ compact = false }: { compact?: boolean }) => {
   return (
     <section className={`${compact ? "py-16 md:py-20" : "py-20 md:py-28"} px-4 border-y border-border bg-card/30`}>
 
-      <div className="container mx-auto max-w-7xl">
+      <div className="container mx-auto">
         <div className={`max-w-3xl ${compact ? "mb-10" : "mb-14"}`}>
           <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.eyebrow}</p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-5">

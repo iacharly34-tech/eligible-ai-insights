@@ -22,7 +22,7 @@ const PourquoiCeLeadEstPrioritaire = () => (
     ctaNote="3 fiches leads livrées sous 48 h pour votre zone."
   >
     <section className="py-14 bg-muted/30 border-y border-border">
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="container mx-auto px-4">
         <div className="rounded-2xl border border-border bg-card shadow-sm overflow-hidden">
           {/* Header lead */}
           <div className="p-6 md:p-8 border-b border-border bg-gradient-to-br from-primary/5 to-transparent">

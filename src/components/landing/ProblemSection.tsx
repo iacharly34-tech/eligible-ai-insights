@@ -20,7 +20,7 @@ export const ProblemSection = () => {
 
   return (
     <section className="py-24 sm:py-32 px-4" aria-label="Problem">
-      <div className="container mx-auto max-w-5xl">
+      <div className="container mx-auto">
         <div className="text-center mb-16 sm:mb-20">
           <span className="text-xs font-semibold text-destructive uppercase tracking-[0.3em]">
             {language === "en" ? "The problem" : "Le problème"}

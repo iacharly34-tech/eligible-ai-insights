@@ -11,7 +11,7 @@ const SimulateurIACabinet = () => (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-32 pb-20">
-        <div className="container mx-auto max-w-7xl px-4">
+        <div className="container mx-auto px-4">
           <SafeLink
             to="/blog/moderniser-cabinet-expertise-comptable-ia"
             className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8"

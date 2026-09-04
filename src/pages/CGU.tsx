@@ -177,7 +177,7 @@ const CGU = () => {
       <SEOHead noindex />
       <div className="min-h-screen bg-background">
         <Header />
-        <main className="container mx-auto px-4 py-16 max-w-4xl">
+        <main className="container mx-auto px-4 py-16">
           <h1 className="text-4xl font-bold text-foreground mb-8">{t('cgu.title')}</h1>
           {language === 'en' ? englishContent : frenchContent}
         </main>

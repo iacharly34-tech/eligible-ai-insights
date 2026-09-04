@@ -49,7 +49,7 @@ export const ComparisonTable = () => {
 
   return (
     <section className="py-24 sm:py-32 px-4" aria-label="Comparison">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto">
         <div className="text-center mb-16">
           <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">
             {language === "en" ? "Comparison" : "Comparaison"}

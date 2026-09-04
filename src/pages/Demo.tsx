@@ -105,7 +105,7 @@ const Demo = () => {
         {/* Hero */}
         <section className="relative overflow-hidden pt-32 pb-16 px-4 bg-[hsl(var(--hero-dark))]" aria-label="Demo hero">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
-          <div className="container mx-auto max-w-4xl text-center relative z-10">
+          <div className="container mx-auto text-center relative z-10">
             <span className="inline-flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-[0.3em]">
               <Rocket className="w-4 h-4" />
               {language === "en" ? "Sample of 3 qualified leads" : "Échantillon de 3 leads qualifiés"}
@@ -136,7 +136,7 @@ const Demo = () => {
 
         {/* Main content */}
         <section className="py-20 px-4">
-          <div className="container mx-auto max-w-5xl">
+          <div className="container mx-auto">
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Form */}
               <div className="rounded-2xl border border-border/50 bg-card p-8 sm:p-10" id="demo-form">
@@ -234,7 +234,7 @@ const Demo = () => {
         {/* Footer CTA */}
         <section className="py-32 sm:py-40 px-4 relative overflow-hidden bg-[hsl(var(--hero-dark))]" aria-label="CTA">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[150px]" />
-          <div className="container mx-auto max-w-3xl text-center relative z-10">
+          <div className="container mx-auto max-w-5xl text-center relative z-10">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display leading-[1.05] tracking-tight">
               Trois leads valent mille slides.
             </h2>
