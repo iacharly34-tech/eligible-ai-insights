@@ -39,7 +39,7 @@ export const CharlyOriginStory = () => {
 
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
             L'histoire de Charly

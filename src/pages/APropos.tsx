@@ -102,7 +102,7 @@ const APropos = () => {
 
         {/* Principles */}
         <section className="py-24 px-4">
-          <div className="container mx-auto max-w-6xl">
+          <div className="container mx-auto max-w-7xl">
             <div className="max-w-2xl mb-14">
               <p className="text-[0.74rem] uppercase tracking-[0.16em] text-primary font-semibold mb-4">
                 {en ? "Principles" : "Principes"}

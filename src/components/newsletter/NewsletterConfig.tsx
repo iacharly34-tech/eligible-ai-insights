@@ -81,7 +81,7 @@ export const NewsletterConfig = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6 space-y-8">
+    <div className="max-w-7xl mx-auto p-6 space-y-8">
       <div className="text-center space-y-4">
         <Badge variant="outline" className="text-primary border-primary">
           <Settings className="w-4 h-4 mr-2" />

@@ -123,7 +123,7 @@ export const ArticleShell = ({
       <Header />
       <MobileCTABar />
       <main className="pt-32 pb-20">
-        <article className="container mx-auto max-w-6xl px-4">
+        <article className="container mx-auto max-w-7xl px-4">
           <SafeLink to={backHref} className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8 max-w-3xl">
             <ArrowLeft className="w-4 h-4 mr-1.5" /> {backLabel}
           </SafeLink>

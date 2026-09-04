@@ -310,8 +310,8 @@ All colors MUST be HSL.
 
   /* Container system */
   .container {
-    @apply mx-auto px-4 sm:px-6 lg:px-8;
-    max-width: 1200px;
+    @apply mx-auto px-4 sm:px-6 lg:px-10 xl:px-14;
+    max-width: 1520px;
   }
 
   /* Responsive media */

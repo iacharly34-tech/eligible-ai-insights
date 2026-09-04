@@ -165,7 +165,7 @@ const Produit = () => {
 
           {/* 4 piliers — interactive explorer */}
           <section className="py-20 md:py-28 px-4 bg-card/30">
-            <div className="container mx-auto max-w-6xl">
+            <div className="container mx-auto max-w-7xl">
               <div className="max-w-2xl mb-14">
                 <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.howEyebrow}</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
@@ -403,7 +403,7 @@ const Produit = () => {
 
           {/* Sécurité & Conformité — bento */}
           <section className="py-20 md:py-28 px-4">
-            <div className="container mx-auto max-w-6xl">
+            <div className="container mx-auto max-w-7xl">
               <div className="max-w-2xl mb-14">
                 <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.secEyebrow}</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
