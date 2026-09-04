@@ -26,7 +26,7 @@ export const ArticleLayout = ({ badge, badgeIcon, title, subtitle, date, readTim
       <div className="min-h-screen bg-background">
         <Header />
         <main className="pt-32 pb-20">
-          <article className="container mx-auto max-w-7xl px-4">
+          <article className="container mx-auto px-4">
             <header className="mb-12 max-w-4xl">
               <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
                 {badgeIcon}

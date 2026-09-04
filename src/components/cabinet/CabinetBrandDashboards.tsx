@@ -24,7 +24,7 @@ export const CabinetBrandDashboards = () => {
 
   return (
     <section id="tableaux-de-bord" className="py-16 md:py-20">
-      <div className="container mx-auto px-4 max-w-5xl">
+      <div className="container mx-auto px-4">
         <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-3">
           Suivi de maturité de marque
         </p>

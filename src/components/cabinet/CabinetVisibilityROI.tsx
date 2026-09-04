@@ -39,7 +39,7 @@ export const CabinetVisibilityROI = () => {
 
   return (
     <section id="calculateur-visibilite" className="py-16 md:py-20 bg-muted/30 border-y border-border">
-      <div className="container mx-auto px-4 max-w-5xl">
+      <div className="container mx-auto px-4">
         <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-3 flex items-center gap-2">
           <Calculator className="w-3.5 h-3.5" aria-hidden="true" /> Calculateur d'impact leads
         </p>

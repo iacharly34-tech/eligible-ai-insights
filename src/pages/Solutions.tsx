@@ -166,7 +166,7 @@ const Solutions = () => {
         <main>
           {/* Hero */}
           <section className="pt-32 pb-20 px-4">
-            <div className="container mx-auto max-w-4xl text-center">
+            <div className="container mx-auto text-center">
               <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-6">{t.eyebrow}</p>
               <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-8">
                 {t.h1a}<em className="italic text-primary font-medium">{t.h1em}</em>{t.h1b}
@@ -180,7 +180,7 @@ const Solutions = () => {
           {/* Cases */}
           {/* Cases — interactive tab explorer */}
           <section className="pb-24 px-4" aria-label="Cas d'usage">
-            <div className="container mx-auto max-w-7xl">
+            <div className="container mx-auto">
               <div className="grid lg:grid-cols-[280px,1fr] gap-8 lg:gap-12">
                 {/* Left rail: sticky list */}
                 <aside className="lg:sticky lg:top-28 lg:self-start">
@@ -298,7 +298,7 @@ const Solutions = () => {
 
           {/* CTA */}
           <section className="py-20 md:py-28 px-4 bg-card/30">
-            <div className="container mx-auto max-w-3xl text-center">
+            <div className="container mx-auto max-w-5xl text-center">
               <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-tight mb-6">
                 {t.finalH2a}<em className="italic text-primary font-medium">{t.finalH2em}</em>{t.finalH2b}
               </h2>

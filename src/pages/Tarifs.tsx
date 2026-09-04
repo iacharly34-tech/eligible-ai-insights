@@ -176,7 +176,7 @@ const Tarifs = () => {
         <main>
           {/* Hero */}
           <section className="pt-32 pb-16 px-4">
-            <div className="container mx-auto max-w-4xl text-center">
+            <div className="container mx-auto text-center">
               <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-6">{t.eyebrow}</p>
               <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-8">
                 {t.h1a}<em className="italic text-primary font-medium">{t.h1em}</em>{t.h1b}
@@ -189,7 +189,7 @@ const Tarifs = () => {
 
           {/* Plan unique */}
           <section className="pb-20 px-4">
-            <div className="container mx-auto max-w-4xl">
+            <div className="container mx-auto">
               <div className="rounded-3xl border-2 border-primary bg-card p-10 md:p-12 relative overflow-hidden">
                 <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-semibold uppercase tracking-[0.14em] px-4 py-1.5 rounded-bl-2xl">
                   {t.planBadge}
@@ -227,7 +227,7 @@ const Tarifs = () => {
 
           {/* ROI */}
           <section className="py-20 px-4 bg-card/30">
-            <div className="container mx-auto max-w-5xl">
+            <div className="container mx-auto">
               <div className="text-center mb-10">
                 <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.roiEyebrow}</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
@@ -247,7 +247,7 @@ const Tarifs = () => {
 
           {/* Guarantee */}
           <section className="py-20 px-4">
-            <div className="container mx-auto max-w-3xl text-center">
+            <div className="container mx-auto max-w-5xl text-center">
               <div className="w-16 h-16 rounded-2xl bg-success/10 border border-success/20 flex items-center justify-center mx-auto mb-8">
                 <Shield className="w-7 h-7 text-success" />
               </div>
@@ -265,7 +265,7 @@ const Tarifs = () => {
 
           {/* FAQ */}
           <section className="py-24 px-4 bg-card/30" id="faq">
-            <div className="container mx-auto max-w-3xl">
+            <div className="container mx-auto max-w-5xl">
               <div className="text-center mb-16">
                 <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.faqEyebrow}</p>
                 <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
@@ -295,7 +295,7 @@ const Tarifs = () => {
 
           {/* Final CTA */}
           <section className="py-24 px-4">
-            <div className="container mx-auto max-w-3xl text-center">
+            <div className="container mx-auto max-w-5xl text-center">
               <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-tight mb-6">
                 {t.finalH2}
               </h2>

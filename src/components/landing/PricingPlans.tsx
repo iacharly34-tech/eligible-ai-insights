@@ -123,7 +123,7 @@ export const PricingPlans = () => {
 
   return (
     <section className="py-24 sm:py-32 px-4 bg-[hsl(var(--hero-dark))]" id="pricing" aria-label="Pricing">
-      <div className="container mx-auto max-w-5xl">
+      <div className="container mx-auto">
         <div className="text-center mb-20">
           <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">
             {language === "en" ? "Pricing" : "Tarifs"}

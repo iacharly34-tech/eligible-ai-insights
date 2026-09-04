@@ -12,7 +12,7 @@ export const FinalCTA = () => {
       {/* Radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[150px]" />
       
-      <div className="container mx-auto max-w-3xl text-center relative z-10">
+      <div className="container mx-auto max-w-5xl text-center relative z-10">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-display leading-[1.05] tracking-tight">
           {language === "en"
             ? "Stop guessing. Start scoring."

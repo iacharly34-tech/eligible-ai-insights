@@ -10,7 +10,7 @@ export const ProductHero = () => {
   return (
     <section className="relative overflow-hidden pt-32 pb-20 px-4 bg-[hsl(var(--hero-dark))]" aria-label="Product hero">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
-      <div className="container mx-auto max-w-4xl text-center relative z-10">
+      <div className="container mx-auto text-center relative z-10">
         <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">
           {t('product.badge')}
         </span>

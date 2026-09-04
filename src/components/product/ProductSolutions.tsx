@@ -59,7 +59,7 @@ export const ProductSolutions = () => {
 
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-background to-gray-100">
-      <div className="container mx-auto max-w-7xl">
+      <div className="container mx-auto">
         <div className="text-center mb-16">
           <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-purple-100 text-primary border-blue-200">
             {t('solutions.badge')}

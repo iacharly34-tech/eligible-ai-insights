@@ -110,7 +110,7 @@ export const ArticleRecommendations = ({ currentArticleUrl, currentCategory }: A
 
   return (
     <section className="py-12 bg-slate-50">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto">
         <div className="text-center mb-8">
           <Badge className="mb-4 bg-blue-100 text-primary border-primary/20">
             <BookOpen className="w-4 h-4 mr-2" />

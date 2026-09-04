@@ -122,7 +122,7 @@ export const LandingCabinetLayout = ({
           <section className="relative pt-28 pb-16 md:pt-36 md:pb-20 bg-gradient-hero overflow-hidden">
             <div className="absolute inset-0 bg-grid-pattern opacity-[0.04]" aria-hidden="true" />
             <div className="absolute top-20 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl" aria-hidden="true" />
-            <div className="container mx-auto relative px-4 max-w-4xl">
+            <div className="container mx-auto relative px-4">
               <Badge variant="outline" className="text-primary border-primary/30 bg-primary/5 px-3 py-1.5 text-xs sm:text-sm mb-6 inline-flex">
                 <Sparkles className="w-3.5 h-3.5 mr-1.5" aria-hidden="true" />
                 {eyebrow}
@@ -164,7 +164,7 @@ export const LandingCabinetLayout = ({
 
           {/* Sections */}
           {sections && sections.length > 0 && (
-          <div className="container mx-auto px-4 max-w-4xl py-16 md:py-20 space-y-14">
+          <div className="container mx-auto px-4 py-16 md:py-20 space-y-14">
             {sections.map((s, i) => (
               <section key={i}>
                 <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-5">
@@ -179,7 +179,7 @@ export const LandingCabinetLayout = ({
           {/* FAQ */}
           {faq && faq.length > 0 && (
             <section className="bg-muted/30 border-y border-border py-16 md:py-20">
-              <div className="container mx-auto px-4 max-w-3xl">
+              <div className="container mx-auto px-4 max-w-5xl">
                 <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-8">
                   FAQ
                 </h2>
@@ -198,7 +198,7 @@ export const LandingCabinetLayout = ({
           {/* Related */}
           {related && related.length > 0 && (
             <section className="py-14">
-              <div className="container mx-auto px-4 max-w-4xl">
+              <div className="container mx-auto px-4">
                 <div className="text-[0.7rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">
                   {readAlsoLabel}
                 </div>
