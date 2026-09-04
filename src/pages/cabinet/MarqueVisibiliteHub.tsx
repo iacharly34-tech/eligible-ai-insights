@@ -73,7 +73,7 @@ const MarqueVisibiliteHub = () => (
     bullets={[
       "Six actifs digitaux, avec le niveau d'exigence attendu sur chacun",
       "Cas clients réels : EM Partners, 5,0 / 5 sur 95 avis Google",
-      "Calculateur d'impact : ce que vaut une place dans le pack local",
+      "Calculateur d'impact leads : ce que valent 2 leads par semaine, signés à 40 %",
       "Tableaux de bord visibilité search, santé des backlinks et preuve sociale",
     ]}
     ctaPrimary="Voir la démo produit"
