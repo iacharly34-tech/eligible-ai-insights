@@ -15,14 +15,15 @@ export default {
 			padding: {
 				DEFAULT: '1rem',     // 16px pour XS/SM
 				sm: '1.5rem',        // 24px pour MD  
-				lg: '2rem'           // 32px pour LG+
+				lg: '2.5rem',        // 40px pour LG+
+				xl: '3.5rem'         // 56px pour XL+
 			},
 			screens: {
 				sm: '480px',         // SM: 480-767px
 				md: '768px',         // MD: 768-1023px  
 				lg: '1024px',        // LG: 1024-1439px
 				xl: '1440px',        // XL: 1440px+
-				'2xl': '1280px'      // Container max-width
+				'2xl': '1520px'      // Container max-width
 			}
 		},
 		extend: {

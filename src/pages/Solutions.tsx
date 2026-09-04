@@ -180,7 +180,7 @@ const Solutions = () => {
           {/* Cases */}
           {/* Cases — interactive tab explorer */}
           <section className="pb-24 px-4" aria-label="Cas d'usage">
-            <div className="container mx-auto max-w-6xl">
+            <div className="container mx-auto max-w-7xl">
               <div className="grid lg:grid-cols-[280px,1fr] gap-8 lg:gap-12">
                 {/* Left rail: sticky list */}
                 <aside className="lg:sticky lg:top-28 lg:self-start">

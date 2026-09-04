@@ -26,7 +26,7 @@ export const FeaturesGrid = () => {
 
   return (
     <section className="py-24 sm:py-32 px-4" id="features" aria-label="Features">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-20">
           <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">
             {language === "en" ? "Features" : "Fonctionnalités"}

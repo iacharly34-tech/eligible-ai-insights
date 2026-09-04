@@ -124,7 +124,7 @@ export const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
           {/* Left Column - Contact Options */}
           <div className="space-y-8">
             <div className="space-y-6">

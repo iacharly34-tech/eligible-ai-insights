@@ -47,7 +47,7 @@ const Connexion = () => {
         <Header />
       
       <section className="pt-32 pb-20 px-4">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Column - Login Form */}
             <div className="max-w-md mx-auto w-full">

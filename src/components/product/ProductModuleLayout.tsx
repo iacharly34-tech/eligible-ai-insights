@@ -125,7 +125,7 @@ export const ProductModuleLayout = ({
 
           {/* Features */}
           <section className="py-20 px-4 bg-[hsl(var(--hero-dark))]">
-            <div className="container mx-auto max-w-6xl">
+            <div className="container mx-auto max-w-7xl">
               <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-12 text-center">
                 {language === "en" ? "Key capabilities" : "Fonctionnalités clés"}
               </h2>
@@ -147,7 +147,7 @@ export const ProductModuleLayout = ({
 
           {/* Use cases */}
           <section className="py-20 px-4">
-            <div className="container mx-auto max-w-6xl">
+            <div className="container mx-auto max-w-7xl">
               <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-12 text-center">
                 {language === "en" ? "Use cases" : "Cas d'usage concrets"}
               </h2>

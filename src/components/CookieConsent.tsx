@@ -89,7 +89,7 @@ export const CookieConsent = memo(() => {
     <>
       {/* Cookie Banner */}
       <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-background/95 backdrop-blur-sm border-t shadow-lg">
-        <Card className="max-w-6xl mx-auto p-6">
+        <Card className="max-w-7xl mx-auto p-6">
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4">
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
