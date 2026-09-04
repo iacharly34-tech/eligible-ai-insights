@@ -23,7 +23,7 @@ export default {
 				md: '768px',         // MD: 768-1023px  
 				lg: '1024px',        // LG: 1024-1439px
 				xl: '1440px',        // XL: 1440px+
-				'2xl': '1520px'      // Container max-width
+				'2xl': '1720px'      // Container max-width
 			}
 		},
 		extend: {
