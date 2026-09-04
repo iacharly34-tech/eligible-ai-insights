@@ -44,7 +44,7 @@ export const CabinetVisibilityROI = () => {
           <Calculator className="w-3.5 h-3.5" aria-hidden="true" /> Calculateur d'impact leads
         </p>
         <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
-          Ce que valent 2 leads par semaine, signés à 40 %
+          Ce que valent 2 leads par semaine, selon vos taux de conversion
         </h2>
         <p className="mt-3 text-muted-foreground max-w-3xl leading-relaxed">
           Le modèle part du volume de leads détectés, pas du référencement. La couche marque &amp; visibilité
