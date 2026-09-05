@@ -1,23 +1,22 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
+import { ROUTE_META } from "@/lib/route-meta";
 
-const ARTICLES = [
-  { slug: "creations-entreprises-france-2025", title: "Créations d'entreprises en France 2025", url: "https://eligibly.ai/blog/creations-entreprises-france-2025" },
-  { slug: "cout-acquisition-client-cabinet-comptable", title: "Coût d'acquisition client pour un cabinet comptable", url: "https://eligibly.ai/blog/cout-acquisition-client-cabinet-comptable" },
-  { slug: "icp-cabinet-expertise-comptable", title: "ICP d'un cabinet d'expertise comptable", url: "https://eligibly.ai/blog/icp-cabinet-expertise-comptable" },
-  { slug: "barometre-acquisition-cabinet-ec-2026", title: "Baromètre acquisition cabinet EC 2026", url: "https://eligibly.ai/blog/barometre-acquisition-cabinet-ec-2026" },
-  { slug: "observatoire-sasu-sas-juin-2026", title: "Observatoire SASU/SAS — juin 2026", url: "https://eligibly.ai/blog/observatoire-sasu-sas-juin-2026" },
-  { slug: "playbook-prospection-cabinet-ec-2026", title: "Playbook prospection cabinet EC 2026", url: "https://eligibly.ai/blog/playbook-prospection-cabinet-ec-2026" },
-  { slug: "lexique-marketing-expert-comptable", title: "Lexique marketing expert-comptable", url: "https://eligibly.ai/blog/lexique-marketing-expert-comptable" },
-  { slug: "barometre-immatriculations-juillet-2026", title: "Baromètre des nouvelles sociétés commerciales — Juillet 2026", url: "https://eligibly.ai/blog/barometre-immatriculations-juillet-2026" },
-  { slug: "moderniser-cabinet-etat-lieux-2026", title: "Le Signal N°1 — Moderniser son cabinet : état des lieux 2026", url: "https://eligibly.ai/blog/moderniser-cabinet-etat-lieux-2026" },
-  { slug: "5-leviers-croissance-cabinet-expertise-comptable", title: "5 leviers pour provoquer la croissance d'un cabinet", url: "https://eligibly.ai/blog/5-leviers-croissance-cabinet-expertise-comptable" },
-];
+/** Source unique de vérité : les routes réellement rendues côté serveur. */
+const ARTICLES = Object.entries(ROUTE_META)
+  .filter(([path]) => path.startsWith("/blog/"))
+  .map(([path, meta]) => ({
+    slug: path.replace("/blog/", ""),
+    title: meta.title,
+    description: meta.description,
+    url: `https://eligibly.ai${path}`,
+  }))
+  .sort((a, b) => a.slug.localeCompare(b.slug));
 
 export default defineTool({
   name: "list_blog_articles",
   title: "List blog articles",
-  description: "List Eligibly's published blog articles (title, slug, url) about acquisition, prospection and marketing for accounting firms.",
+  description: "List Eligibly's published blog articles (title, slug, description, url) about acquisition, prospection and marketing for accounting firms.",
   inputSchema: {
     search: z.string().optional().describe("Optional case-insensitive substring to filter titles/slugs."),
   },
@@ -29,7 +28,7 @@ export default defineTool({
       : ARTICLES;
     return {
       content: [{ type: "text", text: JSON.stringify(items, null, 2) }],
-      structuredContent: { articles: items },
+      structuredContent: { articles: items, count: items.length },
     };
   },
 });

@@ -15,7 +15,7 @@
       {
         "name": "list_blog_articles",
         "title": "List blog articles",
-        "description": "List Eligibly's published blog articles (title, slug, url) about acquisition, prospection and marketing for accounting firms.",
+        "description": "List Eligibly's published blog articles (title, slug, description, url) about acquisition, prospection and marketing for accounting firms.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,

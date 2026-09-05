@@ -8,22 +8,17 @@ import { defineMcp } from "npm:@lovable.dev/mcp-js@0.20.1";
 // src/lib/mcp/tools/list-blog-articles.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.20.1";
 import { z } from "npm:zod@^3.25.76";
-var ARTICLES = [
-  { slug: "creations-entreprises-france-2025", title: "Cr\xE9ations d'entreprises en France 2025", url: "https://eligibly.ai/blog/creations-entreprises-france-2025" },
-  { slug: "cout-acquisition-client-cabinet-comptable", title: "Co\xFBt d'acquisition client pour un cabinet comptable", url: "https://eligibly.ai/blog/cout-acquisition-client-cabinet-comptable" },
-  { slug: "icp-cabinet-expertise-comptable", title: "ICP d'un cabinet d'expertise comptable", url: "https://eligibly.ai/blog/icp-cabinet-expertise-comptable" },
-  { slug: "barometre-acquisition-cabinet-ec-2026", title: "Barom\xE8tre acquisition cabinet EC 2026", url: "https://eligibly.ai/blog/barometre-acquisition-cabinet-ec-2026" },
-  { slug: "observatoire-sasu-sas-juin-2026", title: "Observatoire SASU/SAS \u2014 juin 2026", url: "https://eligibly.ai/blog/observatoire-sasu-sas-juin-2026" },
-  { slug: "playbook-prospection-cabinet-ec-2026", title: "Playbook prospection cabinet EC 2026", url: "https://eligibly.ai/blog/playbook-prospection-cabinet-ec-2026" },
-  { slug: "lexique-marketing-expert-comptable", title: "Lexique marketing expert-comptable", url: "https://eligibly.ai/blog/lexique-marketing-expert-comptable" },
-  { slug: "barometre-immatriculations-juillet-2026", title: "Barom\xE8tre des nouvelles soci\xE9t\xE9s commerciales \u2014 Juillet 2026", url: "https://eligibly.ai/blog/barometre-immatriculations-juillet-2026" },
-  { slug: "moderniser-cabinet-etat-lieux-2026", title: "Le Signal N\xB01 \u2014 Moderniser son cabinet : \xE9tat des lieux 2026", url: "https://eligibly.ai/blog/moderniser-cabinet-etat-lieux-2026" },
-  { slug: "5-leviers-croissance-cabinet-expertise-comptable", title: "5 leviers pour provoquer la croissance d'un cabinet", url: "https://eligibly.ai/blog/5-leviers-croissance-cabinet-expertise-comptable" }
-];
+import { ROUTE_META } from "npm:@/lib/route-meta";
+var ARTICLES = Object.entries(ROUTE_META).filter(([path]) => path.startsWith("/blog/")).map(([path, meta]) => ({
+  slug: path.replace("/blog/", ""),
+  title: meta.title,
+  description: meta.description,
+  url: `https://eligibly.ai${path}`
+})).sort((a, b) => a.slug.localeCompare(b.slug));
 var list_blog_articles_default = defineTool({
   name: "list_blog_articles",
   title: "List blog articles",
-  description: "List Eligibly's published blog articles (title, slug, url) about acquisition, prospection and marketing for accounting firms.",
+  description: "List Eligibly's published blog articles (title, slug, description, url) about acquisition, prospection and marketing for accounting firms.",
   inputSchema: {
     search: z.string().optional().describe("Optional case-insensitive substring to filter titles/slugs.")
   },
@@ -33,7 +28,7 @@ var list_blog_articles_default = defineTool({
     const items = q ? ARTICLES.filter((a) => a.title.toLowerCase().includes(q) || a.slug.includes(q)) : ARTICLES;
     return {
       content: [{ type: "text", text: JSON.stringify(items, null, 2) }],
-      structuredContent: { articles: items }
+      structuredContent: { articles: items, count: items.length }
     };
   }
 });
