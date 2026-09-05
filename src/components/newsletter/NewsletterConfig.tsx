@@ -9,8 +9,10 @@ import { NewsletterSubscription } from './NewsletterSubscription';
 import { Settings, Mail, Zap } from 'lucide-react';
 
 export const NewsletterConfig = () => {
-  const [zapierWebhook, setZapierWebhook] = useState(
-    localStorage.getItem('newsletter_zapier_webhook') || ''
+  const [zapierWebhook, setZapierWebhook] = useState(() =>
+    typeof window !== 'undefined'
+      ? localStorage.getItem('newsletter_zapier_webhook') || ''
+      : ''
   );
   const [testEmail, setTestEmail] = useState('');
   const [isTestingWebhook, setIsTestingWebhook] = useState(false);
