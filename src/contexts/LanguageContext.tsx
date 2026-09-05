@@ -1254,26 +1254,10 @@ const translations = {
 } as const;
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>(() => {
-    // 1. URL prefix wins (deep-link / external share)
-    if (typeof window !== 'undefined') {
-      const p = window.location.pathname;
-      if (p === '/en' || p.startsWith('/en/')) return 'en';
-    }
-    // Check localStorage first, then browser language, default to French
-    const saved = secureStorage.getItem('eligibly-language') as Language;
-    if (saved && (saved === 'fr' || saved === 'en')) {
-      return saved;
-    }
-    
-    // Detect browser language
-    const browserLang = navigator.language.toLowerCase();
-    if (browserLang.startsWith('en')) {
-      return 'en';
-    }
-    
-    return 'fr'; // Default to French
-  });
+  // Deterministic initial value: SSR and first client render must match
+  // (hydration). The URL-sync effect below applies the real language after
+  // mount; all /en/* routes 301-redirect to French pages anyway.
+  const [language, setLanguage] = useState<Language>('fr');
 
   useEffect(() => {
     secureStorage.setItem('eligibly-language', language);
