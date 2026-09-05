@@ -12,7 +12,7 @@ import {
 import { HelmetProvider } from "react-helmet-async";
 
 import appCss from "../styles.css?url";
-import { getRouteMeta, getCanonicalUrl } from "@/lib/route-meta";
+import { getRouteMeta, getCanonicalUrl, isKnownRoute } from "@/lib/route-meta";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
