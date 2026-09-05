@@ -89,7 +89,7 @@ export const CTASection = () => {
         </div>
 
         {/* Bottom Stats */}
-        <div className="mt-20 bg-card/50 backdrop-blur-sm rounded-3xl p-8 border border-border/50">
+        <div className="mt-20 bg-card/50 backdrop-blur-xs rounded-3xl p-8 border border-border/50">
           <div className="text-center mb-6">
             <h3 className="text-xl font-semibold text-foreground">Résultats cette semaine</h3>
           </div>

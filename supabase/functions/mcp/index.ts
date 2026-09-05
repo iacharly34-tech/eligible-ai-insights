@@ -7,7 +7,7 @@ import { defineMcp } from "npm:@lovable.dev/mcp-js@0.20.0";
 
 // src/lib/mcp/tools/list-blog-articles.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.20.0";
-import { z } from "npm:zod@^4.4.3";
+import { z } from "npm:zod@^3.25.76";
 var ARTICLES = [
   { slug: "creations-entreprises-france-2025", title: "Cr\xE9ations d'entreprises en France 2025", url: "https://eligibly.ai/blog/creations-entreprises-france-2025" },
   { slug: "cout-acquisition-client-cabinet-comptable", title: "Co\xFBt d'acquisition client pour un cabinet comptable", url: "https://eligibly.ai/blog/cout-acquisition-client-cabinet-comptable" },
@@ -65,7 +65,7 @@ var get_pricing_default = defineTool2({
 
 // src/lib/mcp/tools/submit-lead.ts
 import { defineTool as defineTool3 } from "npm:@lovable.dev/mcp-js@0.20.0";
-import { z as z2 } from "npm:zod@^4.4.3";
+import { z as z2 } from "npm:zod@^3.25.76";
 var submit_lead_default = defineTool3({
   name: "submit_lead",
   title: "Submit a demo/pilot lead",

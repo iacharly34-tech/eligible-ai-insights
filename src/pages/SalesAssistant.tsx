@@ -61,7 +61,7 @@ const SalesAssistant = () => {
         <Header />
         <MobileCTABar />
 
-        <main id="main-content" tabIndex={-1} className="focus:outline-none" role="main">
+        <main id="main-content" tabIndex={-1} className="focus:outline-hidden" role="main">
           {/* Hero */}
           <section className="relative pt-28 pb-16 md:pt-36 md:pb-20 bg-gradient-hero overflow-hidden">
             <div className="absolute inset-0 bg-grid-pattern opacity-[0.04]" aria-hidden="true" />
@@ -146,7 +146,7 @@ const SalesAssistant = () => {
                   </ul>
                 </div>
 
-                <div className="rounded-2xl border border-border bg-card shadow-sm overflow-hidden">
+                <div className="rounded-2xl border border-border bg-card shadow-xs overflow-hidden">
                   <div className="px-5 py-3 border-b border-border bg-primary/5 flex items-center gap-2">
                     <Sparkles className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
                     <span className="text-xs font-semibold text-foreground">Première touche générée · LinkedIn</span>

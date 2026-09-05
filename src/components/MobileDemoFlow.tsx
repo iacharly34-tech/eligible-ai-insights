@@ -307,7 +307,7 @@ export const MobileDemoFlow = () => {
   const renderResultsScreen = () => (
     <div className="h-screen w-screen bg-gradient-to-br from-background to-muted flex flex-col overflow-hidden">
       {/* Header */}
-      <div className="bg-card/80 backdrop-blur-sm p-4 border-b border-border">
+      <div className="bg-card/80 backdrop-blur-xs p-4 border-b border-border">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-success rounded-2xl flex items-center justify-center">

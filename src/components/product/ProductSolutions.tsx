@@ -79,7 +79,7 @@ export const ProductSolutions = () => {
           {solutions.map((solution, index) => (
             <div key={index} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
               <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm overflow-hidden">
+                <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-xs overflow-hidden">
                   <CardContent className="p-0">
                     <div className={`h-2 bg-gradient-to-r ${solution.gradient}`}></div>
                     <div className="p-8">

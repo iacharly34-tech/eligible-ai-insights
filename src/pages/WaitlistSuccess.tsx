@@ -34,7 +34,7 @@ const WaitlistSuccess = () => {
           <div className="absolute left-1/2 top-40 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-primary/10 blur-[140px]" />
 
           <div className="container relative z-10 mx-auto">
-            <div className="mx-auto max-w-2xl rounded-[32px] border border-border/50 bg-card/95 p-8 text-center shadow-card backdrop-blur-sm sm:p-12">
+            <div className="mx-auto max-w-2xl rounded-[32px] border border-border/50 bg-card/95 p-8 text-center shadow-card backdrop-blur-xs sm:p-12">
               <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl border border-primary/15 bg-primary/10">
                 <CheckCircle2 className="h-9 w-9 text-primary" />
               </div>

@@ -44,7 +44,7 @@ export const CabinetTestimonial = () => {
           </span>
         </div>
 
-        <figure className="bg-background border border-border/60 rounded-2xl p-8 sm:p-14 shadow-sm">
+        <figure className="bg-background border border-border/60 rounded-2xl p-8 sm:p-14 shadow-xs">
           <svg
             aria-hidden="true"
             className="w-10 h-10 text-primary/30 mb-6"

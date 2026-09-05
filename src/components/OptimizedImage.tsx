@@ -55,7 +55,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         <img
           src={placeholder}
           alt="Image optimisée en cours de chargement"
-          className="absolute inset-0 w-full h-full object-cover blur-sm scale-110 transition-opacity duration-300"
+          className="absolute inset-0 w-full h-full object-cover blur-xs scale-110 transition-opacity duration-300"
           aria-hidden="true"
         />
       )}

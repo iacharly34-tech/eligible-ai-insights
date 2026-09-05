@@ -30,7 +30,7 @@ const HomePage = () => {
         <Header />
         <MobileCTABar />
 
-        <main id="main-content" tabIndex={-1} className="focus:outline-none" role="main">
+        <main id="main-content" tabIndex={-1} className="focus:outline-hidden" role="main">
           {/* Pivot juin 2026 — Moteur de détection de leads pour cabinets EC.
               Home resserrée à 7 sections : promesse → friction → mécanique → preuve → comparatif → tarif → FAQ → CTA.
               ROI calculator et Personas déplacés sur /tarifs et /solutions pour resserrer le scroll. */}

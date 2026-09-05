@@ -100,7 +100,7 @@ export const CabinetSignals = () => {
             </ul>
           </div>
 
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <div className="rounded-2xl border border-border bg-card p-6 shadow-xs">
             <div className="flex items-center gap-2 mb-2">
               <RefreshCw className="w-4 h-4 text-primary" aria-hidden="true" />
               <h3 className="font-display text-lg font-semibold text-foreground">{t.reevalTitle}</h3>

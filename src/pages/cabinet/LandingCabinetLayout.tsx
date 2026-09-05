@@ -117,7 +117,7 @@ export const LandingCabinetLayout = ({
         <Header />
         <MobileCTABar />
 
-        <main id="main-content" tabIndex={-1} className="focus:outline-none" role="main">
+        <main id="main-content" tabIndex={-1} className="focus:outline-hidden" role="main">
           {/* Hero */}
           <section className="relative pt-28 pb-16 md:pt-36 md:pb-20 bg-gradient-hero overflow-hidden">
             <div className="absolute inset-0 bg-grid-pattern opacity-[0.04]" aria-hidden="true" />

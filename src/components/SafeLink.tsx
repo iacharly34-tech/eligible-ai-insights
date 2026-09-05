@@ -1,5 +1,5 @@
-import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useLocation } from '@/lib/router-compat';
+import { Link } from '@/lib/router-compat';
 import { ReactNode, forwardRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 

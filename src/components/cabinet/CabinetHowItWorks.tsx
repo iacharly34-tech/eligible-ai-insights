@@ -681,7 +681,7 @@ export const CabinetHowItWorks = () => {
 
           {/* Right: Live preview */}
           <div className="lg:sticky lg:top-24">
-            <div className="rounded-2xl border border-border bg-background/50 backdrop-blur-sm p-6 md:p-8 min-h-[420px] flex flex-col items-center justify-center relative overflow-hidden">
+            <div className="rounded-2xl border border-border bg-background/50 backdrop-blur-xs p-6 md:p-8 min-h-[420px] flex flex-col items-center justify-center relative overflow-hidden">
               {/* Background decoration */}
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/3 rounded-full blur-3xl" />

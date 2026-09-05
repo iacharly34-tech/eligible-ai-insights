@@ -161,7 +161,7 @@ export const DemoPersonas = () => {
 
         {/* Full-width Integrated Demo Section - Optimized Layout */}
         <div className="mb-12">
-          <Card className="border-border shadow-luxury bg-card/50 backdrop-blur-sm">
+          <Card className="border-border shadow-luxury bg-card/50 backdrop-blur-xs">
             <CardContent className="p-6">
               
               
@@ -169,7 +169,7 @@ export const DemoPersonas = () => {
               <div className="mb-8">
                 <div className="grid lg:grid-cols-3 gap-4 max-w-full mx-auto">
                   {/* Persona Description */}
-                  <Card className="border-border shadow-card bg-card/80 backdrop-blur-sm">
+                  <Card className="border-border shadow-card bg-card/80 backdrop-blur-xs">
                     <CardContent className="p-4">
                       <div className="flex items-center gap-3 mb-3">
                         <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">

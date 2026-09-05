@@ -20,7 +20,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { ContextualLinks } from "@/components/ContextualLinks";
 import { SecureFormWrapper } from "@/components/SecureFormWrapper";
 import { useToast } from "@/hooks/use-toast";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@/lib/router-compat";
 import { supabase } from "@/integrations/supabase/client";
 
 const Demo = () => {

@@ -461,7 +461,7 @@ export const MacBookSimulation = () => {
                 ].map((source, index) => (
                   <div 
                     key={index}
-                    className="p-3 bg-card rounded-lg shadow-sm border hover:shadow-md transition-all duration-300"
+                    className="p-3 bg-card rounded-lg shadow-xs border hover:shadow-md transition-all duration-300"
                   >
                     <div className="flex items-center justify-between">
                       <div>
@@ -583,9 +583,9 @@ export const MacBookSimulation = () => {
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <div className="w-4 h-3 bg-muted rounded-sm"></div>
+                    <div className="w-4 h-3 bg-muted rounded-xs"></div>
                     <span>100%</span>
-                    <div className="w-6 h-3 bg-success/100 rounded-sm"></div>
+                    <div className="w-6 h-3 bg-success/100 rounded-xs"></div>
                   </div>
                 </div>
 

@@ -121,7 +121,7 @@ export const CabinetActivation = () => {
         </div>
 
         {/* 10 leads table */}
-        <div className="rounded-2xl border border-border bg-card shadow-sm overflow-hidden">
+        <div className="rounded-2xl border border-border bg-card shadow-xs overflow-hidden">
           <div className="px-5 md:px-6 py-4 border-b border-border bg-muted/30 flex flex-wrap items-center gap-3">
             <Sparkles className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
             <div className="font-display text-sm md:text-base font-semibold text-foreground">

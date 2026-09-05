@@ -178,7 +178,7 @@ export const InternalLinksManager = ({
           <SafeLink
             key={index}
             to={link.href}
-            className="group flex items-start p-3 rounded-lg border border-border hover:border-primary/50 transition-all duration-200 hover:shadow-sm"
+            className="group flex items-start p-3 rounded-lg border border-border hover:border-primary/50 transition-all duration-200 hover:shadow-xs"
           >
             <div className="flex-1">
               <div className="font-medium text-foreground group-hover:text-primary transition-colors flex items-center gap-2">

@@ -240,7 +240,7 @@ export const AIGainsSimulator = () => {
   ]);
 
   return (
-    <section className="not-prose my-12 rounded-2xl border border-border bg-card overflow-hidden shadow-sm">
+    <section className="not-prose my-12 rounded-2xl border border-border bg-card overflow-hidden shadow-xs">
       {/* Bandeau haut */}
       <header className="px-6 py-8 md:px-10 md:py-10 bg-gradient-to-br from-primary/90 to-primary text-primary-foreground text-center">
         <div className="flex items-center justify-center gap-2 text-[0.68rem] uppercase tracking-[0.18em] font-semibold mb-3 opacity-90">
@@ -329,7 +329,7 @@ export const AIGainsSimulator = () => {
                         onClick={() => applyScenario(key)}
                         className={`text-left rounded-xl border-2 px-4 py-4 transition-all ${
                           active
-                            ? "border-primary bg-primary/5 shadow-sm"
+                            ? "border-primary bg-primary/5 shadow-xs"
                             : "border-border bg-background hover:border-primary/50 hover:bg-primary/[0.03]"
                         }`}
                       >

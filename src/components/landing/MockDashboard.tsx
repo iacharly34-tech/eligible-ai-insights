@@ -141,7 +141,7 @@ export const MockDashboard = () => {
                         onClick={() => setSelectedIdx(i)}
                         className={`flex items-center gap-4 p-3 rounded-xl cursor-pointer transition-all duration-300 ${
                           selectedIdx === i
-                            ? "bg-primary/5 border border-primary/20 shadow-sm"
+                            ? "bg-primary/5 border border-primary/20 shadow-xs"
                             : "hover:bg-muted/50 border border-transparent"
                         }`}
                       >

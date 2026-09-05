@@ -12,7 +12,7 @@ interface DemoConsoleProps {
 export const DemoConsole = ({ codeLines, isRunning, showFull, onToggleShowFull }: DemoConsoleProps) => {
   const { t } = useLanguage();
   return (
-    <div className="bg-card rounded-lg border shadow-sm p-4">
+    <div className="bg-card rounded-lg border shadow-xs p-4">
       <div className="flex items-center justify-between mb-3">
         <h3 className="font-bold text-foreground text-sm uppercase tracking-wide flex items-center gap-2 m-0">
           <Terminal className="w-4 h-4" />

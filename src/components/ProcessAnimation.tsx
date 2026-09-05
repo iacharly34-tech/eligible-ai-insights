@@ -179,7 +179,7 @@ export const ProcessAnimation = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <Badge variant="outline" className="text-primary border-primary/20 bg-primary/5 mb-6 backdrop-blur-sm">
+          <Badge variant="outline" className="text-primary border-primary/20 bg-primary/5 mb-6 backdrop-blur-xs">
             <Sparkles className="w-4 h-4 mr-2" />
             IA Générative • Temps Réel
           </Badge>
@@ -226,12 +226,12 @@ export const ProcessAnimation = () => {
               return (
                 <Card 
                   key={step.id}
-                  className={`transition-all duration-700 border backdrop-blur-sm ${
+                  className={`transition-all duration-700 border backdrop-blur-xs ${
                     isActive 
                       ? `border-primary/40 shadow-2xl ${step.gradient} scale-105 ring-2 ring-primary/20` 
                       : isCompleted 
-                        ? 'border-success/20/30 bg-success/100/5 backdrop-blur-sm' 
-                        : 'border-border/30 opacity-60 bg-card/50 backdrop-blur-sm'
+                        ? 'border-success/20/30 bg-success/100/5 backdrop-blur-xs' 
+                        : 'border-border/30 opacity-60 bg-card/50 backdrop-blur-xs'
                   }`}
                 >
                   <CardContent className="p-6">
@@ -249,7 +249,7 @@ export const ProcessAnimation = () => {
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between mb-3">
                           <h3 className="font-bold text-lg text-foreground">{step.title}</h3>
-                          <Badge variant="secondary" className="text-xs bg-card/80 backdrop-blur-sm">
+                          <Badge variant="secondary" className="text-xs bg-card/80 backdrop-blur-xs">
                             Étape {step.id}/4
                           </Badge>
                         </div>
@@ -361,7 +361,7 @@ export const ProcessAnimation = () => {
                   </div>
                   
                   <div className="pt-6 border-t border-border/30">
-                    <div className="bg-gradient-to-r from-success/100/20 to-success/100/20 backdrop-blur-sm border border-success/20/30 rounded-xl p-4 text-center">
+                    <div className="bg-gradient-to-r from-success/100/20 to-success/100/20 backdrop-blur-xs border border-success/20/30 rounded-xl p-4 text-center">
                       <div className="text-2xl font-bold text-success mb-1">{processData.status}</div>
                       <div className="text-sm text-success">Candidature fortement recommandée</div>
                     </div>

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/lib/router-compat";
 
 interface SEOHeadProps {
   noindex?: boolean;

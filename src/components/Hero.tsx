@@ -8,7 +8,7 @@ import { useOptimizedAnimation } from "@/hooks/useOptimizedAnimation";
 
 // Memoized stat card for eco-design
 const StatCard = memo(({ value, label, colorClass }: { value: string; label: string; colorClass: string }) => (
-  <div className="bg-card/80 backdrop-blur-sm rounded-xl p-4 shadow-card border border-border/50">
+  <div className="bg-card/80 backdrop-blur-xs rounded-xl p-4 shadow-card border border-border/50">
     <div className={`text-2xl sm:text-3xl font-bold ${colorClass}`}>{value}</div>
     <div className="text-xs text-muted-foreground">{label}</div>
   </div>

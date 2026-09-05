@@ -51,7 +51,7 @@ const Connexion = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Column - Login Form */}
             <div className="max-w-md mx-auto w-full">
-              <Card className="border-0 bg-card backdrop-blur-sm shadow-2xl">
+              <Card className="border-0 bg-card backdrop-blur-xs shadow-2xl">
                 <CardContent className="p-8">
                   <div className="text-center mb-8">
                     <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">

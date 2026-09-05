@@ -88,7 +88,7 @@ export const CharlyOriginStory = () => {
 
         <div className="space-y-8">
           {storySteps.map((step, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-sm">
+            <Card key={index} className="group hover:shadow-xl transition-all duration-500 border-0 bg-card backdrop-blur-xs">
               <CardContent className="p-8">
                 <div className="grid md:grid-cols-12 gap-6 items-center">
                   <div className="md:col-span-1 flex justify-center">
