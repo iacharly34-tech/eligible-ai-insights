@@ -112,7 +112,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "geo.region", content: "FR" },
       { name: "geo.placename", content: "France" },
-      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      {
+        name: "robots",
+        content: known
+          ? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+          : "noindex, nofollow",
+      },
       { name: "google-site-verification", content: "DU6-5ONzXwKsCKMVInRm8TLzCOg4mtxPbD4Lz8YTjjM" },
       // Security headers (ported from index.html)
       {
