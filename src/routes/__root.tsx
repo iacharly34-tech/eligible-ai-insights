@@ -94,8 +94,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: (ctx) => {
     const leaf = ctx.matches[ctx.matches.length - 1];
     const pathname = leaf?.pathname ?? "/";
-    const known = isKnownRoute(pathname);
-    const pageMeta = getRouteMeta(pathname);
+    // Aucune route feuille ne correspond (404) : le seul match est la racine.
+    const matchedRoute = Boolean(leaf) && leaf!.routeId !== "__root__";
+    const known = matchedRoute && isKnownRoute(pathname);
+    const pageMeta = known ? getRouteMeta(pathname) : NOT_FOUND_META;
     const canonical = getCanonicalUrl(pathname);
     const isArticle = known && pathname.startsWith("/blog/");
     return {
