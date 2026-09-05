@@ -99,23 +99,27 @@ export const ArticleShell = ({
 
   return (
     <>
-      <SEOHead />
       <Helmet>
         <title>{`${title} — Eligibly`}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={`https://eligibly.ai${url}`} />
         <html lang={isEn ? "en-GB" : "fr-FR"} />
+        <meta name="robots" content="index, follow" />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content={isEn ? "en_GB" : "fr_FR"} />
+        <meta property="og:site_name" content="Eligibly" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={`https://eligibly.ai${url}`} />
+        <meta property="og:image" content="https://eligibly.ai/og-image.jpg" />
         <meta property="article:published_time" content={date} />
         <meta property="article:modified_time" content={dateModified ?? date} />
         <meta property="article:section" content={category} />
         <meta property="article:author" content={resolvedAuthor} />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content="https://eligibly.ai/og-image.jpg" />
       </Helmet>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
