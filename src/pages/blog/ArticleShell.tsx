@@ -76,12 +76,14 @@ export const ArticleShell = ({
       worksFor: { "@type": "Organization", name: "Eligibly", url: "https://eligibly.ai" },
     },
     inLanguage: isEn ? "en-GB" : "fr-FR",
+    image: ["https://eligibly.ai/og-image.jpg"],
     publisher: {
       "@type": "Organization",
       name: "Eligibly",
-      logo: { "@type": "ImageObject", url: "https://eligibly.ai/og-image.svg" },
+      logo: { "@type": "ImageObject", url: "https://eligibly.ai/assets/eligibly-logo-main.png" },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": `https://eligibly.ai${url}` },
+
     articleSection: category,
     citation: sources.map((s) => ({ "@type": "CreativeWork", name: s.label, url: s.url })),
   };
