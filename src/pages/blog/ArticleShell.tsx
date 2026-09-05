@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { SEOHead } from "@/components/SEOHead";
 import { MobileCTABar } from "@/components/MobileCTABar";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
