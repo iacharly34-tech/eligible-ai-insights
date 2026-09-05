@@ -125,28 +125,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#5B36F5" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-status-bar-style", content: "default" },
-      // Open Graph / Twitter (per-route overrides applied client-side via Helmet/SEOHead)
-      { property: "og:title", content: "Eligibly — Détectez. Scorez. Signez. Vos futurs clients en 90 j." },
-      {
-        property: "og:description",
-        content:
-          "Détection quotidienne des SASU/SAS/EURL/SARL/SEL, scoring ICP expliqué et plan d'action dans la fenêtre ≤ 90 jours. Digest matinal à 7h. Pilote 14 j sans CB.",
-      },
-      { property: "og:type", content: "website" },
+      // Open Graph / Twitter — per-route values rendered server-side
+      { property: "og:title", content: pageMeta.title },
+      { property: "og:description", content: pageMeta.description },
+      { property: "og:type", content: isArticle ? "article" : "website" },
       { property: "og:image", content: "https://eligibly.ai/og-image.jpg" },
-      { property: "og:url", content: "https://eligibly.ai" },
+      { property: "og:url", content: canonical },
       { property: "og:site_name", content: "Eligibly" },
+      { property: "og:locale", content: "fr_FR" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Eligibly — Détectez. Scorez. Signez. Vos futurs clients en 90 j." },
-      {
-        name: "twitter:description",
-        content:
-          "Détection quotidienne des SASU/SAS/EURL/SARL/SEL, scoring ICP expliqué et plan d'action dans la fenêtre ≤ 90 jours. Digest matinal à 7h. Pilote 14 j sans CB.",
-      },
+      { name: "twitter:title", content: pageMeta.title },
+      { name: "twitter:description", content: pageMeta.description },
       { name: "twitter:image", content: "https://eligibly.ai/og-image.jpg" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      // Self-referencing canonical, rendered server-side for every route
+      { rel: "canonical", href: canonical },
       // Fonts
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
