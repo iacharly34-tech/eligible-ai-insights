@@ -91,22 +91,8 @@ export const LandingCabinetLayout = ({
 
   return (
     <>
+      {/* Title / description / canonical / OG are rendered server-side in __root.tsx */}
       <Helmet>
-        <title>{seoTitle}</title>
-        <meta name="description" content={seoDescription} />
-        <link rel="canonical" href={canonical} />
-        <html lang={isEn ? "en-GB" : "fr-FR"} />
-        {altUrl && <link rel="alternate" hrefLang={isEn ? "fr-FR" : "en-GB"} href={altUrl} />}
-        <link rel="alternate" hrefLang={isEn ? "en-GB" : "fr-FR"} href={canonical} />
-        {altUrl && <link rel="alternate" hrefLang="x-default" href={isEn ? altUrl : canonical} />}
-        <meta property="og:title" content={seoTitle} />
-        <meta property="og:description" content={seoDescription} />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content={isEn ? "en_GB" : "fr_FR"} />
-        <meta property="og:url" content={canonical} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={seoTitle} />
-        <meta name="twitter:description" content={seoDescription} />
         {faqJsonLd && (
           <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
         )}

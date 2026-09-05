@@ -39,21 +39,11 @@ const jsonLd = {
 
 const SalesAssistant = () => {
   const lang = useLang();
-  const seoTitle = "Sales Assistant Eligibly — Copilote IA de prospection pour cabinets EC";
-  const seoDescription = "4 canaux (LinkedIn · Email · Téléphone · Courrier), 9 besoins détectés par lead, plan d'action prêt à envoyer. À partir de 10 € HT/lead, pilote 14 jours sans CB.";
-  const canonical = "https://eligibly.ai/sales-assistant";
 
   return (
     <>
+      {/* Title / description / canonical / OG are rendered server-side in __root.tsx */}
       <Helmet>
-        <title>{seoTitle}</title>
-        <meta name="description" content={seoDescription} />
-        <link rel="canonical" href={canonical} />
-        <meta property="og:title" content={seoTitle} />
-        <meta property="og:description" content={seoDescription} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={canonical} />
-        <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
