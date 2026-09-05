@@ -122,7 +122,7 @@ export const Header = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-[1000] transition-all duration-500",
         isScrolled 
-          ? "bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm" 
+          ? "bg-background/95 backdrop-blur-md border-b border-border/50 shadow-xs" 
           : "bg-transparent border-b border-transparent"
       )}
       role="banner"
@@ -133,7 +133,7 @@ export const Header = () => {
           {/* Brand — centered on mobile, left on desktop */}
           <SafeLink 
             to={homePath} 
-            className="text-lg md:text-xl font-semibold tracking-tight text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md ml-4 md:ml-6 h-10 leading-10 font-display" 
+            className="text-lg md:text-xl font-semibold tracking-tight text-foreground focus:outline-hidden focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md ml-4 md:ml-6 h-10 leading-10 font-display" 
             aria-label={t('accessibility.home')}
           >
             Eligibly
@@ -178,7 +178,7 @@ export const Header = () => {
                       aria-haspopup="true"
                       aria-controls={menuId}
                       className={cn(
-                        "flex items-center gap-1 text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
+                        "flex items-center gap-1 text-sm font-medium transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
                         isActive ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground",
                       )}
                     >
@@ -225,7 +225,7 @@ export const Header = () => {
                                 to={c.href}
                                 role="menuitem"
                                 className={cn(
-                                  "block rounded-lg px-4 py-3 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+                                  "block rounded-lg px-4 py-3 transition-colors focus:outline-hidden focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                                   active ? "bg-primary/10" : "hover:bg-muted/60",
                                 )}
                               >
@@ -250,7 +250,7 @@ export const Header = () => {
                   key={item.name}
                   to={item.href!}
                   className={cn(
-                    "text-sm font-medium transition-colors duration-200 relative group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
+                    "text-sm font-medium transition-colors duration-200 relative group focus:outline-hidden focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
                     isActive 
                       ? "text-primary font-semibold" 
                       : "text-muted-foreground hover:text-foreground"
@@ -287,7 +287,7 @@ export const Header = () => {
             ref={toggleRef}
             data-testid="mobile-menu-toggle"
             type="button"
-            className="md:hidden relative z-[1100] mr-4 w-11 h-11 hover:bg-muted rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 flex items-center justify-center bg-background/80 backdrop-blur-sm border border-border/50 shadow-sm"
+            className="md:hidden relative z-[1100] mr-4 w-11 h-11 hover:bg-muted rounded-lg transition-colors focus:outline-hidden focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 flex items-center justify-center bg-background/80 backdrop-blur-xs border border-border/50 shadow-xs"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? t('accessibility.menu.close') : t('accessibility.menu.open')}
             aria-expanded={isMenuOpen}
@@ -331,7 +331,7 @@ export const Header = () => {
                             aria-expanded={isOpen}
                             aria-controls={panelId}
                             className={cn(
-                              "w-full flex items-center justify-center gap-2 text-lg font-medium uppercase tracking-[0.1em] transition-colors duration-200 px-6 py-4 rounded-xl min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+                              "w-full flex items-center justify-center gap-2 text-lg font-medium uppercase tracking-[0.1em] transition-colors duration-200 px-6 py-4 rounded-xl min-h-[44px] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                               isActive ? "text-primary font-semibold bg-primary/10" : "text-foreground/80 hover:text-foreground hover:bg-muted",
                             )}
                           >
@@ -349,7 +349,7 @@ export const Header = () => {
                                       onClick={() => setIsMenuOpen(false)}
                                       tabIndex={isMenuOpen ? 0 : -1}
                                       className={cn(
-                                        "block text-sm px-6 py-3 rounded-lg text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+                                        "block text-sm px-6 py-3 rounded-lg text-center focus:outline-hidden focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                                         active ? "text-primary font-semibold bg-primary/10" : "text-foreground/70 hover:text-foreground hover:bg-muted",
                                       )}
                                     >
@@ -370,7 +370,7 @@ export const Header = () => {
                           ref={idx === 0 ? firstLinkRef : undefined}
                           to={item.href!}
                           className={cn(
-                            "block text-lg font-medium uppercase tracking-[0.1em] transition-colors duration-200 px-6 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[44px] text-center",
+                            "block text-lg font-medium uppercase tracking-[0.1em] transition-colors duration-200 px-6 py-4 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[44px] text-center",
                             isActive 
                               ? "text-primary font-semibold bg-primary/10" 
                               : "text-foreground/80 hover:text-foreground hover:bg-muted"

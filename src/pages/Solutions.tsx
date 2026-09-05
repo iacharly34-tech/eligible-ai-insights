@@ -196,7 +196,7 @@ const Solutions = () => {
                           onClick={() => setActive(i)}
                           className={`group relative shrink-0 lg:w-full text-left rounded-xl border transition-all duration-300 px-4 py-3 flex items-center gap-3 ${
                             isActive
-                              ? "bg-card border-primary/50 shadow-sm"
+                              ? "bg-card border-primary/50 shadow-xs"
                               : "bg-transparent border-border hover:border-primary/30 hover:bg-card/50"
                           }`}
                         >

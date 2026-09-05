@@ -131,7 +131,7 @@ export const ProductModuleLayout = ({
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
                 {features.map((feature, i) => (
-                  <div key={i} className="p-8 rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm">
+                  <div key={i} className="p-8 rounded-2xl border border-border/40 bg-card/50 backdrop-blur-xs">
                     <div className="flex items-start gap-4">
                       <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-0.5" />
                       <div>

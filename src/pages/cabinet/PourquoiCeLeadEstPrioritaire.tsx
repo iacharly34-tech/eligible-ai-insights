@@ -23,7 +23,7 @@ const PourquoiCeLeadEstPrioritaire = () => (
   >
     <section className="py-14 bg-muted/30 border-y border-border">
       <div className="container mx-auto px-4">
-        <div className="rounded-2xl border border-border bg-card shadow-sm overflow-hidden">
+        <div className="rounded-2xl border border-border bg-card shadow-xs overflow-hidden">
           {/* Header lead */}
           <div className="p-6 md:p-8 border-b border-border bg-gradient-to-br from-primary/5 to-transparent">
             <div className="flex flex-wrap items-start justify-between gap-4">

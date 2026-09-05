@@ -262,7 +262,7 @@ export const ProcessDemo = () => {
                 <Carousel>
                   <CarouselContent>
                     <CarouselItem className="basis-full">
-                      <div className="bg-card rounded-lg border shadow-sm p-3">
+                      <div className="bg-card rounded-lg border shadow-xs p-3">
                         <h3 className="font-bold text-foreground text-sm uppercase tracking-wide mb-3">
                           {t('demo.process')}
                         </h3>
@@ -289,7 +289,7 @@ export const ProcessDemo = () => {
                     </CarouselItem>
 
                     <CarouselItem className="basis-full">
-                      <div className="bg-card rounded-lg border shadow-sm p-3">
+                      <div className="bg-card rounded-lg border shadow-xs p-3">
                         <h3 className="font-bold text-foreground text-sm uppercase tracking-wide mb-3">
                           {t('demo.console')}
                         </h3>
@@ -326,7 +326,7 @@ export const ProcessDemo = () => {
                     </CarouselItem>
 
                     <CarouselItem className="basis-full">
-                      <div className="bg-card rounded-lg border shadow-sm p-3">
+                      <div className="bg-card rounded-lg border shadow-xs p-3">
                         <h3 className="font-bold text-foreground text-sm uppercase tracking-wide mb-3">
                           {t('demo.controls')}
                         </h3>
@@ -385,7 +385,7 @@ export const ProcessDemo = () => {
               {/* Top row: Processus IA, Console et Contrôles (desktop) */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                 {/* Processus IA */}
-                <div className="bg-card rounded-lg border shadow-sm p-4 h-fit">
+                <div className="bg-card rounded-lg border shadow-xs p-4 h-fit">
                   <h3 className="font-bold text-foreground text-sm uppercase tracking-wide mb-4">
                     {t('demo.process')}
                   </h3>
@@ -411,7 +411,7 @@ export const ProcessDemo = () => {
                 </div>
 
                 {/* Console Charly IA */}
-                <div className="bg-card rounded-lg border shadow-sm p-4">
+                <div className="bg-card rounded-lg border shadow-xs p-4">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="font-bold text-foreground text-sm uppercase tracking-wide flex items-center gap-2 m-0">
                       <Terminal className="w-4 h-4" />
@@ -453,7 +453,7 @@ export const ProcessDemo = () => {
                 </div>
 
                 {/* Contrôles */}
-                <div className="bg-card rounded-lg border shadow-sm p-4 h-fit">
+                <div className="bg-card rounded-lg border shadow-xs p-4 h-fit">
                   <h3 className="font-bold text-foreground text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
                     <Play className="w-4 h-4" />
                     {t('demo.controls')}

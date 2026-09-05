@@ -36,12 +36,12 @@ export const ArticleCard = ({
           <div className={`h-48 bg-gradient-to-br ${gradient} relative overflow-hidden rounded-t-lg`}>
             <div className="absolute inset-0 bg-black/20"></div>
             <div className="absolute top-4 left-4">
-              <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
+              <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-xs">
                 Guide complet
               </Badge>
             </div>
             <div className="absolute bottom-4 left-4 right-4">
-              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-3">
+              <div className="w-16 h-16 bg-white/20 backdrop-blur-xs rounded-2xl flex items-center justify-center mb-3">
                 <CategoryIcon category={category} size={32} className="bg-transparent" />
               </div>
             </div>

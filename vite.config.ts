@@ -1,76 +1,19 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
-import { componentTagger } from "lovable-tagger";
+// @lovable.dev/vite-tanstack-config already includes the following — do NOT add them manually
+// or the app will break with duplicate plugins:
+//   - TanStack devtools (dev-only, first), tanstackStart, viteReact, tailwindcss, tsConfigPaths,
+//     nitro (build-only using cloudflare as a default target), VITE_* env injection, @ path alias,
+//     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
+// You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
+import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 import { mcpPlugin } from "@lovable.dev/mcp-js/stacks/supabase/vite";
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
+export default defineConfig({
+  tanstackStart: {
+    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
+    // nitro/vite builds from this
+    server: { entry: "server" },
   },
-  plugins: [
-    react(),
-    mode === 'development' &&
-    componentTagger(),
-    mcpPlugin(),
-  ].filter(Boolean),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-    dedupe: ['react', 'react-dom'],
+  vite: {
+    plugins: [mcpPlugin()],
   },
-  esbuild: {
-    // Optimisation pour réduire la taille du JS
-    drop: mode === 'production' ? ['console', 'debugger'] : [],
-    legalComments: 'none',
-  },
-  build: {
-    // Optimisations de performance avancées
-    target: 'es2020',
-    minify: 'terser',
-    cssCodeSplit: true,
-    sourcemap: mode === 'development',
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          // Séparer les vendors pour un meilleur cache
-          vendor: ['react', 'react-dom'],
-          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-navigation-menu'],
-          icons: ['lucide-react'],
-          router: ['react-router-dom'],
-          utils: ['clsx', 'tailwind-merge', 'class-variance-authority'],
-        },
-        // Optimiser les noms de fichiers pour le cache
-        entryFileNames: 'assets/[name].[hash:8].js',
-        chunkFileNames: 'assets/[name].[hash:8].js',
-        assetFileNames: 'assets/[name].[hash:8].[ext]',
-      },
-    },
-    // Configuration terser pour une compression optimale
-    terserOptions: {
-      compress: {
-        drop_console: mode === 'production',
-        drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info'],
-        dead_code: true,
-      },
-      mangle: {
-        safari10: true,
-      },
-      format: {
-        comments: false,
-      },
-    },
-    // Réduire la limite de taille des chunks
-    chunkSizeWarningLimit: 800,
-    // Optimiser les assets - inliner les petits fichiers
-    assetsInlineLimit: 4096,
-  },
-  // Préchargement des dépendances critiques
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'lucide-react'],
-  },
-}));
+});

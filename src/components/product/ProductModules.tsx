@@ -89,7 +89,7 @@ export const ProductModules = () => {
             <SafeLink
               key={mod.key}
               to={MODULE_URLS[mod.key]}
-              className={`group relative p-8 sm:p-10 rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-500 ${mod.borderAccent} block`}
+              className={`group relative p-8 sm:p-10 rounded-2xl border border-border/40 bg-card/50 backdrop-blur-xs hover:bg-card/80 transition-all duration-500 ${mod.borderAccent} block`}
             >
               {/* Number */}
               <div className="absolute top-6 right-6 text-4xl font-black text-muted-foreground/10 font-display select-none">

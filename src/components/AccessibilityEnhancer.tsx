@@ -33,7 +33,7 @@ export const HighContrastToggle = () => {
       variant="outline"
       size="sm"
       onClick={toggleHighContrast}
-      className="fixed top-20 right-4 z-50 bg-background/90 backdrop-blur-sm"
+      className="fixed top-20 right-4 z-50 bg-background/90 backdrop-blur-xs"
       aria-label={isHighContrast ? 'Désactiver le contraste élevé' : 'Activer le contraste élevé'}
     >
       {isHighContrast ? '🔆' : '🌗'} {isHighContrast ? 'Contraste normal' : 'Contraste élevé'}
@@ -75,7 +75,7 @@ export const FontSizeAdjuster = () => {
   };
 
   return (
-    <div className="fixed top-32 right-4 z-50 flex flex-col gap-2 bg-background/90 backdrop-blur-sm rounded-lg p-2 border">
+    <div className="fixed top-32 right-4 z-50 flex flex-col gap-2 bg-background/90 backdrop-blur-xs rounded-lg p-2 border">
       <Button
         variant="outline"
         size="sm"

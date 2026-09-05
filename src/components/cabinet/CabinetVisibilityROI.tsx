@@ -173,7 +173,7 @@ const Field = ({
         value={value}
         onChange={(e) => onChange(Math.max(0, Number(e.target.value) || 0))}
         aria-label={label}
-        className="w-full h-11 px-4 pr-24 rounded-xl border border-border bg-background text-foreground font-medium focus:outline-none focus:ring-2 focus:ring-primary/40"
+        className="w-full h-11 px-4 pr-24 rounded-xl border border-border bg-background text-foreground font-medium focus:outline-hidden focus:ring-2 focus:ring-primary/40"
       />
       {suffix && (
         <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-muted-foreground">{suffix}</span>

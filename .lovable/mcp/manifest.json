@@ -22,14 +22,15 @@
           "openWorldHint": false
         },
         "inputSchema": {
-          "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
             "search": {
-              "description": "Optional case-insensitive substring to filter titles/slugs.",
-              "type": "string"
+              "type": "string",
+              "description": "Optional case-insensitive substring to filter titles/slugs."
             }
-          }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
         },
         "outputSchema": null
       },
@@ -59,7 +60,6 @@
           "openWorldHint": true
         },
         "inputSchema": {
-          "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
             "full_name": {
@@ -70,7 +70,6 @@
             "email": {
               "type": "string",
               "format": "email",
-              "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
               "description": "Professional email address."
             },
             "firm_name": {
@@ -79,19 +78,21 @@
               "description": "Accounting firm name."
             },
             "phone": {
-              "description": "Optional phone number.",
-              "type": "string"
+              "type": "string",
+              "description": "Optional phone number."
             },
             "message": {
-              "description": "Optional context or question.",
-              "type": "string"
+              "type": "string",
+              "description": "Optional context or question."
             }
           },
           "required": [
             "full_name",
             "email",
             "firm_name"
-          ]
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
         },
         "outputSchema": null
       }

@@ -86,7 +86,7 @@ export const SocialShare = ({ title, url, size = "md", variant = "default" }: So
 
   if (variant === "floating") {
     return (
-      <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-full p-1 shadow-md border">
+      <div className="flex items-center gap-1 bg-white/90 backdrop-blur-xs rounded-full p-1 shadow-md border">
         <Button
           variant="ghost"
           size="sm"

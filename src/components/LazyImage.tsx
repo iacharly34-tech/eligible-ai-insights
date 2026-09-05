@@ -65,7 +65,7 @@ export const LazyImage = ({
         <img
           src={placeholder}
           alt="Image en cours de chargement"
-          className="absolute inset-0 w-full h-full object-cover blur-sm opacity-50"
+          className="absolute inset-0 w-full h-full object-cover blur-xs opacity-50"
           aria-hidden="true"
         />
       )}
