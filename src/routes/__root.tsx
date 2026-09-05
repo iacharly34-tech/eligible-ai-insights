@@ -148,7 +148,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "stylesheet", href: appCss },
       // Self-referencing canonical, rendered server-side for every route
-      { rel: "canonical", href: canonical },
+      ...(known ? [{ rel: "canonical", href: canonical }] : []),
       // Fonts
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
