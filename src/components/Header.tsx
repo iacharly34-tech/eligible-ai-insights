@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SafeLink } from "./SafeLink";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/lib/router-compat";
 
 type NavChild = { name: string; href: string; desc?: string };
 type NavItem = { name: string; href?: string; children?: NavChild[] };

@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { render, screen, within, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter } from "@/lib/router-compat";
 import { Header } from "../Header";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { setViewport } from "@/test/setup";
