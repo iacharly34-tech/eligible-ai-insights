@@ -12,7 +12,7 @@ import {
 import { HelmetProvider } from "react-helmet-async";
 
 import appCss from "../styles.css?url";
-import { getRouteMeta, getCanonicalUrl } from "@/lib/route-meta";
+import { getRouteMeta, getCanonicalUrl, isKnownRoute, NOT_FOUND_META } from "@/lib/route-meta";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -94,9 +94,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: (ctx) => {
     const leaf = ctx.matches[ctx.matches.length - 1];
     const pathname = leaf?.pathname ?? "/";
-    const pageMeta = getRouteMeta(pathname);
+    // Aucune route feuille ne correspond (404) : le seul match est la racine.
+    const matchedRoute = Boolean(leaf) && leaf!.routeId !== "__root__";
+    const known = matchedRoute && isKnownRoute(pathname);
+    const pageMeta = known ? getRouteMeta(pathname) : NOT_FOUND_META;
     const canonical = getCanonicalUrl(pathname);
-    const isArticle = pathname.startsWith("/blog/");
+    const isArticle = known && pathname.startsWith("/blog/");
     return {
     meta: [
       { charSet: "UTF-8" },
@@ -111,7 +114,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "geo.region", content: "FR" },
       { name: "geo.placename", content: "France" },
-      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      {
+        name: "robots",
+        content: known
+          ? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+          : "noindex, nofollow",
+      },
       { name: "google-site-verification", content: "DU6-5ONzXwKsCKMVInRm8TLzCOg4mtxPbD4Lz8YTjjM" },
       // Security headers (ported from index.html)
       {
@@ -131,7 +139,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: pageMeta.description },
       { property: "og:type", content: isArticle ? "article" : "website" },
       { property: "og:image", content: "https://eligibly.ai/og-image.jpg" },
-      { property: "og:url", content: canonical },
+      ...(known ? [{ property: "og:url", content: canonical }] : []),
       { property: "og:site_name", content: "Eligibly" },
       { property: "og:locale", content: "fr_FR" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -142,7 +150,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "stylesheet", href: appCss },
       // Self-referencing canonical, rendered server-side for every route
-      { rel: "canonical", href: canonical },
+      ...(known ? [{ rel: "canonical", href: canonical }] : []),
       // Fonts
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },

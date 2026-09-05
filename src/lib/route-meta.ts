@@ -61,9 +61,23 @@ export const ROUTE_META: Record<string, RouteMeta> = {
 
 export const DEFAULT_META: RouteMeta = ROUTE_META["/"]!;
 
+export const NOT_FOUND_META: RouteMeta = {
+  title: "Page introuvable — Eligibly",
+  description: "Cette page n'existe pas ou n'est plus disponible.",
+};
+
+function normalizePath(pathname: string): string {
+  return pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
+}
+
+/** Une route est connue uniquement si elle est déclarée dans ROUTE_META. */
+export function isKnownRoute(pathname: string): boolean {
+  return normalizePath(pathname) in ROUTE_META;
+}
+
 export function getRouteMeta(pathname: string): RouteMeta {
-  const path = pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
-  return ROUTE_META[path] ?? DEFAULT_META;
+  const path = normalizePath(pathname);
+  return ROUTE_META[path] ?? NOT_FOUND_META;
 }
 
 export function getCanonicalUrl(pathname: string): string {
