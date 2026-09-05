@@ -13,7 +13,7 @@ const AnimatedScore = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
+        if (entry?.isIntersecting && !hasAnimated) {
           setHasAnimated(true);
           let current = 0;
           const target = 87;

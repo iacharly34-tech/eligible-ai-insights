@@ -3,10 +3,10 @@
 // supabase function: mcp
 // Bundled from src/lib/mcp/index.ts by @lovable.dev/mcp-js.
 // src/lib/mcp/index.ts
-import { defineMcp } from "npm:@lovable.dev/mcp-js@0.20.0";
+import { defineMcp } from "npm:@lovable.dev/mcp-js@0.20.1";
 
 // src/lib/mcp/tools/list-blog-articles.ts
-import { defineTool } from "npm:@lovable.dev/mcp-js@0.20.0";
+import { defineTool } from "npm:@lovable.dev/mcp-js@0.20.1";
 import { z } from "npm:zod@^3.25.76";
 var ARTICLES = [
   { slug: "creations-entreprises-france-2025", title: "Cr\xE9ations d'entreprises en France 2025", url: "https://eligibly.ai/blog/creations-entreprises-france-2025" },
@@ -39,7 +39,7 @@ var list_blog_articles_default = defineTool({
 });
 
 // src/lib/mcp/tools/get-pricing.ts
-import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@0.20.0";
+import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@0.20.1";
 var get_pricing_default = defineTool2({
   name: "get_pricing",
   title: "Get Eligibly pricing",
@@ -64,7 +64,7 @@ var get_pricing_default = defineTool2({
 });
 
 // src/lib/mcp/tools/submit-lead.ts
-import { defineTool as defineTool3 } from "npm:@lovable.dev/mcp-js@0.20.0";
+import { defineTool as defineTool3 } from "npm:@lovable.dev/mcp-js@0.20.1";
 import { z as z2 } from "npm:zod@^3.25.76";
 var submit_lead_default = defineTool3({
   name: "submit_lead",
@@ -79,7 +79,7 @@ var submit_lead_default = defineTool3({
   },
   annotations: { readOnlyHint: false, destructiveHint: false, openWorldHint: true },
   handler: async ({ full_name, email, firm_name, phone, message }) => {
-    const supabaseUrl = process.env.SUPABASE_URL;
+    const supabaseUrl = process.env["SUPABASE_URL"];
     if (!supabaseUrl) {
       return { content: [{ type: "text", text: "Server not configured (SUPABASE_URL missing)." }], isError: true };
     }
@@ -109,9 +109,10 @@ var mcp_default = defineMcp({
   title: "Eligibly MCP",
   version: "0.1.0",
   instructions: "Tools for Eligibly, the prospecting CRM for French accounting firms targeting freshly registered SASU/SAS/EURL/SARL/SEL. Use `get_pricing` for current pricing, `list_blog_articles` to surface Eligibly's published resources, and `submit_lead` to book a demo or the free 14-day pilot.",
+  // @ts-expect-error upstream @lovable.dev/mcp-js type bug: AnyToolDefinition.outputSchema is incompatible with exactOptionalPropertyTypes
   tools: [list_blog_articles_default, get_pricing_default, submit_lead_default]
 });
 
 // lovable-mcp-supabase-entry.ts
-import { createSupabaseHandler } from "npm:@lovable.dev/mcp-js@0.20.0/stacks/supabase";
+import { createSupabaseHandler } from "npm:@lovable.dev/mcp-js@0.20.1/stacks/supabase";
 Deno.serve(createSupabaseHandler(mcp_default, { functionName: "mcp" }));

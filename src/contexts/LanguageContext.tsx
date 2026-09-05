@@ -1254,26 +1254,10 @@ const translations = {
 } as const;
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>(() => {
-    // 1. URL prefix wins (deep-link / external share)
-    if (typeof window !== 'undefined') {
-      const p = window.location.pathname;
-      if (p === '/en' || p.startsWith('/en/')) return 'en';
-    }
-    // Check localStorage first, then browser language, default to French
-    const saved = secureStorage.getItem('eligibly-language') as Language;
-    if (saved && (saved === 'fr' || saved === 'en')) {
-      return saved;
-    }
-    
-    // Detect browser language
-    const browserLang = navigator.language.toLowerCase();
-    if (browserLang.startsWith('en')) {
-      return 'en';
-    }
-    
-    return 'fr'; // Default to French
-  });
+  // Deterministic initial value: SSR and first client render must match
+  // (hydration). The URL-sync effect below applies the real language after
+  // mount; all /en/* routes 301-redirect to French pages anyway.
+  const [language, setLanguage] = useState<Language>('fr');
 
   useEffect(() => {
     secureStorage.setItem('eligibly-language', language);
@@ -1293,8 +1277,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     // Patch pushState/replaceState to catch SPA navigations
     const origPush = history.pushState;
     const origReplace = history.replaceState;
-    history.pushState = function (...args) { const r = origPush.apply(this, args as any); sync(); return r; } as typeof history.pushState;
-    history.replaceState = function (...args) { const r = origReplace.apply(this, args as any); sync(); return r; } as typeof history.replaceState;
+    history.pushState = function (this: History, ...args) { const r = origPush.apply(this, args as any); sync(); return r; } as typeof history.pushState;
+    history.replaceState = function (this: History, ...args) { const r = origReplace.apply(this, args as any); sync(); return r; } as typeof history.replaceState;
     return () => {
       window.removeEventListener('popstate', sync);
       history.pushState = origPush;

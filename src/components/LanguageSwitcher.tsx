@@ -68,7 +68,7 @@ export const LanguageSwitcher = () => {
     }
 
     setLanguage(code);
-    navigate({ pathname: newPath, search, hash }, { replace: true });
+    navigate(`${newPath}${search}${hash}`, { replace: true });
   };
 
   return (

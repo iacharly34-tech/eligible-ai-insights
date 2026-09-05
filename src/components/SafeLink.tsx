@@ -35,7 +35,7 @@ export const SafeLink = forwardRef<HTMLAnchorElement, SafeLinkProps>(({ to, chil
     Object.entries(frToEn).map(([fr, en]) => [en, fr])
   );
 
-  const [pathOnly, rest] = to.split(/(?=[?#])/);
+  const [pathOnly = "", rest] = to.split(/(?=[?#])/);
 
   const mappedPath = (() => {
     if (isExternal) return to;

@@ -327,7 +327,7 @@ function ExclusionsView({ t, lang = "fr" }: { t: typeof labels.fr; lang?: "fr" |
 
 function EnrichissementView({ t }: { t: typeof labels.fr; lang?: "fr" | "en" }) {
   const icons = [Mail, Linkedin, Building2, TrendingUp, Check];
-  const fields = t.enrichFields.map((f, i) => ({ ...f, icon: icons[i], delay: i * 0.15 }));
+  const fields = t.enrichFields.map((f, i) => ({ ...f, icon: icons[i] ?? Check, delay: i * 0.15 }));
   return (
     <div className="w-full max-w-sm">
       <div className="rounded-xl border border-border bg-card shadow-card overflow-hidden">
@@ -535,8 +535,8 @@ export const CabinetHowItWorks = () => {
     return () => clearInterval(id);
   }, [autoPlay, goNext]);
 
-  const CurrentView = stepViews[active];
-  const step = steps[active];
+  const CurrentView = stepViews[active] ?? stepViews[0]!;
+  const step = steps[active] ?? steps[0]!;
   const progress = ((active + 1) / steps.length) * 100;
 
   const variants = {

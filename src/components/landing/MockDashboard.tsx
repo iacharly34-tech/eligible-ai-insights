@@ -55,14 +55,15 @@ const ScoreRing = ({ score, size = 44 }: { score: number; size?: number }) => {
 
 export const MockDashboard = () => {
   const { language } = useLanguage();
-  const items = tenders[language];
+  const items = tenders[language] ?? tenders["fr"] ?? [];
   const [selectedIdx, setSelectedIdx] = useState(0);
+  const selected = items[selectedIdx] ?? items[0]!;
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
+      ([entry]) => { if (entry?.isIntersecting) setIsVisible(true); },
       { threshold: 0.2 }
     );
     if (ref.current) observer.observe(ref.current);
@@ -169,8 +170,8 @@ export const MockDashboard = () => {
                 {/* Detail panel */}
                 <div className="hidden lg:block w-80 border-l border-border/30 p-6 bg-muted/10">
                   <div className="flex items-center justify-between mb-4">
-                    <Badge className={`text-xs ${items[selectedIdx].score >= 90 ? "bg-success/10 text-success border-success/20" : items[selectedIdx].score >= 80 ? "bg-primary/10 text-primary border-primary/20" : "bg-warning/10 text-warning border-warning/20"}`}>
-                      {items[selectedIdx].tag}
+                    <Badge className={`text-xs ${selected.score >= 90 ? "bg-success/10 text-success border-success/20" : selected.score >= 80 ? "bg-primary/10 text-primary border-primary/20" : "bg-warning/10 text-warning border-warning/20"}`}>
+                      {selected.tag}
                     </Badge>
                     <div className="flex gap-1">
                       <button className="p-1.5 rounded-md hover:bg-muted transition-colors">
@@ -182,15 +183,15 @@ export const MockDashboard = () => {
                     </div>
                   </div>
 
-                  <ScoreRing score={items[selectedIdx].score} size={80} />
+                  <ScoreRing score={selected.score} size={80} />
                   
-                  <h4 className="mt-4 font-semibold text-sm leading-snug">{items[selectedIdx].title}</h4>
+                  <h4 className="mt-4 font-semibold text-sm leading-snug">{selected.title}</h4>
 
                   <div className="mt-6 space-y-3">
                     {[
-                      { icon: CalendarClock, label: language === "en" ? "Deadline" : "Date limite", value: items[selectedIdx].deadline },
-                      { icon: MapPin, label: language === "en" ? "Location" : "Localisation", value: items[selectedIdx].location },
-                      { icon: Euro, label: language === "en" ? "Value" : "Valeur", value: items[selectedIdx].value },
+                      { icon: CalendarClock, label: language === "en" ? "Deadline" : "Date limite", value: selected.deadline },
+                      { icon: MapPin, label: language === "en" ? "Location" : "Localisation", value: selected.location },
+                      { icon: Euro, label: language === "en" ? "Value" : "Valeur", value: selected.value },
                     ].map((row, i) => (
                       <div key={i} className="flex items-center gap-3 text-sm">
                         <row.icon className="w-4 h-4 text-muted-foreground/60" />

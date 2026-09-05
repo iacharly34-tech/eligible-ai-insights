@@ -84,7 +84,7 @@ export const AOParams = () => {
           {/* Type d'AO */}
           <div className="space-y-1">
             <Label>Type d'AO</Label>
-            <Select value={typeAO} onValueChange={setTypeAO}>
+            <Select value={typeAO ?? ""} onValueChange={setTypeAO}>
               <SelectTrigger className="h-9">
                 <SelectValue placeholder="Sélectionner" />
               </SelectTrigger>
@@ -98,7 +98,7 @@ export const AOParams = () => {
           {/* Région */}
           <div className="space-y-1">
             <Label>Région</Label>
-            <Select value={region} onValueChange={setRegion}>
+            <Select value={region ?? ""} onValueChange={setRegion}>
               <SelectTrigger className="h-9">
                 <SelectValue placeholder="Toute la France" />
               </SelectTrigger>
@@ -115,7 +115,7 @@ export const AOParams = () => {
           {/* Fréquence */}
           <div className="space-y-1">
             <Label>Fréquence de mise à jour</Label>
-            <Select value={frequency} onValueChange={setFrequency}>
+            <Select value={frequency ?? ""} onValueChange={setFrequency}>
               <SelectTrigger className="h-9">
                 <SelectValue />
               </SelectTrigger>

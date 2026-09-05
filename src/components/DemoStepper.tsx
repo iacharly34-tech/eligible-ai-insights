@@ -125,14 +125,14 @@ export const DemoStepper: React.FC<DemoStepperProps> = ({ onComplete }) => {
         <CardContent className="p-6">
           <div className="mb-4">
             <h3 className="text-lg font-semibold mb-1">
-              {steps[currentStep].title}
+              {steps[currentStep]?.title}
             </h3>
             <p className="text-sm text-muted-foreground">
-              {steps[currentStep].subtitle}
+              {steps[currentStep]?.subtitle}
             </p>
-            {steps[currentStep].help && (
+            {steps[currentStep]?.help && (
               <p className="text-xs text-muted-foreground mt-1">
-                💡 {steps[currentStep].help}
+                💡 {steps[currentStep]?.help}
               </p>
             )}
           </div>

@@ -364,7 +364,7 @@ export const MacBookSimulation = () => {
     }
   ];
 
-  const currentStepData = steps[currentStep];
+  const currentStepData = steps[currentStep] ?? steps[0]!;
 
   // Step progression
   useEffect(() => {
@@ -381,6 +381,7 @@ export const MacBookSimulation = () => {
 
       return () => clearTimeout(timer);
     }
+    return undefined;
   }, [currentStep, isPlaying, currentStepData.duration]);
 
   // Progress update
@@ -395,6 +396,7 @@ export const MacBookSimulation = () => {
 
       return () => clearInterval(interval);
     }
+    return undefined;
   }, [isPlaying, currentStepData.duration]);
 
   const startSimulation = () => {

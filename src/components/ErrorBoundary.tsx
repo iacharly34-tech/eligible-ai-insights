@@ -23,7 +23,7 @@ export class ErrorBoundary extends Component<Props, State> {
     return { hasError: true, error, retryCount: 0 };
   }
 
-  componentDidCatch(error: Error, errorInfo: any) {
+  override componentDidCatch(error: Error, errorInfo: any) {
     const isDev = (typeof import.meta !== 'undefined' && (import.meta as any).env && (import.meta as any).env.MODE === 'development') || (typeof process !== 'undefined' && (process as any).env?.NODE_ENV === 'development');
     const isProd = (typeof import.meta !== 'undefined' && (import.meta as any).env && (import.meta as any).env.MODE === 'production') || (typeof process !== 'undefined' && (process as any).env?.NODE_ENV === 'production');
 
@@ -76,7 +76,7 @@ export class ErrorBoundary extends Component<Props, State> {
     window.location.reload();
   };
 
-  render() {
+  override render() {
     if (this.state.hasError) {
       return (
         <div className="min-h-screen flex items-center justify-center p-4 bg-background">

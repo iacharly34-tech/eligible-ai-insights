@@ -104,7 +104,7 @@ export class EcoOptimizer {
   generateEcoReport(): {
     score: number;
     recommendations: string[];
-    metrics: ReturnType<typeof this.measureEnergyImpact>;
+    metrics: { animations: number; images: number; requests: number };
   } {
     const metrics = this.measureEnergyImpact();
     let score = 100;
