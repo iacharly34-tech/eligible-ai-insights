@@ -1,0 +1,10 @@
+{"functions": [
+  {"name": "auth-email-hook", "classification": "webhook receiver", "signal": "Supabase auth email hook — fixed URL configured in auth settings; no src/ callers", "outcome": "left"},
+  {"name": "handle-email-suppression", "classification": "webhook receiver", "signal": "verifyWebhookRequest from @lovable.dev/webhooks-js; called by email infra (Mailgun bounces)", "outcome": "left"},
+  {"name": "handle-email-unsubscribe", "classification": "custom response / fixed URL", "signal": "URL embedded in outgoing email unsubscribe links; also called from src/pages/Unsubscribe.tsx", "outcome": "left"},
+  {"name": "mcp", "classification": "MCP server", "signal": "JSON-RPC MCP handler; fixed URL used by AI agents", "outcome": "left"},
+  {"name": "preview-transactional-email", "classification": "unknown", "signal": "no src/ call sites; part of Lovable email infra tooling — default to external", "outcome": "left"},
+  {"name": "process-email-queue", "classification": "cron target", "signal": "cron.schedule 'process-email-queue' in supabase/migrations/20260629163425_email_infra.sql", "outcome": "left"},
+  {"name": "send-transactional-email", "classification": "internal to Supabase runtime", "signal": "called server-to-server by submit-lead edge function and email infra", "outcome": "left"},
+  {"name": "submit-lead", "classification": "external caller", "signal": "called from src/pages/Demo.tsx but also from the mcp edge function (staying on Supabase) — URL is load-bearing", "outcome": "left"}
+]}
