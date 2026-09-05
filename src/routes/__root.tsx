@@ -94,9 +94,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: (ctx) => {
     const leaf = ctx.matches[ctx.matches.length - 1];
     const pathname = leaf?.pathname ?? "/";
+    const known = isKnownRoute(pathname);
     const pageMeta = getRouteMeta(pathname);
     const canonical = getCanonicalUrl(pathname);
-    const isArticle = pathname.startsWith("/blog/");
+    const isArticle = known && pathname.startsWith("/blog/");
     return {
     meta: [
       { charSet: "UTF-8" },
