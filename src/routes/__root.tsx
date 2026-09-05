@@ -137,7 +137,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: pageMeta.description },
       { property: "og:type", content: isArticle ? "article" : "website" },
       { property: "og:image", content: "https://eligibly.ai/og-image.jpg" },
-      { property: "og:url", content: canonical },
+      ...(known ? [{ property: "og:url", content: canonical }] : []),
       { property: "og:site_name", content: "Eligibly" },
       { property: "og:locale", content: "fr_FR" },
       { name: "twitter:card", content: "summary_large_image" },
