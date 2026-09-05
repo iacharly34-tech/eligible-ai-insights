@@ -90,16 +90,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       throw redirect({ href: target, statusCode: 301, replace: true });
     }
   },
-  head: () => ({
+  head: (ctx) => {
+    const leaf = ctx.matches[ctx.matches.length - 1];
+    const pathname = leaf?.pathname ?? "/";
+    const pageMeta = getRouteMeta(pathname);
+    const canonical = getCanonicalUrl(pathname);
+    const isArticle = pathname.startsWith("/blog/");
+    return {
     meta: [
       { charSet: "UTF-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { title: "Eligibly — Détectez. Scorez. Signez. Vos futurs clients en 90 j." },
-      {
-        name: "description",
-        content:
-          "Détectez chaque SASU/SAS/EURL/SARL/SEL immatriculée, scorez-la sur votre ICP, contactez-la dans la fenêtre ≤ 90 jours. Digest livré chaque matin à 7h. Pilote 14 j sans CB.",
-      },
+      { title: pageMeta.title },
+      { name: "description", content: pageMeta.description },
       { name: "author", content: "eligibly.ai" },
       {
         name: "keywords",
