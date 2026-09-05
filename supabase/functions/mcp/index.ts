@@ -79,7 +79,7 @@ var submit_lead_default = defineTool3({
   },
   annotations: { readOnlyHint: false, destructiveHint: false, openWorldHint: true },
   handler: async ({ full_name, email, firm_name, phone, message }) => {
-    const supabaseUrl = process.env.SUPABASE_URL;
+    const supabaseUrl = process.env["SUPABASE_URL"];
     if (!supabaseUrl) {
       return { content: [{ type: "text", text: "Server not configured (SUPABASE_URL missing)." }], isError: true };
     }

@@ -122,7 +122,7 @@ export const MobileDemoFlow = () => {
     
     const addCodeLine = () => {
       if (lineIndex < stepCodeLines.length) {
-        setCodeLines(prev => [...prev, stepCodeLines[lineIndex]]);
+        setCodeLines(prev => [...prev, stepCodeLines[lineIndex] ?? ""]);
         lineIndex++;
         setTimeout(addCodeLine, 300);
       }

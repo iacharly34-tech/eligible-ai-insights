@@ -165,7 +165,7 @@ export const ProcessAnimation = () => {
     setCurrentStep(0);
     setProgress(0);
     setIsPlaying(true);
-    typeEffect(steps[0].code);
+    typeEffect(steps[0]!.code);
   };
 
   return (

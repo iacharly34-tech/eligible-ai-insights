@@ -9,8 +9,8 @@ export const useEcoOptimizedEffect = (
   deps: React.DependencyList | undefined,
   shouldRun: boolean = true
 ) => {
-  const prevDepsRef = useRef<React.DependencyList | undefined>();
-  const cleanupRef = useRef<(() => void) | void>();
+  const prevDepsRef = useRef<React.DependencyList | undefined>(undefined);
+  const cleanupRef = useRef<(() => void) | void>(undefined);
 
   useEffect(() => {
     // Éviter les exécutions inutiles pour l'écoconception

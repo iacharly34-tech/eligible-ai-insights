@@ -97,7 +97,7 @@ export const DemoPersonas = () => {
     }
   ];
 
-  const selectedPersonaData = i18nPersonas.find(p => p.id === selectedPersona) || i18nPersonas[0];
+  const selectedPersonaData = (i18nPersonas.find(p => p.id === selectedPersona) ?? i18nPersonas[0])!;
   const IconComponent = selectedPersonaData.icon;
 
   // Mobile and desktop share the same unified demo layout.

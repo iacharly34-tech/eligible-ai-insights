@@ -130,8 +130,8 @@ const Produit = () => {
   const pillarIcons = [Database, Filter, Sparkles, Bell];
   const secIcons = [Shield, Server, Lock, FileText];
   const [activePillar, setActivePillar] = useState(0);
-  const ActivePillarIcon = pillarIcons[activePillar];
-  const activePillarData = t.pillars[activePillar];
+  const ActivePillarIcon = pillarIcons[activePillar] ?? pillarIcons[0]!;
+  const activePillarData = t.pillars[activePillar] ?? t.pillars[0]!;
   return (
     <>
       <SEOHead />
@@ -178,7 +178,7 @@ const Produit = () => {
                 <aside className="lg:sticky lg:top-28 lg:self-start">
                   <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible -mx-4 px-4 lg:mx-0 lg:px-0 pb-2 lg:pb-0">
                     {t.pillars.map((p, i) => {
-                      const Icon = pillarIcons[i];
+                      const Icon = pillarIcons[i] ?? pillarIcons[0]!;
                       const isActive = activePillar === i;
                       return (
                         <button
@@ -373,7 +373,7 @@ const Produit = () => {
                 >
                   <div className="space-y-4 text-sm">
                     {t.weeks.map(([w, v], i) => {
-                      const pct = v.match(/\d+/)?.[0] ?? "0";
+                      const pct = v?.match(/\d+/)?.[0] ?? "0";
                       return (
                         <motion.div
                           key={w}
@@ -412,7 +412,7 @@ const Produit = () => {
               </div>
               <div className="grid md:grid-cols-6 gap-5">
                 {t.secCards.map((p, i) => {
-                  const Icon = secIcons[i];
+                  const Icon = secIcons[i] ?? secIcons[0]!;
                   // Bento layout: 0=wide, 1=narrow, 2=narrow, 3=wide
                   const span = i === 0 || i === 3 ? "md:col-span-4" : "md:col-span-2";
                   return (

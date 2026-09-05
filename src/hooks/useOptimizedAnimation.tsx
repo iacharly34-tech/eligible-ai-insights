@@ -36,7 +36,7 @@ export const useIntersectionAnimation = (threshold = 0.1) => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           setIsVisible(true);
           observer.unobserve(element);
         }

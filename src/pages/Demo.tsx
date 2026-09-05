@@ -184,10 +184,10 @@ const Demo = () => {
                 <div className="p-6 rounded-2xl border border-border/50 bg-card">
                   <MessageSquare className="w-5 h-5 text-primary mb-4" />
                   <blockquote className="text-sm italic text-foreground leading-relaxed mb-4">
-                    "{testimonials[0].quote}"
+                    "{testimonials[0]?.quote}"
                   </blockquote>
                   <cite className="text-xs text-muted-foreground not-italic">
-                    — {testimonials[0].author}, {testimonials[0].company}
+                    — {testimonials[0]?.author}, {testimonials[0]?.company}
                   </cite>
                 </div>
 

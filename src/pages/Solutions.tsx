@@ -153,7 +153,7 @@ const Solutions = () => {
   const demoHref = localizedHref("/demo", lang);
   const cases = lang === "en" ? casesEN : casesFR;
   const [active, setActive] = useState(0);
-  const activeCase = cases[active];
+  const activeCase = cases[active] ?? cases[0]!;
 
   return (
     <>

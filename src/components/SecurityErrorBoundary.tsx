@@ -24,14 +24,14 @@ export class SecurityErrorBoundary extends Component<Props, State> {
     };
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  override componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     // Log error securely without exposing sensitive information
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env['NODE_ENV'] === 'development') {
       // Only log in development - error details available here
     }
   }
 
-  render() {
+  override render() {
     if (this.state.hasError) {
       return (
         <div className="container mx-auto px-4 py-8">
@@ -39,7 +39,7 @@ export class SecurityErrorBoundary extends Component<Props, State> {
             <AlertTriangle className="h-4 w-4" />
             <AlertDescription>
               Une erreur s'est produite. Veuillez rafraîchir la page.
-              {process.env.NODE_ENV === 'development' && (
+              {process.env['NODE_ENV'] === 'development' && (
                 <span className="block text-xs mt-2 text-muted-foreground">
                   ID: {this.state.errorId}
                 </span>

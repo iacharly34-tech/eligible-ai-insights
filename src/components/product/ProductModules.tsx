@@ -88,7 +88,7 @@ export const ProductModules = () => {
           {PRODUCT_MODULES.map((mod) => (
             <SafeLink
               key={mod.key}
-              to={MODULE_URLS[mod.key]}
+              to={MODULE_URLS[mod.key] ?? "/produit"}
               className={`group relative p-8 sm:p-10 rounded-2xl border border-border/40 bg-card/50 backdrop-blur-xs hover:bg-card/80 transition-all duration-500 ${mod.borderAccent} block`}
             >
               {/* Number */}

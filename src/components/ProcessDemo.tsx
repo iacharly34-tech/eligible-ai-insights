@@ -369,7 +369,7 @@ export const ProcessDemo = () => {
               {showResults && (
                 <>
                   <div className="mb-3 animate-fade-in">
-                    <HeroAOCardMobile ao={mockAOData[0]} />
+                    <HeroAOCardMobile ao={mockAOData[0]!} />
                   </div>
                   <div className="rounded-xl border bg-card shadow-card p-0">
                     <h4 className="font-semibold text-foreground mb-2 text-sm px-3 pt-3">{t('demo.otherResults')}</h4>

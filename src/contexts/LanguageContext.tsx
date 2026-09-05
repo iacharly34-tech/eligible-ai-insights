@@ -1293,8 +1293,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     // Patch pushState/replaceState to catch SPA navigations
     const origPush = history.pushState;
     const origReplace = history.replaceState;
-    history.pushState = function (...args) { const r = origPush.apply(this, args as any); sync(); return r; } as typeof history.pushState;
-    history.replaceState = function (...args) { const r = origReplace.apply(this, args as any); sync(); return r; } as typeof history.replaceState;
+    history.pushState = function (this: History, ...args) { const r = origPush.apply(this, args as any); sync(); return r; } as typeof history.pushState;
+    history.replaceState = function (this: History, ...args) { const r = origReplace.apply(this, args as any); sync(); return r; } as typeof history.replaceState;
     return () => {
       window.removeEventListener('popstate', sync);
       history.pushState = origPush;

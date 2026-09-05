@@ -18,15 +18,16 @@ import { useMemo, useCallback, forwardRef, type ComponentProps, type ReactNode }
 // ---------- shared URL parsing ----------
 
 function parseTo(to: string): { pathname: string; search?: Record<string, string>; hash?: string } {
-  const [beforeHash, hashStr] = (to ?? "").split("#");
-  const [pathname, searchStr] = beforeHash.split("?");
-  return {
+  const [beforeHash = "", hashStr] = (to ?? "").split("#");
+  const [pathname = "", searchStr] = beforeHash.split("?");
+  const parsed: { pathname: string; search?: Record<string, string>; hash?: string } = {
     // react-router keeps the current path for search-only ("?a=1") and
     // hash-only ("#section") targets; TanStack's "." means current route.
     pathname: pathname || ".",
-    search: searchStr ? Object.fromEntries(new URLSearchParams(searchStr)) : undefined,
-    hash: hashStr || undefined,
   };
+  if (searchStr) parsed.search = Object.fromEntries(new URLSearchParams(searchStr));
+  if (hashStr) parsed.hash = hashStr;
+  return parsed;
 }
 
 // ---------- useNavigate ----------
@@ -47,13 +48,12 @@ export function useNavigate(): NavigateFn {
       return;
     }
     const { pathname, search, hash } = parseTo(to);
-    tsNav({
-      to: pathname,
-      search: search as never,
-      hash,
-      state: options?.state as never,
-      replace: options?.replace,
-    });
+    const opts: Record<string, unknown> = { to: pathname };
+    if (search !== undefined) opts["search"] = search;
+    if (hash !== undefined) opts["hash"] = hash;
+    if (options?.state !== undefined) opts["state"] = options.state;
+    if (options?.replace !== undefined) opts["replace"] = options.replace;
+    tsNav(opts as never);
   }, [tsNav, router]) as NavigateFn;
 }
 
@@ -105,7 +105,9 @@ export function useSearchParams(): [URLSearchParams, (init: URLSearchParams | Re
             : new URLSearchParams(init);
       const searchObj: Record<string, string> = {};
       next.forEach((v, k) => { searchObj[k] = v; });
-      nav({ to: live.pathname, search: searchObj as never, replace: opts?.replace });
+      const navOpts: Record<string, unknown> = { to: live.pathname, search: searchObj };
+      if (opts?.replace !== undefined) navOpts["replace"] = opts.replace;
+      nav(navOpts as never);
     },
     [nav, router],
   );
@@ -126,14 +128,16 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   ref,
 ) {
   const { pathname, search, hash } = parseTo(to);
+  const extra: Record<string, unknown> = {};
+  if (search !== undefined) extra["search"] = search;
+  if (hash !== undefined) extra["hash"] = hash;
+  if (replace !== undefined) extra["replace"] = replace;
+  if (state !== undefined) extra["state"] = state;
   return (
     <TSLink
       ref={ref as never}
       to={pathname as never}
-      search={search as never}
-      hash={hash}
-      replace={replace}
-      state={state as never}
+      {...(extra as never)}
       {...((rest ?? {}) as Record<string, unknown>)}
     >
       {children}
@@ -146,7 +150,12 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
 
 export function Navigate({ to, replace, state }: { to: string; replace?: boolean; state?: unknown }) {
   const { pathname, search, hash } = parseTo(to);
-  return <TSNavigate to={pathname as never} search={search as never} hash={hash} state={state as never} replace={replace} />;
+  const extra: Record<string, unknown> = {};
+  if (search !== undefined) extra["search"] = search;
+  if (hash !== undefined) extra["hash"] = hash;
+  if (replace !== undefined) extra["replace"] = replace;
+  if (state !== undefined) extra["state"] = state;
+  return <TSNavigate to={pathname as never} {...(extra as never)} />;
 }
 
 // ---------- Outlet ----------

@@ -47,7 +47,7 @@ export const SmartImageLoader = memo<SmartImageLoaderProps>(({
     if (element && !priority) {
       observerRef.current = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) {
+          if (entry?.isIntersecting) {
             setIsVisible(true);
             observerRef.current?.disconnect();
           }
