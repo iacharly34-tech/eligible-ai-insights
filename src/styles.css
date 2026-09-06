@@ -58,6 +58,10 @@
   --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
   --color-sidebar-border: hsl(var(--sidebar-border));
   --color-sidebar-ring: hsl(var(--sidebar-ring));
+  --color-editorial-paper: hsl(var(--editorial-paper));
+  --color-editorial-ink: hsl(var(--editorial-ink));
+  --color-editorial-terracotta: hsl(var(--editorial-terracotta));
+  --color-editorial-mustard: hsl(var(--editorial-mustard));
 
   /* backgroundImage extensions (bg-gradient-primary, …) */
   --background-image-gradient-primary: var(--gradient-primary);
@@ -187,6 +191,12 @@
   --sidebar-border: 220 13% 91%;
   --sidebar-ring: 217.2 91.2% 59.8%;
 
+  /* Editorial article palette */
+  --editorial-paper: 45 43% 97%;
+  --editorial-ink: 156 24% 23%;
+  --editorial-terracotta: 16 68% 52%;
+  --editorial-mustard: 43 64% 53%;
+
   /* Fluid typography - prevents text overflow */
   --fs-p: clamp(15px, 1.6vw, 18px);
   --fs-h1: clamp(28px, 5.2vw, 40px);
@@ -240,6 +250,10 @@
   --sidebar-accent-foreground: 240 4.8% 95.9%;
   --sidebar-border: 240 3.7% 15.9%;
   --sidebar-ring: 217.2 91.2% 59.8%;
+  --editorial-paper: 150 8% 10%;
+  --editorial-ink: 45 30% 92%;
+  --editorial-terracotta: 16 68% 60%;
+  --editorial-mustard: 43 64% 60%;
 }
 
 /* Font System */

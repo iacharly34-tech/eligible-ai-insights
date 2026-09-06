@@ -1,11 +1,11 @@
-import { ReactNode } from "react";
+import { Children, cloneElement, isValidElement, ReactElement, ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileCTABar } from "@/components/MobileCTABar";
 import { Button } from "@/components/ui/button";
 import { SafeLink } from "@/components/SafeLink";
-import { ArrowRight, ArrowLeft, BookOpen, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowLeft, BookOpen, Clock3, FileText, Quote, Sparkles } from "lucide-react";
 import { ArticleRecommendations } from "@/components/ArticleRecommendations";
 import { ContextualLinks } from "@/components/ContextualLinks";
 
@@ -62,6 +62,29 @@ export const ArticleShell = ({
   const readLabel = isEn ? "Read" : "Lire";
   const homeCrumb = isEn ? "Home" : "Accueil";
   const resourcesCrumb = isEn ? "Resources" : "Ressources";
+  const slugifyHeading = (value: string) =>
+    value
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+  const contentNodes = Children.toArray(children);
+  const sections = contentNodes.flatMap((node, index) => {
+    if (!isValidElement(node) || node.type !== "h2") return [];
+    const heading = node as ReactElement<{ id?: string; children?: ReactNode }>;
+    const label = typeof heading.props.children === "string" ? heading.props.children : "";
+    if (!label) return [];
+    return [{ id: heading.props.id ?? `${slugifyHeading(label)}-${index}`, label }];
+  });
+  let sectionIndex = 0;
+  const structuredChildren = contentNodes.map((node) => {
+    if (!isValidElement(node) || node.type !== "h2") return node;
+    const heading = node as ReactElement<{ id?: string; children?: ReactNode }>;
+    const section = sections[sectionIndex];
+    sectionIndex += 1;
+    return cloneElement(heading, { id: heading.props.id ?? section?.id });
+  });
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -112,44 +135,76 @@ export const ArticleShell = ({
     <div className="min-h-screen bg-background">
       <Header />
       <MobileCTABar />
-      <main className="pt-32 pb-20">
+      <main className="pt-28 md:pt-32 pb-20 bg-editorial-paper">
         <article className="container mx-auto px-4">
           <SafeLink to={backHref} className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8">
             <ArrowLeft className="w-4 h-4 mr-1.5" /> {backLabel}
           </SafeLink>
 
-            <header className="mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-primary/10 text-primary text-[0.7rem] font-semibold uppercase tracking-[0.12em] mb-6">
+            <header className="relative mb-10 md:mb-14 border-b border-editorial-ink/15 pb-8 md:pb-10">
+              <div className="absolute right-0 top-0 hidden lg:flex h-28 w-28 flex-col items-center justify-center border border-editorial-mustard bg-editorial-mustard/10 text-editorial-ink" aria-hidden="true">
+                <FileText className="h-6 w-6 mb-2 text-editorial-terracotta" />
+                <span className="text-[0.65rem] font-bold uppercase tracking-[0.16em]">Analyse</span>
+                <span className="text-xs">Eligibly</span>
+              </div>
+              <div className="inline-flex items-center gap-2 border border-editorial-terracotta px-3 py-1 text-editorial-terracotta text-[0.7rem] font-semibold uppercase tracking-[0.12em] mb-6">
                 <BookOpen className="w-3.5 h-3.5" /> {badge}
               </div>
-              <h1 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-6">
+              <h1 className="font-display max-w-[24ch] text-3xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] mb-6 text-editorial-ink">
                 {title}
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">{subtitle}</p>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground border-t border-border pt-4">
-                <span>{resolvedAuthor}</span>
-                <span>·</span>
-                <span>{new Date(date).toLocaleDateString(isEn ? "en-GB" : "fr-FR", { day: "numeric", month: "long", year: "numeric" })}</span>
-                <span>·</span>
-                <span>{readTime}</span>
+              <p className="max-w-[78ch] text-lg md:text-xl text-editorial-ink/75 leading-relaxed mb-7">{subtitle}</p>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-editorial-ink/65 border-t border-editorial-ink/15 pt-4">
+                <span className="font-semibold uppercase tracking-[0.08em]">{resolvedAuthor}</span>
+                <span className="hidden sm:inline h-1 w-1 rounded-full bg-editorial-mustard" aria-hidden="true" />
+                <time dateTime={date}>{new Date(date).toLocaleDateString(isEn ? "en-GB" : "fr-FR", { day: "numeric", month: "long", year: "numeric" })}</time>
+                <span className="hidden sm:inline h-1 w-1 rounded-full bg-editorial-mustard" aria-hidden="true" />
+                <span className="inline-flex items-center gap-1.5"><Clock3 className="h-3.5 w-3.5" />{readTime}</span>
               </div>
             </header>
 
-            <div className="prose prose-lg max-w-none mb-12
-              [&>p]:max-w-[78ch] [&>ul]:max-w-[78ch] [&>ol]:max-w-[78ch] [&>h2]:max-w-[78ch] [&>h3]:max-w-[78ch] [&>blockquote]:max-w-[78ch]
-              [&_h2]:font-display [&_h2]:text-2xl md:[&_h2]:text-3xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:mt-12 [&_h2]:mb-4
-              [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-8 [&_h3]:mb-3
-              [&_p]:text-foreground/85 [&_p]:leading-relaxed [&_p]:my-4
-              [&_ul]:space-y-2 [&_ul]:my-4 [&_li]:text-foreground/85
-              [&_strong]:text-foreground [&_strong]:font-semibold
-              [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-primary/80
-              [&_blockquote]:border-l-4 [&_blockquote]:border-primary [&_blockquote]:pl-5 [&_blockquote]:py-1 [&_blockquote]:italic [&_blockquote]:text-foreground/90 [&_blockquote]:my-6">
-              {children}
+            <div className="grid gap-10 lg:grid-cols-[minmax(12rem,0.28fr)_minmax(0,1fr)] xl:grid-cols-[minmax(14rem,0.3fr)_minmax(0,1fr)] lg:gap-14 xl:gap-20 mb-14">
+              {sections.length > 0 && (
+                <aside className="lg:order-first">
+                  <nav aria-label={isEn ? "Article contents" : "Sommaire de l'article"} className="border-y border-editorial-ink/15 py-5 lg:sticky lg:top-28">
+                    <p className="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-editorial-terracotta">
+                      {isEn ? "In this analysis" : "Dans cette analyse"}
+                    </p>
+                    <ol className="space-y-3">
+                      {sections.map((section, index) => (
+                        <li key={section.id} className="grid grid-cols-[1.6rem_1fr] gap-2 text-sm leading-snug">
+                          <span className="font-display font-semibold text-editorial-mustard">{String(index + 1).padStart(2, "0")}</span>
+                          <a href={`#${section.id}`} className="text-editorial-ink/70 transition-colors hover:text-editorial-terracotta">
+                            {section.label.replace(/^\d+[.)]?\s*/, "")}
+                          </a>
+                        </li>
+                      ))}
+                    </ol>
+                  </nav>
+                </aside>
+              )}
+
+              <div className="article-editorial prose prose-lg max-w-none min-w-0
+                [&>p]:max-w-[78ch] [&>ul]:max-w-[78ch] [&>ol]:max-w-[78ch] [&>h2]:max-w-[78ch] [&>h3]:max-w-[78ch] [&>blockquote]:max-w-[78ch]
+                [&_h2]:scroll-mt-28 [&_h2]:font-display [&_h2]:text-2xl md:[&_h2]:text-3xl [&_h2]:font-semibold [&_h2]:mt-16 [&_h2]:mb-5 [&_h2]:border-t [&_h2]:border-editorial-ink/15 [&_h2]:pt-8 [&_h2]:text-editorial-ink
+                [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-9 [&_h3]:mb-3 [&_h3]:text-editorial-ink
+                [&_p]:text-editorial-ink/85 [&_p]:leading-[1.75] [&_p]:my-5
+                [&_ul]:my-7 [&_ul]:space-y-0 [&_ol]:my-7 [&_ol]:space-y-0
+                [&_li]:relative [&_li]:border-b [&_li]:border-editorial-ink/10 [&_li]:py-3 [&_li]:pl-7 [&_li]:text-editorial-ink/85
+                [&_li::marker]:font-semibold [&_li::marker]:text-editorial-terracotta
+                [&_strong]:text-editorial-ink [&_strong]:font-semibold
+                [&_a]:text-editorial-terracotta [&_a]:underline [&_a]:decoration-editorial-terracotta/35 [&_a]:underline-offset-4 hover:[&_a]:decoration-editorial-terracotta
+                [&_blockquote]:relative [&_blockquote]:border-l-4 [&_blockquote]:border-editorial-terracotta [&_blockquote]:bg-editorial-mustard/10 [&_blockquote]:pl-7 [&_blockquote]:pr-6 [&_blockquote]:py-7 [&_blockquote]:font-display [&_blockquote]:text-xl md:[&_blockquote]:text-2xl [&_blockquote]:not-italic [&_blockquote]:text-editorial-ink [&_blockquote]:my-10">
+                {structuredChildren}
+              </div>
             </div>
 
             {sources.length > 0 && (
-              <section className="rounded-2xl border border-border bg-card/40 p-6 mb-12">
-                <h2 className="font-display text-lg font-semibold mb-3">{sourcesLabel}</h2>
+              <section className="border-l-4 border-editorial-mustard bg-editorial-mustard/10 p-6 md:p-8 mb-12">
+                <div className="flex items-center gap-3 mb-4">
+                  <Quote className="h-5 w-5 text-editorial-terracotta" />
+                  <h2 className="font-display text-lg font-semibold text-editorial-ink">{sourcesLabel}</h2>
+                </div>
                 <ol className="list-decimal pl-5 space-y-2 text-sm text-muted-foreground">
                   {sources.map((s, i) => (
                     <li key={i}>
