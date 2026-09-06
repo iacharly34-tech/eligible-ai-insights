@@ -83,7 +83,8 @@ export const ArticleShell = ({
     const heading = node as ReactElement<{ id?: string; children?: ReactNode }>;
     const section = sections[sectionIndex];
     sectionIndex += 1;
-    return cloneElement(heading, { id: heading.props.id ?? section?.id });
+    const headingId = heading.props.id ?? section?.id;
+    return headingId ? cloneElement(heading, { id: headingId }) : heading;
   });
   const jsonLd = {
     "@context": "https://schema.org",
