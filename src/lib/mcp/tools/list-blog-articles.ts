@@ -1,6 +1,6 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
-import { ROUTE_META } from "@/lib/route-meta";
+import { ROUTE_META } from "../../route-meta";
 
 /** Source unique de vérité : les routes réellement rendues côté serveur. */
 const ARTICLES = Object.entries(ROUTE_META)
