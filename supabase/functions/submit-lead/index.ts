@@ -1,14 +1,20 @@
+import * as React from 'npm:react@18.3.1'
+import { renderAsync } from 'npm:@react-email/components@0.0.22'
+import { sendLovableEmail } from 'npm:@lovable.dev/email-js'
 import { createClient } from 'npm:@supabase/supabase-js@2'
 import { corsHeaders } from 'npm:@supabase/supabase-js@2/cors'
 import { z } from 'npm:zod@3.23.8'
+import { TEMPLATES } from '../_shared/transactional-email-templates/registry.ts'
 
 // Public endpoint (verify_jwt = false). This is the ONLY client-facing entry point
 // for demo requests. It validates input, rate-limits by IP + email, persists the
-// lead, and then invokes send-transactional-email with the service role for both
-// the applicant confirmation and the internal notification. This prevents open
-// email relay abuse: clients can no longer choose arbitrary recipients.
+// lead, then renders and sends the applicant confirmation and the internal
+// notification through Lovable's managed email API. Recipients are fixed here, so
+// clients can never choose arbitrary recipients.
 
 const OWNER_NOTIFICATION_EMAIL = 'lahyani.daniel@gmail.com'
+const SENDER_DOMAIN = 'notify.eligibly.ai'
+const FROM_DOMAIN = 'eligibly.ai'
 
 const BodySchema = z.object({
   fullName: z.string().trim().min(1).max(120),
@@ -34,6 +40,7 @@ Deno.serve(async (req) => {
 
   const supabaseUrl = Deno.env.get('SUPABASE_URL')
   const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
+  const lovableApiKey = Deno.env.get('LOVABLE_API_KEY')
   if (!supabaseUrl || !serviceKey) {
     return new Response(JSON.stringify({ error: 'Server misconfigured' }), {
       status: 500,
@@ -116,33 +123,72 @@ Deno.serve(async (req) => {
     })
   }
 
-  // Fire emails with the service-role key so send-transactional-email accepts us.
-  const invokeEmail = async (templateName: string, recipient: string, data: Record<string, unknown>) => {
+  // Render and send each email synchronously through Lovable's managed email
+  // API. Delivery, retries, rate limits, suppression and unsubscribe are handled
+  // on Lovable's side — nothing is queued here.
+  const logSend = async (
+    templateName: string,
+    recipient: string,
+    status: 'sent' | 'suppressed' | 'failed',
+    errorMessage?: string,
+  ) => {
+    const { error } = await supabase.from('email_send_log').insert({
+      recipient_email: recipient,
+      template_name: templateName,
+      status,
+      error_message: errorMessage ?? null,
+    })
+    if (error) console.warn('email_send_log insert failed', templateName, status, error)
+  }
+
+  const sendEmail = async (
+    templateName: string,
+    recipient: string,
+    data: Record<string, unknown>,
+  ) => {
+    const entry = TEMPLATES[templateName]
+    if (!entry) {
+      console.warn('unknown template', templateName)
+      return
+    }
+    const finalRecipient = (typeof entry.to === 'function' ? entry.to(data) : entry.to) || recipient
     try {
-      const res = await fetch(`${supabaseUrl}/functions/v1/send-transactional-email`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${serviceKey}`,
+      const element = React.createElement(entry.component, data)
+      const html = await renderAsync(element)
+      const text = await renderAsync(element, { plainText: true })
+      const subject =
+        typeof entry.subject === 'function' ? entry.subject(data) : entry.subject
+
+      await sendLovableEmail(
+        {
+          to: finalRecipient,
+          from: `Eligibly <noreply@${FROM_DOMAIN}>`,
+          sender_domain: SENDER_DOMAIN,
+          subject,
+          html,
+          text,
+          purpose: 'transactional',
+          label: templateName,
+          idempotency_key: `${templateName}-${inserted.id}`,
         },
-        body: JSON.stringify({
-          templateName,
-          recipientEmail: recipient,
-          idempotencyKey: `${templateName}-${inserted.id}`,
-          templateData: data,
-        }),
-      })
-      if (!res.ok) {
-        console.warn(`${templateName} enqueue failed`, res.status, await res.text())
-      }
+        { apiKey: lovableApiKey ?? '' },
+      )
+      await logSend(templateName, finalRecipient, 'sent')
     } catch (e) {
-      console.warn(`${templateName} enqueue error`, e)
+      const code = e && typeof e === 'object' && 'code' in e ? (e as { code: string }).code : ''
+      if (code === 'recipient_suppressed') {
+        await logSend(templateName, finalRecipient, 'suppressed', 'Recipient suppressed')
+        return
+      }
+      const msg = e instanceof Error ? e.message : String(e)
+      console.warn(`${templateName} send failed`, msg)
+      await logSend(templateName, finalRecipient, 'failed', msg.slice(0, 500))
     }
   }
 
   await Promise.all([
-    invokeEmail('demo-confirmation', email, { fullName, company, message: message || undefined }),
-    invokeEmail('lead-notification', OWNER_NOTIFICATION_EMAIL, {
+    sendEmail('demo-confirmation', email, { fullName, company, message: message || undefined }),
+    sendEmail('lead-notification', OWNER_NOTIFICATION_EMAIL, {
       fullName,
       email,
       company,

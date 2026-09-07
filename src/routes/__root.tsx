@@ -86,6 +86,7 @@ function resolveLegacyRedirect(pathname: string): string | undefined {
 // ----- Root route -----
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   beforeLoad: ({ location }) => {
+    if (location.pathname.startsWith("/lovable/")) return;
     const target = resolveLegacyRedirect(location.pathname);
     if (target && target !== location.pathname) {
       throw redirect({ href: target, statusCode: 301, replace: true });

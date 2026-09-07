@@ -33,7 +33,6 @@ import { Route as SalesAssistantRouteImport } from './routes/sales-assistant'
 import { Route as SimulateurRoiIaCabinetRouteImport } from './routes/simulateur-roi-ia-cabinet'
 import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as TarifsRouteImport } from './routes/tarifs'
-import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
 import { Route as VisibiliteExpertComptableRouteImport } from './routes/visibilite-expert-comptable'
 import { Route as Blog5LeviersCroissanceCabinetExpertiseComptableRouteImport } from './routes/blog/5-leviers-croissance-cabinet-expertise-comptable'
 import { Route as BlogBarometreAcquisitionCabinetEc2026RouteImport } from './routes/blog/barometre-acquisition-cabinet-ec-2026'
@@ -63,6 +62,10 @@ import { Route as CabinetCasUsageIndexRouteImport } from './routes/cabinet/cas-u
 import { Route as CabinetCasUsageCabinet8CollaborateursDepartementRouteImport } from './routes/cabinet/cas-usage/cabinet-8-collaborateurs-departement'
 import { Route as CabinetCasUsageCabinetFullRemoteStartupsEcommerceRouteImport } from './routes/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
 import { Route as CabinetCasUsageCabinetSpecialiseRestaurationRouteImport } from './routes/cabinet/cas-usage/cabinet-specialise-restauration'
+import { Route as LovableEmailEventsRouteImport } from './routes/lovable/email/events'
+import { Route as LovableEmailAuthPreviewRouteImport } from './routes/lovable/email/auth/preview'
+import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
+import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -188,11 +191,6 @@ const SolutionsRoute = SolutionsRouteImport.update({
 const TarifsRoute = TarifsRouteImport.update({
   id: '/tarifs',
   path: '/tarifs',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const UnsubscribeRoute = UnsubscribeRouteImport.update({
-  id: '/unsubscribe',
-  path: '/unsubscribe',
   getParentRoute: () => rootRouteImport,
 } as any)
 const VisibiliteExpertComptableRoute =
@@ -362,6 +360,27 @@ const CabinetCasUsageCabinetSpecialiseRestaurationRoute =
     path: '/cabinet/cas-usage/cabinet-specialise-restauration',
     getParentRoute: () => rootRouteImport,
   } as any)
+const LovableEmailEventsRoute = LovableEmailEventsRouteImport.update({
+  id: '/lovable/email/events',
+  path: '/lovable/email/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
+  id: '/lovable/email/auth/preview',
+  path: '/lovable/email/auth/preview',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LovableEmailAuthWebhookRoute = LovableEmailAuthWebhookRouteImport.update({
+  id: '/lovable/email/auth/webhook',
+  path: '/lovable/email/auth/webhook',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LovableEmailTransactionalPreviewRoute =
+  LovableEmailTransactionalPreviewRouteImport.update({
+    id: '/lovable/email/transactional/preview',
+    path: '/lovable/email/transactional/preview',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -388,7 +407,6 @@ export interface FileRoutesByFullPath {
   '/simulateur-roi-ia-cabinet': typeof SimulateurRoiIaCabinetRoute
   '/solutions': typeof SolutionsRoute
   '/tarifs': typeof TarifsRoute
-  '/unsubscribe': typeof UnsubscribeRoute
   '/visibilite-expert-comptable': typeof VisibiliteExpertComptableRoute
   '/blog/5-leviers-croissance-cabinet-expertise-comptable': typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
@@ -417,7 +435,11 @@ export interface FileRoutesByFullPath {
   '/cabinet/cas-usage/cabinet-8-collaborateurs-departement': typeof CabinetCasUsageCabinet8CollaborateursDepartementRoute
   '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce': typeof CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute
   '/cabinet/cas-usage/cabinet-specialise-restauration': typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
+  '/lovable/email/events': typeof LovableEmailEventsRoute
   '/cabinet/cas-usage/': typeof CabinetCasUsageIndexRoute
+  '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
+  '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -444,7 +466,6 @@ export interface FileRoutesByTo {
   '/simulateur-roi-ia-cabinet': typeof SimulateurRoiIaCabinetRoute
   '/solutions': typeof SolutionsRoute
   '/tarifs': typeof TarifsRoute
-  '/unsubscribe': typeof UnsubscribeRoute
   '/visibilite-expert-comptable': typeof VisibiliteExpertComptableRoute
   '/blog/5-leviers-croissance-cabinet-expertise-comptable': typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
@@ -473,7 +494,11 @@ export interface FileRoutesByTo {
   '/cabinet/cas-usage/cabinet-8-collaborateurs-departement': typeof CabinetCasUsageCabinet8CollaborateursDepartementRoute
   '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce': typeof CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute
   '/cabinet/cas-usage/cabinet-specialise-restauration': typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
+  '/lovable/email/events': typeof LovableEmailEventsRoute
   '/cabinet/cas-usage': typeof CabinetCasUsageIndexRoute
+  '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
+  '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -501,7 +526,6 @@ export interface FileRoutesById {
   '/simulateur-roi-ia-cabinet': typeof SimulateurRoiIaCabinetRoute
   '/solutions': typeof SolutionsRoute
   '/tarifs': typeof TarifsRoute
-  '/unsubscribe': typeof UnsubscribeRoute
   '/visibilite-expert-comptable': typeof VisibiliteExpertComptableRoute
   '/blog/5-leviers-croissance-cabinet-expertise-comptable': typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
@@ -530,7 +554,11 @@ export interface FileRoutesById {
   '/cabinet/cas-usage/cabinet-8-collaborateurs-departement': typeof CabinetCasUsageCabinet8CollaborateursDepartementRoute
   '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce': typeof CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute
   '/cabinet/cas-usage/cabinet-specialise-restauration': typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
+  '/lovable/email/events': typeof LovableEmailEventsRoute
   '/cabinet/cas-usage/': typeof CabinetCasUsageIndexRoute
+  '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
+  '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -559,7 +587,6 @@ export interface FileRouteTypes {
     | '/simulateur-roi-ia-cabinet'
     | '/solutions'
     | '/tarifs'
-    | '/unsubscribe'
     | '/visibilite-expert-comptable'
     | '/blog/5-leviers-croissance-cabinet-expertise-comptable'
     | '/blog/barometre-acquisition-cabinet-ec-2026'
@@ -588,7 +615,11 @@ export interface FileRouteTypes {
     | '/cabinet/cas-usage/cabinet-8-collaborateurs-departement'
     | '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
     | '/cabinet/cas-usage/cabinet-specialise-restauration'
+    | '/lovable/email/events'
     | '/cabinet/cas-usage/'
+    | '/lovable/email/auth/preview'
+    | '/lovable/email/auth/webhook'
+    | '/lovable/email/transactional/preview'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -615,7 +646,6 @@ export interface FileRouteTypes {
     | '/simulateur-roi-ia-cabinet'
     | '/solutions'
     | '/tarifs'
-    | '/unsubscribe'
     | '/visibilite-expert-comptable'
     | '/blog/5-leviers-croissance-cabinet-expertise-comptable'
     | '/blog/barometre-acquisition-cabinet-ec-2026'
@@ -644,7 +674,11 @@ export interface FileRouteTypes {
     | '/cabinet/cas-usage/cabinet-8-collaborateurs-departement'
     | '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
     | '/cabinet/cas-usage/cabinet-specialise-restauration'
+    | '/lovable/email/events'
     | '/cabinet/cas-usage'
+    | '/lovable/email/auth/preview'
+    | '/lovable/email/auth/webhook'
+    | '/lovable/email/transactional/preview'
   id:
     | '__root__'
     | '/'
@@ -671,7 +705,6 @@ export interface FileRouteTypes {
     | '/simulateur-roi-ia-cabinet'
     | '/solutions'
     | '/tarifs'
-    | '/unsubscribe'
     | '/visibilite-expert-comptable'
     | '/blog/5-leviers-croissance-cabinet-expertise-comptable'
     | '/blog/barometre-acquisition-cabinet-ec-2026'
@@ -700,7 +733,11 @@ export interface FileRouteTypes {
     | '/cabinet/cas-usage/cabinet-8-collaborateurs-departement'
     | '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
     | '/cabinet/cas-usage/cabinet-specialise-restauration'
+    | '/lovable/email/events'
     | '/cabinet/cas-usage/'
+    | '/lovable/email/auth/preview'
+    | '/lovable/email/auth/webhook'
+    | '/lovable/email/transactional/preview'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -728,7 +765,6 @@ export interface RootRouteChildren {
   SimulateurRoiIaCabinetRoute: typeof SimulateurRoiIaCabinetRoute
   SolutionsRoute: typeof SolutionsRoute
   TarifsRoute: typeof TarifsRoute
-  UnsubscribeRoute: typeof UnsubscribeRoute
   VisibiliteExpertComptableRoute: typeof VisibiliteExpertComptableRoute
   Blog5LeviersCroissanceCabinetExpertiseComptableRoute: typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   BlogBarometreAcquisitionCabinetEc2026Route: typeof BlogBarometreAcquisitionCabinetEc2026Route
@@ -757,7 +793,11 @@ export interface RootRouteChildren {
   CabinetCasUsageCabinet8CollaborateursDepartementRoute: typeof CabinetCasUsageCabinet8CollaborateursDepartementRoute
   CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute: typeof CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute
   CabinetCasUsageCabinetSpecialiseRestaurationRoute: typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
+  LovableEmailEventsRoute: typeof LovableEmailEventsRoute
   CabinetCasUsageIndexRoute: typeof CabinetCasUsageIndexRoute
+  LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
+  LovableEmailAuthWebhookRoute: typeof LovableEmailAuthWebhookRoute
+  LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -928,13 +968,6 @@ declare module '@tanstack/react-router' {
       path: '/tarifs'
       fullPath: '/tarifs'
       preLoaderRoute: typeof TarifsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/unsubscribe': {
-      id: '/unsubscribe'
-      path: '/unsubscribe'
-      fullPath: '/unsubscribe'
-      preLoaderRoute: typeof UnsubscribeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/visibilite-expert-comptable': {
@@ -1140,6 +1173,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CabinetCasUsageCabinetSpecialiseRestaurationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lovable/email/events': {
+      id: '/lovable/email/events'
+      path: '/lovable/email/events'
+      fullPath: '/lovable/email/events'
+      preLoaderRoute: typeof LovableEmailEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/auth/preview': {
+      id: '/lovable/email/auth/preview'
+      path: '/lovable/email/auth/preview'
+      fullPath: '/lovable/email/auth/preview'
+      preLoaderRoute: typeof LovableEmailAuthPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/auth/webhook': {
+      id: '/lovable/email/auth/webhook'
+      path: '/lovable/email/auth/webhook'
+      fullPath: '/lovable/email/auth/webhook'
+      preLoaderRoute: typeof LovableEmailAuthWebhookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/transactional/preview': {
+      id: '/lovable/email/transactional/preview'
+      path: '/lovable/email/transactional/preview'
+      fullPath: '/lovable/email/transactional/preview'
+      preLoaderRoute: typeof LovableEmailTransactionalPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -1170,7 +1231,6 @@ const rootRouteChildren: RootRouteChildren = {
   SimulateurRoiIaCabinetRoute: SimulateurRoiIaCabinetRoute,
   SolutionsRoute: SolutionsRoute,
   TarifsRoute: TarifsRoute,
-  UnsubscribeRoute: UnsubscribeRoute,
   VisibiliteExpertComptableRoute: VisibiliteExpertComptableRoute,
   Blog5LeviersCroissanceCabinetExpertiseComptableRoute:
     Blog5LeviersCroissanceCabinetExpertiseComptableRoute,
@@ -1216,7 +1276,11 @@ const rootRouteChildren: RootRouteChildren = {
     CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute,
   CabinetCasUsageCabinetSpecialiseRestaurationRoute:
     CabinetCasUsageCabinetSpecialiseRestaurationRoute,
+  LovableEmailEventsRoute: LovableEmailEventsRoute,
   CabinetCasUsageIndexRoute: CabinetCasUsageIndexRoute,
+  LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
+  LovableEmailAuthWebhookRoute: LovableEmailAuthWebhookRoute,
+  LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
