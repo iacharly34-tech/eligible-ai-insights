@@ -63,6 +63,8 @@ import { Route as CabinetCasUsageIndexRouteImport } from './routes/cabinet/cas-u
 import { Route as CabinetCasUsageCabinet8CollaborateursDepartementRouteImport } from './routes/cabinet/cas-usage/cabinet-8-collaborateurs-departement'
 import { Route as CabinetCasUsageCabinetFullRemoteStartupsEcommerceRouteImport } from './routes/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
 import { Route as CabinetCasUsageCabinetSpecialiseRestaurationRouteImport } from './routes/cabinet/cas-usage/cabinet-specialise-restauration'
+import { Route as LovableEmailAuthPreviewRouteImport } from './routes/lovable/email/auth/preview'
+import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -362,6 +364,16 @@ const CabinetCasUsageCabinetSpecialiseRestaurationRoute =
     path: '/cabinet/cas-usage/cabinet-specialise-restauration',
     getParentRoute: () => rootRouteImport,
   } as any)
+const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
+  id: '/lovable/email/auth/preview',
+  path: '/lovable/email/auth/preview',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LovableEmailAuthWebhookRoute = LovableEmailAuthWebhookRouteImport.update({
+  id: '/lovable/email/auth/webhook',
+  path: '/lovable/email/auth/webhook',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -418,6 +430,8 @@ export interface FileRoutesByFullPath {
   '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce': typeof CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute
   '/cabinet/cas-usage/cabinet-specialise-restauration': typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
   '/cabinet/cas-usage/': typeof CabinetCasUsageIndexRoute
+  '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
+  '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -474,6 +488,8 @@ export interface FileRoutesByTo {
   '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce': typeof CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute
   '/cabinet/cas-usage/cabinet-specialise-restauration': typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
   '/cabinet/cas-usage': typeof CabinetCasUsageIndexRoute
+  '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
+  '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -531,6 +547,8 @@ export interface FileRoutesById {
   '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce': typeof CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute
   '/cabinet/cas-usage/cabinet-specialise-restauration': typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
   '/cabinet/cas-usage/': typeof CabinetCasUsageIndexRoute
+  '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
+  '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -589,6 +607,8 @@ export interface FileRouteTypes {
     | '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
     | '/cabinet/cas-usage/cabinet-specialise-restauration'
     | '/cabinet/cas-usage/'
+    | '/lovable/email/auth/preview'
+    | '/lovable/email/auth/webhook'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -645,6 +665,8 @@ export interface FileRouteTypes {
     | '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
     | '/cabinet/cas-usage/cabinet-specialise-restauration'
     | '/cabinet/cas-usage'
+    | '/lovable/email/auth/preview'
+    | '/lovable/email/auth/webhook'
   id:
     | '__root__'
     | '/'
@@ -701,6 +723,8 @@ export interface FileRouteTypes {
     | '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
     | '/cabinet/cas-usage/cabinet-specialise-restauration'
     | '/cabinet/cas-usage/'
+    | '/lovable/email/auth/preview'
+    | '/lovable/email/auth/webhook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -758,6 +782,8 @@ export interface RootRouteChildren {
   CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute: typeof CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute
   CabinetCasUsageCabinetSpecialiseRestaurationRoute: typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
   CabinetCasUsageIndexRoute: typeof CabinetCasUsageIndexRoute
+  LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
+  LovableEmailAuthWebhookRoute: typeof LovableEmailAuthWebhookRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -1140,6 +1166,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CabinetCasUsageCabinetSpecialiseRestaurationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lovable/email/auth/preview': {
+      id: '/lovable/email/auth/preview'
+      path: '/lovable/email/auth/preview'
+      fullPath: '/lovable/email/auth/preview'
+      preLoaderRoute: typeof LovableEmailAuthPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/auth/webhook': {
+      id: '/lovable/email/auth/webhook'
+      path: '/lovable/email/auth/webhook'
+      fullPath: '/lovable/email/auth/webhook'
+      preLoaderRoute: typeof LovableEmailAuthWebhookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -1217,6 +1257,8 @@ const rootRouteChildren: RootRouteChildren = {
   CabinetCasUsageCabinetSpecialiseRestaurationRoute:
     CabinetCasUsageCabinetSpecialiseRestaurationRoute,
   CabinetCasUsageIndexRoute: CabinetCasUsageIndexRoute,
+  LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
+  LovableEmailAuthWebhookRoute: LovableEmailAuthWebhookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
