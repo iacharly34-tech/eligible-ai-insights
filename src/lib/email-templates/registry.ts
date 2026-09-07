@@ -1,4 +1,6 @@
 import type { ComponentType } from 'react'
+import { template as demoConfirmation } from './demo-confirmation'
+import { template as leadNotification } from './lead-notification'
 
 export interface TemplateEntry {
   component: ComponentType<any>
