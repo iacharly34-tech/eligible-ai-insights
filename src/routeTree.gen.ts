@@ -33,7 +33,6 @@ import { Route as SalesAssistantRouteImport } from './routes/sales-assistant'
 import { Route as SimulateurRoiIaCabinetRouteImport } from './routes/simulateur-roi-ia-cabinet'
 import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as TarifsRouteImport } from './routes/tarifs'
-import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
 import { Route as VisibiliteExpertComptableRouteImport } from './routes/visibilite-expert-comptable'
 import { Route as Blog5LeviersCroissanceCabinetExpertiseComptableRouteImport } from './routes/blog/5-leviers-croissance-cabinet-expertise-comptable'
 import { Route as BlogBarometreAcquisitionCabinetEc2026RouteImport } from './routes/blog/barometre-acquisition-cabinet-ec-2026'
@@ -192,11 +191,6 @@ const SolutionsRoute = SolutionsRouteImport.update({
 const TarifsRoute = TarifsRouteImport.update({
   id: '/tarifs',
   path: '/tarifs',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const UnsubscribeRoute = UnsubscribeRouteImport.update({
-  id: '/unsubscribe',
-  path: '/unsubscribe',
   getParentRoute: () => rootRouteImport,
 } as any)
 const VisibiliteExpertComptableRoute =
@@ -413,7 +407,6 @@ export interface FileRoutesByFullPath {
   '/simulateur-roi-ia-cabinet': typeof SimulateurRoiIaCabinetRoute
   '/solutions': typeof SolutionsRoute
   '/tarifs': typeof TarifsRoute
-  '/unsubscribe': typeof UnsubscribeRoute
   '/visibilite-expert-comptable': typeof VisibiliteExpertComptableRoute
   '/blog/5-leviers-croissance-cabinet-expertise-comptable': typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
@@ -473,7 +466,6 @@ export interface FileRoutesByTo {
   '/simulateur-roi-ia-cabinet': typeof SimulateurRoiIaCabinetRoute
   '/solutions': typeof SolutionsRoute
   '/tarifs': typeof TarifsRoute
-  '/unsubscribe': typeof UnsubscribeRoute
   '/visibilite-expert-comptable': typeof VisibiliteExpertComptableRoute
   '/blog/5-leviers-croissance-cabinet-expertise-comptable': typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
@@ -534,7 +526,6 @@ export interface FileRoutesById {
   '/simulateur-roi-ia-cabinet': typeof SimulateurRoiIaCabinetRoute
   '/solutions': typeof SolutionsRoute
   '/tarifs': typeof TarifsRoute
-  '/unsubscribe': typeof UnsubscribeRoute
   '/visibilite-expert-comptable': typeof VisibiliteExpertComptableRoute
   '/blog/5-leviers-croissance-cabinet-expertise-comptable': typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
@@ -596,7 +587,6 @@ export interface FileRouteTypes {
     | '/simulateur-roi-ia-cabinet'
     | '/solutions'
     | '/tarifs'
-    | '/unsubscribe'
     | '/visibilite-expert-comptable'
     | '/blog/5-leviers-croissance-cabinet-expertise-comptable'
     | '/blog/barometre-acquisition-cabinet-ec-2026'
@@ -656,7 +646,6 @@ export interface FileRouteTypes {
     | '/simulateur-roi-ia-cabinet'
     | '/solutions'
     | '/tarifs'
-    | '/unsubscribe'
     | '/visibilite-expert-comptable'
     | '/blog/5-leviers-croissance-cabinet-expertise-comptable'
     | '/blog/barometre-acquisition-cabinet-ec-2026'
@@ -716,7 +705,6 @@ export interface FileRouteTypes {
     | '/simulateur-roi-ia-cabinet'
     | '/solutions'
     | '/tarifs'
-    | '/unsubscribe'
     | '/visibilite-expert-comptable'
     | '/blog/5-leviers-croissance-cabinet-expertise-comptable'
     | '/blog/barometre-acquisition-cabinet-ec-2026'
@@ -777,7 +765,6 @@ export interface RootRouteChildren {
   SimulateurRoiIaCabinetRoute: typeof SimulateurRoiIaCabinetRoute
   SolutionsRoute: typeof SolutionsRoute
   TarifsRoute: typeof TarifsRoute
-  UnsubscribeRoute: typeof UnsubscribeRoute
   VisibiliteExpertComptableRoute: typeof VisibiliteExpertComptableRoute
   Blog5LeviersCroissanceCabinetExpertiseComptableRoute: typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   BlogBarometreAcquisitionCabinetEc2026Route: typeof BlogBarometreAcquisitionCabinetEc2026Route
@@ -981,13 +968,6 @@ declare module '@tanstack/react-router' {
       path: '/tarifs'
       fullPath: '/tarifs'
       preLoaderRoute: typeof TarifsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/unsubscribe': {
-      id: '/unsubscribe'
-      path: '/unsubscribe'
-      fullPath: '/unsubscribe'
-      preLoaderRoute: typeof UnsubscribeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/visibilite-expert-comptable': {
@@ -1251,7 +1231,6 @@ const rootRouteChildren: RootRouteChildren = {
   SimulateurRoiIaCabinetRoute: SimulateurRoiIaCabinetRoute,
   SolutionsRoute: SolutionsRoute,
   TarifsRoute: TarifsRoute,
-  UnsubscribeRoute: UnsubscribeRoute,
   VisibiliteExpertComptableRoute: VisibiliteExpertComptableRoute,
   Blog5LeviersCroissanceCabinetExpertiseComptableRoute:
     Blog5LeviersCroissanceCabinetExpertiseComptableRoute,
