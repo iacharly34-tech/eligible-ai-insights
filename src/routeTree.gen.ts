@@ -63,6 +63,7 @@ import { Route as CabinetCasUsageIndexRouteImport } from './routes/cabinet/cas-u
 import { Route as CabinetCasUsageCabinet8CollaborateursDepartementRouteImport } from './routes/cabinet/cas-usage/cabinet-8-collaborateurs-departement'
 import { Route as CabinetCasUsageCabinetFullRemoteStartupsEcommerceRouteImport } from './routes/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
 import { Route as CabinetCasUsageCabinetSpecialiseRestaurationRouteImport } from './routes/cabinet/cas-usage/cabinet-specialise-restauration'
+import { Route as LovableEmailEventsRouteImport } from './routes/lovable/email/events'
 import { Route as LovableEmailAuthPreviewRouteImport } from './routes/lovable/email/auth/preview'
 import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
@@ -365,6 +366,11 @@ const CabinetCasUsageCabinetSpecialiseRestaurationRoute =
     path: '/cabinet/cas-usage/cabinet-specialise-restauration',
     getParentRoute: () => rootRouteImport,
   } as any)
+const LovableEmailEventsRoute = LovableEmailEventsRouteImport.update({
+  id: '/lovable/email/events',
+  path: '/lovable/email/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
   id: '/lovable/email/auth/preview',
   path: '/lovable/email/auth/preview',
@@ -436,6 +442,7 @@ export interface FileRoutesByFullPath {
   '/cabinet/cas-usage/cabinet-8-collaborateurs-departement': typeof CabinetCasUsageCabinet8CollaborateursDepartementRoute
   '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce': typeof CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute
   '/cabinet/cas-usage/cabinet-specialise-restauration': typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
+  '/lovable/email/events': typeof LovableEmailEventsRoute
   '/cabinet/cas-usage/': typeof CabinetCasUsageIndexRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
@@ -495,6 +502,7 @@ export interface FileRoutesByTo {
   '/cabinet/cas-usage/cabinet-8-collaborateurs-departement': typeof CabinetCasUsageCabinet8CollaborateursDepartementRoute
   '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce': typeof CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute
   '/cabinet/cas-usage/cabinet-specialise-restauration': typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
+  '/lovable/email/events': typeof LovableEmailEventsRoute
   '/cabinet/cas-usage': typeof CabinetCasUsageIndexRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
@@ -555,6 +563,7 @@ export interface FileRoutesById {
   '/cabinet/cas-usage/cabinet-8-collaborateurs-departement': typeof CabinetCasUsageCabinet8CollaborateursDepartementRoute
   '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce': typeof CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute
   '/cabinet/cas-usage/cabinet-specialise-restauration': typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
+  '/lovable/email/events': typeof LovableEmailEventsRoute
   '/cabinet/cas-usage/': typeof CabinetCasUsageIndexRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
@@ -616,6 +625,7 @@ export interface FileRouteTypes {
     | '/cabinet/cas-usage/cabinet-8-collaborateurs-departement'
     | '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
     | '/cabinet/cas-usage/cabinet-specialise-restauration'
+    | '/lovable/email/events'
     | '/cabinet/cas-usage/'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
@@ -675,6 +685,7 @@ export interface FileRouteTypes {
     | '/cabinet/cas-usage/cabinet-8-collaborateurs-departement'
     | '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
     | '/cabinet/cas-usage/cabinet-specialise-restauration'
+    | '/lovable/email/events'
     | '/cabinet/cas-usage'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
@@ -734,6 +745,7 @@ export interface FileRouteTypes {
     | '/cabinet/cas-usage/cabinet-8-collaborateurs-departement'
     | '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
     | '/cabinet/cas-usage/cabinet-specialise-restauration'
+    | '/lovable/email/events'
     | '/cabinet/cas-usage/'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
@@ -794,6 +806,7 @@ export interface RootRouteChildren {
   CabinetCasUsageCabinet8CollaborateursDepartementRoute: typeof CabinetCasUsageCabinet8CollaborateursDepartementRoute
   CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute: typeof CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute
   CabinetCasUsageCabinetSpecialiseRestaurationRoute: typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
+  LovableEmailEventsRoute: typeof LovableEmailEventsRoute
   CabinetCasUsageIndexRoute: typeof CabinetCasUsageIndexRoute
   LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
   LovableEmailAuthWebhookRoute: typeof LovableEmailAuthWebhookRoute
@@ -1180,6 +1193,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CabinetCasUsageCabinetSpecialiseRestaurationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lovable/email/events': {
+      id: '/lovable/email/events'
+      path: '/lovable/email/events'
+      fullPath: '/lovable/email/events'
+      preLoaderRoute: typeof LovableEmailEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lovable/email/auth/preview': {
       id: '/lovable/email/auth/preview'
       path: '/lovable/email/auth/preview'
@@ -1277,6 +1297,7 @@ const rootRouteChildren: RootRouteChildren = {
     CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute,
   CabinetCasUsageCabinetSpecialiseRestaurationRoute:
     CabinetCasUsageCabinetSpecialiseRestaurationRoute,
+  LovableEmailEventsRoute: LovableEmailEventsRoute,
   CabinetCasUsageIndexRoute: CabinetCasUsageIndexRoute,
   LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
   LovableEmailAuthWebhookRoute: LovableEmailAuthWebhookRoute,
