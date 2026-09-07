@@ -1,14 +1,20 @@
+import * as React from 'npm:react@18.3.1'
+import { renderAsync } from 'npm:@react-email/components@0.0.22'
+import { sendLovableEmail } from 'npm:@lovable.dev/email-js'
 import { createClient } from 'npm:@supabase/supabase-js@2'
 import { corsHeaders } from 'npm:@supabase/supabase-js@2/cors'
 import { z } from 'npm:zod@3.23.8'
+import { TEMPLATES } from '../_shared/transactional-email-templates/registry.ts'
 
 // Public endpoint (verify_jwt = false). This is the ONLY client-facing entry point
 // for demo requests. It validates input, rate-limits by IP + email, persists the
-// lead, and then invokes send-transactional-email with the service role for both
-// the applicant confirmation and the internal notification. This prevents open
-// email relay abuse: clients can no longer choose arbitrary recipients.
+// lead, then renders and sends the applicant confirmation and the internal
+// notification through Lovable's managed email API. Recipients are fixed here, so
+// clients can never choose arbitrary recipients.
 
 const OWNER_NOTIFICATION_EMAIL = 'lahyani.daniel@gmail.com'
+const SENDER_DOMAIN = 'notify.eligibly.ai'
+const FROM_DOMAIN = 'eligibly.ai'
 
 const BodySchema = z.object({
   fullName: z.string().trim().min(1).max(120),
