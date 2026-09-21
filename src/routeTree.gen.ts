@@ -16,10 +16,12 @@ import { Route as CanauxActivationRouteImport } from './routes/canaux-activation
 import { Route as CguRouteImport } from './routes/cgu'
 import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
 import { Route as ConnexionRouteImport } from './routes/connexion'
+import { Route as ConseilReferencementExpertComptableRouteImport } from './routes/conseil-referencement-expert-comptable'
 import { Route as DemoRouteImport } from './routes/demo'
 import { Route as ImageDeMarqueExpertComptableRouteImport } from './routes/image-de-marque-expert-comptable'
 import { Route as InscriptionRouteImport } from './routes/inscription'
 import { Route as LeadsExpertsComptablesRouteImport } from './routes/leads-experts-comptables'
+import { Route as MarketingCabinetComptableRouteImport } from './routes/marketing-cabinet-comptable'
 import { Route as MarqueEtVisibiliteExpertComptableRouteImport } from './routes/marque-et-visibilite-expert-comptable'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as NewsletterRouteImport } from './routes/newsletter'
@@ -28,11 +30,13 @@ import { Route as PourquoiCeLeadEstPrioritaireRouteImport } from './routes/pourq
 import { Route as PresenceDigitaleCabinetComptableRouteImport } from './routes/presence-digitale-cabinet-comptable'
 import { Route as ProduitRouteImport } from './routes/produit'
 import { Route as ProspectionCabinetComptableRouteImport } from './routes/prospection-cabinet-comptable'
+import { Route as ProspectionExpertComptableRouteImport } from './routes/prospection-expert-comptable'
 import { Route as RessourcesRouteImport } from './routes/ressources'
 import { Route as SalesAssistantRouteImport } from './routes/sales-assistant'
 import { Route as SimulateurRoiIaCabinetRouteImport } from './routes/simulateur-roi-ia-cabinet'
 import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as TarifsRouteImport } from './routes/tarifs'
+import { Route as TrouverDesClientsCabinetComptableRouteImport } from './routes/trouver-des-clients-cabinet-comptable'
 import { Route as VisibiliteExpertComptableRouteImport } from './routes/visibilite-expert-comptable'
 import { Route as Blog5LeviersCroissanceCabinetExpertiseComptableRouteImport } from './routes/blog/5-leviers-croissance-cabinet-expertise-comptable'
 import { Route as BlogBarometreAcquisitionCabinetEc2026RouteImport } from './routes/blog/barometre-acquisition-cabinet-ec-2026'
@@ -103,6 +107,12 @@ const ConnexionRoute = ConnexionRouteImport.update({
   path: '/connexion',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConseilReferencementExpertComptableRoute =
+  ConseilReferencementExpertComptableRouteImport.update({
+    id: '/conseil-referencement-expert-comptable',
+    path: '/conseil-referencement-expert-comptable',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DemoRoute = DemoRouteImport.update({
   id: '/demo',
   path: '/demo',
@@ -124,6 +134,12 @@ const LeadsExpertsComptablesRoute = LeadsExpertsComptablesRouteImport.update({
   path: '/leads-experts-comptables',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MarketingCabinetComptableRoute =
+  MarketingCabinetComptableRouteImport.update({
+    id: '/marketing-cabinet-comptable',
+    path: '/marketing-cabinet-comptable',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const MarqueEtVisibiliteExpertComptableRoute =
   MarqueEtVisibiliteExpertComptableRouteImport.update({
     id: '/marque-et-visibilite-expert-comptable',
@@ -168,6 +184,12 @@ const ProspectionCabinetComptableRoute =
     path: '/prospection-cabinet-comptable',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ProspectionExpertComptableRoute =
+  ProspectionExpertComptableRouteImport.update({
+    id: '/prospection-expert-comptable',
+    path: '/prospection-expert-comptable',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const RessourcesRoute = RessourcesRouteImport.update({
   id: '/ressources',
   path: '/ressources',
@@ -193,6 +215,12 @@ const TarifsRoute = TarifsRouteImport.update({
   path: '/tarifs',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TrouverDesClientsCabinetComptableRoute =
+  TrouverDesClientsCabinetComptableRouteImport.update({
+    id: '/trouver-des-clients-cabinet-comptable',
+    path: '/trouver-des-clients-cabinet-comptable',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const VisibiliteExpertComptableRoute =
   VisibiliteExpertComptableRouteImport.update({
     id: '/visibilite-expert-comptable',
@@ -390,10 +418,12 @@ export interface FileRoutesByFullPath {
   '/cgu': typeof CguRoute
   '/confidentialite': typeof ConfidentialiteRoute
   '/connexion': typeof ConnexionRoute
+  '/conseil-referencement-expert-comptable': typeof ConseilReferencementExpertComptableRoute
   '/demo': typeof DemoRoute
   '/image-de-marque-expert-comptable': typeof ImageDeMarqueExpertComptableRoute
   '/inscription': typeof InscriptionRoute
   '/leads-experts-comptables': typeof LeadsExpertsComptablesRoute
+  '/marketing-cabinet-comptable': typeof MarketingCabinetComptableRoute
   '/marque-et-visibilite-expert-comptable': typeof MarqueEtVisibiliteExpertComptableRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/newsletter': typeof NewsletterRoute
@@ -402,11 +432,13 @@ export interface FileRoutesByFullPath {
   '/presence-digitale-cabinet-comptable': typeof PresenceDigitaleCabinetComptableRoute
   '/produit': typeof ProduitRoute
   '/prospection-cabinet-comptable': typeof ProspectionCabinetComptableRoute
+  '/prospection-expert-comptable': typeof ProspectionExpertComptableRoute
   '/ressources': typeof RessourcesRoute
   '/sales-assistant': typeof SalesAssistantRoute
   '/simulateur-roi-ia-cabinet': typeof SimulateurRoiIaCabinetRoute
   '/solutions': typeof SolutionsRoute
   '/tarifs': typeof TarifsRoute
+  '/trouver-des-clients-cabinet-comptable': typeof TrouverDesClientsCabinetComptableRoute
   '/visibilite-expert-comptable': typeof VisibiliteExpertComptableRoute
   '/blog/5-leviers-croissance-cabinet-expertise-comptable': typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
@@ -449,10 +481,12 @@ export interface FileRoutesByTo {
   '/cgu': typeof CguRoute
   '/confidentialite': typeof ConfidentialiteRoute
   '/connexion': typeof ConnexionRoute
+  '/conseil-referencement-expert-comptable': typeof ConseilReferencementExpertComptableRoute
   '/demo': typeof DemoRoute
   '/image-de-marque-expert-comptable': typeof ImageDeMarqueExpertComptableRoute
   '/inscription': typeof InscriptionRoute
   '/leads-experts-comptables': typeof LeadsExpertsComptablesRoute
+  '/marketing-cabinet-comptable': typeof MarketingCabinetComptableRoute
   '/marque-et-visibilite-expert-comptable': typeof MarqueEtVisibiliteExpertComptableRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/newsletter': typeof NewsletterRoute
@@ -461,11 +495,13 @@ export interface FileRoutesByTo {
   '/presence-digitale-cabinet-comptable': typeof PresenceDigitaleCabinetComptableRoute
   '/produit': typeof ProduitRoute
   '/prospection-cabinet-comptable': typeof ProspectionCabinetComptableRoute
+  '/prospection-expert-comptable': typeof ProspectionExpertComptableRoute
   '/ressources': typeof RessourcesRoute
   '/sales-assistant': typeof SalesAssistantRoute
   '/simulateur-roi-ia-cabinet': typeof SimulateurRoiIaCabinetRoute
   '/solutions': typeof SolutionsRoute
   '/tarifs': typeof TarifsRoute
+  '/trouver-des-clients-cabinet-comptable': typeof TrouverDesClientsCabinetComptableRoute
   '/visibilite-expert-comptable': typeof VisibiliteExpertComptableRoute
   '/blog/5-leviers-croissance-cabinet-expertise-comptable': typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
@@ -509,10 +545,12 @@ export interface FileRoutesById {
   '/cgu': typeof CguRoute
   '/confidentialite': typeof ConfidentialiteRoute
   '/connexion': typeof ConnexionRoute
+  '/conseil-referencement-expert-comptable': typeof ConseilReferencementExpertComptableRoute
   '/demo': typeof DemoRoute
   '/image-de-marque-expert-comptable': typeof ImageDeMarqueExpertComptableRoute
   '/inscription': typeof InscriptionRoute
   '/leads-experts-comptables': typeof LeadsExpertsComptablesRoute
+  '/marketing-cabinet-comptable': typeof MarketingCabinetComptableRoute
   '/marque-et-visibilite-expert-comptable': typeof MarqueEtVisibiliteExpertComptableRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/newsletter': typeof NewsletterRoute
@@ -521,11 +559,13 @@ export interface FileRoutesById {
   '/presence-digitale-cabinet-comptable': typeof PresenceDigitaleCabinetComptableRoute
   '/produit': typeof ProduitRoute
   '/prospection-cabinet-comptable': typeof ProspectionCabinetComptableRoute
+  '/prospection-expert-comptable': typeof ProspectionExpertComptableRoute
   '/ressources': typeof RessourcesRoute
   '/sales-assistant': typeof SalesAssistantRoute
   '/simulateur-roi-ia-cabinet': typeof SimulateurRoiIaCabinetRoute
   '/solutions': typeof SolutionsRoute
   '/tarifs': typeof TarifsRoute
+  '/trouver-des-clients-cabinet-comptable': typeof TrouverDesClientsCabinetComptableRoute
   '/visibilite-expert-comptable': typeof VisibiliteExpertComptableRoute
   '/blog/5-leviers-croissance-cabinet-expertise-comptable': typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
@@ -570,10 +610,12 @@ export interface FileRouteTypes {
     | '/cgu'
     | '/confidentialite'
     | '/connexion'
+    | '/conseil-referencement-expert-comptable'
     | '/demo'
     | '/image-de-marque-expert-comptable'
     | '/inscription'
     | '/leads-experts-comptables'
+    | '/marketing-cabinet-comptable'
     | '/marque-et-visibilite-expert-comptable'
     | '/mentions-legales'
     | '/newsletter'
@@ -582,11 +624,13 @@ export interface FileRouteTypes {
     | '/presence-digitale-cabinet-comptable'
     | '/produit'
     | '/prospection-cabinet-comptable'
+    | '/prospection-expert-comptable'
     | '/ressources'
     | '/sales-assistant'
     | '/simulateur-roi-ia-cabinet'
     | '/solutions'
     | '/tarifs'
+    | '/trouver-des-clients-cabinet-comptable'
     | '/visibilite-expert-comptable'
     | '/blog/5-leviers-croissance-cabinet-expertise-comptable'
     | '/blog/barometre-acquisition-cabinet-ec-2026'
@@ -629,10 +673,12 @@ export interface FileRouteTypes {
     | '/cgu'
     | '/confidentialite'
     | '/connexion'
+    | '/conseil-referencement-expert-comptable'
     | '/demo'
     | '/image-de-marque-expert-comptable'
     | '/inscription'
     | '/leads-experts-comptables'
+    | '/marketing-cabinet-comptable'
     | '/marque-et-visibilite-expert-comptable'
     | '/mentions-legales'
     | '/newsletter'
@@ -641,11 +687,13 @@ export interface FileRouteTypes {
     | '/presence-digitale-cabinet-comptable'
     | '/produit'
     | '/prospection-cabinet-comptable'
+    | '/prospection-expert-comptable'
     | '/ressources'
     | '/sales-assistant'
     | '/simulateur-roi-ia-cabinet'
     | '/solutions'
     | '/tarifs'
+    | '/trouver-des-clients-cabinet-comptable'
     | '/visibilite-expert-comptable'
     | '/blog/5-leviers-croissance-cabinet-expertise-comptable'
     | '/blog/barometre-acquisition-cabinet-ec-2026'
@@ -688,10 +736,12 @@ export interface FileRouteTypes {
     | '/cgu'
     | '/confidentialite'
     | '/connexion'
+    | '/conseil-referencement-expert-comptable'
     | '/demo'
     | '/image-de-marque-expert-comptable'
     | '/inscription'
     | '/leads-experts-comptables'
+    | '/marketing-cabinet-comptable'
     | '/marque-et-visibilite-expert-comptable'
     | '/mentions-legales'
     | '/newsletter'
@@ -700,11 +750,13 @@ export interface FileRouteTypes {
     | '/presence-digitale-cabinet-comptable'
     | '/produit'
     | '/prospection-cabinet-comptable'
+    | '/prospection-expert-comptable'
     | '/ressources'
     | '/sales-assistant'
     | '/simulateur-roi-ia-cabinet'
     | '/solutions'
     | '/tarifs'
+    | '/trouver-des-clients-cabinet-comptable'
     | '/visibilite-expert-comptable'
     | '/blog/5-leviers-croissance-cabinet-expertise-comptable'
     | '/blog/barometre-acquisition-cabinet-ec-2026'
@@ -748,10 +800,12 @@ export interface RootRouteChildren {
   CguRoute: typeof CguRoute
   ConfidentialiteRoute: typeof ConfidentialiteRoute
   ConnexionRoute: typeof ConnexionRoute
+  ConseilReferencementExpertComptableRoute: typeof ConseilReferencementExpertComptableRoute
   DemoRoute: typeof DemoRoute
   ImageDeMarqueExpertComptableRoute: typeof ImageDeMarqueExpertComptableRoute
   InscriptionRoute: typeof InscriptionRoute
   LeadsExpertsComptablesRoute: typeof LeadsExpertsComptablesRoute
+  MarketingCabinetComptableRoute: typeof MarketingCabinetComptableRoute
   MarqueEtVisibiliteExpertComptableRoute: typeof MarqueEtVisibiliteExpertComptableRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   NewsletterRoute: typeof NewsletterRoute
@@ -760,11 +814,13 @@ export interface RootRouteChildren {
   PresenceDigitaleCabinetComptableRoute: typeof PresenceDigitaleCabinetComptableRoute
   ProduitRoute: typeof ProduitRoute
   ProspectionCabinetComptableRoute: typeof ProspectionCabinetComptableRoute
+  ProspectionExpertComptableRoute: typeof ProspectionExpertComptableRoute
   RessourcesRoute: typeof RessourcesRoute
   SalesAssistantRoute: typeof SalesAssistantRoute
   SimulateurRoiIaCabinetRoute: typeof SimulateurRoiIaCabinetRoute
   SolutionsRoute: typeof SolutionsRoute
   TarifsRoute: typeof TarifsRoute
+  TrouverDesClientsCabinetComptableRoute: typeof TrouverDesClientsCabinetComptableRoute
   VisibiliteExpertComptableRoute: typeof VisibiliteExpertComptableRoute
   Blog5LeviersCroissanceCabinetExpertiseComptableRoute: typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   BlogBarometreAcquisitionCabinetEc2026Route: typeof BlogBarometreAcquisitionCabinetEc2026Route
@@ -851,6 +907,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConnexionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/conseil-referencement-expert-comptable': {
+      id: '/conseil-referencement-expert-comptable'
+      path: '/conseil-referencement-expert-comptable'
+      fullPath: '/conseil-referencement-expert-comptable'
+      preLoaderRoute: typeof ConseilReferencementExpertComptableRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/demo': {
       id: '/demo'
       path: '/demo'
@@ -877,6 +940,13 @@ declare module '@tanstack/react-router' {
       path: '/leads-experts-comptables'
       fullPath: '/leads-experts-comptables'
       preLoaderRoute: typeof LeadsExpertsComptablesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/marketing-cabinet-comptable': {
+      id: '/marketing-cabinet-comptable'
+      path: '/marketing-cabinet-comptable'
+      fullPath: '/marketing-cabinet-comptable'
+      preLoaderRoute: typeof MarketingCabinetComptableRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/marque-et-visibilite-expert-comptable': {
@@ -935,6 +1005,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProspectionCabinetComptableRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/prospection-expert-comptable': {
+      id: '/prospection-expert-comptable'
+      path: '/prospection-expert-comptable'
+      fullPath: '/prospection-expert-comptable'
+      preLoaderRoute: typeof ProspectionExpertComptableRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ressources': {
       id: '/ressources'
       path: '/ressources'
@@ -968,6 +1045,13 @@ declare module '@tanstack/react-router' {
       path: '/tarifs'
       fullPath: '/tarifs'
       preLoaderRoute: typeof TarifsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trouver-des-clients-cabinet-comptable': {
+      id: '/trouver-des-clients-cabinet-comptable'
+      path: '/trouver-des-clients-cabinet-comptable'
+      fullPath: '/trouver-des-clients-cabinet-comptable'
+      preLoaderRoute: typeof TrouverDesClientsCabinetComptableRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/visibilite-expert-comptable': {
@@ -1213,10 +1297,13 @@ const rootRouteChildren: RootRouteChildren = {
   CguRoute: CguRoute,
   ConfidentialiteRoute: ConfidentialiteRoute,
   ConnexionRoute: ConnexionRoute,
+  ConseilReferencementExpertComptableRoute:
+    ConseilReferencementExpertComptableRoute,
   DemoRoute: DemoRoute,
   ImageDeMarqueExpertComptableRoute: ImageDeMarqueExpertComptableRoute,
   InscriptionRoute: InscriptionRoute,
   LeadsExpertsComptablesRoute: LeadsExpertsComptablesRoute,
+  MarketingCabinetComptableRoute: MarketingCabinetComptableRoute,
   MarqueEtVisibiliteExpertComptableRoute:
     MarqueEtVisibiliteExpertComptableRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
@@ -1226,11 +1313,14 @@ const rootRouteChildren: RootRouteChildren = {
   PresenceDigitaleCabinetComptableRoute: PresenceDigitaleCabinetComptableRoute,
   ProduitRoute: ProduitRoute,
   ProspectionCabinetComptableRoute: ProspectionCabinetComptableRoute,
+  ProspectionExpertComptableRoute: ProspectionExpertComptableRoute,
   RessourcesRoute: RessourcesRoute,
   SalesAssistantRoute: SalesAssistantRoute,
   SimulateurRoiIaCabinetRoute: SimulateurRoiIaCabinetRoute,
   SolutionsRoute: SolutionsRoute,
   TarifsRoute: TarifsRoute,
+  TrouverDesClientsCabinetComptableRoute:
+    TrouverDesClientsCabinetComptableRoute,
   VisibiliteExpertComptableRoute: VisibiliteExpertComptableRoute,
   Blog5LeviersCroissanceCabinetExpertiseComptableRoute:
     Blog5LeviersCroissanceCabinetExpertiseComptableRoute,
