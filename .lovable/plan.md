@@ -1,64 +1,41 @@
-# Version UK complète du site
+# Espace cabinet connecté — ingestion « lead v1 »
 
-Cible : **en-GB**, marché UK (chartered accountants). Toutes les URLs sous `/en/...` avec hreflang bidirectionnels vers leurs équivalents FR.
+## Décisions retenues
+- Attribution : tour de rôle entre cabinets couvrant la même zone.
+- Zone : département du siège × verticale.
+- Comptes cabinets créés par l'admin (pas d'inscription libre).
+- Leads avec `opposition_commerciale_rne = true` : stockés, masqués aux cabinets.
 
-## 1. Blog EN (3 articles)
+## Ce qui est construit
+1. **Point d'entrée pipeline** `POST /api/public/pipeline/leads`
+   - Clé secrète partagée (Bearer), comparée en temps constant.
+   - Validation stricte du contrat lead v1 (lots de 500 max).
+   - Upsert par SIREN : une mise à jour ne change jamais le cabinet attributaire.
+   - Traitement immédiat des `suppressions` (tous cabinets).
+   - Réponse `{recus, inseres, mis_a_jour, supprimes}`.
+2. **Attribution automatique** à l'insertion : cabinets actifs couvrant (département, verticale), tour de rôle sur le dernier attribué. Sans cabinet : lead en file « non attribué ».
+3. **Purge à J+90** : suppression automatique quotidienne à `a_supprimer_le`.
+4. **Espace cabinet** `/espace` (connexion requise)
+   - Liste des leads du cabinet : niveau, score, récence, verticale, canal recommandé, filtres.
+   - Fiche lead : société, siège, dirigeant et profil, raisons/points d'attention, angle, date du premier bilan, contacts avec fiabilité, conformité et date de suppression.
+   - Statuts : nouveau, contacté, RDV, signé, écarté + note.
+5. **Console admin** `/admin`
+   - Création des cabinets et de leurs utilisateurs (invitation email).
+   - Gestion des zones (département × verticale) par cabinet.
+   - Leads non attribués, réattribution manuelle.
+6. **Journal d'accès** : consultation de fiche et tout export journalisés ; pas d'export en masse côté cabinet.
 
-Nouvelles routes :
-- `/en/blog/registrations-barometer-july-2026`
-- `/en/blog/modernise-accounting-firm-2026`
-- `/en/blog/5-growth-levers-accounting-firm`
+## Sécurité / données
+- Cloisonnement strict par cabinet (RLS) ; rôles dans une table dédiée (admin).
+- Aucun lead réel sur les pages publiques ; la démo reste fictive.
+- Hébergement : vérifier la région UE du backend et vous le confirmer.
 
-Traduction fidèle du contenu FR, adaptée UK : "chartered accountants", "Companies House" en note comparative, £ mentionné à titre indicatif mais chiffres INSEE conservés avec disclaimer "French market data".
+## Détails techniques
+- Tables : `cabinets`, `cabinet_members`, `cabinet_zones`, `leads` (colonnes clés + `payload jsonb`), `lead_status`, `lead_access_log`, `pipeline_runs`.
+- Secret `PIPELINE_INGEST_KEY` à générer ; je vous fournis l'URL + la clé pour le `.env` du pipeline.
+- Purge via tâche planifiée appelant une route protégée.
+- Routes protégées sous `_authenticated/`, server functions avec authentification.
 
-## 2. Landings cabinet EC (4 pages)
-
-- `/en/accountant-lead-generation` ← `/leads-experts-comptables`
-- `/en/primolead-alternative` ← `/alternatives-primolead-experts-comptables`
-- `/en/use-cases` (+ 3 sous-pages) ← `/cabinet/cas-usage/*`
-  - `/en/use-cases/8-people-regional-firm`
-  - `/en/use-cases/hospitality-specialist-firm`
-  - `/en/use-cases/remote-startup-ecommerce-firm`
-- `/en/glossary` ← `/cabinet/glossaire`
-- `/en/why-this-lead-is-priority` ← `/pourquoi-ce-lead-est-prioritaire`
-- `/en/activation-channels` ← `/canaux-activation`
-- `/en/accounting-firm-prospecting` ← `/prospection-cabinet-comptable`
-
-## 3. Verticales (6 pages)
-
-- `/en/verticals/sasu-tech` → "Tech Ltd companies"
-- `/en/verticals/e-commerce`
-- `/en/verticals/restaurants-hospitality`
-- `/en/verticals/construction-trades`
-- `/en/verticals/healthcare-professionals`
-- `/en/verticals/holdings-groups`
-
-Chaque page traduite avec terminologie UK et hreflang vers son équivalent FR.
-
-## 4. SEO transverse
-
-- **hreflang** : ajout systématique `<link rel="alternate" hreflang="fr-FR|en-GB|x-default">` sur chaque page FR et EN via Helmet.
-- **JSON-LD** : `inLanguage: "en-GB"` sur toutes les nouvelles pages, `Article` / `BreadcrumbList` / `WebPage` structurés.
-- **Sitemap** : `scripts/generate-sitemap.ts` étendu avec les ~20 nouvelles URLs EN.
-- **LanguageSwitcher** : mise à jour du mapping FR↔EN pour toutes les nouvelles paires.
-- **Header/Footer EN** : libellés harmonisés `Product · Solutions · Pricing · Resources · About · Demo`.
-- **llms.txt** : section EN listant les nouvelles URLs.
-- **index.html** : ajout `<link rel="alternate" hreflang>` sitewide pour homepage.
-
-## 5. Sitelinks
-
-Les sitelinks Google se déclenchent sur cohérence de navigation. Actions :
-- S'assurer que les libellés Header/Footer EN sont **strictement identiques** partout.
-- `SitelinksStructuredData` étendu avec les URLs EN principales (`/en`, `/en/product`, `/en/pricing`, `/en/demo`, `/en/resources`).
-
-## Technique
-
-Fichiers créés (~20 fichiers `.tsx`) + patchs sur : `App.tsx`, `LanguageSwitcher.tsx`, `Header.tsx`, `Footer.tsx`, `SitelinksStructuredData.tsx`, `scripts/generate-sitemap.ts`, `public/llms.txt`, `index.html`.
-
-Volume important : je réutilise les shells FR (`LandingCabinetLayout`, `ArticleShell`) en passant des props traduites pour éviter la duplication de logique.
-
-## À noter
-
-- Les articles EN reprennent les données FR (marché français) avec un encart contextuel — un cabinet UK cherchant "how French firms handle X" reste pertinent, mais je préciserai la source pour éviter la confusion.
-- Pas de traduction des pages légales (`/en/legal`, `/en/privacy`, `/en/terms` existent déjà).
-- Publication : les nouveaux `/en/*` mettront quelques jours à être crawlés par Google même après resoumission du sitemap.
+## Hors périmètre (à valider plus tard)
+- Découpage par code postal pour 75/69/13, rayon km.
+- Activation définitive du filtre opposition RNE selon l'avis juridique.
