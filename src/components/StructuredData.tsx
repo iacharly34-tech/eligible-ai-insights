@@ -127,47 +127,31 @@ export const StructuredData = ({ page = "homepage" }: StructuredDataProps) => {
       "availability": "https://schema.org/InStock",
       "description": language === 'en' ? "Free trial available" : "Essai gratuit disponible"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "250",
-      "bestRating": "5"
-    },
     "creator": {
       "@type": "Organization",
       "name": "Eligibly"
     }
   };
 
+  // Service (not Product): Eligibly is a B2B SaaS service, not a retail product.
+  // Avoids Google "Product snippets" requirements (review/aggregateRating) we cannot honestly fill.
   const productData = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Eligibly AI",
+    "@type": "Service",
+    "name": "Eligibly",
+    "serviceType": "Détection et scoring de leads pour cabinets d'expertise-comptable",
     "description": language === 'en'
       ? "Lead detection engine for accounting firms — qualified leads, explained scoring, action plans."
-      : "moteur d'alertes nouveaux clients pour cabinets d'expertise comptable — leads qualifiés, score expliqué, plan d'action.",
-    "image": "https://eligibly.ai/assets/eligible-ai-hero-optimized.webp",
-    "brand": {
-      "@type": "Brand",
-      "name": "Eligibly"
-    },
-    "category": "AI Software",
+      : "Moteur d'alertes nouveaux clients pour cabinets d'expertise comptable — leads qualifiés, score expliqué, plan d'action.",
+    "image": "https://eligibly.ai/og-image.jpg",
+    "provider": { "@type": "Organization", "name": "Eligibly", "url": "https://eligibly.ai" },
+    "areaServed": "FR",
     "offers": {
       "@type": "Offer",
       "availability": "https://schema.org/InStock",
-      "price": "0",
+      "price": "10",
       "priceCurrency": "EUR",
-      "priceValidUntil": "2025-12-31",
-      "seller": {
-        "@type": "Organization",
-        "name": "Eligibly"
-      }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "250",
-      "bestRating": "5"
+      "description": "À partir de 10 € par lead qualifié"
     }
   };
 
