@@ -8,6 +8,7 @@ import {
   Scripts,
   redirect,
   useRouter,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { HelmetProvider } from "react-helmet-async";
 
@@ -85,12 +86,13 @@ function resolveLegacyRedirect(pathname: string): string | undefined {
 
 // ----- Root route -----
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  beforeLoad: ({ location }) => {
-    if (location.pathname.startsWith("/lovable/")) return;
+  beforeLoad: ({ location }): undefined => {
+    if (location.pathname.startsWith("/lovable/")) return undefined;
     const target = resolveLegacyRedirect(location.pathname);
     if (target && target !== location.pathname) {
       throw redirect({ href: target, statusCode: 301, replace: true });
     }
+    return undefined;
   },
   head: (ctx) => {
     const leaf = ctx.matches[ctx.matches.length - 1];
@@ -282,7 +284,7 @@ function RootComponent() {
   );
 }
 
-function RootErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function RootErrorComponent({ error, reset }: ErrorComponentProps) {
   const router = useRouter();
 
   useEffect(() => {

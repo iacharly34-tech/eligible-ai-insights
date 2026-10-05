@@ -30,11 +30,13 @@ const NEEDS = [
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
   name: "Sales Assistant Eligibly",
   description: "Copilote IA de prospection pour cabinets d'expertise comptable : 4 canaux, 9 besoins détectés, plan d'action prêt à envoyer.",
-  brand: { "@type": "Brand", name: "Eligibly" },
-  offers: { "@type": "Offer", price: "10", priceUnit: "per qualified lead", priceCurrency: "EUR", url: "https://eligibly.ai/sales-assistant" },
+  provider: { "@type": "Organization", name: "Eligibly", url: "https://eligibly.ai" },
+  image: "https://eligibly.ai/og-image.jpg",
+  areaServed: "FR",
+  offers: { "@type": "Offer", price: "10", priceCurrency: "EUR", availability: "https://schema.org/InStock", url: "https://eligibly.ai/sales-assistant" },
 };
 
 const SalesAssistant = () => {
