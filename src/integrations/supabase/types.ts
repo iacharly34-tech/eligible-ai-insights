@@ -14,6 +14,91 @@ export type Database = {
   }
   public: {
     Tables: {
+      cabinet_members: {
+        Row: {
+          cabinet_id: string
+          created_at: string
+          email: string | null
+          user_id: string
+        }
+        Insert: {
+          cabinet_id: string
+          created_at?: string
+          email?: string | null
+          user_id: string
+        }
+        Update: {
+          cabinet_id?: string
+          created_at?: string
+          email?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "cabinet_members_cabinet_id_fkey"
+            columns: ["cabinet_id"]
+            isOneToOne: false
+            referencedRelation: "cabinets"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      cabinet_zones: {
+        Row: {
+          cabinet_id: string
+          created_at: string
+          departement: string
+          id: string
+          last_assigned_at: string | null
+          verticale: string
+        }
+        Insert: {
+          cabinet_id: string
+          created_at?: string
+          departement: string
+          id?: string
+          last_assigned_at?: string | null
+          verticale: string
+        }
+        Update: {
+          cabinet_id?: string
+          created_at?: string
+          departement?: string
+          id?: string
+          last_assigned_at?: string | null
+          verticale?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "cabinet_zones_cabinet_id_fkey"
+            columns: ["cabinet_id"]
+            isOneToOne: false
+            referencedRelation: "cabinets"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      cabinets: {
+        Row: {
+          actif: boolean
+          created_at: string
+          id: string
+          nom: string
+        }
+        Insert: {
+          actif?: boolean
+          created_at?: string
+          id?: string
+          nom: string
+        }
+        Update: {
+          actif?: boolean
+          created_at?: string
+          id?: string
+          nom?: string
+        }
+        Relationships: []
+      }
       demo_requests: {
         Row: {
           company: string
@@ -134,6 +219,128 @@ export type Database = {
         }
         Relationships: []
       }
+      lead_access_log: {
+        Row: {
+          action: string
+          at: string
+          id: string
+          siren: string
+          user_id: string
+        }
+        Insert: {
+          action: string
+          at?: string
+          id?: string
+          siren: string
+          user_id: string
+        }
+        Update: {
+          action?: string
+          at?: string
+          id?: string
+          siren?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      leads: {
+        Row: {
+          a_supprimer_le: string
+          assigned_at: string | null
+          cabinet_id: string | null
+          date_creation: string | null
+          denomination: string
+          departement: string
+          detecte_le: string
+          inserted_at: string
+          niveau: string
+          note: string | null
+          opposition_rne: boolean
+          payload: Json
+          score: number
+          siren: string
+          statut: string
+          updated_at: string
+          verticale: string
+        }
+        Insert: {
+          a_supprimer_le: string
+          assigned_at?: string | null
+          cabinet_id?: string | null
+          date_creation?: string | null
+          denomination: string
+          departement: string
+          detecte_le: string
+          inserted_at?: string
+          niveau: string
+          note?: string | null
+          opposition_rne?: boolean
+          payload: Json
+          score: number
+          siren: string
+          statut?: string
+          updated_at?: string
+          verticale: string
+        }
+        Update: {
+          a_supprimer_le?: string
+          assigned_at?: string | null
+          cabinet_id?: string | null
+          date_creation?: string | null
+          denomination?: string
+          departement?: string
+          detecte_le?: string
+          inserted_at?: string
+          niveau?: string
+          note?: string | null
+          opposition_rne?: boolean
+          payload?: Json
+          score?: number
+          siren?: string
+          statut?: string
+          updated_at?: string
+          verticale?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "leads_cabinet_id_fkey"
+            columns: ["cabinet_id"]
+            isOneToOne: false
+            referencedRelation: "cabinets"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      pipeline_runs: {
+        Row: {
+          at: string
+          genere_le: string | null
+          id: string
+          inseres: number
+          mis_a_jour: number
+          recus: number
+          supprimes: number
+        }
+        Insert: {
+          at?: string
+          genere_le?: string | null
+          id?: string
+          inseres?: number
+          mis_a_jour?: number
+          recus?: number
+          supprimes?: number
+        }
+        Update: {
+          at?: string
+          genere_le?: string | null
+          id?: string
+          inseres?: number
+          mis_a_jour?: number
+          recus?: number
+          supprimes?: number
+        }
+        Relationships: []
+      }
       suppressed_emails: {
         Row: {
           created_at: string
@@ -184,6 +391,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      assign_lead_cabinet: {
+        Args: { _departement: string; _verticale: string }
+        Returns: string
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -191,6 +402,8 @@ export type Database = {
         }
         Returns: boolean
       }
+      purge_expired_leads: { Args: never; Returns: number }
+      user_cabinet_id: { Args: { _user_id: string }; Returns: string }
     }
     Enums: {
       app_role: "admin" | "moderator" | "user"
