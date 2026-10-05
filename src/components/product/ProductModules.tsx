@@ -127,7 +127,7 @@ export const ProductModules = () => {
               </ul>
 
               <span className="text-sm font-semibold text-primary group-hover:underline">
-                {language === "en" ? "Learn more →" : "En savoir plus →"}
+                {language === "en" ? "Explore" : "Découvrir le module"} Eligibly {t(`product.suite.${mod.key}.name`)} →
               </span>
             </SafeLink>
           ))}
