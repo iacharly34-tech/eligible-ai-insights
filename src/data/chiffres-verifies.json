@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "source": "Pipeline Eligibly, runs des 23 et 24/09/2026",
+    "perimetre": "France entière, créations sur 14 jours (SCI : 7 jours, échantillon de 300 max)",
+    "unite": "pourcentage des sociétés détectées, sauf 'volume' (nombre de sociétés)",
+    "avertissement": "Mesures ponctuelles, à actualiser. Ne pas extrapoler en promesse de volume par cabinet. 'deja_chez_un_cabinet' non mesuré pour la santé."
+  },
+  "verticales": {
+    "Tech": {
+      "volume": 379,
+      "dirigeant_identifie": 92,
+      "profil_entrepreneurial_etabli": 92,
+      "adresse_courrier_valide": 94,
+      "email_fiable": 18,
+      "telephone": 8,
+      "linkedin_dirigeant": 40,
+      "leads_prioritaires": 27,
+      "deja_chez_un_cabinet": 21
+    },
+    "Conseil": {
+      "volume": 450,
+      "dirigeant_identifie": 96,
+      "profil_entrepreneurial_etabli": 96,
+      "adresse_courrier_valide": 95,
+      "email_fiable": 7,
+      "telephone": 4,
+      "linkedin_dirigeant": 45,
+      "leads_prioritaires": 23,
+      "deja_chez_un_cabinet": 15
+    },
+    "Commerce de proximité": {
+      "volume": 353,
+      "dirigeant_identifie": 94,
+      "profil_entrepreneurial_etabli": 94,
+      "adresse_courrier_valide": 92,
+      "email_fiable": 3,
+      "telephone": 4,
+      "linkedin_dirigeant": 32,
+      "leads_prioritaires": 23,
+      "deja_chez_un_cabinet": 11
+    },
+    "Santé": {
+      "volume": 79,
+      "dirigeant_identifie": 99,
+      "profil_entrepreneurial_etabli": 99,
+      "adresse_courrier_valide": 91,
+      "email_fiable": 13,
+      "telephone": 25,
+      "linkedin_dirigeant": 33,
+      "leads_prioritaires": 14,
+      "deja_chez_un_cabinet": null
+    },
+    "SCI": {
+      "volume": 186,
+      "dirigeant_identifie": 100,
+      "profil_entrepreneurial_etabli": 100,
+      "adresse_courrier_valide": 92,
+      "email_fiable": 2,
+      "telephone": 0,
+      "linkedin_dirigeant": 28,
+      "leads_prioritaires": 22,
+      "deja_chez_un_cabinet": 4
+    }
+  },
+  "sante_points_de_contact": {
+    "au_moins_un_point_de_contact": "63/78 praticiens (81 %)",
+    "page_rdv_en_ligne": "39/78 (50 %)",
+    "telephone": "31/78 (40 %)",
+    "date": "septembre 2026"
+  },
+  "accroche_premier_bilan": {
+    "date_cloture_premier_exercice_connue": "99 %",
+    "date": "septembre 2026"
+  }
+}

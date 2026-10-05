@@ -1,0 +1,51 @@
+{
+  "_avertissement": "EXEMPLE FICTIF — toutes les données (société, dirigeant, SIREN, adresse) sont inventées pour illustrer le produit. À afficher avec la mention « Exemple fictif ».",
+  "niveau": "PREMIUM",
+  "score": 82,
+  "societe": {
+    "denomination": "ATELIER NOVA (exemple)",
+    "forme": "SASU",
+    "activite": "62.01Z — Programmation informatique",
+    "date_creation": "2026-09-15",
+    "capital": "1 000 €",
+    "ville": "Lyon (69003)",
+    "siren": "000 000 000"
+  },
+  "dirigeant": {
+    "nom_affiche": "Camille Exemple",
+    "qualite": "Président",
+    "age": 34,
+    "profil": "Premier projet entrepreneurial",
+    "explication_profil": "Aucun autre mandat de dirigeant, actif ou fermé, trouvé dans les registres."
+  },
+  "accroche": {
+    "premier_bilan": "2027-12-31",
+    "texte": "Premier exercice clôturant le 31/12/2027 : les choix faits d'ici là (IS ou IR, rémunération, organisation comptable) conditionneront ce premier bilan."
+  },
+  "signaux_positifs": [
+    "Créée il y a 8 jours",
+    "Dirigeant identifié dans le registre national",
+    "Premier projet entrepreneurial",
+    "Adresse du siège vérifiée pour un courrier",
+    "Activité dans votre verticale Tech"
+  ],
+  "points_a_verifier": [
+    "Pas encore de site web ni d'email professionnel"
+  ],
+  "canaux": {
+    "courrier_siege": "disponible",
+    "linkedin_dirigeant": "trouvé",
+    "email_professionnel": "non trouvé",
+    "telephone": "non trouvé"
+  },
+  "marqueurs": {
+    "domicilie_chez_un_cabinet_comptable": false,
+    "domiciliation": false
+  },
+  "actions": [
+    "Générer le courrier",
+    "Ouvrir le profil LinkedIn",
+    "Marquer comme contacté",
+    "Écarter ce lead"
+  ]
+}
