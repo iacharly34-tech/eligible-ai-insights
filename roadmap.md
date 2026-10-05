@@ -2,4 +2,5 @@
 
 - [x] Fiche lead interactive (exemple fictif du kit) sur /pourquoi-ce-lead-est-prioritaire
 - [x] Mention RGPD absolue reformulée (À propos)
-- [ ] Espace cabinet connecté alimenté par le pipeline — bloqué : format d'envoi des leads depuis le pipeline + règle d'exclusivité par zone
+- [x] Espace cabinet connecté (ingestion pipeline, attribution tour de rôle, espace, admin)
+- [ ] Brancher le pipeline : URL + clé à mettre dans le .env (attend Daniel)
