@@ -103,7 +103,7 @@ export const SolutionsSection = () => {
                   ))}
                 </div>
                 <Button variant="outline" className="w-full group-hover:bg-primary/5">
-                  En savoir plus
+                  Voir l'approche {solution.title}
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </CardContent>
