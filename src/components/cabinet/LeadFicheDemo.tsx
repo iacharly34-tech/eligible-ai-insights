@@ -84,8 +84,8 @@ export const LeadFicheDemo = () => {
           <p className="text-sm text-muted-foreground mt-1">{lead.dirigeant.explication_profil}</p>
           <div className="text-[0.7rem] uppercase tracking-[0.14em] text-primary font-semibold mt-6 mb-3">Pourquoi ce score</div>
           <ul className="space-y-2">
-            {lead.signaux_positifs.map((x) => (
-              <li key={x} className="flex gap-2 text-sm"><Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" aria-hidden="true" />{x}</li>
+            {lead.signaux_positifs.filter((x) => !x.startsWith("Créée il y a")).map((x) => (
+              <li key={x} className="flex gap-2 text-sm"><Check className="w-4 h-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />{x}</li>
             ))}
             {lead.points_a_verifier.map((x) => (
               <li key={x} className="flex gap-2 text-sm text-muted-foreground"><span className="w-4 text-center font-bold text-accent-foreground">!</span>{x}</li>
