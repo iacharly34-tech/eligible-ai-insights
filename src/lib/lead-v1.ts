@@ -59,11 +59,11 @@ export type LeadV1 = z.infer<typeof leadV1Schema>;
 /** Forme lisible côté UI (payload stocké en JSON). */
 export type LeadPayload = {
   verticale: string;
-  societe: Record<string, any>;
-  siege: Record<string, any>;
-  dirigeant: Record<string, any>;
+  societe: any;
+  siege: any;
+  dirigeant: any;
   priorite: { niveau: string; score: number; raisons_positives: string[]; points_d_attention: string[]; angle?: string | null };
   premier_bilan?: { date_cloture_premier_exercice?: string | null } | null;
-  contact: Record<string, any>;
-  conformite: Record<string, any>;
+  contact: any;
+  conformite: any;
 };
