@@ -100,7 +100,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     // Aucune route feuille ne correspond (404) : le seul match est la racine.
     const matchedRoute = Boolean(leaf) && leaf!.routeId !== "__root__";
     const known = matchedRoute && isKnownRoute(pathname);
-    const pageMeta = known ? getRouteMeta(pathname) : NOT_FOUND_META;
+    const isPrivate = /^\/(espace|admin)(\/|$)/.test(pathname);
+    const pageMeta = known
+      ? getRouteMeta(pathname)
+      : isPrivate
+        ? { title: "Espace cabinet — Eligibly", description: "Espace privé des cabinets Eligibly." }
+        : NOT_FOUND_META;
     const canonical = getCanonicalUrl(pathname);
     const isArticle = known && pathname.startsWith("/blog/");
     return {

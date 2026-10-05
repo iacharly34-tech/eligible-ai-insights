@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as AlternativesPrimoleadExpertsComptablesRouteImport } from './routes/alternatives-primolead-experts-comptables'
 import { Route as CanauxActivationRouteImport } from './routes/canaux-activation'
@@ -38,6 +39,7 @@ import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as TarifsRouteImport } from './routes/tarifs'
 import { Route as TrouverDesClientsCabinetComptableRouteImport } from './routes/trouver-des-clients-cabinet-comptable'
 import { Route as VisibiliteExpertComptableRouteImport } from './routes/visibilite-expert-comptable'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as Blog5LeviersCroissanceCabinetExpertiseComptableRouteImport } from './routes/blog/5-leviers-croissance-cabinet-expertise-comptable'
 import { Route as BlogBarometreAcquisitionCabinetEc2026RouteImport } from './routes/blog/barometre-acquisition-cabinet-ec-2026'
 import { Route as BlogBarometreImmatriculationsJuillet2026RouteImport } from './routes/blog/barometre-immatriculations-juillet-2026'
@@ -62,11 +64,14 @@ import { Route as VerticalesProfessionsLiberalesSanteRouteImport } from './route
 import { Route as VerticalesRestaurationChrRouteImport } from './routes/verticales/restauration-chr'
 import { Route as VerticalesSasuTechRouteImport } from './routes/verticales/sasu-tech'
 import { Route as WaitlistSuccessRouteImport } from './routes/waitlist/success'
+import { Route as AuthenticatedEspaceIndexRouteImport } from './routes/_authenticated/espace/index'
+import { Route as AuthenticatedEspaceSirenRouteImport } from './routes/_authenticated/espace/$siren'
 import { Route as CabinetCasUsageIndexRouteImport } from './routes/cabinet/cas-usage/index'
 import { Route as CabinetCasUsageCabinet8CollaborateursDepartementRouteImport } from './routes/cabinet/cas-usage/cabinet-8-collaborateurs-departement'
 import { Route as CabinetCasUsageCabinetFullRemoteStartupsEcommerceRouteImport } from './routes/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
 import { Route as CabinetCasUsageCabinetSpecialiseRestaurationRouteImport } from './routes/cabinet/cas-usage/cabinet-specialise-restauration'
 import { Route as LovableEmailEventsRouteImport } from './routes/lovable/email/events'
+import { Route as ApiPublicPipelineLeadsRouteImport } from './routes/api/public/pipeline/leads'
 import { Route as LovableEmailAuthPreviewRouteImport } from './routes/lovable/email/auth/preview'
 import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
@@ -74,6 +79,10 @@ import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/l
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AProposRoute = AProposRouteImport.update({
@@ -227,6 +236,11 @@ const VisibiliteExpertComptableRoute =
     path: '/visibilite-expert-comptable',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const Blog5LeviersCroissanceCabinetExpertiseComptableRoute =
   Blog5LeviersCroissanceCabinetExpertiseComptableRouteImport.update({
     id: '/blog/5-leviers-croissance-cabinet-expertise-comptable',
@@ -365,6 +379,18 @@ const WaitlistSuccessRoute = WaitlistSuccessRouteImport.update({
   path: '/waitlist/success',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedEspaceIndexRoute =
+  AuthenticatedEspaceIndexRouteImport.update({
+    id: '/espace/',
+    path: '/espace/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedEspaceSirenRoute =
+  AuthenticatedEspaceSirenRouteImport.update({
+    id: '/espace/$siren',
+    path: '/espace/$siren',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const CabinetCasUsageIndexRoute = CabinetCasUsageIndexRouteImport.update({
   id: '/cabinet/cas-usage/',
   path: '/cabinet/cas-usage/',
@@ -391,6 +417,11 @@ const CabinetCasUsageCabinetSpecialiseRestaurationRoute =
 const LovableEmailEventsRoute = LovableEmailEventsRouteImport.update({
   id: '/lovable/email/events',
   path: '/lovable/email/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicPipelineLeadsRoute = ApiPublicPipelineLeadsRouteImport.update({
+  id: '/api/public/pipeline/leads',
+  path: '/api/public/pipeline/leads',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
@@ -440,6 +471,7 @@ export interface FileRoutesByFullPath {
   '/tarifs': typeof TarifsRoute
   '/trouver-des-clients-cabinet-comptable': typeof TrouverDesClientsCabinetComptableRoute
   '/visibilite-expert-comptable': typeof VisibiliteExpertComptableRoute
+  '/admin': typeof AuthenticatedAdminRoute
   '/blog/5-leviers-croissance-cabinet-expertise-comptable': typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
   '/blog/barometre-immatriculations-juillet-2026': typeof BlogBarometreImmatriculationsJuillet2026Route
@@ -464,11 +496,14 @@ export interface FileRoutesByFullPath {
   '/verticales/restauration-chr': typeof VerticalesRestaurationChrRoute
   '/verticales/sasu-tech': typeof VerticalesSasuTechRoute
   '/waitlist/success': typeof WaitlistSuccessRoute
+  '/espace/$siren': typeof AuthenticatedEspaceSirenRoute
   '/cabinet/cas-usage/cabinet-8-collaborateurs-departement': typeof CabinetCasUsageCabinet8CollaborateursDepartementRoute
   '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce': typeof CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute
   '/cabinet/cas-usage/cabinet-specialise-restauration': typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
   '/lovable/email/events': typeof LovableEmailEventsRoute
+  '/espace/': typeof AuthenticatedEspaceIndexRoute
   '/cabinet/cas-usage/': typeof CabinetCasUsageIndexRoute
+  '/api/public/pipeline/leads': typeof ApiPublicPipelineLeadsRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -503,6 +538,7 @@ export interface FileRoutesByTo {
   '/tarifs': typeof TarifsRoute
   '/trouver-des-clients-cabinet-comptable': typeof TrouverDesClientsCabinetComptableRoute
   '/visibilite-expert-comptable': typeof VisibiliteExpertComptableRoute
+  '/admin': typeof AuthenticatedAdminRoute
   '/blog/5-leviers-croissance-cabinet-expertise-comptable': typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
   '/blog/barometre-immatriculations-juillet-2026': typeof BlogBarometreImmatriculationsJuillet2026Route
@@ -527,11 +563,14 @@ export interface FileRoutesByTo {
   '/verticales/restauration-chr': typeof VerticalesRestaurationChrRoute
   '/verticales/sasu-tech': typeof VerticalesSasuTechRoute
   '/waitlist/success': typeof WaitlistSuccessRoute
+  '/espace/$siren': typeof AuthenticatedEspaceSirenRoute
   '/cabinet/cas-usage/cabinet-8-collaborateurs-departement': typeof CabinetCasUsageCabinet8CollaborateursDepartementRoute
   '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce': typeof CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute
   '/cabinet/cas-usage/cabinet-specialise-restauration': typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
   '/lovable/email/events': typeof LovableEmailEventsRoute
+  '/espace': typeof AuthenticatedEspaceIndexRoute
   '/cabinet/cas-usage': typeof CabinetCasUsageIndexRoute
+  '/api/public/pipeline/leads': typeof ApiPublicPipelineLeadsRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -539,6 +578,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/a-propos': typeof AProposRoute
   '/alternatives-primolead-experts-comptables': typeof AlternativesPrimoleadExpertsComptablesRoute
   '/canaux-activation': typeof CanauxActivationRoute
@@ -567,6 +607,7 @@ export interface FileRoutesById {
   '/tarifs': typeof TarifsRoute
   '/trouver-des-clients-cabinet-comptable': typeof TrouverDesClientsCabinetComptableRoute
   '/visibilite-expert-comptable': typeof VisibiliteExpertComptableRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/blog/5-leviers-croissance-cabinet-expertise-comptable': typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
   '/blog/barometre-immatriculations-juillet-2026': typeof BlogBarometreImmatriculationsJuillet2026Route
@@ -591,11 +632,14 @@ export interface FileRoutesById {
   '/verticales/restauration-chr': typeof VerticalesRestaurationChrRoute
   '/verticales/sasu-tech': typeof VerticalesSasuTechRoute
   '/waitlist/success': typeof WaitlistSuccessRoute
+  '/_authenticated/espace/$siren': typeof AuthenticatedEspaceSirenRoute
   '/cabinet/cas-usage/cabinet-8-collaborateurs-departement': typeof CabinetCasUsageCabinet8CollaborateursDepartementRoute
   '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce': typeof CabinetCasUsageCabinetFullRemoteStartupsEcommerceRoute
   '/cabinet/cas-usage/cabinet-specialise-restauration': typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
   '/lovable/email/events': typeof LovableEmailEventsRoute
+  '/_authenticated/espace/': typeof AuthenticatedEspaceIndexRoute
   '/cabinet/cas-usage/': typeof CabinetCasUsageIndexRoute
+  '/api/public/pipeline/leads': typeof ApiPublicPipelineLeadsRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -632,6 +676,7 @@ export interface FileRouteTypes {
     | '/tarifs'
     | '/trouver-des-clients-cabinet-comptable'
     | '/visibilite-expert-comptable'
+    | '/admin'
     | '/blog/5-leviers-croissance-cabinet-expertise-comptable'
     | '/blog/barometre-acquisition-cabinet-ec-2026'
     | '/blog/barometre-immatriculations-juillet-2026'
@@ -656,11 +701,14 @@ export interface FileRouteTypes {
     | '/verticales/restauration-chr'
     | '/verticales/sasu-tech'
     | '/waitlist/success'
+    | '/espace/$siren'
     | '/cabinet/cas-usage/cabinet-8-collaborateurs-departement'
     | '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
     | '/cabinet/cas-usage/cabinet-specialise-restauration'
     | '/lovable/email/events'
+    | '/espace/'
     | '/cabinet/cas-usage/'
+    | '/api/public/pipeline/leads'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
     | '/lovable/email/transactional/preview'
@@ -695,6 +743,7 @@ export interface FileRouteTypes {
     | '/tarifs'
     | '/trouver-des-clients-cabinet-comptable'
     | '/visibilite-expert-comptable'
+    | '/admin'
     | '/blog/5-leviers-croissance-cabinet-expertise-comptable'
     | '/blog/barometre-acquisition-cabinet-ec-2026'
     | '/blog/barometre-immatriculations-juillet-2026'
@@ -719,17 +768,21 @@ export interface FileRouteTypes {
     | '/verticales/restauration-chr'
     | '/verticales/sasu-tech'
     | '/waitlist/success'
+    | '/espace/$siren'
     | '/cabinet/cas-usage/cabinet-8-collaborateurs-departement'
     | '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
     | '/cabinet/cas-usage/cabinet-specialise-restauration'
     | '/lovable/email/events'
+    | '/espace'
     | '/cabinet/cas-usage'
+    | '/api/public/pipeline/leads'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
     | '/lovable/email/transactional/preview'
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/a-propos'
     | '/alternatives-primolead-experts-comptables'
     | '/canaux-activation'
@@ -758,6 +811,7 @@ export interface FileRouteTypes {
     | '/tarifs'
     | '/trouver-des-clients-cabinet-comptable'
     | '/visibilite-expert-comptable'
+    | '/_authenticated/admin'
     | '/blog/5-leviers-croissance-cabinet-expertise-comptable'
     | '/blog/barometre-acquisition-cabinet-ec-2026'
     | '/blog/barometre-immatriculations-juillet-2026'
@@ -782,11 +836,14 @@ export interface FileRouteTypes {
     | '/verticales/restauration-chr'
     | '/verticales/sasu-tech'
     | '/waitlist/success'
+    | '/_authenticated/espace/$siren'
     | '/cabinet/cas-usage/cabinet-8-collaborateurs-departement'
     | '/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
     | '/cabinet/cas-usage/cabinet-specialise-restauration'
     | '/lovable/email/events'
+    | '/_authenticated/espace/'
     | '/cabinet/cas-usage/'
+    | '/api/public/pipeline/leads'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
     | '/lovable/email/transactional/preview'
@@ -794,6 +851,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AProposRoute: typeof AProposRoute
   AlternativesPrimoleadExpertsComptablesRoute: typeof AlternativesPrimoleadExpertsComptablesRoute
   CanauxActivationRoute: typeof CanauxActivationRoute
@@ -851,6 +909,7 @@ export interface RootRouteChildren {
   CabinetCasUsageCabinetSpecialiseRestaurationRoute: typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
   LovableEmailEventsRoute: typeof LovableEmailEventsRoute
   CabinetCasUsageIndexRoute: typeof CabinetCasUsageIndexRoute
+  ApiPublicPipelineLeadsRoute: typeof ApiPublicPipelineLeadsRoute
   LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
   LovableEmailAuthWebhookRoute: typeof LovableEmailAuthWebhookRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
@@ -863,6 +922,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/a-propos': {
@@ -1061,6 +1127,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VisibiliteExpertComptableRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/blog/5-leviers-croissance-cabinet-expertise-comptable': {
       id: '/blog/5-leviers-croissance-cabinet-expertise-comptable'
       path: '/blog/5-leviers-croissance-cabinet-expertise-comptable'
@@ -1229,6 +1302,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WaitlistSuccessRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/espace/': {
+      id: '/_authenticated/espace/'
+      path: '/espace'
+      fullPath: '/espace/'
+      preLoaderRoute: typeof AuthenticatedEspaceIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/espace/$siren': {
+      id: '/_authenticated/espace/$siren'
+      path: '/espace/$siren'
+      fullPath: '/espace/$siren'
+      preLoaderRoute: typeof AuthenticatedEspaceSirenRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/cabinet/cas-usage/': {
       id: '/cabinet/cas-usage/'
       path: '/cabinet/cas-usage'
@@ -1264,6 +1351,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LovableEmailEventsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/pipeline/leads': {
+      id: '/api/public/pipeline/leads'
+      path: '/api/public/pipeline/leads'
+      fullPath: '/api/public/pipeline/leads'
+      preLoaderRoute: typeof ApiPublicPipelineLeadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lovable/email/auth/preview': {
       id: '/lovable/email/auth/preview'
       path: '/lovable/email/auth/preview'
@@ -1288,8 +1382,24 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+  AuthenticatedEspaceSirenRoute: typeof AuthenticatedEspaceSirenRoute
+  AuthenticatedEspaceIndexRoute: typeof AuthenticatedEspaceIndexRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+  AuthenticatedEspaceSirenRoute: AuthenticatedEspaceSirenRoute,
+  AuthenticatedEspaceIndexRoute: AuthenticatedEspaceIndexRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AProposRoute: AProposRoute,
   AlternativesPrimoleadExpertsComptablesRoute:
     AlternativesPrimoleadExpertsComptablesRoute,
@@ -1368,6 +1478,7 @@ const rootRouteChildren: RootRouteChildren = {
     CabinetCasUsageCabinetSpecialiseRestaurationRoute,
   LovableEmailEventsRoute: LovableEmailEventsRoute,
   CabinetCasUsageIndexRoute: CabinetCasUsageIndexRoute,
+  ApiPublicPipelineLeadsRoute: ApiPublicPipelineLeadsRoute,
   LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
   LovableEmailAuthWebhookRoute: LovableEmailAuthWebhookRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,

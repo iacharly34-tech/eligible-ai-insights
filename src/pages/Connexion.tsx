@@ -14,13 +14,48 @@ import {
   Shield,
   CheckCircle
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "@tanstack/react-router";
+import { supabase } from "@/integrations/supabase/client";
 import { SEOHead } from "@/components/SEOHead";
 
 const Connexion = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [setPwdMode, setSetPwdMode] = useState(false);
+  const [msg, setMsg] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const isInvite = /type=(invite|recovery)/.test(window.location.hash);
+    if (isInvite) setSetPwdMode(true);
+    supabase.auth.getSession().then(({ data }) => {
+      if (data.session && !isInvite) navigate({ to: "/espace" });
+    });
+  }, [navigate]);
+
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setBusy(true); setMsg(null);
+    if (setPwdMode) {
+      const { error } = await supabase.auth.updateUser({ password });
+      setBusy(false);
+      if (error) return setMsg(error.message);
+      return navigate({ to: "/espace" });
+    }
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    setBusy(false);
+    if (error) return setMsg("Identifiants incorrects.");
+    navigate({ to: "/espace" });
+  };
+
+  const onForgot = async () => {
+    if (!email) return setMsg("Saisissez votre email puis cliquez à nouveau.");
+    await supabase.auth.resetPasswordForEmail(email, { redirectTo: `${window.location.origin}/connexion` });
+    setMsg("Si un compte existe, un lien de réinitialisation vient d'être envoyé.");
+  };
 
   const benefits = [
     {
@@ -65,8 +100,9 @@ const Connexion = () => {
                     </p>
                   </div>
 
-                  <form className="space-y-6">
-                    <div className="space-y-2">
+                  <form className="space-y-6" onSubmit={onSubmit}>
+                    {setPwdMode && <p className="text-sm text-foreground">Définissez votre mot de passe pour activer votre accès.</p>}
+                    {!setPwdMode && <div className="space-y-2">
                       <Label htmlFor="email" className="text-sm font-medium text-foreground">
                         Adresse email
                       </Label>
@@ -82,7 +118,7 @@ const Connexion = () => {
                           required
                         />
                       </div>
-                    </div>
+                    </div>}
 
                     <div className="space-y-2">
                       <Label htmlFor="password" className="text-sm font-medium text-foreground">
@@ -125,27 +161,30 @@ const Connexion = () => {
                       </div>
                       <button
                         type="button"
+                        onClick={onForgot}
                         className="text-sm text-primary hover:text-primary/80 transition-colors"
                       >
                         Mot de passe oublié ?
                       </button>
                     </div>
 
+                    {msg && <p role="status" className="text-sm text-muted-foreground">{msg}</p>}
                     <Button 
                       type="submit" 
+                      disabled={busy}
                       className="w-full h-12 bg-gradient-cta hover:shadow-glow text-white text-base group transition-all duration-300"
                     >
-                      Se connecter
+                      {setPwdMode ? "Activer mon accès" : "Se connecter"}
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </form>
 
                   <div className="mt-8 pt-6 border-t border-border text-center">
                     <p className="text-muted-foreground text-sm">
-                      Pas encore de compte ?{" "}
-                      <button className="text-primary hover:text-primary/80 font-medium transition-colors">
-                        Créer un compte
-                      </button>
+                      Accès réservé aux cabinets clients.{" "}
+                      <a href="/demo" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                        Demander un pilote
+                      </a>
                     </p>
                   </div>
 
