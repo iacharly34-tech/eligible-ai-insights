@@ -1,0 +1,1 @@
+revoke execute on function public.user_cabinet_id(uuid) from public, anon;
