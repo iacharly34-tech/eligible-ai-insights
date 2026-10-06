@@ -23,7 +23,7 @@ const PourquoiCeLeadEstPrioritaire = () => (
                 Fiche lead — exemple fictif
               </Badge>
               <div className="space-y-4">
-                <h1 className="font-display text-3xl font-semibold leading-tight tracking-tight text-foreground sm:text-4xl xl:text-5xl">
+                <h1 className="font-display text-3xl font-semibold leading-tight text-foreground sm:text-4xl xl:text-5xl">
                   Analyse d’un lead prioritaire
                 </h1>
                 <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
