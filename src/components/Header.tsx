@@ -38,6 +38,11 @@ export const Header = () => {
           href: '/produit',
           desc: 'Le produit Eligibly : immatriculations détectées, scorées et livrées chaque matin, Sales Assistant inclus.',
         },
+        {
+          name: 'Exemple de fiche lead',
+          href: '/pourquoi-ce-lead-est-prioritaire',
+          desc: 'Démo : score expliqué, récence, contacts, angle d’approche et actions.',
+        },
       ],
     },
     { name: 'Solutions', href: '/solutions' },
