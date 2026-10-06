@@ -89,7 +89,7 @@ export const CabinetCompare = () => {
   return (
     <section className="py-14 md:py-20 bg-muted/30 border-y border-border">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mb-12">
+        <div className="max-w-3xl mb-8">
           <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.eyebrow}</p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
             {t.h2a} <em className="italic text-primary font-medium">{t.h2b}</em>.
