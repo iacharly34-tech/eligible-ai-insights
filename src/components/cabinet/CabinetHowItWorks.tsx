@@ -546,10 +546,10 @@ export const CabinetHowItWorks = () => {
   };
 
   return (
-    <section id="how" className="py-20 md:py-28">
+    <section id="how" className="py-14 md:py-20">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="max-w-2xl mb-12">
+        <div className="max-w-2xl mb-8">
           <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">
             {t.eyebrow}
           </p>

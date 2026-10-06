@@ -36,9 +36,9 @@ export const CabinetTestimonial = () => {
   const t = copy[lang];
 
   return (
-    <section className="py-24 sm:py-32 px-4 bg-[hsl(var(--cream))]" aria-label={t.eyebrow}>
+    <section className="py-16 md:py-24 px-4 bg-[hsl(var(--cream))]" aria-label={t.eyebrow}>
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <span className="text-xs font-semibold text-primary uppercase tracking-[0.3em]">
             {t.eyebrow}
           </span>

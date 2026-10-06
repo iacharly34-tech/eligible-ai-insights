@@ -78,7 +78,7 @@ export const CabinetHero = () => {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-background pt-24 pb-20 sm:pt-28 sm:pb-24 border-b border-border/60"
+      className="relative overflow-hidden bg-background pt-16 pb-14 sm:pt-20 sm:pb-16 border-b border-border/60"
     >
       <div className="container mx-auto relative px-4">
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-20 items-center">

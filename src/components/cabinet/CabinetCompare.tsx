@@ -87,7 +87,7 @@ export const CabinetCompare = () => {
   const groups = Array.from(new Set(rows.map((r) => r.group)));
 
   return (
-    <section className="py-20 md:py-28 bg-muted/30 border-y border-border">
+    <section className="py-14 md:py-20 bg-muted/30 border-y border-border">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mb-12">
           <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.eyebrow}</p>

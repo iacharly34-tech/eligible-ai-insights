@@ -31,7 +31,7 @@ export const CabinetProblems = () => {
   const lang = useLang();
   const t = copy[lang];
   return (
-    <section className="py-20 md:py-28 border-b border-border/60">
+    <section className="py-14 md:py-20 border-b border-border/60">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-[0.9fr_1.6fr] gap-12 lg:gap-20">
           <div>

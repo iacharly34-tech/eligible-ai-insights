@@ -26,7 +26,7 @@ export const CabinetFinalCTA = () => {
   const lang = useLang();
   const t = copy[lang];
   return (
-    <section id="demo" className="py-20 md:py-28">
+    <section id="demo" className="py-14 md:py-20">
       <div className="container mx-auto px-4">
         <div className="relative rounded-3xl overflow-hidden bg-foreground text-background px-8 py-16 md:px-16 md:py-20 text-center">
           <div
