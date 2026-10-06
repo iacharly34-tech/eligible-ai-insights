@@ -64,9 +64,9 @@ export const CabinetTransparency = () => {
   const lang = useLang();
   const t = copy[lang];
   return (
-    <section id="transparence" className="py-20 md:py-28 bg-muted/20">
+    <section id="transparence" className="py-14 md:py-20 bg-muted/20">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mb-14">
+        <div className="max-w-3xl mb-10">
           <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">
             {t.eyebrow}
           </p>

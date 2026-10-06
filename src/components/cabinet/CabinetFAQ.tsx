@@ -45,9 +45,9 @@ export const CabinetFAQ = () => {
   const lang = useLang();
   const t = copy[lang];
   return (
-    <section id="faq" className="py-20 md:py-28">
+    <section id="faq" className="py-14 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto text-center mb-12">
+        <div className="max-w-2xl mx-auto text-center mb-8">
           <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4">{t.eyebrow}</p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight">
             {t.h2a} <em className="italic text-primary font-medium">{t.h2b}</em>.

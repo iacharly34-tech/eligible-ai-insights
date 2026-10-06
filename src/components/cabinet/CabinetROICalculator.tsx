@@ -118,9 +118,9 @@ export const CabinetROICalculator = () => {
   const mailtoBody = encodeURIComponent(t.mailBody(fmt(spend), fmt(leads), rdvRate, size));
 
   return (
-    <section id="roi" className="py-20 md:py-28 bg-muted/30 border-y border-border">
+    <section id="roi" className="py-14 md:py-20 bg-muted/30 border-y border-border">
       <div className="container mx-auto px-4">
-        <div className="max-w-2xl mb-12">
+        <div className="max-w-2xl mb-8">
           <p className="text-[0.74rem] uppercase tracking-[0.14em] text-primary font-semibold mb-4 flex items-center gap-2">
             <Calculator className="w-3.5 h-3.5" /> {t.eyebrow}
           </p>
