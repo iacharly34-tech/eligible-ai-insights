@@ -104,7 +104,7 @@ export const CabinetActivation = () => {
         </div>
 
         {/* 5 channels */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-14">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-10">
           {t.channels.map((c) => {
             const m = meta[c.key as keyof typeof meta];
             const Icon = m.icon;
