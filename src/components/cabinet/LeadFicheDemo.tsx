@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -39,7 +39,7 @@ const CANAL_LABEL: Record<string, { label: string; icon: LucideIcon }> = {
   telephone: { label: "Téléphone", icon: Phone },
 };
 
-function SectionTitle({ children }: { children: React.ReactNode }) {
+function SectionTitle({ children }: { children: ReactNode }) {
   return (
     <div className="mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-primary">
       {children}
@@ -47,7 +47,7 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
   );
 }
 
-function InfoTile({ icon: Icon, label, value }: { icon: LucideIcon; label: string; value: React.ReactNode }) {
+function InfoTile({ icon: Icon, label, value }: { icon: LucideIcon; label: string; value: ReactNode }) {
   return (
     <div className="grid grid-cols-[2rem_minmax(0,1fr)] items-start gap-3 rounded-lg border border-border bg-background p-3">
       <div className="grid h-8 w-8 shrink-0 place-items-center rounded-md bg-primary/10">
@@ -61,7 +61,7 @@ function InfoTile({ icon: Icon, label, value }: { icon: LucideIcon; label: strin
   );
 }
 
-function DecisionMetric({ icon: Icon, label, value, detail }: { icon: LucideIcon; label: string; value: React.ReactNode; detail?: string }) {
+function DecisionMetric({ icon: Icon, label, value, detail }: { icon: LucideIcon; label: string; value: ReactNode; detail?: string }) {
   return (
     <div className="rounded-lg border border-border bg-card p-4">
       <div className="mb-2 flex items-center gap-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
