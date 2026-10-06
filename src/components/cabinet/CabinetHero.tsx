@@ -125,6 +125,13 @@ export const CabinetHero = () => {
             <p className="mt-3 text-xs text-muted-foreground">
               {t.ctaNote}
             </p>
+            <SafeLink
+              to="/pourquoi-ce-lead-est-prioritaire"
+              className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary underline underline-offset-4 hover:no-underline"
+            >
+              {lang === "en" ? "See a sample lead sheet" : "Voir un exemple de fiche lead"}
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </SafeLink>
 
             {/* Trust strip */}
             <div className="mt-10 pt-8 border-t border-border/60 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
