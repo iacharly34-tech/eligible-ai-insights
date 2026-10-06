@@ -128,6 +128,15 @@ export const ProduitOffres = ({ compact = false }: { compact?: boolean }) => {
                     </li>
                   ))}
                 </ul>
+                {o.icon === Radar && (
+                  <SafeLink
+                    to="/pourquoi-ce-lead-est-prioritaire"
+                    className="mb-5 inline-flex items-center gap-2 text-sm font-semibold text-primary underline underline-offset-4 hover:no-underline"
+                  >
+                    {lang === "en" ? "View a sample lead sheet" : "Voir un exemple de fiche lead"}
+                    <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                  </SafeLink>
+                )}
                 <SafeLink
                   to={localizedHref(o.href, lang)}
                   className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
