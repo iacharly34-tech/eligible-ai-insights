@@ -6,7 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { SafeLink } from "./SafeLink";
 import { useLocation } from "@/lib/router-compat";
 
-type NavChild = { name: string; href: string; desc?: string };
+type NavChild = { name: string; href: string; desc?: string; exampleHref?: string };
 type NavItem = { name: string; href?: string; children?: NavChild[] };
 
 export const Header = () => {
@@ -37,11 +37,7 @@ export const Header = () => {
           name: 'Détection & prospection',
           href: '/produit',
           desc: 'Le produit Eligibly : immatriculations détectées, scorées et livrées chaque matin, Sales Assistant inclus.',
-        },
-        {
-          name: 'Exemple de fiche lead',
-          href: '/pourquoi-ce-lead-est-prioritaire',
-          desc: 'Démo : score expliqué, récence, contacts, angle d’approche et actions.',
+          exampleHref: '/pourquoi-ce-lead-est-prioritaire',
         },
       ],
     },
@@ -225,8 +221,8 @@ export const Header = () => {
                           {item.children.map((c) => {
                             const active = location.pathname === c.href;
                             return (
+                              <div key={c.href}>
                               <SafeLink
-                                key={c.href}
                                 to={c.href}
                                 role="menuitem"
                                 className={cn(
@@ -241,6 +237,12 @@ export const Header = () => {
                                   <div className="text-xs text-muted-foreground mt-0.5 leading-snug">{c.desc}</div>
                                 )}
                               </SafeLink>
+                              {c.exampleHref && (
+                                <SafeLink to={c.exampleHref} role="menuitem" className="ml-4 mb-3 block border-l border-primary/30 py-2 pl-3 text-xs font-semibold text-primary underline underline-offset-4 focus-visible:outline-primary">
+                                  Voir un exemple de fiche lead
+                                </SafeLink>
+                              )}
+                              </div>
                             );
                           })}
                         </div>
@@ -360,6 +362,11 @@ export const Header = () => {
                                     >
                                       {c.name}
                                     </SafeLink>
+                                    {c.exampleHref && (
+                                      <SafeLink to={c.exampleHref} onClick={() => setIsMenuOpen(false)} className="block pb-3 text-center text-xs font-semibold text-primary underline underline-offset-4 focus-visible:outline-primary">
+                                        Voir un exemple de fiche lead
+                                      </SafeLink>
+                                    )}
                                   </li>
                                 );
                               })}
