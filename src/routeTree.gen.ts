@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as AlternativesPrimoleadExpertsComptablesRouteImport } from './routes/alternatives-primolead-experts-comptables'
+import { Route as BarometreQualiteLeadsRouteImport } from './routes/barometre-qualite-leads'
 import { Route as CanauxActivationRouteImport } from './routes/canaux-activation'
 import { Route as CguRouteImport } from './routes/cgu'
 import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
@@ -96,6 +97,11 @@ const AlternativesPrimoleadExpertsComptablesRoute =
     path: '/alternatives-primolead-experts-comptables',
     getParentRoute: () => rootRouteImport,
   } as any)
+const BarometreQualiteLeadsRoute = BarometreQualiteLeadsRouteImport.update({
+  id: '/barometre-qualite-leads',
+  path: '/barometre-qualite-leads',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CanauxActivationRoute = CanauxActivationRouteImport.update({
   id: '/canaux-activation',
   path: '/canaux-activation',
@@ -445,6 +451,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
   '/alternatives-primolead-experts-comptables': typeof AlternativesPrimoleadExpertsComptablesRoute
+  '/barometre-qualite-leads': typeof BarometreQualiteLeadsRoute
   '/canaux-activation': typeof CanauxActivationRoute
   '/cgu': typeof CguRoute
   '/confidentialite': typeof ConfidentialiteRoute
@@ -512,6 +519,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
   '/alternatives-primolead-experts-comptables': typeof AlternativesPrimoleadExpertsComptablesRoute
+  '/barometre-qualite-leads': typeof BarometreQualiteLeadsRoute
   '/canaux-activation': typeof CanauxActivationRoute
   '/cgu': typeof CguRoute
   '/confidentialite': typeof ConfidentialiteRoute
@@ -581,6 +589,7 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/a-propos': typeof AProposRoute
   '/alternatives-primolead-experts-comptables': typeof AlternativesPrimoleadExpertsComptablesRoute
+  '/barometre-qualite-leads': typeof BarometreQualiteLeadsRoute
   '/canaux-activation': typeof CanauxActivationRoute
   '/cgu': typeof CguRoute
   '/confidentialite': typeof ConfidentialiteRoute
@@ -650,6 +659,7 @@ export interface FileRouteTypes {
     | '/'
     | '/a-propos'
     | '/alternatives-primolead-experts-comptables'
+    | '/barometre-qualite-leads'
     | '/canaux-activation'
     | '/cgu'
     | '/confidentialite'
@@ -717,6 +727,7 @@ export interface FileRouteTypes {
     | '/'
     | '/a-propos'
     | '/alternatives-primolead-experts-comptables'
+    | '/barometre-qualite-leads'
     | '/canaux-activation'
     | '/cgu'
     | '/confidentialite'
@@ -785,6 +796,7 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/a-propos'
     | '/alternatives-primolead-experts-comptables'
+    | '/barometre-qualite-leads'
     | '/canaux-activation'
     | '/cgu'
     | '/confidentialite'
@@ -854,6 +866,7 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AProposRoute: typeof AProposRoute
   AlternativesPrimoleadExpertsComptablesRoute: typeof AlternativesPrimoleadExpertsComptablesRoute
+  BarometreQualiteLeadsRoute: typeof BarometreQualiteLeadsRoute
   CanauxActivationRoute: typeof CanauxActivationRoute
   CguRoute: typeof CguRoute
   ConfidentialiteRoute: typeof ConfidentialiteRoute
@@ -943,6 +956,13 @@ declare module '@tanstack/react-router' {
       path: '/alternatives-primolead-experts-comptables'
       fullPath: '/alternatives-primolead-experts-comptables'
       preLoaderRoute: typeof AlternativesPrimoleadExpertsComptablesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/barometre-qualite-leads': {
+      id: '/barometre-qualite-leads'
+      path: '/barometre-qualite-leads'
+      fullPath: '/barometre-qualite-leads'
+      preLoaderRoute: typeof BarometreQualiteLeadsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/canaux-activation': {
@@ -1403,6 +1423,7 @@ const rootRouteChildren: RootRouteChildren = {
   AProposRoute: AProposRoute,
   AlternativesPrimoleadExpertsComptablesRoute:
     AlternativesPrimoleadExpertsComptablesRoute,
+  BarometreQualiteLeadsRoute: BarometreQualiteLeadsRoute,
   CanauxActivationRoute: CanauxActivationRoute,
   CguRoute: CguRoute,
   ConfidentialiteRoute: ConfidentialiteRoute,

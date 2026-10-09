@@ -37,6 +37,7 @@ Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets
 - [Prospection cabinet comptable : méthode 2026](/prospection-cabinet-comptable): Méthode complète de prospection pour cabinet EC.
 - [Canaux d'activation](/canaux-activation): Quel canal (WhatsApp, LinkedIn, email, appel, courrier) pour quel type de lead créateur.
 - [Pourquoi ce lead est prioritaire](/pourquoi-ce-lead-est-prioritaire): Comment se lit un score Eligibly et ses trois raisons clés.
+- [Baromètre qualité des leads (sept. 2026)](/barometre-qualite-leads): 1 447 créations mesurées sur 5 verticales — dirigeant identifié, adresse courrier, e-mail fiable, téléphone, part déjà chez un cabinet.
 - [Glossaire prospection & génération de leads](/cabinet/glossaire): Définitions — SIRENE, INPI, BODACC, ICP, scoring prédictif, CAC, LTV, code APE 6920Z, SASU, SAS, EURL.
 - [Visibilité expert-comptable](/visibilite-expert-comptable): Les 4 surfaces de visibilité d'un cabinet (recherche locale, avis, site, assistants IA) et 7 indicateurs de suivi.
 - [Image de marque expert-comptable](/image-de-marque-expert-comptable): Positionnement, verticalisation, 4 familles de preuves, cadre déontologique de la communication.
