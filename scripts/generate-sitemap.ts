@@ -31,6 +31,7 @@ const entries: Entry[] = [
   { path: "/leads-experts-comptables", changefreq: "weekly", priority: "0.9" },
   { path: "/prospection-cabinet-comptable", changefreq: "monthly", priority: "0.8" },
   { path: "/canaux-activation", changefreq: "monthly", priority: "0.7" },
+  { path: "/barometre-qualite-leads", changefreq: "monthly", priority: "0.8" },
   { path: "/pourquoi-ce-lead-est-prioritaire", changefreq: "monthly", priority: "0.7" },
   { path: "/alternatives-primolead-experts-comptables", changefreq: "monthly", priority: "0.85" },
   { path: "/marque-et-visibilite-expert-comptable", changefreq: "monthly", priority: "0.9" },

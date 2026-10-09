@@ -137,6 +137,15 @@ export const ProduitOffres = ({ compact = false }: { compact?: boolean }) => {
                     <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
                   </SafeLink>
                 )}
+                {o.icon === Radar && (
+                  <SafeLink
+                    to="/barometre-qualite-leads"
+                    className="-mt-3 mb-5 inline-flex items-center gap-2 text-sm font-semibold text-primary underline underline-offset-4 hover:no-underline"
+                  >
+                    Baromètre qualité des leads (sept. 2026)
+                    <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                  </SafeLink>
+                )}
                 <SafeLink
                   to={localizedHref(o.href, lang)}
                   className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"

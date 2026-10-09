@@ -71,6 +71,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://eligibly.ai/barometre-qualite-leads</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://eligibly.ai/pourquoi-ce-lead-est-prioritaire</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
