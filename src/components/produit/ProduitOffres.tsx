@@ -147,10 +147,10 @@ export const ProduitOffres = ({ compact = false }: { compact?: boolean }) => {
                   </SafeLink>
                 )}
                 <SafeLink
-                  to={localizedHref(o.href, lang)}
+                  to={localizedHref(compact && o.icon === Radar ? "/produit" : o.href, lang)}
                   className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
                 >
-                  {o.cta}
+                  {compact && o.icon === Radar ? (lang === "en" ? "See the detection & outreach offer" : "Voir l’offre détection & prospection") : o.cta}
                   <ArrowRight className="w-4 h-4" />
                 </SafeLink>
               </div>

@@ -14,11 +14,11 @@ import { useState } from "react";
 
 const copy = {
   fr: {
-    eyebrow: "Fonctionnalités",
-    h1a: "Un moteur de détection qui livre ",
-    h1em: "les bons leads",
-    h1b: ", là où votre cabinet travaille.",
-    sub: "Eligibly consolide les sources officielles, filtre selon votre ICP, score chaque société fraîchement immatriculée, et pousse les meilleures alertes dans votre canal de prédilection.",
+    eyebrow: "Offres pour cabinets d’expertise comptable",
+    h1a: "Marque & visibilité. ",
+    h1em: "Détection & prospection.",
+    h1b: "",
+    sub: "Deux offres complémentaires : établir la crédibilité de votre cabinet en ligne, puis identifier les sociétés nouvellement créées, comprendre leur score et organiser la prise de contact.",
     bookDemo: "Réserver une démo",
     howEyebrow: "Comment ça marche",
     howH2a: "Quatre briques pour transformer les immatriculations en ",
