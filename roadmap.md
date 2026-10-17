@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Renforcer le SEO : métadonnées cohérentes après navigation, page Offres explicite, vérification HTML et sitemap
+- [x] Renforcer le SEO : métadonnées cohérentes après navigation, page Offres explicite, vérification HTML et sitemap
 - [x] Fiche lead interactive (exemple fictif du kit) sur /pourquoi-ce-lead-est-prioritaire
 - [x] Mention RGPD absolue reformulée (À propos)
 - [x] Espace cabinet connecté (ingestion pipeline, attribution tour de rôle, espace, admin)
