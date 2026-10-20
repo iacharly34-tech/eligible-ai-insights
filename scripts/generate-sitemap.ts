@@ -61,6 +61,7 @@ const entries: Entry[] = [
   { path: "/blog/moderniser-cabinet-expertise-comptable-ia", changefreq: "monthly", priority: "0.7" },
   // Blog (cabinet EC)
   { path: "/blog/creations-entreprises-france-2025", changefreq: "monthly", priority: "0.7" },
+  { path: "/blog/churn-cabinet-expertise-comptable", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/cout-acquisition-client-cabinet-comptable", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/icp-cabinet-expertise-comptable", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/barometre-acquisition-cabinet-ec-2026", changefreq: "monthly", priority: "0.7" },

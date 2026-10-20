@@ -45,6 +45,7 @@ import { Route as Blog5LeviersCroissanceCabinetExpertiseComptableRouteImport } f
 import { Route as BlogBarometreAcquisitionCabinetEc2026RouteImport } from './routes/blog/barometre-acquisition-cabinet-ec-2026'
 import { Route as BlogBarometreImmatriculationsJuillet2026RouteImport } from './routes/blog/barometre-immatriculations-juillet-2026'
 import { Route as BlogCasClientEmpartnersRouteImport } from './routes/blog/cas-client-empartners'
+import { Route as BlogChurnCabinetExpertiseComptableRouteImport } from './routes/blog/churn-cabinet-expertise-comptable'
 import { Route as BlogCoutAcquisitionClientCabinetComptableRouteImport } from './routes/blog/cout-acquisition-client-cabinet-comptable'
 import { Route as BlogCreationsEntreprisesFrance2025RouteImport } from './routes/blog/creations-entreprises-france-2025'
 import { Route as BlogCreerSiteWebExpertComptableGuideRouteImport } from './routes/blog/creer-site-web-expert-comptable-guide'
@@ -270,6 +271,12 @@ const BlogCasClientEmpartnersRoute = BlogCasClientEmpartnersRouteImport.update({
   path: '/blog/cas-client-empartners',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogChurnCabinetExpertiseComptableRoute =
+  BlogChurnCabinetExpertiseComptableRouteImport.update({
+    id: '/blog/churn-cabinet-expertise-comptable',
+    path: '/blog/churn-cabinet-expertise-comptable',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BlogCoutAcquisitionClientCabinetComptableRoute =
   BlogCoutAcquisitionClientCabinetComptableRouteImport.update({
     id: '/blog/cout-acquisition-client-cabinet-comptable',
@@ -483,6 +490,7 @@ export interface FileRoutesByFullPath {
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
   '/blog/barometre-immatriculations-juillet-2026': typeof BlogBarometreImmatriculationsJuillet2026Route
   '/blog/cas-client-empartners': typeof BlogCasClientEmpartnersRoute
+  '/blog/churn-cabinet-expertise-comptable': typeof BlogChurnCabinetExpertiseComptableRoute
   '/blog/cout-acquisition-client-cabinet-comptable': typeof BlogCoutAcquisitionClientCabinetComptableRoute
   '/blog/creations-entreprises-france-2025': typeof BlogCreationsEntreprisesFrance2025Route
   '/blog/creer-site-web-expert-comptable-guide': typeof BlogCreerSiteWebExpertComptableGuideRoute
@@ -551,6 +559,7 @@ export interface FileRoutesByTo {
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
   '/blog/barometre-immatriculations-juillet-2026': typeof BlogBarometreImmatriculationsJuillet2026Route
   '/blog/cas-client-empartners': typeof BlogCasClientEmpartnersRoute
+  '/blog/churn-cabinet-expertise-comptable': typeof BlogChurnCabinetExpertiseComptableRoute
   '/blog/cout-acquisition-client-cabinet-comptable': typeof BlogCoutAcquisitionClientCabinetComptableRoute
   '/blog/creations-entreprises-france-2025': typeof BlogCreationsEntreprisesFrance2025Route
   '/blog/creer-site-web-expert-comptable-guide': typeof BlogCreerSiteWebExpertComptableGuideRoute
@@ -621,6 +630,7 @@ export interface FileRoutesById {
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
   '/blog/barometre-immatriculations-juillet-2026': typeof BlogBarometreImmatriculationsJuillet2026Route
   '/blog/cas-client-empartners': typeof BlogCasClientEmpartnersRoute
+  '/blog/churn-cabinet-expertise-comptable': typeof BlogChurnCabinetExpertiseComptableRoute
   '/blog/cout-acquisition-client-cabinet-comptable': typeof BlogCoutAcquisitionClientCabinetComptableRoute
   '/blog/creations-entreprises-france-2025': typeof BlogCreationsEntreprisesFrance2025Route
   '/blog/creer-site-web-expert-comptable-guide': typeof BlogCreerSiteWebExpertComptableGuideRoute
@@ -691,6 +701,7 @@ export interface FileRouteTypes {
     | '/blog/barometre-acquisition-cabinet-ec-2026'
     | '/blog/barometre-immatriculations-juillet-2026'
     | '/blog/cas-client-empartners'
+    | '/blog/churn-cabinet-expertise-comptable'
     | '/blog/cout-acquisition-client-cabinet-comptable'
     | '/blog/creations-entreprises-france-2025'
     | '/blog/creer-site-web-expert-comptable-guide'
@@ -759,6 +770,7 @@ export interface FileRouteTypes {
     | '/blog/barometre-acquisition-cabinet-ec-2026'
     | '/blog/barometre-immatriculations-juillet-2026'
     | '/blog/cas-client-empartners'
+    | '/blog/churn-cabinet-expertise-comptable'
     | '/blog/cout-acquisition-client-cabinet-comptable'
     | '/blog/creations-entreprises-france-2025'
     | '/blog/creer-site-web-expert-comptable-guide'
@@ -828,6 +840,7 @@ export interface FileRouteTypes {
     | '/blog/barometre-acquisition-cabinet-ec-2026'
     | '/blog/barometre-immatriculations-juillet-2026'
     | '/blog/cas-client-empartners'
+    | '/blog/churn-cabinet-expertise-comptable'
     | '/blog/cout-acquisition-client-cabinet-comptable'
     | '/blog/creations-entreprises-france-2025'
     | '/blog/creer-site-web-expert-comptable-guide'
@@ -897,6 +910,7 @@ export interface RootRouteChildren {
   BlogBarometreAcquisitionCabinetEc2026Route: typeof BlogBarometreAcquisitionCabinetEc2026Route
   BlogBarometreImmatriculationsJuillet2026Route: typeof BlogBarometreImmatriculationsJuillet2026Route
   BlogCasClientEmpartnersRoute: typeof BlogCasClientEmpartnersRoute
+  BlogChurnCabinetExpertiseComptableRoute: typeof BlogChurnCabinetExpertiseComptableRoute
   BlogCoutAcquisitionClientCabinetComptableRoute: typeof BlogCoutAcquisitionClientCabinetComptableRoute
   BlogCreationsEntreprisesFrance2025Route: typeof BlogCreationsEntreprisesFrance2025Route
   BlogCreerSiteWebExpertComptableGuideRoute: typeof BlogCreerSiteWebExpertComptableGuideRoute
@@ -1182,6 +1196,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogCasClientEmpartnersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/churn-cabinet-expertise-comptable': {
+      id: '/blog/churn-cabinet-expertise-comptable'
+      path: '/blog/churn-cabinet-expertise-comptable'
+      fullPath: '/blog/churn-cabinet-expertise-comptable'
+      preLoaderRoute: typeof BlogChurnCabinetExpertiseComptableRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/cout-acquisition-client-cabinet-comptable': {
       id: '/blog/cout-acquisition-client-cabinet-comptable'
       path: '/blog/cout-acquisition-client-cabinet-comptable'
@@ -1460,6 +1481,8 @@ const rootRouteChildren: RootRouteChildren = {
   BlogBarometreImmatriculationsJuillet2026Route:
     BlogBarometreImmatriculationsJuillet2026Route,
   BlogCasClientEmpartnersRoute: BlogCasClientEmpartnersRoute,
+  BlogChurnCabinetExpertiseComptableRoute:
+    BlogChurnCabinetExpertiseComptableRoute,
   BlogCoutAcquisitionClientCabinetComptableRoute:
     BlogCoutAcquisitionClientCabinetComptableRoute,
   BlogCreationsEntreprisesFrance2025Route:
