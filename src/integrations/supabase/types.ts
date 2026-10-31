@@ -101,33 +101,57 @@ export type Database = {
       }
       demo_requests: {
         Row: {
+          booking_token: string
           company: string
           created_at: string
+          departements: string | null
           email: string
+          followup_count: number
           full_name: string
           id: string
+          last_followup_at: string | null
           message: string | null
+          phone: string | null
+          rdv_at: string | null
           source: string | null
+          statut: string
+          taille_cabinet: string | null
           user_agent: string | null
         }
         Insert: {
+          booking_token?: string
           company: string
           created_at?: string
+          departements?: string | null
           email: string
+          followup_count?: number
           full_name: string
           id?: string
+          last_followup_at?: string | null
           message?: string | null
+          phone?: string | null
+          rdv_at?: string | null
           source?: string | null
+          statut?: string
+          taille_cabinet?: string | null
           user_agent?: string | null
         }
         Update: {
+          booking_token?: string
           company?: string
           created_at?: string
+          departements?: string | null
           email?: string
+          followup_count?: number
           full_name?: string
           id?: string
+          last_followup_at?: string | null
           message?: string | null
+          phone?: string | null
+          rdv_at?: string | null
           source?: string | null
+          statut?: string
+          taille_cabinet?: string | null
           user_agent?: string | null
         }
         Relationships: []
