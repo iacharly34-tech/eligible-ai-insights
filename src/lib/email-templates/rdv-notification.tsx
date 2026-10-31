@@ -32,6 +32,6 @@ export const template = {
   component: Email,
   subject: (d: Record<string, any>) => `Eligibly · RDV démo — ${d['company'] ?? ''} — ${d['when'] ?? ''}`,
   displayName: 'Demo — notification RDV (interne)',
-  to: 'lahyani.daniel@gmail.com',
+  to: 'contact@eligibly.ai',
   previewData: { fullName: 'Jean Dupont', email: 'jean@cabinet.fr', phone: '06 00 00 00 00', company: 'Cabinet Dupont', departements: '75, 92', tailleCabinet: '2 à 5 personnes', when: 'mardi 3 novembre à 09:30' },
 } satisfies TemplateEntry

@@ -12,7 +12,7 @@ import { TEMPLATES } from '../_shared/transactional-email-templates/registry.ts'
 // notification through Lovable's managed email API. Recipients are fixed here, so
 // clients can never choose arbitrary recipients.
 
-const OWNER_NOTIFICATION_EMAIL = 'lahyani.daniel@gmail.com'
+const OWNER_NOTIFICATION_EMAIL = 'contact@eligibly.ai'
 const SENDER_DOMAIN = 'notify.eligibly.ai'
 const FROM_DOMAIN = 'eligibly.ai'
 
