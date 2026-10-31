@@ -20,6 +20,7 @@ import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
 import { Route as ConnexionRouteImport } from './routes/connexion'
 import { Route as ConseilReferencementExpertComptableRouteImport } from './routes/conseil-referencement-expert-comptable'
 import { Route as DemoRouteImport } from './routes/demo'
+import { Route as DiagnosticVisibiliteIaRouteImport } from './routes/diagnostic-visibilite-ia'
 import { Route as ImageDeMarqueExpertComptableRouteImport } from './routes/image-de-marque-expert-comptable'
 import { Route as InscriptionRouteImport } from './routes/inscription'
 import { Route as LeadsExpertsComptablesRouteImport } from './routes/leads-experts-comptables'
@@ -137,6 +138,11 @@ const ConseilReferencementExpertComptableRoute =
 const DemoRoute = DemoRouteImport.update({
   id: '/demo',
   path: '/demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiagnosticVisibiliteIaRoute = DiagnosticVisibiliteIaRouteImport.update({
+  id: '/diagnostic-visibilite-ia',
+  path: '/diagnostic-visibilite-ia',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImageDeMarqueExpertComptableRoute =
@@ -499,6 +505,7 @@ export interface FileRoutesByFullPath {
   '/connexion': typeof ConnexionRoute
   '/conseil-referencement-expert-comptable': typeof ConseilReferencementExpertComptableRoute
   '/demo': typeof DemoRoute
+  '/diagnostic-visibilite-ia': typeof DiagnosticVisibiliteIaRoute
   '/image-de-marque-expert-comptable': typeof ImageDeMarqueExpertComptableRoute
   '/inscription': typeof InscriptionRoute
   '/leads-experts-comptables': typeof LeadsExpertsComptablesRoute
@@ -573,6 +580,7 @@ export interface FileRoutesByTo {
   '/connexion': typeof ConnexionRoute
   '/conseil-referencement-expert-comptable': typeof ConseilReferencementExpertComptableRoute
   '/demo': typeof DemoRoute
+  '/diagnostic-visibilite-ia': typeof DiagnosticVisibiliteIaRoute
   '/image-de-marque-expert-comptable': typeof ImageDeMarqueExpertComptableRoute
   '/inscription': typeof InscriptionRoute
   '/leads-experts-comptables': typeof LeadsExpertsComptablesRoute
@@ -649,6 +657,7 @@ export interface FileRoutesById {
   '/connexion': typeof ConnexionRoute
   '/conseil-referencement-expert-comptable': typeof ConseilReferencementExpertComptableRoute
   '/demo': typeof DemoRoute
+  '/diagnostic-visibilite-ia': typeof DiagnosticVisibiliteIaRoute
   '/image-de-marque-expert-comptable': typeof ImageDeMarqueExpertComptableRoute
   '/inscription': typeof InscriptionRoute
   '/leads-experts-comptables': typeof LeadsExpertsComptablesRoute
@@ -725,6 +734,7 @@ export interface FileRouteTypes {
     | '/connexion'
     | '/conseil-referencement-expert-comptable'
     | '/demo'
+    | '/diagnostic-visibilite-ia'
     | '/image-de-marque-expert-comptable'
     | '/inscription'
     | '/leads-experts-comptables'
@@ -799,6 +809,7 @@ export interface FileRouteTypes {
     | '/connexion'
     | '/conseil-referencement-expert-comptable'
     | '/demo'
+    | '/diagnostic-visibilite-ia'
     | '/image-de-marque-expert-comptable'
     | '/inscription'
     | '/leads-experts-comptables'
@@ -874,6 +885,7 @@ export interface FileRouteTypes {
     | '/connexion'
     | '/conseil-referencement-expert-comptable'
     | '/demo'
+    | '/diagnostic-visibilite-ia'
     | '/image-de-marque-expert-comptable'
     | '/inscription'
     | '/leads-experts-comptables'
@@ -950,6 +962,7 @@ export interface RootRouteChildren {
   ConnexionRoute: typeof ConnexionRoute
   ConseilReferencementExpertComptableRoute: typeof ConseilReferencementExpertComptableRoute
   DemoRoute: typeof DemoRoute
+  DiagnosticVisibiliteIaRoute: typeof DiagnosticVisibiliteIaRoute
   ImageDeMarqueExpertComptableRoute: typeof ImageDeMarqueExpertComptableRoute
   InscriptionRoute: typeof InscriptionRoute
   LeadsExpertsComptablesRoute: typeof LeadsExpertsComptablesRoute
@@ -1088,6 +1101,13 @@ declare module '@tanstack/react-router' {
       path: '/demo'
       fullPath: '/demo'
       preLoaderRoute: typeof DemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diagnostic-visibilite-ia': {
+      id: '/diagnostic-visibilite-ia'
+      path: '/diagnostic-visibilite-ia'
+      fullPath: '/diagnostic-visibilite-ia'
+      preLoaderRoute: typeof DiagnosticVisibiliteIaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/image-de-marque-expert-comptable': {
@@ -1556,6 +1576,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConseilReferencementExpertComptableRoute:
     ConseilReferencementExpertComptableRoute,
   DemoRoute: DemoRoute,
+  DiagnosticVisibiliteIaRoute: DiagnosticVisibiliteIaRoute,
   ImageDeMarqueExpertComptableRoute: ImageDeMarqueExpertComptableRoute,
   InscriptionRoute: InscriptionRoute,
   LeadsExpertsComptablesRoute: LeadsExpertsComptablesRoute,
