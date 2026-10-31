@@ -22,7 +22,7 @@ const TrouverClientsCabinetComptable = () => (
     intro="Réponse courte : un cabinet augmente durablement son portefeuille en combinant trois couches. 1) Une visibilité vérifiable (fiche Google, avis, site, présence dans les IA) pour inspirer confiance. 2) Un flux régulier de sociétés nouvellement créées, ciblées sur son ICP et contactées dans les 90 jours. 3) Un processus de conversion mesuré : premier contact, rendez-vous, lettre de mission. La recommandation reste le meilleur canal en qualité, mais elle ne se pilote pas."
     bullets={[
       "7 canaux comparés sur volume, délai, coût et dépendance",
-      "Pourquoi les 90 jours suivant l'immatriculation concentrent l'opportunité",
+      "Comment qualifier la récence sans présumer du besoin du dirigeant",
       "Plan d'action sur 90 jours et indicateurs à suivre chaque semaine",
       "Données mesurées en septembre 2026 sur 1 447 sociétés nouvellement créées",
     ]}
@@ -62,12 +62,10 @@ const TrouverClientsCabinetComptable = () => (
         ),
       },
       {
-        title: "Pourquoi les 90 jours après la création décident de tout",
+        title: "La récence : un critère utile, pas une preuve de besoin",
         body: (
           <p>
-            Une société nouvellement immatriculée doit rapidement organiser sa comptabilité, ses déclarations et son premier bilan. C'est la période où le dirigeant
-            n'a pas encore d'expert-comptable, ou n'est pas encore engagé durablement. Passé ce délai, vous ne prospectez plus un créateur : vous cherchez à remplacer un confrère,
-            avec un cycle plus long. D'où l'intérêt d'un flux quotidien plutôt que de campagnes ponctuelles. Exemple de lead :{" "}
+            Une société nouvellement immatriculée doit rapidement organiser sa comptabilité, ses déclarations et son premier bilan. Cela ne prouve pas que le dirigeant cherche encore un cabinet : il peut être accompagné dès la création. La fenêtre de 90 jours est un choix opérationnel, pas une frontière universelle entre création et remplacement d'un confrère. D'où l'intérêt d'un flux quotidien plutôt que de campagnes ponctuelles. Exemple de lead :{" "}
             <SafeLink to="/pourquoi-ce-lead-est-prioritaire">fiche lead commentée</SafeLink>.
           </p>
         ),
