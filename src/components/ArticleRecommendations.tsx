@@ -2,169 +2,83 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SafeLink } from "@/components/SafeLink";
-import { SocialShare } from "@/components/ui/social-share";
-import { ArrowRight, Clock, BookOpen } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
+import { ROUTE_META } from "@/lib/route-meta";
 
-interface ArticleRecommendation {
-  title: string;
-  description: string;
-  url: string;
-  date: string;
-  readTime: string;
-  category: string;
-  icon: React.ComponentType<any>;
-}
+// Topic clusters: every blog article belongs to one cluster, each cluster has a pillar page.
+// Recommendations pull from the same cluster first, so search engines and AI crawlers
+// see coherent topical depth instead of random links.
+type Cluster = "prospection" | "visibilite" | "marche" | "cabinet";
+
+const CLUSTERS: Record<Cluster, { label: string; pillar: { href: string; label: string } }> = {
+  prospection: { label: "Prospection & acquisition", pillar: { href: "/leads-experts-comptables", label: "Génération de leads pour experts-comptables" } },
+  visibilite: { label: "Marque & visibilité", pillar: { href: "/marque-et-visibilite-expert-comptable", label: "Marque & visibilité du cabinet" } },
+  marche: { label: "Données de marché", pillar: { href: "/barometre-qualite-leads", label: "Baromètre qualité des leads" } },
+  cabinet: { label: "Pilotage du cabinet", pillar: { href: "/produit", label: "Les offres Eligibly" } },
+};
+
+const clusterOf = (url: string): Cluster => {
+  if (/demarchage|playbook|icp|fichier-siret|cout-acquisition|barometre-acquisition|lexique/.test(url)) return "prospection";
+  if (/site-web|referencement|fiche-google|cas-client/.test(url)) return "visibilite";
+  if (/immatriculations|observatoire|creations-entreprises|etat-lieux/.test(url)) return "marche";
+  return "cabinet";
+};
 
 interface ArticleRecommendationsProps {
   currentArticleUrl: string;
   currentCategory?: string;
 }
 
-export const ArticleRecommendations = ({ currentArticleUrl, currentCategory }: ArticleRecommendationsProps) => {
-  // Articles cabinet d'expertise comptable
-  const allArticles: ArticleRecommendation[] = [
-    {
-      title: "Baromètre acquisition cabinet 2026",
-      description: "Benchmark CAC, taux de conversion et durée du cycle de vente en cabinet d'expertise comptable.",
-      url: "/blog/barometre-acquisition-cabinet-ec-2026",
-      date: "15 janvier 2026",
-      readTime: "10 min",
-      category: "Acquisition",
-      icon: () => <BookOpen className="w-4 h-4" />
-    },
-    {
-      title: "Observatoire SASU & SAS 2026",
-      description: "Volumes, géographie et secteurs des SASU/SAS fraîchement immatriculées en France.",
-      url: "/blog/observatoire-sasu-sas-juin-2026",
-      date: "10 janvier 2026",
-      readTime: "9 min",
-      category: "Marché",
-      icon: () => <BookOpen className="w-4 h-4" />
-    },
-    {
-      title: "Playbook prospection cabinet 2026",
-      description: "Cadre opérationnel de prospection pour cabinets d'expertise comptable : ICP, séquences, mesure.",
-      url: "/blog/playbook-prospection-cabinet-ec-2026",
-      date: "5 janvier 2026",
-      readTime: "12 min",
-      category: "Prospection",
-      icon: () => <BookOpen className="w-4 h-4" />
-    },
-    {
-      title: "ICP cabinet d'expertise comptable",
-      description: "Comment définir votre profil client idéal et exclure ce qui pollue votre pipeline.",
-      url: "/blog/icp-cabinet-expertise-comptable",
-      date: "18 décembre 2025",
-      readTime: "8 min",
-      category: "Acquisition",
-      icon: () => <BookOpen className="w-4 h-4" />
-    },
-    {
-      title: "Coût d'acquisition client en cabinet",
-      description: "Décomposition du CAC en cabinet et leviers pour le diviser par deux.",
-      url: "/blog/cout-acquisition-client-cabinet-comptable",
-      date: "5 décembre 2025",
-      readTime: "7 min",
-      category: "Acquisition",
-      icon: () => <BookOpen className="w-4 h-4" />
-    },
-    {
-      title: "Créations d'entreprises 2025",
-      description: "État des lieux INSEE : SASU, SAS et primo-entrepreneurs sur le marché français.",
-      url: "/blog/creations-entreprises-france-2025",
-      date: "20 novembre 2025",
-      readTime: "6 min",
-      category: "Marché",
-      icon: () => <BookOpen className="w-4 h-4" />
-    },
-    {
-      title: "Moderniser un cabinet EC à l'ère de l'IA",
-      description: "Les 6 axes IA pour moderniser un cabinet d'expertise comptable en 2026 : production, conseil, RH, visibilité.",
-      url: "/blog/moderniser-cabinet-expertise-comptable-ia",
-      date: "6 juillet 2026",
-      readTime: "16 min",
-      category: "Transformation",
-      icon: () => <BookOpen className="w-4 h-4" />
-    }
-  ];
+export const ArticleRecommendations = ({ currentArticleUrl }: ArticleRecommendationsProps) => {
+  const articles = Object.entries(ROUTE_META)
+    .filter(([path]) => path.startsWith("/blog/") && path !== currentArticleUrl)
+    .map(([url, meta]) => ({ url, ...meta, cluster: clusterOf(url) }));
 
-  // Filtrer les articles (exclure l'article actuel)
-  const filteredArticles = allArticles.filter(article => article.url !== currentArticleUrl);
-  
-  // Prioriser les articles de la même catégorie
-  const sameCategory = filteredArticles.filter(article => 
-    currentCategory && article.category === currentCategory
-  );
-  
-  const otherCategories = filteredArticles.filter(article => 
-    !currentCategory || article.category !== currentCategory
-  );
-  
-  // Sélectionner 3 articles : 2 de la même catégorie si possible, sinon les plus récents
-  const recommendedArticles = [
-    ...sameCategory.slice(0, 2),
-    ...otherCategories.slice(0, 3 - sameCategory.slice(0, 2).length)
-  ].slice(0, 3);
+  const current = clusterOf(currentArticleUrl);
+  const same = articles.filter((a) => a.cluster === current);
+  const others = articles.filter((a) => a.cluster !== current);
+  // Deterministic rotation so each article links to different neighbours (SSR-stable).
+  const seed = [...currentArticleUrl].reduce((n, c) => n + c.charCodeAt(0), 0);
+  const rotate = <T,>(list: T[]) => (list.length ? [...list.slice(seed % list.length), ...list.slice(0, seed % list.length)] : list);
+  const picks = [...rotate(same).slice(0, 4), ...rotate(others)].slice(0, 6);
 
-  if (recommendedArticles.length === 0) return null;
+  if (picks.length === 0) return null;
+  const pillar = CLUSTERS[current].pillar;
 
   return (
-    <section className="py-12 bg-slate-50">
+    <section className="py-12 bg-muted/40">
       <div className="container mx-auto">
         <div className="text-center mb-8">
-          <Badge className="mb-4 bg-blue-100 text-primary border-primary/20">
+          <Badge variant="outline" className="mb-4">
             <BookOpen className="w-4 h-4 mr-2" />
-            À lire ensuite
+            {CLUSTERS[current].label}
           </Badge>
-          <h2 className="text-2xl font-bold mb-4">
-            Articles recommandés pour vous
-          </h2>
+          <h2 className="text-2xl font-bold mb-3">Approfondir le sujet</h2>
           <p className="text-muted-foreground">
-            Poursuivez votre lecture sur la prospection en cabinet d'expertise comptable
+            Page de référence :{" "}
+            <SafeLink to={pillar.href} className="text-primary underline underline-offset-4">
+              {pillar.label}
+            </SafeLink>
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {recommendedArticles.map((article, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 h-full">
+          {picks.map((article) => (
+            <Card key={article.url} className="group hover:shadow-lg transition-all duration-300 h-full">
               <CardContent className="p-6 flex flex-col h-full">
-                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
-                  <Clock className="w-3 h-3" />
-                  <span>{article.readTime}</span>
-                  <span>•</span>
-                  <span>{article.date}</span>
-                </div>
-                
+                <div className="text-xs text-muted-foreground mb-3">{CLUSTERS[article.cluster].label}</div>
                 <h3 className="text-base font-bold mb-3 leading-tight group-hover:text-primary transition-colors">
                   {article.title}
                 </h3>
-                
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-grow">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
                   {article.description}
                 </p>
-                
-                <div className="space-y-3">
-                  <div className="mb-3">
-                    <SocialShare 
-                      title={article.title}
-                      url={article.url}
-                      variant="minimal"
-                      size="sm"
-                    />
-                  </div>
-                  
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all"
-                    asChild
-                  >
-                    <SafeLink to={article.url}>
-                      Lire l'article
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </SafeLink>
-                  </Button>
-                </div>
+                <Button variant="outline" size="sm" className="w-full" asChild>
+                  <SafeLink to={article.url}>
+                    Lire l'article
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </SafeLink>
+                </Button>
               </CardContent>
             </Card>
           ))}
