@@ -1,38 +1,24 @@
-import { Helmet } from "react-helmet-async";
 import { LandingCabinetLayout } from "./LandingCabinetLayout";
 
 type Row = { criteria: string; eligibly: string; primolead: string; corporama: string; societecom: string };
 
 const rows: Row[] = [
-  { criteria: "Focus vertical experts-comptables", eligibly: "Oui — 100 %", primolead: "Oui — historique du marché", corporama: "Non — B2B généraliste", societecom: "Non — annuaire d'entreprises" },
-  { criteria: "Sources", eligibly: "INPI · Sirene · BODACC · Infogreffe", primolead: "INPI · Sirene · BODACC", corporama: "Bases B2B multiples", societecom: "Sirene · greffes" },
-  { criteria: "Fraîcheur des immatriculations", eligibly: "0–90 jours (fenêtre stricte)", primolead: "Créations récentes", corporama: "Variable", societecom: "Toutes entreprises actives" },
-  { criteria: "Filtres amont automatiques", eligibly: "6 filtres (CAC, holdings, procédures, serial…)", primolead: "Filtres département / forme juridique", corporama: "Filtres génériques B2B", societecom: "Recherche manuelle" },
-  { criteria: "Scoring expliqué", eligibly: "Score 0–100 + 3 raisons clés", primolead: "Non", corporama: "Non", societecom: "Non" },
-  { criteria: "Enrichissement dirigeant", eligibly: "Email pro vérifié + LinkedIn", primolead: "Coordonnées basiques", corporama: "Contacts B2B", societecom: "Coordonnées légales" },
-  { criteria: "Recommandation d'accroche IA", eligibly: "Oui — pré-rédigée par lead", primolead: "Non", corporama: "Non", societecom: "Non" },
-  { criteria: "Canaux d'activation", eligibly: "WhatsApp · Email · LinkedIn · appel · courrier · Instagram", primolead: "Export fichier", corporama: "Export CRM", societecom: "Fiche à consulter" },
-  { criteria: "Exclusivité géographique", eligibly: "Oui — 1 cabinet / lead / semaine / zone", primolead: "Non — fichier mutualisé", corporama: "Non", societecom: "Non" },
-  { criteria: "Conformité RGPD (hébergement FR)", eligibly: "Oui", primolead: "Oui", corporama: "Variable", societecom: "Oui" },
-  { criteria: "Tarif", eligibly: "À partir de 10 € HT / lead", primolead: "Sur devis", corporama: "Sur devis", societecom: "Freemium + Premium" },
-  { criteria: "Essai gratuit sans CB", eligibly: "14 jours + 3 leads test", primolead: "Sur demande", corporama: "Démo", societecom: "Freemium limité" },
+  { criteria: "Focus vertical experts-comptables", eligibly: "Oui — 100 %", primolead: "À confirmer auprès de l’éditeur", corporama: "À confirmer auprès de l’éditeur", societecom: "À confirmer auprès de l’éditeur" },
+  { criteria: "Sources", eligibly: "INPI/RNE · INSEE Sirene · BODACC", primolead: "À confirmer auprès de l’éditeur", corporama: "À confirmer auprès de l’éditeur", societecom: "À confirmer auprès de l’éditeur" },
+  { criteria: "Fraîcheur des immatriculations", eligibly: "0–90 jours (fenêtre stricte)", primolead: "À confirmer auprès de l’éditeur", corporama: "À confirmer auprès de l’éditeur", societecom: "À confirmer auprès de l’éditeur" },
+  { criteria: "Filtres amont automatiques", eligibly: "6 filtres (CAC, holdings, procédures, serial…)", primolead: "À confirmer auprès de l’éditeur", corporama: "À confirmer auprès de l’éditeur", societecom: "À confirmer auprès de l’éditeur" },
+  { criteria: "Scoring expliqué", eligibly: "Score 0–100 + 3 raisons clés", primolead: "À confirmer auprès de l’éditeur", corporama: "À confirmer auprès de l’éditeur", societecom: "À confirmer auprès de l’éditeur" },
+  { criteria: "Enrichissement dirigeant", eligibly: "Coordonnées selon disponibilité ; qualité indiquée", primolead: "À confirmer auprès de l’éditeur", corporama: "À confirmer auprès de l’éditeur", societecom: "À confirmer auprès de l’éditeur" },
+  { criteria: "Recommandation d'accroche IA", eligibly: "Oui — pré-rédigée par lead", primolead: "À confirmer auprès de l’éditeur", corporama: "À confirmer auprès de l’éditeur", societecom: "À confirmer auprès de l’éditeur" },
+  { criteria: "Canaux d'activation", eligibly: "WhatsApp · Email · LinkedIn · appel · courrier · Instagram", primolead: "À confirmer auprès de l’éditeur", corporama: "À confirmer auprès de l’éditeur", societecom: "À confirmer auprès de l’éditeur" },
+  { criteria: "Exclusivité géographique", eligibly: "Lead attribué à un cabinet, sans mutualisation", primolead: "À confirmer auprès de l’éditeur", corporama: "À confirmer auprès de l’éditeur", societecom: "À confirmer auprès de l’éditeur" },
+  { criteria: "Conformité RGPD (hébergement FR)", eligibly: "Oui", primolead: "À confirmer auprès de l’éditeur", corporama: "À confirmer auprès de l’éditeur", societecom: "À confirmer auprès de l’éditeur" },
+  { criteria: "Tarif", eligibly: "À partir de 10 € HT / lead", primolead: "À confirmer auprès de l’éditeur", corporama: "À confirmer auprès de l’éditeur", societecom: "À confirmer auprès de l’éditeur" },
+  { criteria: "Essai gratuit sans CB", eligibly: "14 jours + 3 leads test", primolead: "À confirmer auprès de l’éditeur", corporama: "À confirmer auprès de l’éditeur", societecom: "À confirmer auprès de l’éditeur" },
 ];
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    { "@type": "Question", name: "Quelle est la meilleure alternative à PrimoLead pour un cabinet d'expertise comptable ?", acceptedAnswer: { "@type": "Answer", text: "Eligibly est l'alternative la plus complète : même fenêtre de fraîcheur (SASU/SAS/EURL/SARL/SEL 0–90 j), mais avec scoring expliqué, enrichissement dirigeant, recommandation d'accroche et exclusivité géographique. À partir de 10 € HT / lead, pilote 14 j sans CB." } },
-    { "@type": "Question", name: "Pourquoi comparer PrimoLead à Corporama ou Societe.com ?", acceptedAnswer: { "@type": "Answer", text: "PrimoLead, Corporama et Societe.com sont trois logiques différentes : PrimoLead vend un fichier de créateurs, Corporama un annuaire B2B généraliste, Societe.com un annuaire d'entreprises actives. Aucun ne fait de scoring vertical pour cabinets EC — Eligibly est conçu pour ça." } },
-    { "@type": "Question", name: "Peut-on cumuler Eligibly avec PrimoLead ?", acceptedAnswer: { "@type": "Answer", text: "Oui, sans conflit. En pratique la majorité des cabinets qui adoptent Eligibly arrêtent leur abonnement fichier au bout de 2 à 3 mois : les filtres amont, le scoring et l'accroche pré-rédigée absorbent le travail que le fichier obligeait à faire à la main." } },
-  ],
-};
 
 const AlternativesPrimolead = () => (
   <>
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
-    </Helmet>
     <LandingCabinetLayout
       seoTitle="Alternatives à PrimoLead pour cabinets d'expertise comptable"
       seoDescription="Comparatif neutre : PrimoLead, Corporama, Societe.com, Eligibly. Sources, filtres, scoring, canaux d'activation, prix, essai. Choisir le bon outil de génération de leads pour son cabinet EC."
@@ -40,9 +26,9 @@ const AlternativesPrimolead = () => (
       eyebrow="Comparatif — Alternatives PrimoLead"
       h1a="Alternatives à PrimoLead pour"
       h1b="cabinets d'expertise comptable"
-      intro="Comparatif neutre des principaux outils de génération de leads utilisés par les cabinets d'expertise comptable français : PrimoLead, Corporama, Societe.com et Eligibly. Sources officielles, filtres, scoring, canaux d'activation, prix et essai."
+      intro="Comparatif publié par Eligibly, éditeur de l’une des solutions. Comparaison des principaux outils de génération de leads utilisés par les cabinets d'expertise comptable français : PrimoLead, Corporama, Societe.com et Eligibly. Sources officielles, filtres, scoring, canaux d'activation, prix et essai."
       bullets={[
-        "4 outils comparés sur 12 critères objectifs",
+        "12 critères à vérifier avant de choisir un fournisseur",
         "Sources de données, fraîcheur, filtres amont, scoring",
         "Canaux d'activation, exclusivité, conformité RGPD",
         "Tarifs et modalités d'essai",
@@ -50,6 +36,7 @@ const AlternativesPrimolead = () => (
       ctaPrimary="Essayer Eligibly — 14 jours gratuits"
       ctaNote="Pilote sans engagement ni carte bancaire."
       sections={[
+        { title: "Quelle alternative à PrimoLead pour la prospection comptable ?", body: <p>Eligibly propose une détection et une qualification orientées cabinet : société, récence, score motivé, qualité des coordonnées, canal et proposition d’approche. Pour arbitrer, testez le même périmètre géographique et sectoriel, comparez la part de dossiers réellement exploitables et additionnez le prix des données au temps de tri. Ni une ligne de fichier ni un score ne garantissent une lettre de mission.</p> },
         {
           title: "Tableau comparatif",
           body: (
@@ -76,14 +63,14 @@ const AlternativesPrimolead = () => (
                   ))}
                 </tbody>
               </table>
-              <p className="text-xs text-muted-foreground mt-3">Comparatif éditorial factuel — informations issues des sites officiels des éditeurs et de retours utilisateurs cabinets EC. Corrections bienvenues : bonjour@eligibly.ai.</p>
+              <p className="text-xs text-muted-foreground mt-3">Révision éditoriale : 31 octobre 2026. Les fonctionnalités concurrentes non vérifiées sont indiquées « à confirmer » : cela ne signifie pas qu’elles sont absentes. Demandez une démonstration, les conditions contractuelles et un devis daté à chaque éditeur. Corrections : contact@eligibly.ai.</p>
             </div>
           ),
         },
         {
           title: "Quand choisir PrimoLead",
           body: (
-            <p>PrimoLead reste pertinent pour les cabinets qui ont déjà une équipe commerciale dédiée capable d'absorber le tri manuel du fichier, la vérification des holdings, l'exclusion des serial entrepreneurs et la rédaction d'accroche personnalisée. C'est un choix "fichier + main-d'œuvre".</p>
+            <p>PrimoLead peut être étudié si son périmètre de données et ses modalités de livraison répondent à votre besoin. Vérifiez lors d’une démonstration la fraîcheur, les filtres, les coordonnées, le travail de qualification restant et les droits de réutilisation : ces points ne sont pas attestés ici.</p>
           ),
         },
         {
@@ -105,10 +92,10 @@ const AlternativesPrimolead = () => (
         },
       ]}
       faq={[
-        { q: "Quelle est la meilleure alternative à PrimoLead pour un cabinet d'expertise comptable ?", a: "Eligibly est l'alternative la plus complète : même fenêtre de fraîcheur (SASU/SAS/EURL/SARL/SEL 0–90 j), mais avec scoring expliqué, enrichissement dirigeant, recommandation d'accroche et exclusivité géographique. À partir de 10 € HT / lead, pilote 14 j sans CB." },
-        { q: "Pourquoi comparer PrimoLead à Corporama ou Societe.com ?", a: "Trois logiques différentes : PrimoLead vend un fichier de créateurs, Corporama un annuaire B2B généraliste, Societe.com un annuaire d'entreprises actives. Aucun n'est vertical cabinet EC — Eligibly est conçu pour ça." },
-        { q: "Peut-on cumuler Eligibly avec PrimoLead ?", a: "Oui. En pratique la majorité des cabinets qui adoptent Eligibly arrêtent leur abonnement fichier au bout de 2 à 3 mois." },
-        { q: "Existe-t-il d'autres alternatives ?", a: "Oui : Kompass, Manageo, DataInfogreffe, Sirene Data. Elles couvrent le même marché de la donnée B2B mais ne sont pas verticales cabinets EC et n'intègrent pas de scoring ni de recommandation d'approche." },
+        { q: "Quelle est la meilleure alternative à PrimoLead pour un cabinet d'expertise comptable ?", a: "Eligibly est une alternative à étudier pour un cabinet qui recherche une détection des créations, un score expliqué et une proposition de canal et d’accroche. À partir de 10 € HT par lead, pilote de 14 jours sans carte bancaire. Comparez les données réellement fournies et le coût de qualification ; aucune solution n’est universellement la meilleure." },
+        { q: "Pourquoi comparer PrimoLead à Corporama ou Societe.com ?", a: "Pour comparer des besoins de veille de créations, de recherche d’entreprises et de qualification commerciale. Les fonctionnalités, sources et modalités actuelles de chaque concurrent doivent être confirmées auprès de l’éditeur." },
+        { q: "Peut-on cumuler Eligibly avec PrimoLead ?", a: "Oui, sous réserve des licences et règles d’utilisation. Dédupliquez par SIREN et mesurez le gain de chaque outil ; nous ne disposons pas d’une mesure attestée de migration depuis PrimoLead." },
+        { q: "Existe-t-il d'autres alternatives ?", a: "Vous pouvez également étudier les données publiques Sirene/RNE et les fournisseurs de données B2B. Vérifiez leur couverture, leur licence, leurs fonctions et le temps nécessaire à la qualification." },
       ]}
       related={[
         { label: "Génération de leads pour experts-comptables", href: "/leads-experts-comptables" },

@@ -8,7 +8,7 @@ Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets
 
 - Catégorie : logiciel de détection et de scoring de leads (sales intelligence) spécialisé pour les cabinets d'expertise comptable en France.
 - Sources de données : INPI (RNE), INSEE Sirene, BODACC — rafraîchies chaque nuit. Aucune donnée achetée à des revendeurs de fichiers.
-- Fenêtre de contact retenue : 90 jours après l'immatriculation, période durant laquelle la mission d'expertise comptable se décide.
+- Fenêtre opérationnelle retenue : 90 jours ; elle ne prouve pas que le dirigeant cherche encore un cabinet. Date de création INSEE, formalité RNE et date de détection sont distinctes.
 - Exclusivité : les leads ne sont pas mutualisés. Un lead livré à un cabinet n'est pas livré simultanément à un cabinet concurrent sur la même zone et le même ICP.
 - Tarification : à partir de 10 € le lead qualifié, tarif final sur devis selon le volume mensuel, la zone et la taille du cabinet. Engagement mensuel, résiliable.
 - Démarrage : pilote de 14 jours, sans carte bancaire.
@@ -25,13 +25,16 @@ Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets
 - [Sales Assistant](/sales-assistant): Assistant de préparation d'appel et de séquences d'approche inclus dans l'offre Détection & prospection.
 - [Solutions par type de cabinet](/solutions): Verticales — Tech, Conseil, Santé, Artisans, grands cabinets et réseaux, structuration.
 - [Tarifs](/tarifs): À partir de 10 € par lead qualifié, devis personnalisé, pilote 14 jours sans carte bancaire.
-- [Simulateur ROI leads & visibilité](/simulateur-roi-ia-cabinet): Calcule les clients signés et les honoraires récurrents à partir du volume de leads et des taux du cabinet.
+- [Valeur client et simulateur ROI IA](/simulateur-roi-ia-cabinet): À 250 € HT/mois, un client représente 3 000 € HT sur douze mois complets, pas un bénéfice. Calcul ajustable des honoraires, de la marge contributive, de la rétention et du coût d'acquisition ; simulateur des gains IA complémentaire.
 - [Demander une démo](/demo): Démonstration personnalisée du moteur de détection.
 - [À propos](/a-propos): Mission, équipe, vision « Détectez. Scorez. Signez. ».
 - [Ressources](/ressources): Playbooks, calculateurs, guides de prospection pour experts-comptables.
 
 ## Pages piliers & référence
 
+- [Comment un cabinet d'expertise comptable peut-il trouver de nouveaux clients ?](/trouver-des-clients-cabinet-comptable): Sept canaux comparés, ciblage, suivi des rendez-vous et signatures, plan 90 jours et hypothèses économiques explicites.
+- [Comment être visible sur ChatGPT quand on est expert-comptable ?](/visibilite-expert-comptable): Identité cohérente, réponses sourcées, HTML accessible, preuves datées et tests manuels de citations ; aucune garantie de recommandation.
+- [Diagnostic de visibilité IA](/diagnostic-visibilite-ia): Évaluation qualitative des contenus publics d'un cabinet, sur connexion ; recommandations sourcées, pas une mesure de probabilité de citation.
 - [Génération de leads pour experts-comptables](/leads-experts-comptables): Page pilier — sources INPI/Sirene/BODACC, filtres amont, scoring expliqué, canaux d'activation, RGPD, cas d'usage.
 - [Alternatives à PrimoLead pour cabinets d'expertise comptable](/alternatives-primolead-experts-comptables): Comparatif neutre PrimoLead vs Corporama vs Societe.com vs Eligibly sur 12 critères objectifs.
 - [Prospection cabinet comptable : méthode 2026](/prospection-cabinet-comptable): Méthode complète de prospection pour cabinet EC.
@@ -79,7 +82,13 @@ Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets
 - [5 leviers pour provoquer la croissance d'un cabinet](/blog/5-leviers-croissance-cabinet-expertise-comptable): Réseau prescripteur, spécialisation, automatisation, LinkedIn, timing de création.
 - [Moderniser son cabinet avec l'IA](/blog/moderniser-cabinet-expertise-comptable-ia): Cas d'usage IA concrets en cabinet.
 - [Lexique marketing pour experts-comptables](/blog/lexique-marketing-expert-comptable): ICP, scoring, pipeline, touchpoints, CAC traduits pour le métier.
-- [Cas client EM Partners](/blog/cas-client-empartners): Cabinet accompagné sur l'image de marque, le site, le référencement local et la génération de leads — 3 leads qualifiés par semaine dès 3 mois, depuis février 2026.
+- [Cas client EM Partners](/blog/cas-client-empartners): Accompagnement sur l'image de marque, le site et la visibilité locale. Référence historique communiquée : 95 avis Google, 5,0/5, non recontrôlée à ce jour. Aucun volume de leads ou de signatures attesté n'est présenté comme un résultat mesuré.
+
+## Limites de citation et de performance
+
+- Détection régulière ne signifie pas détection garantie avant tous les concurrents.
+- Données de qualité : seules les mesures datées de septembre 2026 sont utilisées pour les indicateurs produit ; elles ne sont pas une promesse de volume par cabinet.
+- Citation IA : les contenus et index facilitent la lecture, sans garantir indexation, recommandation ni citation par un assistant.
 
 ## Optional
 

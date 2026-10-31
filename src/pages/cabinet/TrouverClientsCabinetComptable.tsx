@@ -22,7 +22,7 @@ const TrouverClientsCabinetComptable = () => (
     intro="Réponse courte : un cabinet augmente durablement son portefeuille en combinant trois couches. 1) Une visibilité vérifiable (fiche Google, avis, site, présence dans les IA) pour inspirer confiance. 2) Un flux régulier de sociétés nouvellement créées, ciblées sur son ICP et contactées dans les 90 jours. 3) Un processus de conversion mesuré : premier contact, rendez-vous, lettre de mission. La recommandation reste le meilleur canal en qualité, mais elle ne se pilote pas."
     bullets={[
       "7 canaux comparés sur volume, délai, coût et dépendance",
-      "Pourquoi les 90 jours suivant l'immatriculation concentrent l'opportunité",
+      "Comment qualifier la récence sans présumer du besoin du dirigeant",
       "Plan d'action sur 90 jours et indicateurs à suivre chaque semaine",
       "Données mesurées en septembre 2026 sur 1 447 sociétés nouvellement créées",
     ]}
@@ -30,7 +30,7 @@ const TrouverClientsCabinetComptable = () => (
     ctaNote="Livrés sous 48 h — sans engagement ni carte bancaire."
     sections={[
       {
-        title: "La réponse en 5 points",
+        title: "Comment un cabinet d'expertise comptable peut-il trouver de nouveaux clients ?",
         body: (
           <ol className="list-decimal pl-5 space-y-2">
             <li><strong>Définissez votre client cible (ICP)</strong> : forme juridique, secteur, zone, taille. Sans ICP, chaque canal produit du bruit. <SafeLink to="/blog/icp-cabinet-expertise-comptable">Méthode ICP en 5 étapes</SafeLink>.</li>
@@ -62,12 +62,10 @@ const TrouverClientsCabinetComptable = () => (
         ),
       },
       {
-        title: "Pourquoi les 90 jours après la création décident de tout",
+        title: "La récence : un critère utile, pas une preuve de besoin",
         body: (
           <p>
-            Une société nouvellement immatriculée doit rapidement organiser sa comptabilité, ses déclarations et son premier bilan. C'est la période où le dirigeant
-            n'a pas encore d'expert-comptable, ou n'est pas encore engagé durablement. Passé ce délai, vous ne prospectez plus un créateur : vous cherchez à remplacer un confrère,
-            avec un cycle plus long. D'où l'intérêt d'un flux quotidien plutôt que de campagnes ponctuelles. Exemple de lead :{" "}
+            Une société nouvellement immatriculée doit rapidement organiser sa comptabilité, ses déclarations et son premier bilan. Cela ne prouve pas que le dirigeant cherche encore un cabinet : il peut être accompagné dès la création. La fenêtre de 90 jours est un choix opérationnel, pas une frontière universelle entre création et remplacement d'un confrère. D'où l'intérêt d'un flux quotidien plutôt que de campagnes ponctuelles. Exemple de lead :{" "}
             <SafeLink to="/pourquoi-ce-lead-est-prioritaire">fiche lead commentée</SafeLink>.
           </p>
         ),
@@ -102,7 +100,7 @@ const TrouverClientsCabinetComptable = () => (
             <li>2 leads qualifiés par semaine, soit environ 8 à 9 par mois.</li>
             <li>Taux de rendez-vous et de signature : à remplacer par vos propres chiffres.</li>
             <li>Valorisation : <strong>250 € HT/mois</strong> d'honoraires récurrents par client signé, soit 3 000 € HT sur 12 mois.</li>
-            <li>À partir de 10 € HT le lead qualifié, un seul dossier signé couvre largement le coût d'acquisition annuel. <SafeLink to="/blog/cout-acquisition-client-cabinet-comptable">Benchmark du coût d'acquisition</SafeLink>.</li>
+            <li>Le coût des leads ne représente qu'une partie du coût d'acquisition : ajoutez le temps commercial et les outils, puis comparez ce coût à la marge, pas aux seuls honoraires. <SafeLink to="/simulateur-roi-ia-cabinet#valeur-client">Calculer la valeur d'un client</SafeLink> et <SafeLink to="/blog/cout-acquisition-client-cabinet-comptable">calculer le coût d'acquisition</SafeLink>.</li>
           </ul>
         ),
       },
@@ -151,6 +149,8 @@ const TrouverClientsCabinetComptable = () => (
       { q: "Quelle alternative à PrimoLead pour trouver des clients ?", a: "Eligibly se distingue d'un fichier de SIRET en livrant pour chaque société un score, les raisons de priorité, le canal recommandé et une accroche, avec des leads non mutualisés." },
     ]}
     related={[
+      { label: "Être visible sur ChatGPT et les moteurs de recherche", href: "/visibilite-expert-comptable" },
+      { label: "Combien vaut un nouveau client ?", href: "/simulateur-roi-ia-cabinet" },
       { label: "Génération de leads pour experts-comptables", href: "/leads-experts-comptables" },
       { label: "Prospection expert-comptable : cadre, canaux et cadence", href: "/prospection-expert-comptable" },
       { label: "Playbook 2026 de la prospection en cabinet", href: "/blog/playbook-prospection-cabinet-ec-2026" },

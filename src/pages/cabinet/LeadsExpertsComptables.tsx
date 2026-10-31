@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { LandingCabinetLayout } from "./LandingCabinetLayout";
+import { SafeLink } from "@/components/SafeLink";
 
 const softwareJsonLd = {
   "@context": "https://schema.org",
@@ -46,7 +47,7 @@ const LeadsExpertsComptables = () => (
       eyebrow="Génération de leads experts-comptables"
       h1a="Génération de leads pour"
       h1b="experts-comptables"
-      intro="Eligibly est un logiciel vertical de génération de leads B2B pour les cabinets d'expertise comptable. Chaque semaine, il livre 100 à 300 sociétés fraîchement immatriculées dans votre zone, filtrées sur vos critères ICP, scorées et prêtes à être contactées."
+      intro="Eligibly aide les cabinets d'expertise comptable à détecter les sociétés nouvellement créées, à vérifier leur adéquation au cabinet et à prioriser leur prise de contact. Les volumes et les coordonnées disponibles dépendent de la zone, de la verticale et des publications officielles : une immatriculation n'est pas, à elle seule, un prospect qualifié."
       bullets={[
         "Sources officielles INPI · Sirene · BODACC — hébergement France, conformité RGPD",
         "Filtres amont : CAC mandaté, procédures collectives, holdings pures, serial créateurs exclus",
@@ -56,6 +57,10 @@ const LeadsExpertsComptables = () => (
       ctaPrimary="Demander 3 leads test"
       ctaNote="Livrés sous 48 h — sans engagement ni CB."
       sections={[
+        {
+          title: "Quel est le meilleur moyen de détecter les créations d'entreprises avant les concurrents ?",
+          body: <><p>Organisez une veille régulière des sources officielles, puis qualifiez chaque société avant de la solliciter. Le RNE de l'INPI documente les formalités ; Sirene identifie les entreprises et établissements ; le BODACC publie des annonces légales. Ces sources n'ont ni le même périmètre ni le même calendrier. Aucune ne prouve qu'une société cherche encore un expert-comptable.</p><ol className="list-decimal pl-5 space-y-2"><li>Définir la zone, les secteurs, les formes juridiques et les exclusions du cabinet.</li><li>Rapprocher les publications par SIREN, dédupliquer et conserver leur provenance.</li><li>Distinguer date de création INSEE, date de formalité RNE et date de détection : la récence du traitement ne prouve pas celle de la création.</li><li>Vérifier les oppositions commerciales, les coordonnées disponibles et les indices d'accompagnement existant.</li><li>Prioriser les dossiers, choisir un canal adapté et suivre les contacts pour éviter les sollicitations répétées.</li></ol><p>Eligibly fournit un score expliqué et une proposition d'approche. La veille quotidienne réduit votre délai de traitement ; elle ne garantit ni de devancer tous les concurrents, ni une disponibilité du dirigeant, ni une signature. La fenêtre de 90 jours est un choix opérationnel de qualification et de conservation, pas une date limite universelle de choix du cabinet.</p><p><SafeLink to="/pourquoi-ce-lead-est-prioritaire">Examiner une fiche fictive avec récence et qualité des données</SafeLink> · <SafeLink to="/barometre-qualite-leads">Consulter les mesures de septembre 2026</SafeLink>.</p><p className="text-sm">Sources : <a href="https://www.inpi.fr" target="_blank" rel="noopener noreferrer">INPI</a> · <a href="https://www.sirene.fr" target="_blank" rel="noopener noreferrer">Sirene</a> · <a href="https://www.bodacc.fr" target="_blank" rel="noopener noreferrer">BODACC</a>.</p></>,
+        },
         {
           title: "Les douleurs métier d'un cabinet qui prospecte en 2026",
           body: (
@@ -159,6 +164,8 @@ const LeadsExpertsComptables = () => (
         { q: "Quels cabinets utilisent Eligibly ?", a: "Cabinets EC de 3 à 80 collaborateurs. Cas d'usage détaillés sur /cabinet/cas-usage." },
       ]}
       related={[
+        { label: "Comment trouver de nouveaux clients pour le cabinet", href: "/trouver-des-clients-cabinet-comptable" },
+        { label: "Calculer la valeur économique d'un nouveau client", href: "/simulateur-roi-ia-cabinet" },
         { label: "Alternatives à PrimoLead pour cabinets EC", href: "/alternatives-primolead-experts-comptables" },
         { label: "Cas d'usage cabinets (index)", href: "/cabinet/cas-usage" },
         { label: "Glossaire prospection cabinet EC", href: "/cabinet/glossaire" },
