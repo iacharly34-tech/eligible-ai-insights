@@ -63,7 +63,7 @@ export const template = {
   displayName: 'Lead — notification interne',
   // Fixed internal recipient — the send helper ignores any caller-provided
   // recipient for this template. Defense in depth against relay abuse.
-  to: 'lahyani.daniel@gmail.com',
+  to: 'contact@eligibly.ai',
   previewData: {
     fullName: 'Jean Dupont',
     email: 'jean@cabinet-dupont.fr',

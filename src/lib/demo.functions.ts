@@ -5,7 +5,7 @@ import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { availableSlots, formatParis, isValidSlot } from "./demo-booking";
 
 const SITE = "https://eligibly.ai";
-const REPLY_TO = "lahyani.daniel@gmail.com";
+const REPLY_TO = "contact@eligibly.ai";
 export const bookingUrl = (token: string) => `${SITE}/rdv/${token}`;
 
 async function admin() {

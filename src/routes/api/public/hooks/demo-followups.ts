@@ -28,7 +28,7 @@ export const Route = createFileRoute("/api/public/hooks/demo-followups")({
             const res = await sendTemplateEmail("demo-followup", r.email, {
               templateData: { fullName: r.full_name.split(" ")[0], company: r.company, bookingUrl: `https://eligibly.ai/rdv/${r.booking_token}`, step },
               idempotencyKey: `demo-followup-${r.id}-${step}`,
-              replyTo: "lahyani.daniel@gmail.com",
+              replyTo: "contact@eligibly.ai",
             });
             await db.from("demo_requests").update({ followup_count: step, last_followup_at: now.toISOString(), statut: "relance" }).eq("id", r.id);
             if (res.sent) sent++;
