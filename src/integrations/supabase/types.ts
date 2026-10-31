@@ -243,6 +243,24 @@ export type Database = {
         }
         Relationships: []
       }
+      internal_job_secrets: {
+        Row: {
+          created_at: string
+          name: string
+          secret: string
+        }
+        Insert: {
+          created_at?: string
+          name: string
+          secret?: string
+        }
+        Update: {
+          created_at?: string
+          name?: string
+          secret?: string
+        }
+        Relationships: []
+      }
       lead_access_log: {
         Row: {
           action: string
