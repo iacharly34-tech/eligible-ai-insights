@@ -87,3 +87,7 @@ Eligibly est un moteur de détection de leads vertical, conçu pour les cabinets
 - [Mentions légales](/mentions-legales)
 - [Confidentialité](/confidentialite)
 - [CGU](/cgu)
+
+## Optional
+
+- [Index complet des pages](https://eligibly.ai/llms-full.txt): toutes les pages publiques avec titre et résumé, regroupées par thème.

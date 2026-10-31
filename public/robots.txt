@@ -87,6 +87,7 @@ Allow: /demo
 Allow: /sitemap.xml
 Allow: /manifest.json
 Allow: /llms.txt
+Allow: /llms-full.txt
 
 # Crawl delay for politeness
 Crawl-delay: 1
@@ -96,3 +97,4 @@ Sitemap: https://eligibly.ai/sitemap.xml
 
 # LLMs.txt for AI assistants
 # https://eligibly.ai/llms.txt
+# https://eligibly.ai/llms-full.txt
