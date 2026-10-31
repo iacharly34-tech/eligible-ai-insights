@@ -49,6 +49,8 @@ import { Route as BlogChurnCabinetExpertiseComptableRouteImport } from './routes
 import { Route as BlogCoutAcquisitionClientCabinetComptableRouteImport } from './routes/blog/cout-acquisition-client-cabinet-comptable'
 import { Route as BlogCreationsEntreprisesFrance2025RouteImport } from './routes/blog/creations-entreprises-france-2025'
 import { Route as BlogCreerSiteWebExpertComptableGuideRouteImport } from './routes/blog/creer-site-web-expert-comptable-guide'
+import { Route as BlogFacturationElectroniqueCabinetExpertiseComptableRouteImport } from './routes/blog/facturation-electronique-cabinet-expertise-comptable'
+import { Route as BlogFicheGoogleCabinetExpertiseComptableRouteImport } from './routes/blog/fiche-google-cabinet-expertise-comptable'
 import { Route as BlogFichierSiretVsPlanActionComptableRouteImport } from './routes/blog/fichier-siret-vs-plan-action-comptable'
 import { Route as BlogGuideDemarchageClientExpertComptableRouteImport } from './routes/blog/guide-demarchage-client-expert-comptable'
 import { Route as BlogIcpCabinetExpertiseComptableRouteImport } from './routes/blog/icp-cabinet-expertise-comptable'
@@ -295,6 +297,18 @@ const BlogCreerSiteWebExpertComptableGuideRoute =
     path: '/blog/creer-site-web-expert-comptable-guide',
     getParentRoute: () => rootRouteImport,
   } as any)
+const BlogFacturationElectroniqueCabinetExpertiseComptableRoute =
+  BlogFacturationElectroniqueCabinetExpertiseComptableRouteImport.update({
+    id: '/blog/facturation-electronique-cabinet-expertise-comptable',
+    path: '/blog/facturation-electronique-cabinet-expertise-comptable',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BlogFicheGoogleCabinetExpertiseComptableRoute =
+  BlogFicheGoogleCabinetExpertiseComptableRouteImport.update({
+    id: '/blog/fiche-google-cabinet-expertise-comptable',
+    path: '/blog/fiche-google-cabinet-expertise-comptable',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BlogFichierSiretVsPlanActionComptableRoute =
   BlogFichierSiretVsPlanActionComptableRouteImport.update({
     id: '/blog/fichier-siret-vs-plan-action-comptable',
@@ -494,6 +508,8 @@ export interface FileRoutesByFullPath {
   '/blog/cout-acquisition-client-cabinet-comptable': typeof BlogCoutAcquisitionClientCabinetComptableRoute
   '/blog/creations-entreprises-france-2025': typeof BlogCreationsEntreprisesFrance2025Route
   '/blog/creer-site-web-expert-comptable-guide': typeof BlogCreerSiteWebExpertComptableGuideRoute
+  '/blog/facturation-electronique-cabinet-expertise-comptable': typeof BlogFacturationElectroniqueCabinetExpertiseComptableRoute
+  '/blog/fiche-google-cabinet-expertise-comptable': typeof BlogFicheGoogleCabinetExpertiseComptableRoute
   '/blog/fichier-siret-vs-plan-action-comptable': typeof BlogFichierSiretVsPlanActionComptableRoute
   '/blog/guide-demarchage-client-expert-comptable': typeof BlogGuideDemarchageClientExpertComptableRoute
   '/blog/icp-cabinet-expertise-comptable': typeof BlogIcpCabinetExpertiseComptableRoute
@@ -563,6 +579,8 @@ export interface FileRoutesByTo {
   '/blog/cout-acquisition-client-cabinet-comptable': typeof BlogCoutAcquisitionClientCabinetComptableRoute
   '/blog/creations-entreprises-france-2025': typeof BlogCreationsEntreprisesFrance2025Route
   '/blog/creer-site-web-expert-comptable-guide': typeof BlogCreerSiteWebExpertComptableGuideRoute
+  '/blog/facturation-electronique-cabinet-expertise-comptable': typeof BlogFacturationElectroniqueCabinetExpertiseComptableRoute
+  '/blog/fiche-google-cabinet-expertise-comptable': typeof BlogFicheGoogleCabinetExpertiseComptableRoute
   '/blog/fichier-siret-vs-plan-action-comptable': typeof BlogFichierSiretVsPlanActionComptableRoute
   '/blog/guide-demarchage-client-expert-comptable': typeof BlogGuideDemarchageClientExpertComptableRoute
   '/blog/icp-cabinet-expertise-comptable': typeof BlogIcpCabinetExpertiseComptableRoute
@@ -634,6 +652,8 @@ export interface FileRoutesById {
   '/blog/cout-acquisition-client-cabinet-comptable': typeof BlogCoutAcquisitionClientCabinetComptableRoute
   '/blog/creations-entreprises-france-2025': typeof BlogCreationsEntreprisesFrance2025Route
   '/blog/creer-site-web-expert-comptable-guide': typeof BlogCreerSiteWebExpertComptableGuideRoute
+  '/blog/facturation-electronique-cabinet-expertise-comptable': typeof BlogFacturationElectroniqueCabinetExpertiseComptableRoute
+  '/blog/fiche-google-cabinet-expertise-comptable': typeof BlogFicheGoogleCabinetExpertiseComptableRoute
   '/blog/fichier-siret-vs-plan-action-comptable': typeof BlogFichierSiretVsPlanActionComptableRoute
   '/blog/guide-demarchage-client-expert-comptable': typeof BlogGuideDemarchageClientExpertComptableRoute
   '/blog/icp-cabinet-expertise-comptable': typeof BlogIcpCabinetExpertiseComptableRoute
@@ -705,6 +725,8 @@ export interface FileRouteTypes {
     | '/blog/cout-acquisition-client-cabinet-comptable'
     | '/blog/creations-entreprises-france-2025'
     | '/blog/creer-site-web-expert-comptable-guide'
+    | '/blog/facturation-electronique-cabinet-expertise-comptable'
+    | '/blog/fiche-google-cabinet-expertise-comptable'
     | '/blog/fichier-siret-vs-plan-action-comptable'
     | '/blog/guide-demarchage-client-expert-comptable'
     | '/blog/icp-cabinet-expertise-comptable'
@@ -774,6 +796,8 @@ export interface FileRouteTypes {
     | '/blog/cout-acquisition-client-cabinet-comptable'
     | '/blog/creations-entreprises-france-2025'
     | '/blog/creer-site-web-expert-comptable-guide'
+    | '/blog/facturation-electronique-cabinet-expertise-comptable'
+    | '/blog/fiche-google-cabinet-expertise-comptable'
     | '/blog/fichier-siret-vs-plan-action-comptable'
     | '/blog/guide-demarchage-client-expert-comptable'
     | '/blog/icp-cabinet-expertise-comptable'
@@ -844,6 +868,8 @@ export interface FileRouteTypes {
     | '/blog/cout-acquisition-client-cabinet-comptable'
     | '/blog/creations-entreprises-france-2025'
     | '/blog/creer-site-web-expert-comptable-guide'
+    | '/blog/facturation-electronique-cabinet-expertise-comptable'
+    | '/blog/fiche-google-cabinet-expertise-comptable'
     | '/blog/fichier-siret-vs-plan-action-comptable'
     | '/blog/guide-demarchage-client-expert-comptable'
     | '/blog/icp-cabinet-expertise-comptable'
@@ -914,6 +940,8 @@ export interface RootRouteChildren {
   BlogCoutAcquisitionClientCabinetComptableRoute: typeof BlogCoutAcquisitionClientCabinetComptableRoute
   BlogCreationsEntreprisesFrance2025Route: typeof BlogCreationsEntreprisesFrance2025Route
   BlogCreerSiteWebExpertComptableGuideRoute: typeof BlogCreerSiteWebExpertComptableGuideRoute
+  BlogFacturationElectroniqueCabinetExpertiseComptableRoute: typeof BlogFacturationElectroniqueCabinetExpertiseComptableRoute
+  BlogFicheGoogleCabinetExpertiseComptableRoute: typeof BlogFicheGoogleCabinetExpertiseComptableRoute
   BlogFichierSiretVsPlanActionComptableRoute: typeof BlogFichierSiretVsPlanActionComptableRoute
   BlogGuideDemarchageClientExpertComptableRoute: typeof BlogGuideDemarchageClientExpertComptableRoute
   BlogIcpCabinetExpertiseComptableRoute: typeof BlogIcpCabinetExpertiseComptableRoute
@@ -1224,6 +1252,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogCreerSiteWebExpertComptableGuideRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/facturation-electronique-cabinet-expertise-comptable': {
+      id: '/blog/facturation-electronique-cabinet-expertise-comptable'
+      path: '/blog/facturation-electronique-cabinet-expertise-comptable'
+      fullPath: '/blog/facturation-electronique-cabinet-expertise-comptable'
+      preLoaderRoute: typeof BlogFacturationElectroniqueCabinetExpertiseComptableRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/fiche-google-cabinet-expertise-comptable': {
+      id: '/blog/fiche-google-cabinet-expertise-comptable'
+      path: '/blog/fiche-google-cabinet-expertise-comptable'
+      fullPath: '/blog/fiche-google-cabinet-expertise-comptable'
+      preLoaderRoute: typeof BlogFicheGoogleCabinetExpertiseComptableRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/fichier-siret-vs-plan-action-comptable': {
       id: '/blog/fichier-siret-vs-plan-action-comptable'
       path: '/blog/fichier-siret-vs-plan-action-comptable'
@@ -1489,6 +1531,10 @@ const rootRouteChildren: RootRouteChildren = {
     BlogCreationsEntreprisesFrance2025Route,
   BlogCreerSiteWebExpertComptableGuideRoute:
     BlogCreerSiteWebExpertComptableGuideRoute,
+  BlogFacturationElectroniqueCabinetExpertiseComptableRoute:
+    BlogFacturationElectroniqueCabinetExpertiseComptableRoute,
+  BlogFicheGoogleCabinetExpertiseComptableRoute:
+    BlogFicheGoogleCabinetExpertiseComptableRoute,
   BlogFichierSiretVsPlanActionComptableRoute:
     BlogFichierSiretVsPlanActionComptableRoute,
   BlogGuideDemarchageClientExpertComptableRoute:
