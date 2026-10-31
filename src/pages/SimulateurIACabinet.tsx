@@ -4,6 +4,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { SafeLink } from "@/components/SafeLink";
 import { AIGainsSimulator } from "@/components/AIGainsSimulator";
 import { ArrowLeft } from "lucide-react";
+import { ClientValueCalculator } from "@/components/cabinet/ClientValueCalculator";
 
 const SimulateurIACabinet = () => (
   <>
@@ -29,6 +30,7 @@ const SimulateurIACabinet = () => (
             </p>
           </header>
 
+          <ClientValueCalculator />
           <AIGainsSimulator />
         </div>
       </main>
