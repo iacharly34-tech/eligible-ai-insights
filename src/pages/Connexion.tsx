@@ -27,12 +27,13 @@ const Connexion = () => {
   const [msg, setMsg] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const navigate = useNavigate();
+  const nextPath = () => new URLSearchParams(window.location.search).get("retour") === "diagnostic" ? "/diagnostic-visibilite-ia" as const : "/espace" as const;
 
   useEffect(() => {
     const isInvite = /type=(invite|recovery)/.test(window.location.hash);
     if (isInvite) setSetPwdMode(true);
     supabase.auth.getSession().then(({ data }) => {
-      if (data.session && !isInvite) navigate({ to: "/espace" });
+      if (data.session && !isInvite) navigate({ to: nextPath() });
     });
   }, [navigate]);
 
@@ -43,12 +44,12 @@ const Connexion = () => {
       const { error } = await supabase.auth.updateUser({ password });
       setBusy(false);
       if (error) return setMsg(error.message);
-      return navigate({ to: "/espace" });
+      return navigate({ to: nextPath() });
     }
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     setBusy(false);
     if (error) return setMsg("Identifiants incorrects.");
-    navigate({ to: "/espace" });
+    navigate({ to: nextPath() });
   };
 
   const onForgot = async () => {

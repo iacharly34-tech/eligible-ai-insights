@@ -27,6 +27,7 @@ const entries: Entry[] = [
   { path: "/newsletter", changefreq: "monthly", priority: "0.5" },
   { path: "/connexion", changefreq: "yearly", priority: "0.3" },
   { path: "/simulateur-roi-ia-cabinet", changefreq: "monthly", priority: "0.85" },
+  { path: "/diagnostic-visibilite-ia", changefreq: "monthly", priority: "0.8" },
   // Landing SEO cabinet EC
   { path: "/leads-experts-comptables", changefreq: "weekly", priority: "0.9" },
   { path: "/prospection-cabinet-comptable", changefreq: "monthly", priority: "0.8" },
