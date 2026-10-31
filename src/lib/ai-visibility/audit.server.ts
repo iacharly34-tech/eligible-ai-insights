@@ -11,7 +11,7 @@ Ce diagnostic n'est PAS une mesure de citations ChatGPT, Perplexity, Gemini ou C
 Donne 5 à 7 constats avec URL de preuve (null si non vérifié), 3 à 5 actions priorisées P1/P2/P3 avec exemple de rédaction et effort indicatif, 4 questions clients à tester manuellement dans les assistants. N'invente ni client, avis, tarif, résultats ni certification. Exemples proposés explicitement identifiés comme tels. Si aucun contenu exploitable, assessment non_evaluable, confiance faible et explique la limite sans conclure à une mauvaise qualité.
 Le résumé doit indiquer si les bases éditoriales sont solides ou doivent être renforcées, jamais affirmer que le cabinet est cité. Ajoute aux limites : recherche limitée aux pages accessibles via cet outil, pas de test des quatre assistants, pas d'audit technique complet ni contrôle de mentions externes.`;
 
-export async function handleVisibilityAudit(request: Request, env: { key?: string; url?: string; publishableKey?: string }) {
+export async function handleVisibilityAudit(request: Request, env: { key: string | undefined; url: string | undefined; publishableKey: string | undefined }) {
   const fail = (message: string, status: number) => Response.json({ message }, { status, headers: { "Cache-Control": "no-store" } });
   const token = request.headers.get("Authorization")?.replace(/^Bearer /, "");
   if (!token) return fail("Connectez-vous pour lancer le diagnostic.", 401);
