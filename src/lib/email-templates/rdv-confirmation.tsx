@@ -29,7 +29,7 @@ const Email = ({ fullName, when, bookingUrl }: Props) => (
 
 export const template = {
   component: Email,
-  subject: (d: Record<string, any>) => `Eligibly · Démo confirmée${d.when ? ` — ${d.when}` : ''}`,
+  subject: (d: Record<string, any>) => `Eligibly · Démo confirmée${d['when'] ? ` — ${d['when']}` : ''}`,
   displayName: 'Demo — rendez-vous confirmé',
   previewData: { fullName: 'Jean Dupont', when: 'mardi 3 novembre à 09:30', bookingUrl: 'https://eligibly.ai/rdv/exemple' },
 } satisfies TemplateEntry

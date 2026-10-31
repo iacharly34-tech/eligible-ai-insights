@@ -41,7 +41,7 @@ export const submitDemoRequest = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const db = await admin();
     const req = getRequest();
-    const ip = (req.headers.get("x-forwarded-for") || "").split(",")[0].trim();
+    const ip = (req.headers.get("x-forwarded-for") || "").split(",")[0]?.trim() ?? "";
     const ua = (req.headers.get("user-agent") || "").slice(0, 400);
     const hourAgo = new Date(Date.now() - 3600_000).toISOString();
     const { count } = await db.from("demo_requests").select("id", { count: "exact", head: true }).eq("email", data.email).gte("created_at", hourAgo);
@@ -50,7 +50,7 @@ export const submitDemoRequest = createServerFn({ method: "POST" })
     const { data: row, error } = await db.from("demo_requests").insert({
       full_name: data.fullName, email: data.email, company: data.company,
       phone: data.phone || null, departements: data.departements || null,
-      taille_cabinet: data.tailleCabinet ? TAILLE_LABEL[data.tailleCabinet] : null,
+      taille_cabinet: data.tailleCabinet ? (TAILLE_LABEL[data.tailleCabinet] ?? null) : null,
       message: data.message || null, source: "/demo",
       user_agent: ip ? `[${ip}] ${ua}` : ua,
     }).select("id, booking_token, created_at").single();

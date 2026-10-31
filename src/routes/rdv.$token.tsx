@@ -41,7 +41,7 @@ function RdvPage() {
     return m;
   }, [data]);
   const days = [...byDay.keys()];
-  const activeDay = day ?? days[0];
+  const activeDay = day ?? days[0] ?? "";
 
   const confirm = async () => {
     if (!slot) return;

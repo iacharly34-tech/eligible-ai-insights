@@ -44,7 +44,7 @@ const Email = ({ fullName, company, bookingUrl, step = 1 }: Props) => (
 
 export const template = {
   component: Email,
-  subject: (d: Record<string, any>) => d.step === 2 ? 'Eligibly · Votre démo, dernier rappel' : 'Eligibly · Fixons votre démo de 20 minutes',
+  subject: (d: Record<string, any>) => d['step'] === 2 ? 'Eligibly · Votre démo, dernier rappel' : 'Eligibly · Fixons votre démo de 20 minutes',
   displayName: 'Demo — relance',
   previewData: { fullName: 'Jean Dupont', company: 'Cabinet Dupont', bookingUrl: 'https://eligibly.ai/rdv/exemple', step: 1 },
 } satisfies TemplateEntry

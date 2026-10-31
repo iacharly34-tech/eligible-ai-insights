@@ -39,7 +39,7 @@ export function availableSlots(now: Date, taken: string[] = []): string[] {
     if (wd === "Sat" || wd === "Sun") continue;
     days++;
     for (const t of SLOT_TIMES) {
-      const [hh, mm] = t.split(":").map(Number);
+      const [hh = 0, mm = 0] = t.split(":").map(Number);
       const iso = parisToUtc(y, m, d, hh, mm).toISOString();
       if (!takenSet.has(iso)) out.push(iso);
     }
@@ -58,7 +58,7 @@ export function followupDue(r: { created_at: string; statut: string; followup_co
   if (r.rdv_at || !["nouveau", "relance"].includes(r.statut)) return null;
   const n = r.followup_count;
   if (n >= FOLLOWUP_DAYS.length) return null;
-  const due = new Date(r.created_at).getTime() + FOLLOWUP_DAYS[n] * 86400000;
+  const due = new Date(r.created_at).getTime() + (FOLLOWUP_DAYS[n] ?? 0) * 86400000;
   return now.getTime() >= due ? n + 1 : null;
 }
 
