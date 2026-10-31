@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { adminOverview, createCabinet, toggleCabinet, addZone, removeZone, inviteMember, reassignLead } from "@/lib/admin.functions";
 import { EspaceShell, useMe, fmtDate, VERTICALES } from "@/components/espace/EspaceShell";
 import { Button } from "@/components/ui/button";
+import { DemoRequestsAdmin } from "@/components/espace/DemoRequestsAdmin";
 import { Input } from "@/components/ui/input";
 
 export const Route = createFileRoute("/_authenticated/admin")({ component: AdminPage });
@@ -114,6 +115,8 @@ function AdminPage() {
           </table></div>
         )}
       </section>
+
+      <DemoRequestsAdmin />
 
       <section className={`${card} mt-4`}>
         <h2 className="font-semibold mb-3">Derniers lots reçus du pipeline</h2>

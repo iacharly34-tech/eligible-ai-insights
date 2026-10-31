@@ -21,15 +21,20 @@ import { ContextualLinks } from "@/components/ContextualLinks";
 import { SecureFormWrapper } from "@/components/SecureFormWrapper";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "@/lib/router-compat";
-import { supabase } from "@/integrations/supabase/client";
+import { useServerFn } from "@tanstack/react-start";
+import { submitDemoRequest } from "@/lib/demo.functions";
 
 const Demo = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     company: "",
+    phone: "",
+    departements: "",
+    tailleCabinet: "",
     message: "",
   });
+  const submitDemo = useServerFn(submitDemoRequest);
   const [submitting, setSubmitting] = useState(false);
   const { language } = useLanguage();
   const { toast } = useToast();
@@ -44,41 +49,30 @@ const Demo = () => {
     if (submitting) return;
     setSubmitting(true);
 
-    const { data, error } = await supabase.functions.invoke("submit-lead", {
-      body: {
-        fullName: formData.fullName.trim(),
-        email: formData.email.trim(),
-        company: formData.company.trim(),
-        message: formData.message.trim() || undefined,
-        source: "/demo",
-      },
-    });
-
-    if (error || (data && (data as any).error)) {
+    try {
+      const res = await submitDemo({
+        data: {
+          fullName: formData.fullName.trim(),
+          email: formData.email.trim(),
+          company: formData.company.trim(),
+          phone: formData.phone.trim(),
+          departements: formData.departements.trim(),
+          tailleCabinet: formData.tailleCabinet as "" | "1" | "2-5" | "6-20" | "20+",
+          message: formData.message.trim(),
+        },
+      });
+      toast({ title: "✅ Demande reçue !", description: "Choisissez maintenant votre créneau de démo.", duration: 4000 });
+      navigate(`/rdv/${res.bookingToken}`, { replace: true });
+    } catch (err) {
       setSubmitting(false);
-      console.error("submit-lead failed", error || (data as any).error);
+      console.error("submitDemoRequest failed", err);
       toast({
-        title: language === "en" ? "Submission failed" : "Envoi impossible",
-        description:
-          language === "en"
-            ? "Please try again, or contact us on WhatsApp at +33 6 03 26 31 00."
-            : "Réessayez, ou écrivez-nous sur WhatsApp au +33 6 03 26 31 00.",
+        title: "Envoi impossible",
+        description: "Vérifiez les champs, ou écrivez-nous sur WhatsApp au +33 6 03 26 31 00.",
         variant: "destructive",
         duration: 6000,
       });
-      return;
     }
-
-    toast({
-      title: language === "en" ? "✅ Request received!" : "✅ Demande reçue !",
-      description:
-        language === "en"
-          ? "We will deliver your first lead within 48 hours."
-          : "Nous vous livrons votre premier lead sous 48 h.",
-      duration: 5000,
-    });
-
-    navigate(language === "en" ? "/en/waitlist/success" : "/waitlist/success", { replace: true });
   };
 
   const testimonials = [
@@ -160,8 +154,28 @@ const Demo = () => {
                       <Input id="email" type="email" value={formData.email} onChange={(e) => handleInputChange("email", e.target.value)} placeholder="julie@startup.com" className="h-12" required />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="company" className="text-sm font-medium">Entreprise *</Label>
-                      <Input id="company" value={formData.company} onChange={(e) => handleInputChange("company", e.target.value)} placeholder="Ma Société SARL" className="h-12" required />
+                      <Label htmlFor="company" className="text-sm font-medium">Cabinet *</Label>
+                      <Input id="company" value={formData.company} onChange={(e) => handleInputChange("company", e.target.value)} placeholder="Cabinet Dupont & Associés" className="h-12" required />
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="phone" className="text-sm font-medium">Téléphone</Label>
+                        <Input id="phone" type="tel" inputMode="tel" maxLength={30} value={formData.phone} onChange={(e) => handleInputChange("phone", e.target.value)} placeholder="06 12 34 56 78" className="h-12" autoComplete="tel" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="tailleCabinet" className="text-sm font-medium">Taille du cabinet</Label>
+                        <select id="tailleCabinet" value={formData.tailleCabinet} onChange={(e) => handleInputChange("tailleCabinet", e.target.value)} className="h-12 w-full rounded-md border border-input bg-background px-3 text-sm">
+                          <option value="">Sélectionnez…</option>
+                          <option value="1">Expert-comptable seul</option>
+                          <option value="2-5">2 à 5 personnes</option>
+                          <option value="6-20">6 à 20 personnes</option>
+                          <option value="20+">Plus de 20 personnes</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="departements" className="text-sm font-medium">Département(s) ciblé(s)</Label>
+                      <Input id="departements" maxLength={120} value={formData.departements} onChange={(e) => handleInputChange("departements", e.target.value)} placeholder="75, 92, 93" className="h-12" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="message" className="text-sm font-medium">Message / besoin spécifique</Label>
@@ -172,7 +186,7 @@ const Demo = () => {
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
                     <p className="text-center text-xs text-muted-foreground">
-                      3 leads livrés sous 48 h. Sans engagement. Vos coordonnées ne sont jamais revendues.
+                      Étape suivante : vous choisissez votre créneau de démo. Sans engagement. Vos coordonnées ne sont jamais revendues.
                     </p>
                   </SecureFormWrapper>
                 </>

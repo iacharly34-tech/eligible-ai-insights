@@ -61,6 +61,7 @@ import { Route as BlogObservatoireSasuSasJuin2026RouteImport } from './routes/bl
 import { Route as BlogPlaybookProspectionCabinetEc2026RouteImport } from './routes/blog/playbook-prospection-cabinet-ec-2026'
 import { Route as BlogReferencementLocalExpertComptableRouteImport } from './routes/blog/referencement-local-expert-comptable'
 import { Route as CabinetGlossaireRouteImport } from './routes/cabinet/glossaire'
+import { Route as RdvTokenRouteImport } from './routes/rdv.$token'
 import { Route as VerticalesBtpArtisansRouteImport } from './routes/verticales/btp-artisans'
 import { Route as VerticalesECommerceRouteImport } from './routes/verticales/e-commerce'
 import { Route as VerticalesHoldingsGroupesRouteImport } from './routes/verticales/holdings-groupes'
@@ -75,6 +76,7 @@ import { Route as CabinetCasUsageCabinet8CollaborateursDepartementRouteImport } 
 import { Route as CabinetCasUsageCabinetFullRemoteStartupsEcommerceRouteImport } from './routes/cabinet/cas-usage/cabinet-full-remote-startups-ecommerce'
 import { Route as CabinetCasUsageCabinetSpecialiseRestaurationRouteImport } from './routes/cabinet/cas-usage/cabinet-specialise-restauration'
 import { Route as LovableEmailEventsRouteImport } from './routes/lovable/email/events'
+import { Route as ApiPublicHooksDemoFollowupsRouteImport } from './routes/api/public/hooks/demo-followups'
 import { Route as ApiPublicPipelineLeadsRouteImport } from './routes/api/public/pipeline/leads'
 import { Route as LovableEmailAuthPreviewRouteImport } from './routes/lovable/email/auth/preview'
 import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
@@ -368,6 +370,11 @@ const CabinetGlossaireRoute = CabinetGlossaireRouteImport.update({
   path: '/cabinet/glossaire',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RdvTokenRoute = RdvTokenRouteImport.update({
+  id: '/rdv/$token',
+  path: '/rdv/$token',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VerticalesBtpArtisansRoute = VerticalesBtpArtisansRouteImport.update({
   id: '/verticales/btp-artisans',
   path: '/verticales/btp-artisans',
@@ -446,6 +453,12 @@ const LovableEmailEventsRoute = LovableEmailEventsRouteImport.update({
   path: '/lovable/email/events',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicHooksDemoFollowupsRoute =
+  ApiPublicHooksDemoFollowupsRouteImport.update({
+    id: '/api/public/hooks/demo-followups',
+    path: '/api/public/hooks/demo-followups',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiPublicPipelineLeadsRoute = ApiPublicPipelineLeadsRouteImport.update({
   id: '/api/public/pipeline/leads',
   path: '/api/public/pipeline/leads',
@@ -520,6 +533,7 @@ export interface FileRoutesByFullPath {
   '/blog/playbook-prospection-cabinet-ec-2026': typeof BlogPlaybookProspectionCabinetEc2026Route
   '/blog/referencement-local-expert-comptable': typeof BlogReferencementLocalExpertComptableRoute
   '/cabinet/glossaire': typeof CabinetGlossaireRoute
+  '/rdv/$token': typeof RdvTokenRoute
   '/verticales/btp-artisans': typeof VerticalesBtpArtisansRoute
   '/verticales/e-commerce': typeof VerticalesECommerceRoute
   '/verticales/holdings-groupes': typeof VerticalesHoldingsGroupesRoute
@@ -534,6 +548,7 @@ export interface FileRoutesByFullPath {
   '/lovable/email/events': typeof LovableEmailEventsRoute
   '/espace/': typeof AuthenticatedEspaceIndexRoute
   '/cabinet/cas-usage/': typeof CabinetCasUsageIndexRoute
+  '/api/public/hooks/demo-followups': typeof ApiPublicHooksDemoFollowupsRoute
   '/api/public/pipeline/leads': typeof ApiPublicPipelineLeadsRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
@@ -591,6 +606,7 @@ export interface FileRoutesByTo {
   '/blog/playbook-prospection-cabinet-ec-2026': typeof BlogPlaybookProspectionCabinetEc2026Route
   '/blog/referencement-local-expert-comptable': typeof BlogReferencementLocalExpertComptableRoute
   '/cabinet/glossaire': typeof CabinetGlossaireRoute
+  '/rdv/$token': typeof RdvTokenRoute
   '/verticales/btp-artisans': typeof VerticalesBtpArtisansRoute
   '/verticales/e-commerce': typeof VerticalesECommerceRoute
   '/verticales/holdings-groupes': typeof VerticalesHoldingsGroupesRoute
@@ -605,6 +621,7 @@ export interface FileRoutesByTo {
   '/lovable/email/events': typeof LovableEmailEventsRoute
   '/espace': typeof AuthenticatedEspaceIndexRoute
   '/cabinet/cas-usage': typeof CabinetCasUsageIndexRoute
+  '/api/public/hooks/demo-followups': typeof ApiPublicHooksDemoFollowupsRoute
   '/api/public/pipeline/leads': typeof ApiPublicPipelineLeadsRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
@@ -664,6 +681,7 @@ export interface FileRoutesById {
   '/blog/playbook-prospection-cabinet-ec-2026': typeof BlogPlaybookProspectionCabinetEc2026Route
   '/blog/referencement-local-expert-comptable': typeof BlogReferencementLocalExpertComptableRoute
   '/cabinet/glossaire': typeof CabinetGlossaireRoute
+  '/rdv/$token': typeof RdvTokenRoute
   '/verticales/btp-artisans': typeof VerticalesBtpArtisansRoute
   '/verticales/e-commerce': typeof VerticalesECommerceRoute
   '/verticales/holdings-groupes': typeof VerticalesHoldingsGroupesRoute
@@ -678,6 +696,7 @@ export interface FileRoutesById {
   '/lovable/email/events': typeof LovableEmailEventsRoute
   '/_authenticated/espace/': typeof AuthenticatedEspaceIndexRoute
   '/cabinet/cas-usage/': typeof CabinetCasUsageIndexRoute
+  '/api/public/hooks/demo-followups': typeof ApiPublicHooksDemoFollowupsRoute
   '/api/public/pipeline/leads': typeof ApiPublicPipelineLeadsRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
@@ -737,6 +756,7 @@ export interface FileRouteTypes {
     | '/blog/playbook-prospection-cabinet-ec-2026'
     | '/blog/referencement-local-expert-comptable'
     | '/cabinet/glossaire'
+    | '/rdv/$token'
     | '/verticales/btp-artisans'
     | '/verticales/e-commerce'
     | '/verticales/holdings-groupes'
@@ -751,6 +771,7 @@ export interface FileRouteTypes {
     | '/lovable/email/events'
     | '/espace/'
     | '/cabinet/cas-usage/'
+    | '/api/public/hooks/demo-followups'
     | '/api/public/pipeline/leads'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
@@ -808,6 +829,7 @@ export interface FileRouteTypes {
     | '/blog/playbook-prospection-cabinet-ec-2026'
     | '/blog/referencement-local-expert-comptable'
     | '/cabinet/glossaire'
+    | '/rdv/$token'
     | '/verticales/btp-artisans'
     | '/verticales/e-commerce'
     | '/verticales/holdings-groupes'
@@ -822,6 +844,7 @@ export interface FileRouteTypes {
     | '/lovable/email/events'
     | '/espace'
     | '/cabinet/cas-usage'
+    | '/api/public/hooks/demo-followups'
     | '/api/public/pipeline/leads'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
@@ -880,6 +903,7 @@ export interface FileRouteTypes {
     | '/blog/playbook-prospection-cabinet-ec-2026'
     | '/blog/referencement-local-expert-comptable'
     | '/cabinet/glossaire'
+    | '/rdv/$token'
     | '/verticales/btp-artisans'
     | '/verticales/e-commerce'
     | '/verticales/holdings-groupes'
@@ -894,6 +918,7 @@ export interface FileRouteTypes {
     | '/lovable/email/events'
     | '/_authenticated/espace/'
     | '/cabinet/cas-usage/'
+    | '/api/public/hooks/demo-followups'
     | '/api/public/pipeline/leads'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
@@ -952,6 +977,7 @@ export interface RootRouteChildren {
   BlogPlaybookProspectionCabinetEc2026Route: typeof BlogPlaybookProspectionCabinetEc2026Route
   BlogReferencementLocalExpertComptableRoute: typeof BlogReferencementLocalExpertComptableRoute
   CabinetGlossaireRoute: typeof CabinetGlossaireRoute
+  RdvTokenRoute: typeof RdvTokenRoute
   VerticalesBtpArtisansRoute: typeof VerticalesBtpArtisansRoute
   VerticalesECommerceRoute: typeof VerticalesECommerceRoute
   VerticalesHoldingsGroupesRoute: typeof VerticalesHoldingsGroupesRoute
@@ -964,6 +990,7 @@ export interface RootRouteChildren {
   CabinetCasUsageCabinetSpecialiseRestaurationRoute: typeof CabinetCasUsageCabinetSpecialiseRestaurationRoute
   LovableEmailEventsRoute: typeof LovableEmailEventsRoute
   CabinetCasUsageIndexRoute: typeof CabinetCasUsageIndexRoute
+  ApiPublicHooksDemoFollowupsRoute: typeof ApiPublicHooksDemoFollowupsRoute
   ApiPublicPipelineLeadsRoute: typeof ApiPublicPipelineLeadsRoute
   LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
   LovableEmailAuthWebhookRoute: typeof LovableEmailAuthWebhookRoute
@@ -1336,6 +1363,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CabinetGlossaireRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rdv/$token': {
+      id: '/rdv/$token'
+      path: '/rdv/$token'
+      fullPath: '/rdv/$token'
+      preLoaderRoute: typeof RdvTokenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/verticales/btp-artisans': {
       id: '/verticales/btp-artisans'
       path: '/verticales/btp-artisans'
@@ -1432,6 +1466,13 @@ declare module '@tanstack/react-router' {
       path: '/lovable/email/events'
       fullPath: '/lovable/email/events'
       preLoaderRoute: typeof LovableEmailEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/hooks/demo-followups': {
+      id: '/api/public/hooks/demo-followups'
+      path: '/api/public/hooks/demo-followups'
+      fullPath: '/api/public/hooks/demo-followups'
+      preLoaderRoute: typeof ApiPublicHooksDemoFollowupsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/public/pipeline/leads': {
@@ -1552,6 +1593,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogReferencementLocalExpertComptableRoute:
     BlogReferencementLocalExpertComptableRoute,
   CabinetGlossaireRoute: CabinetGlossaireRoute,
+  RdvTokenRoute: RdvTokenRoute,
   VerticalesBtpArtisansRoute: VerticalesBtpArtisansRoute,
   VerticalesECommerceRoute: VerticalesECommerceRoute,
   VerticalesHoldingsGroupesRoute: VerticalesHoldingsGroupesRoute,
@@ -1568,6 +1610,7 @@ const rootRouteChildren: RootRouteChildren = {
     CabinetCasUsageCabinetSpecialiseRestaurationRoute,
   LovableEmailEventsRoute: LovableEmailEventsRoute,
   CabinetCasUsageIndexRoute: CabinetCasUsageIndexRoute,
+  ApiPublicHooksDemoFollowupsRoute: ApiPublicHooksDemoFollowupsRoute,
   ApiPublicPipelineLeadsRoute: ApiPublicPipelineLeadsRoute,
   LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
   LovableEmailAuthWebhookRoute: LovableEmailAuthWebhookRoute,
