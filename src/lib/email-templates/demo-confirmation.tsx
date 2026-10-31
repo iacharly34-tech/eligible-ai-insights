@@ -17,9 +17,10 @@ interface Props {
   fullName?: string
   company?: string
   message?: string
+  bookingUrl?: string
 }
 
-const Email = ({ fullName, company, message }: Props) => (
+const Email = ({ fullName, company, message, bookingUrl }: Props) => (
   <Html lang="fr" dir="ltr">
     <Head />
     <Preview>Votre premier lead premium arrive sous 48 h</Preview>
@@ -44,6 +45,16 @@ const Email = ({ fullName, company, message }: Props) => (
             <Section style={quote}>
               <Text style={quoteText}>« {message} »</Text>
             </Section>
+          ) : null}
+          {bookingUrl ? (
+            <>
+              <Text style={text}>
+                Choisissez dès maintenant un créneau de <strong>20 minutes</strong> pour parcourir ensemble les leads de votre zone&nbsp;:
+              </Text>
+              <Section style={{ textAlign: 'center' as const, margin: '8px 0 20px' }}>
+                <Link href={bookingUrl} style={bookButton}>Réserver mon créneau</Link>
+              </Section>
+            </>
           ) : null}
           <Hr style={hr} />
           <Text style={text}>
@@ -72,6 +83,7 @@ export const template = {
     fullName: 'Jean Dupont',
     company: 'Cabinet Dupont & Associés',
     message: 'SASU/SAS en Île-de-France, capital > 5k€, secteur tech.',
+    bookingUrl: 'https://eligibly.ai/rdv/exemple',
   },
 } satisfies TemplateEntry
 
@@ -169,4 +181,14 @@ const whatsappButton = {
   padding: '12px 24px',
   borderRadius: '6px',
   fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+}
+const bookButton = {
+  display: 'inline-block' as const,
+  backgroundColor: '#D85A30',
+  color: '#ffffff',
+  fontSize: '15px',
+  fontWeight: 600 as const,
+  textDecoration: 'none',
+  padding: '13px 26px',
+  borderRadius: '6px',
 }
