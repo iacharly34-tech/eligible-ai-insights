@@ -10,16 +10,20 @@ const VisibiliteExpertComptable = () => (
     h1a="Visibilité expert-comptable :"
     h1b="être trouvé au moment"
     h1c=" où le créateur cherche."
-    intro="Un créateur d'entreprise arbitre son cabinet en 3 à 10 jours, souvent avant même de vous parler : recherche Google, avis, site du cabinet, réponse d'un assistant IA. Si vous n'existez pas sur ces quatre surfaces, vous n'êtes pas dans le comparatif. Voici la mécanique de visibilité que nous mettons en place avec nos cabinets partenaires, et les indicateurs qui prouvent qu'elle fonctionne."
+    intro="Un dirigeant peut vérifier un cabinet sur Google, consulter ses avis et son site, ou interroger un assistant IA avant de le contacter. Construire une présence cohérente facilite cette vérification. L'objectif est de rendre vos missions et votre expertise compréhensibles et vérifiables, puis de mesurer les prises de contact, sans promettre une position Google ni une citation IA."
     bullets={[
       "Fiche Google Business complète, catégorisée, alimentée en avis récents",
       "Site du cabinet indexable : pages par service, par verticale et par ville",
-      "Présence dans les réponses de ChatGPT, Perplexity, Gemini et Claude",
+      "Contenus exploitables par ChatGPT, Perplexity, Gemini et Claude, sans garantie de citation",
       "Sortie de prospection sortante : la visibilité ne remplace pas le contact, elle le rend plus facile",
     ]}
     ctaPrimary="Voir comment Eligibly complète votre visibilité"
     ctaNote="Démo produit — 20 minutes, sans engagement."
     sections={[
+      {
+        title: "Comment être visible sur ChatGPT quand on est expert-comptable ?",
+        body: <><p>Publiez des réponses précises aux questions de vos clients, accessibles dans le HTML initial, et faites corroborer l'identité du cabinet par des sources externes fiables. ChatGPT, Perplexity, Gemini et Claude n'utilisent pas exactement les mêmes systèmes ; l'accès d'un robot à une page ne prouve pas qu'un assistant la cite.</p><ol className="list-decimal pl-5 space-y-2"><li><strong>Identifier le cabinet :</strong> dénomination, associés, coordonnées, inscription professionnelle et zone réelle, cohérents sur le site et les annuaires.</li><li><strong>Répondre à une question par section :</strong> mission, clientèle concernée, limites, modalités et sources. Préférer les faits aux superlatifs.</li><li><strong>Rendre les pages accessibles :</strong> statut 200, texte sans JavaScript, titre et canonical propres, liens internes, sitemap et absence de blocage involontaire.</li><li><strong>Documenter les preuves :</strong> cas autorisés, résultats datés avec méthode et dénominateur ; distinguer exemple et résultat réel.</li><li><strong>Tester régulièrement :</strong> enregistrer question exacte, assistant, date, recherche web activée ou non, citation et URL citée. Répéter les tests ; une réponse isolée n'est pas un taux de visibilité.</li></ol><p>Le balisage structuré décrit vos informations ; il ne garantit pas leur sélection. Les fichiers llms.txt sont des index complémentaires, pas un mécanisme d'indexation officiel commun aux assistants. Le diagnostic Eligibly évalue qualitativement les contenus trouvés et propose des améliorations ; il ne mesure pas une probabilité de citation.</p><p className="text-sm">Références : <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">Google Search Central — contenus utiles</a> · <a href="https://platform.openai.com/docs/bots" target="_blank" rel="noopener noreferrer">OpenAI — robots et contrôles d'accès</a>.</p></>,
+      },
       {
         title: "Évaluer les contenus de votre propre site",
         body: <Button asChild variant="outline"><a href="/diagnostic-visibilite-ia">Lancer le diagnostic de visibilité IA</a></Button>,
@@ -66,12 +70,14 @@ const VisibiliteExpertComptable = () => (
       },
     ]}
     faq={[
-      { q: "Combien de temps avant de voir des résultats de visibilité ?", a: "Fiche Google Business optimisée : 3 à 6 semaines sur les appels entrants. Référencement local sur des requêtes concurrentielles : 4 à 8 mois. Citation par les assistants IA : 2 à 4 mois après publication de pages explicites et corroborées. Ce sont des ordres de grandeur observés sur nos cabinets partenaires, pas des garanties." },
+      { q: "Combien de temps avant de voir des résultats de visibilité ?", a: "Aucun délai de citation IA n'est garanti. Suivez les impressions, les contacts et les URL effectivement citées sur plusieurs périodes comparables. Une page accessible et indexable peut ne jamais être reprise dans une réponse." },
       { q: "Faut-il un budget publicitaire ?", a: "Non pour démarrer. La fiche Google Business, les avis et 8 à 12 pages de site bien écrites couvrent l'essentiel du potentiel local. Le SEA n'a d'intérêt que pour tester rapidement des requêtes à forte intention avant d'investir en contenu." },
       { q: "Un cabinet de 3 personnes peut-il tenir cette cadence ?", a: "Oui, à condition de cadrer : 2 heures par mois pour la fiche et les avis, une page ou un article par mois. En dessous, la visibilité stagne ; au-dessus, elle mobilise du temps facturable sans gain proportionnel." },
       { q: "La visibilité remplace-t-elle la prospection ?", a: "Non. Elle réduit le coût d'acquisition des leads entrants mais ne couvre pas les créateurs qui ne vous cherchent pas. Les deux canaux se cumulent : visibilité pour l'inbound, détection d'immatriculations pour l'outbound dans la fenêtre 90 jours." },
     ]}
     related={[
+      { label: "Développer le nombre de clients du cabinet", href: "/trouver-des-clients-cabinet-comptable" },
+      { label: "Diagnostic de préparation aux citations IA", href: "/diagnostic-visibilite-ia" },
       { label: "Image de marque du cabinet", href: "/image-de-marque-expert-comptable" },
       { label: "Présence digitale du cabinet", href: "/presence-digitale-cabinet-comptable" },
       { label: "Cas client EM Partners", href: "/blog/cas-client-empartners" },

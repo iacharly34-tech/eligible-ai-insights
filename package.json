@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "predev": "bunx tsx scripts/generate-sitemap.ts",
+    "predev": "bun scripts/generate-sitemap.ts && bun scripts/gen-llms-full.ts",
     "build": "vite build",
-    "prebuild": "bunx tsx scripts/generate-sitemap.ts",
+    "prebuild": "bun scripts/generate-sitemap.ts && bun scripts/gen-llms-full.ts",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",

@@ -13,7 +13,7 @@ interface Entry {
   priority?: string;
 }
 
-// Kept in sync with src/App.tsx — only public, indexable routes for the
+// Kept in sync with TanStack content routes — only public, indexable routes for the
 // current cabinet-EC positioning. Legacy AO routes are intentionally excluded.
 const entries: Entry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
@@ -61,6 +61,8 @@ const entries: Entry[] = [
   // Blog article added récemment
   { path: "/blog/moderniser-cabinet-expertise-comptable-ia", changefreq: "monthly", priority: "0.7" },
   // Blog (cabinet EC)
+  { path: "/blog/facturation-electronique-cabinet-expertise-comptable", changefreq: "monthly", priority: "0.7" },
+  { path: "/blog/fiche-google-cabinet-expertise-comptable", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/creations-entreprises-france-2025", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/churn-cabinet-expertise-comptable", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/cout-acquisition-client-cabinet-comptable", changefreq: "monthly", priority: "0.7" },
