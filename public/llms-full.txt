@@ -34,7 +34,7 @@ Deux offres pour développer votre cabinet : Marque & visibilité, puis Détecti
 ## Pages métier et comparatifs
 
 ### [À propos d'Eligibly : l'équipe derrière les leads pour cabinets EC](https://eligibly.ai/a-propos)
-Eligibly aide les cabinets d'expertise comptable à détecter les sociétés nouvellement créées avant leurs concurrents. Mission, équipe, sources de données et engagements.
+Eligibly aide les cabinets d'expertise comptable à détecter et qualifier les sociétés nouvellement créées. Mission, équipe, sources de données et engagements.
 
 ### [Alternatives à PrimoLead pour cabinets d'expertise comptable](https://eligibly.ai/alternatives-primolead-experts-comptables)
 Comparatif neutre : PrimoLead, Corporama, Societe.com, Eligibly. Sources, filtres, scoring, canaux d'activation, prix, essai. Choisir le bon outil de génération de leads pour son cabinet EC.
@@ -47,6 +47,9 @@ Pour chaque lead cabinet, le meilleur canal : WhatsApp Business, LinkedIn, email
 
 ### [Conseil en référencement pour expert-comptable — méthode 2026](https://eligibly.ai/conseil-referencement-expert-comptable)
 Conseil en référencement pour cabinet d'expertise comptable : fiche Google Business, pages locales et verticales, socle technique, netlinking de proximité, citations dans ChatGPT et Perplexity. Arbitrages budget et KPIs.
+
+### [Diagnostic visibilité IA du cabinet comptable — Eligibly](https://eligibly.ai/diagnostic-visibilite-ia)
+Évaluez les contenus publics de votre site de cabinet : préparation aux citations IA, preuves disponibles et recommandations éditoriales concrètes, sans garantie de citation.
 
 ### [Image de marque d'un cabinet d'expertise comptable : la méthode](https://eligibly.ai/image-de-marque-expert-comptable)
 Positionnement, spécialisation, preuves clients et identité visuelle : comment construire la marque d'un cabinet EC dans le respect de la déontologie. Exemples et checklist.
@@ -81,8 +84,8 @@ Prospection pour expert-comptable : ciblage des nouvelles immatriculations, séq
 ### [Ressources cabinet EC — Baromètres, playbooks & analyses sourcées](https://eligibly.ai/ressources)
 Baromètres CAC, playbooks de prospection, ICP, séquences multicanal, observatoires SASU/SAS : les analyses sourcées (INSEE, OEC, Atlas) pour votre cabinet.
 
-### [Simulateur ROI IA cabinet comptable — Gains chiffrés en 4 étapes](https://eligibly.ai/simulateur-roi-ia-cabinet)
-Calculez les gains nets de l'IA pour votre cabinet d'expertise comptable : production, conseil, prospection. Simulateur gratuit en 4 étapes, résultats immédiats.
+### [Valeur client et ROI IA d'un cabinet comptable — Eligibly](https://eligibly.ai/simulateur-roi-ia-cabinet)
+Combien vaut un nouveau client ? Calculez honoraires, marge, rétention et coût d'acquisition, puis estimez les gains de l'IA pour votre cabinet comptable.
 
 ### [Cas d'usage cabinet EC — 6 profils, filtres & bénéfices concrets](https://eligibly.ai/solutions)
 6 verticales cabinet EC : Tech, Conseil, Santé, Artisans, Grands cabinets, Structuration commerciale. Filtres appliqués et gains chiffrés par profil.

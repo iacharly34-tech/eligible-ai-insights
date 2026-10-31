@@ -3,19 +3,17 @@ import {
   EmpartnersSiteMockup,
   EmpartnersCtaVariants,
   EmpartnersGoogleReviews,
-  EmpartnersLeadsDigest,
-  EmpartnersDealsWon,
 } from "@/components/blog/EmpartnersVisuals";
 
 const CasClientEmpartners = () => (
   <ArticleShell
     badge="Cas client cabinet EC"
-    title="Cas client Empartners : 3 leads qualifiés par semaine, dès 3 mois, sur un site générant quelques centaines de visites"
+    title="Cas client EM Partners : image de marque, site et visibilité locale"
     subtitle="Comment Eligibly a accompagné Mickael Fellous et son cabinet Empartners.fr de l'image de marque au site web, en passant par le référencement local et la prospection ciblée sur les nouvelles immatriculations."
     date="2026-08-24"
     readTime="9 min de lecture"
     url="/blog/cas-client-empartners"
-    description="Cas client Empartners.fr : cabinet d'expertise comptable accompagné par Eligibly sur l'image de marque, le site web, le référencement local et la génération de leads. Résultat : 3 leads qualifiés par semaine dès 3 mois, depuis février 2026."
+    description="Cas client Empartners.fr : cabinet d'expertise comptable accompagné par Eligibly sur l'image de marque, le site web, le référencement local et la génération de leads. Périmètre de l’accompagnement et limites des résultats documentés."
     category="Cas client cabinet EC"
     sources={[
       { label: "Empartners — site officiel", url: "https://empartners.fr" },
@@ -73,7 +71,7 @@ const CasClientEmpartners = () => (
 
     <h3>3.3. Référencement local et Google Business Profile</h3>
     <p>
-      Pour un cabinet d'expertise comptable, la recherche locale est critique. Nous avons structuré la fiche Google Business Profile du cabinet (6 rue de Verdun, Charenton-le-Pont), harmonisé les NAP (Nom, Adresse, Téléphone) sur les annuaires professionnels — dont l'annuaire de l'Ordre des experts-comptables — et industrialisé la collecte d'<strong>avis clients</strong> réels après chaque livrable. Résultat mesurable : <strong>95 avis Google, note de 5,0 / 5</strong>. Ce socle amplifie tout le reste : quand un prospect cherche « expert-comptable [ville] », la fiche apparaît en premier, et le site capte le trafic qualifié.
+      Pour un cabinet d'expertise comptable, la recherche locale est critique. Nous avons structuré la fiche Google Business Profile du cabinet (6 rue de Verdun, Charenton-le-Pont), harmonisé les NAP (Nom, Adresse, Téléphone) sur les annuaires professionnels — dont l'annuaire de l'Ordre des experts-comptables — et industrialisé la collecte d'<strong>avis clients</strong> réels après chaque livrable. Résultat mesurable : <strong>95 avis Google, note de 5,0 / 5</strong>. Ce socle amplifie tout le reste : ces avis ne prouvent ni une première position locale ni un effet causal de l’accompagnement. La référence de 95 avis à 5,0/5 a été communiquée pour ce cas ; elle n’a pas été recontrôlée à la date de cette révision.
     </p>
 
     <EmpartnersGoogleReviews lang="fr" />
@@ -92,23 +90,9 @@ const CasClientEmpartners = () => (
       Chaque matin, Empartners reçoit les nouvelles immatriculations correspondant à son ICP, avec un score et une recommandation d'approche. Pas de fichier Excel inerte : une liste de décision commerciale.
     </p>
 
-    <EmpartnersLeadsDigest lang="fr" />
-
-    <h2>5. Les résultats à 6 mois</h2>
-    <p>
-      Depuis le démarrage en <strong>février 2026</strong>, les indicateurs sont les suivants :
-    </p>
-    <ul>
-      <li><strong>3 leads qualifiés par semaine</strong> en moyenne, soit environ 12 à 13 leads par mois.</li>
-      <li><strong>Site web générant quelques centaines de visites par semaine</strong> après 3 mois de mise en ligne.</li>
-      <li><strong>Pipeline prévisible</strong> : le cabinet sait chaque lundi combien de nouvelles sociétés il va contacter dans la semaine.</li>
-      <li><strong>Posture commerciale maîtrisée</strong> : les contacts sont contextualisés, le timing est juste, la première phrase n'est plus improvisée.</li>
-    </ul>
-    <p>
-      Ces chiffres ne sont pas une garantie reproductible à l'identique : ils dépendent de la zone, de l'ICP et du flux d'immatriculations. Mais ils montrent l'ordre de grandeur atteignable quand le socle digital et le moteur de leads fonctionnent ensemble.
-    </p>
-
-    <EmpartnersDealsWon lang="fr" />
+    <h2>5. Résultats documentés et limites</h2>
+    <p>Le site et le périmètre d’accompagnement décrits constituent des éléments consultables. En revanche, aucun export daté de trafic, de demandes qualifiées ou de lettres de mission n’est joint à ce cas : nous ne présentons donc pas de volume hebdomadaire de leads, de taux de conversion ni de gain économique comme un résultat attesté.</p>
+    <p>Pour établir une performance commerciale, il faut préciser la période, la définition d’une demande qualifiée, les doublons, l’origine et les signatures effectivement obtenues. Les résultats Google et IA doivent être mesurés séparément ; une fiche Google et un site ne prouvent pas une citation par un assistant.</p>
 
     <h2>6. Ce qui a fait la différence : trois leviers techniques</h2>
     <p>

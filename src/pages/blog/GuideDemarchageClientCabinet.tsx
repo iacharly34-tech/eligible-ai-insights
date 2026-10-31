@@ -1,5 +1,5 @@
 import { ArticleShell } from "./ArticleShell";
-import { KitTimingTimeline, KitEmpartnersStats, KitPillars12, KitFourCategories } from "@/components/blog/KitMarketingVisuals";
+import { KitTimingTimeline, KitPillars12, KitFourCategories } from "@/components/blog/KitMarketingVisuals";
 
 const GuideDemarchageClientCabinet = () => (
   <ArticleShell
@@ -9,7 +9,7 @@ const GuideDemarchageClientCabinet = () => (
     date="2026-07-27"
     readTime="14 min de lecture"
     url="/blog/guide-demarchage-client-expert-comptable"
-    description="Kit marketing 2026 pour experts-comptables : cadre déontologique post-2014, présence sociale, canaux fluides (Slack, WhatsApp), démarchage direct, timing d'immatriculation et checklist marketing en 12 axes (site web qui convertit, Google avis, SEO, visibilité LLM, réseaux sociaux, formulaires de contact, outbound Eligibly, canal prescripteur, lead magnets, webinaires, témoignages et parrainage). Sources CNOEC, INSEE, Légifrance. Cas Empartners : 3 leads / semaine en 3 mois."
+    description="Kit marketing 2026 pour experts-comptables : cadre déontologique post-2014, présence sociale, canaux fluides (Slack, WhatsApp), démarchage direct, timing d'immatriculation et checklist marketing en 12 axes (site web qui convertit, Google avis, SEO, visibilité LLM, réseaux sociaux, formulaires de contact, outbound Eligibly, canal prescripteur, lead magnets, webinaires, témoignages et parrainage). Sources CNOEC, INSEE, Légifrance. Cas EM Partners : image de marque et visibilité locale."
     category="Kit marketing cabinet"
     sources={[
       { label: "OEC — Code de déontologie des professionnels de l'expertise comptable", url: "https://www.experts-comptables.fr/code-de-deontologie" },
@@ -167,20 +167,8 @@ const GuideDemarchageClientCabinet = () => (
       Ce n'est pas cosmétique : la <strong>facilité de contact</strong> est un critère de choix explicite pour les créateurs. Un cabinet difficilement joignable perd la vente avant même la première proposition. La meilleure prospection du monde ne sert à rien si le prospect ne peut pas vous joindre facilement.
     </p>
 
-    <h2>6. Cas client — Empartners : 3 leads par semaine en 3 mois</h2>
-    <p>
-      <a href="https://empartners.fr" target="_blank" rel="noopener noreferrer">Empartners</a>, cabinet dirigé par Mickaël, illustre concrètement ce que produit la combinaison <em>présence digitale + timing d'immatriculation</em>.
-    </p>
-    <ul>
-      <li><strong>Site publié depuis 3 mois</strong>, quelques centaines de visites par semaine ;</li>
-      <li><strong>3 leads qualifiés / semaine</strong> livrés par Eligibly sur sa zone et sa verticale ;</li>
-      <li>Un cycle de démarchage <strong>court</strong> : la société est contactée pendant qu'elle cherche encore son expert-comptable.</li>
-    </ul>
-    <p>
-      Autrement dit : un site jeune, un trafic modeste, mais une <strong>machine d'acquisition qui tourne</strong> — parce que le cabinet ne dépend pas du hasard du référencement, il agit sur le timing. C'est la preuve que la méthode fonctionne avant d'avoir investi des années en SEO.
-    </p>
-
-    <KitEmpartnersStats />
+    <h2>6. Cas client — EM Partners : périmètre et preuves</h2>
+    <p>Le <a href="/blog/cas-client-empartners">cas EM Partners</a> décrit l’accompagnement sur la marque, le site et la visibilité locale. La référence historique de 95 avis Google à 5,0/5 n’a pas été recontrôlée à cette date. Aucun volume hebdomadaire de leads ni de signatures n’est attesté par une mesure publiée : ce cas ne constitue pas une promesse de performance.</p>
 
     <h2>7. Le canal le plus sous-estimé : le timing d'immatriculation</h2>
     <p>
@@ -232,7 +220,7 @@ const GuideDemarchageClientCabinet = () => (
 
     <h2>9. Checklist marketing : les 12 axes qui génèrent des rendez-vous</h2>
     <p>
-      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist ne vise pas à faire de vous un expert technique : elle identifie les 12 axes concrets qui font la différence entre un site vitrine et une machine d'acquisition. Elle s'appuie sur les orientations du CNOEC (Leadtech 2026, travaux Data & IA), les retours de nos cabinets pilotes et le cas Empartners (3 leads / semaine en 3 mois).
+      Un cabinet invisible en ligne n'existe pas pour les créateurs d'aujourd'hui. Cette checklist ne vise pas à faire de vous un expert technique : elle identifie les 12 axes concrets qui font la différence entre un site vitrine et une machine d'acquisition. Elle s'appuie sur les orientations du CNOEC (Leadtech 2026, travaux Data & IA), les retours de nos cabinets pilotes et le cas EM Partners, sans extrapolation de résultats commerciaux.
     </p>
 
     <h3>1. Site web qui convertit</h3>
@@ -318,7 +306,7 @@ const GuideDemarchageClientCabinet = () => (
       <li>☐ <strong>Contacter dans les premières semaines</strong> : c'est le moment où le dirigeant choisit encore son expert-comptable.</li>
       <li>☐ <strong>Utiliser l'accroche contextuelle</strong> fournie par Eligibly (ex: « Madame, votre SASU de conseil IT, immatriculée le 12 juillet, entre dans sa première période de TVA. Voici les 3 pièges à éviter. »).</li>
       <li>☐ <strong>Piloter par le nombre de RDV / mois</strong> et par le taux de conversion, pas par le nombre de emails envoyés.</li>
-      <li>☐ <strong>Objectif réaliste à 3 mois</strong> : 1 à 3 leads qualifiés par semaine sur une zone et une verticale ciblées, comme le cas Empartners.</li>
+      <li>☐ <strong>Objectif à définir</strong> : fixer le volume exploitable et les taux de rendez-vous et de signature à partir de vos propres mesures, sans extrapoler un cas client.</li>
     </ul>
 
     <h3>8. Canal prescripteur : banquiers, avocats, notaires, courtiers</h3>
