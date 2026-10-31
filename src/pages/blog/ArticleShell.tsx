@@ -233,7 +233,11 @@ export const ArticleShell = ({
                 </Button>
               </SafeLink>
               <p className="mt-6 text-sm text-muted-foreground">
-                Voir en détail{" "}
+                Méthode complète :{" "}
+                <SafeLink to="/trouver-des-clients-cabinet-comptable" className="text-primary underline underline-offset-4">
+                  comment augmenter le nombre de clients d'un cabinet comptable
+                </SafeLink>
+                . Voir en détail{" "}
                 <SafeLink to="/produit" className="text-primary underline underline-offset-4">
                   comment fonctionne le moteur de détection de leads pour cabinets d'expertise comptable
                 </SafeLink>{" "}
