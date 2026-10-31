@@ -11,6 +11,7 @@ import { z } from "npm:zod@^3.25.76";
 
 // src/lib/route-meta.ts
 var ROUTE_META = {
+  "/diagnostic-visibilite-ia": { title: "Diagnostic visibilit\xE9 IA du cabinet comptable \u2014 Eligibly", description: "\xC9valuez les contenus publics de votre site de cabinet : pr\xE9paration aux citations IA, preuves disponibles et recommandations \xE9ditoriales concr\xE8tes, sans garantie de citation." },
   "/": { title: "Eligibly : leads qualifi\xE9s pour cabinets d'expertise comptable", description: "Chaque jour, les nouvelles SASU, SAS, SARL et SEL de votre zone, scor\xE9es et pr\xEAtes \xE0 contacter. Sources INPI, Sirene, BODACC. \xC0 partir de 10 \u20AC / lead, pilote 14 jours sans CB." },
   "/a-propos": { title: "\xC0 propos d'Eligibly : l'\xE9quipe derri\xE8re les leads pour cabinets EC", description: "Eligibly aide les cabinets d'expertise comptable \xE0 d\xE9tecter les soci\xE9t\xE9s nouvellement cr\xE9\xE9es avant leurs concurrents. Mission, \xE9quipe, sources de donn\xE9es et engagements." },
   "/alternatives-primolead-experts-comptables": { title: "Alternatives \xE0 PrimoLead pour cabinets d'expertise comptable", description: "Comparatif neutre : PrimoLead, Corporama, Societe.com, Eligibly. Sources, filtres, scoring, canaux d'activation, prix, essai. Choisir le bon outil de g\xE9n\xE9ration de leads pour son cabinet EC." },

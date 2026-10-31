@@ -1,4 +1,5 @@
 import { LandingCabinetLayout } from "./LandingCabinetLayout";
+import { Button } from "@/components/ui/button";
 
 const VisibiliteExpertComptable = () => (
   <LandingCabinetLayout
@@ -19,6 +20,10 @@ const VisibiliteExpertComptable = () => (
     ctaPrimary="Voir comment Eligibly complète votre visibilité"
     ctaNote="Démo produit — 20 minutes, sans engagement."
     sections={[
+      {
+        title: "Évaluer les contenus de votre propre site",
+        body: <Button asChild variant="outline"><a href="/diagnostic-visibilite-ia">Lancer le diagnostic de visibilité IA</a></Button>,
+      },
       {
         title: "Les quatre surfaces où un cabinet se joue",
         body: (

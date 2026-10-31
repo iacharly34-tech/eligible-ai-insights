@@ -3,6 +3,7 @@
 export interface RouteMeta { title: string; description: string; }
 
 export const ROUTE_META: Record<string, RouteMeta> = {
+  "/diagnostic-visibilite-ia": { title: "Diagnostic visibilité IA du cabinet comptable — Eligibly", description: "Évaluez les contenus publics de votre site de cabinet : préparation aux citations IA, preuves disponibles et recommandations éditoriales concrètes, sans garantie de citation." },
   "/": { title: "Eligibly : leads qualifiés pour cabinets d'expertise comptable", description: "Chaque jour, les nouvelles SASU, SAS, SARL et SEL de votre zone, scorées et prêtes à contacter. Sources INPI, Sirene, BODACC. À partir de 10 € / lead, pilote 14 jours sans CB." },
   "/a-propos": { title: "À propos d'Eligibly : l'équipe derrière les leads pour cabinets EC", description: "Eligibly aide les cabinets d'expertise comptable à détecter les sociétés nouvellement créées avant leurs concurrents. Mission, équipe, sources de données et engagements." },
   "/alternatives-primolead-experts-comptables": { title: "Alternatives à PrimoLead pour cabinets d'expertise comptable", description: "Comparatif neutre : PrimoLead, Corporama, Societe.com, Eligibly. Sources, filtres, scoring, canaux d'activation, prix, essai. Choisir le bon outil de génération de leads pour son cabinet EC." },

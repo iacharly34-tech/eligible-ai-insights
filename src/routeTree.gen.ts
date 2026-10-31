@@ -20,6 +20,7 @@ import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
 import { Route as ConnexionRouteImport } from './routes/connexion'
 import { Route as ConseilReferencementExpertComptableRouteImport } from './routes/conseil-referencement-expert-comptable'
 import { Route as DemoRouteImport } from './routes/demo'
+import { Route as DiagnosticVisibiliteIaRouteImport } from './routes/diagnostic-visibilite-ia'
 import { Route as ImageDeMarqueExpertComptableRouteImport } from './routes/image-de-marque-expert-comptable'
 import { Route as InscriptionRouteImport } from './routes/inscription'
 import { Route as LeadsExpertsComptablesRouteImport } from './routes/leads-experts-comptables'
@@ -41,6 +42,7 @@ import { Route as TarifsRouteImport } from './routes/tarifs'
 import { Route as TrouverDesClientsCabinetComptableRouteImport } from './routes/trouver-des-clients-cabinet-comptable'
 import { Route as VisibiliteExpertComptableRouteImport } from './routes/visibilite-expert-comptable'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as ApiDiagnosticVisibiliteIaRouteImport } from './routes/api/diagnostic-visibilite-ia'
 import { Route as Blog5LeviersCroissanceCabinetExpertiseComptableRouteImport } from './routes/blog/5-leviers-croissance-cabinet-expertise-comptable'
 import { Route as BlogBarometreAcquisitionCabinetEc2026RouteImport } from './routes/blog/barometre-acquisition-cabinet-ec-2026'
 import { Route as BlogBarometreImmatriculationsJuillet2026RouteImport } from './routes/blog/barometre-immatriculations-juillet-2026'
@@ -136,6 +138,11 @@ const ConseilReferencementExpertComptableRoute =
 const DemoRoute = DemoRouteImport.update({
   id: '/demo',
   path: '/demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiagnosticVisibiliteIaRoute = DiagnosticVisibiliteIaRouteImport.update({
+  id: '/diagnostic-visibilite-ia',
+  path: '/diagnostic-visibilite-ia',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImageDeMarqueExpertComptableRoute =
@@ -252,6 +259,12 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const ApiDiagnosticVisibiliteIaRoute =
+  ApiDiagnosticVisibiliteIaRouteImport.update({
+    id: '/api/diagnostic-visibilite-ia',
+    path: '/api/diagnostic-visibilite-ia',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const Blog5LeviersCroissanceCabinetExpertiseComptableRoute =
   Blog5LeviersCroissanceCabinetExpertiseComptableRouteImport.update({
     id: '/blog/5-leviers-croissance-cabinet-expertise-comptable',
@@ -492,6 +505,7 @@ export interface FileRoutesByFullPath {
   '/connexion': typeof ConnexionRoute
   '/conseil-referencement-expert-comptable': typeof ConseilReferencementExpertComptableRoute
   '/demo': typeof DemoRoute
+  '/diagnostic-visibilite-ia': typeof DiagnosticVisibiliteIaRoute
   '/image-de-marque-expert-comptable': typeof ImageDeMarqueExpertComptableRoute
   '/inscription': typeof InscriptionRoute
   '/leads-experts-comptables': typeof LeadsExpertsComptablesRoute
@@ -513,6 +527,7 @@ export interface FileRoutesByFullPath {
   '/trouver-des-clients-cabinet-comptable': typeof TrouverDesClientsCabinetComptableRoute
   '/visibilite-expert-comptable': typeof VisibiliteExpertComptableRoute
   '/admin': typeof AuthenticatedAdminRoute
+  '/api/diagnostic-visibilite-ia': typeof ApiDiagnosticVisibiliteIaRoute
   '/blog/5-leviers-croissance-cabinet-expertise-comptable': typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
   '/blog/barometre-immatriculations-juillet-2026': typeof BlogBarometreImmatriculationsJuillet2026Route
@@ -565,6 +580,7 @@ export interface FileRoutesByTo {
   '/connexion': typeof ConnexionRoute
   '/conseil-referencement-expert-comptable': typeof ConseilReferencementExpertComptableRoute
   '/demo': typeof DemoRoute
+  '/diagnostic-visibilite-ia': typeof DiagnosticVisibiliteIaRoute
   '/image-de-marque-expert-comptable': typeof ImageDeMarqueExpertComptableRoute
   '/inscription': typeof InscriptionRoute
   '/leads-experts-comptables': typeof LeadsExpertsComptablesRoute
@@ -586,6 +602,7 @@ export interface FileRoutesByTo {
   '/trouver-des-clients-cabinet-comptable': typeof TrouverDesClientsCabinetComptableRoute
   '/visibilite-expert-comptable': typeof VisibiliteExpertComptableRoute
   '/admin': typeof AuthenticatedAdminRoute
+  '/api/diagnostic-visibilite-ia': typeof ApiDiagnosticVisibiliteIaRoute
   '/blog/5-leviers-croissance-cabinet-expertise-comptable': typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
   '/blog/barometre-immatriculations-juillet-2026': typeof BlogBarometreImmatriculationsJuillet2026Route
@@ -640,6 +657,7 @@ export interface FileRoutesById {
   '/connexion': typeof ConnexionRoute
   '/conseil-referencement-expert-comptable': typeof ConseilReferencementExpertComptableRoute
   '/demo': typeof DemoRoute
+  '/diagnostic-visibilite-ia': typeof DiagnosticVisibiliteIaRoute
   '/image-de-marque-expert-comptable': typeof ImageDeMarqueExpertComptableRoute
   '/inscription': typeof InscriptionRoute
   '/leads-experts-comptables': typeof LeadsExpertsComptablesRoute
@@ -661,6 +679,7 @@ export interface FileRoutesById {
   '/trouver-des-clients-cabinet-comptable': typeof TrouverDesClientsCabinetComptableRoute
   '/visibilite-expert-comptable': typeof VisibiliteExpertComptableRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
+  '/api/diagnostic-visibilite-ia': typeof ApiDiagnosticVisibiliteIaRoute
   '/blog/5-leviers-croissance-cabinet-expertise-comptable': typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   '/blog/barometre-acquisition-cabinet-ec-2026': typeof BlogBarometreAcquisitionCabinetEc2026Route
   '/blog/barometre-immatriculations-juillet-2026': typeof BlogBarometreImmatriculationsJuillet2026Route
@@ -715,6 +734,7 @@ export interface FileRouteTypes {
     | '/connexion'
     | '/conseil-referencement-expert-comptable'
     | '/demo'
+    | '/diagnostic-visibilite-ia'
     | '/image-de-marque-expert-comptable'
     | '/inscription'
     | '/leads-experts-comptables'
@@ -736,6 +756,7 @@ export interface FileRouteTypes {
     | '/trouver-des-clients-cabinet-comptable'
     | '/visibilite-expert-comptable'
     | '/admin'
+    | '/api/diagnostic-visibilite-ia'
     | '/blog/5-leviers-croissance-cabinet-expertise-comptable'
     | '/blog/barometre-acquisition-cabinet-ec-2026'
     | '/blog/barometre-immatriculations-juillet-2026'
@@ -788,6 +809,7 @@ export interface FileRouteTypes {
     | '/connexion'
     | '/conseil-referencement-expert-comptable'
     | '/demo'
+    | '/diagnostic-visibilite-ia'
     | '/image-de-marque-expert-comptable'
     | '/inscription'
     | '/leads-experts-comptables'
@@ -809,6 +831,7 @@ export interface FileRouteTypes {
     | '/trouver-des-clients-cabinet-comptable'
     | '/visibilite-expert-comptable'
     | '/admin'
+    | '/api/diagnostic-visibilite-ia'
     | '/blog/5-leviers-croissance-cabinet-expertise-comptable'
     | '/blog/barometre-acquisition-cabinet-ec-2026'
     | '/blog/barometre-immatriculations-juillet-2026'
@@ -862,6 +885,7 @@ export interface FileRouteTypes {
     | '/connexion'
     | '/conseil-referencement-expert-comptable'
     | '/demo'
+    | '/diagnostic-visibilite-ia'
     | '/image-de-marque-expert-comptable'
     | '/inscription'
     | '/leads-experts-comptables'
@@ -883,6 +907,7 @@ export interface FileRouteTypes {
     | '/trouver-des-clients-cabinet-comptable'
     | '/visibilite-expert-comptable'
     | '/_authenticated/admin'
+    | '/api/diagnostic-visibilite-ia'
     | '/blog/5-leviers-croissance-cabinet-expertise-comptable'
     | '/blog/barometre-acquisition-cabinet-ec-2026'
     | '/blog/barometre-immatriculations-juillet-2026'
@@ -937,6 +962,7 @@ export interface RootRouteChildren {
   ConnexionRoute: typeof ConnexionRoute
   ConseilReferencementExpertComptableRoute: typeof ConseilReferencementExpertComptableRoute
   DemoRoute: typeof DemoRoute
+  DiagnosticVisibiliteIaRoute: typeof DiagnosticVisibiliteIaRoute
   ImageDeMarqueExpertComptableRoute: typeof ImageDeMarqueExpertComptableRoute
   InscriptionRoute: typeof InscriptionRoute
   LeadsExpertsComptablesRoute: typeof LeadsExpertsComptablesRoute
@@ -957,6 +983,7 @@ export interface RootRouteChildren {
   TarifsRoute: typeof TarifsRoute
   TrouverDesClientsCabinetComptableRoute: typeof TrouverDesClientsCabinetComptableRoute
   VisibiliteExpertComptableRoute: typeof VisibiliteExpertComptableRoute
+  ApiDiagnosticVisibiliteIaRoute: typeof ApiDiagnosticVisibiliteIaRoute
   Blog5LeviersCroissanceCabinetExpertiseComptableRoute: typeof Blog5LeviersCroissanceCabinetExpertiseComptableRoute
   BlogBarometreAcquisitionCabinetEc2026Route: typeof BlogBarometreAcquisitionCabinetEc2026Route
   BlogBarometreImmatriculationsJuillet2026Route: typeof BlogBarometreImmatriculationsJuillet2026Route
@@ -1074,6 +1101,13 @@ declare module '@tanstack/react-router' {
       path: '/demo'
       fullPath: '/demo'
       preLoaderRoute: typeof DemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diagnostic-visibilite-ia': {
+      id: '/diagnostic-visibilite-ia'
+      path: '/diagnostic-visibilite-ia'
+      fullPath: '/diagnostic-visibilite-ia'
+      preLoaderRoute: typeof DiagnosticVisibiliteIaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/image-de-marque-expert-comptable': {
@@ -1222,6 +1256,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/admin'
       preLoaderRoute: typeof AuthenticatedAdminRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/api/diagnostic-visibilite-ia': {
+      id: '/api/diagnostic-visibilite-ia'
+      path: '/api/diagnostic-visibilite-ia'
+      fullPath: '/api/diagnostic-visibilite-ia'
+      preLoaderRoute: typeof ApiDiagnosticVisibiliteIaRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/blog/5-leviers-croissance-cabinet-expertise-comptable': {
       id: '/blog/5-leviers-croissance-cabinet-expertise-comptable'
@@ -1535,6 +1576,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConseilReferencementExpertComptableRoute:
     ConseilReferencementExpertComptableRoute,
   DemoRoute: DemoRoute,
+  DiagnosticVisibiliteIaRoute: DiagnosticVisibiliteIaRoute,
   ImageDeMarqueExpertComptableRoute: ImageDeMarqueExpertComptableRoute,
   InscriptionRoute: InscriptionRoute,
   LeadsExpertsComptablesRoute: LeadsExpertsComptablesRoute,
@@ -1557,6 +1599,7 @@ const rootRouteChildren: RootRouteChildren = {
   TrouverDesClientsCabinetComptableRoute:
     TrouverDesClientsCabinetComptableRoute,
   VisibiliteExpertComptableRoute: VisibiliteExpertComptableRoute,
+  ApiDiagnosticVisibiliteIaRoute: ApiDiagnosticVisibiliteIaRoute,
   Blog5LeviersCroissanceCabinetExpertiseComptableRoute:
     Blog5LeviersCroissanceCabinetExpertiseComptableRoute,
   BlogBarometreAcquisitionCabinetEc2026Route:

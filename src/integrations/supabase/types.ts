@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      ai_visibility_guard: {
+        Row: {
+          attempts: number
+          paused_message: string | null
+          paused_status: number | null
+          scope: string
+          window_started_at: string
+        }
+        Insert: {
+          attempts?: number
+          paused_message?: string | null
+          paused_status?: number | null
+          scope: string
+          window_started_at?: string
+        }
+        Update: {
+          attempts?: number
+          paused_message?: string | null
+          paused_status?: number | null
+          scope?: string
+          window_started_at?: string
+        }
+        Relationships: []
+      }
       cabinet_members: {
         Row: {
           cabinet_id: string
@@ -445,6 +469,10 @@ export type Database = {
         Returns: boolean
       }
       purge_expired_leads: { Args: never; Returns: number }
+      reserve_ai_visibility_audit: {
+        Args: { _user_id: string }
+        Returns: boolean
+      }
       user_cabinet_id: { Args: { _user_id: string }; Returns: string }
     }
     Enums: {
