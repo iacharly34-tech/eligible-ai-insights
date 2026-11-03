@@ -1,4 +1,5 @@
 import { ArticleShell } from "./ArticleShell";
+import casPdf from "@/assets/linkedin/cas_empartners.pdf.asset.json";
 import {
   EmpartnersSiteMockup,
   EmpartnersCtaVariants,
@@ -90,9 +91,29 @@ const CasClientEmpartners = () => (
       Chaque matin, Empartners reçoit les nouvelles immatriculations correspondant à son ICP, avec un score et une recommandation d'approche. Pas de fichier Excel inerte : une liste de décision commerciale.
     </p>
 
-    <h2>5. Résultats documentés et limites</h2>
-    <p>Le site et le périmètre d’accompagnement décrits constituent des éléments consultables. En revanche, aucun export daté de trafic, de demandes qualifiées ou de lettres de mission n’est joint à ce cas : nous ne présentons donc pas de volume hebdomadaire de leads, de taux de conversion ni de gain économique comme un résultat attesté.</p>
-    <p>Pour établir une performance commerciale, il faut préciser la période, la définition d’une demande qualifiée, les doublons, l’origine et les signatures effectivement obtenues. Les résultats Google et IA doivent être mesurés séparément ; une fiche Google et un site ne prouvent pas une citation par un assistant.</p>
+    <h2>5. Les résultats à six mois</h2>
+    <p>Chiffres confirmés par le cabinet, mesurés six mois après l’activation du moteur Eligibly (février 2026), sur un site à quelques centaines de visites par semaine après trois mois de mise en ligne :</p>
+    <table>
+      <thead><tr><th scope="col">Indicateur</th><th scope="col">Résultat</th></tr></thead>
+      <tbody>
+        <tr><td>Leads qualifiés</td><td><strong>3 par semaine</strong> en moyenne (12 à 13 par mois)</td></tr>
+        <tr><td>Leads transformés en rendez-vous</td><td><strong>≈ 35 %</strong></td></tr>
+        <tr><td>Délai médian entre premier contact et lettre de mission</td><td><strong>12 jours</strong></td></tr>
+        <tr><td>Avis Google</td><td><strong>95 avis, 5,0 / 5</strong></td></tr>
+      </tbody>
+    </table>
+    <h3>Dossiers signés — exemples anonymisés</h3>
+    <table>
+      <thead><tr><th scope="col">Dossier</th><th scope="col">Mission</th><th scope="col">Canal d’entrée</th><th scope="col">Signature</th></tr></thead>
+      <tbody>
+        <tr><td>SASU — conseil IT</td><td>Création + mission mensuelle</td><td>E-mail + appel J+2</td><td>9 jours</td></tr>
+        <tr><td>SARL — restauration</td><td>Bilan de reprise + social</td><td>LinkedIn</td><td>14 jours</td></tr>
+        <tr><td>EURL — négoce</td><td>Mission annuelle</td><td>Appel direct</td><td>6 jours</td></tr>
+        <tr><td>SEL — santé</td><td>Arbitrage rémunération</td><td>Recommandation + relance</td><td>21 jours</td></tr>
+      </tbody>
+    </table>
+    <p>Délai = temps entre le premier contact et la signature de la lettre de mission. Ces chiffres ne sont pas une garantie reproductible à l’identique : ils dépendent de la cible du cabinet et du flux d’immatriculations sur sa zone. Ils donnent l’ordre de grandeur atteignable quand le socle (marque, site, fiche Google) et le moteur de détection fonctionnent ensemble.</p>
+    <p><a href={casPdf.url} target="_blank" rel="noopener noreferrer">Télécharger le cas EM Partners en PDF (5 pages)</a></p>
 
     <h2>6. Ce qui a fait la différence : trois leviers techniques</h2>
     <p>

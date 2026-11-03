@@ -1,4 +1,6 @@
 import { LeadFicheDemo } from "@/components/cabinet/LeadFicheDemo";
+import leadVideo from "@/assets/linkedin/lead_decrypte.mp4.asset.json";
+import leadPoster from "@/assets/linkedin/lead_decrypte_poster.jpg.asset.json";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileCTABar } from "@/components/MobileCTABar";
@@ -65,6 +67,32 @@ const PourquoiCeLeadEstPrioritaire = () => (
             <div className="min-w-0">
               <LeadFicheDemo />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border py-12 sm:py-16" aria-labelledby="video-lead">
+        <div className="container mx-auto grid items-center gap-8 px-4 md:grid-cols-[minmax(0,320px)_minmax(0,1fr)] lg:gap-12">
+          <video
+            src={leadVideo.url}
+            poster={leadPoster.url}
+            controls
+            muted
+            playsInline
+            preload="none"
+            className="mx-auto w-full max-w-xs rounded-lg border border-border shadow-sm"
+            aria-describedby="video-lead-transcript"
+          />
+          <div className="space-y-4">
+            <h2 id="video-lead" className="font-display text-2xl font-semibold text-foreground sm:text-3xl">
+              Un lead décrypté en 27 secondes
+            </h2>
+            <p id="video-lead-transcript" className="max-w-2xl leading-relaxed text-muted-foreground">
+              La vidéo parcourt une fiche lead Eligibly dans l’ordre où un collaborateur la lit : société et date d’immatriculation, score sur 100 et ses raisons, dirigeant et coordonnées disponibles, fenêtre de contact avant le premier bilan, canal recommandé et premier message à relire. Exemple fictif, données anonymisées.
+            </p>
+            <SafeLink to="/demo" className="inline-flex items-center gap-2 font-semibold text-primary">
+              Recevoir 3 fiches réelles pour ma zone <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </SafeLink>
           </div>
         </div>
       </section>
