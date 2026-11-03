@@ -8,6 +8,7 @@ import { Footer } from "@/components/Footer";
 import { supabase } from "@/integrations/supabase/client";
 import { publicSiteUrl, type AuditEvent } from "@/lib/ai-visibility/schema";
 import logo from "@/assets/eligibly-logo-main.png";
+import iaVisual from "@/assets/linkedin/ia_cabinet_absent.png.asset.json";
 
 type Result = Extract<AuditEvent, { type: "result" }>;
 const assessmentLabels = { bases_solides: "Bases éditoriales solides", a_renforcer: "Bases à renforcer", insuffisant: "Contenu insuffisant", non_evaluable: "Évaluation impossible" };
