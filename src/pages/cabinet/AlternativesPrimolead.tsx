@@ -1,4 +1,5 @@
 import { LandingCabinetLayout } from "./LandingCabinetLayout";
+import { ProspectionAveugleTable } from "@/components/cabinet/ProspectionAveugleTable";
 
 type Row = { criteria: string; eligibly: string; primolead: string; corporama: string; societecom: string };
 
@@ -36,6 +37,7 @@ const AlternativesPrimolead = () => (
       ctaPrimary="Essayer Eligibly — 14 jours gratuits"
       ctaNote="Pilote sans engagement ni carte bancaire."
       sections={[
+        { title: "Prospecter à l’aveugle ou recevoir les dossiers à appeler ?", body: <><p>Quatre étapes où la recherche manuelle de créations d’entreprises coûte du temps au cabinet, comparées au fonctionnement d’Eligibly. Montants de temps chargé indicatifs, à recalculer avec votre propre coût horaire.</p><div className="mt-4"><ProspectionAveugleTable /></div></> },
         { title: "Quelle alternative à PrimoLead pour la prospection comptable ?", body: <p>Eligibly propose une détection et une qualification orientées cabinet : société, récence, score motivé, qualité des coordonnées, canal et proposition d’approche. Pour arbitrer, testez le même périmètre géographique et sectoriel, comparez la part de dossiers réellement exploitables et additionnez le prix des données au temps de tri. Ni une ligne de fichier ni un score ne garantissent une lettre de mission.</p> },
         {
           title: "Tableau comparatif",

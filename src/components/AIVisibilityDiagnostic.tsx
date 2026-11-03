@@ -77,8 +77,17 @@ export function AIVisibilityDiagnostic() {
         <img src={logo} alt="Eligibly" className="h-9 w-9 object-contain" />
         <span className="text-sm font-semibold text-editorial-ink">Marque & visibilité · Diagnostic IA</span>
       </div>
-      <h1 className="font-display text-3xl md:text-4xl text-editorial-ink max-w-3xl leading-tight">Votre cabinet est-il prêt à être cité par les assistants IA ?</h1>
-      <p className="mt-4 max-w-3xl text-muted-foreground leading-relaxed">Une évaluation qualitative des contenus publics de votre site, avec preuves disponibles et améliorations prioritaires. Aucun score ne garantit une citation dans ChatGPT, Perplexity, Gemini ou Claude.</p>
+      <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,340px)] items-start">
+        <div>
+          <h1 className="font-display text-3xl md:text-4xl text-editorial-ink max-w-3xl leading-tight">Votre cabinet est-il prêt à être cité par les assistants IA ?</h1>
+          <p className="mt-4 max-w-3xl text-muted-foreground leading-relaxed">Une évaluation qualitative des contenus publics de votre site, avec preuves disponibles et améliorations prioritaires. Aucun score ne garantit une citation dans ChatGPT, Perplexity, Gemini ou Claude.</p>
+          <p className="mt-4 max-w-3xl text-muted-foreground leading-relaxed">Le scénario est concret : un créateur de SASU de conseil demande à un assistant quel expert-comptable choisir. L’assistant cite trois cabinets bien notés, avec une page dédiée à sa forme juridique ou un devis immédiat. Un cabinet à la fiche Google incomplète, sans avis récent, n’apparaît pas. Ce diagnostic repère ce qui manque à votre site pour figurer dans ce type de réponse.</p>
+        </div>
+        <figure>
+          <img src={iaVisual.url} alt="Exemple illustratif : un assistant IA recommande trois cabinets à un créateur de SASU ; le cabinet à la fiche incomplète et sans avis récent est absent." width={1080} height={1350} loading="lazy" className="w-full rounded-lg border border-editorial-ink/20" />
+          <figcaption className="mt-2 text-xs text-muted-foreground">Exemple illustratif, cabinets fictifs.</figcaption>
+        </figure>
+      </div>
       <form onSubmit={run} className="mt-8 border border-editorial-ink/20 bg-card rounded-lg p-5 md:p-7" aria-busy={busy}>
         <Label htmlFor="cabinet-site" className="text-editorial-ink">URL du site du cabinet</Label>
         <div className="mt-3 flex flex-col sm:flex-row gap-3">
