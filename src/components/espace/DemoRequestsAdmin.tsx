@@ -1,15 +1,16 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
-import { listDemoRequests, updateDemoStatus } from "@/lib/demo.functions";
+import { listDemoRequests, updateDemoStatus, demoVolumeStats } from "@/lib/demo.functions";
 import { formatParis } from "@/lib/demo-booking";
 
 const STATUTS: Record<string, string> = { nouveau: "Nouveau", relance: "Relancé", rdv_pris: "RDV pris", signe: "Signé", perdu: "Perdu" };
 
 export function DemoRequestsAdmin() {
   const qc = useQueryClient();
-  const fList = useServerFn(listDemoRequests), fUpdate = useServerFn(updateDemoStatus);
+  const fList = useServerFn(listDemoRequests), fUpdate = useServerFn(updateDemoStatus), fStats = useServerFn(demoVolumeStats);
   const { data = [], isLoading } = useQuery({ queryKey: ["admin-demo"], queryFn: () => fList() });
+  const { data: stats } = useQuery({ queryKey: ["admin-demo-volume"], queryFn: () => fStats() });
   const counts = Object.keys(STATUTS).map((k) => [k, data.filter((r: any) => r.statut === k).length] as const);
 
   const change = async (id: string, statut: string) => {
