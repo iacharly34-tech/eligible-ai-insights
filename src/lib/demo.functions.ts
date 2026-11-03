@@ -126,6 +126,36 @@ export const listDemoRequests = createServerFn({ method: "GET" })
     return data ?? [];
   });
 
+/** Admin: volume tracking of demo form submissions (monthly/weekly counts, RDV conversion). */
+export const demoVolumeStats = createServerFn({ method: "GET" })
+  .middleware([requireSupabaseAuth])
+  .handler(async ({ context }) => {
+    await assertAdmin(context);
+    const since = new Date(Date.now() - 365 * 24 * 3600_000).toISOString();
+    const { data } = await context.supabase.from("demo_requests")
+      .select("created_at, statut, rdv_at").gte("created_at", since);
+    const rows = data ?? [];
+    const byMonth = new Map<string, number>();
+    const byWeek = new Map<string, number>();
+    for (const r of rows) {
+      const d = new Date(r.created_at as string);
+      const m = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
+      byMonth.set(m, (byMonth.get(m) ?? 0) + 1);
+      const day = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+      day.setUTCDate(day.getUTCDate() - ((day.getUTCDay() + 6) % 7));
+      const w = day.toISOString().slice(0, 10);
+      byWeek.set(w, (byWeek.get(w) ?? 0) + 1);
+    }
+    const sort = (m: Map<string, number>) => [...m.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([period, count]) => ({ period, count }));
+    return {
+      total: rows.length,
+      rdvPris: rows.filter((r) => r.rdv_at).length,
+      signes: rows.filter((r) => r.statut === "signe").length,
+      byMonth: sort(byMonth),
+      byWeek: sort(byWeek).slice(-12),
+    };
+  });
+
 export const updateDemoStatus = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .inputValidator((d) => z.object({ id: z.string().uuid(), statut: z.enum(["nouveau", "relance", "rdv_pris", "signe", "perdu"]) }).parse(d))
